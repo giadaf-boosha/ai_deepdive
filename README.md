@@ -62,9 +62,10 @@ Aggiungi/togli voci direttamente in [`config/sources.yaml`](./config/sources.yam
 ## Stato
 
 - ✅ Scaffold + KB seed (15 concetti) + primo digest manuale: 2026-04-28
-- ⏳ Routine schedulata: prossimo auto-run domani 07:00
+- ✅ Routine remota creata: `ai-deepdive-daily` (ID: `trig_01U38R2BbWd86ZSZvv9uv5Jy`)
+- ⏳ Prossimo auto-run: domani 2026-04-29 alle 07:08 Europe/Rome
 
-Dashboard routine: vedi commit più recente per ID routine.
+Dashboard routine: https://claude.ai/code/routines/trig_01U38R2BbWd86ZSZvv9uv5Jy
 
 ## Identità editoriale
 
