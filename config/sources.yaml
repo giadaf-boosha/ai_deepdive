@@ -1,0 +1,485 @@
+# config/sources.yaml — ai_deepdive
+# Lista canonica delle fonti monitorate dalla routine giornaliera.
+# Ultima revisione: 2026-04-28
+# Modifica questo file e committa per aggiornare le fonti della routine.
+
+# Convenzioni:
+# - type: "rss" se feed RSS canonico, "substack_rss" se Substack /feed,
+#   "html" se solo scraping HTML dell'archive
+# - paywall: false | partial | full
+# - priority: high | medium | low (la routine prioritizza high in caso di rate limit)
+
+newsletters:
+  - name: AlphaSignal
+    url: https://alphasignal.ai/archive
+    rss: https://alphasignalai.substack.com/feed
+    type: substack_rss
+    priority: high
+    paywall: false
+    language: en
+    notes: "Daily AI news digest (Lior Sinclair). Sintesi quotidiana di papers, modelli, repo. Feed canonico ufficiale e' la versione Substack; alphasignal.ai/feed.xml restituisce 403."
+
+  - name: Simon Willison's Weblog
+    url: https://simonwillison.net/
+    rss: https://simonwillison.net/atom/everything/
+    type: rss
+    priority: high
+    paywall: false
+    language: en
+    notes: "Atom feed completo (entries + linkblog). Riferimento per LLM tooling, prompting, ecosistema OSS."
+
+  - name: Every
+    url: https://every.to
+    rss: null
+    type: html
+    priority: high
+    paywall: partial
+    language: en
+    notes: "Network di newsletter (Dan Shipper et al.). Nessun feed unico pubblico verificato (every.to/feed e /feed.xml e /atom.xml ritornano 404). Scraping HTML dell'homepage o per autore."
+
+  - name: AI Snake Oil
+    url: https://www.aisnakeoil.com
+    rss: https://www.normaltech.ai/feed
+    type: substack_rss
+    priority: high
+    paywall: false
+    language: en
+    notes: "Arvind Narayanan + Sayash Kapoor. La pubblicazione si e' rinominata in 'AI as Normal Technology' (normaltech.ai); il vecchio dominio aisnakeoil.com fa 301 redirect."
+
+  - name: One Useful Thing
+    url: https://www.oneusefulthing.org
+    rss: https://www.oneusefulthing.org/feed
+    type: substack_rss
+    priority: high
+    paywall: false
+    language: en
+    notes: "Ethan Mollick. Implicazioni AI su lavoro e formazione, prompting pratico."
+
+  - name: Exponential View
+    url: https://www.exponentialview.co
+    rss: https://www.exponentialview.co/feed
+    type: substack_rss
+    priority: high
+    paywall: partial
+    language: en
+    notes: "Azeem Azhar. Analisi macro AI/tech. Alcuni post premium-only."
+
+  - name: Ben's Bites
+    url: https://www.bensbites.com
+    rss: https://www.bensbites.com/feed
+    type: rss
+    priority: high
+    paywall: false
+    language: en
+    notes: "Daily AI roundup. Domain principale e' bensbites.com (bensbites.beehiiv.com restituisce 404 sul feed)."
+
+  - name: Unwind AI
+    url: https://unwindai.substack.com
+    rss: https://unwindai.substack.com/feed
+    type: substack_rss
+    priority: medium
+    paywall: false
+    language: en
+    notes: "Tutorial e tool AI lato sviluppatore."
+
+  - name: Daily Dose of Data Science
+    url: https://www.dailydoseofds.com
+    rss: https://www.dailydoseofds.com/rss/
+    type: rss
+    priority: medium
+    paywall: partial
+    language: en
+    notes: "Avi Chawla. Deep dive tecnici DS/ML/RL, alcuni post solo paid."
+
+  - name: Cobus Greyling
+    url: https://cobusgreyling.substack.com
+    rss: https://cobusgreyling.substack.com/feed
+    type: substack_rss
+    priority: medium
+    paywall: false
+    language: en
+    notes: "LLM, agenti, NLU/NLP. Pubblica spesso, taglio applicato."
+
+  - name: Interconnects (ex Robotic)
+    url: https://www.interconnects.ai
+    rss: https://www.interconnects.ai/feed
+    type: substack_rss
+    priority: medium
+    paywall: partial
+    language: en
+    notes: "Nathan Lambert (AI2). robotic.substack.com fa 301 a interconnects.ai. Approfondimenti su frontier models e RLHF."
+
+  - name: LLM Watch (ex The Week in AI / XaiGuy)
+    url: https://www.llmwatch.com
+    rss: https://www.llmwatch.com/feed
+    type: substack_rss
+    priority: medium
+    paywall: false
+    language: en
+    notes: "Pascal Biese. Sintesi settimanale dei paper LLM piu' rilevanti. xaiguy.substack.com fa 301 al nuovo dominio."
+
+  - name: Andreas' Newsletter
+    url: https://andreas.substack.com
+    rss: https://andreas.substack.com/feed
+    type: substack_rss
+    priority: medium
+    paywall: false
+    language: en
+    notes: "URL non verificato univocamente — il riferimento dell'utente e' ambiguo. Fallback: lasciare type substack_rss; se la routine non trova items per >7 giorni, segnalare per revisione manuale dell'handle."
+
+  - name: G Huntley
+    url: https://ghuntley.com
+    rss: https://ghuntley.com/rss/
+    type: rss
+    priority: medium
+    paywall: false
+    language: en
+    notes: "Geoffrey Huntley. AI engineering, automazione SDE, DevEx."
+
+  - name: Behind the Craft (Peter Yang)
+    url: https://creatoreconomy.so
+    rss: https://creatoreconomy.so/feed
+    type: substack_rss
+    priority: medium
+    paywall: partial
+    language: en
+    notes: "Peter Yang. peteryang.substack.com fa 301 a creatoreconomy.so / 'Behind the Craft'. Product + AI applicato."
+
+  - name: Data Pizza
+    url: https://datapizza.tech
+    rss: null
+    type: html
+    priority: medium
+    paywall: false
+    language: it
+    notes: "Datapizza (community italiana data/AI). Domini datapizza.it e datapizza.tech non espongono feed RSS verificato (404 su /feed). Scraping HTML dell'archive blog."
+
+  - name: TechCrunch
+    url: https://techcrunch.com
+    rss: https://techcrunch.com/feed/
+    type: rss
+    priority: low
+    paywall: partial
+    language: en
+    notes: "Coverage generalista tech. Filtrare per categoria AI; molti articoli con paywall TechCrunch+."
+
+  - name: The Information
+    url: https://www.theinformation.com
+    rss: null
+    type: html
+    priority: low
+    paywall: full
+    language: en
+    notes: "Paywall totale. La routine puo' loggare solo titoli/teaser dalla home; serve abbonamento per il corpo."
+
+x_accounts:
+  # --- Founder / CEO AI lab (high signal strategico) ---
+  - handle: sama
+    name: Sam Altman
+    role: ceo
+    why: "CEO OpenAI. Annunci di product e direzione strategica."
+    priority: high
+  - handle: DarioAmodei
+    name: Dario Amodei
+    role: ceo
+    why: "CEO Anthropic. Posizioni su safety, scaling, policy."
+    priority: high
+  - handle: demishassabis
+    name: Demis Hassabis
+    role: ceo
+    why: "CEO Google DeepMind. Aggiornamenti su Gemini e research."
+    priority: high
+  - handle: mustafasuleyman
+    name: Mustafa Suleyman
+    role: ceo
+    why: "CEO Microsoft AI. Visione consumer AI e Copilot."
+    priority: medium
+  - handle: ylecun
+    name: Yann LeCun
+    role: ricercatore
+    why: "Chief AI Scientist Meta, Turing Award. Critica franca su LLM-only e world models."
+    priority: high
+  - handle: AravSrinivas
+    name: Aravind Srinivas
+    role: ceo
+    why: "CEO Perplexity. Annunci product search/agentic."
+    priority: medium
+  - handle: alexandr_wang
+    name: Alexandr Wang
+    role: ceo
+    why: "Founder Scale AI, ora a Meta Superintelligence. Data + frontier scaling."
+    priority: medium
+  - handle: emostaque
+    name: Emad Mostaque
+    role: founder
+    why: "Ex Stability AI, commento su open-source AI."
+    priority: medium
+  - handle: clementdelangue
+    name: Clem Delangue
+    role: ceo
+    why: "CEO Hugging Face. Hub OSS, modelli open."
+    priority: high
+  - handle: jeffdean
+    name: Jeff Dean
+    role: ricercatore
+    why: "Chief Scientist Google. Infrastruttura ML, scaling, TPU."
+    priority: high
+
+  # --- Ricercatori senior / Turing-level ---
+  - handle: karpathy
+    name: Andrej Karpathy
+    role: ricercatore
+    why: "Ex Tesla AI / OpenAI. Tutorial e thread didattici di altissimo livello."
+    priority: high
+  - handle: goodfellow_ian
+    name: Ian Goodfellow
+    role: ricercatore
+    why: "Inventore GAN, ex Apple/DeepMind. Commento su safety e generative models."
+    priority: medium
+  - handle: AndrewYNg
+    name: Andrew Ng
+    role: educator
+    why: "DeepLearning.AI, Coursera. Sintesi e formazione AI."
+    priority: high
+  - handle: drfeifei
+    name: Fei-Fei Li
+    role: ricercatore
+    why: "Stanford HAI, World Labs. Spatial intelligence, vision."
+    priority: medium
+  - handle: hardmaru
+    name: David Ha
+    role: ricercatore
+    why: "Sakana AI. Evolutionary methods, model merging."
+    priority: medium
+  - handle: ilyasut
+    name: Ilya Sutskever
+    role: ricercatore
+    why: "SSI. Pubblicazioni rare ma alto segnale strategico."
+    priority: medium
+  - handle: lmthang
+    name: Thang Luong
+    role: ricercatore
+    why: "Google DeepMind. NLP, reasoning."
+    priority: medium
+  - handle: YiTayML
+    name: Yi Tay
+    role: ricercatore
+    why: "Reka AI. Architetture LLM, training."
+    priority: medium
+  - handle: percyliang
+    name: Percy Liang
+    role: ricercatore
+    why: "Stanford CRFM, HELM benchmark. Valutazione LLM rigorosa."
+    priority: medium
+  - handle: tszzl
+    name: Roon
+    role: ricercatore
+    why: "OpenAI. Commento culturale + leak soft di direction."
+    priority: medium
+
+  # --- Engineer Anthropic / Claude Code ---
+  - handle: bcherny
+    name: Boris Cherny
+    role: engineer
+    why: "Anthropic, lead Claude Code. Pattern operativi e workflow agentici."
+    priority: high
+  - handle: _catwu
+    name: Cat Wu
+    role: engineer
+    why: "Anthropic, Claude Code. Tip su uso interno e best practice."
+    priority: high
+  - handle: nzweben
+    name: Noah Zweben
+    role: engineer
+    why: "Anthropic. Claude Code / agent loops."
+    priority: medium
+  - handle: AnthropicAI
+    name: Anthropic
+    role: founder
+    why: "Account ufficiale: model release, system card, papers."
+    priority: high
+  - handle: alexalbert__
+    name: Alex Albert
+    role: dev_rel
+    why: "Anthropic Developer Relations. Demo, prompting, novita' API."
+    priority: high
+  - handle: mlpowered
+    name: Emmanuel Ameisen
+    role: engineer
+    why: "Anthropic. Interpretability e applied research."
+    priority: medium
+
+  # --- OpenAI / Google / Meta engineers & researchers ---
+  - handle: gdb
+    name: Greg Brockman
+    role: engineer
+    why: "Co-founder OpenAI. Demo e direzione tecnica."
+    priority: high
+  - handle: miramurati
+    name: Mira Murati
+    role: founder
+    why: "Ex CTO OpenAI, founder Thinking Machines."
+    priority: medium
+  - handle: barret_zoph
+    name: Barret Zoph
+    role: ricercatore
+    why: "Thinking Machines, ex OpenAI post-training."
+    priority: medium
+  - handle: johnschulman2
+    name: John Schulman
+    role: ricercatore
+    why: "RLHF / PPO. Ora Anthropic."
+    priority: high
+  - handle: noamshazeer
+    name: Noam Shazeer
+    role: ricercatore
+    why: "Transformer, Character.ai, ora Google. Architetture LLM."
+    priority: medium
+  - handle: jackclarkSF
+    name: Jack Clark
+    role: founder
+    why: "Co-founder Anthropic. Policy + Import AI newsletter."
+    priority: high
+  - handle: OriolVinyalsML
+    name: Oriol Vinyals
+    role: ricercatore
+    why: "VP Research Google DeepMind. Gemini, AlphaCode."
+    priority: medium
+
+  # --- AI educators / technical writers ---
+  - handle: simonw
+    name: Simon Willison
+    role: technical_writer
+    why: "LLM tooling, prompt injection, ecosistema OSS. Riferimento tecnico quotidiano."
+    priority: high
+  - handle: HamelHusain
+    name: Hamel Husain
+    role: educator
+    why: "ML engineering pratico, evals LLM, fine-tuning."
+    priority: high
+  - handle: eugeneyan
+    name: Eugene Yan
+    role: educator
+    why: "Applied ML, system design, evals. Pattern molto chiari."
+    priority: high
+  - handle: chipro
+    name: Chip Huyen
+    role: educator
+    why: "ML systems, autrice 'Designing ML Systems' e 'AI Engineering'."
+    priority: high
+  - handle: jeremyphoward
+    name: Jeremy Howard
+    role: educator
+    why: "fast.ai, Answer.AI. Open weights, dialogue engineering."
+    priority: high
+  - handle: rasbt
+    name: Sebastian Raschka
+    role: educator
+    why: "LLM from scratch, deep dive paper digest."
+    priority: high
+  - handle: abacaj
+    name: Anton
+    role: engineer
+    why: "Hands-on LLM dev, valutazioni rapide nuovi modelli."
+    priority: medium
+  - handle: svpino
+    name: Santiago
+    role: educator
+    why: "ML/AI engineering content, tutorial pragmatici."
+    priority: medium
+  - handle: maximelabonne
+    name: Maxime Labonne
+    role: educator
+    why: "Fine-tuning, model merging, abliteration. Practical OSS LLM."
+    priority: medium
+
+  # --- Prompting / Agentic / Tooling ---
+  - handle: goodside
+    name: Riley Goodside
+    role: engineer
+    why: "Scale AI. Prompt engineering canonico, edge cases LLM."
+    priority: high
+  - handle: thariq
+    name: Thariq
+    role: engineer
+    why: "Builder/engineer, AI coding tools."
+    priority: medium
+  - handle: swyx
+    name: shawn swyx wang
+    role: dev_rel
+    why: "Latent Space podcast, AI Engineer summit. Sintesi ecosistema."
+    priority: high
+  - handle: jxnlco
+    name: Jason Liu
+    role: engineer
+    why: "Instructor, structured outputs, RAG consulting."
+    priority: high
+  - handle: LangChainAI
+    name: LangChain
+    role: dev_rel
+    why: "Framework agentic. Release e pattern."
+    priority: medium
+  - handle: llama_index
+    name: LlamaIndex
+    role: dev_rel
+    why: "RAG framework. Pattern e integrazioni."
+    priority: medium
+  - handle: cursor_ai
+    name: Cursor
+    role: dev_rel
+    why: "IDE AI. Update product e tip."
+    priority: medium
+  - handle: levelsio
+    name: Pieter Levels
+    role: founder
+    why: "Indie hacker, vibe coding, esperimenti rapidi con AI."
+    priority: medium
+
+  # --- Commento / VC / strategia ---
+  - handle: bindureddy
+    name: Bindu Reddy
+    role: ceo
+    why: "Abacus.AI. Commento mercato AI, modelli open."
+    priority: medium
+  - handle: pmarca
+    name: Marc Andreessen
+    role: vc
+    why: "a16z. Tesi macro AI."
+    priority: medium
+  - handle: balajis
+    name: Balaji Srinivasan
+    role: vc
+    why: "Tech + AI commentary, grandi idee."
+    priority: medium
+  - handle: nearcyan
+    name: near
+    role: engineer
+    why: "AI commentary, agent culture, leak soft."
+    priority: medium
+  - handle: AnjneyMidha
+    name: Anjney Midha
+    role: vc
+    why: "a16z, OSS AI ecosystem."
+    priority: medium
+  - handle: sarahookr
+    name: Sara Hooker
+    role: ricercatore
+    why: "Cohere For AI. Multilingual, efficient training, policy."
+    priority: medium
+
+  # --- Product / Builder ---
+  - handle: amasad
+    name: Amjad Masad
+    role: ceo
+    why: "Replit. Agent / AI coding."
+    priority: medium
+  - handle: garrytan
+    name: Garry Tan
+    role: vc
+    why: "YC. Trend startup AI."
+    priority: medium
+  - handle: shaneguML
+    name: Shane Gu
+    role: ricercatore
+    why: "OpenAI. Reasoning, multilingual."
+    priority: medium
