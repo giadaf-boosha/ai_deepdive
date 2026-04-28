@@ -4,7 +4,7 @@ aliases: [agent, AI agent, agente autonomo, autonomous agent]
 categoria: paradigma
 created: 2026-04-28
 last_updated: 2026-04-28
-mentions_count: 0
+mentions_count: 3
 ---
 
 # AI Agent
@@ -113,4 +113,6 @@ Telemetria distribuita. Un agente che fa 50 step distribuiti tra LLM, database, 
 
 ## Aggiornamenti
 
-Nessun aggiornamento dopo la creazione (2026-04-28).
+### 2026-04-28
+
+Tre voci del digest di oggi coinvolgono il concetto di agent. "From Skills to Talent" (huggingface.co/papers/2604.22446) propone un'architettura multi-agente ispirata alla gerarchia aziendale, con assegnazione task basata su skill matching. "ClawMark" (huggingface.co/papers/2604.23781) introduce un benchmark living-world per agenti persistenti multi-giorno, colmando il gap tra valutazione single-shot e use case operativi. Avoca AI chiude un Series B da $125M: prodotto interamente basato su agenti vocali per la gestione di chiamate in entrata nel settore servizi. Segnale convergente: l'architettura agentica si consolida sia come oggetto di ricerca accademica (benchmark, framework) sia come categoria di prodotto commerciale con metriche di business (volume prenotato). [Digest 2026-04-28](/digest/2026/04/28.md)
