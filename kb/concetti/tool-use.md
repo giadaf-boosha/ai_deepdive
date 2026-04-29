@@ -3,8 +3,8 @@ name: Tool use / Function calling
 aliases: [tool use, function calling, tool calling, chiamata di funzione]
 categoria: tecnica
 created: 2026-04-28
-last_updated: 2026-04-28
-mentions_count: 0
+last_updated: 2026-04-29
+mentions_count: 3
 ---
 
 # Tool use / Function calling
@@ -146,4 +146,6 @@ Tool result truncation. Un tool che ritorna 100k token (es. cat di un file grand
 
 ## Aggiornamenti
 
-Nessun aggiornamento dopo la creazione (2026-04-28).
+### 2026-04-29
+
+Il paper "The Reasoning Trap: How Enhancing LLM Reasoning Amplifies Tool Hallucination" (arXiv 2510.22977, presentato a ICLR 2026) introduce un risultato importante per chi costruisce agenti con tool calling: addestrare un modello a ragionare meglio via reinforcement learning aumenta il tasso di tool hallucination — cioe' la frequenza con cui il modello invoca strumenti, parametri API o endpoint inesistenti — in modo proporzionale ai guadagni di task performance. Meccanisticamente, il RL collassa le rappresentazioni legate all'affidabilita' degli strumenti nei layer finali, che sono esattamente quelli deputati al "freno" della chiamata. Prompt engineering e DPO riducono il problema parzialmente ma non lo chiudono. Questo trade-off e' strutturale nei metodi attuali. Il paper introduce SimpleToolHalluBench come benchmark diagnostico con due modalita' di fallimento: nessun tool disponibile, o solo tool-distractor disponibili. Vedi [digest 2026-04-29](../../digest/2026/04/29.md).
