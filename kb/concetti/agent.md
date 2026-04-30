@@ -3,8 +3,8 @@ name: AI Agent
 aliases: [agent, AI agent, agente autonomo, autonomous agent]
 categoria: paradigma
 created: 2026-04-28
-last_updated: 2026-04-29
-mentions_count: 6
+last_updated: 2026-04-30
+mentions_count: 10
 ---
 
 # AI Agent
@@ -120,3 +120,7 @@ Tre voci del digest di oggi coinvolgono il concetto di agent. "From Skills to Ta
 ### 2026-04-29
 
 Tre segnali convergenti sul fronte agentico. Xiaomi MiMo-V2.5-Pro si valuta su Claw-Eval (benchmark agentico) e batte DeepSeek-V4-Pro: i benchmark agentici diventano il metro competitivo di riferimento anche per i modelli cinesi open source. OpenAI porta Codex su Amazon Bedrock come "Amazon Bedrock Managed Agents powered by OpenAI": la disponibilita' multi-cloud espande la superficie di deployment degli agenti basati su GPT-5.5. "The Reasoning Trap" (ICLR 2026, arXiv 2510.22977) documenta un trade-off strutturale che riguarda direttamente chi deploya agenti con tool calling: il RL di reasoning aumenta il task performance ma amplifica le tool hallucination in modo proporzionale, erodendo l'affidabilita' degli strumenti nei layer finali. [Digest 2026-04-29](../../digest/2026/04/29.md)
+
+### 2026-04-30
+
+Quattro segnali agentici nel digest di oggi. AutoResearchBench (arXiv 2604.25256, BAAI) documenta che anche i modelli frontier raggiungono meno del 10% su task di scoperta letteratura scientifica autonoma: il gap tra browsing generico e comprensione scientifica strutturata e' ora quantificato. GEPA (ICLR 2026 Oral) ottimizza compound AI systems (pipeline multi-modulo con piu' LLM e tool) via riflessione NL, battendo GRPO con 35x meno rollout: segnale che l'ottimizzazione di sistemi agentici non richiede RL costoso. Rogo chiude un Series D da $160M per "Felix", agente multi-step per investment banking: secondo round oltre $100M in due giorni per vertical AI agents (dopo Avoca AI $125M). Goldman Sachs rimuove l'accesso a Claude per i banker di Hong Kong: la governance per giurisdizione degli strumenti AI diventa pratica operativa nelle istituzioni finanziarie globali. [Digest 2026-04-30](../../digest/2026/04/30.md)
