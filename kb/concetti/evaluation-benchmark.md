@@ -3,8 +3,8 @@ name: Evaluation / Benchmark AI
 aliases: [benchmark, eval, evaluation, valutazione LLM, AI benchmark, leaderboard]
 categoria: tecnica
 created: 2026-04-30
-last_updated: 2026-04-30
-mentions_count: 8
+last_updated: 2026-05-01
+mentions_count: 9
 ---
 
 # Evaluation / Benchmark AI
@@ -86,3 +86,7 @@ Per gli agenti il processo e' piu' complesso: lo stato esterno (database, browse
 ### 2026-04-30
 
 AutoResearchBench (arXiv 2604.25256, BAAI) introduce un benchmark dedicato alla scoperta letteratura scientifica autonoma. Il risultato piu' rilevante: anche i frontier model che dominano BrowseComp (navigazione web generica) ottengono meno del 10% su Deep Research e Wide Research. Il dato quantifica per la prima volta il gap tra web browsing generico e comprensione scientifica strutturata negli agenti, e fissa un riferimento realistico per chi costruisce sistemi di ricerca autonoma. Correlato: il processo Musk v. Altman (Day 2-3, digest 29/04) ha riportato in evidenza la questione di come i benchmark di safety vengano usati internamente dai laboratori per giustificare decisioni di deployment — un tema di governance dei benchmark oltre che di performance. [Digest 2026-04-30](../../digest/2026/04/30.md)
+
+### 2026-05-01
+
+SWE-Bench Verified si conferma metro di riferimento per i modelli di coding: Mistral Medium 3.5 ottiene 77,6% su SWE-Bench Verified e usa questo risultato come confronto principale contro Claude Sonnet 4.5. La crescente adozione di SWE-Bench Verified (variante human-validated di SWE-Bench) come benchmark competitivo primario segnala uno spostamento verso benchmark che valutano task di ingegneria reali su pull request. Il paper Centaur (NSO, Zhejiang University) usa test di valutazione con condizioni degradate (context-free, istruzione fuorviante) per smontare le claim del modello originale su Nature: tecnica metodologica da applicare anche nella valutazione degli LLM quando i risultati di benchmark sembrano troppo alti rispetto all'intuizione. [Digest 2026-05-01](../../digest/2026/05/01.md)

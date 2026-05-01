@@ -3,8 +3,8 @@ name: AI Agent
 aliases: [agent, AI agent, agente autonomo, autonomous agent]
 categoria: paradigma
 created: 2026-04-28
-last_updated: 2026-04-30
-mentions_count: 10
+last_updated: 2026-05-01
+mentions_count: 11
 ---
 
 # AI Agent
@@ -124,3 +124,7 @@ Tre segnali convergenti sul fronte agentico. Xiaomi MiMo-V2.5-Pro si valuta su C
 ### 2026-04-30
 
 Quattro segnali agentici nel digest di oggi. AutoResearchBench (arXiv 2604.25256, BAAI) documenta che anche i modelli frontier raggiungono meno del 10% su task di scoperta letteratura scientifica autonoma: il gap tra browsing generico e comprensione scientifica strutturata e' ora quantificato. GEPA (ICLR 2026 Oral) ottimizza compound AI systems (pipeline multi-modulo con piu' LLM e tool) via riflessione NL, battendo GRPO con 35x meno rollout: segnale che l'ottimizzazione di sistemi agentici non richiede RL costoso. Rogo chiude un Series D da $160M per "Felix", agente multi-step per investment banking: secondo round oltre $100M in due giorni per vertical AI agents (dopo Avoca AI $125M). Goldman Sachs rimuove l'accesso a Claude per i banker di Hong Kong: la governance per giurisdizione degli strumenti AI diventa pratica operativa nelle istituzioni finanziarie globali. [Digest 2026-04-30](../../digest/2026/04/30.md)
+
+### 2026-05-01
+
+Mistral lancia Vibe remote agents come prodotto companion di Mistral Medium 3.5: sessioni di coding asincrone che girano nel cloud, avviabili da CLI o da Le Chat, con connettori nativi per GitHub, Linear, Jira, Sentry e Slack. Il pattern e' rilevante perche' porta l'architettura agentica direttamente nel workspace dello sviluppatore senza richiedere un harness custom: orchestrazione, sandbox, tool calling e report sono gestiti dalla piattaforma. OpenAI lancio contestuale di GPT-5.5-Cyber, modello per difesa informatica con accesso ristretto via TAC program: primo esempio di agente specializzato per cybersecurity da un frontier lab, con governance di accesso separata dal modello consumer. [Digest 2026-05-01](../../digest/2026/05/01.md)
