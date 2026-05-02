@@ -3,8 +3,8 @@ name: AI Agent
 aliases: [agent, AI agent, agente autonomo, autonomous agent]
 categoria: paradigma
 created: 2026-04-28
-last_updated: 2026-05-01
-mentions_count: 11
+last_updated: 2026-05-02
+mentions_count: 13
 ---
 
 # AI Agent
@@ -128,3 +128,7 @@ Quattro segnali agentici nel digest di oggi. AutoResearchBench (arXiv 2604.25256
 ### 2026-05-01
 
 Mistral lancia Vibe remote agents come prodotto companion di Mistral Medium 3.5: sessioni di coding asincrone che girano nel cloud, avviabili da CLI o da Le Chat, con connettori nativi per GitHub, Linear, Jira, Sentry e Slack. Il pattern e' rilevante perche' porta l'architettura agentica direttamente nel workspace dello sviluppatore senza richiedere un harness custom: orchestrazione, sandbox, tool calling e report sono gestiti dalla piattaforma. OpenAI lancio contestuale di GPT-5.5-Cyber, modello per difesa informatica con accesso ristretto via TAC program: primo esempio di agente specializzato per cybersecurity da un frontier lab, con governance di accesso separata dal modello consumer. [Digest 2026-05-01](../../digest/2026/05/01.md)
+
+### 2026-05-02
+
+Due segnali agentici nel digest di oggi. Claude Code v2.1.126 porta miglioramenti operativi all'harness piu' usato per coding agentico: project purge, OAuth in ambienti non-browser, model picker gateway-aware. Il Pentagon AI classified deal (7 aziende su IL6/IL7) segnala che i sistemi agentici entrano nei contesti piu' sensibili della difesa: AWS, Google, Microsoft, OpenAI, SpaceX, NVIDIA e Reflection ottengono accesso per analisi dati e decision-making su campo di battaglia, mentre Anthropic resta fuori per aver rifiutato di rinunciare ai guardrail. La dicotomia e' rilevante per chi progetta sistemi agentici enterprise: le restrizioni di deployment non sono solo tecniche ma politiche, e le scelte di policy del vendor di modelli impattano direttamente la disponibilita' del servizio in segmenti governativi. [Digest 2026-05-02](../../digest/2026/05/02.md)

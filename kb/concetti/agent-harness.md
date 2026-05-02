@@ -3,8 +3,8 @@ name: Agent harness
 aliases: [agent harness, harness, scaffolding agentico, agent runtime]
 categoria: infrastruttura
 created: 2026-04-28
-last_updated: 2026-04-28
-mentions_count: 0
+last_updated: 2026-05-02
+mentions_count: 1
 ---
 
 # Agent harness
@@ -128,4 +128,6 @@ Sicurezza dei tool. La superficie d'attacco principale di un harness e' nei tool
 
 ## Aggiornamenti
 
-Nessun aggiornamento dopo la creazione (2026-04-28).
+### 2026-05-02
+
+Claude Code v2.1.126 (rilasciato 1 maggio 2026) introduce miglioramenti significativi al harness: `claude project purge` per la gestione del ciclo di vita dei progetti, model picker che interroga `/v1/models` di gateway compatibili, OAuth via incolla in terminale per ambienti WSL2/SSH/container, e risoluzione del rilevamento PowerShell 7 su Windows. I progressi evidenziano come il harness di produzione evolva lungo tre assi: gestione dello stato persistente (project state lifecycle), integrazione con infrastrutture ibride (gateway, Bedrock service tier), e robustezza su ambienti non standard (WSL2, container, cloud IDE). [Digest 2026-05-02](../../digest/2026/05/02.md)
