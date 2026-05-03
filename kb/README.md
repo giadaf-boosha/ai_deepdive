@@ -6,14 +6,14 @@
 
 | Concetto | Categoria | Aliases | Ultimo aggiornamento |
 |---|---|---|---|
-| [Agent](./concetti/agent.md) | paradigma | AI agent, agente autonomo | 2026-05-02 |
+| [Agent](./concetti/agent.md) | paradigma | AI agent, agente autonomo | 2026-05-03 |
 | [Agent harness](./concetti/agent-harness.md) | infrastruttura | harness, scaffolding agentico | 2026-05-02 |
 | [Chain of Thought / Reasoning](./concetti/chain-of-thought.md) | tecnica | CoT, catena di pensiero, extended thinking | 2026-04-28 |
 | [Context window](./concetti/context-window.md) | architettura | finestra di contesto, context length | 2026-04-28 |
 | [Embedding](./concetti/embedding.md) | tecnica | vector embedding, dense representation | 2026-04-28 |
 | [Evaluation / Benchmark AI](./concetti/evaluation-benchmark.md) | tecnica | benchmark, eval, evaluation, valutazione LLM, leaderboard | 2026-05-01 |
 | [Fine-tuning](./concetti/fine-tuning.md) | training | SFT, supervised fine-tuning | 2026-04-28 |
-| [Inference](./concetti/inference.md) | infrastruttura | inferenza, serving, decoding | 2026-04-28 |
+| [Inference](./concetti/inference.md) | infrastruttura | inferenza, serving, decoding | 2026-05-03 |
 | [Large Language Model](./concetti/llm.md) | architettura | LLM, foundation model | 2026-04-28 |
 | [Model Context Protocol](./concetti/mcp.md) | infrastruttura | MCP | 2026-04-28 |
 | [Prompt engineering](./concetti/prompt-engineering.md) | tecnica | ingegneria dei prompt, prompting | 2026-04-28 |

@@ -3,8 +3,8 @@ name: AI Agent
 aliases: [agent, AI agent, agente autonomo, autonomous agent]
 categoria: paradigma
 created: 2026-04-28
-last_updated: 2026-05-02
-mentions_count: 13
+last_updated: 2026-05-03
+mentions_count: 15
 ---
 
 # AI Agent
@@ -132,3 +132,7 @@ Mistral lancia Vibe remote agents come prodotto companion di Mistral Medium 3.5:
 ### 2026-05-02
 
 Due segnali agentici nel digest di oggi. Claude Code v2.1.126 porta miglioramenti operativi all'harness piu' usato per coding agentico: project purge, OAuth in ambienti non-browser, model picker gateway-aware. Il Pentagon AI classified deal (7 aziende su IL6/IL7) segnala che i sistemi agentici entrano nei contesti piu' sensibili della difesa: AWS, Google, Microsoft, OpenAI, SpaceX, NVIDIA e Reflection ottengono accesso per analisi dati e decision-making su campo di battaglia, mentre Anthropic resta fuori per aver rifiutato di rinunciare ai guardrail. La dicotomia e' rilevante per chi progetta sistemi agentici enterprise: le restrizioni di deployment non sono solo tecniche ma politiche, e le scelte di policy del vendor di modelli impattano direttamente la disponibilita' del servizio in segmenti governativi. [Digest 2026-05-02](../../digest/2026/05/02.md)
+
+### 2026-05-03
+
+Microsoft porta Agent 365 in general availability: e' il primo prodotto di governance per agenti AI a raggiungere GA da un vendor hyperscaler. Il control plane unificato copre Windows endpoint, Azure, AWS Bedrock e Google Cloud, e introduce il concetto di "shadow AI discovery" — rilevamento automatico degli agenti non registrati nell'inventario centralizzato. Il pricing standalone ($15/utente/mese) o bundled in M365 E7 indica che la governance degli agenti diventa un costo operativo standard nelle aziende enterprise, analogo alla governance delle identita'. Il lancio posiziona Microsoft come fornitore dell'infrastruttura di controllo sulla quale le organizzazioni deployana agenti di tutti i vendor (inclusi OpenAI, Anthropic e agenti custom). [Digest 2026-05-03](../../digest/2026/05/03.md)

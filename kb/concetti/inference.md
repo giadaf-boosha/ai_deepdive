@@ -3,8 +3,8 @@ name: Inference
 aliases: [inference, inferenza, serving, generation, decoding]
 categoria: infrastruttura
 created: 2026-04-28
-last_updated: 2026-04-28
-mentions_count: 0
+last_updated: 2026-05-03
+mentions_count: 4
 ---
 
 # Inference
@@ -115,4 +115,6 @@ Cold start e warm-up. Self-hosting con auto-scaling soffre di cold start: avviar
 
 ## Aggiornamenti
 
-Nessun aggiornamento dopo la creazione (2026-04-28).
+### 2026-05-03
+
+Nebius Group acquisisce Eigen AI per $643 milioni, la piu' grande acquisizione mai registrata focalizzata esclusivamente sull'ottimizzazione dell'inferenza. La tecnologia chiave di Eigen AI e' AWQ (Activation-Aware Weight Quantization), sviluppata da Wei-Chen Wang (MIT HAN Lab, MLSys Best Paper 2024): quantizza i pesi LLM a 4 bit con attenzione selettiva ai canali piu' sensibili all'attivazione, riducendo la perdita di qualita' rispetto alla quantizzazione uniforme. Il risultato pratico: un modello che richiederebbe due GPU H100 in fp16 gira su una singola GPU in INT4. Eigen AI aveva gia' ottenuto i primi rank su Artificial Analysis per throughput di token output. L'acquisizione da $643M per 20 persone — circa $32M per ricercatore — segnala che lo strato di ottimizzazione dell'inferenza e' diventato l'asset piu' conteso nell'infrastruttura AI: la capacita' di "fare di piu' con le stesse GPU" vale quanto la GPU stessa. [Digest 2026-05-03](../../digest/2026/05/03.md)
