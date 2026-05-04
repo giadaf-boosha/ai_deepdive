@@ -3,8 +3,8 @@ name: AI Agent
 aliases: [agent, AI agent, agente autonomo, autonomous agent]
 categoria: paradigma
 created: 2026-04-28
-last_updated: 2026-05-03
-mentions_count: 15
+last_updated: 2026-05-04
+mentions_count: 16
 ---
 
 # AI Agent
@@ -136,3 +136,7 @@ Due segnali agentici nel digest di oggi. Claude Code v2.1.126 porta migliorament
 ### 2026-05-03
 
 Microsoft porta Agent 365 in general availability: e' il primo prodotto di governance per agenti AI a raggiungere GA da un vendor hyperscaler. Il control plane unificato copre Windows endpoint, Azure, AWS Bedrock e Google Cloud, e introduce il concetto di "shadow AI discovery" — rilevamento automatico degli agenti non registrati nell'inventario centralizzato. Il pricing standalone ($15/utente/mese) o bundled in M365 E7 indica che la governance degli agenti diventa un costo operativo standard nelle aziende enterprise, analogo alla governance delle identita'. Il lancio posiziona Microsoft come fornitore dell'infrastruttura di controllo sulla quale le organizzazioni deployana agenti di tutti i vendor (inclusi OpenAI, Anthropic e agenti custom). [Digest 2026-05-03](../../digest/2026/05/03.md)
+
+### 2026-05-04
+
+Writer introduce trigger event-based per i propri agenti enterprise (30 aprile 2026): gli agenti ascoltano segnali di business in tempo reale — email, call, aggiornamenti documento, messaggi Slack — e avviano autonomamente i playbook corrispondenti senza che un utente inizi l'interazione. Il pattern si chiama "agente ambient" e rappresenta un cambio architetturale rispetto all'agente on-demand: invece di aspettare un prompt, l'agente e' sempre attivo in ascolto. Le integrazioni native coprono Gmail, Gong, Google Calendar, Google Drive, Microsoft SharePoint, Slack, Microsoft Teams. Il caso Writer si aggiunge a Microsoft Agent 365 (governance) e Mistral Vibe remote agents (coding asincrono) come segnale che il modello di deployment agentico si sta spostando da "tool invocato" a "processo continuo in background". [Digest 2026-05-04](../../digest/2026/05/04.md)
