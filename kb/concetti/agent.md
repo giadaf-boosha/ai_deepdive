@@ -3,8 +3,8 @@ name: AI Agent
 aliases: [agent, AI agent, agente autonomo, autonomous agent]
 categoria: paradigma
 created: 2026-04-28
-last_updated: 2026-05-04
-mentions_count: 16
+last_updated: 2026-05-05
+mentions_count: 19
 ---
 
 # AI Agent
@@ -140,3 +140,7 @@ Microsoft porta Agent 365 in general availability: e' il primo prodotto di gover
 ### 2026-05-04
 
 Writer introduce trigger event-based per i propri agenti enterprise (30 aprile 2026): gli agenti ascoltano segnali di business in tempo reale — email, call, aggiornamenti documento, messaggi Slack — e avviano autonomamente i playbook corrispondenti senza che un utente inizi l'interazione. Il pattern si chiama "agente ambient" e rappresenta un cambio architetturale rispetto all'agente on-demand: invece di aspettare un prompt, l'agente e' sempre attivo in ascolto. Le integrazioni native coprono Gmail, Gong, Google Calendar, Google Drive, Microsoft SharePoint, Slack, Microsoft Teams. Il caso Writer si aggiunge a Microsoft Agent 365 (governance) e Mistral Vibe remote agents (coding asincrono) come segnale che il modello di deployment agentico si sta spostando da "tool invocato" a "processo continuo in background". [Digest 2026-05-04](../../digest/2026/05/04.md)
+
+### 2026-05-05
+
+Tre segnali convergenti sul fronte del deployment agentico enterprise. Sierra chiude un Series E da $950 milioni a $15,8 miliardi di valutazione: e' il piu' grande round annunciato per un pure-play di agenti customer service, con Tiger Global e GV come lead. Anthropic lancia una nuova societa' standalone da $1,5 miliardi con Blackstone, Goldman Sachs, Hellman & Friedman e altri PE per embedded ingegneri Anthropic dentro le aziende clienti — il modello e' forward-deployed engineer, schema Palantir applicato agli agenti Claude. Lo stesso giorno OpenAI finalizza "The Deployment Company" (DeployCo) con $4 miliardi da 19 investitori PE a $10 miliardi di valutazione, stessa logica di integrazione profonda. Il segnale aggregato: la competizione tra lab frontier si sposta dall'architettura del modello all'integrazione nei processi operativi aziendali, con i fondi PE come canale di distribuzione primario. [Digest 2026-05-05](../../digest/2026/05/05.md)
