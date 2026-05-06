@@ -13,8 +13,8 @@
 | [Embedding](./concetti/embedding.md) | tecnica | vector embedding, dense representation | 2026-04-28 |
 | [Evaluation / Benchmark AI](./concetti/evaluation-benchmark.md) | tecnica | benchmark, eval, evaluation, valutazione LLM, leaderboard | 2026-05-01 |
 | [Fine-tuning](./concetti/fine-tuning.md) | training | SFT, supervised fine-tuning | 2026-04-28 |
-| [Inference](./concetti/inference.md) | infrastruttura | inferenza, serving, decoding | 2026-05-03 |
-| [Large Language Model](./concetti/llm.md) | architettura | LLM, foundation model | 2026-04-28 |
+| [Inference](./concetti/inference.md) | infrastruttura | inferenza, serving, decoding | 2026-05-06 |
+| [Large Language Model](./concetti/llm.md) | architettura | LLM, foundation model | 2026-05-06 |
 | [Model Context Protocol](./concetti/mcp.md) | infrastruttura | MCP | 2026-04-28 |
 | [Prompt engineering](./concetti/prompt-engineering.md) | tecnica | ingegneria dei prompt, prompting | 2026-04-28 |
 | [Reinforcement Learning from Human Feedback](./concetti/rlhf.md) | training | RLHF, RLAIF | 2026-04-28 |

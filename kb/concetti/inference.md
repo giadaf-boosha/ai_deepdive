@@ -3,8 +3,8 @@ name: Inference
 aliases: [inference, inferenza, serving, generation, decoding]
 categoria: infrastruttura
 created: 2026-04-28
-last_updated: 2026-05-03
-mentions_count: 4
+last_updated: 2026-05-06
+mentions_count: 6
 ---
 
 # Inference
@@ -114,6 +114,10 @@ Routing tra modelli. Un'app moderna spesso usa una flotta: small per classificaz
 Cold start e warm-up. Self-hosting con auto-scaling soffre di cold start: avviare un container con modello 70B richiede minuti per scaricare i pesi e riempire la KV cache iniziale. Pattern produttivi: pre-warm di repliche minime sempre attive, tier separati per richieste latency-critical vs batch, scaling reattivo basato su QPS osservato. I provider managed (Together, Fireworks, Bedrock, Vertex) gestiscono questo per te a costo di markup.
 
 ## Aggiornamenti
+
+### 2026-05-06
+
+Due segnali convergenti sul costo dell'inferenza a produzione. Greg Brockman rivela in aula (processo Musk v. Altman) che OpenAI spende $50 miliardi in compute nel 2026, contro $30 milioni nel 2017: una crescita di oltre 1.600x in nove anni, superiore alle stime degli analisti e coerente con il superamento del target Stargate da 10 GW. Parallelamente, Allen Institute for AI pubblica MolmoAct2 (arXiv 2605.02881), modello open-source di action reasoning robotico che ottiene un throughput 2,42x superiore all'inference non ottimizzata del predecessore su task DROID con oggetti non visti: il risultato indica che ottimizzazioni architetturali specifiche per dominio (robot vs. chat) producono guadagni di latenza comparabili a quelli della quantizzazione generale. [Digest 2026-05-06](../../digest/2026/05/06.md)
 
 ### 2026-05-03
 

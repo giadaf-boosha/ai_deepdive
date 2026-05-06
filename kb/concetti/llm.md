@@ -3,8 +3,8 @@ name: Large Language Model
 aliases: [LLM, modello linguistico di grandi dimensioni, foundation model]
 categoria: architettura
 created: 2026-04-28
-last_updated: 2026-04-28
-mentions_count: 0
+last_updated: 2026-05-06
+mentions_count: 1
 ---
 
 # Large Language Model
@@ -106,4 +106,6 @@ Allucinazioni residue. Anche modelli ben allineati allucinano: invertire numeri,
 
 ## Aggiornamenti
 
-Nessun aggiornamento dopo la creazione (2026-04-28).
+### 2026-05-06
+
+OpenAI rilascia GPT-5.5 Instant come nuovo modello di default di ChatGPT, sostituendo GPT-5.3 Instant. Il modello registra il 52,5% di affermazioni allucinatorie in meno su prompt ad alta posta rispetto al predecessore e risposte il 30,2% piu' brevi. E' il primo modello default di ChatGPT a integrare la ricerca nelle conversazioni passate e nei file dell'utente per personalizzazione contestuale. La mossa consolida il trend emerso a fine aprile 2026 — GPT-5.5 originale il 23 aprile, GPT-5.5-Cyber il 30 aprile — verso varianti specializzate derivate dalla stessa architettura di base. [Digest 2026-05-06](../../digest/2026/05/06.md)
