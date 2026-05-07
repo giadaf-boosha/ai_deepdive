@@ -3,8 +3,8 @@ name: AI Agent
 aliases: [agent, AI agent, agente autonomo, autonomous agent]
 categoria: paradigma
 created: 2026-04-28
-last_updated: 2026-05-05
-mentions_count: 19
+last_updated: 2026-05-07
+mentions_count: 24
 ---
 
 # AI Agent
@@ -144,3 +144,7 @@ Writer introduce trigger event-based per i propri agenti enterprise (30 aprile 2
 ### 2026-05-05
 
 Tre segnali convergenti sul fronte del deployment agentico enterprise. Sierra chiude un Series E da $950 milioni a $15,8 miliardi di valutazione: e' il piu' grande round annunciato per un pure-play di agenti customer service, con Tiger Global e GV come lead. Anthropic lancia una nuova societa' standalone da $1,5 miliardi con Blackstone, Goldman Sachs, Hellman & Friedman e altri PE per embedded ingegneri Anthropic dentro le aziende clienti — il modello e' forward-deployed engineer, schema Palantir applicato agli agenti Claude. Lo stesso giorno OpenAI finalizza "The Deployment Company" (DeployCo) con $4 miliardi da 19 investitori PE a $10 miliardi di valutazione, stessa logica di integrazione profonda. Il segnale aggregato: la competizione tra lab frontier si sposta dall'architettura del modello all'integrazione nei processi operativi aziendali, con i fondi PE come canale di distribuzione primario. [Digest 2026-05-05](../../digest/2026/05/05.md)
+
+### 2026-05-07
+
+Cinque occorrenze agentiche nel digest di oggi, distribuite su tre aree distinte. Anthropic lancia 10 agent template per financial services (pitchbook, KYC, AML, ledger reconciliation) disponibili come plugin in Claude Cowork, Claude Code e Claude Managed Agents: primo set di template di dominio preconfigurati da un frontier lab per una vertical specifica, con benchmark di valutazione proprietario (Vals AI Finance Agent, Claude Opus 4.7 al 64,37%). FIS annuncia il Financial Crimes AI Agent sviluppato con Anthropic: comprime le investigazioni AML da giorni a minuti operando su piu' sistemi bancari in parallelo, con due banche (BMO, Amalgamated Bank) gia' in sviluppo e GA prevista per H2 2026. Al Code w/ Claude 2026 (San Francisco, 6 maggio), Anthropic lancia Code Review (revisione automatica del codice, in uso a ogni team interno) e Remote Agents (controllo del desktop dallo smartphone): due pattern agentici applicati al workflow dello sviluppatore. ARIS (arXiv 2605.03042) introduce l'adversarial multi-agent collaboration come meccanismo di assurance per la ricerca ML autonoma: un executor e un reviewer di famiglie di modelli diverse per intercettare errori correlati che il self-refinement mono-modello manca. [Digest 2026-05-07](../../digest/2026/05/07.md)
