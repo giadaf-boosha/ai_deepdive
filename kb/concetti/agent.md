@@ -3,8 +3,8 @@ name: AI Agent
 aliases: [agent, AI agent, agente autonomo, autonomous agent]
 categoria: paradigma
 created: 2026-04-28
-last_updated: 2026-05-07
-mentions_count: 24
+last_updated: 2026-05-10
+mentions_count: 27
 ---
 
 # AI Agent
@@ -148,3 +148,7 @@ Tre segnali convergenti sul fronte del deployment agentico enterprise. Sierra ch
 ### 2026-05-07
 
 Cinque occorrenze agentiche nel digest di oggi, distribuite su tre aree distinte. Anthropic lancia 10 agent template per financial services (pitchbook, KYC, AML, ledger reconciliation) disponibili come plugin in Claude Cowork, Claude Code e Claude Managed Agents: primo set di template di dominio preconfigurati da un frontier lab per una vertical specifica, con benchmark di valutazione proprietario (Vals AI Finance Agent, Claude Opus 4.7 al 64,37%). FIS annuncia il Financial Crimes AI Agent sviluppato con Anthropic: comprime le investigazioni AML da giorni a minuti operando su piu' sistemi bancari in parallelo, con due banche (BMO, Amalgamated Bank) gia' in sviluppo e GA prevista per H2 2026. Al Code w/ Claude 2026 (San Francisco, 6 maggio), Anthropic lancia Code Review (revisione automatica del codice, in uso a ogni team interno) e Remote Agents (controllo del desktop dallo smartphone): due pattern agentici applicati al workflow dello sviluppatore. ARIS (arXiv 2605.03042) introduce l'adversarial multi-agent collaboration come meccanismo di assurance per la ricerca ML autonoma: un executor e un reviewer di famiglie di modelli diverse per intercettare errori correlati che il self-refinement mono-modello manca. [Digest 2026-05-07](../../digest/2026/05/07.md)
+
+### 2026-05-10
+
+Google DeepMind pubblica l'AI Co-Mathematician (arXiv 2605.06651), il primo sistema multi-agente documentato ad affrontare matematica frontier con collaborazione umana verificata. L'architettura e' un workspace statefulness e asincrono in cui un agente "project coordinator" orchestra in parallelo piu' research workstream (ideazione, ricerca bibliografica, esplorazione computazionale, dimostrazione di teoremi, scrittura LaTeX). Il pattern e' rilevante per il concetto di agent perche' estende l'architettura orchestratore-worker a un dominio ad alta struttura formale — la matematica — in cui la verifica degli output (dimostrazioni) e' oggettiva e il costo di un errore propagato e' elevato. Risultato di sistema: 48% su FrontierMath Tier 4, nuovo record. Caso documentato: Marc Lackenby (Oxford) ha usato il sistema per risolvere il problema 21.10 del Kourovka Notebook; il reviewer-agent ha individuato un errore nella prima dimostrazione, e Lackenby ha trovato la correzione. Il caveat centrale rimane valido anche in questo contesto: il sistema opera senza cap di token o chiamate, rendendo il confronto con altri benchmark non direttamente comparabile in termini di costo. [Digest 2026-05-10](../../digest/2026/05/10.md)
