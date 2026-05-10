@@ -3,8 +3,8 @@ name: Evaluation / Benchmark AI
 aliases: [benchmark, eval, evaluation, valutazione LLM, AI benchmark, leaderboard]
 categoria: tecnica
 created: 2026-04-30
-last_updated: 2026-05-01
-mentions_count: 9
+last_updated: 2026-05-10
+mentions_count: 11
 ---
 
 # Evaluation / Benchmark AI
@@ -90,3 +90,7 @@ AutoResearchBench (arXiv 2604.25256, BAAI) introduce un benchmark dedicato alla 
 ### 2026-05-01
 
 SWE-Bench Verified si conferma metro di riferimento per i modelli di coding: Mistral Medium 3.5 ottiene 77,6% su SWE-Bench Verified e usa questo risultato come confronto principale contro Claude Sonnet 4.5. La crescente adozione di SWE-Bench Verified (variante human-validated di SWE-Bench) come benchmark competitivo primario segnala uno spostamento verso benchmark che valutano task di ingegneria reali su pull request. Il paper Centaur (NSO, Zhejiang University) usa test di valutazione con condizioni degradate (context-free, istruzione fuorviante) per smontare le claim del modello originale su Nature: tecnica metodologica da applicare anche nella valutazione degli LLM quando i risultati di benchmark sembrano troppo alti rispetto all'intuizione. [Digest 2026-05-01](../../digest/2026/05/01.md)
+
+### 2026-05-10
+
+Due nuovi benchmark verticali entrano nel panorama di riferimento. FrontierMath Tier 4 (Epoch AI) emerge come il benchmark di matematica piu' difficile tracciato pubblicamente: problemi "designed to potentially remain unsolved by AI for decades". Il nuovo record e' stabilito da Google DeepMind AI Co-Mathematician con il 48% (sistema multi-agente senza cap di token, quindi non direttamente comparabile con le valutazioni standard). Il benchmark e' rilevante perche' e' l'unico a partizione non pubblica dei problemi difficili, riducendo il rischio di contaminazione. CyberGym, il benchmark di OpenAI per le capacita' cyber offensive-difensive, misura la performance su 1.500+ CVE storiche da centinaia di progetti open source: GPT-5.5-Cyber raggiunge 81,9%, GPT-5.4 aveva ottenuto 73,33% nel cyber range evaluation con 14/15 scenari completati. Il "cyber range evaluation" (15 scenari end-to-end su rete isolata) si affianca a CyberGym come metrica complementare per task complessi multi-step, non solo riconoscimento di vulnerabilita'. [Digest 2026-05-10](../../digest/2026/05/10.md)
