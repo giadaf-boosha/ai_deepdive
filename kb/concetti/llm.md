@@ -3,8 +3,8 @@ name: Large Language Model
 aliases: [LLM, modello linguistico di grandi dimensioni, foundation model]
 categoria: architettura
 created: 2026-04-28
-last_updated: 2026-05-06
-mentions_count: 1
+last_updated: 2026-05-11
+mentions_count: 2
 ---
 
 # Large Language Model
@@ -105,6 +105,10 @@ Knowledge cutoff. Ogni LLM ha una data oltre la quale non ha visto eventi. Model
 Allucinazioni residue. Anche modelli ben allineati allucinano: invertire numeri, citare paper inesistenti, inventare API. Mitigazioni: chiedere al modello di citare fonti verificabili (RAG), avere validation a valle (es. eseguire il codice generato, controllare URL), preferire structured output per dati critici. Il livello accettabile di allucinazione dipende dal use case: in ricerca di marketing e' tollerabile, in informazioni mediche o legali no.
 
 ## Aggiornamenti
+
+### 2026-05-11
+
+Un paper su arXiv (2605.06241) riformula il ruolo del reinforcement learning nel training LLM per il reasoning: RL non insegna strategie nuove ai modelli, ma redistribuisce massa di probabilita' su un sottoinsieme sparso (1-3% delle posizioni token) in cui il modello base e' gia' incerto. Il token promosso cade sempre tra le prime 5 alternative del modello base. Traduzione pratica: gli autori introducono ReasonMaxxer, metodo RL-free che applica contrastive loss solo ai punti di decisione ad alta entropia, replicando le performance del full RL con circa tre ordini di grandezza meno compute. [Digest 2026-05-11](../../digest/2026/05/11.md)
 
 ### 2026-05-06
 
