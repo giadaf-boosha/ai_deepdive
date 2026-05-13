@@ -3,8 +3,8 @@ name: AI Agent
 aliases: [agent, AI agent, agente autonomo, autonomous agent]
 categoria: paradigma
 created: 2026-04-28
-last_updated: 2026-05-10
-mentions_count: 27
+last_updated: 2026-05-13
+mentions_count: 30
 ---
 
 # AI Agent
@@ -148,6 +148,10 @@ Tre segnali convergenti sul fronte del deployment agentico enterprise. Sierra ch
 ### 2026-05-07
 
 Cinque occorrenze agentiche nel digest di oggi, distribuite su tre aree distinte. Anthropic lancia 10 agent template per financial services (pitchbook, KYC, AML, ledger reconciliation) disponibili come plugin in Claude Cowork, Claude Code e Claude Managed Agents: primo set di template di dominio preconfigurati da un frontier lab per una vertical specifica, con benchmark di valutazione proprietario (Vals AI Finance Agent, Claude Opus 4.7 al 64,37%). FIS annuncia il Financial Crimes AI Agent sviluppato con Anthropic: comprime le investigazioni AML da giorni a minuti operando su piu' sistemi bancari in parallelo, con due banche (BMO, Amalgamated Bank) gia' in sviluppo e GA prevista per H2 2026. Al Code w/ Claude 2026 (San Francisco, 6 maggio), Anthropic lancia Code Review (revisione automatica del codice, in uso a ogni team interno) e Remote Agents (controllo del desktop dallo smartphone): due pattern agentici applicati al workflow dello sviluppatore. ARIS (arXiv 2605.03042) introduce l'adversarial multi-agent collaboration come meccanismo di assurance per la ricerca ML autonoma: un executor e un reviewer di famiglie di modelli diverse per intercettare errori correlati che il self-refinement mono-modello manca. [Digest 2026-05-07](../../digest/2026/05/07.md)
+
+### 2026-05-13
+
+Tre segnali agentici nel digest di oggi. Anthropic ricostruisce Thomson Reuters CoCounsel Legal interamente sul Claude Agent SDK: e' il primo sistema di ricerca giuridica commerciale ad alta scala (1M+ professionisti) che usa l'SDK come base operativa, con un'architettura multi-agente che pianifica l'inquiry, seleziona tool, recupera da Westlaw/Practical Law/KeyCite e si adatta mid-workflow via MCP. OpenAI lancia Daybreak, piattaforma agentica per la difesa informatica che usa Codex Security in loop per identificare attack path, testare vulnerabilita' in sandbox e proporre patch: 3.000+ problemi critici gia' corretti in 1.000+ progetti open source. Thinking Machines Lab presenta TML-Interaction-Small con un design a due livelli: un modello di interazione time-aware per il real-time (micro-turn da 200 ms) e un modello asincrono in background per il ragionamento esteso e l'uso di tool — una separazione esplicita tra il piano dell'interazione e il piano dell'execution che si avvicina al pattern orchestratore-worker applicato a un singolo sistema conversazionale. [Digest 2026-05-13](../../digest/2026/05/13.md)
 
 ### 2026-05-10
 

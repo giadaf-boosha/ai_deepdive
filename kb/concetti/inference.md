@@ -3,8 +3,8 @@ name: Inference
 aliases: [inference, inferenza, serving, generation, decoding]
 categoria: infrastruttura
 created: 2026-04-28
-last_updated: 2026-05-06
-mentions_count: 6
+last_updated: 2026-05-13
+mentions_count: 9
 ---
 
 # Inference
@@ -115,10 +115,14 @@ Cold start e warm-up. Self-hosting con auto-scaling soffre di cold start: avviar
 
 ## Aggiornamenti
 
+### 2026-05-13
+
+Tre segnali sull'inference nel digest di oggi. TML-Interaction-Small introduce il paradigma del micro-turn: invece di un ciclo prefill-decode lineare, il modello processa audio, video e testo in chunk da 200 ms in modo continuativo, leggendo l'input e producendo output in simultanea — una modalita' che richiede un'architettura di inference non autoregressive nel senso tradizionale, con streaming bidirezionale a bassa latenza come vincolo di progettazione primario. SOL (arXiv:2605.10875) propone una policy network leggera che alloca dinamicamente il budget di compute per ogni token decodificato, controllando contemporaneamente sparsita' di attention, pruning nelle MLP e bit-width della quantizzazione; i pesi del modello base restano congelati. Claude Platform on AWS raggiunge la general availability come primo hyperscaler con accesso nativo alla piattaforma Anthropic: l'autenticazione avviene via IAM, la fatturazione tramite AWS invoice, e il servizio include Managed Agents, skills e MCP connector in beta — il che sposta il punto di integrazione dell'inference agentica all'interno della fatturazione cloud gia' consolidata delle imprese. [Digest 2026-05-13](../../digest/2026/05/13.md)
+
 ### 2026-05-06
 
 Due segnali convergenti sul costo dell'inferenza a produzione. Greg Brockman rivela in aula (processo Musk v. Altman) che OpenAI spende $50 miliardi in compute nel 2026, contro $30 milioni nel 2017: una crescita di oltre 1.600x in nove anni, superiore alle stime degli analisti e coerente con il superamento del target Stargate da 10 GW. Parallelamente, Allen Institute for AI pubblica MolmoAct2 (arXiv 2605.02881), modello open-source di action reasoning robotico che ottiene un throughput 2,42x superiore all'inference non ottimizzata del predecessore su task DROID con oggetti non visti: il risultato indica che ottimizzazioni architetturali specifiche per dominio (robot vs. chat) producono guadagni di latenza comparabili a quelli della quantizzazione generale. [Digest 2026-05-06](../../digest/2026/05/06.md)
 
 ### 2026-05-03
 
-Nebius Group acquisisce Eigen AI per $643 milioni, la piu' grande acquisizione mai registrata focalizzata esclusivamente sull'ottimizzazione dell'inferenza. La tecnologia chiave di Eigen AI e' AWQ (Activation-Aware Weight Quantization), sviluppata da Wei-Chen Wang (MIT HAN Lab, MLSys Best Paper 2024): quantizza i pesi LLM a 4 bit con attenzione selettiva ai canali piu' sensibili all'attivazione, riducendo la perdita di qualita' rispetto alla quantizzazione uniforme. Il risultato pratico: un modello che richiederebbe due GPU H100 in fp16 gira su una singola GPU in INT4. Eigen AI aveva gia' ottenuto i primi rank su Artificial Analysis per throughput di token output. L'acquisizione da $643M per 20 persone — circa $32M per ricercatore — segnala che lo strato di ottimizzazione dell'inferenza e' diventato l'asset piu' conteso nell'infrastruttura AI: la capacita' di "fare di piu' con le stesse GPU" vale quanto la GPU stessa. [Digest 2026-05-03](../../digest/2026/05/03.md)
+Nebius Group acquisisce Eigen AI per $643 milioni, la piu' grande acquisizione mai registrata focalizzata esclusivamente sull'ottimizzazione dell'inferenza. La tecnologia chiave di Eigen AI e' AWQ (Activation-Aware Weight Quantization), sviluppata da Wei-Chen Wang (MIT HAN Lab, MLSys Best Paper 2024): quantizza i pesi LLM a 4 bit con attenzione selettiva ai canali piu' sensibili all'attivazione, riducendo la perdita di qualita' rispetto alla quantizzazione uniforme. Il risultato pratico: un modello che richiederebbe due GPU H100 in fp16 gira su una singola GPU in INT4. Eigen AI aveva gia' ottenuto i primi rank su Artificial Analysis per throughput di token output. L'acquisizione da $643M per 20 persone — circa $32M per ricercatore — segnala che lo strato di ottimizzazione dell'inferenza e' diventato l'asset piu' conteso nell'infrastruttura AI: la capacita' di 'fare di piu' con le stesse GPU' vale quanto la GPU stessa. [Digest 2026-05-03](../../digest/2026/05/03.md)
