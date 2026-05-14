@@ -3,8 +3,8 @@ name: Inference
 aliases: [inference, inferenza, serving, generation, decoding]
 categoria: infrastruttura
 created: 2026-04-28
-last_updated: 2026-05-13
-mentions_count: 9
+last_updated: 2026-05-14
+mentions_count: 11
 ---
 
 # Inference
@@ -114,6 +114,10 @@ Routing tra modelli. Un'app moderna spesso usa una flotta: small per classificaz
 Cold start e warm-up. Self-hosting con auto-scaling soffre di cold start: avviare un container con modello 70B richiede minuti per scaricare i pesi e riempire la KV cache iniziale. Pattern produttivi: pre-warm di repliche minime sempre attive, tier separati per richieste latency-critical vs batch, scaling reattivo basato su QPS osservato. I provider managed (Together, Fireworks, Bedrock, Vertex) gestiscono questo per te a costo di markup.
 
 ## Aggiornamenti
+
+### 2026-05-14
+
+Due segnali convergenti sul futuro dell'inference hardware e software. Fractile ($220M Series B, 13 maggio) porta l'in-memory-compute chip specializzato per AI inference: i calcoli avvengono direttamente in memoria, eliminando il collo di bottiglia di trasferimento pesi DRAM-chip che domina il costo del decode autoregressivo su GPU standard; le performance dichiarate sono 25x piu' veloci e 10x piu' economiche delle GPU correnti per workload di reasoning, con target di 1.200 token/secondo. Il primo silicio commerciale e' atteso nel 2027. Multi-Stream LLMs (arXiv 2605.12460, ELLIS/Tübingen) introduce un approccio complementare sul lato architetturale: passare da instruction-tuning sequenziale a stream paralleli di computazione, dove ogni forward pass legge da piu' input stream e genera in piu' output stream simultaneamente — riducendo la latenza percepita e abilitando parallelismo nel ciclo prefill-decode. [Digest 2026-05-14](../../digest/2026/05/14.md)
 
 ### 2026-05-13
 

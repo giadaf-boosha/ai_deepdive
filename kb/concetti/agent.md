@@ -3,8 +3,8 @@ name: AI Agent
 aliases: [agent, AI agent, agente autonomo, autonomous agent]
 categoria: paradigma
 created: 2026-04-28
-last_updated: 2026-05-13
-mentions_count: 30
+last_updated: 2026-05-14
+mentions_count: 31
 ---
 
 # AI Agent
@@ -156,3 +156,7 @@ Tre segnali agentici nel digest di oggi. Anthropic ricostruisce Thomson Reuters 
 ### 2026-05-10
 
 Google DeepMind pubblica l'AI Co-Mathematician (arXiv 2605.06651), il primo sistema multi-agente documentato ad affrontare matematica frontier con collaborazione umana verificata. L'architettura e' un workspace statefulness e asincrono in cui un agente "project coordinator" orchestra in parallelo piu' research workstream (ideazione, ricerca bibliografica, esplorazione computazionale, dimostrazione di teoremi, scrittura LaTeX). Il pattern e' rilevante per il concetto di agent perche' estende l'architettura orchestratore-worker a un dominio ad alta struttura formale — la matematica — in cui la verifica degli output (dimostrazioni) e' oggettiva e il costo di un errore propagato e' elevato. Risultato di sistema: 48% su FrontierMath Tier 4, nuovo record. Caso documentato: Marc Lackenby (Oxford) ha usato il sistema per risolvere il problema 21.10 del Kourovka Notebook; il reviewer-agent ha individuato un errore nella prima dimostrazione, e Lackenby ha trovato la correzione. Il caveat centrale rimane valido anche in questo contesto: il sistema opera senza cap di token o chiamate, rendendo il confronto con altri benchmark non direttamente comparabile in termini di costo. [Digest 2026-05-10](../../digest/2026/05/10.md)
+
+### 2026-05-14
+
+Google presenta Gemini Intelligence all'Android Show 2026 come esempio di sistema agentico a scala OS: Gemini si muove tra applicazioni, comprende cio' che e' sullo schermo e completa task cross-app in modo autonomo (prenotazioni, costruzione carrelli, recupero email, navigazione siti) senza che l'utente passi manualmente da un'app all'altra. Il pattern architetturale rilevante e' l'agente ambient a livello di sistema operativo: l'agente non e' invocato per singole richieste ma e' sempre presente come strato di orchestrazione sul dispositivo, accede al contesto multi-app in tempo reale e agisce su screen state. Il rollout inizia estate 2026 su Pixel e Galaxy; si espande a watch, auto, occhiali e laptop. L'annuncio segnala che il paradigma agentico si estende ora al livello di OS consumer, oltre che all'enterprise software. [Digest 2026-05-14](../../digest/2026/05/14.md)
