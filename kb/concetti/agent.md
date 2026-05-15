@@ -3,8 +3,8 @@ name: AI Agent
 aliases: [agent, AI agent, agente autonomo, autonomous agent]
 categoria: paradigma
 created: 2026-04-28
-last_updated: 2026-05-14
-mentions_count: 31
+last_updated: 2026-05-15
+mentions_count: 32
 ---
 
 # AI Agent
@@ -156,6 +156,10 @@ Tre segnali agentici nel digest di oggi. Anthropic ricostruisce Thomson Reuters 
 ### 2026-05-10
 
 Google DeepMind pubblica l'AI Co-Mathematician (arXiv 2605.06651), il primo sistema multi-agente documentato ad affrontare matematica frontier con collaborazione umana verificata. L'architettura e' un workspace statefulness e asincrono in cui un agente "project coordinator" orchestra in parallelo piu' research workstream (ideazione, ricerca bibliografica, esplorazione computazionale, dimostrazione di teoremi, scrittura LaTeX). Il pattern e' rilevante per il concetto di agent perche' estende l'architettura orchestratore-worker a un dominio ad alta struttura formale — la matematica — in cui la verifica degli output (dimostrazioni) e' oggettiva e il costo di un errore propagato e' elevato. Risultato di sistema: 48% su FrontierMath Tier 4, nuovo record. Caso documentato: Marc Lackenby (Oxford) ha usato il sistema per risolvere il problema 21.10 del Kourovka Notebook; il reviewer-agent ha individuato un errore nella prima dimostrazione, e Lackenby ha trovato la correzione. Il caveat centrale rimane valido anche in questo contesto: il sistema opera senza cap di token o chiamate, rendendo il confronto con altri benchmark non direttamente comparabile in termini di costo. [Digest 2026-05-10](../../digest/2026/05/10.md)
+
+### 2026-05-15
+
+Microsoft MDASH (multi-model agentic scanning harness) entra in produzione come sistema di sicurezza: piu' di 100 agenti AI specializzati orchestrati su una pipeline a cinque stadi (prepare, scan, validate, dedup, prove) per la scoperta autonoma di vulnerabilita' in codebase complessi come Windows. In produzione, MDASH ha trovato 16 delle falle corrette nel Patch Tuesday di maggio 2026, incluse 4 RCE critiche. Il pattern architetturale e' rilevante: agenti specializzati per classe di vulnerabilita', un modello frontier per il ragionamento pesante, modelli distillati come debater ad alto volume, un secondo frontier per verifica indipendente, plugin di dominio per contesto non inferibile dai pesi. Il risultato (88,45% su CyberGym, primo posto) e' il primo caso documentato di un sistema multi-agente che raggiunge prestazioni di produzione in security research — un campo storicamente resistente all'AI per la necessita' di exploit proof-of-concept verificabili. [Digest 2026-05-15](../../digest/2026/05/15.md)
 
 ### 2026-05-14
 

@@ -3,8 +3,8 @@ name: Inference
 aliases: [inference, inferenza, serving, generation, decoding]
 categoria: infrastruttura
 created: 2026-04-28
-last_updated: 2026-05-14
-mentions_count: 11
+last_updated: 2026-05-15
+mentions_count: 13
 ---
 
 # Inference
@@ -114,6 +114,10 @@ Routing tra modelli. Un'app moderna spesso usa una flotta: small per classificaz
 Cold start e warm-up. Self-hosting con auto-scaling soffre di cold start: avviare un container con modello 70B richiede minuti per scaricare i pesi e riempire la KV cache iniziale. Pattern produttivi: pre-warm di repliche minime sempre attive, tier separati per richieste latency-critical vs batch, scaling reattivo basato su QPS osservato. I provider managed (Together, Fireworks, Bedrock, Vertex) gestiscono questo per te a costo di markup.
 
 ## Aggiornamenti
+
+### 2026-05-15
+
+Due segnali convergenti sull'hardware per l'inference AI. Cerebras debutta al Nasdaq il 14 maggio con un'IPO da $5,55 miliardi — la maggiore IPO tech USA del 2026 — con un'apertura a $385 (+108% rispetto al prezzo di offerta di $185). Il core della tesi di Cerebras e' il WSE-3 (Wafer Scale Engine 3): un chip che corrisponde all'intero wafer di silicio invece dei die separati, con 4 trilioni di transistor e 44 GB di SRAM on-chip. L'SRAM on-chip elimina il principale bottleneck del decode autoregressivo su GPU (il trasferimento dei pesi da DRAM al chip a ogni step), portando Cerebras a dichiarare throughput fino a 2.000 token/s su modelli 70B contro i 150-300 token/s tipici di H100 in serving standard. L'IPO certifica che la tesi hardware alternativa alla GPU per l'inference LLM ha trovato validazione di mercato a scala. Parallelamente, Microsoft MDASH documenta concretamente il costo dell'inference agentica in un sistema di produzione: orchestrare 100+ agenti su un ensemble di modelli frontier e distillati per una pipeline di vulnerability discovery riduce la dipendenza da un singolo provider ma amplifica i requisiti di compute complessivi. [Digest 2026-05-15](../../digest/2026/05/15.md)
 
 ### 2026-05-14
 

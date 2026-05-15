@@ -3,8 +3,8 @@ name: Large Language Model
 aliases: [LLM, modello linguistico di grandi dimensioni, foundation model]
 categoria: architettura
 created: 2026-04-28
-last_updated: 2026-05-11
-mentions_count: 2
+last_updated: 2026-05-15
+mentions_count: 4
 ---
 
 # Large Language Model
@@ -105,6 +105,10 @@ Knowledge cutoff. Ogni LLM ha una data oltre la quale non ha visto eventi. Model
 Allucinazioni residue. Anche modelli ben allineati allucinano: invertire numeri, citare paper inesistenti, inventare API. Mitigazioni: chiedere al modello di citare fonti verificabili (RAG), avere validation a valle (es. eseguire il codice generato, controllare URL), preferire structured output per dati critici. Il livello accettabile di allucinazione dipende dal use case: in ricerca di marketing e' tollerabile, in informazioni mediche o legali no.
 
 ## Aggiornamenti
+
+### 2026-05-15
+
+Due contributi distinti sull'estensione delle capacita' degli LLM. SU-01 (arXiv 2605.13301) dimostra che un modello 30B-A3B e' sufficiente per raggiungere il livello medaglia d'oro a IMO 2025, USAMO 2026 e IPhO 2024/2025: la ricetta e' curriculum SFT con reverse-perplexity su 340K traiettorie + RL a due stadi (verifiable reward poi proof-level RL) + test-time scaling. Il risultato principale e' metodologico: non serve un modello frontier proprietario o una modifica architetturale per raggiungere performance olimpica in matematica e fisica, basta una ricetta di addestramento sistematica applicata a un backbone competitivo gia' disponibile. uPRM (arXiv 2605.10158, EPFL) affronta il problema del training dei Process Reward Model: le annotazioni step-level da esperti umani sono il principale collo di bottiglia alla scalabilita' dei PRM, che sono lo strumento principale per guidare il ragionamento degli LLM step-by-step. uPRM elimina questa dipendenza usando la distribuzione next-token dell'LLM stesso come segnale di supervisione, identificando il primo step errato in un batch di traiettorie senza alcuna label esterna. I due paper si inseriscono in un filone convergente: la frontiera della capacita' degli LLM si sposta sempre piu' verso il post-training (RL, PRM, curriculum) piuttosto che verso la scala del pre-training. [Digest 2026-05-15](../../digest/2026/05/15.md)
 
 ### 2026-05-11
 
