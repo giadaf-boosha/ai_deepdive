@@ -3,8 +3,8 @@ name: Large Language Model
 aliases: [LLM, modello linguistico di grandi dimensioni, foundation model]
 categoria: architettura
 created: 2026-04-28
-last_updated: 2026-05-15
-mentions_count: 4
+last_updated: 2026-05-20
+mentions_count: 6
 ---
 
 # Large Language Model
@@ -105,6 +105,10 @@ Knowledge cutoff. Ogni LLM ha una data oltre la quale non ha visto eventi. Model
 Allucinazioni residue. Anche modelli ben allineati allucinano: invertire numeri, citare paper inesistenti, inventare API. Mitigazioni: chiedere al modello di citare fonti verificabili (RAG), avere validation a valle (es. eseguire il codice generato, controllare URL), preferire structured output per dati critici. Il livello accettabile di allucinazione dipende dal use case: in ricerca di marketing e' tollerabile, in informazioni mediche o legali no.
 
 ## Aggiornamenti
+
+### 2026-05-20
+
+Google I/O 2026 porta due nuovi modelli frontier. Gemini 3.5 Flash e' il nuovo modello di riferimento Google per task agentici e multimodali: supera Gemini 3.1 Pro su Terminal-Bench 2.1 (76,2%), GDPval-AA (1656 Elo) e CharXiv Reasoning (84,2%) con 4x la velocita' dei modelli comparabili, context window da 1M token e prezzo $1,50/$9,00 per 1M token in input/output. La disponibilita' immediata via Gemini API (AI Studio, Android Studio) lo rende il primo modello Google pensato esplicitamente per pipeline agentiche in produzione. Gemini Omni Flash e' la prima architettura Google che unifica reasoning testuale e generazione video in un singolo modello, senza pipeline separata tra LLM e video model: accetta in input testo, immagini, audio e video e genera clip fino a 10 secondi con coerenza fisica e SynthID watermarking. Il precedente piu' vicino nell'ecosistema era GPT-4o con image output; Gemini Omni Flash estende il concetto al video. Sul piano architetturale, entrambi i modelli segnalano la direzione del 2026 nei frontier model Google: la specializzazione per agentic use case (velocita', costo, multimodalita') e' esplicitata nei benchmark ufficiali, non piu' ricavabile solo dai test indipendenti. [Digest 2026-05-20](../../digest/2026/05/20.md)
 
 ### 2026-05-15
 

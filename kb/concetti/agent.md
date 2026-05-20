@@ -3,8 +3,8 @@ name: AI Agent
 aliases: [agent, AI agent, agente autonomo, autonomous agent]
 categoria: paradigma
 created: 2026-04-28
-last_updated: 2026-05-15
-mentions_count: 32
+last_updated: 2026-05-20
+mentions_count: 36
 ---
 
 # AI Agent
@@ -160,6 +160,10 @@ Google DeepMind pubblica l'AI Co-Mathematician (arXiv 2605.06651), il primo sist
 ### 2026-05-15
 
 Microsoft MDASH (multi-model agentic scanning harness) entra in produzione come sistema di sicurezza: piu' di 100 agenti AI specializzati orchestrati su una pipeline a cinque stadi (prepare, scan, validate, dedup, prove) per la scoperta autonoma di vulnerabilita' in codebase complessi come Windows. In produzione, MDASH ha trovato 16 delle falle corrette nel Patch Tuesday di maggio 2026, incluse 4 RCE critiche. Il pattern architetturale e' rilevante: agenti specializzati per classe di vulnerabilita', un modello frontier per il ragionamento pesante, modelli distillati come debater ad alto volume, un secondo frontier per verifica indipendente, plugin di dominio per contesto non inferibile dai pesi. Il risultato (88,45% su CyberGym, primo posto) e' il primo caso documentato di un sistema multi-agente che raggiunge prestazioni di produzione in security research — un campo storicamente resistente all'AI per la necessita' di exploit proof-of-concept verificabili. [Digest 2026-05-15](../../digest/2026/05/15.md)
+
+### 2026-05-20
+
+Google I/O 2026 introduce due sistemi agentici di rilievo. Gemini Spark e' il primo agente Google progettato per girare 24/7 su virtual machine cloud-side indipendenti dal dispositivo dell'utente: accede a Gmail, Docs, Slides, Calendar e completa task multi-step in background (sintetizzare note di riunione, redigere email, costruire documenti) senza richiedere un prompt attivo. Il pattern e' l'agente ambient a livello di produttivita' — lo stesso che Writer e Microsoft Agent 365 hanno esplorato in ambienti enterprise — applicato ora all'ecosistema consumer Google. La disponibilita' e' scaglionata: beta per trusted tester questa settimana, AI Ultra subscriber la settimana successiva. Google Antigravity 2.0 introduce un livello di astrazione piu' alto per gli sviluppatori: una desktop app standalone, un CLI e un SDK per orchestrare piu' agenti in parallelo, con Managed Agents nel Gemini API come ambiente Linux isolato di execution. Il modello di default e' Gemini 3.5 Flash. I due sistemi convergono sullo stesso punto: l'unita' di deployment AI si sposta dal singolo LLM call all'agente persistente con stato, memoria e capacita' di azione su sistemi esterni. [Digest 2026-05-20](../../digest/2026/05/20.md)
 
 ### 2026-05-14
 
