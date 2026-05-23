@@ -3,8 +3,8 @@ name: Large Language Model
 aliases: [LLM, modello linguistico di grandi dimensioni, foundation model]
 categoria: architettura
 created: 2026-04-28
-last_updated: 2026-05-20
-mentions_count: 6
+last_updated: 2026-05-23
+mentions_count: 7
 ---
 
 # Large Language Model
@@ -121,3 +121,7 @@ Un paper su arXiv (2605.06241) riformula il ruolo del reinforcement learning nel
 ### 2026-05-06
 
 OpenAI rilascia GPT-5.5 Instant come nuovo modello di default di ChatGPT, sostituendo GPT-5.3 Instant. Il modello registra il 52,5% di affermazioni allucinatorie in meno su prompt ad alta posta rispetto al predecessore e risposte il 30,2% piu' brevi. E' il primo modello default di ChatGPT a integrare la ricerca nelle conversazioni passate e nei file dell'utente per personalizzazione contestuale. La mossa consolida il trend emerso a fine aprile 2026 — GPT-5.5 originale il 23 aprile, GPT-5.5-Cyber il 30 aprile — verso varianti specializzate derivate dalla stessa architettura di base. [Digest 2026-05-06](../../digest/2026/05/06.md)
+
+### 2026-05-23
+
+Alibaba lancia Qwen3.7-Max al Cloud Summit di Hangzhou (20-21 maggio): modello flagship per l'era degli agenti con context window nativa da 1 milione di token, extended thinking mode e ottimizzazione nativa per i principali CLI agent framework. In termini architetturali, il modello affronta i task agentici con orizzonte lungo (1.000+ tool call, 35 ore di esecuzione autonoma in un test interno) in modo che i modelli frontier precedenti non documentavano in produzione. Contestualmente Alibaba presenta il chip Zhenwu M890 e afferma che Qwen3.7-Max e' stato usato per scrivere autonomamente il firmware ottimizzato del chip stesso, in un loop di validazione software-hardware integrato. Questa notizia si inserisce nella traiettoria degli ultimi mesi: dalla settimana scorsa (Gemini 3.5 Flash per agentic, Gemini Omni Flash come modello unificato testo-video) il 2026 registra un'accelerazione verso modelli progettati esplicitamente per sessioni agentiche lunghe, non solo per singole inference. [Digest 2026-05-23](../../digest/2026/05/23.md)

@@ -3,8 +3,8 @@ name: AI Agent
 aliases: [agent, AI agent, agente autonomo, autonomous agent]
 categoria: paradigma
 created: 2026-04-28
-last_updated: 2026-05-20
-mentions_count: 36
+last_updated: 2026-05-23
+mentions_count: 38
 ---
 
 # AI Agent
@@ -168,3 +168,7 @@ Google I/O 2026 introduce due sistemi agentici di rilievo. Gemini Spark e' il pr
 ### 2026-05-14
 
 Google presenta Gemini Intelligence all'Android Show 2026 come esempio di sistema agentico a scala OS: Gemini si muove tra applicazioni, comprende cio' che e' sullo schermo e completa task cross-app in modo autonomo (prenotazioni, costruzione carrelli, recupero email, navigazione siti) senza che l'utente passi manualmente da un'app all'altra. Il pattern architetturale rilevante e' l'agente ambient a livello di sistema operativo: l'agente non e' invocato per singole richieste ma e' sempre presente come strato di orchestrazione sul dispositivo, accede al contesto multi-app in tempo reale e agisce su screen state. Il rollout inizia estate 2026 su Pixel e Galaxy; si espande a watch, auto, occhiali e laptop. L'annuncio segnala che il paradigma agentico si estende ora al livello di OS consumer, oltre che all'enterprise software. [Digest 2026-05-14](../../digest/2026/05/14.md)
+
+### 2026-05-23
+
+Due contributi rilevanti per il concetto di agent. MOSS (arxiv 2605.22794, HKUST/Tsinghua/Alibaba DAMO, submission 21 maggio) introduce la prima architettura documentata di auto-evoluzione agentica tramite riscrittura del codice sorgente in produzione: l'agente accumula failure di produzione, genera candidati di fix delegando l'editing a un coding-agent CLI esterno, verifica in worker effimeri e si aggiorna via container swap in-place. Su OpenClaw, il punteggio medio su quattro task sale da 0.25 a 0.60 in un singolo ciclo evolutivo senza supervisione umana. Il contributo metodologico e' la distinzione tra scope di adattamento: MOSS sostiene che la riscrittura del source code e' l'unico meccanismo Turing-completo, deterministico e immune al context drift — una posizione rilevante per chi progetta agenti a lunga durata di vita in produzione. Qwen3.7-Max (Alibaba Cloud Summit, 20-21 maggio) e' il nuovo modello frontier per agenti di Alibaba: 1M token di context, extended thinking, ottimizzato esplicitamente per i principali CLI agent framework (OpenClaw, Claude Code, Hermes Agent). In un test interno ha sostenuto esecuzione autonoma per 35 ore con 1.000+ tool call su un task complesso. Entrambe le notizie convergono sullo stesso segnale: il design degli agenti si sta spostando dall'orizzonte di pochi minuti (singolo task) verso sessioni di ore/giorni, con conseguenti esigenze di persistenza di stato, tolleranza al fallimento e auto-correzione. [Digest 2026-05-23](../../digest/2026/05/23.md)
