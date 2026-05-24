@@ -3,8 +3,8 @@ name: AI Agent
 aliases: [agent, AI agent, agente autonomo, autonomous agent]
 categoria: paradigma
 created: 2026-04-28
-last_updated: 2026-05-23
-mentions_count: 38
+last_updated: 2026-05-24
+mentions_count: 40
 ---
 
 # AI Agent
@@ -172,3 +172,7 @@ Google presenta Gemini Intelligence all'Android Show 2026 come esempio di sistem
 ### 2026-05-23
 
 Due contributi rilevanti per il concetto di agent. MOSS (arxiv 2605.22794, HKUST/Tsinghua/Alibaba DAMO, submission 21 maggio) introduce la prima architettura documentata di auto-evoluzione agentica tramite riscrittura del codice sorgente in produzione: l'agente accumula failure di produzione, genera candidati di fix delegando l'editing a un coding-agent CLI esterno, verifica in worker effimeri e si aggiorna via container swap in-place. Su OpenClaw, il punteggio medio su quattro task sale da 0.25 a 0.60 in un singolo ciclo evolutivo senza supervisione umana. Il contributo metodologico e' la distinzione tra scope di adattamento: MOSS sostiene che la riscrittura del source code e' l'unico meccanismo Turing-completo, deterministico e immune al context drift — una posizione rilevante per chi progetta agenti a lunga durata di vita in produzione. Qwen3.7-Max (Alibaba Cloud Summit, 20-21 maggio) e' il nuovo modello frontier per agenti di Alibaba: 1M token di context, extended thinking, ottimizzato esplicitamente per i principali CLI agent framework (OpenClaw, Claude Code, Hermes Agent). In un test interno ha sostenuto esecuzione autonoma per 35 ore con 1.000+ tool call su un task complesso. Entrambe le notizie convergono sullo stesso segnale: il design degli agenti si sta spostando dall'orizzonte di pochi minuti (singolo task) verso sessioni di ore/giorni, con conseguenti esigenze di persistenza di stato, tolleranza al fallimento e auto-correzione. [Digest 2026-05-23](../../digest/2026/05/23.md)
+
+### 2026-05-24
+
+Due aggiornamenti sul paradigma agentico. OpenAI porta Goal mode di Codex alla stabilita' (21 maggio): l'agente di coding puo' ora perseguire un obiettivo complesso per ore o giorni senza supervisione attiva, e' disponibile nell'app, nell'IDE extension e nella CLI. La funzionalita' era in beta da aprile; la promozione a stabile segnala che OpenAI ritiene il pattern affidabile per uso continuativo. L'aggiunta di Appshots (contesto visuale dall'app in primo piano via doppio Command) e del controllo remoto con Mac bloccato completa la transizione di Codex da co-pilota interattivo ad agente semi-autonomo persistente. Jack Clark (co-fondatore Anthropic) ha previsto alla 2026 Cosmos Lecture di Oxford (20 maggio) che le prime aziende gestite interamente da AI — senza management umano — genereranno milioni di dollari di ricavi entro 18 mesi. La previsione e' la prima affermazione pubblica con timeline specifica da un fondatore di lab frontier sull'emergere di "agent-only companies" come categoria di business autonoma; si posiziona piu' vicina alla concretezza rispetto ad analoghe previsioni di Altman e Hassabis sullo stesso tema. [Digest 2026-05-24](../../digest/2026/05/24.md)

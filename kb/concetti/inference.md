@@ -3,8 +3,8 @@ name: Inference
 aliases: [inference, inferenza, serving, generation, decoding]
 categoria: infrastruttura
 created: 2026-04-28
-last_updated: 2026-05-15
-mentions_count: 13
+last_updated: 2026-05-24
+mentions_count: 14
 ---
 
 # Inference
@@ -134,3 +134,7 @@ Due segnali convergenti sul costo dell'inferenza a produzione. Greg Brockman riv
 ### 2026-05-03
 
 Nebius Group acquisisce Eigen AI per $643 milioni, la piu' grande acquisizione mai registrata focalizzata esclusivamente sull'ottimizzazione dell'inferenza. La tecnologia chiave di Eigen AI e' AWQ (Activation-Aware Weight Quantization), sviluppata da Wei-Chen Wang (MIT HAN Lab, MLSys Best Paper 2024): quantizza i pesi LLM a 4 bit con attenzione selettiva ai canali piu' sensibili all'attivazione, riducendo la perdita di qualita' rispetto alla quantizzazione uniforme. Il risultato pratico: un modello che richiederebbe due GPU H100 in fp16 gira su una singola GPU in INT4. Eigen AI aveva gia' ottenuto i primi rank su Artificial Analysis per throughput di token output. L'acquisizione da $643M per 20 persone — circa $32M per ricercatore — segnala che lo strato di ottimizzazione dell'inferenza e' diventato l'asset piu' conteso nell'infrastruttura AI: la capacita' di 'fare di piu' con le stesse GPU' vale quanto la GPU stessa. [Digest 2026-05-03](../../digest/2026/05/03.md)
+
+### 2026-05-24
+
+Gated DeltaNet-2 (arXiv 2605.22791, NVLabs, Ali Hatamizadeh, Yejin Choi, Jan Kautz) introduce un contributo rilevante all'inference su sequenze lunghe tramite linear attention con gate disaccoppiati. L'architettura standard di softmax attention scala come O(n^2) nella lunghezza della sequenza per il prefill e richiede una KV cache che cresce linearmente nel context size; la linear attention (Mamba, DeltaNet, RWKV) rimpiazza questa cache con uno stato ricorrente di dimensione fissa, riducendo il decode a costo costante in memoria ma sacrificando la capacita' di retrieval a chiavi multiple. Gated DeltaNet-2 risolve il trade-off con gate channel-wise separati per erase e write: a 1.3B parametri su 100B token FineWeb-Edu, supera Mamba-2, Mamba-3, Gated DeltaNet e KDA su linguaggio, ragionamento e retrieval, con il vantaggio piu' pronunciato sui benchmark RULER needle-in-a-haystack a chiavi multiple. Il risultato e' rilevante per scenari di inference con context window molto estese (>1M token) dove la KV cache cresce in modo proibitivo: un modello linear attention con stato fisso e' l'unica architettura scalabile senza incremento proporzionale di memoria. Il codice e' open su GitHub (NVlabs/GatedDeltaNet-2). [Digest 2026-05-24](../../digest/2026/05/24.md)
