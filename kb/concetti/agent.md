@@ -3,8 +3,8 @@ name: AI Agent
 aliases: [agent, AI agent, agente autonomo, autonomous agent]
 categoria: paradigma
 created: 2026-04-28
-last_updated: 2026-05-24
-mentions_count: 40
+last_updated: 2026-05-25
+mentions_count: 41
 ---
 
 # AI Agent
@@ -176,3 +176,7 @@ Due contributi rilevanti per il concetto di agent. MOSS (arxiv 2605.22794, HKUST
 ### 2026-05-24
 
 Due aggiornamenti sul paradigma agentico. OpenAI porta Goal mode di Codex alla stabilita' (21 maggio): l'agente di coding puo' ora perseguire un obiettivo complesso per ore o giorni senza supervisione attiva, e' disponibile nell'app, nell'IDE extension e nella CLI. La funzionalita' era in beta da aprile; la promozione a stabile segnala che OpenAI ritiene il pattern affidabile per uso continuativo. L'aggiunta di Appshots (contesto visuale dall'app in primo piano via doppio Command) e del controllo remoto con Mac bloccato completa la transizione di Codex da co-pilota interattivo ad agente semi-autonomo persistente. Jack Clark (co-fondatore Anthropic) ha previsto alla 2026 Cosmos Lecture di Oxford (20 maggio) che le prime aziende gestite interamente da AI — senza management umano — genereranno milioni di dollari di ricavi entro 18 mesi. La previsione e' la prima affermazione pubblica con timeline specifica da un fondatore di lab frontier sull'emergere di "agent-only companies" come categoria di business autonoma; si posiziona piu' vicina alla concretezza rispetto ad analoghe previsioni di Altman e Hassabis sullo stesso tema. [Digest 2026-05-24](../../digest/2026/05/24.md)
+
+### 2026-05-25
+
+Cursor lancia Composer 2.5, un coding agent basato su Kimi K2.5 con post-training proprietario (RL su 25x piu' task sintetici del predecessore): raggiunge 79,8% su SWE-Bench Multilingual — essenzialmente a parita' con Claude Opus 4.7 (80,5%) — a un decimo del costo. Il modello opera esclusivamente come agente inside l'IDE e CLI Cursor: legge e modifica piu' file in parallelo, esegue comandi in terminale, itera su test falliti senza input umano. Il lancio segnala che il paradigma "agente di coding specializzato" ha raggiunto parita' con i modelli frontier generalisti sulle metriche chiave, rendendo la specializzazione post-training su open-weight la strategia di default per i tool builder. [Digest 2026-05-25](../../digest/2026/05/25.md)
