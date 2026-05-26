@@ -3,8 +3,8 @@ name: Evaluation / Benchmark AI
 aliases: [benchmark, eval, evaluation, valutazione LLM, AI benchmark, leaderboard]
 categoria: tecnica
 created: 2026-04-30
-last_updated: 2026-05-10
-mentions_count: 11
+last_updated: 2026-05-26
+mentions_count: 12
 ---
 
 # Evaluation / Benchmark AI
@@ -94,3 +94,7 @@ SWE-Bench Verified si conferma metro di riferimento per i modelli di coding: Mis
 ### 2026-05-10
 
 Due nuovi benchmark verticali entrano nel panorama di riferimento. FrontierMath Tier 4 (Epoch AI) emerge come il benchmark di matematica piu' difficile tracciato pubblicamente: problemi "designed to potentially remain unsolved by AI for decades". Il nuovo record e' stabilito da Google DeepMind AI Co-Mathematician con il 48% (sistema multi-agente senza cap di token, quindi non direttamente comparabile con le valutazioni standard). Il benchmark e' rilevante perche' e' l'unico a partizione non pubblica dei problemi difficili, riducendo il rischio di contaminazione. CyberGym, il benchmark di OpenAI per le capacita' cyber offensive-difensive, misura la performance su 1.500+ CVE storiche da centinaia di progetti open source: GPT-5.5-Cyber raggiunge 81,9%, GPT-5.4 aveva ottenuto 73,33% nel cyber range evaluation con 14/15 scenari completati. Il "cyber range evaluation" (15 scenari end-to-end su rete isolata) si affianca a CyberGym come metrica complementare per task complessi multi-step, non solo riconoscimento di vulnerabilita'. [Digest 2026-05-10](../../digest/2026/05/10.md)
+
+### 2026-05-26
+
+SWE-Bench Verified si consolida come metro competitivo primario per i coding agent: xAI dichiara 70,8% per Grok Build 0.1 al lancio del proprio CLI agentico (20 maggio), posizionandolo esplicitamente contro Claude Code (~80% con Opus 4.7) e Cursor Composer 2.5 (79,8% SWE-Bench Multilingual, 05-25). Il dato e' rilevante per il pattern che si sta consolidando: ogni nuovo coding agent usa SWE-Bench come misura di riferimento nella comunicazione di lancio, rendendo il benchmark de facto lo standard competitivo del settore indipendentemente dai laboratori. Il rischio di gaming e' noto (i modelli vengono ottimizzati sul benchmark specifico durante il post-training) ed e' esplicitamente riconosciuto da Cursor con il proprio CursorBench v3.1 come benchmark alternativo. La proliferazione di varianti (SWE-Bench, SWE-Bench Verified, SWE-Bench Multilingual, SWE-Bench Pro) riflette la tensione strutturale tra standardizzazione (confrontabilita') e specificita' (rilevanza per il caso d'uso reale). [Digest 2026-05-26](../../digest/2026/05/26.md)

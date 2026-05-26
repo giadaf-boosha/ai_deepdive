@@ -3,8 +3,8 @@ name: AI Agent
 aliases: [agent, AI agent, agente autonomo, autonomous agent]
 categoria: paradigma
 created: 2026-04-28
-last_updated: 2026-05-25
-mentions_count: 41
+last_updated: 2026-05-26
+mentions_count: 44
 ---
 
 # AI Agent
@@ -180,3 +180,7 @@ Due aggiornamenti sul paradigma agentico. OpenAI porta Goal mode di Codex alla s
 ### 2026-05-25
 
 Cursor lancia Composer 2.5, un coding agent basato su Kimi K2.5 con post-training proprietario (RL su 25x piu' task sintetici del predecessore): raggiunge 79,8% su SWE-Bench Multilingual — essenzialmente a parita' con Claude Opus 4.7 (80,5%) — a un decimo del costo. Il modello opera esclusivamente come agente inside l'IDE e CLI Cursor: legge e modifica piu' file in parallelo, esegue comandi in terminale, itera su test falliti senza input umano. Il lancio segnala che il paradigma "agente di coding specializzato" ha raggiunto parita' con i modelli frontier generalisti sulle metriche chiave, rendendo la specializzazione post-training su open-weight la strategia di default per i tool builder. [Digest 2026-05-25](../../digest/2026/05/25.md)
+
+### 2026-05-26
+
+Tre segnali agentici nel digest di oggi. xAI lancia Grok Build 0.1 (20 maggio), il primo coding agent CLI proprietario di xAI: 8 sub-agenti paralleli, Arena Mode (piu' agenti competono sullo stesso task e vengono classificati automaticamente prima che il risultato raggiunga lo sviluppatore), architettura local-first, 256K context, 70,8% SWE-Bench Verified. La mossa porta xAI nel segmento coding agentico dove il valore si misura su task completion, non su chat quality. Google apre gradualmente Gemini for Science, la piattaforma annunciata a I/O 2026 che unifica tre moduli agentici — Literature Insights (NotebookLM), Hypothesis Generation (Co-Scientist) e Computational Discovery (AlphaEvolve+ERA) — per la ricerca scientifica. Computational Discovery in particolare e' un agente evolutivo che genera e valuta in parallelo migliaia di varianti di codice, estendendo il paradigma agentico dal dominio engineering al dominio della scoperta scientifica strutturata. Il pattern aggregato della settimana e' coerente con il trend tracciato nei digest precedenti: il paradigma agentico si sta frammentando in specializzazioni verticali — coding (Claude Code, Cursor, Codex, Grok Build), ricerca scientifica (Gemini for Science, AI Co-Mathematician), manifattura (Mistral/Emmi AI LEMs) — con architetture diverse per ciascun dominio e benchmark di valutazione sempre piu' verticali. [Digest 2026-05-26](../../digest/2026/05/26.md)
