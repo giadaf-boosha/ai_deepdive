@@ -3,8 +3,8 @@ name: AI Agent
 aliases: [agent, AI agent, agente autonomo, autonomous agent]
 categoria: paradigma
 created: 2026-04-28
-last_updated: 2026-05-26
-mentions_count: 44
+last_updated: 2026-05-27
+mentions_count: 46
 ---
 
 # AI Agent
@@ -180,6 +180,10 @@ Due aggiornamenti sul paradigma agentico. OpenAI porta Goal mode di Codex alla s
 ### 2026-05-25
 
 Cursor lancia Composer 2.5, un coding agent basato su Kimi K2.5 con post-training proprietario (RL su 25x piu' task sintetici del predecessore): raggiunge 79,8% su SWE-Bench Multilingual — essenzialmente a parita' con Claude Opus 4.7 (80,5%) — a un decimo del costo. Il modello opera esclusivamente come agente inside l'IDE e CLI Cursor: legge e modifica piu' file in parallelo, esegue comandi in terminale, itera su test falliti senza input umano. Il lancio segnala che il paradigma "agente di coding specializzato" ha raggiunto parita' con i modelli frontier generalisti sulle metriche chiave, rendendo la specializzazione post-training su open-weight la strategia di default per i tool builder. [Digest 2026-05-25](../../digest/2026/05/25.md)
+
+### 2026-05-27
+
+Due segnali agentici nel digest di oggi. Anthropic pubblica il primo update di Project Glasswing (25-26 maggio): Claude Mythos Preview — il modello piu' avanzato di Anthropic con 93,9% su SWE-bench Verified — ha operato autonomamente come agente di security scanning su 1.000+ progetti open source, trovando 6.202 vulnerabilita' high/critical in scansione non presidiata. Il comportamento documentato (raccolta automatica di target, esecuzione di analisi iterativa, classificazione per severita') e' un esempio di agente autonomo specializzato su un task di lunga durata con output verificabile. In parallelo, il sighting del toggle "claude-mythos-1-preview" in Claude Code pubblico il 25 maggio segnala che Anthropic sta preparando l'integrazione di Mythos nell'harness di coding agent piu' usato — un'espansione dell'architettura agentica di Claude Code verso capacita' di security research. L'ostacolo dichiarato al rilascio e' di governance, non tecnico: la velocita' di discovery supera la capacita' di patching dell'ecosistema. [Digest 2026-05-27](../../digest/2026/05/27.md)
 
 ### 2026-05-26
 

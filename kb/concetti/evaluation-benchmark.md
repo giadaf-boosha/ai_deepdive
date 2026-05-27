@@ -3,8 +3,8 @@ name: Evaluation / Benchmark AI
 aliases: [benchmark, eval, evaluation, valutazione LLM, AI benchmark, leaderboard]
 categoria: tecnica
 created: 2026-04-30
-last_updated: 2026-05-26
-mentions_count: 12
+last_updated: 2026-05-27
+mentions_count: 14
 ---
 
 # Evaluation / Benchmark AI
@@ -94,6 +94,10 @@ SWE-Bench Verified si conferma metro di riferimento per i modelli di coding: Mis
 ### 2026-05-10
 
 Due nuovi benchmark verticali entrano nel panorama di riferimento. FrontierMath Tier 4 (Epoch AI) emerge come il benchmark di matematica piu' difficile tracciato pubblicamente: problemi "designed to potentially remain unsolved by AI for decades". Il nuovo record e' stabilito da Google DeepMind AI Co-Mathematician con il 48% (sistema multi-agente senza cap di token, quindi non direttamente comparabile con le valutazioni standard). Il benchmark e' rilevante perche' e' l'unico a partizione non pubblica dei problemi difficili, riducendo il rischio di contaminazione. CyberGym, il benchmark di OpenAI per le capacita' cyber offensive-difensive, misura la performance su 1.500+ CVE storiche da centinaia di progetti open source: GPT-5.5-Cyber raggiunge 81,9%, GPT-5.4 aveva ottenuto 73,33% nel cyber range evaluation con 14/15 scenari completati. Il "cyber range evaluation" (15 scenari end-to-end su rete isolata) si affianca a CyberGym come metrica complementare per task complessi multi-step, non solo riconoscimento di vulnerabilita'. [Digest 2026-05-10](../../digest/2026/05/10.md)
+
+### 2026-05-27
+
+Il primo update di Project Glasswing introduce due benchmark come misure di riferimento per Claude Mythos Preview. SWE-bench Verified (93,9%): Mythos supera di 14 punti percentuali Claude Opus 4.7 (~80%) sullo stesso benchmark, confermando SWE-bench Verified come metro principale per confrontare la capacita' di coding tra modelli Anthropic. Terminal-Bench 2.0 (82,0%): il benchmark per task da terminale emerge come secondo asse di valutazione nel profilo pubblico di Mythos, affiancando SWE-bench Verified come indicatore di capacita' di execution nei contesti agentic. Per contesto: l'USAMO 2026 (97,6%) misura ragionamento matematico, non software engineering. Il pattern e' rilevante: Anthropic sceglie per Mythos lo stesso set di benchmark (SWE-bench Verified, Terminal-Bench) usato da Cursor Composer 2.5 e Grok Build 0.1, consolidando questi due come la coppia di benchmark canonici per i coding agent nel 2026. [Digest 2026-05-27](../../digest/2026/05/27.md)
 
 ### 2026-05-26
 
