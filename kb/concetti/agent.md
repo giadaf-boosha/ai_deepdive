@@ -3,8 +3,8 @@ name: AI Agent
 aliases: [agent, AI agent, agente autonomo, autonomous agent]
 categoria: paradigma
 created: 2026-04-28
-last_updated: 2026-05-27
-mentions_count: 46
+last_updated: 2026-05-28
+mentions_count: 49
 ---
 
 # AI Agent
@@ -184,6 +184,10 @@ Cursor lancia Composer 2.5, un coding agent basato su Kimi K2.5 con post-trainin
 ### 2026-05-27
 
 Due segnali agentici nel digest di oggi. Anthropic pubblica il primo update di Project Glasswing (25-26 maggio): Claude Mythos Preview — il modello piu' avanzato di Anthropic con 93,9% su SWE-bench Verified — ha operato autonomamente come agente di security scanning su 1.000+ progetti open source, trovando 6.202 vulnerabilita' high/critical in scansione non presidiata. Il comportamento documentato (raccolta automatica di target, esecuzione di analisi iterativa, classificazione per severita') e' un esempio di agente autonomo specializzato su un task di lunga durata con output verificabile. In parallelo, il sighting del toggle "claude-mythos-1-preview" in Claude Code pubblico il 25 maggio segnala che Anthropic sta preparando l'integrazione di Mythos nell'harness di coding agent piu' usato — un'espansione dell'architettura agentica di Claude Code verso capacita' di security research. L'ostacolo dichiarato al rilascio e' di governance, non tecnico: la velocita' di discovery supera la capacita' di patching dell'ecosistema. [Digest 2026-05-27](../../digest/2026/05/27.md)
+
+### 2026-05-28
+
+Tre segnali agentici nel digest di oggi. Anthropic rilascia Claude Managed Agents con self-hosted sandboxes (public beta) e MCP tunnels (research preview): il loop agentico — orchestrazione, context management, error recovery — rimane su Anthropic, mentre l'esecuzione dei tool si sposta nell'infrastruttura del cliente o di provider come Cloudflare, Daytona, Modal, Vercel. I MCP tunnels permettono agli agenti di raggiungere server MCP nella rete privata dell'azienda senza esporre endpoint pubblici. La coppia di funzionalita' rimuove i due principali blocchi all'adozione enterprise degli agenti in ambienti regulated (healthcare, legal, finance): il controllo dei dati e l'esposizione dei sistemi interni. KPMG e PwC, i due Big Four che hanno siglato global alliance con Anthropic nella settimana del 14-19 maggio, prevedono entrambi deployment di workflow agentici come caso d'uso primario: KPMG menziona esplicitamente "agentic workflows in real time" come funzionalita' core di Digital Gateway. I tre segnali convergono su un tema comune: il paradigma agentico e' passato dalla fase di prototipazione alla fase di infrastruttura enterprise, con richieste specifiche di governance (sandbox isolato, rete privata, certificazioni) che i frontier lab stanno soddisfacendo con architetture dedicate. [Digest 2026-05-28](../../digest/2026/05/28.md)
 
 ### 2026-05-26
 
