@@ -3,8 +3,8 @@ name: AI Agent
 aliases: [agent, AI agent, agente autonomo, autonomous agent]
 categoria: paradigma
 created: 2026-04-28
-last_updated: 2026-05-28
-mentions_count: 49
+last_updated: 2026-05-29
+mentions_count: 52
 ---
 
 # AI Agent
@@ -188,6 +188,10 @@ Due segnali agentici nel digest di oggi. Anthropic pubblica il primo update di P
 ### 2026-05-28
 
 Tre segnali agentici nel digest di oggi. Anthropic rilascia Claude Managed Agents con self-hosted sandboxes (public beta) e MCP tunnels (research preview): il loop agentico — orchestrazione, context management, error recovery — rimane su Anthropic, mentre l'esecuzione dei tool si sposta nell'infrastruttura del cliente o di provider come Cloudflare, Daytona, Modal, Vercel. I MCP tunnels permettono agli agenti di raggiungere server MCP nella rete privata dell'azienda senza esporre endpoint pubblici. La coppia di funzionalita' rimuove i due principali blocchi all'adozione enterprise degli agenti in ambienti regulated (healthcare, legal, finance): il controllo dei dati e l'esposizione dei sistemi interni. KPMG e PwC, i due Big Four che hanno siglato global alliance con Anthropic nella settimana del 14-19 maggio, prevedono entrambi deployment di workflow agentici come caso d'uso primario: KPMG menziona esplicitamente "agentic workflows in real time" come funzionalita' core di Digital Gateway. I tre segnali convergono su un tema comune: il paradigma agentico e' passato dalla fase di prototipazione alla fase di infrastruttura enterprise, con richieste specifiche di governance (sandbox isolato, rete privata, certificazioni) che i frontier lab stanno soddisfacendo con architetture dedicate. [Digest 2026-05-28](../../digest/2026/05/28.md)
+
+### 2026-05-29
+
+Tre segnali agentici nel digest di oggi. Anthropic rilascia Claude Opus 4.8 con Dynamic Workflows (research preview per piani Enterprise, Team, Max): Claude scrive uno script JavaScript che orchestra fino a 1.000 subagenti totali per run (16 in parallelo), eseguiti in background fuori dal context window — architettura che abilita task a scala di codebase (es. migrazione da kickoff a merge su centinaia di migliaia di righe di codice). Il pannello Effort aggiunge controllo esplicito sull'intensita' di elaborazione. Google lancia il Google Pay & Wallet Developer MCP Server: un server MCP ufficiale che espone le API di pagamento come tool per agenti AI. IBM e Red Hat lanciano Project Lightwell ($5B, 20.000+ ingegneri), che usa metodi AI agentici — ispirandosi a Glasswing e OpenAI Trust Access for Cyber — per trovare e correggere vulnerabilita' nelle dipendenze open source usate da enterprise. I tre segnali convergono sullo stesso pattern: il paradigma agentico si estende in profondita' sia in verticale (coding a scala di repo) che in orizzontale (sicurezza supply chain, integrazione payment API). [Digest 2026-05-29](../../digest/2026/05/29.md)
 
 ### 2026-05-26
 

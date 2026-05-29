@@ -3,8 +3,8 @@ name: Model Context Protocol
 aliases: [MCP, Model Context Protocol, protocollo MCP]
 categoria: infrastruttura
 created: 2026-04-28
-last_updated: 2026-04-28
-mentions_count: 0
+last_updated: 2026-05-29
+mentions_count: 3
 ---
 
 # Model Context Protocol
@@ -123,4 +123,6 @@ Pattern di adozione enterprise. Nelle organizzazioni che hanno introdotto MCP ne
 
 ## Aggiornamenti
 
-Nessun aggiornamento dopo la creazione (2026-04-28).
+### 2026-05-29
+
+Google lancia il Google Pay & Wallet Developer MCP Server in Public Preview (28 maggio): un server MCP ufficiale che espone le API di Google Pay e Google Wallet come tool per agenti AI e assistant di sviluppo. Le capability esposte includono ricerca nella documentazione ufficiale, gestione delle integrazioni, accesso a metriche e log, gestione dei pass emitters per Google Wallet. Contestualmente Google ha reso disponibili MCP server gestiti per altre API cloud ("Google-managed MCP servers are available for everyone"). Il lancio segnala che Google adotta MCP come interfaccia standard per esporre servizi production-grade ad agenti — lo stesso passaggio che ha portato OpenAI ad aggiungere il supporto MCP ad Agents SDK e ChatGPT Desktop. Il pattern convergente dei tre grandi lab (Anthropic, OpenAI, Google) verso MCP come strato di interoperabilita' conferma che il protocollo si e' affermato come standard de facto. [Digest 2026-05-29](../../digest/2026/05/29.md)

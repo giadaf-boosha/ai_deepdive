@@ -3,8 +3,8 @@ name: Large Language Model
 aliases: [LLM, modello linguistico di grandi dimensioni, foundation model]
 categoria: architettura
 created: 2026-04-28
-last_updated: 2026-05-23
-mentions_count: 7
+last_updated: 2026-05-29
+mentions_count: 9
 ---
 
 # Large Language Model
@@ -121,6 +121,10 @@ Un paper su arXiv (2605.06241) riformula il ruolo del reinforcement learning nel
 ### 2026-05-06
 
 OpenAI rilascia GPT-5.5 Instant come nuovo modello di default di ChatGPT, sostituendo GPT-5.3 Instant. Il modello registra il 52,5% di affermazioni allucinatorie in meno su prompt ad alta posta rispetto al predecessore e risposte il 30,2% piu' brevi. E' il primo modello default di ChatGPT a integrare la ricerca nelle conversazioni passate e nei file dell'utente per personalizzazione contestuale. La mossa consolida il trend emerso a fine aprile 2026 — GPT-5.5 originale il 23 aprile, GPT-5.5-Cyber il 30 aprile — verso varianti specializzate derivate dalla stessa architettura di base. [Digest 2026-05-06](../../digest/2026/05/06.md)
+
+### 2026-05-29
+
+Anthropic rilascia Claude Opus 4.8 (28 maggio), nuovo modello flagship con miglioramenti su coding, reasoning, financial analysis e knowledge work. Prezzo invariato rispetto a Opus 4.7. Fast Mode disponibile come opzione separata: 2.5x la velocita' standard a un terzo del costo. Disponibile su Claude.ai, API e GitHub Copilot (GA dalla stessa data). Anthropic conferma che i Mythos-class models — il livello di capacita' superiore, finora disponibile solo a partner di sicurezza selezionati tramite Project Glasswing — restano "in the coming weeks" senza data specifica. Il lancio consolida la cadenza di aggiornamento Anthropic nel 2026: Opus 4.7 a febbraio, Sonnet 4.6 ad aprile, Opus 4.8 a maggio — aggiornamenti del modello flagship ogni 2-3 mesi con prezzi stabili e miglioramenti incrementali di capability. [Digest 2026-05-29](../../digest/2026/05/29.md)
 
 ### 2026-05-23
 

@@ -3,8 +3,8 @@ name: Evaluation / Benchmark AI
 aliases: [benchmark, eval, evaluation, valutazione LLM, AI benchmark, leaderboard]
 categoria: tecnica
 created: 2026-04-30
-last_updated: 2026-05-27
-mentions_count: 14
+last_updated: 2026-05-29
+mentions_count: 16
 ---
 
 # Evaluation / Benchmark AI
@@ -98,6 +98,10 @@ Due nuovi benchmark verticali entrano nel panorama di riferimento. FrontierMath 
 ### 2026-05-27
 
 Il primo update di Project Glasswing introduce due benchmark come misure di riferimento per Claude Mythos Preview. SWE-bench Verified (93,9%): Mythos supera di 14 punti percentuali Claude Opus 4.7 (~80%) sullo stesso benchmark, confermando SWE-bench Verified come metro principale per confrontare la capacita' di coding tra modelli Anthropic. Terminal-Bench 2.0 (82,0%): il benchmark per task da terminale emerge come secondo asse di valutazione nel profilo pubblico di Mythos, affiancando SWE-bench Verified come indicatore di capacita' di execution nei contesti agentic. Per contesto: l'USAMO 2026 (97,6%) misura ragionamento matematico, non software engineering. Il pattern e' rilevante: Anthropic sceglie per Mythos lo stesso set di benchmark (SWE-bench Verified, Terminal-Bench) usato da Cursor Composer 2.5 e Grok Build 0.1, consolidando questi due come la coppia di benchmark canonici per i coding agent nel 2026. [Digest 2026-05-27](../../digest/2026/05/27.md)
+
+### 2026-05-29
+
+Anthropic rilascia Claude Opus 4.8 e dichiara che il modello "outperformed competitors on a number of key benchmarks, including agentic coding, reasoning, financial analysis and knowledge work" (Bloomberg, TechCrunch, Anthropic, 9to5Mac = 4+ fonti). Il pattern e' ricorrente nelle release Anthropic: la comunicazione di lancio usa benchmark di agentic coding come metro competitivo primario invece di un singolo numero assoluto — coerente con la scelta di presentare Mythos Preview tramite SWE-bench Verified e Terminal-Bench (digest 05-27). Fast Mode viene presentato come "2.5x la velocita' a un terzo del costo" rispetto al modello base: una metrica di inference performance, non di quality benchmark, che introduce una nuova dimensione di valutazione (costo/velocita') accanto ai benchmark di capability tradizionali. [Digest 2026-05-29](../../digest/2026/05/29.md)
 
 ### 2026-05-26
 
