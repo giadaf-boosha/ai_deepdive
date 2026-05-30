@@ -6,7 +6,7 @@
 
 | Concetto | Categoria | Aliases | Ultimo aggiornamento |
 |---|---|---|---|
-| [Agent](./concetti/agent.md) | paradigma | AI agent, agente autonomo | 2026-05-29 |
+| [Agent](./concetti/agent.md) | paradigma | AI agent, agente autonomo | 2026-05-30 |
 | [Agent harness](./concetti/agent-harness.md) | infrastruttura | harness, scaffolding agentico | 2026-05-02 |
 | [Chain of Thought / Reasoning](./concetti/chain-of-thought.md) | tecnica | CoT, catena di pensiero, extended thinking | 2026-04-28 |
 | [Context window](./concetti/context-window.md) | architettura | finestra di contesto, context length | 2026-04-28 |

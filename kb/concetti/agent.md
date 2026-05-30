@@ -3,8 +3,8 @@ name: AI Agent
 aliases: [agent, AI agent, agente autonomo, autonomous agent]
 categoria: paradigma
 created: 2026-04-28
-last_updated: 2026-05-29
-mentions_count: 52
+last_updated: 2026-05-30
+mentions_count: 55
 ---
 
 # AI Agent
@@ -196,3 +196,7 @@ Tre segnali agentici nel digest di oggi. Anthropic rilascia Claude Opus 4.8 con 
 ### 2026-05-26
 
 Tre segnali agentici nel digest di oggi. xAI lancia Grok Build 0.1 (20 maggio), il primo coding agent CLI proprietario di xAI: 8 sub-agenti paralleli, Arena Mode (piu' agenti competono sullo stesso task e vengono classificati automaticamente prima che il risultato raggiunga lo sviluppatore), architettura local-first, 256K context, 70,8% SWE-Bench Verified. La mossa porta xAI nel segmento coding agentico dove il valore si misura su task completion, non su chat quality. Google apre gradualmente Gemini for Science, la piattaforma annunciata a I/O 2026 che unifica tre moduli agentici — Literature Insights (NotebookLM), Hypothesis Generation (Co-Scientist) e Computational Discovery (AlphaEvolve+ERA) — per la ricerca scientifica. Computational Discovery in particolare e' un agente evolutivo che genera e valuta in parallelo migliaia di varianti di codice, estendendo il paradigma agentico dal dominio engineering al dominio della scoperta scientifica strutturata. Il pattern aggregato della settimana e' coerente con il trend tracciato nei digest precedenti: il paradigma agentico si sta frammentando in specializzazioni verticali — coding (Claude Code, Cursor, Codex, Grok Build), ricerca scientifica (Gemini for Science, AI Co-Mathematician), manifattura (Mistral/Emmi AI LEMs) — con architetture diverse per ciascun dominio e benchmark di valutazione sempre piu' verticali. [Digest 2026-05-26](../../digest/2026/05/26.md)
+
+### 2026-05-30
+
+Due segnali agentici nel digest di oggi. Sesame — startup fondata dai co-fondatori di Oculus Brendan Iribe e Ankit Kumar — lancia la public preview dell'app iOS con quattro agenti vocali distinti (Maya, Miles, Simone, Charlie), ciascuno con voce, personalita' e memoria persistente proprie. Il prodotto realizza un pattern che emerge in parallelo su piu' fronti: l'agente come entita' con identita' continua, non come tool da invocare. La ricerca web parallela mid-sentence mentre l'agente parla e' un esempio concreto di architettura in cui l'agente orchestra tool (search) in modo trasparente per l'utente. Rosalind Biodefense (OpenAI) espande l'accesso a GPT-Rosalind — modello life-science specializzato in ragionamento su molecole, proteine e biologia delle malattie — a sviluppatori e partner governativi selezionati per biodefesa e risposta pandemica: e' un agente di dominio vincolato da un access control istituzionale, pattern distinto dal modello consumer. Il segnale aggregato: il paradigma agentico si sta specializzando non solo per task (coding, ricerca scientifica, customer support) ma anche per modello di accesso (consumer libero, enterprise governato, governo trusted). [Digest 2026-05-30](../../digest/2026/05/30.md)
