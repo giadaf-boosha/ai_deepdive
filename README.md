@@ -90,9 +90,10 @@ Aggiungi/togli voci direttamente in [`config/sources.yaml`](./config/sources.yam
 - ✅ Routine giornaliera attiva: `ai-deepdive-daily` (ID: `trig_01U38R2BbWd86ZSZvv9uv5Jy`) — digest + KB ogni mattina alle 07:00
 - ✅ Web frontend live su Vercel: [aideepdive.vercel.app](https://aideepdive.vercel.app) (rebuild automatico ad ogni push)
 - ✅ Fonti Hugging Face Papers + TechCrunch (categoria AI) aggiunte a `config/sources.yaml`
-- 🛠️ Routine settimanale radar `ai-deepdive-weekly-radar` preparata in `automations/` — da creare su claude.ai/code/routines (body pronto, cron domenicale)
+- ✅ Routine settimanale radar `ai-deepdive-weekly-radar` (ID: `trig_017UcxBB68S2FaiQGQWnNh39`) attiva — aggiorna `web/data/models.json` ogni domenica alle 08:00
 
 Dashboard routine daily: https://claude.ai/code/routines/trig_01U38R2BbWd86ZSZvv9uv5Jy
+Dashboard routine radar: https://claude.ai/code/routines/trig_017UcxBB68S2FaiQGQWnNh39
 
 ## Identità editoriale
 

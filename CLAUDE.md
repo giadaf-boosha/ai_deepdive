@@ -7,7 +7,7 @@
 Questo repo e' guidato da due routine:
 
 - **`ai-deepdive-daily`** (ID `trig_01U38R2BbWd86ZSZvv9uv5Jy`, cron `0 5 * * *` UTC = 07:00 Europe/Rome) — il prompt completo e self-contained vive in [`automations/whats-new-daily-prompt.md`](./automations/whats-new-daily-prompt.md). NON modificarla da qui.
-- **`ai-deepdive-weekly-radar`** (cron `0 6 * * 0` UTC = 08:00 Europe/Rome) — aggiorna `web/data/models.json`. Prompt in [`automations/weekly-radar-prompt.md`](./automations/weekly-radar-prompt.md). Task sintetico sotto.
+- **`ai-deepdive-weekly-radar`** (ID `trig_017UcxBB68S2FaiQGQWnNh39`, cron `0 6 * * 0` UTC = 08:00 Europe/Rome) — aggiorna `web/data/models.json`. Prompt in [`automations/weekly-radar-prompt.md`](./automations/weekly-radar-prompt.md). Task sintetico sotto.
 
 ---
 

@@ -130,7 +130,7 @@ Layer web `web/` deployato su Vercel + routine settimanale radar preparata.
 - [x] `output: export` statico → deploy Vercel (`vercel.json` root, build dentro `web/`)
 - [x] Deploy live: **[aideepdive.vercel.app](https://aideepdive.vercel.app)** + Git integration (rebuild su push)
 - [x] `config/sources.yaml`: +Hugging Face Papers, +TechCrunch categoria AI
-- [x] `CLAUDE.md` + `automations/weekly-radar-*`: routine `ai-deepdive-weekly-radar` (cron domenicale) **preparata** — creazione su claude.ai a cura dell'utente
+- [x] `CLAUDE.md` + `automations/weekly-radar-*`: routine `ai-deepdive-weekly-radar` (ID `trig_017UcxBB68S2FaiQGQWnNh39`, cron domenicale) **creata e attiva** su claude.ai (primo run 2026-06-07)
 - [x] README/spec/implementation_plan aggiornati
 
 Acceptance verificati: `npm run build` verde, `tsc --noEmit` pulito, 55 pagine statiche, tutte le route live rispondono 200.
