@@ -1,0 +1,45 @@
+{
+  "name": "ai-deepdive-weekly-radar",
+  "cron_expression": "0 6 * * 0",
+  "enabled": true,
+  "job_config": {
+    "ccr": {
+      "environment_id": "env_011CUioy7aASAFi9ucxkS4pA",
+      "session_context": {
+        "model": "claude-sonnet-4-6",
+        "sources": [
+          {
+            "git_repository": {
+              "url": "https://github.com/giadaf-boosha/ai_deepdive"
+            }
+          }
+        ],
+        "allowed_tools": [
+          "Bash",
+          "Read",
+          "Write",
+          "Edit",
+          "Glob",
+          "Grep",
+          "WebFetch",
+          "WebSearch"
+        ]
+      },
+      "events": [
+        {
+          "data": {
+            "uuid": "66a49b34-7f34-43f5-b60f-eb92523c7ce9",
+            "session_id": "",
+            "type": "user",
+            "parent_tool_use_id": null,
+            "message": {
+              "role": "user",
+              "content": "RADAR_UPDATE\n\n# ai_deepdive — Routine settimanale \"Radar modelli AI\"\n\nSei la routine settimanale `ai-deepdive-weekly-radar`. Il tuo unico compito e' mantenere aggiornato il file `web/data/models.json`, che alimenta la sezione `/radar` del sito. Non sei un aggregatore: verifichi solo variazioni reali da fonti ufficiali. Non inventare nulla.\n\n**Esegui SOLO se il messaggio di attivazione contiene la stringa `RADAR_UPDATE`.** Altrimenti termina senza modifiche.\n\nIl repository `ai_deepdive` e' montato come source. Tutti i path sono relativi alla root del repo. La data corrente e' quella di oggi nel fuso `Europe/Rome` (`Bash: TZ=Europe/Rome date '+%Y-%m-%d'`).\n\n## Stato corrente\n\nLeggi `web/data/models.json`. Schema (TypeScript, definito in `web/lib/models.ts`):\n\n```ts\ninterface ModelsData {\n  meta: { lastUpdated: string; generatedBy: string; sourcesChecked: string[]; nextScheduledUpdate: string }\n  models: Model[]        // id: \"claude\" | \"chatgpt\" | \"gemini\" | \"copilot\"\n  benchmarks: Benchmark[]\n  useCases: UseCase[]\n  changelog: ChangelogEntry[]\n}\ninterface Model {\n  id; provider; name; latestModel; releaseDate; tagline;\n  strengths: string[]; weaknesses: string[]; bestFor: string[];\n  pricing: { free; pro; proPrice: number; team; enterprise; apiInputPer1M: number; apiOutputPer1M: number };\n  contextWindow; supportsImages; supportsVideo; supportsCode; supportsAgents: boolean;\n  privacyRating: \"high\" | \"medium\" | \"low\"; enterpriseCertifications: string[];\n  dataResidency; trainingPolicy; verdict; lmarenaRank: number; lmarenaFinancialRank: number\n}\ninterface Benchmark { id; name; description; unit; lowerIsBetter: boolean; scores: { modelId; value: number }[] }\ninterface UseCase { category; task; ratings: { modelId; rating: number }[] }   // rating 1-5\ninterface ChangelogEntry { date; summary; sources: string[] }\n```\n\n## Step\n\n1. **Ricerca web** per ogni modello (Claude, ChatGPT/GPT, Gemini, Copilot) con `WebSearch`/`WebFetch`:\n   - Nuovi modelli o versioni rilasciate negli ultimi 7 giorni.\n   - Variazioni di prezzo API o abbonamenti.\n   - Nuovi benchmark pubblicati ufficialmente (SWE-Bench Pro, OSWorld, GPQA, ecc.).\n   - Nuove funzionalita' rilevanti (agenti, multimodale).\n   - Variazioni ranking LMArena (lmarena.ai).\n\n   Query suggerite:\n   - `\"Claude\" new model site:anthropic.com last week`\n   - `\"GPT\" OR \"OpenAI\" model pricing update 2026`\n   - `\"Gemini\" Google model benchmark 2026`\n   - `\"Copilot\" Microsoft 365 AI update 2026`\n   - `LMArena leaderboard rankings current`\n\n2. **Identifica i delta** rispetto allo stato corrente di `web/data/models.json`.\n\n3. **Aggiorna `web/data/models.json`**:\n   - Modifica solo i campi con variazioni verificate.\n   - Aggiungi un `ChangelogEntry` (data odierna, sintesi dei delta, `sources` con URL ufficiali).\n   - Aggiorna `meta.lastUpdated` (oggi), `meta.sourcesChecked` (URL consultati), `meta.nextScheduledUpdate` (domenica successiva).\n   - Se nessuna variazione rilevante: aggiungi un changelog \"Nessuna variazione rilevante\" e aggiorna solo `meta.lastUpdated`/`nextScheduledUpdate`.\n   - Mantieni il JSON valido e conforme allo schema (stessi tipi, stessi `id` modello).\n\n4. **Valida**: `cd web && npx tsc --noEmit` deve passare. Se fallisce, correggi il JSON finche' non passa (NON committare JSON invalido).\n\n5. **Commit + push** su `main`:\n   ```bash\n   DATE=$(TZ=Europe/Rome date '+%Y-%m-%d')\n   git checkout main\n   git pull --rebase origin main || { echo \"ABORT: rebase failed\"; exit 1; }\n   git add web/data/models.json\n   git commit -m \"chore: weekly radar update ${DATE}\"\n   git push origin main\n   ```\n   NO `--force`, NO `--no-verify`. Se il push fallisce, log e termina. Vercel ricostruisce automaticamente al push.\n\n## Regole critiche\n\n- Non inventare dati. Solo variazioni con fonte verificata e citata.\n- Prezzi da siti ufficiali: anthropic.com, openai.com, ai.google.dev / cloud.google.com, microsoft.com.\n- Benchmark da pubblicazioni ufficiali vendor o lmarena.ai.\n- **Non modificare file fuori da `web/data/models.json`** (salvo il commit). Non toccare `digest/`, `kb/`, `config/`, la routine daily.\n- Lingua italiana, apostrofi ASCII, nomi di prodotti/modelli inalterati.\n\n## Done\n\nLog conclusivo: campi aggiornati, changelog aggiunto, esito `tsc`, SHA commit (o `none`), URL commit GitHub, fonti consultate.\n"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "mcp_connections": []
+}

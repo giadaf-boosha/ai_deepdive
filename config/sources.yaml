@@ -1,6 +1,6 @@
 # config/sources.yaml — ai_deepdive
 # Lista canonica delle fonti monitorate dalla routine giornaliera.
-# Ultima revisione: 2026-04-28
+# Ultima revisione: 2026-05-31
 # Modifica questo file e committa per aggiornare le fonti della routine.
 
 # Convenzioni:
@@ -18,6 +18,15 @@ newsletters:
     paywall: false
     language: en
     notes: "Daily AI news digest (Lior Sinclair). Sintesi quotidiana di papers, modelli, repo. Feed canonico ufficiale e' la versione Substack; alphasignal.ai/feed.xml restituisce 403."
+
+  - name: Hugging Face Papers
+    url: https://huggingface.co/papers
+    rss: null
+    type: html
+    priority: high
+    paywall: false
+    language: en
+    notes: "Paper trending giornalieri. La pagina del giorno e' huggingface.co/papers/date/YYYY-MM-DD: scraping HTML di quella data, coprire tutti i paper elencati come base per la sezione Paper & ricerca (poi selezione editoriale per il digest)."
 
   - name: Simon Willison's Weblog
     url: https://simonwillison.net/
@@ -154,14 +163,14 @@ newsletters:
     language: it
     notes: "Datapizza (community italiana data/AI). Domini datapizza.it e datapizza.tech non espongono feed RSS verificato (404 su /feed). Scraping HTML dell'archive blog."
 
-  - name: TechCrunch
-    url: https://techcrunch.com
-    rss: https://techcrunch.com/feed/
+  - name: TechCrunch (Artificial Intelligence)
+    url: https://techcrunch.com/category/artificial-intelligence/
+    rss: https://techcrunch.com/category/artificial-intelligence/feed/
     type: rss
-    priority: low
+    priority: medium
     paywall: partial
     language: en
-    notes: "Coverage generalista tech. Filtrare per categoria AI; molti articoli con paywall TechCrunch+."
+    notes: "Categoria AI dedicata: monitorare tutti gli articoli pubblicati nella categoria nelle ultime 24 ore come base per Tool & prodotti / Business & strategia (poi selezione editoriale). Alcuni articoli con paywall TechCrunch+."
 
   - name: The Information
     url: https://www.theinformation.com

@@ -17,9 +17,26 @@ Spec di riferimento: [`../spec.md`](../spec.md). Piano: [`../implementation_plan
 
 ## File in questa cartella
 
-- `whats-new-daily-prompt.md` — prompt completo, self-contained, eseguito dalla routine remota. Single source of truth per il comportamento giornaliero.
-- `routine-body.json` — body JSON pronto per `RemoteTrigger create` / `update`. Embedda il prompt nel campo `events[0].data.message.content`.
+- `whats-new-daily-prompt.md` — prompt completo, self-contained, eseguito dalla routine giornaliera. Single source of truth per il comportamento giornaliero.
+- `routine-body.json` — body JSON della routine giornaliera, pronto per `RemoteTrigger create` / `update`. Embedda il prompt nel campo `events[0].data.message.content`.
+- `weekly-radar-prompt.md` — prompt completo della routine settimanale `ai-deepdive-weekly-radar` (aggiorna `web/data/models.json`).
+- `weekly-radar-body.json` — body JSON della routine settimanale, pronto per `RemoteTrigger create`.
 - `README.md` — questo file.
+
+## Routine settimanale: ai-deepdive-weekly-radar
+
+Aggiorna `web/data/models.json` (sezione `/radar` del sito) ogni domenica alle 08:00 Europe/Rome.
+
+- **Cron**: `0 6 * * 0` (UTC) = 08:00 Europe/Rome in CEST, 07:00 in CET.
+- **Guard**: il body embedda la stringa `RADAR_UPDATE` in testa al messaggio; il prompt esegue solo se quella stringa e' presente nell'attivazione.
+- **Tool**: `Bash`, `Read`, `Write`, `Edit`, `Glob`, `Grep`, `WebFetch`, `WebSearch`. Nessun MCP (no email).
+- **Effetto**: commit `chore: weekly radar update YYYY-MM-DD` su `main` -> Vercel ricostruisce il sito.
+
+### Come crearla (da fare una volta)
+
+La routine NON e' ancora creata sul cloud. Per crearla, da claude.ai/code/routines (o via `RemoteTrigger create`) passa il body `weekly-radar-body.json`. Verifica l'`environment_id` (riusa quello della daily: `env_011CUioy7aASAFi9ucxkS4pA`) e che il git source punti a `giadaf-boosha/ai_deepdive`. Dopo la creazione, un run manuale di test verifica che `web/data/models.json` venga aggiornato e committato.
+
+Modifiche al prompt: edita `weekly-radar-prompt.md`, poi rigenera il body (stesso schema dello snippet Python sopra, leggendo `weekly-radar-prompt.md` e anteponendo `RADAR_UPDATE\n\n` al contenuto) e aggiorna la routine con `RemoteTrigger update`.
 
 ## Come modificare la routine
 
