@@ -175,3 +175,5 @@ Prossimo run automatico: domani 2026-04-29 alle 07:00 Europe/Rome.
 |---|---|
 | 2026-04-28 | Creazione iniziale del piano |
 | 2026-05-31 | Fase 4: web frontend Next.js su Vercel (aideepdive.vercel.app), routine radar preparata, fonti HF/TechCrunch aggiunte |
+| 2026-05-31 | Routine radar creata/attivata (trig_017UcxBB68S2FaiQGQWnNh39) + primo run di test OK (commit `chore: weekly radar update 2026-05-31`) |
+| 2026-05-31 | Redesign UI/UX con brand Boosha (palette avorio/charcoal + arancione, eyebrow mono, stile Apple, responsive verificato desktop+mobile) |
