@@ -6,7 +6,7 @@ export function DigestCard({ digest }: { digest: Digest }) {
   return (
     <Link
       href={`/digest/${digest.date}`}
-      className="group flex flex-col gap-2 rounded-lg border border-line bg-surface p-5 transition-colors hover:border-accent/50"
+      className="card card-hover group flex flex-col gap-2 p-5"
     >
       <div className="flex items-baseline justify-between gap-3">
         <time
@@ -26,9 +26,6 @@ export function DigestCard({ digest }: { digest: Digest }) {
           {digest.entries.slice(0, 3).map((e) => e.title).join(" · ")}
         </p>
       )}
-      <span className="mt-1 text-sm font-medium text-accent opacity-0 transition-opacity group-hover:opacity-100">
-        Leggi tutto →
-      </span>
     </Link>
   );
 }

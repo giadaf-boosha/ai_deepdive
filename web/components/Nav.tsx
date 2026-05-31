@@ -13,14 +13,23 @@ export function Nav() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-40 border-b border-line bg-paper/85 backdrop-blur">
-      <nav className="container-wide flex h-16 items-center justify-between gap-4">
-        <Link href="/" className="group flex items-baseline gap-2">
-          <span className="font-mono text-sm font-semibold tracking-tight">
-            AI<span className="text-accent">·</span>Deep Dive
+    <header className="sticky top-0 z-40 border-b border-line bg-paper/80 backdrop-blur-xl">
+      <nav className="container-wide flex h-16 items-center justify-between gap-3">
+        <Link
+          href="/"
+          className="group flex items-center gap-2.5"
+          aria-label="AI Deep Dive — home"
+        >
+          <span className="text-[15px] font-semibold tracking-tight text-ink">
+            AI Deep Dive
+            <span className="text-accent">.</span>
+          </span>
+          <span className="hidden font-mono text-[10px] uppercase tracking-[0.2em] text-faint sm:inline">
+            Boosha
           </span>
         </Link>
-        <ul className="flex items-center gap-1 text-sm">
+
+        <ul className="flex items-center gap-0.5 sm:gap-1">
           {LINKS.map((link) => {
             const active =
               pathname === link.href || pathname.startsWith(`${link.href}/`);
@@ -28,16 +37,18 @@ export function Nav() {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className={`rounded-md px-3 py-1.5 transition-colors ${
-                    active
-                      ? "font-medium text-ink"
-                      : "text-muted hover:text-ink"
+                  aria-current={active ? "page" : undefined}
+                  className={`relative block rounded-lg px-2.5 py-2 text-sm transition-colors sm:px-3.5 ${
+                    active ? "font-medium text-ink" : "text-muted hover:text-ink"
                   }`}
                 >
                   {link.label}
-                  {active && (
-                    <span className="mx-auto mt-0.5 block h-px w-full bg-accent" />
-                  )}
+                  <span
+                    className={`absolute inset-x-2.5 -bottom-px h-0.5 rounded-full bg-accent transition-opacity sm:inset-x-3.5 ${
+                      active ? "opacity-100" : "opacity-0"
+                    }`}
+                    aria-hidden
+                  />
                 </Link>
               </li>
             );

@@ -2,69 +2,128 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Identita' Boosha: avorio caldo / charcoal caldo, accent arancione, neutri caldi. */
 :root {
-  --paper: #fafaf7;
+  --paper: #faf9f3;
   --surface: #ffffff;
-  --ink: #14110f;
-  --muted: #57534e;
-  --faint: #8a847d;
-  --line: #e7e3dc;
+  --ink: #1a1815;
+  --muted: #5c574f;
+  --faint: #938c80;
+  --line: #e7e2d7;
+  --accent: #e8901b;
+  --accent-ink: #b26a05; /* arancione "scuro" per testo/link, contrasto AA su avorio */
+  --accent-soft: #f4a53a;
+  --shadow: 0 1px 2px rgba(26, 24, 21, 0.04), 0 8px 24px -12px rgba(26, 24, 21, 0.12);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --paper: #100f0d;
-    --surface: #1a1815;
-    --ink: #f5f2ec;
-    --muted: #a8a29a;
-    --faint: #6f6a63;
-    --line: #2c2925;
+    --paper: #161412;
+    --surface: #201d19;
+    --ink: #f4f1ea;
+    --muted: #a9a196;
+    --faint: #6f685d;
+    --line: #2e2a24;
+    --accent: #e8901b;
+    --accent-ink: #f2a53c;
+    --accent-soft: #f4a53a;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 12px 32px -16px rgba(0, 0, 0, 0.6);
   }
 }
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 5rem;
+  scroll-padding-top: 5.5rem;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
   background-color: var(--paper);
   color: var(--ink);
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  font-feature-settings: "cv01", "ss01";
 }
 
-/* Ancore dei paragrafi KB: offset per la nav sticky. */
 :target {
-  scroll-margin-top: 5rem;
+  scroll-margin-top: 5.5rem;
+}
+
+/* Focus visibile e coerente (accessibilita', stile Apple). */
+*:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+::selection {
+  background-color: var(--accent);
+  color: #1a1815;
 }
 
 @layer components {
   .container-wide {
-    @apply mx-auto w-full max-w-wide px-5 sm:px-8;
+    @apply mx-auto w-full max-w-wide px-5 sm:px-8 lg:px-10;
   }
   .container-prose {
     @apply mx-auto w-full max-w-prose px-5 sm:px-8;
   }
-  .hairline {
-    @apply border-line;
+
+  /* Eyebrow Boosha: monospace uppercase + quadratino arancione. */
+  .eyebrow {
+    @apply inline-flex items-center gap-2 font-mono text-xs font-medium uppercase tracking-[0.18em] text-muted;
   }
+  .eyebrow::before {
+    content: "";
+    @apply inline-block h-2 w-2 bg-accent;
+  }
+
   .chip {
-    @apply inline-flex items-center gap-1.5 rounded-full border border-line px-2.5 py-0.5 text-xs font-medium text-muted;
+    @apply inline-flex items-center gap-1.5 rounded-full border border-line px-2.5 py-1 text-xs font-medium text-muted;
   }
+
   .link-accent {
-    @apply font-medium text-accent transition-colors hover:text-accent-soft;
+    @apply font-medium text-[color:var(--accent-ink)] underline-offset-4 transition-colors hover:underline;
+  }
+
+  /* Card di base con micro-interazione (lift) stile Apple. */
+  .card {
+    @apply rounded-2xl border border-line bg-surface transition-all duration-200 ease-out;
+  }
+  .card-hover {
+    @apply hover:-translate-y-0.5 hover:border-accent/40;
+    box-shadow: none;
+  }
+  .card-hover:hover {
+    box-shadow: var(--shadow);
+  }
+
+  /* Divisore titolo: trattino ink + trattino arancione (firma del deck). */
+  .rule-mark {
+    @apply inline-flex items-center gap-1.5;
+  }
+  .rule-mark::before {
+    content: "";
+    @apply h-0.5 w-6 rounded-full bg-ink/70;
+  }
+  .rule-mark::after {
+    content: "";
+    @apply h-0.5 w-3 rounded-full bg-accent;
   }
 }
 
 /* Stili prose per i contenuti markdown (digest e KB). */
 .prose-deepdive {
   @apply prose prose-neutral max-w-none dark:prose-invert
-    prose-headings:font-semibold prose-headings:tracking-tight
-    prose-h2:mt-10 prose-h2:scroll-mt-20 prose-h2:border-b prose-h2:border-line prose-h2:pb-2
-    prose-h3:mt-7 prose-h3:scroll-mt-20
-    prose-a:font-medium prose-a:text-accent prose-a:no-underline hover:prose-a:underline
-    prose-strong:text-ink
-    prose-code:rounded prose-code:bg-surface prose-code:px-1 prose-code:py-0.5 prose-code:text-[0.85em] prose-code:font-normal prose-code:before:content-none prose-code:after:content-none
-    prose-li:my-1;
+    prose-headings:font-semibold prose-headings:tracking-tight prose-headings:text-ink
+    prose-h2:mt-12 prose-h2:scroll-mt-24 prose-h2:text-2xl prose-h2:border-b prose-h2:border-line prose-h2:pb-2.5
+    prose-h3:mt-8 prose-h3:scroll-mt-24 prose-h3:text-xl
+    prose-p:leading-relaxed prose-p:text-[color:var(--muted)]
+    prose-a:font-medium prose-a:text-[color:var(--accent-ink)] prose-a:no-underline hover:prose-a:underline prose-a:underline-offset-4
+    prose-strong:text-ink prose-strong:font-semibold
+    prose-li:my-1 prose-li:text-[color:var(--muted)]
+    prose-code:rounded prose-code:bg-paper prose-code:px-1.5 prose-code:py-0.5 prose-code:text-[0.85em] prose-code:font-normal prose-code:text-ink prose-code:before:content-none prose-code:after:content-none
+    prose-blockquote:border-l-2 prose-blockquote:border-accent prose-blockquote:not-italic prose-blockquote:text-ink
+    prose-hr:border-line;
 }

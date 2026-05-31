@@ -28,7 +28,7 @@ export default function RootLayout({
     <html lang="it" className={`${GeistSans.variable} ${GeistMono.variable}`}>
       <body className="flex min-h-screen flex-col font-sans">
         <Nav />
-        <main className="flex-1 pb-20 pt-8">{children}</main>
+        <main className="flex-1 pb-24 pt-6">{children}</main>
         <Footer />
       </body>
     </html>

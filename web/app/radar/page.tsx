@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getModelsData } from "@/lib/models";
 import { RadarTabs } from "@/components/RadarTabs";
+import { Eyebrow } from "@/components/Eyebrow";
 
 export const metadata: Metadata = {
   title: "Radar modelli AI",
@@ -13,17 +14,21 @@ export default function RadarPage() {
   const verifyDate = data.meta.lastUpdated.slice(0, 10);
 
   return (
-    <div className="container-wide flex flex-col gap-8">
+    <div className="container-wide flex flex-col gap-8 pt-4">
       <header className="flex flex-col gap-3">
-        <h1 className="text-3xl font-semibold tracking-tight">Radar modelli AI</h1>
-        <p className="max-w-prose text-muted">
+        <Eyebrow>Radar</Eyebrow>
+        <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">Modelli AI</h1>
+        <p className="max-w-prose text-lg text-muted">
           Confronto dei modelli di frontiera con focus sui financial services.
         </p>
-        <div className="rounded-lg border border-accent/30 bg-accent/5 px-4 py-3 text-sm text-muted">
-          Dati aggiornati da routine settimanale —{" "}
-          <span className="font-medium text-ink">ultima verifica: {verifyDate}</span>.{" "}
-          {data.meta.sourcesChecked.length} fonti ufficiali consultate. Prossimo
-          aggiornamento: {data.meta.nextScheduledUpdate.slice(0, 10)}.
+        <div className="mt-1 flex items-start gap-3 rounded-xl border border-accent/30 bg-accent/[0.06] px-4 py-3 text-sm text-muted">
+          <span className="mt-0.5 h-2 w-2 shrink-0 rounded-full bg-accent" aria-hidden />
+          <span>
+            Dati aggiornati da routine settimanale —{" "}
+            <span className="font-medium text-ink">ultima verifica: {verifyDate}</span>.{" "}
+            {data.meta.sourcesChecked.length} fonti ufficiali consultate. Prossimo
+            aggiornamento: {data.meta.nextScheduledUpdate.slice(0, 10)}.
+          </span>
         </div>
       </header>
 

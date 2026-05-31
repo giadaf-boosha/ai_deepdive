@@ -20,17 +20,19 @@ const config: Config = {
         faint: "var(--faint)",
         line: "var(--line)",
         surface: "var(--surface)",
+        // Accent Boosha (uguale in light/dark): hex statico per supportare /opacity.
         accent: {
-          DEFAULT: "#c2410c",
-          soft: "#ea580c",
-          fg: "#ffffff",
+          DEFAULT: "#e8901b",
+          soft: "#f4a53a",
+          ink: "var(--accent-ink)",
+          fg: "#1a1815",
         },
-        // Tinte per le quattro sezioni tematiche del digest.
+        // Tinte per le quattro sezioni tematiche del digest (armonizzate col warm).
         cat: {
           modelli: "#0f766e",
-          tool: "#1d4ed8",
-          paper: "#b45309",
-          business: "#9f1239",
+          tool: "#2563eb",
+          paper: "#d97706",
+          business: "#b91c5c",
         },
       },
       fontFamily: {

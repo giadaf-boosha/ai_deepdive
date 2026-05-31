@@ -11,10 +11,10 @@ import type {
 import { ModelCard } from "./ModelCard";
 
 const BRAND: Record<ModelId, string> = {
-  claude: "#c2410c",
+  claude: "#e8901b",
   chatgpt: "#0f766e",
-  gemini: "#1d4ed8",
-  copilot: "#6d28d9",
+  gemini: "#2563eb",
+  copilot: "#7c3aed",
 };
 
 const TABS = [
@@ -37,14 +37,17 @@ export function RadarTabs({ data }: { data: ModelsData }) {
 
   return (
     <div className="flex flex-col gap-8">
-      <div role="tablist" className="flex flex-wrap gap-1 border-b border-line">
+      <div
+        role="tablist"
+        className="-mx-5 flex gap-1 overflow-x-auto border-b border-line px-5 sm:mx-0 sm:px-0"
+      >
         {TABS.map((t) => (
           <button
             key={t}
             role="tab"
             aria-selected={tab === t}
             onClick={() => setTab(t)}
-            className={`-mb-px border-b-2 px-4 py-2.5 text-sm font-medium transition-colors ${
+            className={`-mb-px shrink-0 whitespace-nowrap border-b-2 px-3.5 py-2.5 text-sm font-medium transition-colors sm:px-4 ${
               tab === t
                 ? "border-accent text-ink"
                 : "border-transparent text-muted hover:text-ink"

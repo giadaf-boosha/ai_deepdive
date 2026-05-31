@@ -9,6 +9,7 @@ import {
 import { conceptsMentionedIn } from "@/lib/relations";
 import { formatLong } from "@/lib/dates";
 import { MarkdownContent } from "@/components/MarkdownContent";
+import { Eyebrow } from "@/components/Eyebrow";
 
 export const dynamicParams = false;
 
@@ -58,8 +59,9 @@ export default async function DigestPage({
         </Link>
       </div>
 
-      <header className="flex flex-col gap-2 border-b border-line pb-5">
-        <h1 className="text-3xl font-semibold capitalize tracking-tight">
+      <header className="flex flex-col gap-3 border-b border-line pb-5">
+        <Eyebrow>Digest</Eyebrow>
+        <h1 className="text-3xl font-semibold capitalize tracking-tight sm:text-4xl">
           {formatLong(digest.date)}
         </h1>
         <p className="flex flex-wrap gap-x-4 gap-y-1 font-mono text-xs text-faint">
@@ -77,16 +79,14 @@ export default async function DigestPage({
       </article>
 
       {related.length > 0 && (
-        <section className="flex flex-col gap-3 rounded-lg border border-line bg-surface p-5">
-          <h2 className="font-mono text-sm font-semibold uppercase tracking-wider text-ink">
-            Concetti correlati dalla KB
-          </h2>
+        <section className="card flex flex-col gap-4 p-6">
+          <Eyebrow>Concetti correlati dalla KB</Eyebrow>
           <div className="flex flex-wrap gap-2">
             {related.map(({ concept, hits }) => (
               <Link
                 key={concept.slug}
                 href={`/kb/${concept.slug}`}
-                className="chip border transition-colors hover:border-accent/50 hover:text-ink"
+                className="chip transition-colors hover:border-accent/50 hover:text-ink"
               >
                 {concept.name}
                 <span className="text-faint">· {hits}</span>

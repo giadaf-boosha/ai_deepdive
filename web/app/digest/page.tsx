@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getAllDigests } from "@/lib/digest";
 import { DigestArchive, type DigestListItem } from "@/components/DigestArchive";
+import { Eyebrow } from "@/components/Eyebrow";
 
 export const metadata: Metadata = {
   title: "Archivio digest",
@@ -18,10 +19,11 @@ export default function DigestArchivePage() {
   }));
 
   return (
-    <div className="container-wide flex flex-col gap-8">
-      <header className="flex flex-col gap-2">
-        <h1 className="text-3xl font-semibold tracking-tight">Archivio digest</h1>
-        <p className="text-muted">
+    <div className="container-wide flex flex-col gap-8 pt-4">
+      <header className="flex flex-col gap-3">
+        <Eyebrow>Archivio</Eyebrow>
+        <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">Digest</h1>
+        <p className="max-w-prose text-lg text-muted">
           {items.length} digest giornalieri. Ricerca full-text e filtro per mese.
         </p>
       </header>

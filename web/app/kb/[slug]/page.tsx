@@ -11,6 +11,7 @@ import { extractToc } from "@/lib/markdown";
 import { formatLong, formatShort } from "@/lib/dates";
 import { MarkdownContent } from "@/components/MarkdownContent";
 import { Toc } from "@/components/Toc";
+import { Eyebrow } from "@/components/Eyebrow";
 
 export const dynamicParams = false;
 
@@ -67,7 +68,7 @@ export default async function KBConceptPage({
               </span>
             ))}
           </div>
-          <h1 className="text-3xl font-semibold tracking-tight">{concept.name}</h1>
+          <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">{concept.name}</h1>
           <p className="flex flex-wrap gap-x-4 font-mono text-xs text-faint">
             <span>{concept.wordCount.toLocaleString("it-IT")} parole</span>
             {concept.lastUpdated && (
@@ -84,10 +85,8 @@ export default async function KBConceptPage({
         </article>
 
         {mentions.length > 0 && (
-          <section className="flex flex-col gap-3 rounded-lg border border-line bg-surface p-5">
-            <h2 className="font-mono text-sm font-semibold uppercase tracking-wider text-ink">
-              Citato nei digest
-            </h2>
+          <section className="card flex flex-col gap-4 p-6">
+            <Eyebrow>Citato nei digest</Eyebrow>
             <ul className="flex flex-col gap-1.5">
               {mentions.map((d) => (
                 <li key={d.date}>

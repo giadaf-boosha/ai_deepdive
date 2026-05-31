@@ -1,10 +1,10 @@
 import type { Model, ModelId } from "@/lib/models";
 
 const BRAND: Record<ModelId, string> = {
-  claude: "#c2410c",
+  claude: "#e8901b",
   chatgpt: "#0f766e",
-  gemini: "#1d4ed8",
-  copilot: "#6d28d9",
+  gemini: "#2563eb",
+  copilot: "#7c3aed",
 };
 
 export function ModelAccent({ id }: { id: ModelId }) {
@@ -19,13 +19,13 @@ export function ModelAccent({ id }: { id: ModelId }) {
 
 export function ModelCardCompact({ model }: { model: Model }) {
   return (
-    <div className="flex flex-col gap-2 rounded-lg border border-line bg-surface p-4">
+    <div className="card card-hover flex flex-col gap-2 p-5">
       <div className="flex items-center gap-2">
         <ModelAccent id={model.id} />
         <span className="text-sm font-semibold text-ink">{model.name}</span>
       </div>
       <p className="font-mono text-xs text-faint">{model.latestModel}</p>
-      <p className="text-sm text-muted">{model.tagline}</p>
+      <p className="text-sm leading-relaxed text-muted">{model.tagline}</p>
     </div>
   );
 }
@@ -33,7 +33,7 @@ export function ModelCardCompact({ model }: { model: Model }) {
 export function ModelCard({ model }: { model: Model }) {
   return (
     <article
-      className="flex h-full flex-col gap-4 rounded-lg border border-line bg-surface p-5"
+      className="card flex h-full flex-col gap-4 p-6"
       style={{ borderTopColor: BRAND[model.id], borderTopWidth: 3 }}
     >
       <header className="flex flex-col gap-1">
