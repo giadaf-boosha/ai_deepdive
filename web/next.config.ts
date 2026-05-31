@@ -1,13 +1,16 @@
 import type { NextConfig } from "next";
-import path from "node:path";
 
-// Il layer web legge i markdown da ../digest e ../kb a build time (SSG).
-// outputFileTracingRoot punta alla root del repo cosi' il tracing dei file
-// considera correttamente i contenuti fuori dalla cartella web/.
+// Il layer web legge i markdown da ../digest e ../kb a build time (SSG puro:
+// tutte le route hanno generateStaticParams, nessun runtime server).
+// output: "export" produce un sito statico in web/out servibile da Vercel
+// come progetto statico (framework: null), evitando vincoli sulla Root Directory.
+// trailingSlash garantisce URL "puliti" via index.html per ogni route.
 const nextConfig: NextConfig = {
-  outputFileTracingRoot: path.join(process.cwd(), ".."),
+  output: "export",
+  trailingSlash: true,
+  images: { unoptimized: true },
   eslint: {
-    // La qualita' del codice e' garantita da `tsc --noEmit`; il lint non blocca il build su Vercel.
+    // La qualita' del codice e' garantita da `tsc --noEmit`; il lint non blocca il build.
     ignoreDuringBuilds: true,
   },
 };
