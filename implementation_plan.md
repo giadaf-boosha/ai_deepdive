@@ -116,6 +116,25 @@ Scrive `automations/whats-new-daily-prompt.md` con il prompt finale (filosofia e
 - [ ] Test routine: `RemoteTrigger run` e monitor
 - [ ] Aggiornamento `README.md` con link routine
 
+## Fase 4 — Web frontend + radar (2026-05-31)
+
+**Owner**: Giada (lead) · **Stato**: completato (deploy live)
+
+Layer web `web/` deployato su Vercel + routine settimanale radar preparata.
+
+- [x] Scaffold `web/` (Next.js 15 App Router, TS, Tailwind v3, font Geist locali)
+- [x] `lib/digest.ts` + `lib/kb.ts`: parser robusto ai due formati storici (frontmatter IT/EN, voci bootstrap/auto)
+- [x] `lib/relations.ts`: cross-link digest ↔ KB; `lib/markdown.ts`: riscrittura link relativi + TOC
+- [x] Route: `/`, `/digest` (+archivio Fuse.js), `/digest/[date]`, `/kb`, `/kb/[slug]`, `/radar`
+- [x] `data/models.json`: seed maggio 2026 + dati verificati da fonti ufficiali (Claude Opus 4.8, GPT-5.5, Gemini 3.1 Pro, Microsoft 365 Copilot)
+- [x] `output: export` statico → deploy Vercel (`vercel.json` root, build dentro `web/`)
+- [x] Deploy live: **[aideepdive.vercel.app](https://aideepdive.vercel.app)** + Git integration (rebuild su push)
+- [x] `config/sources.yaml`: +Hugging Face Papers, +TechCrunch categoria AI
+- [x] `CLAUDE.md` + `automations/weekly-radar-*`: routine `ai-deepdive-weekly-radar` (cron domenicale) **preparata** — creazione su claude.ai a cura dell'utente
+- [x] README/spec/implementation_plan aggiornati
+
+Acceptance verificati: `npm run build` verde, `tsc --noEmit` pulito, 55 pagine statiche, tutte le route live rispondono 200.
+
 ## Criteri di accettazione (Done definition)
 
 Il progetto è considerato live quando tutte queste condizioni sono vere:
@@ -155,3 +174,4 @@ Prossimo run automatico: domani 2026-04-29 alle 07:00 Europe/Rome.
 | Data | Cambio |
 |---|---|
 | 2026-04-28 | Creazione iniziale del piano |
+| 2026-05-31 | Fase 4: web frontend Next.js su Vercel (aideepdive.vercel.app), routine radar preparata, fonti HF/TechCrunch aggiunte |

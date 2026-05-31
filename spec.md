@@ -1,7 +1,7 @@
 # spec.md — ai_deepdive
 
 > Specifica del progetto. Sorgente di verità per scope, requisiti, decisioni di design.
-> Ultima revisione: 2026-04-28
+> Ultima revisione: 2026-05-31
 
 ## 1. Scopo
 
@@ -106,6 +106,20 @@ Stessa news segnalata da fonti multiple → cluster automatico per topic. Una so
 - KB: file unico per concetto, accumula sezione "Aggiornamenti" nel tempo
 - Nessuna rotation/cancellazione automatica
 
+### 3.7 Web frontend (aggiunto 2026-05-31)
+
+Layer web in `web/` (Next.js 15 App Router, TypeScript, Tailwind) deployato su Vercel a [aideepdive.vercel.app](https://aideepdive.vercel.app). Espone il contenuto già prodotto dalle routine come applicazione navigabile.
+
+- **File-based**: legge i markdown da `digest/` e `kb/` a build time (SSG, export statico in `web/out`). Nessun database, nessuna API esterna a runtime.
+- **Rebuild automatico** ad ogni push su `main` (Git integration Vercel).
+- **Route**: `/` (home), `/digest` (archivio + ricerca Fuse.js + filtro mese), `/digest/[date]` (singolo digest, prev/next, KB correlata), `/kb` (indice + filtro), `/kb/[slug]` (articolo + TOC + digest correlati), `/radar` (mappatura modelli AI in 5 tab).
+- **Parser** robusto ai due formati storici dei digest (frontmatter IT del bootstrap 2026-04-28 ed EN auto-generato) e al frontmatter KB.
+- **Radar**: dati in `web/data/models.json` (schema TypeScript in `web/lib/models.ts`), aggiornati dalla routine settimanale.
+
+### 3.8 Routine settimanale radar (aggiunto 2026-05-31)
+
+`ai-deepdive-weekly-radar` aggiorna `web/data/models.json` ogni domenica alle 08:00 Europe/Rome (cron `0 6 * * 0` UTC, guard `RADAR_UPDATE`). Ricerca web su fonti ufficiali dei vendor, aggiorna campi + changelog, valida con `tsc --noEmit`, committa e pusha (Vercel ricostruisce). Prompt e body in `automations/weekly-radar-*`. Non modifica file fuori da `web/data/models.json`.
+
 ## 4. Requisiti non funzionali
 
 ### 4.1 Esecuzione
@@ -143,8 +157,8 @@ Stessa news segnalata da fonti multiple → cluster automatico per topic. Una so
 ## 5. Non requisiti (out of scope v1)
 
 - ❌ Scraping live di X via API ufficiale (uso curated list + WebFetch/WebSearch fallback)
-- ❌ Frontend / sito statico per leggere digest e KB (lettura via GitHub UI o IDE)
-- ❌ Database / vector DB per ricerca semantica (KB cercabile via grep)
+- ✅ ~~Frontend / sito statico~~ — aggiunto 2026-05-31: web layer in `web/` su Vercel (vedi 3.7)
+- ❌ Database / vector DB per ricerca semantica (KB cercabile via grep; ricerca digest client-side via Fuse.js nel web)
 - ❌ Newsletter pubblica / RSS feed pubblicato
 - ❌ Post X automatico
 - ❌ PDF export della KB

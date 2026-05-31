@@ -2,6 +2,8 @@
 
 > La mia raccolta quotidiana di segnali AI, in italiano. Curata da una routine Claude Code, aggiornata ogni mattina alle 07:00 (Europe/Rome).
 
+**Sito web**: [aideepdive.vercel.app](https://aideepdive.vercel.app) — digest, knowledge base e radar modelli AI navigabili.
+
 ## Cosa trovi qui
 
 Due tracce parallele:
@@ -21,6 +23,24 @@ Ogni mattina alle **07:00 Europe/Rome** una routine remota Claude Code (girata s
 6. **Commit & push**: push diretto su `main` (no PR).
 7. **Email**: invia il digest in HTML a `giada.f@me.com` via Gmail MCP.
 
+## Web frontend
+
+Un layer web (Next.js 15, App Router, TypeScript, Tailwind) in [`web/`](./web) espone tutto il contenuto come applicazione navigabile, deployata su Vercel: **[aideepdive.vercel.app](https://aideepdive.vercel.app)**.
+
+- **File-based, zero database**: legge a build time i markdown da `digest/` e `kb/` (SSG puro, export statico).
+- **Rebuild automatico ad ogni push** su `main` via Git integration Vercel.
+- **Route**:
+  - `/` — homepage: ultimo digest, ultimi concetti KB, radar rapido.
+  - `/digest` — archivio cronologico con ricerca full-text (Fuse.js) e filtro per mese.
+  - `/digest/[date]` — singolo digest con sezioni tematiche, navigazione prev/next, concetti KB correlati.
+  - `/kb` — indice dei concetti con filtro per categoria.
+  - `/kb/[slug]` — articolo con TOC auto-generato, digest che lo citano, concetti correlati.
+  - `/radar` — mappatura modelli AI (Claude, ChatGPT, Gemini, Copilot): panoramica, benchmark, casi d'uso, prezzi, privacy & enterprise.
+
+Sviluppo locale: `cd web && npm install && npm run dev`. Build: `npm run build` (output statico in `web/out`).
+
+I dati del radar vivono in [`web/data/models.json`](./web/data/models.json), aggiornati settimanalmente dalla routine `ai-deepdive-weekly-radar` (vedi [`automations/`](./automations)).
+
 ## Struttura repo
 
 ```
@@ -28,21 +48,26 @@ ai_deepdive/
 ├── README.md                 ← questo file
 ├── spec.md                   ← specifica completa
 ├── implementation_plan.md    ← piano di lavoro
+├── CLAUDE.md                 ← istruzioni progetto + task routine radar
 ├── LICENSE                   ← MIT
 ├── config/
 │   └── sources.yaml          ← lista newsletter + X accounts (sorgente di verità)
+├── automations/
+│   ├── whats-new-daily-prompt.md  + routine-body.json        ← routine giornaliera
+│   └── weekly-radar-prompt.md     + weekly-radar-body.json   ← routine settimanale radar
 ├── digest/
 │   └── YYYY/MM/DD.md         ← un file per giorno, archiviato per sempre
-└── kb/
-    ├── README.md             ← indice alfabetico KB
-    └── concetti/
-        └── <slug>.md         ← un file per concetto tecnico
+├── kb/
+│   ├── README.md             ← indice alfabetico KB
+│   └── concetti/
+│       └── <slug>.md         ← un file per concetto tecnico
+└── web/                      ← layer Next.js deployato su Vercel (app/, lib/, components/, data/)
 ```
 
 ## Fonti monitorate
 
-**Newsletter / blog (17)**:
-TechCrunch · AlphaSignal · Every · Unwind AI · Ben's Bites · Daily Dose of Data Science · Cobus Greyling · Robotic · Simon Willison · One Useful Thing (Ethan Mollick) · The Week in AI · Data Pizza · Andreas' Newsletter · G Huntley · AI Snake Oil · Peter Yang · Exponential View · The Information.
+**Newsletter / blog / paper**:
+TechCrunch (categoria AI) · Hugging Face Papers · AlphaSignal · Every · Unwind AI · Ben's Bites · Daily Dose of Data Science · Cobus Greyling · Robotic · Simon Willison · One Useful Thing (Ethan Mollick) · The Week in AI · Data Pizza · Andreas' Newsletter · G Huntley · AI Snake Oil · Peter Yang · Exponential View · The Information.
 
 **X accounts**: 40-60 account curati AI (ricercatori, founder/CEO AI lab, engineer Anthropic/OpenAI/Google DeepMind, dev rel, AI educator, technical writer). Lista completa in `config/sources.yaml`.
 
@@ -61,11 +86,13 @@ Aggiungi/togli voci direttamente in [`config/sources.yaml`](./config/sources.yam
 
 ## Stato
 
-- ✅ Scaffold + KB seed (15 concetti) + primo digest manuale: 2026-04-28
-- ✅ Routine remota creata: `ai-deepdive-daily` (ID: `trig_01U38R2BbWd86ZSZvv9uv5Jy`)
-- ⏳ Prossimo auto-run: domani 2026-04-29 alle 07:08 Europe/Rome
+- ✅ Scaffold + KB seed + primo digest manuale: 2026-04-28
+- ✅ Routine giornaliera attiva: `ai-deepdive-daily` (ID: `trig_01U38R2BbWd86ZSZvv9uv5Jy`) — digest + KB ogni mattina alle 07:00
+- ✅ Web frontend live su Vercel: [aideepdive.vercel.app](https://aideepdive.vercel.app) (rebuild automatico ad ogni push)
+- ✅ Fonti Hugging Face Papers + TechCrunch (categoria AI) aggiunte a `config/sources.yaml`
+- 🛠️ Routine settimanale radar `ai-deepdive-weekly-radar` preparata in `automations/` — da creare su claude.ai/code/routines (body pronto, cron domenicale)
 
-Dashboard routine: https://claude.ai/code/routines/trig_01U38R2BbWd86ZSZvv9uv5Jy
+Dashboard routine daily: https://claude.ai/code/routines/trig_01U38R2BbWd86ZSZvv9uv5Jy
 
 ## Identità editoriale
 
