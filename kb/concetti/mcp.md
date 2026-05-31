@@ -3,8 +3,8 @@ name: Model Context Protocol
 aliases: [MCP, Model Context Protocol, protocollo MCP]
 categoria: infrastruttura
 created: 2026-04-28
-last_updated: 2026-05-29
-mentions_count: 3
+last_updated: 2026-05-31
+mentions_count: 4
 ---
 
 # Model Context Protocol
@@ -126,3 +126,7 @@ Pattern di adozione enterprise. Nelle organizzazioni che hanno introdotto MCP ne
 ### 2026-05-29
 
 Google lancia il Google Pay & Wallet Developer MCP Server in Public Preview (28 maggio): un server MCP ufficiale che espone le API di Google Pay e Google Wallet come tool per agenti AI e assistant di sviluppo. Le capability esposte includono ricerca nella documentazione ufficiale, gestione delle integrazioni, accesso a metriche e log, gestione dei pass emitters per Google Wallet. Contestualmente Google ha reso disponibili MCP server gestiti per altre API cloud ("Google-managed MCP servers are available for everyone"). Il lancio segnala che Google adotta MCP come interfaccia standard per esporre servizi production-grade ad agenti — lo stesso passaggio che ha portato OpenAI ad aggiungere il supporto MCP ad Agents SDK e ChatGPT Desktop. Il pattern convergente dei tre grandi lab (Anthropic, OpenAI, Google) verso MCP come strato di interoperabilita' conferma che il protocollo si e' affermato come standard de facto. [Digest 2026-05-29](../../digest/2026/05/29.md)
+
+### 2026-05-31
+
+Anthropic pubblica il post di ingegneria "How we contain Claude across products" (30 maggio), che include la prima documentazione tecnica pubblica dei MCP tunnels nell'architettura di sicurezza enterprise di Claude. I MCP tunnels (research preview da maggio 2026) permettono agli agenti Claude di raggiungere MCP server nella rete privata aziendale attraverso un gateway outbound-only: nessuna regola di firewall inbound, nessun endpoint pubblico esposto, traffico cifrato end-to-end. Questo pattern — gia' descritto funzionalmente nel digest 05-28 per il lancio di Claude Managed Agents — riceve ora una collocazione precisa nell'architettura di containment: i MCP tunnels sono lo strato di connettivita' che permette all'agente (loop su Anthropic) di usare tool interni aziendali (MCP server in rete privata) senza che i dati aziendali escano dal perimetro. La documentazione fornisce ai security architect il modello di minaccia preciso: cosa puo' raggiungere un agente comprometessoin ogni configurazione, e quali controlli tecnologici limitano l'esposizione. [Digest 2026-05-31](../../digest/2026/05/31.md)

@@ -3,8 +3,8 @@ name: AI Agent
 aliases: [agent, AI agent, agente autonomo, autonomous agent]
 categoria: paradigma
 created: 2026-04-28
-last_updated: 2026-05-30
-mentions_count: 55
+last_updated: 2026-05-31
+mentions_count: 57
 ---
 
 # AI Agent
@@ -200,3 +200,7 @@ Tre segnali agentici nel digest di oggi. xAI lancia Grok Build 0.1 (20 maggio), 
 ### 2026-05-30
 
 Due segnali agentici nel digest di oggi. Sesame — startup fondata dai co-fondatori di Oculus Brendan Iribe e Ankit Kumar — lancia la public preview dell'app iOS con quattro agenti vocali distinti (Maya, Miles, Simone, Charlie), ciascuno con voce, personalita' e memoria persistente proprie. Il prodotto realizza un pattern che emerge in parallelo su piu' fronti: l'agente come entita' con identita' continua, non come tool da invocare. La ricerca web parallela mid-sentence mentre l'agente parla e' un esempio concreto di architettura in cui l'agente orchestra tool (search) in modo trasparente per l'utente. Rosalind Biodefense (OpenAI) espande l'accesso a GPT-Rosalind — modello life-science specializzato in ragionamento su molecole, proteine e biologia delle malattie — a sviluppatori e partner governativi selezionati per biodefesa e risposta pandemica: e' un agente di dominio vincolato da un access control istituzionale, pattern distinto dal modello consumer. Il segnale aggregato: il paradigma agentico si sta specializzando non solo per task (coding, ricerca scientifica, customer support) ma anche per modello di accesso (consumer libero, enterprise governato, governo trusted). [Digest 2026-05-30](../../digest/2026/05/30.md)
+
+### 2026-05-31
+
+Due segnali agentici nel digest di oggi. Anthropic pubblica il post di ingegneria "How we contain Claude across products" — la prima documentazione pubblica comprensiva dell'isolamento dell'agente in ogni prodotto Claude: il loop agentico (orchestrazione, context management, error recovery) resta su Anthropic anche quando l'esecuzione dei tool e' delegata a infrastruttura esterna (self-hosted sandboxes, MCP tunnels enterprise). La separazione tra agent loop e execution environment e' il pattern architetturale centrale: isola il piano di esecuzione dall'ambiente fisico, limitando il blast radius in caso di compromissione. AlphaProof Nexus (Google DeepMind, arXiv 2605.22763v1) realizza un loop agentico per la matematica formale: Gemini 3.1 Pro genera dimostrazioni candidate, Lean le verifica formalmente passo per passo; se un passo non regge, il sistema reitera. Il risultato — 9 problemi aperti di Erdos e 44 congetture OEIS risolti — e' la prima evidenza su record che un agente AI con verifica formale produce contributi originali alla matematica di ricerca frontier. Il pattern e' coerente con Computational Discovery in Gemini for Science (digest 05-26): l'agente che itera con un oracolo esterno di verifica (Lean per la matematica, la test suite per il codice) estende la capacita' generativa del LLM fuori dal dominio in cui puo' allucinare. [Digest 2026-05-31](../../digest/2026/05/31.md)
