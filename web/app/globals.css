@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --paper: #fafaf7;
+  --surface: #ffffff;
+  --ink: #14110f;
+  --muted: #57534e;
+  --faint: #8a847d;
+  --line: #e7e3dc;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #100f0d;
+    --surface: #1a1815;
+    --ink: #f5f2ec;
+    --muted: #a8a29a;
+    --faint: #6f6a63;
+    --line: #2c2925;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background-color: var(--paper);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Ancore dei paragrafi KB: offset per la nav sticky. */
+:target {
+  scroll-margin-top: 5rem;
+}
+
+@layer components {
+  .container-wide {
+    @apply mx-auto w-full max-w-wide px-5 sm:px-8;
+  }
+  .container-prose {
+    @apply mx-auto w-full max-w-prose px-5 sm:px-8;
+  }
+  .hairline {
+    @apply border-line;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-line px-2.5 py-0.5 text-xs font-medium text-muted;
+  }
+  .link-accent {
+    @apply font-medium text-accent transition-colors hover:text-accent-soft;
+  }
+}
+
+/* Stili prose per i contenuti markdown (digest e KB). */
+.prose-deepdive {
+  @apply prose prose-neutral max-w-none dark:prose-invert
+    prose-headings:font-semibold prose-headings:tracking-tight
+    prose-h2:mt-10 prose-h2:scroll-mt-20 prose-h2:border-b prose-h2:border-line prose-h2:pb-2
+    prose-h3:mt-7 prose-h3:scroll-mt-20
+    prose-a:font-medium prose-a:text-accent prose-a:no-underline hover:prose-a:underline
+    prose-strong:text-ink
+    prose-code:rounded prose-code:bg-surface prose-code:px-1 prose-code:py-0.5 prose-code:text-[0.85em] prose-code:font-normal prose-code:before:content-none prose-code:after:content-none
+    prose-li:my-1;
+}

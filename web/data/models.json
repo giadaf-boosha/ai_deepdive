@@ -1,0 +1,438 @@
+{
+  "meta": {
+    "lastUpdated": "2026-05-31",
+    "generatedBy": "Claude Code Routine — ai-deepdive-weekly-radar",
+    "sourcesChecked": [
+      "https://www.anthropic.com/news/claude-opus-4-8",
+      "https://claude.com/pricing",
+      "https://support.claude.com/en/articles/10015870-what-certifications-has-anthropic-obtained",
+      "https://openai.com/index/introducing-gpt-5-5/",
+      "https://developers.openai.com/api/docs/models/gpt-5.5",
+      "https://openai.com/chatgpt/pricing",
+      "https://trust.openai.com/",
+      "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-pro/",
+      "https://ai.google.dev/gemini-api/docs/pricing",
+      "https://docs.cloud.google.com/gemini/enterprise/docs/compliance-security-controls",
+      "https://www.microsoft.com/en-us/microsoft-365-copilot/pricing",
+      "https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-privacy"
+    ],
+    "nextScheduledUpdate": "2026-06-07T08:00:00+02:00"
+  },
+  "models": [
+    {
+      "id": "claude",
+      "provider": "Anthropic",
+      "name": "Claude",
+      "latestModel": "Claude Opus 4.8",
+      "releaseDate": "2026-05-28",
+      "tagline": "Il modello piu' forte su coding agentico e workflow complessi.",
+      "strengths": [
+        "SWE-Bench Pro 69.2% e OSWorld 83.4%: top assoluto su coding agentico e computer use",
+        "Dynamic Workflow: orchestrazione nativa di agenti multi-step",
+        "Context window 1M token a prezzo standard",
+        "#1 su LMArena overall"
+      ],
+      "weaknesses": [
+        "Nessun input immagine o video sui modelli Opus 4.8 (focus testo e codice)",
+        "API output a $25/1M tra le piu' costose del gruppo",
+        "Il nuovo tokenizer (Opus 4.7+) puo' consumare fino al ~35% di token in piu' sullo stesso testo"
+      ],
+      "bestFor": [
+        "Coding agentico e refactoring su larga scala",
+        "Automazione di workflow multi-step",
+        "Reasoning lungo con 1M di contesto"
+      ],
+      "pricing": {
+        "free": "Gratis ($0/mese)",
+        "pro": "Pro $20/mese (o $17 con piano annuale)",
+        "proPrice": 20,
+        "team": "Team $25/seat/mese (standard) o $125/seat (premium)",
+        "enterprise": "Custom (sales); dynamic workflows inclusi su Team/Enterprise/Max",
+        "apiInputPer1M": 5,
+        "apiOutputPer1M": 25
+      },
+      "contextWindow": "1M token",
+      "supportsImages": false,
+      "supportsVideo": false,
+      "supportsCode": true,
+      "supportsAgents": true,
+      "privacyRating": "high",
+      "enterpriseCertifications": [
+        "SOC 2 Type I",
+        "SOC 2 Type II",
+        "ISO 27001:2022",
+        "ISO 42001:2023",
+        "HIPAA (BAA)"
+      ],
+      "dataResidency": "US; opzioni regionali via AWS Bedrock e Google Vertex AI",
+      "trainingPolicy": "Nessun training sui dati di API e prodotti commerciali per default",
+      "verdict": "Prima scelta per chi mette coding agentico e automazione dei processi al centro. In financial services convince su affidabilita' e certificazioni (SOC 2, ISO 42001), meno sulla multimodalita'.",
+      "lmarenaRank": 1,
+      "lmarenaFinancialRank": 2
+    },
+    {
+      "id": "chatgpt",
+      "provider": "OpenAI",
+      "name": "ChatGPT",
+      "latestModel": "GPT-5.5",
+      "releaseDate": "2026-04-24",
+      "tagline": "Il generalista multimodale, #1 sui financial ops di LMArena.",
+      "strengths": [
+        "#1 su LMArena Financial Ops",
+        "Multimodale: input immagini e video (Sora 2)",
+        "Context window 1M token via API",
+        "Ecosistema piu' ampio: ChatGPT, Codex, Azure, AWS Bedrock"
+      ],
+      "weaknesses": [
+        "SWE-Bench 58.6%: sotto Claude sul coding agentico",
+        "API output a $30/1M la piu' cara del gruppo",
+        "Context in chat limitato a 128K (1M solo via API)"
+      ],
+      "bestFor": [
+        "Casi d'uso generalisti e multimodali",
+        "Analisi e operativita' finanziaria",
+        "Team gia' su ecosistema OpenAI/Azure"
+      ],
+      "pricing": {
+        "free": "Gratis ($0/mese)",
+        "pro": "Plus $20/mese; Pro $200/mese",
+        "proPrice": 20,
+        "team": "Business $25/utente/mese",
+        "enterprise": "Custom (sales)",
+        "apiInputPer1M": 5,
+        "apiOutputPer1M": 30
+      },
+      "contextWindow": "1M token (API) · 128K (chat)",
+      "supportsImages": true,
+      "supportsVideo": true,
+      "supportsCode": true,
+      "supportsAgents": true,
+      "privacyRating": "high",
+      "enterpriseCertifications": [
+        "SOC 2 Type 2",
+        "ISO 27001:2022",
+        "ISO 27017",
+        "ISO 27018",
+        "ISO 27701"
+      ],
+      "dataResidency": "US ed EU (data residency per Enterprise/API)",
+      "trainingPolicy": "Nessun training su dati business/API per default (Enterprise e API)",
+      "verdict": "Il piu' equilibrato: vince sui financial ops di LMArena ed e' il piu' multimodale. In financial services pesano il costo dell'output API e un coding agentico inferiore a Claude.",
+      "lmarenaRank": 3,
+      "lmarenaFinancialRank": 1
+    },
+    {
+      "id": "gemini",
+      "provider": "Google",
+      "name": "Gemini",
+      "latestModel": "Gemini 3.1 Pro",
+      "releaseDate": "2026-02-19",
+      "tagline": "Il piu' economico e multimodale end-to-end, GPQA al top.",
+      "strengths": [
+        "GPQA Diamond 94.3%: miglior reasoning scientifico del gruppo",
+        "API piu' economica: $2/$12 per 1M token (sotto 200K)",
+        "Multimodale nativo, video incluso (Omni)",
+        "#2 su LMArena overall"
+      ],
+      "weaknesses": [
+        "SWE-Bench 54.2%: il piu' debole dei tre frontier sul coding agentico",
+        "Nessun tier consumer 'Team' (uso aziendale solo via Vertex AI / Gemini Enterprise)",
+        "Pricing API a scaglioni: input/output raddoppiano oltre 200K token"
+      ],
+      "bestFor": [
+        "Carichi multimodali e video",
+        "Reasoning scientifico e analitico",
+        "Volumi elevati a basso costo via API"
+      ],
+      "pricing": {
+        "free": "Gratis ($0/mese): Gemini 3.5 Flash + accesso limitato a 3.1 Pro",
+        "pro": "Google AI Pro $19.99/mese (Plus $7.99, Ultra $100–$200)",
+        "proPrice": 19.99,
+        "team": "n/d (uso aziendale via Gemini Enterprise / Vertex AI)",
+        "enterprise": "Vertex AI / Gemini Enterprise, pricing a consumo",
+        "apiInputPer1M": 2,
+        "apiOutputPer1M": 12
+      },
+      "contextWindow": "1M token (input) · 64K (output)",
+      "supportsImages": true,
+      "supportsVideo": true,
+      "supportsCode": true,
+      "supportsAgents": true,
+      "privacyRating": "high",
+      "enterpriseCertifications": [
+        "SOC 1",
+        "SOC 2",
+        "SOC 3",
+        "ISO 27001",
+        "ISO 27017",
+        "ISO 27018",
+        "ISO 27701",
+        "HIPAA",
+        "FedRAMP High (Vertex AI)",
+        "PCI DSS"
+      ],
+      "dataResidency": "Multi-regione via Google Cloud (incl. EU)",
+      "trainingPolicy": "Vertex AI / Enterprise: nessun uso dei dati cliente per training",
+      "verdict": "L'opzione costo/multimodalita'. In financial services attrae per prezzo API e certificazioni Google Cloud (FedRAMP High, PCI DSS), ma il coding agentico resta il piu' debole dei tre frontier.",
+      "lmarenaRank": 2,
+      "lmarenaFinancialRank": 3
+    },
+    {
+      "id": "copilot",
+      "provider": "Microsoft",
+      "name": "Copilot",
+      "latestModel": "Microsoft 365 Copilot (GPT-5.X)",
+      "releaseDate": "n/d",
+      "tagline": "L'AI integrata in Microsoft 365, nativa su Excel e Office.",
+      "strengths": [
+        "Integrazione nativa M365 (Excel, Word, Outlook, Teams)",
+        "Excel financial modeling tra i top-3",
+        "Certificazioni enterprise piu' ampie (FedRAMP, HIPAA, EU Data Boundary)",
+        "Agent 365 in beta"
+      ],
+      "weaknesses": [
+        "Context window non pubblicata ufficialmente",
+        "Nessun accesso API a token: venduto per seat",
+        "Dipende dal backend OpenAI/Anthropic (modello proprietario Project Polaris in arrivo)"
+      ],
+      "bestFor": [
+        "Aziende gia' su Microsoft 365",
+        "Financial modeling in Excel",
+        "Ambienti regolamentati (settore pubblico, sanita')"
+      ],
+      "pricing": {
+        "free": "M365 Copilot Chat gratuito (con licenza M365 idonea)",
+        "pro": "Copilot Pro $19.99/mese",
+        "proPrice": 19.99,
+        "team": "M365 Copilot Business $30/utente/mese (promo $18 fino al 30/06/2026)",
+        "enterprise": "M365 Copilot add-on $30/utente/mese (annuale)",
+        "apiInputPer1M": 0,
+        "apiOutputPer1M": 0
+      },
+      "contextWindow": "n/d (non pubblicata)",
+      "supportsImages": true,
+      "supportsVideo": false,
+      "supportsCode": true,
+      "supportsAgents": true,
+      "privacyRating": "high",
+      "enterpriseCertifications": [
+        "GDPR",
+        "ISO 27001",
+        "HIPAA",
+        "ISO 42001",
+        "EU Data Boundary",
+        "ISO 27018",
+        "SOC 2 Type 2",
+        "FedRAMP"
+      ],
+      "dataResidency": "EU Data Boundary; multi-regione Microsoft 365",
+      "trainingPolicy": "Nessun uso dei dati M365 per addestrare i foundation model",
+      "verdict": "La scelta naturale per chi vive in Microsoft 365: imbattibile su Excel/Office e compliance (FedRAMP, EU Data Boundary). Per financial services e' il ponte enterprise, non il modello piu' forte sui benchmark grezzi.",
+      "lmarenaRank": 0,
+      "lmarenaFinancialRank": 0
+    }
+  ],
+  "benchmarks": [
+    {
+      "id": "swe-bench-pro",
+      "name": "SWE-Bench Pro",
+      "description": "Risoluzione autonoma di issue software reali (coding agentico).",
+      "unit": "%",
+      "lowerIsBetter": false,
+      "scores": [
+        { "modelId": "claude", "value": 69.2 },
+        { "modelId": "chatgpt", "value": 58.6 },
+        { "modelId": "gemini", "value": 54.2 }
+      ]
+    },
+    {
+      "id": "computer-use",
+      "name": "Computer Use (OSWorld)",
+      "description": "Controllo autonomo di un computer in task reali.",
+      "unit": "%",
+      "lowerIsBetter": false,
+      "scores": [
+        { "modelId": "claude", "value": 83.4 },
+        { "modelId": "chatgpt", "value": 78.7 }
+      ]
+    },
+    {
+      "id": "gpqa-diamond",
+      "name": "GPQA Diamond",
+      "description": "Domande scientifiche a livello PhD (reasoning).",
+      "unit": "%",
+      "lowerIsBetter": false,
+      "scores": [
+        { "modelId": "claude", "value": 93.6 },
+        { "modelId": "chatgpt", "value": 93.2 },
+        { "modelId": "gemini", "value": 94.3 }
+      ]
+    },
+    {
+      "id": "lmarena-overall",
+      "name": "LMArena (overall)",
+      "description": "Classifica generale per preferenza umana (posizione, piu' basso = meglio).",
+      "unit": "",
+      "lowerIsBetter": true,
+      "scores": [
+        { "modelId": "claude", "value": 1 },
+        { "modelId": "gemini", "value": 2 },
+        { "modelId": "chatgpt", "value": 3 }
+      ]
+    },
+    {
+      "id": "lmarena-financial",
+      "name": "LMArena Financial Ops",
+      "description": "Classifica su operazioni finanziarie (posizione, piu' basso = meglio).",
+      "unit": "",
+      "lowerIsBetter": true,
+      "scores": [
+        { "modelId": "chatgpt", "value": 1 },
+        { "modelId": "claude", "value": 2 },
+        { "modelId": "gemini", "value": 3 }
+      ]
+    }
+  ],
+  "useCases": [
+    {
+      "category": "Coding",
+      "task": "Refactoring agentico su larga scala",
+      "ratings": [
+        { "modelId": "claude", "rating": 5 },
+        { "modelId": "chatgpt", "rating": 4 },
+        { "modelId": "gemini", "rating": 3 },
+        { "modelId": "copilot", "rating": 4 }
+      ]
+    },
+    {
+      "category": "Coding",
+      "task": "Completamento di codice in-IDE",
+      "ratings": [
+        { "modelId": "claude", "rating": 4 },
+        { "modelId": "chatgpt", "rating": 4 },
+        { "modelId": "gemini", "rating": 4 },
+        { "modelId": "copilot", "rating": 5 }
+      ]
+    },
+    {
+      "category": "Testo",
+      "task": "Scrittura long-form e sintesi",
+      "ratings": [
+        { "modelId": "claude", "rating": 5 },
+        { "modelId": "chatgpt", "rating": 5 },
+        { "modelId": "gemini", "rating": 4 },
+        { "modelId": "copilot", "rating": 4 }
+      ]
+    },
+    {
+      "category": "Testo",
+      "task": "Traduzione multilingue",
+      "ratings": [
+        { "modelId": "claude", "rating": 4 },
+        { "modelId": "chatgpt", "rating": 5 },
+        { "modelId": "gemini", "rating": 5 },
+        { "modelId": "copilot", "rating": 4 }
+      ]
+    },
+    {
+      "category": "Multimodale",
+      "task": "Analisi di immagini e documenti",
+      "ratings": [
+        { "modelId": "claude", "rating": 2 },
+        { "modelId": "chatgpt", "rating": 5 },
+        { "modelId": "gemini", "rating": 5 },
+        { "modelId": "copilot", "rating": 4 }
+      ]
+    },
+    {
+      "category": "Multimodale",
+      "task": "Generazione e analisi video",
+      "ratings": [
+        { "modelId": "claude", "rating": 1 },
+        { "modelId": "chatgpt", "rating": 4 },
+        { "modelId": "gemini", "rating": 5 },
+        { "modelId": "copilot", "rating": 2 }
+      ]
+    },
+    {
+      "category": "Agenti",
+      "task": "Orchestrazione di workflow multi-step",
+      "ratings": [
+        { "modelId": "claude", "rating": 5 },
+        { "modelId": "chatgpt", "rating": 4 },
+        { "modelId": "gemini", "rating": 3 },
+        { "modelId": "copilot", "rating": 4 }
+      ]
+    },
+    {
+      "category": "Agenti",
+      "task": "Computer use e automazione desktop",
+      "ratings": [
+        { "modelId": "claude", "rating": 5 },
+        { "modelId": "chatgpt", "rating": 4 },
+        { "modelId": "gemini", "rating": 3 },
+        { "modelId": "copilot", "rating": 3 }
+      ]
+    },
+    {
+      "category": "Finance",
+      "task": "Financial modeling in Excel",
+      "ratings": [
+        { "modelId": "claude", "rating": 3 },
+        { "modelId": "chatgpt", "rating": 4 },
+        { "modelId": "gemini", "rating": 3 },
+        { "modelId": "copilot", "rating": 5 }
+      ]
+    },
+    {
+      "category": "Finance",
+      "task": "Analisi e financial ops",
+      "ratings": [
+        { "modelId": "claude", "rating": 4 },
+        { "modelId": "chatgpt", "rating": 5 },
+        { "modelId": "gemini", "rating": 3 },
+        { "modelId": "copilot", "rating": 4 }
+      ]
+    },
+    {
+      "category": "Office",
+      "task": "Integrazione con la suite di produttivita'",
+      "ratings": [
+        { "modelId": "claude", "rating": 2 },
+        { "modelId": "chatgpt", "rating": 3 },
+        { "modelId": "gemini", "rating": 4 },
+        { "modelId": "copilot", "rating": 5 }
+      ]
+    },
+    {
+      "category": "Office",
+      "task": "Email e calendario assistiti",
+      "ratings": [
+        { "modelId": "claude", "rating": 2 },
+        { "modelId": "chatgpt", "rating": 3 },
+        { "modelId": "gemini", "rating": 4 },
+        { "modelId": "copilot", "rating": 5 }
+      ]
+    }
+  ],
+  "changelog": [
+    {
+      "date": "2026-05-31",
+      "summary": "Seed iniziale del radar (maggio 2026): Claude Opus 4.8, GPT-5.5, Gemini 3.1 Pro, Microsoft 365 Copilot. Dati verificati da fonti ufficiali dei vendor.",
+      "sources": [
+        "https://www.anthropic.com/news/claude-opus-4-8",
+        "https://openai.com/index/introducing-gpt-5-5/",
+        "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-pro/",
+        "https://www.microsoft.com/en-us/microsoft-365-copilot/pricing"
+      ]
+    },
+    {
+      "date": "2026-05-31",
+      "summary": "Correzione: Gemini 3.1 Pro risulta rilasciato il 2026-02-19, non al Google I/O di maggio (dove e' uscito Gemini 3.5 Flash). Release date e context window (1M in / 64K out) allineati alle fonti ufficiali.",
+      "sources": [
+        "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-pro/",
+        "https://deepmind.google/models/model-cards/gemini-3-1-pro/"
+      ]
+    }
+  ]
+}
