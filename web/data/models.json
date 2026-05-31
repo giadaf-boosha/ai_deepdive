@@ -10,11 +10,13 @@
       "https://developers.openai.com/api/docs/models/gpt-5.5",
       "https://openai.com/chatgpt/pricing",
       "https://trust.openai.com/",
-      "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-pro/",
+      "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/",
       "https://ai.google.dev/gemini-api/docs/pricing",
-      "https://docs.cloud.google.com/gemini/enterprise/docs/compliance-security-controls",
+      "https://openrouter.ai/google/gemini-3.5-flash",
+      "https://simonwillison.net/2026/May/19/gemini-35-flash/",
+      "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--may-2026/4522010",
       "https://www.microsoft.com/en-us/microsoft-365-copilot/pricing",
-      "https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-privacy"
+      "https://www.microsoft.com/en-us/licensing/news/2026-m365-packaging-pricing-updates"
     ],
     "nextScheduledUpdate": "2026-06-07T08:00:00+02:00"
   },
@@ -125,19 +127,19 @@
       "id": "gemini",
       "provider": "Google",
       "name": "Gemini",
-      "latestModel": "Gemini 3.1 Pro",
-      "releaseDate": "2026-02-19",
-      "tagline": "Il piu' economico e multimodale end-to-end, GPQA al top.",
+      "latestModel": "Gemini 3.5 Flash",
+      "releaseDate": "2026-05-19",
+      "tagline": "Il piu' rapido e multimodale end-to-end, ottimo rapporto velocita'/costo su agentico e API.",
       "strengths": [
-        "GPQA Diamond 94.3%: miglior reasoning scientifico del gruppo",
-        "API piu' economica: $2/$12 per 1M token (sotto 200K)",
+        "4x piu' veloce dei modelli frontier: latenza bassa su task agentico e coding",
+        "API piu' economica: $1.50/$9 per 1M token",
         "Multimodale nativo, video incluso (Omni)",
         "#2 su LMArena overall"
       ],
       "weaknesses": [
-        "SWE-Bench 54.2%: il piu' debole dei tre frontier sul coding agentico",
+        "SWE-Bench Pro 55.1%: ancora il piu' debole dei tre frontier sul coding agentico",
         "Nessun tier consumer 'Team' (uso aziendale solo via Vertex AI / Gemini Enterprise)",
-        "Pricing API a scaglioni: input/output raddoppiano oltre 200K token"
+        "GPQA Diamond 92.2% con il modello Flash: scende sotto Claude (93.6%) e ChatGPT (93.2%)"
       ],
       "bestFor": [
         "Carichi multimodali e video",
@@ -145,13 +147,13 @@
         "Volumi elevati a basso costo via API"
       ],
       "pricing": {
-        "free": "Gratis ($0/mese): Gemini 3.5 Flash + accesso limitato a 3.1 Pro",
+        "free": "Gratis ($0/mese): Gemini 3.5 Flash (accesso gratuito via Google AI Studio)",
         "pro": "Google AI Pro $19.99/mese (Plus $7.99, Ultra $100–$200)",
         "proPrice": 19.99,
         "team": "n/d (uso aziendale via Gemini Enterprise / Vertex AI)",
         "enterprise": "Vertex AI / Gemini Enterprise, pricing a consumo",
-        "apiInputPer1M": 2,
-        "apiOutputPer1M": 12
+        "apiInputPer1M": 1.5,
+        "apiOutputPer1M": 9
       },
       "contextWindow": "1M token (input) · 64K (output)",
       "supportsImages": true,
@@ -173,7 +175,7 @@
       ],
       "dataResidency": "Multi-regione via Google Cloud (incl. EU)",
       "trainingPolicy": "Vertex AI / Enterprise: nessun uso dei dati cliente per training",
-      "verdict": "L'opzione costo/multimodalita'. In financial services attrae per prezzo API e certificazioni Google Cloud (FedRAMP High, PCI DSS), ma il coding agentico resta il piu' debole dei tre frontier.",
+      "verdict": "L'opzione velocita'/costo su agentico e multimodale. In financial services attrae per prezzo API ($1.50/$9 per 1M) e certificazioni Google Cloud (FedRAMP High, PCI DSS), ma il coding agentico resta il piu' debole dei tre frontier.",
       "lmarenaRank": 2,
       "lmarenaFinancialRank": 3
     },
@@ -181,14 +183,15 @@
       "id": "copilot",
       "provider": "Microsoft",
       "name": "Copilot",
-      "latestModel": "Microsoft 365 Copilot (GPT-5.X)",
+      "latestModel": "Microsoft 365 Copilot (GPT-5.5 / Claude Opus 4.8)",
       "releaseDate": "n/d",
       "tagline": "L'AI integrata in Microsoft 365, nativa su Excel e Office.",
       "strengths": [
         "Integrazione nativa M365 (Excel, Word, Outlook, Teams)",
         "Excel financial modeling tra i top-3",
         "Certificazioni enterprise piu' ampie (FedRAMP, HIPAA, EU Data Boundary)",
-        "Agent 365 in beta"
+        "Agent 365 GA (maggio 2026); Microsoft 365 E7 (Frontier Suite = M365 E5 + Copilot + Agent 365) disponibile",
+        "Backend multi-model: Claude Opus 4.8 e GPT-5.5 Instant ora disponibili in M365 Copilot"
       ],
       "weaknesses": [
         "Context window non pubblicata ufficialmente",
@@ -242,7 +245,7 @@
       "scores": [
         { "modelId": "claude", "value": 69.2 },
         { "modelId": "chatgpt", "value": 58.6 },
-        { "modelId": "gemini", "value": 54.2 }
+        { "modelId": "gemini", "value": 55.1 }
       ]
     },
     {
@@ -265,7 +268,7 @@
       "scores": [
         { "modelId": "claude", "value": 93.6 },
         { "modelId": "chatgpt", "value": 93.2 },
-        { "modelId": "gemini", "value": 94.3 }
+        { "modelId": "gemini", "value": 92.2 }
       ]
     },
     {
@@ -432,6 +435,17 @@
       "sources": [
         "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-pro/",
         "https://deepmind.google/models/model-cards/gemini-3-1-pro/"
+      ]
+    },
+    {
+      "date": "2026-05-31",
+      "summary": "Radar update settimanale. Gemini: latestModel aggiornato a Gemini 3.5 Flash (rilasciato Google I/O 19 maggio 2026); SWE-Bench Pro 54.2 -> 55.1%; GPQA Diamond 94.3 -> 92.2% (Flash scende sotto Claude e ChatGPT); API pricing $2/$12 -> $1.50/$9 per 1M token. Copilot: Agent 365 raggiunge GA (1 maggio 2026); M365 E7 (Frontier Suite) annunciato GA; Claude Opus 4.8 e GPT-5.5 Instant ora disponibili come backend M365 Copilot; latestModel aggiornato. Claude Opus 4.8 e GPT-5.5: nessuna variazione di modello o prezzo nell'ultima settimana. LMArena: Opus 4.8 troppo recente (3 giorni) per dati stabili, ranking invariati.",
+      "sources": [
+        "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/",
+        "https://openrouter.ai/google/gemini-3.5-flash",
+        "https://simonwillison.net/2026/May/19/gemini-35-flash/",
+        "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--may-2026/4522010",
+        "https://www.microsoft.com/en-us/licensing/news/2026-m365-packaging-pricing-updates"
       ]
     }
   ]
