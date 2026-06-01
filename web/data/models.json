@@ -35,7 +35,13 @@
       "supportsCode": true,
       "supportsAgents": true,
       "privacyRating": "high",
-      "enterpriseCertifications": ["SOC 2 Type I", "SOC 2 Type II", "ISO 27001:2022", "ISO 42001:2023", "HIPAA (BAA)"],
+      "enterpriseCertifications": [
+        "SOC 2 Type I",
+        "SOC 2 Type II",
+        "ISO 27001:2022",
+        "ISO 42001:2023",
+        "HIPAA (BAA)"
+      ],
       "dataResidency": "US; opzioni regionali via AWS Bedrock e Google Vertex AI",
       "trainingPolicy": "Nessun training sui dati di API e prodotti commerciali per default",
       "strengths": [
@@ -71,7 +77,13 @@
       "supportsCode": true,
       "supportsAgents": true,
       "privacyRating": "high",
-      "enterpriseCertifications": ["SOC 2 Type 2", "ISO 27001:2022", "ISO 27017", "ISO 27018", "ISO 27701"],
+      "enterpriseCertifications": [
+        "SOC 2 Type 2",
+        "ISO 27001:2022",
+        "ISO 27017",
+        "ISO 27018",
+        "ISO 27701"
+      ],
       "dataResidency": "US ed EU (data residency per Enterprise/API)",
       "trainingPolicy": "Nessun training su dati business/API per default (Enterprise e API)",
       "strengths": [
@@ -107,7 +119,18 @@
       "supportsCode": true,
       "supportsAgents": true,
       "privacyRating": "high",
-      "enterpriseCertifications": ["SOC 1", "SOC 2", "SOC 3", "ISO 27001", "ISO 27017", "ISO 27018", "ISO 27701", "HIPAA", "FedRAMP High (Vertex AI)", "PCI DSS"],
+      "enterpriseCertifications": [
+        "SOC 1",
+        "SOC 2",
+        "SOC 3",
+        "ISO 27001",
+        "ISO 27017",
+        "ISO 27018",
+        "ISO 27701",
+        "HIPAA",
+        "FedRAMP High (Vertex AI)",
+        "PCI DSS"
+      ],
       "dataResidency": "Multi-regione via Google Cloud (incl. EU)",
       "trainingPolicy": "Vertex AI / Enterprise: nessun uso dei dati cliente per training",
       "strengths": [
@@ -136,12 +159,28 @@
       "name": "ChatGPT",
       "url": "https://chatgpt.com/",
       "provider": "OpenAI",
-      "poweredBy": "GPT-5.5",
+      "poweredBy": "GPT-5.5 (Instant, default da maggio 2026)",
       "tagline": "L'assistente AI conversazionale piu' diffuso, con ricerca web, ragionamento e strumenti agentici.",
       "pricingFree": "Gratis (modelli base con limiti d'uso)",
       "pricingPaid": "ChatGPT Plus: 20 USD/mese",
-      "features": ["GPTs (assistenti personalizzati)", "Web Search", "Canvas", "Voice Mode", "Reasoning models", "Projects", "Deep Research", "Operator (agente)", "Image Generation"],
-      "bestFor": ["Assistente generalista quotidiano", "Ricerca e sintesi online", "Scrittura e brainstorming", "Ragionamento su problemi complessi", "Generazione di immagini"]
+      "features": [
+        "GPTs (assistenti personalizzati)",
+        "Web Search",
+        "Canvas",
+        "Voice Mode",
+        "Reasoning models",
+        "Projects",
+        "Deep Research",
+        "Operator (agente)",
+        "Image Generation"
+      ],
+      "bestFor": [
+        "Assistente generalista quotidiano",
+        "Ricerca e sintesi online",
+        "Scrittura e brainstorming",
+        "Ragionamento su problemi complessi",
+        "Generazione di immagini"
+      ]
     },
     {
       "id": "claude-ai",
@@ -152,8 +191,20 @@
       "tagline": "Assistente orientato a scrittura, analisi e ragionamento approfondito con artifacts interattivi.",
       "pricingFree": "Gratis (accesso con limiti d'uso)",
       "pricingPaid": "Claude Pro: 20 USD/mese (17 USD/mese annuale)",
-      "features": ["Projects", "Artifacts", "Custom Styles", "Extended thinking", "Web Search (US / computer use con MCP)"],
-      "bestFor": ["Scrittura di qualita' e tono personalizzato", "Analisi di documenti lunghi", "Ragionamento esteso", "Artifacts (codice, app, contenuti)", "Progetti con contesto persistente"]
+      "features": [
+        "Projects",
+        "Artifacts",
+        "Custom Styles",
+        "Extended thinking",
+        "Web Search (US / computer use con MCP)"
+      ],
+      "bestFor": [
+        "Scrittura di qualita' e tono personalizzato",
+        "Analisi di documenti lunghi",
+        "Ragionamento esteso",
+        "Artifacts (codice, app, contenuti)",
+        "Progetti con contesto persistente"
+      ]
     },
     {
       "id": "perplexity",
@@ -164,20 +215,44 @@
       "tagline": "Motore di risposta con ricerca web citata e ragionamento, per la ricerca approfondita.",
       "pricingFree": "Gratis (ricerche base illimitate, Pro Search limitato)",
       "pricingPaid": "Perplexity Pro: 20 USD/mese (200 USD/anno)",
-      "features": ["Web Search", "Reasoning", "Spaces", "Deep Research", "Image Generation"],
-      "bestFor": ["Ricerca con fonti citate", "Deep Research multi-fonte", "Organizzare ricerche in Spaces", "Risposte aggiornate dal web", "Sintesi rapida"]
+      "features": [
+        "Web Search",
+        "Reasoning",
+        "Spaces",
+        "Deep Research",
+        "Image Generation"
+      ],
+      "bestFor": [
+        "Ricerca con fonti citate",
+        "Deep Research multi-fonte",
+        "Organizzare ricerche in Spaces",
+        "Risposte aggiornate dal web",
+        "Sintesi rapida"
+      ]
     },
     {
       "id": "grok",
       "name": "Grok",
       "url": "https://grok.com/",
       "provider": "xAI",
-      "poweredBy": "Grok (serie Grok 4)",
+      "poweredBy": "Grok 4.3",
       "tagline": "L'assistente di xAI con ricerca su web e su X in tempo reale e ragionamento.",
       "pricingFree": "Gratis (accesso con limiti d'uso)",
       "pricingPaid": "SuperGrok: 30 USD/mese (300 USD/anno)",
-      "features": ["Web Search", "X Search", "DeepSearch", "Reasoning", "Image Generation"],
-      "bestFor": ["Ricerca su X in tempo reale", "Attualita' aggiornata", "Reasoning e DeepSearch", "Generazione di immagini", "Conversazione diretta"]
+      "features": [
+        "Web Search",
+        "X Search",
+        "DeepSearch",
+        "Reasoning",
+        "Image Generation"
+      ],
+      "bestFor": [
+        "Ricerca su X in tempo reale",
+        "Attualita' aggiornata",
+        "Reasoning e DeepSearch",
+        "Generazione di immagini",
+        "Conversazione diretta"
+      ]
     },
     {
       "id": "gemini-app",
@@ -188,8 +263,20 @@
       "tagline": "L'assistente di Google con Deep Research, Canvas, Gems e voce Live.",
       "pricingFree": "Gratis (modelli con limiti d'uso)",
       "pricingPaid": "Google AI Pro: 19,99 USD/mese (1M token, 2 TB One)",
-      "features": ["Deep Research", "Canvas", "Gems (assistenti personalizzati)", "Gemini Live (voce)", "Image Generation"],
-      "bestFor": ["Integrazione ecosistema Google", "Deep Research", "Conversazione vocale (Live)", "Assistenti personalizzati (Gems)", "Documenti e codice con Canvas"]
+      "features": [
+        "Deep Research",
+        "Canvas",
+        "Gems (assistenti personalizzati)",
+        "Gemini Live (voce)",
+        "Image Generation"
+      ],
+      "bestFor": [
+        "Integrazione ecosistema Google",
+        "Deep Research",
+        "Conversazione vocale (Live)",
+        "Assistenti personalizzati (Gems)",
+        "Documenti e codice con Canvas"
+      ]
     },
     {
       "id": "microsoft-copilot",
@@ -200,8 +287,20 @@
       "tagline": "L'assistente di Microsoft integrato in Windows e nelle app Microsoft 365.",
       "pricingFree": "Gratis (Copilot consumer con limiti d'uso)",
       "pricingPaid": "Copilot Pro: 20 USD/mese · M365 Copilot: 30 USD/seat/mese",
-      "features": ["Integrazione Microsoft 365 (Word, Excel, PowerPoint, Outlook)", "Agenti (Agent 365)", "Web Search", "Image Generation", "Voice"],
-      "bestFor": ["Produttivita' in Microsoft 365", "Ecosistema Windows e Office", "Automazione con agenti", "Assistenza a scrittura e documenti", "Aziende gia' su M365"]
+      "features": [
+        "Integrazione Microsoft 365 (Word, Excel, PowerPoint, Outlook)",
+        "Agenti (Agent 365)",
+        "Web Search",
+        "Image Generation",
+        "Voice"
+      ],
+      "bestFor": [
+        "Produttivita' in Microsoft 365",
+        "Ecosistema Windows e Office",
+        "Automazione con agenti",
+        "Assistenza a scrittura e documenti",
+        "Aziende gia' su M365"
+      ]
     },
     {
       "id": "google-ai-studio",
@@ -212,8 +311,20 @@
       "tagline": "Il playground per sviluppatori per prototipare prompt e app con i modelli Gemini.",
       "pricingFree": "Gratis (interfaccia con rate limit)",
       "pricingPaid": "n/d (interfaccia gratuita; costi solo con Gemini API a consumo)",
-      "features": ["Prototipazione di prompt", "Accesso a piu' modelli Gemini", "Test e tuning dei parametri", "Generazione di codice per API", "Costruzione di agenti"],
-      "bestFor": ["Sviluppatori che sperimentano con Gemini", "Prototipazione rapida", "Confronto tra modelli Gemini", "Passaggio prototipo -> API", "Esplorazione gratuita"]
+      "features": [
+        "Prototipazione di prompt",
+        "Accesso a piu' modelli Gemini",
+        "Test e tuning dei parametri",
+        "Generazione di codice per API",
+        "Costruzione di agenti"
+      ],
+      "bestFor": [
+        "Sviluppatori che sperimentano con Gemini",
+        "Prototipazione rapida",
+        "Confronto tra modelli Gemini",
+        "Passaggio prototipo -> API",
+        "Esplorazione gratuita"
+      ]
     },
     {
       "id": "notebooklm",
@@ -224,66 +335,387 @@
       "tagline": "Assistente di ricerca sulle tue fonti, con Audio Overview in stile podcast.",
       "pricingFree": "Gratis (100 notebook, 50 fonti/notebook, Audio Overview limitati)",
       "pricingPaid": "NotebookLM Plus (Google AI Plus): 7,99 USD/mese",
-      "features": ["Ricerca sulle tue fonti (RAG)", "Audio Overview (podcast a due voci)", "Interactive mode", "Risposte con citazioni", "Piu' notebook e documenti"],
-      "bestFor": ["Studio e sintesi di documenti propri", "Risposte ancorate alle fonti", "Riassunti audio in stile podcast", "Studenti e ricercatori", "Meno allucinazioni su materiale specifico"]
+      "features": [
+        "Ricerca sulle tue fonti (RAG)",
+        "Audio Overview (podcast a due voci)",
+        "Interactive mode",
+        "Risposte con citazioni",
+        "Piu' notebook e documenti"
+      ],
+      "bestFor": [
+        "Studio e sintesi di documenti propri",
+        "Risposte ancorate alle fonti",
+        "Riassunti audio in stile podcast",
+        "Studenti e ricercatori",
+        "Meno allucinazioni su materiale specifico"
+      ]
     }
   ],
   "tools": [
-    { "category": "Immagini", "name": "OpenAI 4o Image Generation", "url": "https://openai.com/index/introducing-4o-image-generation/", "oneLiner": "Generazione e modifica di immagini nativa in ChatGPT, con resa accurata di testo e prompt complessi." },
-    { "category": "Immagini", "name": "Midjourney", "url": "https://www.midjourney.com/", "oneLiner": "Generatore di immagini artistiche da testo, noto per qualita' estetica e stile fotografico/illustrativo." },
-    { "category": "Immagini", "name": "Gemini Image", "url": "https://gemini.google/overview/image-generation/", "oneLiner": "Generazione e modifica di immagini di Google Gemini tramite prompt conversazionali." },
-    { "category": "Immagini", "name": "Ideogram", "url": "https://ideogram.ai/", "oneLiner": "Generatore di immagini specializzato nel rendere correttamente testo, loghi e tipografia." },
-    { "category": "Immagini", "name": "Adobe Firefly", "url": "https://www.adobe.com/it/products/firefly.html", "oneLiner": "Suite generativa Adobe per immagini e grafica, sicura per uso commerciale." },
-    { "category": "Immagini", "name": "Graphy", "url": "https://graphy.app/", "oneLiner": "Trasforma dati grezzi in grafici e visualizzazioni curate tramite AI, senza competenze tecniche." },
-    { "category": "Immagini", "name": "Recraft", "url": "https://www.recraft.ai/", "oneLiner": "Generatore AI per design, illustrazioni vettoriali, icone e mockup con stile di brand coerente." },
-    { "category": "Immagini", "name": "Canva", "url": "https://www.canva.com/", "oneLiner": "Piattaforma di design grafico online con strumenti AI per grafiche, presentazioni e contenuti." },
-    { "category": "Immagini", "name": "CLO3D", "url": "https://www.clo3d.com/", "oneLiner": "Design di abbigliamento in 3D con simulazione realistica dei tessuti e prototipazione virtuale." },
-    { "category": "Immagini", "name": "EverArt", "url": "https://www.everart.ai/", "oneLiner": "Addestra modelli di immagini sul tuo stile o brand per generare visual coerenti su misura." },
-    { "category": "Immagini", "name": "MagicPath", "url": "https://www.magicpath.ai/", "oneLiner": "Workspace tra persone e agenti AI per progettare e iterare interfacce e design insieme." },
-    { "category": "Immagini", "name": "FLUX Kontext", "url": "https://bfl.ai/", "oneLiner": "Modello di Black Forest Labs per generare ed editare immagini via testo, con coerenza di personaggi." },
-    { "category": "Immagini", "name": "Google Pomelli", "url": "https://labs.google.com/pomelli", "oneLiner": "Analizza il sito di un'azienda e genera campagne marketing on-brand (Google Labs)." },
-    { "category": "Immagini", "name": "Google Mixboard", "url": "https://labs.google.com/mixboard", "oneLiner": "Mood board AI su lavagna infinita per generare e combinare immagini e idee (Google Labs)." },
-    { "category": "Video", "name": "Sora", "url": "https://sora.com/", "oneLiner": "Modello di OpenAI per generare video realistici da prompt testuali o immagini." },
-    { "category": "Video", "name": "Midjourney Video", "url": "https://www.midjourney.com/", "oneLiner": "Anima le immagini generate da Midjourney trasformandole in brevi clip video." },
-    { "category": "Video", "name": "Google Flow", "url": "https://labs.google/flow/about", "oneLiner": "Crea video cinematografici con i modelli Veo, gestendo scene e inquadrature (Google Labs)." },
-    { "category": "Video", "name": "Runway", "url": "https://runwayml.com/", "oneLiner": "Suite AI per generazione ed editing video professionale da testo, immagini o clip." },
-    { "category": "Video", "name": "HeyGen", "url": "https://www.heygen.com/", "oneLiner": "Crea video con avatar AI parlanti e doppiaggio multilingua a partire da uno script." },
-    { "category": "Video", "name": "Pika", "url": "https://pika.art/", "oneLiner": "Generatore di video AI da testo e immagini con effetti creativi e animazioni stilizzate." },
-    { "category": "Video", "name": "Opus Clip", "url": "https://www.opus.pro/", "oneLiner": "Trasforma video lunghi in clip brevi per i social, con sottotitoli e montaggio automatico." },
-    { "category": "Video", "name": "Guidde", "url": "https://app.guidde.com/", "oneLiner": "Crea video-tutorial e documentazione step-by-step da un workflow, con voiceover AI." },
-    { "category": "Audio", "name": "ElevenLabs", "url": "https://elevenlabs.io/", "oneLiner": "Sintesi vocale e voice cloning realistici, text-to-speech e doppiaggio multilingua di alta qualita'." },
-    { "category": "Audio", "name": "Wondercraft", "url": "https://www.wondercraft.ai/", "oneLiner": "Studio AI per creare podcast e audio aziendali combinando voce, musica ed effetti." },
-    { "category": "Audio", "name": "Adobe Podcast", "url": "https://podcast.adobe.com/", "oneLiner": "Strumenti AI Adobe per registrare e migliorare l'audio vocale, rimuovendo il rumore." },
-    { "category": "Audio", "name": "Loudly", "url": "https://www.loudly.com/", "oneLiner": "Genera e personalizza musica royalty-free per video e contenuti." },
-    { "category": "Audio", "name": "Suno", "url": "https://suno.com/", "oneLiner": "Genera canzoni complete con musica e voce a partire da un prompt testuale." },
-    { "category": "Agent", "name": "Zapier Agents", "url": "https://agents.zapier.com/", "oneLiner": "Agenti AI che eseguono compiti e automazioni connessi alle migliaia di app di Zapier." },
-    { "category": "Agent", "name": "n8n", "url": "https://n8n.io/workflows", "oneLiner": "Piattaforma di automazione workflow open-source per orchestrare integrazioni e agenti AI." },
-    { "category": "Coding", "name": "Cursor", "url": "https://cursor.com/", "oneLiner": "Editor di codice AI-first che assiste scrittura, refactoring e comprensione del codice." },
-    { "category": "Coding", "name": "Replit", "url": "https://replit.com/", "oneLiner": "Ambiente di sviluppo cloud con AI per scrivere, eseguire e deployare app dal browser." },
-    { "category": "Coding", "name": "Lovable", "url": "https://lovable.dev/", "oneLiner": "Genera applicazioni web full-stack a partire da prompt in linguaggio naturale." },
-    { "category": "Coding", "name": "Warp", "url": "http://warp.dev/", "oneLiner": "Terminale moderno con AI integrata per eseguire comandi e assistere il workflow da CLI." },
-    { "category": "Coding", "name": "Factory", "url": "https://www.factory.ai/", "oneLiner": "Piattaforma agent-native (Droid) per costruire e gestire software con agenti AI." },
-    { "category": "Coding", "name": "Claude Code", "url": "https://claude.com/product/claude-code", "oneLiner": "Agente di coding di Anthropic che lavora nel terminale leggendo, scrivendo ed eseguendo codice." },
-    { "category": "Coding", "name": "OpenAI Codex", "url": "https://openai.com/codex/", "oneLiner": "Agente di coding di OpenAI per scrivere, modificare ed eseguire task di sviluppo." }
+    {
+      "category": "Immagini",
+      "name": "ChatGPT Images 2.0 (gpt-image-2)",
+      "url": "https://openai.com/index/introducing-4o-image-generation/",
+      "oneLiner": "Generatore immagini OpenAI con ragionamento nativo, testo quasi perfetto e output fino a 4K (apr 2026, sostituisce 4o / GPT Image 1.5)."
+    },
+    {
+      "category": "Immagini",
+      "name": "Midjourney V8.1",
+      "url": "https://www.midjourney.com/",
+      "oneLiner": "Generatore di immagini artistiche (apr 2026): 4-5x piu' veloce, HD fino a 2K e maggiore aderenza al prompt."
+    },
+    {
+      "category": "Immagini",
+      "name": "Gemini Image (Nano Banana)",
+      "url": "https://gemini.google/overview/image-generation/",
+      "oneLiner": "Famiglia immagini di Gemini: Nano Banana 2 (3.1 Flash Image) per la velocita', Nano Banana Pro (3 Pro Image) per la qualita'."
+    },
+    {
+      "category": "Immagini",
+      "name": "Ideogram",
+      "url": "https://ideogram.ai/",
+      "oneLiner": "Generatore di immagini specializzato nel rendere correttamente testo, loghi e tipografia."
+    },
+    {
+      "category": "Immagini",
+      "name": "Adobe Firefly",
+      "url": "https://www.adobe.com/it/products/firefly.html",
+      "oneLiner": "Suite generativa Adobe per immagini e grafica, sicura per uso commerciale."
+    },
+    {
+      "category": "Immagini",
+      "name": "Graphy",
+      "url": "https://graphy.app/",
+      "oneLiner": "Trasforma dati grezzi in grafici e visualizzazioni curate tramite AI, senza competenze tecniche."
+    },
+    {
+      "category": "Immagini",
+      "name": "Recraft",
+      "url": "https://www.recraft.ai/",
+      "oneLiner": "Generatore AI per design, illustrazioni vettoriali, icone e mockup con stile di brand coerente."
+    },
+    {
+      "category": "Immagini",
+      "name": "Canva",
+      "url": "https://www.canva.com/",
+      "oneLiner": "Piattaforma di design grafico online con strumenti AI per grafiche, presentazioni e contenuti."
+    },
+    {
+      "category": "Immagini",
+      "name": "CLO3D",
+      "url": "https://www.clo3d.com/",
+      "oneLiner": "Design di abbigliamento in 3D con simulazione realistica dei tessuti e prototipazione virtuale."
+    },
+    {
+      "category": "Immagini",
+      "name": "EverArt",
+      "url": "https://www.everart.ai/",
+      "oneLiner": "Addestra modelli di immagini sul tuo stile o brand per generare visual coerenti su misura."
+    },
+    {
+      "category": "Immagini",
+      "name": "MagicPath",
+      "url": "https://www.magicpath.ai/",
+      "oneLiner": "Workspace tra persone e agenti AI per progettare e iterare interfacce e design insieme."
+    },
+    {
+      "category": "Immagini",
+      "name": "FLUX.2",
+      "url": "https://bfl.ai/",
+      "oneLiner": "Black Forest Labs: generazione ed editing fino a 4 megapixel, testo accurato e identita' di personaggio coerente."
+    },
+    {
+      "category": "Immagini",
+      "name": "Google Pomelli",
+      "url": "https://labs.google.com/pomelli",
+      "oneLiner": "Analizza il sito di un'azienda e genera campagne marketing on-brand (Google Labs)."
+    },
+    {
+      "category": "Immagini",
+      "name": "Google Mixboard",
+      "url": "https://labs.google.com/mixboard",
+      "oneLiner": "Mood board AI su lavagna infinita per generare e combinare immagini e idee (Google Labs)."
+    },
+    {
+      "category": "Video",
+      "name": "Sora 2",
+      "url": "https://sora.com/",
+      "oneLiner": "Modello video/audio di punta di OpenAI: fisica piu' accurata, realismo maggiore e audio sincronizzato (dialoghi ed effetti)."
+    },
+    {
+      "category": "Video",
+      "name": "Midjourney Video",
+      "url": "https://www.midjourney.com/",
+      "oneLiner": "Anima le immagini generate da Midjourney trasformandole in brevi clip video."
+    },
+    {
+      "category": "Video",
+      "name": "Google Flow (Veo 3.1)",
+      "url": "https://labs.google/flow/about",
+      "oneLiner": "Video production di Google Labs su Veo 3.1: editing preciso, audio integrato e output verticali fino a 4K."
+    },
+    {
+      "category": "Video",
+      "name": "Runway Gen-4.5",
+      "url": "https://runwayml.com/",
+      "oneLiner": "Modello video di punta Runway con motion quality ai vertici, aderenza al prompt elevata e audio generato."
+    },
+    {
+      "category": "Video",
+      "name": "HeyGen",
+      "url": "https://www.heygen.com/",
+      "oneLiner": "Crea video con avatar AI parlanti e doppiaggio multilingua a partire da uno script."
+    },
+    {
+      "category": "Video",
+      "name": "Pika",
+      "url": "https://pika.art/",
+      "oneLiner": "Generatore di video AI da testo e immagini con effetti creativi e animazioni stilizzate."
+    },
+    {
+      "category": "Video",
+      "name": "Opus Clip",
+      "url": "https://www.opus.pro/",
+      "oneLiner": "Trasforma video lunghi in clip brevi per i social, con sottotitoli e montaggio automatico."
+    },
+    {
+      "category": "Video",
+      "name": "Guidde",
+      "url": "https://app.guidde.com/",
+      "oneLiner": "Crea video-tutorial e documentazione step-by-step da un workflow, con voiceover AI."
+    },
+    {
+      "category": "Audio",
+      "name": "ElevenLabs",
+      "url": "https://elevenlabs.io/",
+      "oneLiner": "Sintesi vocale e voice cloning realistici, text-to-speech e doppiaggio multilingua di alta qualita'."
+    },
+    {
+      "category": "Audio",
+      "name": "Wondercraft",
+      "url": "https://www.wondercraft.ai/",
+      "oneLiner": "Studio AI per creare podcast e audio aziendali combinando voce, musica ed effetti."
+    },
+    {
+      "category": "Audio",
+      "name": "Adobe Podcast",
+      "url": "https://podcast.adobe.com/",
+      "oneLiner": "Strumenti AI Adobe per registrare e migliorare l'audio vocale, rimuovendo il rumore."
+    },
+    {
+      "category": "Audio",
+      "name": "Loudly",
+      "url": "https://www.loudly.com/",
+      "oneLiner": "Genera e personalizza musica royalty-free per video e contenuti."
+    },
+    {
+      "category": "Audio",
+      "name": "Suno v5.5",
+      "url": "https://suno.com/",
+      "oneLiner": "Genera canzoni complete con voce e strumenti; v5.5 (mar 2026) con Voices (clonazione), Custom Models e My Taste."
+    },
+    {
+      "category": "Agent",
+      "name": "Zapier Agents",
+      "url": "https://agents.zapier.com/",
+      "oneLiner": "Agenti AI che eseguono compiti e automazioni connessi alle migliaia di app di Zapier."
+    },
+    {
+      "category": "Agent",
+      "name": "n8n",
+      "url": "https://n8n.io/workflows",
+      "oneLiner": "Piattaforma di automazione workflow open-source per orchestrare integrazioni e agenti AI."
+    },
+    {
+      "category": "Coding",
+      "name": "Cursor 2.0 (Composer 2.5)",
+      "url": "https://cursor.com/",
+      "oneLiner": "Editor AI con interfaccia multi-agente (fino a 8 agenti in parallelo) e modello proprietario Composer 2.5."
+    },
+    {
+      "category": "Coding",
+      "name": "Replit",
+      "url": "https://replit.com/",
+      "oneLiner": "Ambiente di sviluppo cloud con AI per scrivere, eseguire e deployare app dal browser."
+    },
+    {
+      "category": "Coding",
+      "name": "Lovable",
+      "url": "https://lovable.dev/",
+      "oneLiner": "Genera applicazioni web full-stack a partire da prompt in linguaggio naturale."
+    },
+    {
+      "category": "Coding",
+      "name": "Warp",
+      "url": "http://warp.dev/",
+      "oneLiner": "Terminale moderno con AI integrata per eseguire comandi e assistere il workflow da CLI."
+    },
+    {
+      "category": "Coding",
+      "name": "Factory",
+      "url": "https://www.factory.ai/",
+      "oneLiner": "Piattaforma agent-native (Droid) per costruire e gestire software con agenti AI."
+    },
+    {
+      "category": "Coding",
+      "name": "Claude Code",
+      "url": "https://claude.com/product/claude-code",
+      "oneLiner": "Agente di coding di Anthropic che lavora nel terminale leggendo, scrivendo ed eseguendo codice."
+    },
+    {
+      "category": "Coding",
+      "name": "OpenAI Codex (GPT-5.5)",
+      "url": "https://openai.com/codex/",
+      "oneLiner": "Agente di coding unificato OpenAI (terminale, IDE, web) su GPT-5.5 e il modello agentico GPT-5.3-Codex."
+    }
   ],
   "useMatrix": [
-    { "category": "Testo", "task": "Scrivere un testo lungo, strutturato e ragionato", "recommended": ["Claude", "ChatGPT"], "why": "Eccellono nella stesura di testi estesi e coerenti con ragionamento articolato." },
-    { "category": "Testo", "task": "Riassumere e interrogare molti documenti propri", "recommended": ["NotebookLM"], "why": "Risponde citando solo i tuoi documenti, riducendo le allucinazioni." },
-    { "category": "Reasoning", "task": "Risolvere problemi complessi passo-passo", "recommended": ["Claude", "ChatGPT", "Gemini"], "why": "I modelli di reasoning scompongono il problema e mostrano i passaggi logici." },
-    { "category": "Ricerca", "task": "Cercare informazioni aggiornate con fonti citate", "recommended": ["Perplexity"], "why": "Risponde in tempo reale dal web citando sempre le fonti consultate." },
-    { "category": "Ricerca", "task": "Sapere cosa succede ora su un tema social/attualita'", "recommended": ["Grok"], "why": "Accesso diretto al flusso di X per il polso del momento." },
-    { "category": "Immagini", "task": "Generare immagini foto-realistiche", "recommended": ["Midjourney", "Adobe Firefly"], "why": "Massima qualita' fotografica e resa realistica di luce e dettagli." },
-    { "category": "Immagini", "task": "Creare un logo o asset grafico con testo leggibile", "recommended": ["Ideogram", "Adobe Firefly"], "why": "Gestiscono bene tipografia e testo nelle immagini, dove altri sbagliano." },
-    { "category": "Immagini", "task": "Impaginare grafiche pronte (social, slide, volantini)", "recommended": ["Canva"], "why": "Template e strumenti AI per output finiti senza skill di design." },
-    { "category": "Video", "task": "Generare un video da testo o immagine", "recommended": ["Sora", "Runway"], "why": "Generazione text-to-video con qualita' e controllo della scena ai vertici." },
-    { "category": "Video", "task": "Creare un avatar parlante per formazione/messaggi", "recommended": ["HeyGen"], "why": "Avatar realistici con lip-sync multilingua a partire dal solo script." },
-    { "category": "Video", "task": "Estrarre clip brevi da un video lungo", "recommended": ["Opus Clip", "Runway"], "why": "Tagliano e riformattano automaticamente i momenti salienti per i social." },
-    { "category": "Audio", "task": "Generare una voce sintetica naturale", "recommended": ["ElevenLabs"], "why": "Voci espressive e clonazione vocale tra le piu' naturali sul mercato." },
-    { "category": "Audio", "task": "Generare musica originale", "recommended": ["Suno"], "why": "Crea canzoni complete con voce e strumenti da una semplice descrizione." },
-    { "category": "Audio", "task": "Trasformare documenti in un podcast da ascoltare", "recommended": ["NotebookLM"], "why": "Genera un audio overview conversazionale a due voci dai tuoi materiali." },
-    { "category": "Agent", "task": "Automatizzare un flusso tra app senza codice", "recommended": ["Zapier", "n8n"], "why": "Collegano centinaia di app con trigger e azioni; n8n e' piu' flessibile e self-hosted." },
-    { "category": "Coding", "task": "Prototipare un'app full-stack da una descrizione", "recommended": ["Lovable", "Cursor"], "why": "Lovable genera l'app dal browser; Cursor da' pieno controllo nell'editor." },
-    { "category": "Coding", "task": "Lavorare su un codebase reale da terminale", "recommended": ["Claude Code", "OpenAI Codex"], "why": "Agenti che leggono, modificano ed eseguono il codice nel tuo progetto." }
+    {
+      "category": "Testo",
+      "task": "Scrivere un testo lungo, strutturato e ragionato",
+      "recommended": [
+        "Claude",
+        "ChatGPT"
+      ],
+      "why": "Eccellono nella stesura di testi estesi e coerenti con ragionamento articolato."
+    },
+    {
+      "category": "Testo",
+      "task": "Riassumere e interrogare molti documenti propri",
+      "recommended": [
+        "NotebookLM"
+      ],
+      "why": "Risponde citando solo i tuoi documenti, riducendo le allucinazioni."
+    },
+    {
+      "category": "Reasoning",
+      "task": "Risolvere problemi complessi passo-passo",
+      "recommended": [
+        "Claude",
+        "ChatGPT",
+        "Gemini"
+      ],
+      "why": "I modelli di reasoning scompongono il problema e mostrano i passaggi logici."
+    },
+    {
+      "category": "Ricerca",
+      "task": "Cercare informazioni aggiornate con fonti citate",
+      "recommended": [
+        "Perplexity"
+      ],
+      "why": "Risponde in tempo reale dal web citando sempre le fonti consultate."
+    },
+    {
+      "category": "Ricerca",
+      "task": "Sapere cosa succede ora su un tema social/attualita'",
+      "recommended": [
+        "Grok"
+      ],
+      "why": "Accesso diretto al flusso di X per il polso del momento."
+    },
+    {
+      "category": "Immagini",
+      "task": "Generare immagini foto-realistiche",
+      "recommended": [
+        "Midjourney",
+        "Adobe Firefly"
+      ],
+      "why": "Massima qualita' fotografica e resa realistica di luce e dettagli."
+    },
+    {
+      "category": "Immagini",
+      "task": "Creare un logo o asset grafico con testo leggibile",
+      "recommended": [
+        "Ideogram",
+        "Adobe Firefly"
+      ],
+      "why": "Gestiscono bene tipografia e testo nelle immagini, dove altri sbagliano."
+    },
+    {
+      "category": "Immagini",
+      "task": "Impaginare grafiche pronte (social, slide, volantini)",
+      "recommended": [
+        "Canva"
+      ],
+      "why": "Template e strumenti AI per output finiti senza skill di design."
+    },
+    {
+      "category": "Video",
+      "task": "Generare un video da testo o immagine",
+      "recommended": [
+        "Sora",
+        "Runway"
+      ],
+      "why": "Generazione text-to-video con qualita' e controllo della scena ai vertici."
+    },
+    {
+      "category": "Video",
+      "task": "Creare un avatar parlante per formazione/messaggi",
+      "recommended": [
+        "HeyGen"
+      ],
+      "why": "Avatar realistici con lip-sync multilingua a partire dal solo script."
+    },
+    {
+      "category": "Video",
+      "task": "Estrarre clip brevi da un video lungo",
+      "recommended": [
+        "Opus Clip",
+        "Runway"
+      ],
+      "why": "Tagliano e riformattano automaticamente i momenti salienti per i social."
+    },
+    {
+      "category": "Audio",
+      "task": "Generare una voce sintetica naturale",
+      "recommended": [
+        "ElevenLabs"
+      ],
+      "why": "Voci espressive e clonazione vocale tra le piu' naturali sul mercato."
+    },
+    {
+      "category": "Audio",
+      "task": "Generare musica originale",
+      "recommended": [
+        "Suno"
+      ],
+      "why": "Crea canzoni complete con voce e strumenti da una semplice descrizione."
+    },
+    {
+      "category": "Audio",
+      "task": "Trasformare documenti in un podcast da ascoltare",
+      "recommended": [
+        "NotebookLM"
+      ],
+      "why": "Genera un audio overview conversazionale a due voci dai tuoi materiali."
+    },
+    {
+      "category": "Agent",
+      "task": "Automatizzare un flusso tra app senza codice",
+      "recommended": [
+        "Zapier",
+        "n8n"
+      ],
+      "why": "Collegano centinaia di app con trigger e azioni; n8n e' piu' flessibile e self-hosted."
+    },
+    {
+      "category": "Coding",
+      "task": "Prototipare un'app full-stack da una descrizione",
+      "recommended": [
+        "Lovable",
+        "Cursor"
+      ],
+      "why": "Lovable genera l'app dal browser; Cursor da' pieno controllo nell'editor."
+    },
+    {
+      "category": "Coding",
+      "task": "Lavorare su un codebase reale da terminale",
+      "recommended": [
+        "Claude Code",
+        "OpenAI Codex"
+      ],
+      "why": "Agenti che leggono, modificano ed eseguono il codice nel tuo progetto."
+    }
   ],
   "benchmarks": [
     {
@@ -293,9 +725,18 @@
       "unit": "%",
       "lowerIsBetter": false,
       "scores": [
-        { "modelId": "claude", "value": 69.2 },
-        { "modelId": "chatgpt", "value": 58.6 },
-        { "modelId": "gemini", "value": 55.1 }
+        {
+          "modelId": "claude",
+          "value": 69.2
+        },
+        {
+          "modelId": "chatgpt",
+          "value": 58.6
+        },
+        {
+          "modelId": "gemini",
+          "value": 55.1
+        }
       ]
     },
     {
@@ -305,8 +746,14 @@
       "unit": "%",
       "lowerIsBetter": false,
       "scores": [
-        { "modelId": "claude", "value": 83.4 },
-        { "modelId": "chatgpt", "value": 78.7 }
+        {
+          "modelId": "claude",
+          "value": 83.4
+        },
+        {
+          "modelId": "chatgpt",
+          "value": 78.7
+        }
       ]
     },
     {
@@ -316,9 +763,18 @@
       "unit": "%",
       "lowerIsBetter": false,
       "scores": [
-        { "modelId": "claude", "value": 93.6 },
-        { "modelId": "chatgpt", "value": 93.2 },
-        { "modelId": "gemini", "value": 92.2 }
+        {
+          "modelId": "claude",
+          "value": 93.6
+        },
+        {
+          "modelId": "chatgpt",
+          "value": 93.2
+        },
+        {
+          "modelId": "gemini",
+          "value": 92.2
+        }
       ]
     },
     {
@@ -328,27 +784,56 @@
       "unit": "",
       "lowerIsBetter": true,
       "scores": [
-        { "modelId": "claude", "value": 1 },
-        { "modelId": "gemini", "value": 2 },
-        { "modelId": "chatgpt", "value": 3 }
+        {
+          "modelId": "claude",
+          "value": 1
+        },
+        {
+          "modelId": "gemini",
+          "value": 2
+        },
+        {
+          "modelId": "chatgpt",
+          "value": 3
+        }
       ]
     }
   ],
   "changelog": [
     {
       "date": "2026-06-01",
+      "summary": "Aggiornate le versioni correnti dei tool: GPT Image 2, Midjourney V8.1, Nano Banana, FLUX.2, Sora 2, Runway Gen-4.5, Veo 3.1, Suno v5.5, Cursor 2.0 (Composer 2.5), Codex su GPT-5.5; app ChatGPT su GPT-5.5 Instant, Grok 4.3.",
+      "sources": [
+        "https://openai.com/index/introducing-chatgpt-images-2-0",
+        "https://bfl.ai/models/flux-2",
+        "https://cursor.com/blog/2-0",
+        "https://suno.com/blog/v5-5"
+      ]
+    },
+    {
+      "date": "2026-06-01",
       "summary": "Radar ristrutturato in 'Modelli e tools AI a confronto': distinzione tra modelli (livello tecnico) e app (livello prodotto/feature), catalogo tools per categoria (Immagini/Video/Audio/Agent/Coding) e matrice 'cosa usare per cosa'. Rimosso il taglio verticale financial services.",
-      "sources": ["https://chatgpt.com/", "https://claude.ai/", "https://www.perplexity.ai/", "https://grok.com/"]
+      "sources": [
+        "https://chatgpt.com/",
+        "https://claude.ai/",
+        "https://www.perplexity.ai/",
+        "https://grok.com/"
+      ]
     },
     {
       "date": "2026-05-31",
       "summary": "Gemini aggiornato a Gemini 3.5 Flash (rilasciato al Google I/O del 19/05): API $1.50/$9, SWE-Bench Pro 55.1%, GPQA 92.2%. Correzione release date.",
-      "sources": ["https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/"]
+      "sources": [
+        "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/"
+      ]
     },
     {
       "date": "2026-05-31",
       "summary": "Seed iniziale del radar (maggio 2026), dati verificati da fonti ufficiali dei vendor.",
-      "sources": ["https://www.anthropic.com/news/claude-opus-4-8", "https://openai.com/index/introducing-gpt-5-5/"]
+      "sources": [
+        "https://www.anthropic.com/news/claude-opus-4-8",
+        "https://openai.com/index/introducing-gpt-5-5/"
+      ]
     }
   ]
 }

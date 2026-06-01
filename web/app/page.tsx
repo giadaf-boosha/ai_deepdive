@@ -31,9 +31,9 @@ export default function HomePage() {
           L&apos;AI che conta<span className="text-accent">.</span> Senza il rumore.
         </h1>
         <p className="max-w-prose text-lg leading-relaxed text-muted sm:text-xl">
-          Ogni giorno filtro centinaia di fonti e tengo solo i segnali che
-          spostano davvero qualcosa. Pochi, scelti a mano, in italiano. Li scrive
-          una routine Claude Code, alle 07:00 — il giudizio editoriale è il mio.
+          Ogni giorno escono centinaia di annunci sull&apos;AI. Qui trovi solo
+          quelli che spostano davvero qualcosa — pochi, scelti a mano, in
+          italiano. Li raccoglie una routine Claude Code, ogni mattina alle 07:00.
         </p>
         <div className="mt-2 flex flex-wrap gap-2.5">
           <Stat value={digests.length} label="digest" href="/digest" />

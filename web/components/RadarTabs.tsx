@@ -26,7 +26,7 @@ export function RadarTabs({ data }: { data: ModelsData }) {
     <div className="flex flex-col gap-8">
       <div
         role="tablist"
-        className="-mx-5 flex gap-1 overflow-x-auto border-b border-line px-5 sm:mx-0 sm:px-0"
+        className="-mx-5 flex gap-1 overflow-x-auto border-b border-line px-5 sm:mx-0 sm:px-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
       >
         {TABS.map((t) => (
           <button
@@ -155,12 +155,13 @@ function ToolsPanel({ tools }: { tools: CatalogTool[] }) {
 function MatrixPanel({ rows }: { rows: UseRow[] }) {
   const categories = useMemo(() => Array.from(new Set(rows.map((r) => r.category))), [rows]);
   const [cat, setCat] = useState("all");
-  const filtered = rows.filter((r) => cat === "all" || r.category === cat);
+  const visible = cat === "all" ? categories : [cat];
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-6">
       <p className="max-w-prose text-sm text-muted">
-        Parti dal bisogno, non dallo strumento. Cosa vuoi fare — e con cosa conviene farlo.
+        Parti dal bisogno, non dallo strumento: scegli cosa vuoi fare e trovi subito con cosa
+        conviene farlo, e perche&apos;.
       </p>
       <div className="flex flex-wrap gap-1.5">
         <CatBtn active={cat === "all"} onClick={() => setCat("all")}>Tutte</CatBtn>
@@ -168,40 +169,38 @@ function MatrixPanel({ rows }: { rows: UseRow[] }) {
           <CatBtn key={c} active={cat === c} onClick={() => setCat(c)}>{c}</CatBtn>
         ))}
       </div>
-      <div className="overflow-x-auto rounded-2xl border border-line">
-        <table className="w-full border-collapse text-sm">
-          <thead>
-            <tr className="border-b border-line bg-surface text-left">
-              <th className="px-4 py-3 font-medium text-muted">Vuoi...</th>
-              <th className="px-4 py-3 font-medium text-muted">Usa</th>
-              <th className="hidden px-4 py-3 font-medium text-muted sm:table-cell">Perche&apos;</th>
-            </tr>
-          </thead>
-          <tbody>
-            {filtered.map((r) => (
-              <tr key={r.task} className="border-b border-line align-top last:border-0">
-                <td className="px-4 py-3">
-                  <span className="block text-ink">{r.task}</span>
-                  <span className="font-mono text-xs text-faint">{r.category}</span>
-                </td>
-                <td className="px-4 py-3">
-                  <span className="flex flex-wrap gap-1.5">
-                    {r.recommended.map((t) => (
-                      <span key={t} className="chip border-primary/40 text-xs font-medium text-[color:var(--primary-ink)]">
-                        {t}
-                      </span>
-                    ))}
-                  </span>
-                  <span className="mt-1.5 block text-xs text-muted sm:hidden">{r.why}</span>
-                </td>
-                <td className="hidden px-4 py-3 text-muted sm:table-cell">{r.why}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+
+      <div className="flex flex-col gap-10">
+        {visible.map((c) => (
+          <section key={c} className="flex flex-col gap-4">
+            <h3 className="font-mono text-sm font-semibold uppercase tracking-wider text-ink">{c}</h3>
+            <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
+              {rows
+                .filter((r) => r.category === c)
+                .map((r) => (
+                  <div key={r.task} className="card flex flex-col gap-3 p-5">
+                    <p className="text-[15px] font-medium leading-snug text-ink">{r.task}</p>
+                    <div className="flex flex-wrap items-center gap-1.5">
+                      <span className="font-mono text-xs uppercase tracking-wider text-faint">Usa</span>
+                      {r.recommended.map((t) => (
+                        <span
+                          key={t}
+                          className="rounded-full bg-primary/10 px-2.5 py-0.5 text-sm font-medium text-[color:var(--primary-ink)]"
+                        >
+                          {t}
+                        </span>
+                      ))}
+                    </div>
+                    <p className="text-sm leading-relaxed text-muted">{r.why}</p>
+                  </div>
+                ))}
+            </div>
+          </section>
+        ))}
       </div>
+
       <p className="text-xs text-faint">
-        Consigli indicativi su tool pubblici, per orientarsi in fretta. Verifica sempre sul tuo caso reale.
+        Consigli indicativi su tool pubblici, per orientarti in fretta. Verifica sempre sul tuo caso reale.
       </p>
     </div>
   );

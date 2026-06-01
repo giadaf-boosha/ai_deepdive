@@ -10,26 +10,33 @@ const LINKS = [
   { href: "/claude-code", label: "Claude Code", short: "Claude Code" },
 ];
 
+const BOOSHA_URL = "https://boosha.it/";
+
 export function Nav() {
   const pathname = usePathname();
 
   return (
     <header className="sticky top-0 z-40 border-b border-line bg-paper/80 backdrop-blur-xl">
       <nav className="container-wide flex h-16 items-center justify-between gap-3">
-        <Link
-          href="/"
-          className="group flex shrink-0 items-center gap-2.5"
-          aria-label="AI Deep Dive — home"
-        >
-          <span className="text-[15px] font-semibold tracking-tight text-ink">
+        <div className="flex shrink-0 items-center gap-2.5">
+          <Link
+            href="/"
+            className="text-[15px] font-semibold tracking-tight text-ink"
+            aria-label="AI Deep Dive — home"
+          >
             AI Deep Dive<span className="text-accent">.</span>
-          </span>
-          <span className="hidden font-mono text-[10px] uppercase tracking-[0.2em] text-faint lg:inline">
+          </Link>
+          <a
+            href={BOOSHA_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="hidden font-mono text-[10px] uppercase tracking-[0.2em] text-faint transition-colors hover:text-[color:var(--primary-ink)] lg:inline"
+          >
             by Boosha
-          </span>
-        </Link>
+          </a>
+        </div>
 
-        <ul className="-mr-2 flex items-center gap-0.5 overflow-x-auto sm:gap-1">
+        <ul className="-mr-2 flex items-center gap-0.5 overflow-x-auto sm:gap-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           {LINKS.map((link) => {
             const active =
               pathname === link.href || pathname.startsWith(`${link.href}/`);

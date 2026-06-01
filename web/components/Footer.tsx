@@ -2,6 +2,7 @@ import { getLastUpdateLabel } from "@/lib/git";
 import { ArrowUpRight } from "./Icons";
 
 const REPO_URL = "https://github.com/giadaf-boosha/ai_deepdive";
+const BOOSHA_URL = "https://boosha.it/";
 
 export function Footer() {
   const lastUpdate = getLastUpdateLabel();
@@ -13,9 +14,9 @@ export function Footer() {
           <span className="text-sm font-semibold tracking-tight text-ink">
             AI Deep Dive<span className="text-accent">.</span>
           </span>
-          <p className="max-w-sm text-sm text-muted">
-            Segnali AI in italiano, generati da una routine Claude Code. Ultimo
-            aggiornamento: <span className="text-ink">{lastUpdate}</span>.
+          <p className="max-w-md text-sm leading-relaxed text-muted">
+            Quello che conta nell&apos;AI, scelto a mano — non tutto quello che
+            esce. Ultimo aggiornamento: <span className="text-ink">{lastUpdate}</span>.
           </p>
           <div className="mt-1 flex items-center gap-4 text-sm">
             <a
@@ -26,12 +27,16 @@ export function Footer() {
             >
               Repository <ArrowUpRight className="h-3.5 w-3.5" />
             </a>
-            <span className="text-faint">Italiano · nomi tecnici inalterati</span>
           </div>
         </div>
-        <span className="font-mono text-xs uppercase tracking-[0.2em] text-faint">
-          ■ Boosha AI
-        </span>
+        <a
+          href={BOOSHA_URL}
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-[0.2em] text-faint transition-colors hover:text-[color:var(--primary-ink)]"
+        >
+          ■ Boosha AI <ArrowUpRight className="h-3 w-3" />
+        </a>
       </div>
     </footer>
   );
