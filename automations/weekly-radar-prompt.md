@@ -12,25 +12,27 @@ Leggi `web/data/models.json`. Schema (TypeScript, definito in `web/lib/models.ts
 
 ```ts
 interface ModelsData {
-  meta: { lastUpdated: string; generatedBy: string; sourcesChecked: string[]; nextScheduledUpdate: string }
-  models: Model[]        // modelli LLM, id: "claude" | "chatgpt" | "gemini"
-  apps: App[]            // app/prodotti consumer (ChatGPT, Claude.ai, Perplexity, Grok, Gemini app, Copilot, AI Studio, NotebookLM)
+  meta: { lastUpdated; generatedBy; sourcesChecked: string[]; nextScheduledUpdate; benchmarkLinks: {name;url}[] }
+  models: Model[]        // ~10 modelli LLM (claude, chatgpt, gemini, grok, llama, deepseek, qwen, mistral, kimi, glm, ...)
+  apps: App[]            // ~15 schede tool/app (ChatGPT, Claude, Gemini, Perplexity, Grok, NotebookLM, Gamma, Pomelli, Mixboard, AI Studio, Zapier, n8n, Claude Code, Lovable, Transcript LOL)
   tools: CatalogTool[]   // catalogo per categoria
-  useMatrix: UseRow[]    // "cosa usare per cosa"
+  useMatrix: UseRow[]    // "cosa usare per cosa" (casi d'uso cross-dominio)
+  containers: ContainerRow[]   // tabella contenitori (assistenti con knowledge base)
+  decisionTree: DecisionRow[]  // quale contenitore scegliere
   benchmarks: Benchmark[]
   changelog: ChangelogEntry[]
 }
 interface Model {
-  id; provider; name; releaseDate; tagline; contextWindow;
-  apiInputPer1M: number; apiOutputPer1M: number;
+  id; provider; name; releaseDate; tagline?; contextWindow; domain;  // domain = dominio provider per il logo
+  apiInputPer1M: number; apiOutputPer1M: number;  // 0 se open-weight/n/d
   supportsImages; supportsVideo; supportsCode; supportsAgents: boolean;
-  privacyRating: "high"|"medium"|"low"; enterpriseCertifications: string[];
-  dataResidency; trainingPolicy; verdict;  // verdict GENERALE, non finance
-  strengths: string[]; weaknesses: string[]; bestFor: string[]; lmarenaRank: number
+  strengths: string[]; weaknesses: string[]; bestFor: string[]; verdict; lmarenaRank: number  // verdict GENERALE, non finance
 }
-interface App { id; name; url; provider; poweredBy; tagline; pricingFree; pricingPaid; features: string[]; bestFor: string[] }
+interface App { id; name; url; provider; poweredBy?; cosaFa; funzionalita: string[]; tierGratuito; caveat; sweetSpot }
 interface CatalogTool { category: "Immagini"|"Video"|"Audio"|"Agent"|"Coding"; name; url; oneLiner }
 interface UseRow { category; task; recommended: string[]; why }
+interface ContainerRow { dimensione; customGpts; chatgptProjects; claudeProjects; geminiGems; perplexitySpaces }
+interface DecisionRow { scenario; tool }
 interface Benchmark { id; name; description; unit; lowerIsBetter: boolean; scores: { modelId; value: number }[] }
 interface ChangelogEntry { date; summary; sources: string[] }
 ```
@@ -38,9 +40,11 @@ interface ChangelogEntry { date; summary; sources: string[] }
 ## Step
 
 1. **Ricerca web** con `WebSearch`/`WebFetch`:
-   - **Modelli** (Claude Opus, GPT, Gemini): nuove versioni negli ultimi 7 giorni, prezzi API, benchmark ufficiali (SWE-Bench Pro, OSWorld, GPQA), ranking LMArena (lmarena.ai).
-   - **App** (ChatGPT, Claude.ai, Perplexity, Grok, Gemini app, Copilot, AI Studio, NotebookLM): nuove feature, variazioni di prezzo consumer, quale modello le alimenta (poweredBy).
-   - **Tools** (catalogo Immagini/Video/Audio/Agent/Coding): nuovi tool rilevanti emersi o variazioni d'uso.
+   - **Modelli** (~10: Claude, GPT, Gemini, Grok, Llama, DeepSeek, Qwen, Mistral, Kimi, GLM...): nuove versioni negli ultimi 7 giorni, prezzi API, benchmark ufficiali (SWE-Bench Pro, OSWorld, GPQA), ranking LMArena. Verifica e aggiorna `domain` per il logo.
+   - **App** (le ~15 schede): verifica e aggiorna `cosaFa`, `funzionalita`, `tierGratuito`, `caveat`, `sweetSpot`; correggi versioni/prezzi cambiati; aggiungi nuove app rilevanti.
+   - **Tools** (catalogo): verifica che ogni tool sia alla VERSIONE corrente (es. nome con versione) e aggiorna `oneLiner`; aggiungi nuovi tool.
+   - **Contenitori** (`containers`) e **decisionTree**: verifica file limit, tier e capacita' delle 5 piattaforme (Custom GPT, ChatGPT/Claude Projects, Gemini Gems, Perplexity Spaces).
+   - **benchmarkLinks**: mantieni i link a Hugging Face e Artificial Analysis (aggiorna se cambiano).
 
    Query suggerite:
    - `"Claude" new model site:anthropic.com last week`
