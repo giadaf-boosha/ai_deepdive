@@ -39,6 +39,12 @@ function stripLeadingH1(content: string): string {
   return content.replace(/^\s*#\s+.*\n/, "");
 }
 
+// Rimuove la sezione "Note di produzione" (e l'eventuale separatore che la precede)
+// dalla visualizzazione: resta nel file e nella ricerca, ma non si mostra nell'app.
+function stripProductionNotes(content: string): string {
+  return content.replace(/\n+(?:-{3,}\s*\n+)?#{1,6}\s*Note di produzione[\s\S]*$/i, "\n");
+}
+
 export default async function DigestPage({
   params,
 }: {
@@ -75,7 +81,7 @@ export default async function DigestPage({
       </header>
 
       <article>
-        <MarkdownContent content={stripLeadingH1(digest.content)} />
+        <MarkdownContent content={stripProductionNotes(stripLeadingH1(digest.content))} />
       </article>
 
       {related.length > 0 && (
