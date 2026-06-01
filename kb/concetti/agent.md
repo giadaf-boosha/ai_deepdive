@@ -3,8 +3,8 @@ name: AI Agent
 aliases: [agent, AI agent, agente autonomo, autonomous agent]
 categoria: paradigma
 created: 2026-04-28
-last_updated: 2026-05-31
-mentions_count: 57
+last_updated: 2026-06-01
+mentions_count: 61
 ---
 
 # AI Agent
@@ -204,3 +204,7 @@ Due segnali agentici nel digest di oggi. Sesame — startup fondata dai co-fonda
 ### 2026-05-31
 
 Due segnali agentici nel digest di oggi. Anthropic pubblica il post di ingegneria "How we contain Claude across products" — la prima documentazione pubblica comprensiva dell'isolamento dell'agente in ogni prodotto Claude: il loop agentico (orchestrazione, context management, error recovery) resta su Anthropic anche quando l'esecuzione dei tool e' delegata a infrastruttura esterna (self-hosted sandboxes, MCP tunnels enterprise). La separazione tra agent loop e execution environment e' il pattern architetturale centrale: isola il piano di esecuzione dall'ambiente fisico, limitando il blast radius in caso di compromissione. AlphaProof Nexus (Google DeepMind, arXiv 2605.22763v1) realizza un loop agentico per la matematica formale: Gemini 3.1 Pro genera dimostrazioni candidate, Lean le verifica formalmente passo per passo; se un passo non regge, il sistema reitera. Il risultato — 9 problemi aperti di Erdos e 44 congetture OEIS risolti — e' la prima evidenza su record che un agente AI con verifica formale produce contributi originali alla matematica di ricerca frontier. Il pattern e' coerente con Computational Discovery in Gemini for Science (digest 05-26): l'agente che itera con un oracolo esterno di verifica (Lean per la matematica, la test suite per il codice) estende la capacita' generativa del LLM fuori dal dominio in cui puo' allucinare. [Digest 2026-05-31](../../digest/2026/05/31.md)
+
+### 2026-06-01
+
+Quattro segnali agentici nel digest di oggi da tre direzioni distinte. Nvidia RTX Spark (Computex 2026, 3 fonti: NVIDIA official, TechRadar, HotHardware) e' il primo SoC Arm per PC Windows che posiziona la piattaforma hardware esplicitamente come "agente personale" — 128 GB di memoria unificata per ospitare LLM da 120B parametri in locale con context fino a 1M token, cio' che consente sessioni agentiche prolungate senza round-trip al cloud. La memoria e' il fattore abilitante: un agente con 1M context puo' mantenere lo stato dell'intero task senza compressione. Microsoft Build 2026 (Windows News, Notebookcheck) annuncia il Windows Agent Framework (MIT) e il Copilot Agent Mode: WAF astrae il ciclo di vita dell'agente come API di sistema, Copilot Agent Mode diventa un meta-agente che progetta e orchestra swarm di sub-agenti da linguaggio naturale. Il pattern e' la stessa architettura orchestratore-worker gia' vista in Claude Dynamic Workflows (05-29) applicata al sistema operativo. TerminalWorld (arXiv 2605.22535, tbench.ai, explainx.ai) pubblica un benchmark per agenti su task terminale reali (1530 task, 8 modelli frontier, max 62.5% pass rate): il risultato basso su task autentici — contro percentuali ben piu' alte su benchmark sintetici come HumanEval — e' evidenza empirica che i sistemi agentici attuali generalizzano male fuori dalla distribuzione di addestramento. Il gap tra benchmark sintetici e benchmark su dati reali e' la principale metrica di maturita' del paradigma agentico nel 2026. [Digest 2026-06-01](../../digest/2026/06/01.md)
