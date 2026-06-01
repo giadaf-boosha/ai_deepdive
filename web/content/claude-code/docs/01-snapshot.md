@@ -12,6 +12,8 @@ source: https://github.com/giadaf-boosha/claude-code/blob/main/docs/01-snapshot.
 
 **Componente harness IMPACT**: trasversale a tutti i pilastri (Intent / Memory / Planning / Authority / Control flow).
 
+**Concetti/feature chiave**: [00 — Harness overview](/claude-code/00-harness-overview) per il framework concettuale, [Dynamic Workflows](/claude-code/24-workflows) e [/goal](/claude-code/25-goal).
+
 **Per il deep-dive**: [00 — Harness overview](/claude-code/00-harness-overview) per il framework concettuale.
 
 ---
@@ -20,9 +22,9 @@ source: https://github.com/giadaf-boosha/claude-code/blob/main/docs/01-snapshot.
 
 | Item | Valore |
 |---|---|
-| Versione CLI corrente | `v2.1.132` (6 mag 2026), range coperto 2.1.83 → 2.1.132 |
+| Versione CLI corrente | `v2.1.159` (31 mag 2026), range coperto 2.1.83 → 2.1.159 |
 | Modello di default | `claude-sonnet-4-6` |
-| Modello premium | `claude-opus-4-7` con effort `xhigh` (Max plan, da v2.1.111) |
+| Modello premium | `claude-opus-4-8` con effort `xhigh` (Max plan) |
 | Effort levels | `low`, `medium`, `high`, `xhigh`, `max` |
 | Default effort Pro/Max | `high` su Opus 4.6 e Sonnet 4.6 (da v2.1.117) |
 | Fast mode | 2.5x piu' veloce di **Opus 4.6** (NON disponibile su 4.7) — $30/$150 per MTok |
@@ -70,7 +72,7 @@ Annunci recenti rilevanti:
 | Plan | Cosa offre |
 |---|---|
 | Pro | Sonnet 4.6 + Opus 4.6, plan/auto mode, `/loop`, 5 routine scheduled/giorno — **limiti 5-ore raddoppiati**, no peak-hour limits (da 6 mag 2026) |
-| Max | Tutto di Pro + Opus 4.7 xhigh, fast mode con $50 credit, 15 routine/giorno, Remote Control — **limiti 5-ore raddoppiati**, no peak-hour limits (da 6 mag 2026) |
+| Max | Tutto di Pro + Opus 4.8 xhigh, fast mode con $50 credit, 15 routine/giorno, Remote Control — **limiti 5-ore raddoppiati**, no peak-hour limits (da 6 mag 2026) |
 | Team | 25 routine/giorno, Code Review GA su PR, managed settings — **limiti 5-ore raddoppiati** (da 6 mag 2026) |
 | Enterprise | SSO, RBAC, compliance API, Claude Code Security — **limiti 5-ore raddoppiati** (da 6 mag 2026) |
 
@@ -98,6 +100,9 @@ Cronologia compatta (per dettaglio vedi [19-changelog.md](/claude-code/19-change
 | 23 apr 2026 | v2.1.119 — Vim visual mode, custom themes, hooks `mcp_tool` |
 | 1 mag 2026 | v2.1.126 — `claude project purge`, OAuth paste-in-terminal |
 | 6 mag 2026 | **Limiti 5-ore raddoppiati** per tutti i piani; rimossi peak-hour limits Pro/Max. Accordo SpaceX. v2.1.132 — `CLAUDE_CODE_SESSION_ID`. |
+| 11 mag 2026 | `/goal` (v2.1.139) — vedi [./25-goal.md](/claude-code/25-goal) |
+| 28 mag 2026 | **Dynamic Workflows** (v2.1.154) — vedi [./24-workflows.md](/claude-code/24-workflows) |
+| 31 mag 2026 | v2.1.159 — versione CLI corrente; modello premium Opus 4.8 |
 
 ---
 

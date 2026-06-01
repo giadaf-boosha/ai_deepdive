@@ -15,8 +15,7 @@ export function Footer() {
             AI Deep Dive<span className="text-accent">.</span>
           </span>
           <p className="max-w-md text-sm leading-relaxed text-muted">
-            Quello che conta nell&apos;AI, scelto a mano — non tutto quello che
-            esce. Ultimo aggiornamento: <span className="text-ink">{lastUpdate}</span>.
+            Ultimo aggiornamento: <span className="text-ink">{lastUpdate}</span>.
           </p>
           <div className="mt-1 flex items-center gap-4 text-sm">
             <a

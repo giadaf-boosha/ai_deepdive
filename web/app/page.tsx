@@ -2,10 +2,11 @@ import Link from "next/link";
 import { getAllDigests } from "@/lib/digest";
 import { getAllConcepts } from "@/lib/kb";
 import { getModelById } from "@/lib/models";
-import { getAllDocs } from "@/lib/claudecode";
+import { getLatestNews } from "@/lib/claudecode";
 import { formatLong } from "@/lib/dates";
 import { SectionBadge } from "@/components/SectionBadge";
 import { ModelCardCompact } from "@/components/ModelCard";
+import { MarkdownContent } from "@/components/MarkdownContent";
 import { Eyebrow } from "@/components/Eyebrow";
 import { ArrowRight, ArrowUpRight } from "@/components/Icons";
 import type { ModelId } from "@/lib/models";
@@ -20,20 +21,19 @@ export default function HomePage() {
   const quickModels = (["claude", "chatgpt", "gemini"] as ModelId[])
     .map((id) => getModelById(id))
     .filter((m): m is NonNullable<typeof m> => Boolean(m));
-  const ccDocs = getAllDocs();
+  const ccNews = getLatestNews();
 
   return (
     <div className="container-wide flex flex-col gap-20 sm:gap-28">
       {/* Hero */}
       <section className="flex flex-col gap-6 pt-2 sm:pt-8">
-        <Eyebrow>Segnali AI · ogni mattina</Eyebrow>
+        <Eyebrow>Ogni mattina alle 7</Eyebrow>
         <h1 className="max-w-3xl text-balance text-5xl font-semibold leading-[1.02] tracking-tight sm:text-6xl lg:text-7xl">
-          L&apos;AI che conta<span className="text-accent">.</span> Senza il rumore.
+          5 AI news<span className="text-accent">.</span>
         </h1>
         <p className="max-w-prose text-lg leading-relaxed text-muted sm:text-xl">
           Ogni giorno escono centinaia di annunci sull&apos;AI. Qui trovi solo
-          quelli che spostano davvero qualcosa — pochi, scelti a mano, in
-          italiano. Li raccoglie una routine Claude Code, ogni mattina alle 07:00.
+          quelli che contano.
         </p>
         <div className="mt-2 flex flex-wrap gap-2.5">
           <Stat value={digests.length} label="digest" href="/digest" />
@@ -75,6 +75,29 @@ export default function HomePage() {
         </section>
       )}
 
+      {ccNews && (
+        <section className="flex flex-col gap-6">
+          <SectionHeader eyebrow="Claude Code · novità" href="/claude-code" cta="Apri la guida" />
+          <div className="card flex flex-col gap-4 p-6 sm:p-8">
+            <span className="font-mono text-xs text-faint">{formatLong(ccNews.date)}</span>
+            {ccNews.hasNews ? (
+              <MarkdownContent content={ccNews.body} />
+            ) : (
+              <p className="text-sm text-muted">
+                Nessuna novità rilevante nell&apos;ultimo aggiornamento. La routine
+                ricontrolla ogni mattina.
+              </p>
+            )}
+            <Link
+              href="/claude-code/whats-new"
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-[color:var(--primary-ink)]"
+            >
+              Tutte le novità <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+        </section>
+      )}
+
       <section className="flex flex-col gap-6">
         <SectionHeader eyebrow="Dalla knowledge base" href="/kb" cta="Esplora la KB" />
         <p className="-mt-3 max-w-prose text-[15px] leading-relaxed text-muted">
@@ -111,28 +134,6 @@ export default function HomePage() {
           ))}
         </div>
       </section>
-
-      {ccDocs.length > 0 && (
-        <section className="flex flex-col gap-6">
-          <SectionHeader eyebrow="Guida Claude Code" href="/claude-code" cta="Apri la guida" />
-          <Link
-            href="/claude-code"
-            className="card card-hover group flex flex-col gap-4 p-6 sm:p-8"
-          >
-            <h3 className="max-w-2xl text-xl font-semibold tracking-tight text-ink sm:text-2xl">
-              Padroneggiare Claude Code, in italiano.
-            </h3>
-            <p className="max-w-prose text-[15px] leading-relaxed text-muted">
-              {ccDocs.length} capitoli su CLI, routines, hooks, MCP, subagents e
-              workflow agentici — più il <span className="text-ink">What&apos;s new</span> aggiornato
-              ogni giorno.
-            </p>
-            <span className="inline-flex items-center gap-1.5 text-sm font-medium text-[color:var(--primary-ink)]">
-              Apri la guida <ArrowRight className="h-4 w-4" />
-            </span>
-          </Link>
-        </section>
-      )}
     </div>
   );
 }
