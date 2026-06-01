@@ -29,13 +29,15 @@ Un layer web (Next.js 15, App Router, TypeScript, Tailwind) in [`web/`](./web) e
 
 - **File-based, zero database**: legge a build time i markdown da `digest/` e `kb/` (SSG puro, export statico).
 - **Rebuild automatico ad ogni push** su `main` via Git integration Vercel.
+- **Identità Boosha**: palette viola `#7531E3` (primario) + arancione `#FE990B` (secondario), Geist + Geist Mono, eyebrow monospace, gerarchie chiare (vedi [boosha.it](https://boosha.it/)).
 - **Route**:
-  - `/` — homepage: ultimo digest, ultimi concetti KB, radar rapido.
+  - `/` — homepage: ultimo digest, ultimi concetti KB, confronto AI rapido, guida Claude Code.
   - `/digest` — archivio cronologico con ricerca full-text (Fuse.js) e filtro per mese.
   - `/digest/[date]` — singolo digest con sezioni tematiche, navigazione prev/next, concetti KB correlati.
   - `/kb` — indice dei concetti con filtro per categoria.
   - `/kb/[slug]` — articolo con TOC auto-generato, digest che lo citano, concetti correlati.
-  - `/radar` — mappatura modelli AI (Claude, ChatGPT, Gemini, Copilot): panoramica, benchmark, casi d'uso, prezzi, privacy & enterprise.
+  - `/radar` — **Modelli e tools AI a confronto**: distinzione modelli (motore) vs app (prodotto), catalogo tool per categoria (Immagini/Video/Audio/Agent/Coding), matrice "cosa usare per cosa", benchmark. Analisi generale, non verticale.
+  - `/claude-code` — guida a Claude Code in italiano (sincronizzata dal repo [`giadaf-boosha/claude-code`](https://github.com/giadaf-boosha/claude-code)): capitoli + "What's new".
 
 Sviluppo locale: `cd web && npm install && npm run dev`. Build: `npm run build` (output statico in `web/out`).
 

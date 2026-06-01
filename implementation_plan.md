@@ -177,3 +177,4 @@ Prossimo run automatico: domani 2026-04-29 alle 07:00 Europe/Rome.
 | 2026-05-31 | Fase 4: web frontend Next.js su Vercel (aideepdive.vercel.app), routine radar preparata, fonti HF/TechCrunch aggiunte |
 | 2026-05-31 | Routine radar creata/attivata (trig_017UcxBB68S2FaiQGQWnNh39) + primo run di test OK (commit `chore: weekly radar update 2026-05-31`) |
 | 2026-05-31 | Redesign UI/UX con brand Boosha (palette avorio/charcoal + arancione, eyebrow mono, stile Apple, responsive verificato desktop+mobile) |
+| 2026-06-01 | Identità Boosha da boosha.it (viola #7531E3 primario + arancione secondario, icone outline, gerarchie); copy in ToV; nuova sezione `/claude-code` (sync dal repo claude-code); Radar -> "Modelli e tools AI a confronto" (modelli vs app + catalogo tool + matrice, no finance); routine radar aggiornata al nuovo schema; refresh KB (9 concetti + 3 nuovi) via workflow |

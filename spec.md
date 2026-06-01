@@ -112,7 +112,9 @@ Layer web in `web/` (Next.js 15 App Router, TypeScript, Tailwind) deployato su V
 
 - **File-based**: legge i markdown da `digest/` e `kb/` a build time (SSG, export statico in `web/out`). Nessun database, nessuna API esterna a runtime.
 - **Rebuild automatico** ad ogni push su `main` (Git integration Vercel).
-- **Route**: `/` (home), `/digest` (archivio + ricerca Fuse.js + filtro mese), `/digest/[date]` (singolo digest, prev/next, KB correlata), `/kb` (indice + filtro), `/kb/[slug]` (articolo + TOC + digest correlati), `/radar` (mappatura modelli AI in 5 tab).
+- **Route**: `/` (home), `/digest` (archivio + ricerca Fuse.js + filtro mese), `/digest/[date]` (singolo digest, prev/next, KB correlata), `/kb` (indice + filtro), `/kb/[slug]` (articolo + TOC + digest correlati), `/radar` ("Modelli e tools AI a confronto": modelli vs app, catalogo tool, matrice "cosa usare per cosa", benchmark — analisi generale, no finance), `/claude-code` (guida Claude Code sincronizzata dal repo separato + "What's new").
+- **Identità visiva**: brand Boosha da boosha.it — viola `#7531E3` primario + arancione `#FE990B` secondario, Geist + Geist Mono, eyebrow monospace, icone outline, gerarchie H1/H2 chiare, responsive.
+- **Sync Claude Code**: `web/scripts/sync-claude-code.mjs` copia docs/ + whats-new-archive dal repo `giadaf-boosha/claude-code` in `web/content/claude-code/` (frontmatter iniettato, link riscritti); contenuto committato, build dal proprio repo.
 - **Parser** robusto ai due formati storici dei digest (frontmatter IT del bootstrap 2026-04-28 ed EN auto-generato) e al frontmatter KB.
 - **Radar**: dati in `web/data/models.json` (schema TypeScript in `web/lib/models.ts`), aggiornati dalla routine settimanale.
 
