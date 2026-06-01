@@ -20,12 +20,20 @@ const config: Config = {
         faint: "var(--faint)",
         line: "var(--line)",
         surface: "var(--surface)",
-        // Accent Boosha (uguale in light/dark): hex statico per supportare /opacity.
+        "surface-alt": "var(--surface-alt)",
+        // Primario Boosha = viola. Hex statico per supportare i modificatori /opacity.
+        primary: {
+          DEFAULT: "#7531e3",
+          soft: "#9a6bfe",
+          ink: "var(--primary-ink)",
+          fg: "#fffffa",
+        },
+        // Secondario Boosha = arancione.
         accent: {
-          DEFAULT: "#e8901b",
+          DEFAULT: "#ed8f12",
           soft: "#f4a53a",
           ink: "var(--accent-ink)",
-          fg: "#1a1815",
+          fg: "#131315",
         },
         // Tinte per le quattro sezioni tematiche del digest (armonizzate col warm).
         cat: {

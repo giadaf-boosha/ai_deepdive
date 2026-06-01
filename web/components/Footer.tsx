@@ -1,4 +1,5 @@
 import { getLastUpdateLabel } from "@/lib/git";
+import { ArrowUpRight } from "./Icons";
 
 const REPO_URL = "https://github.com/giadaf-boosha/ai_deepdive";
 
@@ -17,8 +18,13 @@ export function Footer() {
             aggiornamento: <span className="text-ink">{lastUpdate}</span>.
           </p>
           <div className="mt-1 flex items-center gap-4 text-sm">
-            <a className="link-accent" href={REPO_URL} target="_blank" rel="noreferrer">
-              Repository
+            <a
+              className="link-primary inline-flex items-center gap-1"
+              href={REPO_URL}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Repository <ArrowUpRight className="h-3.5 w-3.5" />
             </a>
             <span className="text-faint">Italiano · nomi tecnici inalterati</span>
           </div>

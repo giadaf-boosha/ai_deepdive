@@ -48,12 +48,12 @@ export function DigestArchive({ digests }: { digests: DigestListItem[] }) {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Cerca nei digest (titolo o contenuto)..."
-          className="w-full rounded-md border border-line bg-surface px-4 py-2.5 text-sm outline-none transition-colors placeholder:text-faint focus:border-accent"
+          className="w-full rounded-xl border border-line bg-surface px-4 py-3 text-sm outline-none transition-colors placeholder:text-faint focus:border-primary"
         />
         <select
           value={month}
           onChange={(e) => setMonth(e.target.value)}
-          className="rounded-md border border-line bg-surface px-3 py-2.5 text-sm capitalize outline-none focus:border-accent"
+          className="rounded-xl border border-line bg-surface px-3 py-3 text-sm capitalize outline-none focus:border-primary"
         >
           <option value="all">Tutti i mesi</option>
           {months.map((m) => (

@@ -2,32 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Identita' Boosha: avorio caldo / charcoal caldo, accent arancione, neutri caldi. */
+/* Identita' Boosha (da boosha.it): viola primario, arancione secondario,
+   bianco caldo, neutri grigio-freddi. Geist + Geist Mono. */
 :root {
-  --paper: #faf9f3;
+  --paper: #fbfbf7;
   --surface: #ffffff;
-  --ink: #1a1815;
-  --muted: #5c574f;
-  --faint: #938c80;
-  --line: #e7e2d7;
-  --accent: #e8901b;
-  --accent-ink: #b26a05; /* arancione "scuro" per testo/link, contrasto AA su avorio */
-  --accent-soft: #f4a53a;
-  --shadow: 0 1px 2px rgba(26, 24, 21, 0.04), 0 8px 24px -12px rgba(26, 24, 21, 0.12);
+  --surface-alt: #f1f1f0;
+  --ink: #131315;
+  --muted: #56565e;
+  --faint: #8a8a93;
+  --line: #e2e1e4;
+  --primary: #7531e3; /* viola brand */
+  --primary-ink: #6a23d6; /* viola per testo/link, contrasto AA su bianco */
+  --primary-soft: #9a6bfe;
+  --accent: #ed8f12; /* arancione secondario */
+  --accent-ink: #b56a05;
+  --shadow: 0 1px 2px rgba(19, 19, 21, 0.04), 0 10px 30px -14px rgba(19, 19, 21, 0.16);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --paper: #161412;
-    --surface: #201d19;
-    --ink: #f4f1ea;
-    --muted: #a9a196;
-    --faint: #6f685d;
-    --line: #2e2a24;
-    --accent: #e8901b;
-    --accent-ink: #f2a53c;
-    --accent-soft: #f4a53a;
-    --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 12px 32px -16px rgba(0, 0, 0, 0.6);
+    --paper: #131315;
+    --surface: #1d1d20;
+    --surface-alt: #232327;
+    --ink: #fffffa;
+    --muted: #a3a3ad;
+    --faint: #6c6c75;
+    --line: #2d2d31;
+    --primary: #9a6bfe;
+    --primary-ink: #a880ff;
+    --primary-soft: #b79bff;
+    --accent: #ed8f12;
+    --accent-ink: #f0a93c;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 14px 36px -18px rgba(0, 0, 0, 0.65);
   }
 }
 
@@ -50,16 +57,15 @@ body {
   scroll-margin-top: 5.5rem;
 }
 
-/* Focus visibile e coerente (accessibilita', stile Apple). */
 *:focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--primary);
   outline-offset: 2px;
   border-radius: 4px;
 }
 
 ::selection {
-  background-color: var(--accent);
-  color: #1a1815;
+  background-color: var(--primary);
+  color: #fffffa;
 }
 
 @layer components {
@@ -83,47 +89,49 @@ body {
     @apply inline-flex items-center gap-1.5 rounded-full border border-line px-2.5 py-1 text-xs font-medium text-muted;
   }
 
-  .link-accent {
-    @apply font-medium text-[color:var(--accent-ink)] underline-offset-4 transition-colors hover:underline;
+  /* Link: viola, sottolineatura on hover (stile boosha.it). */
+  .link-primary {
+    @apply font-medium text-[color:var(--primary-ink)] underline-offset-4 transition-colors hover:underline;
   }
 
-  /* Card di base con micro-interazione (lift) stile Apple. */
+  /* Bottoni Boosha: mono uppercase, radius piccolo. */
+  .btn {
+    @apply inline-flex items-center gap-2 rounded-md px-4 py-2.5 font-mono text-sm font-medium uppercase tracking-[0.04em] transition-all duration-150;
+  }
+  .btn-primary {
+    @apply btn bg-primary text-white hover:bg-[color:var(--primary-soft)];
+  }
+  .btn-outline {
+    @apply btn border border-primary text-[color:var(--primary-ink)] hover:bg-primary/5;
+  }
+
   .card {
     @apply rounded-2xl border border-line bg-surface transition-all duration-200 ease-out;
   }
   .card-hover {
-    @apply hover:-translate-y-0.5 hover:border-accent/40;
+    @apply hover:-translate-y-0.5 hover:border-primary/40;
     box-shadow: none;
   }
   .card-hover:hover {
     box-shadow: var(--shadow);
   }
-
-  /* Divisore titolo: trattino ink + trattino arancione (firma del deck). */
-  .rule-mark {
-    @apply inline-flex items-center gap-1.5;
-  }
-  .rule-mark::before {
-    content: "";
-    @apply h-0.5 w-6 rounded-full bg-ink/70;
-  }
-  .rule-mark::after {
-    content: "";
-    @apply h-0.5 w-3 rounded-full bg-accent;
-  }
 }
 
-/* Stili prose per i contenuti markdown (digest e KB). */
+/* Prose per i contenuti markdown (digest, KB, claude-code). */
 .prose-deepdive {
   @apply prose prose-neutral max-w-none dark:prose-invert
     prose-headings:font-semibold prose-headings:tracking-tight prose-headings:text-ink
+    prose-h1:text-3xl prose-h1:mb-2
     prose-h2:mt-12 prose-h2:scroll-mt-24 prose-h2:text-2xl prose-h2:border-b prose-h2:border-line prose-h2:pb-2.5
     prose-h3:mt-8 prose-h3:scroll-mt-24 prose-h3:text-xl
+    prose-h4:mt-6 prose-h4:text-base prose-h4:font-semibold
     prose-p:leading-relaxed prose-p:text-[color:var(--muted)]
-    prose-a:font-medium prose-a:text-[color:var(--accent-ink)] prose-a:no-underline hover:prose-a:underline prose-a:underline-offset-4
+    prose-a:font-medium prose-a:text-[color:var(--primary-ink)] prose-a:no-underline hover:prose-a:underline prose-a:underline-offset-4
     prose-strong:text-ink prose-strong:font-semibold
+    prose-em:text-ink
     prose-li:my-1 prose-li:text-[color:var(--muted)]
-    prose-code:rounded prose-code:bg-paper prose-code:px-1.5 prose-code:py-0.5 prose-code:text-[0.85em] prose-code:font-normal prose-code:text-ink prose-code:before:content-none prose-code:after:content-none
-    prose-blockquote:border-l-2 prose-blockquote:border-accent prose-blockquote:not-italic prose-blockquote:text-ink
-    prose-hr:border-line;
+    prose-code:rounded prose-code:bg-surface-alt prose-code:px-1.5 prose-code:py-0.5 prose-code:text-[0.85em] prose-code:font-normal prose-code:text-ink prose-code:before:content-none prose-code:after:content-none
+    prose-blockquote:border-l-2 prose-blockquote:border-primary prose-blockquote:not-italic prose-blockquote:text-ink
+    prose-table:text-sm prose-th:text-ink
+    prose-hr:border-line prose-img:rounded-xl;
 }

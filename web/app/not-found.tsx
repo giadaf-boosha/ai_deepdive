@@ -8,7 +8,7 @@ export default function NotFound() {
       <p className="text-muted">
         Il contenuto richiesto non esiste o e&apos; stato spostato.
       </p>
-      <Link href="/" className="link-accent">
+      <Link href="/" className="link-primary">
         ← Torna alla home
       </Link>
     </div>

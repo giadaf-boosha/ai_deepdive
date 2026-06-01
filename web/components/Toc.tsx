@@ -12,7 +12,7 @@ export function Toc({ items }: { items: TocItem[] }) {
           <li key={item.id} className={item.depth === 3 ? "pl-6" : "pl-3"}>
             <a
               href={`#${item.id}`}
-              className="block text-muted transition-colors hover:text-accent"
+              className="block text-muted transition-colors hover:text-[color:var(--primary-ink)]"
             >
               {item.text}
             </a>

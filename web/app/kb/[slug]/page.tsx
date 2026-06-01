@@ -54,7 +54,7 @@ export default async function KBConceptPage({
     <div className="container-wide grid grid-cols-1 gap-10 lg:grid-cols-[1fr_16rem]">
       <div className="flex min-w-0 flex-col gap-8">
         <div>
-          <Link href="/kb" className="link-accent text-sm">
+          <Link href="/kb" className="link-primary text-sm">
             ← Knowledge base
           </Link>
         </div>
@@ -92,7 +92,7 @@ export default async function KBConceptPage({
                 <li key={d.date}>
                   <Link
                     href={`/digest/${d.date}`}
-                    className="text-sm capitalize text-muted transition-colors hover:text-accent"
+                    className="text-sm capitalize text-muted transition-colors hover:text-[color:var(--primary-ink)]"
                   >
                     {formatLong(d.date)}
                   </Link>
@@ -115,7 +115,7 @@ export default async function KBConceptPage({
                 <li key={c.slug}>
                   <Link
                     href={`/kb/${c.slug}`}
-                    className="text-muted transition-colors hover:text-accent"
+                    className="text-muted transition-colors hover:text-[color:var(--primary-ink)]"
                   >
                     {c.name}
                   </Link>

@@ -54,7 +54,7 @@ export default async function DigestPage({
   return (
     <div className="container-prose flex flex-col gap-8">
       <div>
-        <Link href="/digest" className="link-accent text-sm">
+        <Link href="/digest" className="link-primary text-sm">
           ← Torna all&apos;archivio
         </Link>
       </div>
@@ -86,7 +86,7 @@ export default async function DigestPage({
               <Link
                 key={concept.slug}
                 href={`/kb/${concept.slug}`}
-                className="chip transition-colors hover:border-accent/50 hover:text-ink"
+                className="chip transition-colors hover:border-primary/50 hover:text-ink"
               >
                 {concept.name}
                 <span className="text-faint">· {hits}</span>
@@ -103,7 +103,7 @@ export default async function DigestPage({
             className="group flex flex-col gap-1 text-sm"
           >
             <span className="text-faint">← Precedente</span>
-            <span className="font-medium capitalize text-muted group-hover:text-accent">
+            <span className="font-medium capitalize text-muted group-hover:text-[color:var(--primary-ink)]">
               {formatLong(prev.date)}
             </span>
           </Link>
@@ -116,7 +116,7 @@ export default async function DigestPage({
             className="group flex flex-col items-end gap-1 text-right text-sm"
           >
             <span className="text-faint">Successivo →</span>
-            <span className="font-medium capitalize text-muted group-hover:text-accent">
+            <span className="font-medium capitalize text-muted group-hover:text-[color:var(--primary-ink)]">
               {formatLong(next.date)}
             </span>
           </Link>
