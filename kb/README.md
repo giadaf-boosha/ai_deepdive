@@ -4,22 +4,27 @@
 
 ## Indice
 
+20 concetti documentati.
+
 | Concetto | Categoria | Aliases | Ultimo aggiornamento |
 |---|---|---|---|
-| [Agent](./concetti/agent.md) | paradigma | AI agent, agente autonomo | 2026-06-01 |
-| [Agent harness](./concetti/agent-harness.md) | infrastruttura | harness, scaffolding agentico | 2026-05-02 |
-| [Chain of Thought / Reasoning](./concetti/chain-of-thought.md) | tecnica | CoT, catena di pensiero, extended thinking | 2026-04-28 |
-| [Context window](./concetti/context-window.md) | architettura | finestra di contesto, context length | 2026-04-28 |
-| [Embedding](./concetti/embedding.md) | tecnica | vector embedding, dense representation | 2026-04-28 |
-| [Evaluation / Benchmark AI](./concetti/evaluation-benchmark.md) | tecnica | benchmark, eval, evaluation, valutazione LLM, leaderboard | 2026-06-01 |
-| [Fine-tuning](./concetti/fine-tuning.md) | training | SFT, supervised fine-tuning | 2026-04-28 |
-| [Inference](./concetti/inference.md) | infrastruttura | inferenza, serving, decoding | 2026-05-24 |
-| [Interaction Model](./concetti/interaction-model.md) | architettura | full-duplex AI, modello di interazione, full-duplex model | 2026-05-13 |
-| [Large Language Model](./concetti/llm.md) | architettura | LLM, foundation model | 2026-05-29 |
-| [Model Context Protocol](./concetti/mcp.md) | infrastruttura | MCP | 2026-05-31 |
-| [Prompt engineering](./concetti/prompt-engineering.md) | tecnica | ingegneria dei prompt, prompting | 2026-04-28 |
-| [Reinforcement Learning from Human Feedback](./concetti/rlhf.md) | training | RLHF, RLAIF | 2026-04-28 |
-| [Retrieval-Augmented Generation](./concetti/rag.md) | paradigma | RAG, generazione aumentata da retrieval | 2026-04-28 |
-| [Tokenization](./concetti/tokenization.md) | tecnica | tokenizzazione, BPE, subword | 2026-04-28 |
-| [Tool use / Function calling](./concetti/tool-use.md) | tecnica | tool use, function calling, tool calling | 2026-04-29 |
-| [Vector database](./concetti/vector-database.md) | infrastruttura | vector DB, vector store, ANN index | 2026-04-28 |
+| [Agent harness](./concetti/agent-harness.md) | infrastruttura | agent harness, harness, scaffolding agentico, agent runtime | 2026-06-01 |
+| [Agent sandboxing](./concetti/agent-sandboxing.md) | infrastruttura | sandboxing, containment, isolamento agenti, agent containment, esecuzione isolata, sandbox | 2026-06-01 |
+| [AI Agent](./concetti/agent.md) | paradigma | agent, AI agent, agente autonomo, autonomous agent | 2026-06-01 |
+| [Chain of Thought / Reasoning](./concetti/chain-of-thought.md) | tecnica | chain of thought, CoT, catena di pensiero, reasoning, ragionamento esplicito, extended thinking | 2026-06-01 |
+| [Context window](./concetti/context-window.md) | architettura | context window, finestra di contesto, finestra contestuale, context length | 2026-06-01 |
+| [Embedding](./concetti/embedding.md) | tecnica | embedding, vector embedding, dense representation, rappresentazione densa | 2026-06-01 |
+| [Evaluation / Benchmark AI](./concetti/evaluation-benchmark.md) | tecnica | benchmark, eval, evaluation, valutazione LLM, AI benchmark, leaderboard | 2026-06-01 |
+| [Fine-tuning](./concetti/fine-tuning.md) | training | fine-tuning, fine tuning, SFT, supervised fine-tuning, adattamento di modello | 2026-06-01 |
+| [Inference](./concetti/inference.md) | infrastruttura | inference, inferenza, serving, generation, decoding | 2026-06-01 |
+| [Interaction Model](./concetti/interaction-model.md) | architettura | interaction model, full-duplex AI, modello di interazione, full-duplex model | 2026-06-01 |
+| [Large Language Model](./concetti/llm.md) | architettura | LLM, modello linguistico di grandi dimensioni, foundation model | 2026-06-01 |
+| [Mixture of Experts](./concetti/mixture-of-experts.md) | architettura | MoE, mixture-of-experts, mixture of experts, modello sparso, sparse model, expert routing | 2026-06-01 |
+| [Model Context Protocol](./concetti/mcp.md) | infrastruttura | MCP, Model Context Protocol, protocollo MCP | 2026-06-01 |
+| [Multi-agent orchestration](./concetti/multi-agent-orchestration.md) | paradigma | multi-agent, sistema multi-agente, orchestrazione di agenti, agent swarm, subagenti, sub-agent orchestration | 2026-06-01 |
+| [Prompt engineering](./concetti/prompt-engineering.md) | tecnica | prompt engineering, ingegneria dei prompt, prompting | 2026-06-01 |
+| [Reinforcement Learning from Human Feedback](./concetti/rlhf.md) | training | RLHF, reinforcement learning from human feedback, allineamento RL, RLAIF | 2026-06-01 |
+| [Retrieval-Augmented Generation](./concetti/rag.md) | paradigma | RAG, retrieval augmented, generazione aumentata da retrieval | 2026-06-01 |
+| [Tokenization](./concetti/tokenization.md) | tecnica | tokenization, tokenizzazione, BPE, subword, byte-pair encoding | 2026-06-01 |
+| [Tool use / Function calling](./concetti/tool-use.md) | tecnica | tool use, function calling, tool calling, chiamata di funzione | 2026-06-01 |
+| [Vector database](./concetti/vector-database.md) | infrastruttura | vector database, vector DB, vector store, database vettoriale, ANN index | 2026-06-01 |
