@@ -4,7 +4,6 @@ const BRAND: Record<ModelId, string> = {
   claude: "#e8901b",
   chatgpt: "#0f766e",
   gemini: "#2563eb",
-  copilot: "#7c3aed",
 };
 
 export function ModelAccent({ id }: { id: ModelId }) {
@@ -24,7 +23,7 @@ export function ModelCardCompact({ model }: { model: Model }) {
         <ModelAccent id={model.id} />
         <span className="text-sm font-semibold text-ink">{model.name}</span>
       </div>
-      <p className="font-mono text-xs text-faint">{model.latestModel}</p>
+      <p className="font-mono text-xs text-faint">{model.provider}</p>
       <p className="text-sm leading-relaxed text-muted">{model.tagline}</p>
     </div>
   );
@@ -41,9 +40,7 @@ export function ModelCard({ model }: { model: Model }) {
           <h3 className="text-lg font-semibold text-ink">{model.name}</h3>
           <span className="chip">{model.provider}</span>
         </div>
-        <p className="font-mono text-xs text-faint">
-          {model.latestModel} · {model.releaseDate}
-        </p>
+        <p className="font-mono text-xs text-faint">rilascio {model.releaseDate}</p>
         <p className="mt-1 text-sm text-muted">{model.tagline}</p>
       </header>
 
@@ -51,26 +48,17 @@ export function ModelCard({ model }: { model: Model }) {
       <Block title="Limiti" items={model.weaknesses} tone="neg" />
       <Block title="Ideale per" items={model.bestFor} tone="neutral" />
 
-      <div className="mt-auto rounded-md border border-line bg-paper p-3">
-        <p className="mb-1 font-mono text-xs uppercase tracking-wider text-faint">
-          Verdetto · financial services
-        </p>
+      <div className="mt-auto rounded-lg border border-line bg-paper p-3">
+        <p className="mb-1 font-mono text-xs uppercase tracking-wider text-faint">Verdetto</p>
         <p className="text-sm text-ink">{model.verdict}</p>
       </div>
 
       <dl className="grid grid-cols-2 gap-x-4 gap-y-1 text-xs text-muted">
         <Stat label="Context" value={model.contextWindow} />
-        <Stat
-          label="LMArena"
-          value={model.lmarenaRank > 0 ? `#${model.lmarenaRank}` : "n/d"}
-        />
+        <Stat label="LMArena" value={model.lmarenaRank > 0 ? `#${model.lmarenaRank}` : "n/d"} />
         <Stat
           label="API in/out"
-          value={
-            model.pricing.apiInputPer1M > 0
-              ? `$${model.pricing.apiInputPer1M}/$${model.pricing.apiOutputPer1M}`
-              : "n/d"
-          }
+          value={model.apiInputPer1M > 0 ? `$${model.apiInputPer1M}/$${model.apiOutputPer1M}` : "n/d"}
         />
         <Stat label="Privacy" value={model.privacyRating} />
       </dl>
@@ -92,15 +80,11 @@ function Block({
     tone === "pos" ? "text-cat-modelli" : tone === "neg" ? "text-cat-business" : "text-faint";
   return (
     <div>
-      <p className="mb-1.5 font-mono text-xs uppercase tracking-wider text-faint">
-        {title}
-      </p>
+      <p className="mb-1.5 font-mono text-xs uppercase tracking-wider text-faint">{title}</p>
       <ul className="flex flex-col gap-1 text-sm text-muted">
         {items.map((item) => (
           <li key={item} className="flex gap-2">
-            <span className={`mt-1 ${marker}`} aria-hidden>
-              •
-            </span>
+            <span className={`mt-1 ${marker}`} aria-hidden>•</span>
             <span>{item}</span>
           </li>
         ))}
@@ -113,7 +97,7 @@ function Stat({ label, value }: { label: string; value: string }) {
   return (
     <div className="flex items-baseline justify-between gap-2 border-b border-line py-1 last:border-0">
       <dt className="text-faint">{label}</dt>
-      <dd className="font-medium text-ink">{value}</dd>
+      <dd className="font-medium capitalize text-ink">{value}</dd>
     </div>
   );
 }

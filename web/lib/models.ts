@@ -1,30 +1,25 @@
-import modelsData from "@/data/models.json";
+import data from "@/data/models.json";
 
-export type ModelId = "claude" | "chatgpt" | "gemini" | "copilot";
+export type ModelId = "claude" | "chatgpt" | "gemini";
 export type PrivacyRating = "high" | "medium" | "low";
+export type ToolCategory =
+  | "Testo"
+  | "Immagini"
+  | "Video"
+  | "Audio"
+  | "Agent"
+  | "Coding";
 
-export interface ModelPricing {
-  free: string;
-  pro: string;
-  proPrice: number;
-  team: string;
-  enterprise: string;
-  apiInputPer1M: number;
-  apiOutputPer1M: number;
-}
-
+// Modello LLM sottostante (livello tecnico): benchmark, API, contesto.
 export interface Model {
   id: ModelId;
   provider: string;
   name: string;
-  latestModel: string;
   releaseDate: string;
   tagline: string;
-  strengths: string[];
-  weaknesses: string[];
-  bestFor: string[];
-  pricing: ModelPricing;
   contextWindow: string;
+  apiInputPer1M: number;
+  apiOutputPer1M: number;
   supportsImages: boolean;
   supportsVideo: boolean;
   supportsCode: boolean;
@@ -33,16 +28,47 @@ export interface Model {
   enterpriseCertifications: string[];
   dataResidency: string;
   trainingPolicy: string;
+  strengths: string[];
+  weaknesses: string[];
+  bestFor: string[];
   verdict: string;
   lmarenaRank: number;
-  lmarenaFinancialRank: number;
+}
+
+// App/prodotto consumer (livello prodotto): feature, prezzi consumer.
+export interface App {
+  id: string;
+  name: string;
+  url: string;
+  provider: string;
+  poweredBy: string;
+  tagline: string;
+  pricingFree: string;
+  pricingPaid: string;
+  features: string[];
+  bestFor: string[];
+}
+
+// Tool del catalogo per categoria.
+export interface CatalogTool {
+  category: ToolCategory;
+  name: string;
+  url: string;
+  oneLiner: string;
+}
+
+// Riga della matrice "cosa usare per cosa".
+export interface UseRow {
+  category: string;
+  task: string;
+  recommended: string[];
+  why: string;
 }
 
 export interface BenchmarkScore {
   modelId: ModelId;
   value: number;
 }
-
 export interface Benchmark {
   id: string;
   name: string;
@@ -50,17 +76,6 @@ export interface Benchmark {
   unit: string;
   lowerIsBetter: boolean;
   scores: BenchmarkScore[];
-}
-
-export interface UseCaseRating {
-  modelId: ModelId;
-  rating: number; // 1-5
-}
-
-export interface UseCase {
-  category: string;
-  task: string;
-  ratings: UseCaseRating[];
 }
 
 export interface ChangelogEntry {
@@ -79,25 +94,29 @@ export interface ModelsMeta {
 export interface ModelsData {
   meta: ModelsMeta;
   models: Model[];
+  apps: App[];
+  tools: CatalogTool[];
+  useMatrix: UseRow[];
   benchmarks: Benchmark[];
-  useCases: UseCase[];
   changelog: ChangelogEntry[];
 }
 
-const data = modelsData as ModelsData;
+const typed = data as ModelsData;
 
 export function getModelsData(): ModelsData {
-  return data;
+  return typed;
 }
-
 export function getModels(): Model[] {
-  return data.models;
+  return typed.models;
 }
-
 export function getModelById(id: ModelId): Model | undefined {
-  return data.models.find((m) => m.id === id);
+  return typed.models.find((m) => m.id === id);
 }
-
-export function getUseCaseCategories(): string[] {
-  return Array.from(new Set(data.useCases.map((u) => u.category)));
+export function getApps(): App[] {
+  return typed.apps;
+}
+export function getToolsByCategory(): Record<string, CatalogTool[]> {
+  const out: Record<string, CatalogTool[]> = {};
+  for (const t of typed.tools) (out[t.category] ??= []).push(t);
+  return out;
 }

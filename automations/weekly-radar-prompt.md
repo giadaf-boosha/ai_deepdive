@@ -8,37 +8,39 @@ Il repository `ai_deepdive` e' montato come source. Tutti i path sono relativi a
 
 ## Stato corrente
 
-Leggi `web/data/models.json`. Schema (TypeScript, definito in `web/lib/models.ts`):
+Leggi `web/data/models.json`. Schema (TypeScript, definito in `web/lib/models.ts`). NB: analisi GENERALE (creativita' e lavoro), NIENTE taglio finanziario. Distinzione netta tra MODELLI (motore: benchmark/API/contesto) e APP (prodotto: feature/prezzi consumer).
 
 ```ts
 interface ModelsData {
   meta: { lastUpdated: string; generatedBy: string; sourcesChecked: string[]; nextScheduledUpdate: string }
-  models: Model[]        // id: "claude" | "chatgpt" | "gemini" | "copilot"
+  models: Model[]        // modelli LLM, id: "claude" | "chatgpt" | "gemini"
+  apps: App[]            // app/prodotti consumer (ChatGPT, Claude.ai, Perplexity, Grok, Gemini app, Copilot, AI Studio, NotebookLM)
+  tools: CatalogTool[]   // catalogo per categoria
+  useMatrix: UseRow[]    // "cosa usare per cosa"
   benchmarks: Benchmark[]
-  useCases: UseCase[]
   changelog: ChangelogEntry[]
 }
 interface Model {
-  id; provider; name; latestModel; releaseDate; tagline;
-  strengths: string[]; weaknesses: string[]; bestFor: string[];
-  pricing: { free; pro; proPrice: number; team; enterprise; apiInputPer1M: number; apiOutputPer1M: number };
-  contextWindow; supportsImages; supportsVideo; supportsCode; supportsAgents: boolean;
-  privacyRating: "high" | "medium" | "low"; enterpriseCertifications: string[];
-  dataResidency; trainingPolicy; verdict; lmarenaRank: number; lmarenaFinancialRank: number
+  id; provider; name; releaseDate; tagline; contextWindow;
+  apiInputPer1M: number; apiOutputPer1M: number;
+  supportsImages; supportsVideo; supportsCode; supportsAgents: boolean;
+  privacyRating: "high"|"medium"|"low"; enterpriseCertifications: string[];
+  dataResidency; trainingPolicy; verdict;  // verdict GENERALE, non finance
+  strengths: string[]; weaknesses: string[]; bestFor: string[]; lmarenaRank: number
 }
+interface App { id; name; url; provider; poweredBy; tagline; pricingFree; pricingPaid; features: string[]; bestFor: string[] }
+interface CatalogTool { category: "Immagini"|"Video"|"Audio"|"Agent"|"Coding"; name; url; oneLiner }
+interface UseRow { category; task; recommended: string[]; why }
 interface Benchmark { id; name; description; unit; lowerIsBetter: boolean; scores: { modelId; value: number }[] }
-interface UseCase { category; task; ratings: { modelId; rating: number }[] }   // rating 1-5
 interface ChangelogEntry { date; summary; sources: string[] }
 ```
 
 ## Step
 
-1. **Ricerca web** per ogni modello (Claude, ChatGPT/GPT, Gemini, Copilot) con `WebSearch`/`WebFetch`:
-   - Nuovi modelli o versioni rilasciate negli ultimi 7 giorni.
-   - Variazioni di prezzo API o abbonamenti.
-   - Nuovi benchmark pubblicati ufficialmente (SWE-Bench Pro, OSWorld, GPQA, ecc.).
-   - Nuove funzionalita' rilevanti (agenti, multimodale).
-   - Variazioni ranking LMArena (lmarena.ai).
+1. **Ricerca web** con `WebSearch`/`WebFetch`:
+   - **Modelli** (Claude Opus, GPT, Gemini): nuove versioni negli ultimi 7 giorni, prezzi API, benchmark ufficiali (SWE-Bench Pro, OSWorld, GPQA), ranking LMArena (lmarena.ai).
+   - **App** (ChatGPT, Claude.ai, Perplexity, Grok, Gemini app, Copilot, AI Studio, NotebookLM): nuove feature, variazioni di prezzo consumer, quale modello le alimenta (poweredBy).
+   - **Tools** (catalogo Immagini/Video/Audio/Agent/Coding): nuovi tool rilevanti emersi o variazioni d'uso.
 
    Query suggerite:
    - `"Claude" new model site:anthropic.com last week`

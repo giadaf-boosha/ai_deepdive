@@ -1,22 +1,22 @@
 {
   "meta": {
-    "lastUpdated": "2026-05-31",
+    "lastUpdated": "2026-06-01",
     "generatedBy": "Claude Code Routine — ai-deepdive-weekly-radar",
     "sourcesChecked": [
       "https://www.anthropic.com/news/claude-opus-4-8",
       "https://claude.com/pricing",
-      "https://support.claude.com/en/articles/10015870-what-certifications-has-anthropic-obtained",
       "https://openai.com/index/introducing-gpt-5-5/",
       "https://developers.openai.com/api/docs/models/gpt-5.5",
-      "https://openai.com/chatgpt/pricing",
-      "https://trust.openai.com/",
+      "https://openai.com/chatgpt/pricing/",
       "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/",
       "https://ai.google.dev/gemini-api/docs/pricing",
-      "https://openrouter.ai/google/gemini-3.5-flash",
-      "https://simonwillison.net/2026/May/19/gemini-35-flash/",
-      "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--may-2026/4522010",
-      "https://www.microsoft.com/en-us/microsoft-365-copilot/pricing",
-      "https://www.microsoft.com/en-us/licensing/news/2026-m365-packaging-pricing-updates"
+      "https://gemini.google/subscriptions/",
+      "https://www.perplexity.ai/",
+      "https://grok.com/",
+      "https://copilot.microsoft.com/",
+      "https://aistudio.google.com/",
+      "https://notebooklm.google.com/",
+      "https://one.google.com/about/google-ai-plans/"
     ],
     "nextScheduledUpdate": "2026-06-07T08:00:00+02:00"
   },
@@ -24,10 +24,20 @@
     {
       "id": "claude",
       "provider": "Anthropic",
-      "name": "Claude",
-      "latestModel": "Claude Opus 4.8",
+      "name": "Claude Opus 4.8",
       "releaseDate": "2026-05-28",
       "tagline": "Il modello piu' forte su coding agentico e workflow complessi.",
+      "contextWindow": "1M token",
+      "apiInputPer1M": 5,
+      "apiOutputPer1M": 25,
+      "supportsImages": false,
+      "supportsVideo": false,
+      "supportsCode": true,
+      "supportsAgents": true,
+      "privacyRating": "high",
+      "enterpriseCertifications": ["SOC 2 Type I", "SOC 2 Type II", "ISO 27001:2022", "ISO 42001:2023", "HIPAA (BAA)"],
+      "dataResidency": "US; opzioni regionali via AWS Bedrock e Google Vertex AI",
+      "trainingPolicy": "Nessun training sui dati di API e prodotti commerciali per default",
       "strengths": [
         "SWE-Bench Pro 69.2% e OSWorld 83.4%: top assoluto su coding agentico e computer use",
         "Dynamic Workflow: orchestrazione nativa di agenti multi-step",
@@ -44,46 +54,31 @@
         "Automazione di workflow multi-step",
         "Reasoning lungo con 1M di contesto"
       ],
-      "pricing": {
-        "free": "Gratis ($0/mese)",
-        "pro": "Pro $20/mese (o $17 con piano annuale)",
-        "proPrice": 20,
-        "team": "Team $25/seat/mese (standard) o $125/seat (premium)",
-        "enterprise": "Custom (sales); dynamic workflows inclusi su Team/Enterprise/Max",
-        "apiInputPer1M": 5,
-        "apiOutputPer1M": 25
-      },
-      "contextWindow": "1M token",
-      "supportsImages": false,
-      "supportsVideo": false,
-      "supportsCode": true,
-      "supportsAgents": true,
-      "privacyRating": "high",
-      "enterpriseCertifications": [
-        "SOC 2 Type I",
-        "SOC 2 Type II",
-        "ISO 27001:2022",
-        "ISO 42001:2023",
-        "HIPAA (BAA)"
-      ],
-      "dataResidency": "US; opzioni regionali via AWS Bedrock e Google Vertex AI",
-      "trainingPolicy": "Nessun training sui dati di API e prodotti commerciali per default",
-      "verdict": "Prima scelta per chi mette coding agentico e automazione dei processi al centro. In financial services convince su affidabilita' e certificazioni (SOC 2, ISO 42001), meno sulla multimodalita'.",
-      "lmarenaRank": 1,
-      "lmarenaFinancialRank": 2
+      "verdict": "La scelta per coding agentico, automazione e ragionamento lungo. Affidabile e con contesto ampio; non genera ne' interpreta immagini o video.",
+      "lmarenaRank": 1
     },
     {
       "id": "chatgpt",
       "provider": "OpenAI",
-      "name": "ChatGPT",
-      "latestModel": "GPT-5.5",
+      "name": "GPT-5.5",
       "releaseDate": "2026-04-24",
-      "tagline": "Il generalista multimodale, #1 sui financial ops di LMArena.",
+      "tagline": "Il modello multimodale piu' versatile, con l'ecosistema piu' ampio.",
+      "contextWindow": "1M token (API) · 128K (chat)",
+      "apiInputPer1M": 5,
+      "apiOutputPer1M": 30,
+      "supportsImages": true,
+      "supportsVideo": true,
+      "supportsCode": true,
+      "supportsAgents": true,
+      "privacyRating": "high",
+      "enterpriseCertifications": ["SOC 2 Type 2", "ISO 27001:2022", "ISO 27017", "ISO 27018", "ISO 27701"],
+      "dataResidency": "US ed EU (data residency per Enterprise/API)",
+      "trainingPolicy": "Nessun training su dati business/API per default (Enterprise e API)",
       "strengths": [
-        "#1 su LMArena Financial Ops",
         "Multimodale: input immagini e video (Sora 2)",
         "Context window 1M token via API",
-        "Ecosistema piu' ampio: ChatGPT, Codex, Azure, AWS Bedrock"
+        "Ecosistema piu' ampio: ChatGPT, Codex, Azure, AWS Bedrock",
+        "Tuttofare equilibrato su testo, codice e ragionamento"
       ],
       "weaknesses": [
         "SWE-Bench 58.6%: sotto Claude sul coding agentico",
@@ -92,44 +87,29 @@
       ],
       "bestFor": [
         "Casi d'uso generalisti e multimodali",
-        "Analisi e operativita' finanziaria",
+        "Scrittura, ricerca e ragionamento",
         "Team gia' su ecosistema OpenAI/Azure"
       ],
-      "pricing": {
-        "free": "Gratis ($0/mese)",
-        "pro": "Plus $20/mese; Pro $200/mese",
-        "proPrice": 20,
-        "team": "Business $25/utente/mese",
-        "enterprise": "Custom (sales)",
-        "apiInputPer1M": 5,
-        "apiOutputPer1M": 30
-      },
-      "contextWindow": "1M token (API) · 128K (chat)",
+      "verdict": "Il piu' versatile e multimodale, con l'ecosistema piu' ampio. Ottimo tuttofare; l'output API resta il piu' costoso del gruppo.",
+      "lmarenaRank": 3
+    },
+    {
+      "id": "gemini",
+      "provider": "Google",
+      "name": "Gemini 3.5 Flash",
+      "releaseDate": "2026-05-19",
+      "tagline": "Il piu' rapido ed economico, multimodale end-to-end.",
+      "contextWindow": "1M token (input) · 64K (output)",
+      "apiInputPer1M": 1.5,
+      "apiOutputPer1M": 9,
       "supportsImages": true,
       "supportsVideo": true,
       "supportsCode": true,
       "supportsAgents": true,
       "privacyRating": "high",
-      "enterpriseCertifications": [
-        "SOC 2 Type 2",
-        "ISO 27001:2022",
-        "ISO 27017",
-        "ISO 27018",
-        "ISO 27701"
-      ],
-      "dataResidency": "US ed EU (data residency per Enterprise/API)",
-      "trainingPolicy": "Nessun training su dati business/API per default (Enterprise e API)",
-      "verdict": "Il piu' equilibrato: vince sui financial ops di LMArena ed e' il piu' multimodale. In financial services pesano il costo dell'output API e un coding agentico inferiore a Claude.",
-      "lmarenaRank": 3,
-      "lmarenaFinancialRank": 1
-    },
-    {
-      "id": "gemini",
-      "provider": "Google",
-      "name": "Gemini",
-      "latestModel": "Gemini 3.5 Flash",
-      "releaseDate": "2026-05-19",
-      "tagline": "Il piu' rapido e multimodale end-to-end, ottimo rapporto velocita'/costo su agentico e API.",
+      "enterpriseCertifications": ["SOC 1", "SOC 2", "SOC 3", "ISO 27001", "ISO 27017", "ISO 27018", "ISO 27701", "HIPAA", "FedRAMP High (Vertex AI)", "PCI DSS"],
+      "dataResidency": "Multi-regione via Google Cloud (incl. EU)",
+      "trainingPolicy": "Vertex AI / Enterprise: nessun uso dei dati cliente per training",
       "strengths": [
         "4x piu' veloce dei modelli frontier: latenza bassa su task agentico e coding",
         "API piu' economica: $1.50/$9 per 1M token",
@@ -139,101 +119,171 @@
       "weaknesses": [
         "SWE-Bench Pro 55.1%: ancora il piu' debole dei tre frontier sul coding agentico",
         "Nessun tier consumer 'Team' (uso aziendale solo via Vertex AI / Gemini Enterprise)",
-        "GPQA Diamond 92.2% con il modello Flash: scende sotto Claude (93.6%) e ChatGPT (93.2%)"
+        "GPQA Diamond 92.2% con Flash: sotto Claude (93.6%) e ChatGPT (93.2%)"
       ],
       "bestFor": [
         "Carichi multimodali e video",
         "Reasoning scientifico e analitico",
         "Volumi elevati a basso costo via API"
       ],
-      "pricing": {
-        "free": "Gratis ($0/mese): Gemini 3.5 Flash (accesso gratuito via Google AI Studio)",
-        "pro": "Google AI Pro $19.99/mese (Plus $7.99, Ultra $100–$200)",
-        "proPrice": 19.99,
-        "team": "n/d (uso aziendale via Gemini Enterprise / Vertex AI)",
-        "enterprise": "Vertex AI / Gemini Enterprise, pricing a consumo",
-        "apiInputPer1M": 1.5,
-        "apiOutputPer1M": 9
-      },
-      "contextWindow": "1M token (input) · 64K (output)",
-      "supportsImages": true,
-      "supportsVideo": true,
-      "supportsCode": true,
-      "supportsAgents": true,
-      "privacyRating": "high",
-      "enterpriseCertifications": [
-        "SOC 1",
-        "SOC 2",
-        "SOC 3",
-        "ISO 27001",
-        "ISO 27017",
-        "ISO 27018",
-        "ISO 27701",
-        "HIPAA",
-        "FedRAMP High (Vertex AI)",
-        "PCI DSS"
-      ],
-      "dataResidency": "Multi-regione via Google Cloud (incl. EU)",
-      "trainingPolicy": "Vertex AI / Enterprise: nessun uso dei dati cliente per training",
-      "verdict": "L'opzione velocita'/costo su agentico e multimodale. In financial services attrae per prezzo API ($1.50/$9 per 1M) e certificazioni Google Cloud (FedRAMP High, PCI DSS), ma il coding agentico resta il piu' debole dei tre frontier.",
-      "lmarenaRank": 2,
-      "lmarenaFinancialRank": 3
+      "verdict": "Il piu' rapido ed economico, multimodale end-to-end. Ideale per volumi e video; sul coding agentico resta dietro a Claude.",
+      "lmarenaRank": 2
+    }
+  ],
+  "apps": [
+    {
+      "id": "chatgpt",
+      "name": "ChatGPT",
+      "url": "https://chatgpt.com/",
+      "provider": "OpenAI",
+      "poweredBy": "GPT-5.5",
+      "tagline": "L'assistente AI conversazionale piu' diffuso, con ricerca web, ragionamento e strumenti agentici.",
+      "pricingFree": "Gratis (modelli base con limiti d'uso)",
+      "pricingPaid": "ChatGPT Plus: 20 USD/mese",
+      "features": ["GPTs (assistenti personalizzati)", "Web Search", "Canvas", "Voice Mode", "Reasoning models", "Projects", "Deep Research", "Operator (agente)", "Image Generation"],
+      "bestFor": ["Assistente generalista quotidiano", "Ricerca e sintesi online", "Scrittura e brainstorming", "Ragionamento su problemi complessi", "Generazione di immagini"]
     },
     {
-      "id": "copilot",
+      "id": "claude-ai",
+      "name": "Claude.ai",
+      "url": "https://claude.ai/",
+      "provider": "Anthropic",
+      "poweredBy": "Claude Opus 4.8",
+      "tagline": "Assistente orientato a scrittura, analisi e ragionamento approfondito con artifacts interattivi.",
+      "pricingFree": "Gratis (accesso con limiti d'uso)",
+      "pricingPaid": "Claude Pro: 20 USD/mese (17 USD/mese annuale)",
+      "features": ["Projects", "Artifacts", "Custom Styles", "Extended thinking", "Web Search (US / computer use con MCP)"],
+      "bestFor": ["Scrittura di qualita' e tono personalizzato", "Analisi di documenti lunghi", "Ragionamento esteso", "Artifacts (codice, app, contenuti)", "Progetti con contesto persistente"]
+    },
+    {
+      "id": "perplexity",
+      "name": "Perplexity",
+      "url": "https://www.perplexity.ai/",
+      "provider": "Perplexity AI",
+      "poweredBy": "Modelli multipli (GPT, Claude, Gemini, Sonar)",
+      "tagline": "Motore di risposta con ricerca web citata e ragionamento, per la ricerca approfondita.",
+      "pricingFree": "Gratis (ricerche base illimitate, Pro Search limitato)",
+      "pricingPaid": "Perplexity Pro: 20 USD/mese (200 USD/anno)",
+      "features": ["Web Search", "Reasoning", "Spaces", "Deep Research", "Image Generation"],
+      "bestFor": ["Ricerca con fonti citate", "Deep Research multi-fonte", "Organizzare ricerche in Spaces", "Risposte aggiornate dal web", "Sintesi rapida"]
+    },
+    {
+      "id": "grok",
+      "name": "Grok",
+      "url": "https://grok.com/",
+      "provider": "xAI",
+      "poweredBy": "Grok (serie Grok 4)",
+      "tagline": "L'assistente di xAI con ricerca su web e su X in tempo reale e ragionamento.",
+      "pricingFree": "Gratis (accesso con limiti d'uso)",
+      "pricingPaid": "SuperGrok: 30 USD/mese (300 USD/anno)",
+      "features": ["Web Search", "X Search", "DeepSearch", "Reasoning", "Image Generation"],
+      "bestFor": ["Ricerca su X in tempo reale", "Attualita' aggiornata", "Reasoning e DeepSearch", "Generazione di immagini", "Conversazione diretta"]
+    },
+    {
+      "id": "gemini-app",
+      "name": "Gemini app",
+      "url": "https://gemini.google.com/app",
+      "provider": "Google",
+      "poweredBy": "Gemini 3.x",
+      "tagline": "L'assistente di Google con Deep Research, Canvas, Gems e voce Live.",
+      "pricingFree": "Gratis (modelli con limiti d'uso)",
+      "pricingPaid": "Google AI Pro: 19,99 USD/mese (1M token, 2 TB One)",
+      "features": ["Deep Research", "Canvas", "Gems (assistenti personalizzati)", "Gemini Live (voce)", "Image Generation"],
+      "bestFor": ["Integrazione ecosistema Google", "Deep Research", "Conversazione vocale (Live)", "Assistenti personalizzati (Gems)", "Documenti e codice con Canvas"]
+    },
+    {
+      "id": "microsoft-copilot",
+      "name": "Microsoft Copilot",
+      "url": "https://copilot.microsoft.com/",
       "provider": "Microsoft",
-      "name": "Copilot",
-      "latestModel": "Microsoft 365 Copilot (GPT-5.5 / Claude Opus 4.8)",
-      "releaseDate": "n/d",
-      "tagline": "L'AI integrata in Microsoft 365, nativa su Excel e Office.",
-      "strengths": [
-        "Integrazione nativa M365 (Excel, Word, Outlook, Teams)",
-        "Excel financial modeling tra i top-3",
-        "Certificazioni enterprise piu' ampie (FedRAMP, HIPAA, EU Data Boundary)",
-        "Agent 365 GA (maggio 2026); Microsoft 365 E7 (Frontier Suite = M365 E5 + Copilot + Agent 365) disponibile",
-        "Backend multi-model: Claude Opus 4.8 e GPT-5.5 Instant ora disponibili in M365 Copilot"
-      ],
-      "weaknesses": [
-        "Context window non pubblicata ufficialmente",
-        "Nessun accesso API a token: venduto per seat",
-        "Dipende dal backend OpenAI/Anthropic (modello proprietario Project Polaris in arrivo)"
-      ],
-      "bestFor": [
-        "Aziende gia' su Microsoft 365",
-        "Financial modeling in Excel",
-        "Ambienti regolamentati (settore pubblico, sanita')"
-      ],
-      "pricing": {
-        "free": "M365 Copilot Chat gratuito (con licenza M365 idonea)",
-        "pro": "Copilot Pro $19.99/mese",
-        "proPrice": 19.99,
-        "team": "M365 Copilot Business $30/utente/mese (promo $18 fino al 30/06/2026)",
-        "enterprise": "M365 Copilot add-on $30/utente/mese (annuale)",
-        "apiInputPer1M": 0,
-        "apiOutputPer1M": 0
-      },
-      "contextWindow": "n/d (non pubblicata)",
-      "supportsImages": true,
-      "supportsVideo": false,
-      "supportsCode": true,
-      "supportsAgents": true,
-      "privacyRating": "high",
-      "enterpriseCertifications": [
-        "GDPR",
-        "ISO 27001",
-        "HIPAA",
-        "ISO 42001",
-        "EU Data Boundary",
-        "ISO 27018",
-        "SOC 2 Type 2",
-        "FedRAMP"
-      ],
-      "dataResidency": "EU Data Boundary; multi-regione Microsoft 365",
-      "trainingPolicy": "Nessun uso dei dati M365 per addestrare i foundation model",
-      "verdict": "La scelta naturale per chi vive in Microsoft 365: imbattibile su Excel/Office e compliance (FedRAMP, EU Data Boundary). Per financial services e' il ponte enterprise, non il modello piu' forte sui benchmark grezzi.",
-      "lmarenaRank": 0,
-      "lmarenaFinancialRank": 0
+      "poweredBy": "GPT-5.x / Claude Opus 4.8",
+      "tagline": "L'assistente di Microsoft integrato in Windows e nelle app Microsoft 365.",
+      "pricingFree": "Gratis (Copilot consumer con limiti d'uso)",
+      "pricingPaid": "Copilot Pro: 20 USD/mese · M365 Copilot: 30 USD/seat/mese",
+      "features": ["Integrazione Microsoft 365 (Word, Excel, PowerPoint, Outlook)", "Agenti (Agent 365)", "Web Search", "Image Generation", "Voice"],
+      "bestFor": ["Produttivita' in Microsoft 365", "Ecosistema Windows e Office", "Automazione con agenti", "Assistenza a scrittura e documenti", "Aziende gia' su M365"]
+    },
+    {
+      "id": "google-ai-studio",
+      "name": "Google AI Studio",
+      "url": "https://aistudio.google.com/",
+      "provider": "Google",
+      "poweredBy": "Gemini (2.5 Pro/Flash, 3 Flash)",
+      "tagline": "Il playground per sviluppatori per prototipare prompt e app con i modelli Gemini.",
+      "pricingFree": "Gratis (interfaccia con rate limit)",
+      "pricingPaid": "n/d (interfaccia gratuita; costi solo con Gemini API a consumo)",
+      "features": ["Prototipazione di prompt", "Accesso a piu' modelli Gemini", "Test e tuning dei parametri", "Generazione di codice per API", "Costruzione di agenti"],
+      "bestFor": ["Sviluppatori che sperimentano con Gemini", "Prototipazione rapida", "Confronto tra modelli Gemini", "Passaggio prototipo -> API", "Esplorazione gratuita"]
+    },
+    {
+      "id": "notebooklm",
+      "name": "NotebookLM",
+      "url": "https://notebooklm.google.com/",
+      "provider": "Google",
+      "poweredBy": "Gemini",
+      "tagline": "Assistente di ricerca sulle tue fonti, con Audio Overview in stile podcast.",
+      "pricingFree": "Gratis (100 notebook, 50 fonti/notebook, Audio Overview limitati)",
+      "pricingPaid": "NotebookLM Plus (Google AI Plus): 7,99 USD/mese",
+      "features": ["Ricerca sulle tue fonti (RAG)", "Audio Overview (podcast a due voci)", "Interactive mode", "Risposte con citazioni", "Piu' notebook e documenti"],
+      "bestFor": ["Studio e sintesi di documenti propri", "Risposte ancorate alle fonti", "Riassunti audio in stile podcast", "Studenti e ricercatori", "Meno allucinazioni su materiale specifico"]
     }
+  ],
+  "tools": [
+    { "category": "Immagini", "name": "OpenAI 4o Image Generation", "url": "https://openai.com/index/introducing-4o-image-generation/", "oneLiner": "Generazione e modifica di immagini nativa in ChatGPT, con resa accurata di testo e prompt complessi." },
+    { "category": "Immagini", "name": "Midjourney", "url": "https://www.midjourney.com/", "oneLiner": "Generatore di immagini artistiche da testo, noto per qualita' estetica e stile fotografico/illustrativo." },
+    { "category": "Immagini", "name": "Gemini Image", "url": "https://gemini.google/overview/image-generation/", "oneLiner": "Generazione e modifica di immagini di Google Gemini tramite prompt conversazionali." },
+    { "category": "Immagini", "name": "Ideogram", "url": "https://ideogram.ai/", "oneLiner": "Generatore di immagini specializzato nel rendere correttamente testo, loghi e tipografia." },
+    { "category": "Immagini", "name": "Adobe Firefly", "url": "https://www.adobe.com/it/products/firefly.html", "oneLiner": "Suite generativa Adobe per immagini e grafica, sicura per uso commerciale." },
+    { "category": "Immagini", "name": "Graphy", "url": "https://graphy.app/", "oneLiner": "Trasforma dati grezzi in grafici e visualizzazioni curate tramite AI, senza competenze tecniche." },
+    { "category": "Immagini", "name": "Recraft", "url": "https://www.recraft.ai/", "oneLiner": "Generatore AI per design, illustrazioni vettoriali, icone e mockup con stile di brand coerente." },
+    { "category": "Immagini", "name": "Canva", "url": "https://www.canva.com/", "oneLiner": "Piattaforma di design grafico online con strumenti AI per grafiche, presentazioni e contenuti." },
+    { "category": "Immagini", "name": "CLO3D", "url": "https://www.clo3d.com/", "oneLiner": "Design di abbigliamento in 3D con simulazione realistica dei tessuti e prototipazione virtuale." },
+    { "category": "Immagini", "name": "EverArt", "url": "https://www.everart.ai/", "oneLiner": "Addestra modelli di immagini sul tuo stile o brand per generare visual coerenti su misura." },
+    { "category": "Immagini", "name": "MagicPath", "url": "https://www.magicpath.ai/", "oneLiner": "Workspace tra persone e agenti AI per progettare e iterare interfacce e design insieme." },
+    { "category": "Immagini", "name": "FLUX Kontext", "url": "https://bfl.ai/", "oneLiner": "Modello di Black Forest Labs per generare ed editare immagini via testo, con coerenza di personaggi." },
+    { "category": "Immagini", "name": "Google Pomelli", "url": "https://labs.google.com/pomelli", "oneLiner": "Analizza il sito di un'azienda e genera campagne marketing on-brand (Google Labs)." },
+    { "category": "Immagini", "name": "Google Mixboard", "url": "https://labs.google.com/mixboard", "oneLiner": "Mood board AI su lavagna infinita per generare e combinare immagini e idee (Google Labs)." },
+    { "category": "Video", "name": "Sora", "url": "https://sora.com/", "oneLiner": "Modello di OpenAI per generare video realistici da prompt testuali o immagini." },
+    { "category": "Video", "name": "Midjourney Video", "url": "https://www.midjourney.com/", "oneLiner": "Anima le immagini generate da Midjourney trasformandole in brevi clip video." },
+    { "category": "Video", "name": "Google Flow", "url": "https://labs.google/flow/about", "oneLiner": "Crea video cinematografici con i modelli Veo, gestendo scene e inquadrature (Google Labs)." },
+    { "category": "Video", "name": "Runway", "url": "https://runwayml.com/", "oneLiner": "Suite AI per generazione ed editing video professionale da testo, immagini o clip." },
+    { "category": "Video", "name": "HeyGen", "url": "https://www.heygen.com/", "oneLiner": "Crea video con avatar AI parlanti e doppiaggio multilingua a partire da uno script." },
+    { "category": "Video", "name": "Pika", "url": "https://pika.art/", "oneLiner": "Generatore di video AI da testo e immagini con effetti creativi e animazioni stilizzate." },
+    { "category": "Video", "name": "Opus Clip", "url": "https://www.opus.pro/", "oneLiner": "Trasforma video lunghi in clip brevi per i social, con sottotitoli e montaggio automatico." },
+    { "category": "Video", "name": "Guidde", "url": "https://app.guidde.com/", "oneLiner": "Crea video-tutorial e documentazione step-by-step da un workflow, con voiceover AI." },
+    { "category": "Audio", "name": "ElevenLabs", "url": "https://elevenlabs.io/", "oneLiner": "Sintesi vocale e voice cloning realistici, text-to-speech e doppiaggio multilingua di alta qualita'." },
+    { "category": "Audio", "name": "Wondercraft", "url": "https://www.wondercraft.ai/", "oneLiner": "Studio AI per creare podcast e audio aziendali combinando voce, musica ed effetti." },
+    { "category": "Audio", "name": "Adobe Podcast", "url": "https://podcast.adobe.com/", "oneLiner": "Strumenti AI Adobe per registrare e migliorare l'audio vocale, rimuovendo il rumore." },
+    { "category": "Audio", "name": "Loudly", "url": "https://www.loudly.com/", "oneLiner": "Genera e personalizza musica royalty-free per video e contenuti." },
+    { "category": "Audio", "name": "Suno", "url": "https://suno.com/", "oneLiner": "Genera canzoni complete con musica e voce a partire da un prompt testuale." },
+    { "category": "Agent", "name": "Zapier Agents", "url": "https://agents.zapier.com/", "oneLiner": "Agenti AI che eseguono compiti e automazioni connessi alle migliaia di app di Zapier." },
+    { "category": "Agent", "name": "n8n", "url": "https://n8n.io/workflows", "oneLiner": "Piattaforma di automazione workflow open-source per orchestrare integrazioni e agenti AI." },
+    { "category": "Coding", "name": "Cursor", "url": "https://cursor.com/", "oneLiner": "Editor di codice AI-first che assiste scrittura, refactoring e comprensione del codice." },
+    { "category": "Coding", "name": "Replit", "url": "https://replit.com/", "oneLiner": "Ambiente di sviluppo cloud con AI per scrivere, eseguire e deployare app dal browser." },
+    { "category": "Coding", "name": "Lovable", "url": "https://lovable.dev/", "oneLiner": "Genera applicazioni web full-stack a partire da prompt in linguaggio naturale." },
+    { "category": "Coding", "name": "Warp", "url": "http://warp.dev/", "oneLiner": "Terminale moderno con AI integrata per eseguire comandi e assistere il workflow da CLI." },
+    { "category": "Coding", "name": "Factory", "url": "https://www.factory.ai/", "oneLiner": "Piattaforma agent-native (Droid) per costruire e gestire software con agenti AI." },
+    { "category": "Coding", "name": "Claude Code", "url": "https://claude.com/product/claude-code", "oneLiner": "Agente di coding di Anthropic che lavora nel terminale leggendo, scrivendo ed eseguendo codice." },
+    { "category": "Coding", "name": "OpenAI Codex", "url": "https://openai.com/codex/", "oneLiner": "Agente di coding di OpenAI per scrivere, modificare ed eseguire task di sviluppo." }
+  ],
+  "useMatrix": [
+    { "category": "Testo", "task": "Scrivere un testo lungo, strutturato e ragionato", "recommended": ["Claude", "ChatGPT"], "why": "Eccellono nella stesura di testi estesi e coerenti con ragionamento articolato." },
+    { "category": "Testo", "task": "Riassumere e interrogare molti documenti propri", "recommended": ["NotebookLM"], "why": "Risponde citando solo i tuoi documenti, riducendo le allucinazioni." },
+    { "category": "Reasoning", "task": "Risolvere problemi complessi passo-passo", "recommended": ["Claude", "ChatGPT", "Gemini"], "why": "I modelli di reasoning scompongono il problema e mostrano i passaggi logici." },
+    { "category": "Ricerca", "task": "Cercare informazioni aggiornate con fonti citate", "recommended": ["Perplexity"], "why": "Risponde in tempo reale dal web citando sempre le fonti consultate." },
+    { "category": "Ricerca", "task": "Sapere cosa succede ora su un tema social/attualita'", "recommended": ["Grok"], "why": "Accesso diretto al flusso di X per il polso del momento." },
+    { "category": "Immagini", "task": "Generare immagini foto-realistiche", "recommended": ["Midjourney", "Adobe Firefly"], "why": "Massima qualita' fotografica e resa realistica di luce e dettagli." },
+    { "category": "Immagini", "task": "Creare un logo o asset grafico con testo leggibile", "recommended": ["Ideogram", "Adobe Firefly"], "why": "Gestiscono bene tipografia e testo nelle immagini, dove altri sbagliano." },
+    { "category": "Immagini", "task": "Impaginare grafiche pronte (social, slide, volantini)", "recommended": ["Canva"], "why": "Template e strumenti AI per output finiti senza skill di design." },
+    { "category": "Video", "task": "Generare un video da testo o immagine", "recommended": ["Sora", "Runway"], "why": "Generazione text-to-video con qualita' e controllo della scena ai vertici." },
+    { "category": "Video", "task": "Creare un avatar parlante per formazione/messaggi", "recommended": ["HeyGen"], "why": "Avatar realistici con lip-sync multilingua a partire dal solo script." },
+    { "category": "Video", "task": "Estrarre clip brevi da un video lungo", "recommended": ["Opus Clip", "Runway"], "why": "Tagliano e riformattano automaticamente i momenti salienti per i social." },
+    { "category": "Audio", "task": "Generare una voce sintetica naturale", "recommended": ["ElevenLabs"], "why": "Voci espressive e clonazione vocale tra le piu' naturali sul mercato." },
+    { "category": "Audio", "task": "Generare musica originale", "recommended": ["Suno"], "why": "Crea canzoni complete con voce e strumenti da una semplice descrizione." },
+    { "category": "Audio", "task": "Trasformare documenti in un podcast da ascoltare", "recommended": ["NotebookLM"], "why": "Genera un audio overview conversazionale a due voci dai tuoi materiali." },
+    { "category": "Agent", "task": "Automatizzare un flusso tra app senza codice", "recommended": ["Zapier", "n8n"], "why": "Collegano centinaia di app con trigger e azioni; n8n e' piu' flessibile e self-hosted." },
+    { "category": "Coding", "task": "Prototipare un'app full-stack da una descrizione", "recommended": ["Lovable", "Cursor"], "why": "Lovable genera l'app dal browser; Cursor da' pieno controllo nell'editor." },
+    { "category": "Coding", "task": "Lavorare su un codebase reale da terminale", "recommended": ["Claude Code", "OpenAI Codex"], "why": "Agenti che leggono, modificano ed eseguono il codice nel tuo progetto." }
   ],
   "benchmarks": [
     {
@@ -282,171 +332,23 @@
         { "modelId": "gemini", "value": 2 },
         { "modelId": "chatgpt", "value": 3 }
       ]
-    },
-    {
-      "id": "lmarena-financial",
-      "name": "LMArena Financial Ops",
-      "description": "Classifica su operazioni finanziarie (posizione, piu' basso = meglio).",
-      "unit": "",
-      "lowerIsBetter": true,
-      "scores": [
-        { "modelId": "chatgpt", "value": 1 },
-        { "modelId": "claude", "value": 2 },
-        { "modelId": "gemini", "value": 3 }
-      ]
-    }
-  ],
-  "useCases": [
-    {
-      "category": "Coding",
-      "task": "Refactoring agentico su larga scala",
-      "ratings": [
-        { "modelId": "claude", "rating": 5 },
-        { "modelId": "chatgpt", "rating": 4 },
-        { "modelId": "gemini", "rating": 3 },
-        { "modelId": "copilot", "rating": 4 }
-      ]
-    },
-    {
-      "category": "Coding",
-      "task": "Completamento di codice in-IDE",
-      "ratings": [
-        { "modelId": "claude", "rating": 4 },
-        { "modelId": "chatgpt", "rating": 4 },
-        { "modelId": "gemini", "rating": 4 },
-        { "modelId": "copilot", "rating": 5 }
-      ]
-    },
-    {
-      "category": "Testo",
-      "task": "Scrittura long-form e sintesi",
-      "ratings": [
-        { "modelId": "claude", "rating": 5 },
-        { "modelId": "chatgpt", "rating": 5 },
-        { "modelId": "gemini", "rating": 4 },
-        { "modelId": "copilot", "rating": 4 }
-      ]
-    },
-    {
-      "category": "Testo",
-      "task": "Traduzione multilingue",
-      "ratings": [
-        { "modelId": "claude", "rating": 4 },
-        { "modelId": "chatgpt", "rating": 5 },
-        { "modelId": "gemini", "rating": 5 },
-        { "modelId": "copilot", "rating": 4 }
-      ]
-    },
-    {
-      "category": "Multimodale",
-      "task": "Analisi di immagini e documenti",
-      "ratings": [
-        { "modelId": "claude", "rating": 2 },
-        { "modelId": "chatgpt", "rating": 5 },
-        { "modelId": "gemini", "rating": 5 },
-        { "modelId": "copilot", "rating": 4 }
-      ]
-    },
-    {
-      "category": "Multimodale",
-      "task": "Generazione e analisi video",
-      "ratings": [
-        { "modelId": "claude", "rating": 1 },
-        { "modelId": "chatgpt", "rating": 4 },
-        { "modelId": "gemini", "rating": 5 },
-        { "modelId": "copilot", "rating": 2 }
-      ]
-    },
-    {
-      "category": "Agenti",
-      "task": "Orchestrazione di workflow multi-step",
-      "ratings": [
-        { "modelId": "claude", "rating": 5 },
-        { "modelId": "chatgpt", "rating": 4 },
-        { "modelId": "gemini", "rating": 3 },
-        { "modelId": "copilot", "rating": 4 }
-      ]
-    },
-    {
-      "category": "Agenti",
-      "task": "Computer use e automazione desktop",
-      "ratings": [
-        { "modelId": "claude", "rating": 5 },
-        { "modelId": "chatgpt", "rating": 4 },
-        { "modelId": "gemini", "rating": 3 },
-        { "modelId": "copilot", "rating": 3 }
-      ]
-    },
-    {
-      "category": "Finance",
-      "task": "Financial modeling in Excel",
-      "ratings": [
-        { "modelId": "claude", "rating": 3 },
-        { "modelId": "chatgpt", "rating": 4 },
-        { "modelId": "gemini", "rating": 3 },
-        { "modelId": "copilot", "rating": 5 }
-      ]
-    },
-    {
-      "category": "Finance",
-      "task": "Analisi e financial ops",
-      "ratings": [
-        { "modelId": "claude", "rating": 4 },
-        { "modelId": "chatgpt", "rating": 5 },
-        { "modelId": "gemini", "rating": 3 },
-        { "modelId": "copilot", "rating": 4 }
-      ]
-    },
-    {
-      "category": "Office",
-      "task": "Integrazione con la suite di produttivita'",
-      "ratings": [
-        { "modelId": "claude", "rating": 2 },
-        { "modelId": "chatgpt", "rating": 3 },
-        { "modelId": "gemini", "rating": 4 },
-        { "modelId": "copilot", "rating": 5 }
-      ]
-    },
-    {
-      "category": "Office",
-      "task": "Email e calendario assistiti",
-      "ratings": [
-        { "modelId": "claude", "rating": 2 },
-        { "modelId": "chatgpt", "rating": 3 },
-        { "modelId": "gemini", "rating": 4 },
-        { "modelId": "copilot", "rating": 5 }
-      ]
     }
   ],
   "changelog": [
     {
-      "date": "2026-05-31",
-      "summary": "Seed iniziale del radar (maggio 2026): Claude Opus 4.8, GPT-5.5, Gemini 3.1 Pro, Microsoft 365 Copilot. Dati verificati da fonti ufficiali dei vendor.",
-      "sources": [
-        "https://www.anthropic.com/news/claude-opus-4-8",
-        "https://openai.com/index/introducing-gpt-5-5/",
-        "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-pro/",
-        "https://www.microsoft.com/en-us/microsoft-365-copilot/pricing"
-      ]
+      "date": "2026-06-01",
+      "summary": "Radar ristrutturato in 'Modelli e tools AI a confronto': distinzione tra modelli (livello tecnico) e app (livello prodotto/feature), catalogo tools per categoria (Immagini/Video/Audio/Agent/Coding) e matrice 'cosa usare per cosa'. Rimosso il taglio verticale financial services.",
+      "sources": ["https://chatgpt.com/", "https://claude.ai/", "https://www.perplexity.ai/", "https://grok.com/"]
     },
     {
       "date": "2026-05-31",
-      "summary": "Correzione: Gemini 3.1 Pro risulta rilasciato il 2026-02-19, non al Google I/O di maggio (dove e' uscito Gemini 3.5 Flash). Release date e context window (1M in / 64K out) allineati alle fonti ufficiali.",
-      "sources": [
-        "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-pro/",
-        "https://deepmind.google/models/model-cards/gemini-3-1-pro/"
-      ]
+      "summary": "Gemini aggiornato a Gemini 3.5 Flash (rilasciato al Google I/O del 19/05): API $1.50/$9, SWE-Bench Pro 55.1%, GPQA 92.2%. Correzione release date.",
+      "sources": ["https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/"]
     },
     {
       "date": "2026-05-31",
-      "summary": "Radar update settimanale. Gemini: latestModel aggiornato a Gemini 3.5 Flash (rilasciato Google I/O 19 maggio 2026); SWE-Bench Pro 54.2 -> 55.1%; GPQA Diamond 94.3 -> 92.2% (Flash scende sotto Claude e ChatGPT); API pricing $2/$12 -> $1.50/$9 per 1M token. Copilot: Agent 365 raggiunge GA (1 maggio 2026); M365 E7 (Frontier Suite) annunciato GA; Claude Opus 4.8 e GPT-5.5 Instant ora disponibili come backend M365 Copilot; latestModel aggiornato. Claude Opus 4.8 e GPT-5.5: nessuna variazione di modello o prezzo nell'ultima settimana. LMArena: Opus 4.8 troppo recente (3 giorni) per dati stabili, ranking invariati.",
-      "sources": [
-        "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/",
-        "https://openrouter.ai/google/gemini-3.5-flash",
-        "https://simonwillison.net/2026/May/19/gemini-35-flash/",
-        "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--may-2026/4522010",
-        "https://www.microsoft.com/en-us/licensing/news/2026-m365-packaging-pricing-updates"
-      ]
+      "summary": "Seed iniziale del radar (maggio 2026), dati verificati da fonti ufficiali dei vendor.",
+      "sources": ["https://www.anthropic.com/news/claude-opus-4-8", "https://openai.com/index/introducing-gpt-5-5/"]
     }
   ]
 }
