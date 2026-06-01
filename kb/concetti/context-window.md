@@ -3,7 +3,7 @@ name: Context window
 aliases: [context window, finestra di contesto, finestra contestuale, context length]
 categoria: architettura
 created: 2026-04-28
-last_updated: 2026-04-28
+last_updated: 2026-06-01
 mentions_count: 0
 ---
 
@@ -13,9 +13,9 @@ mentions_count: 0
 
 Il context window (o finestra di contesto) e' la quantita' massima di token che un [LLM](./llm.md) puo' considerare in un singolo passo di inferenza, sommando input (system prompt, messaggi precedenti, documenti, esempi few-shot) e output generato. Si esprime in token e definisce un confine fisico: il modello non puo' ragionare su informazioni oltre la finestra, perche' non sono nelle sue rappresentazioni di attention. La finestra include sia testo "passato" della conversazione sia testo "futuro" che il modello sta producendo.
 
-I primi transformer (GPT-2, BERT) avevano finestre di 512-1024 token. GPT-3 nel 2020 saliva a 2048. La traiettoria 2022-2026 e' di crescita esponenziale: GPT-4 8k/32k (2023), Claude 2 100k (2023), GPT-4 Turbo 128k (2023), Claude 2.1 200k (2023), Gemini 1.5 1M con sperimentazioni a 10M (2024), Claude 3.5/4 con 200k-1M (2024-2026), Gemini 2 standard 2M (2025). L'estensione del context e' diventata feature competitiva centrale.
+I primi transformer (GPT-2, BERT) avevano finestre di 512-1024 token. GPT-3 nel 2020 saliva a 2048. La traiettoria 2022-2026 e' di crescita esponenziale: GPT-4 8k/32k (2023), Claude 2 100k (2023), GPT-4 Turbo 128k (2023), Claude 2.1 200k (2023), Gemini 1.5 1M con sperimentazioni a 10M (2024), Claude 3.5/4 con 200k-1M (2024-2026), Gemini 2 standard 2M (2025). Nella primavera 2026 la finestra "di default" si e' stabilizzata su due fasce ricorrenti: 128k-256k per i modelli mid-tier e 1M token per i flagship agentici (Gemini 3.5 Flash, Qwen3.7-Max). L'estensione del context resta una feature competitiva centrale, ma il fronte si e' spostato: non basta dichiarare un milione di token, occorre dimostrare che il modello li usa davvero in task agentici lunghi.
 
-L'importanza pratica e' duplice. Determina quanto puoi inserire in una singola chiamata: documenti interi, codebase, transcript di riunioni, base di conoscenza piccole. E determina la complessita' computazionale: l'attention e' O(n^2) sulla lunghezza, quindi raddoppiare il contesto piu' che raddoppia costi e latenza, a meno di ottimizzazioni. La gestione del context window e' tema centrale per progettare prompt, [agent](./agent.md), pipeline [RAG](./rag.md), e [fine-tuning](./fine-tuning.md).
+L'importanza pratica e' duplice. Determina quanto puoi inserire in una singola chiamata: documenti interi, codebase, transcript di riunioni, base di conoscenza piccole. E determina la complessita' computazionale: l'attention e' O(n^2) sulla lunghezza, quindi raddoppiare il contesto piu' che raddoppia costi e latenza, a meno di ottimizzazioni. La gestione del context window e' tema centrale per progettare prompt, [agent](./agent.md), pipeline [RAG](./rag.md), e [fine-tuning](./fine-tuning.md). Con l'arrivo degli agenti che eseguono migliaia di tool call su sessioni lunghe (Qwen3.7-Max ha sostenuto run autonome fino a 35 ore con 1.000+ tool call), il context window e' passato da limite di "quanto testo posso incollare" a vincolo architetturale di "come distribuisco lo stato di un processo lungo tra finestra, storage esterno e sottoprocessi".
 
 ## Come funziona
 
@@ -23,11 +23,13 @@ Il limite del context viene definito a training time: si stabilisce una `max_pos
 
 Per estendere il context oltre il training nominale si usano diverse tecniche.
 
-Position encoding migliorato. RoPE (Rotary Position Embedding, Su et al. 2021) codifica la posizione come rotazione complessa applicata a query e key, permettendo extrapolation oltre la lunghezza training tramite interpolation o YaRN scaling. ALiBi (Press et al. 2022) aggiunge bias lineari basati su distanza, naturalmente estensibili. NoPE elimina del tutto le encoding posizionali in alcune varianti.
+Position encoding migliorato. RoPE (Rotary Position Embedding, Su et al. 2021) codifica la posizione come rotazione complessa applicata a query e key, permettendo extrapolation oltre la lunghezza training tramite interpolation o YaRN scaling. ALiBi (Press et al. 2022) aggiunge bias lineari basati su distanza, naturalmente estensibili. NoPE elimina del tutto le encoding posizionali in alcune varianti. La finestra da 512k token di IBM Granite 4.1 (maggio 2026) non nasce da un trucco a inference time ma da un training in cinque fasi su circa 15 trilioni di token: e' il segnale che i lab puntano sempre piu' al long context "nativo" invece che a estensioni post-hoc.
 
-Attention efficiente. FlashAttention (Dao et al. 2022) ricalcola l'attention in modo I/O-aware riducendo l'overhead memoria, abilitando training su context lunghi. Sliding window attention (Mistral): ogni token attende solo gli ultimi W token, rendendo l'attention O(nW). Sparse attention (Longformer, BigBird): pattern fissi di sparsita'. Linear attention / state space model (Mamba, RWKV): complessita' lineare in n, alternative al transformer.
+Attention efficiente. FlashAttention (Dao et al. 2022) ricalcola l'attention in modo I/O-aware riducendo l'overhead memoria, abilitando training su context lunghi. Sliding window attention (Mistral): ogni token attende solo gli ultimi W token, rendendo l'attention O(nW). Sparse attention (Longformer, BigBird): pattern fissi di sparsita'. Linear attention / state space model (Mamba, RWKV): complessita' lineare in n, alternative al transformer. Una direzione emergente nel 2026 e' il compute adattivo per token: il paper "Compute Where it Counts" (Self Optimizing Language Models, maggio 2026) aggiunge a un modello base congelato una policy network leggera che, a ogni step di decode, regola dinamicamente sparsita' dell'attention, pruning delle attivazioni e bit-width della quantizzazione, comprimendo i token "facili" e riservando il budget pieno a quelli difficili. E' complementare alle tecniche statiche e mira proprio a rendere economicamente sostenibili le generazioni su finestre lunghe.
 
-KV cache. A inference time, durante la generazione, si memorizzano key e value di tutti i token gia' processati per non ricalcolarli. La KV cache e' la fonte principale del consumo memoria a runtime. Per Llama 3 70B con context 8k, la KV cache occupa diversi GB. Su context 1M la KV cache puo' superare la memoria di una H100. Tecniche di compressione (PagedAttention come in vLLM, KV cache quantization, MQA/GQA che condividono key e value tra heads) riducono il problema.
+KV cache. A inference time, durante la generazione, si memorizzano key e value di tutti i token gia' processati per non ricalcolarli. La KV cache e' la fonte principale del consumo memoria a runtime. Per Llama 3 70B con context 8k, la KV cache occupa diversi GB. Su context 1M la KV cache puo' superare la memoria di una H100. Tecniche di compressione (PagedAttention come in vLLM, KV cache quantization, MQA/GQA che condividono key e value tra heads) riducono il problema. La pressione sulla KV cache spiega perche' lo strato di ottimizzazione dell'inferenza valga sempre di piu': l'acquisizione di Eigen AI da parte di Nebius per circa 643 milioni di dollari (maggio 2026), per un team di 20 persone autore della tecnica di quantizzazione AWQ, segnala che ridurre l'impronta memoria di un modello a 4 bit (dimezzando le GPU necessarie) e' diventato un asset strategico quanto lo stack applicativo.
+
+Hardware e long context locale. La capacita' di tenere un milione di token in finestra dipende anche dalla memoria del dispositivo. Nvidia ha annunciato al Computex 2026 (1 giugno) RTX Spark, un SoC con 128 GB di memoria unificata LPDDR5X che, secondo Nvidia, consente di eseguire localmente su laptop modelli da 70B-120B parametri senza quantizzazione degradante e con context length fino a 1 milione di token per sessioni agentiche prolungate. E' il segnale che il long context sta scendendo dal datacenter al client.
 
 Long-context retrieval. Anche con finestra estesa, modelli reali mostrano "lost in the middle" (Liu et al. 2023): performance peggiora per informazioni a meta' del contesto. Le valutazioni "needle in a haystack" misurano la capacita' di recuperare un'informazione precisa inserita a posizioni casuali. I modelli frontier 2025-2026 raggiungono 95%+ di recall su 1M token; quelli precedenti calano al 60-70%.
 
@@ -39,17 +41,23 @@ Modelli del 2025-2026 con i loro context window:
 
 | Modello | Context window | Note |
 |---|---|---|
-| Claude Opus / Sonnet 4.x | 200k - 1M | 1M in beta o per Enterprise |
+| Claude Opus 4.8 / Sonnet 4.x | 200k - 1M | 1M in beta o per Enterprise; Dynamic Workflows sposta lo stato fuori dal context |
 | GPT-5 / GPT-4o | 128k - 256k | Variabile per tier |
+| GPT-Realtime-2 | 128k | Voice model con reasoning GPT-5, salito da 32k |
+| Gemini 3.5 Flash | 1M | Nativo multimodale, modello agentico Google I/O 2026 |
 | Gemini 2 Pro | 2M | Standard, 10M sperimentale |
+| Qwen3.7-Max | 1M | Ottimizzato per CLI agent, run autonome fino a 35h |
+| Mistral Medium 3.5 | 256k | 128B open-weights |
+| IBM Granite 4.1 | 512k | Open-source Apache 2.0, long context nativo |
+| Grok Build 0.1 | 256k | Coding agent CLI, cached $0,20/1M token |
 | Llama 3.1 / 3.3 | 128k | Open weights |
-| Mistral Large 2 | 128k | |
 | DeepSeek V3 | 128k | MoE open |
-| Qwen 2.5 | 128k - 1M | Varianti |
 
 Sull'asse di tecnica per estendere il context: training nativo (modello addestrato direttamente su sequenze lunghe), continued pre-training su long context (estendere un modello base), position interpolation (NTK-aware, YaRN), retrieval-augmented (delegare a [RAG](./rag.md) la selezione, mantenere context piccolo).
 
 Contrasto context-vs-RAG. Long context vince quando il corpus e' < 1-2M token, la query richiede sintesi globale, la latenza piu' alta e' tollerata. RAG vince per corpora vasti, query puntuali, costi bassi per richiesta. Pattern ibrido: RAG per filtrare al milione di token poi long context per ragionare globalmente.
+
+Un terzo approccio emerso nella primavera 2026 e' l'esternalizzazione dello stato fuori dal context. Le Dynamic Workflows di Claude Opus 4.8 (28 maggio 2026) ne sono l'esempio piu' netto: invece di tenere tutta la storia di un task multi-step a scala di codebase dentro la finestra, Claude scrive uno script JavaScript che orchestra fino a 1.000 subagenti totali (16 in parallelo); il piano vive nello script, i risultati intermedi nelle variabili, e il context riceve solo la risposta finale. E' una risposta diretta al problema dell'overflow: il context window non viene esteso, viene aggirato delegando il coordinamento a un'orchestrazione esterna.
 
 ## Quando usarlo / quando no
 
@@ -57,7 +65,7 @@ Sfruttare un context grande e' la scelta giusta quando: si analizza un documento
 
 Non bisogna sfruttarlo quando: il task richiede solo un frammento (un chunk RAG di 500 token basta); il costo per chiamata diventa proibitivo (256k token in input a tariffa LLM frontier sono molti dollari per richiesta); la latenza diventa intollerabile (un context da 1M token aggiunge secondi); il "lost in the middle" degrada la qualita'.
 
-Anti-pattern. Riempire il context "per sicurezza" con tutto il possibile: piu' rumore peggiora le risposte. Ignorare il prompt caching: le finestre grandi sono economiche solo se il prefisso e' cached (Anthropic prompt caching, OpenAI prompt caching). Non gestire il contesto di un agent: in [agent](./agent.md) lunghi la storia cresce, va periodicamente riassunta (compaction) altrimenti il context esplode. Confondere context window e knowledge cutoff: la finestra e' "quanto puoi mostrare al modello in una chiamata", non "quanto sa".
+Anti-pattern. Riempire il context "per sicurezza" con tutto il possibile: piu' rumore peggiora le risposte. Ignorare il prompt caching: le finestre grandi sono economiche solo se il prefisso e' cached (Anthropic prompt caching, OpenAI prompt caching; Grok Build 0.1 espone token cached a $0,20/1M contro $1/1M dei token freschi, un fattore 5 che cambia l'economia di un workflow). Non gestire il contesto di un agent: in [agent](./agent.md) lunghi la storia cresce, va periodicamente riassunta (compaction) o spostata fuori dal context con un'orchestrazione esterna (vedi Dynamic Workflows), altrimenti la finestra esplode. Confondere context window e knowledge cutoff: la finestra e' "quanto puoi mostrare al modello in una chiamata", non "quanto sa".
 
 ## Esempi pratici
 
@@ -66,6 +74,8 @@ Esempio 1: analisi di documento lungo. Si carica un PDF di 200 pagine (~80k toke
 Esempio 2: prompt caching. Anthropic e OpenAI consentono di marcare prefissi del prompt come cache-able. Una applicazione che invia la stessa codebase di 100k token a ogni domanda paga il prezzo pieno solo la prima volta; le richieste successive (entro 5 minuti per Anthropic standard) hanno costo input ridotto del 90%. Sfruttare il caching e' essenziale per workflow long-context economicamente sostenibili.
 
 Esempio 3: gestione context in agente. Un agente coding che lavora 30 step accumula history. A 100k token il prompt diventa pesante. Tecnica: ogni 20 step l'agent invoca una "summarize_history" che condensa gli step vecchi in un sommario di 2k token, mantenendo dettagli solo per gli ultimi 5. Il context resta gestibile, le metriche di task completion non peggiorano in modo significativo.
+
+Esempio 4: orchestrazione fuori dal context. Per una migrazione su centinaia di migliaia di righe di codice, tenere ogni file modificato e ogni risultato di test nella finestra porterebbe rapidamente all'overflow. Con un'architettura tipo Dynamic Workflows si scrive uno script che lancia subagenti in parallelo, ciascuno con il proprio context fresco su un sottoinsieme di file; lo script accumula gli esiti nelle sue variabili e restituisce al context principale solo lo stato di avanzamento e la risposta finale. La test suite esistente funge da criterio di accettazione. Il context principale resta leggero mentre il lavoro effettivo gira su molte finestre indipendenti.
 
 ## Letture
 
@@ -76,6 +86,7 @@ Esempio 3: gestione context in agente. Un agente coding che lavora 30 step accum
 - Liu et al., "Lost in the Middle: How Language Models Use Long Contexts", 2023. https://arxiv.org/abs/2307.03172
 - Peng et al., "YaRN: Efficient Context Window Extension of Large Language Models", 2023. https://arxiv.org/abs/2309.00071
 - Gemini 1.5 Technical Report, Google DeepMind 2024. https://arxiv.org/abs/2403.05530
+- Akhauri & Abdelfattah, "Compute Where it Counts: Self Optimizing Language Models", 2026. https://arxiv.org/abs/2605.10875
 - Anthropic, "Prompt caching documentation". https://docs.anthropic.com/en/docs/build-with-claude/prompt-caching
 
 ## Note operative
@@ -88,6 +99,12 @@ Caching budget. Anthropic permette fino a 4 cache breakpoint per richiesta. La g
 
 Pattern di compaction. Per agenti long-running serve una strategia di riassunto. Schema tipico: ogni N step l'agent invoca un sub-task "riassumi gli ultimi M step in massimo K token", il riassunto sostituisce gli step originali nella history. Si tengono integri solo gli ultimi 2-3 step. La storia completa viene archiviata fuori-context su disco o database, recuperabile su richiesta esplicita.
 
+Esternalizzazione dello stato. Quando il task supera per sua natura qualsiasi finestra (migrazioni su intere codebase, run agentiche di molte ore), la compaction non basta: conviene spostare il coordinamento fuori dal context con un'orchestrazione esplicita. Lo stato vive in uno script o in un layer applicativo, i sottoprocessi ricevono context freschi e mirati, e la finestra principale mantiene solo il sommario di avanzamento. E' un cambio di mentalita': il context window non e' la memoria dell'agente, e' solo la sua memoria di lavoro immediata.
+
 ## Aggiornamenti
 
 Nessun aggiornamento dopo la creazione (2026-04-28).
+
+### 2026-06-01
+
+Mese intenso di rilasci che confermano il long context come terreno competitivo. Sul fronte modelli: Mistral Medium 3.5 (256k, [01.md](../../digest/2026/05/01.md)), IBM Granite 4.1 con 512k token nativi ([05.md](../../digest/2026/05/05.md)), GPT-Realtime-2 salito da 32k a 128k ([08.md](../../digest/2026/05/08.md)), Gemini 3.5 Flash con 1M token nativo a Google I/O ([20.md](../../digest/2026/05/20.md)), Qwen3.7-Max con 1M token e run autonome fino a 35 ore con 1.000+ tool call ([23.md](../../digest/2026/05/23.md)), Grok Build 0.1 (256k, cached $0,20/1M, [26.md](../../digest/2026/05/26.md)). Due novita' strutturali oltre i numeri di finestra: le Dynamic Workflows di Claude Opus 4.8, che spostano il coordinamento di task multi-step fuori dal context via orchestrazione di subagenti ([29.md](../../digest/2026/05/29.md)), e l'hardware per il long context locale con Nvidia RTX Spark (128 GB unificati, context fino a 1M su laptop, [06/01.md](../../digest/2026/06/01.md)). Sul lato efficienza: il paper SOL sul compute adattivo per token ([13.md](../../digest/2026/05/13.md)) e l'acquisizione di Eigen AI (AWQ) da parte di Nebius ([03.md](../../digest/2026/05/03.md)). Aggiornati tabella modelli, sezioni Come funziona e Varianti, aggiunto Esempio 4 e una nota operativa sull'esternalizzazione dello stato.

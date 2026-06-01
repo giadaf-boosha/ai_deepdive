@@ -1,0 +1,89 @@
+---
+name: Agent sandboxing
+aliases: [sandboxing, containment, isolamento agenti, agent containment, esecuzione isolata, sandbox]
+categoria: infrastruttura
+created: 2026-06-01
+last_updated: 2026-06-01
+mentions_count: 4
+---
+
+# Agent sandboxing
+
+## Cos'e
+
+L'agent sandboxing (o containment) e' l'insieme delle tecniche che isolano l'ambiente in cui un [agent](./agent.md) esegue codice e tool dal resto del sistema, in modo che un agente compromesso, manipolato o semplicemente in errore non possa danneggiare dati, infrastruttura o rete oltre un perimetro definito. Mentre il loop agentico (ragionamento, pianificazione, scelta dei tool) decide cosa fare, la sandbox e' il guscio dentro cui quelle azioni — eseguire un comando, scrivere un file, fare una richiesta di rete — accadono in modo confinato.
+
+Il tema e' diventato centrale nel 2026 perche' gli agenti hanno smesso di essere demo e sono entrati in produzione, dove eseguono codice arbitrario generato dal modello stesso o influenzato da input non fidato. Un agente che riceve un documento via [tool use](./tool-use.md) puo' subire prompt injection; un agente che genera ed esegue codice puo' produrre un comando distruttivo; un agente con accesso alla rete puo' esfiltrare dati. La sandbox non risolve questi rischi a monte, ma ne limita il blast radius: definisce esattamente cosa puo' raggiungere un agente compromesso.
+
+La documentazione di riferimento del periodo e' il post di ingegneria Anthropic "How we contain Claude across products" (fine maggio 2026, rilanciato da Simon Willison), prima descrizione pubblica completa di come ogni prodotto Claude isola l'esecuzione: tre architetture di sandbox distinte per tre prodotti distinti. In parallelo, Claude Managed Agents ha introdotto self-hosted sandboxes (l'esecuzione dei tool si sposta nell'infrastruttura del cliente) e MCP tunnels; Mistral Vibe esegue i remote agent in sandbox isolata nel cloud; il sistema di ricerca MOSS verifica i candidati di codice in worker effimeri prima di promuoverli in produzione.
+
+## Come funziona
+
+Il principio guida e' il least privilege: l'ambiente di esecuzione riceve solo le capabilities strettamente necessarie, e tutto il resto e' negato per default. Le tecniche si collocano su uno spettro di forza crescente.
+
+Process-level isolation. Il livello piu' leggero confina un processo senza una macchina virtuale completa. Su macOS, Seatbelt (il sandbox di sistema) limita le syscall e gli accessi al filesystem; su Linux, Bubblewrap crea namespace isolati (mount, PID, network, user) con capabilities minime. Anthropic usa entrambi per Claude Code, che gira in locale sulla macchina dell'utente: il processo dell'agente e' confinato con capabilities minime, riducendo cosa puo' toccare sul sistema dell'utente.
+
+Container con kernel isolation. Un gradino sopra, gVisor (un kernel applicativo userspace) intercetta le syscall del container e le serve in uno spazio isolato, riducendo la superficie d'attacco verso il kernel dell'host rispetto a un container Linux standard. Anthropic esegue il codice di Claude.ai in un container gVisor su infrastruttura isolata, con filesystem effimero per sessione e agente interamente server-side: ogni sessione parte pulita e non lascia stato persistente.
+
+Virtual machine completa. Il livello piu' forte e' una VM che replica le condizioni di un computer reale, con un confine hardware-assistito tra guest e host. Claude Cowork gira dentro una VM completa — Apple Virtualization Framework su macOS, Hyper-V Container System su Windows. La VM e' la scelta quando l'agente deve avere l'illusione di un computer intero (eseguire app GUI, gestire piu' processi) ma l'isolamento dall'host deve restare forte.
+
+Worker effimeri. Una variante orientata alla verifica e' eseguire ogni candidato di azione in un worker usa-e-getta che replica le condizioni reali, poi distruggerlo. MOSS verifica ogni candidato di modifica del codice in worker effimeri che replicano i failure di produzione raccolti, e promuove la versione vincente via container swap in-place con un rollback gate. L'effimerita' garantisce che un tentativo fallito non lasci residui.
+
+Separazione del loop dall'esecuzione. Un pattern architetturale chiave del 2026 e' separare dove vive il loop agentico da dove avviene l'esecuzione dei tool. Con i self-hosted sandboxes di Claude Managed Agents, il loop agentico (orchestrazione, context management, error recovery) resta su infrastruttura Anthropic, mentre l'esecuzione dei tool si sposta nell'ambiente del cliente (server propri o provider come Cloudflare, Daytona, Modal, Vercel). File sensibili, package e servizi interni non escono dal perimetro aziendale. Gli MCP tunnels completano il quadro: gli agenti raggiungono [MCP](./mcp.md) server nella rete privata via un gateway outbound-only, senza regole di firewall inbound ne' endpoint pubblici esposti, con traffico cifrato end-to-end.
+
+## Varianti / approcci
+
+| Tecnica | Forza isolamento | Costo overhead | Esempio nei digest |
+|---|---|---|---|
+| Seatbelt (macOS) / Bubblewrap (Linux) | Process-level | Basso | Claude Code (locale) |
+| gVisor | Kernel userspace | Medio | Claude.ai (server-side) |
+| VM completa | Hardware-assisted | Alto | Claude Cowork |
+| Worker effimeri | Per-tentativo, usa-e-getta | Medio | MOSS (verifica candidati) |
+| Self-hosted sandbox | Perimetro del cliente | Operativo | Claude Managed Agents |
+| Sandbox cloud isolata | Provider-managed | Operativo | Mistral Vibe remote agents |
+
+L'asse "forza vs overhead". Process-level isolation e' leggero e adatto a un agente locale che gira sulla macchina dell'utente; la VM e' la piu' forte ma costa in risorse e tempo di avvio. La scelta dipende dal modello di minaccia: un agente che esegue codice di terze parti o influenzato da input non fidato merita isolamento piu' forte di uno che esegue solo codice fidato in un perimetro controllato.
+
+L'asse "dove vive il loop". Tutto server-side (Claude.ai) e' semplice ma i dati escono dal perimetro del cliente. Loop su provider + esecuzione self-hosted (Claude Managed Agents) tiene i dati sensibili in casa al costo di maggiore complessita' operativa. La scelta e' guidata dalla compliance: in finanza, healthcare e legal il controllo sui dati e la non-esposizione dei sistemi interni sono spesso vincolanti.
+
+## Quando usarlo / quando no
+
+La sandbox e' obbligatoria — non opzionale — quando l'agente esegue codice generato dal modello, quando elabora input non fidato (documenti, pagine web, tool result che possono contenere prompt injection), quando ha accesso a rete o filesystem, e quando opera in ambienti regolamentati dove il modello di minaccia va documentato. In pratica: qualunque agente in produzione che faccia [tool use](./tool-use.md) reale.
+
+La sandbox e' sovradimensionata quando l'agente non esegue nulla di esterno — un assistente puramente conversazionale che genera solo testo non ha un ambiente di esecuzione da isolare. Una VM completa e' eccessiva quando basta un process-level confinement: imporre l'isolamento piu' forte ovunque introduce overhead di avvio e risorse senza guadagno di sicurezza proporzionato.
+
+Anti-pattern. Eseguire codice generato dall'agente direttamente sull'host senza isolamento ("tanto e' solo uno script"): e' la via piu' diretta a un incidente. Concedere all'agente capabilities ampie per comodita' di sviluppo e dimenticarsi di restringerle in produzione. Trattare il tool result come fidato: un risultato di tool puo' contenere istruzioni di prompt injection, e va trattato come dato pubblico, mai come istruzione (vedi le note operative di [tool-use](./tool-use.md)). Promuovere in produzione una modifica generata dall'agente senza un rollback gate, come invece fa MOSS.
+
+Sicurezza. La sandbox e' un controllo di contenimento, non di prevenzione: limita il danno di un agente compromesso, non impedisce che lo diventi. Va combinata con human-in-the-loop sulle azioni sensibili, con un controllo di policy separato dal modello, e con logging completo dei tool call per l'osservabilita'. Quando si orchestrano molti agenti (vedi [multi-agent-orchestration](./multi-agent-orchestration.md)), ogni worker eredita questi rischi moltiplicati: ciascuno va sandboxato, e il loop di coordinamento resta su infrastruttura controllata.
+
+## Esempi pratici
+
+Esempio 1: tre prodotti, tre sandbox (Anthropic). Claude.ai esegue codice in un container gVisor server-side con filesystem effimero per sessione; Claude Code, in locale, usa Seatbelt (macOS) o Bubblewrap (Linux) per confinare il processo con capabilities minime; Claude Cowork gira in una VM completa (Apple Virtualization Framework / Hyper-V Container System) che replica un computer reale. La scelta del livello segue il modello di minaccia di ciascun prodotto: piu' l'agente e' autonomo e potente, piu' forte e' l'isolamento.
+
+Esempio 2: tenere i dati in casa (Claude Managed Agents). Una banca vuole usare agenti Claude ma non puo' far uscire file sensibili e sistemi interni dal proprio perimetro. Con i self-hosted sandboxes, l'esecuzione dei tool avviene su infrastruttura della banca mentre il loop agentico resta su Anthropic; gli MCP tunnels permettono agli agenti di raggiungere MCP server interni via gateway outbound-only, senza esporre endpoint pubblici. I due blocchi storici all'adozione enterprise (controllo dei dati, esposizione dei sistemi interni) cadono.
+
+Esempio 3: verifica prima della promozione (MOSS). Un sistema di auto-evoluzione agentica raccoglie i failure di produzione, genera candidati di modifica del codice, e li verifica in worker effimeri che replicano i failure raccolti. Solo il candidato che supera la verifica viene promosso, via container swap in-place con rollback gate. La sandbox effimera garantisce che un candidato difettoso non contamini la produzione.
+
+## Letture
+
+- Anthropic Engineering, "How we contain Claude across products", 2026. https://www.anthropic.com/engineering/how-we-contain-claude
+- Simon Willison, "How we contain Claude", 2026. https://simonwillison.net/2026/May/30/how-we-contain-claude/
+- Anthropic, "Claude Managed Agents updates" (self-hosted sandboxes, MCP tunnels), 2026. https://claude.com/blog/claude-managed-agents-updates
+- gVisor project documentation. https://gvisor.dev/docs/
+- Bubblewrap (containers/bubblewrap). https://github.com/containers/bubblewrap
+- MOSS, arXiv 2605.22794, 2026. https://arxiv.org/abs/2605.22794
+- Mistral AI, "Vibe remote agents", 2026. https://mistral.ai/news/vibe-remote-agents-mistral-medium-3-5
+
+## Note operative
+
+Scegliere il livello sul modello di minaccia. Non esiste un livello "giusto" in assoluto: Seatbelt/Bubblewrap bastano per un agente locale che esegue codice fidato; gVisor e' adatto a esecuzione server-side multi-tenant; la VM serve quando l'agente deve avere un computer intero ma l'isolamento dall'host resta critico. La domanda operativa e' sempre: cosa puo' raggiungere un agente compromesso in questo ambiente, e ce ne andiamo bene?
+
+Loop e esecuzione vanno disaccoppiati per la compliance. Il pattern "loop su provider, esecuzione self-hosted" e' la risposta del 2026 ai requisiti di settori regolamentati. Tiene i dati sensibili nel perimetro del cliente senza rinunciare all'orchestrazione gestita. Va valutato per i suoi limiti dichiarati: ad esempio i self-hosted sandbox di Claude non erano disponibili su Claude Platform su AWS e la Memory non era supportata nelle sessioni self-hosted al lancio.
+
+La sandbox non sostituisce gli altri controlli. Contenimento, human-in-the-loop sulle azioni sensibili, controllo di policy separato dal modello e logging completo sono livelli complementari. Un agente sandboxato ma senza approvazione umana sulle azioni distruttive, o senza tracciamento dei tool call, e' ancora un rischio operativo. La sandbox limita il danno; gli altri controlli riducono la probabilita' che il danno si verifichi.
+
+## Aggiornamenti
+
+### 2026-06-01
+
+L'agent sandboxing emerge come tema infrastrutturale ricorrente nei digest di maggio 2026. Anthropic pubblica "How we contain Claude across products", prima documentazione pubblica completa dell'isolamento di ogni prodotto Claude: gVisor per Claude.ai, Seatbelt/Bubblewrap per Claude Code, VM completa per Claude Cowork (vedi [digest 2026-05-31](../../digest/2026/05/31.md)). Claude Managed Agents introduce self-hosted sandboxes e MCP tunnels, disaccoppiando il loop agentico (su Anthropic) dall'esecuzione dei tool (nel perimetro del cliente) per sbloccare l'adozione in ambienti regolamentati (vedi [digest 2026-05-28](../../digest/2026/05/28.md)). Mistral Vibe esegue i remote agent in sandbox isolata nel cloud (vedi [digest 2026-05-01](../../digest/2026/05/01.md)). Il sistema di ricerca MOSS verifica i candidati di codice in worker effimeri con rollback gate prima della promozione in produzione (vedi [digest 2026-05-23](../../digest/2026/05/23.md)). Il filo conduttore: con gli agenti in produzione, il containment passa da dettaglio implementativo a requisito di prodotto e di compliance, ed e' la controparte difensiva necessaria della [multi-agent-orchestration](./multi-agent-orchestration.md).
