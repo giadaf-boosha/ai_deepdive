@@ -2,6 +2,7 @@ import Link from "next/link";
 import { getAllDigests } from "@/lib/digest";
 import { getAllConcepts } from "@/lib/kb";
 import { getModelById } from "@/lib/models";
+import { getAllDocs } from "@/lib/claudecode";
 import { formatLong } from "@/lib/dates";
 import { SectionBadge } from "@/components/SectionBadge";
 import { ModelCardCompact } from "@/components/ModelCard";
@@ -19,6 +20,7 @@ export default function HomePage() {
   const quickModels = (["claude", "chatgpt", "gemini"] as ModelId[])
     .map((id) => getModelById(id))
     .filter((m): m is NonNullable<typeof m> => Boolean(m));
+  const ccDocs = getAllDocs();
 
   return (
     <div className="container-wide flex flex-col gap-20 sm:gap-28">
@@ -109,6 +111,28 @@ export default function HomePage() {
           ))}
         </div>
       </section>
+
+      {ccDocs.length > 0 && (
+        <section className="flex flex-col gap-6">
+          <SectionHeader eyebrow="Guida Claude Code" href="/claude-code" cta="Apri la guida" />
+          <Link
+            href="/claude-code"
+            className="card card-hover group flex flex-col gap-4 p-6 sm:p-8"
+          >
+            <h3 className="max-w-2xl text-xl font-semibold tracking-tight text-ink sm:text-2xl">
+              Padroneggiare Claude Code, in italiano.
+            </h3>
+            <p className="max-w-prose text-[15px] leading-relaxed text-muted">
+              {ccDocs.length} capitoli su CLI, routines, hooks, MCP, subagents e
+              workflow agentici — più il <span className="text-ink">What&apos;s new</span> aggiornato
+              ogni giorno.
+            </p>
+            <span className="inline-flex items-center gap-1.5 text-sm font-medium text-[color:var(--primary-ink)]">
+              Apri la guida <ArrowRight className="h-4 w-4" />
+            </span>
+          </Link>
+        </section>
+      )}
     </div>
   );
 }

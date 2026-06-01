@@ -1,0 +1,258 @@
+# What's new — Archivio storico
+
+> 📍 [README](/claude-code) → **Archivio "What's new today"**
+> 📚 Riferimento
+
+Archivio degli aggiornamenti giornalieri "What's new today" generati dall'[automazione daily](https://github.com/giadaf-boosha/claude-code/blob/main/automations/daily-whats-new/).
+
+Il README master mostra **solo l'aggiornamento del giorno corrente**. Quando ne arriva uno nuovo, il precedente viene archiviato qui.
+
+**Politica di retention**: ultimi 30 giorni. Le entry piu' vecchie sono cancellate (per evitare crescita illimitata del file). La storia completa resta comunque tracciabile via `git log README.md`.
+
+---
+
+## 2026-05-31
+
+- **Auto mode su Bedrock, Vertex e Foundry** (v2.1.158, 30 mag): la modalita' auto — il classifier che sostituisce le permission prompt con safety check automatici — diventa disponibile su AWS Bedrock, Google Vertex AI e Azure Foundry per Opus 4.7 e Opus 4.8; opt-in con `CLAUDE_CODE_ENABLE_AUTO_MODE=1`. Fonte: [GitHub Releases v2.1.158](https://github.com/anthropics/claude-code/releases/tag/v2.1.158). Doc: [docs/04-modalita-permessi.md](/claude-code/04-modalita-permessi), [docs/19-changelog.md](/claude-code/19-changelog).
+
+---
+
+## 2026-05-30
+
+- **Plugin auto-loading** (v2.1.157, 29 mag): i plugin in `.claude/skills/<nome>/` vengono caricati automaticamente senza passare per il marketplace — niente piu' `/plugin install` per plugin locali e custom. Fonte: [GitHub Releases v2.1.157](https://github.com/anthropics/claude-code/releases/tag/v2.1.157). Doc: [docs/11-plugins-marketplace.md](/claude-code/11-plugins-marketplace), [docs/09-skills.md](/claude-code/09-skills).
+- **`claude plugin init <name>`** (v2.1.157, 29 mag): nuovo comando CLI scaffolda un plugin in `.claude/skills/<nome>/` con struttura e manifest pronti — abbassa la barriera alla creazione di plugin locali senza configurazione manuale. Fonte: [GitHub Releases v2.1.157](https://github.com/anthropics/claude-code/releases/tag/v2.1.157). Doc: [docs/11-plugins-marketplace.md](/claude-code/11-plugins-marketplace).
+- **Campo `agent` in `settings.json` per dispatch** (v2.1.157, 29 mag): il campo `agent` viene ora rispettato per le sessioni dispatch con override per sessione via `--agent <name>` — permette di fissare l'agente di default senza modificare ogni invocazione. Fonte: [GitHub Releases v2.1.157](https://github.com/anthropics/claude-code/releases/tag/v2.1.157). Doc: [docs/08-subagents.md](/claude-code/08-subagents), [docs/18-settings-auth.md](/claude-code/18-settings-auth).
+
+---
+
+## 2026-05-29
+
+- **Opus 4.8** (v2.1.154, 28 mag): nuovo modello flagship disponibile in Claude Code come default per task `xhigh`; Fast Mode su Opus 4.8 gira a 2.5x la velocita' standard a 2x il costo base. Fonte: [GitHub Releases v2.1.154](https://github.com/anthropics/claude-code/releases/tag/v2.1.154). Doc: [docs/05-fast-mode-1m-context.md](/claude-code/05-fast-mode-1m-context), [docs/19-changelog.md](/claude-code/19-changelog).
+- **`/workflows`** (v2.1.154, 28 mag): nuovo slash command per creare e orchestrare workflow dinamici con decine o centinaia di agenti background — descrivi il task, Claude genera il workflow ed esegue gli agenti in parallelo. Fonte: [GitHub Releases v2.1.154](https://github.com/anthropics/claude-code/releases/tag/v2.1.154). Doc: [docs/03-slash-commands.md](/claude-code/03-slash-commands), [docs/08-subagents.md](/claude-code/08-subagents), [docs/19-changelog.md](/claude-code/19-changelog).
+- **`! <command>` in `claude agents`** (v2.1.154, 28 mag): digitare `! <comando>` in Agent View esegue il comando shell direttamente in una sessione background — equivalente a `claude --bg --exec '<comando>'` senza uscire dall'interfaccia di gestione sessioni. Fonte: [GitHub Releases v2.1.154](https://github.com/anthropics/claude-code/releases/tag/v2.1.154). Doc: [docs/08-subagents.md](/claude-code/08-subagents).
+
+---
+
+## 2026-05-28
+
+> Nessuna novita' significativa nelle ultime 24 ore.
+
+---
+
+## 2026-05-27
+
+- **`/reload-skills`** (v2.1.152, 27 mag): nuovo slash command built-in ricarica le directory skill nella sessione corrente senza riavvio — utile dopo installazione di nuovi plugin o aggiornamento di skill locali; i `SessionStart` hook possono restituire `reloadSkills: true` per lo stesso effetto via codice, e `sessionTitle` per impostare il titolo della sessione. Fonte: [GitHub Releases v2.1.152](https://github.com/anthropics/claude-code/releases/tag/v2.1.152). Doc: [docs/03-slash-commands.md](/claude-code/03-slash-commands), [docs/09-skills.md](/claude-code/09-skills), [docs/19-changelog.md](/claude-code/19-changelog).
+- **`MessageDisplay` hook event** (v2.1.152, 27 mag): nuovo evento hook che intercetta i messaggi dell'assistente prima della visualizzazione — permette di trasformare il testo (redact, formatting, traduzione) o nasconderlo completamente. Fonte: [GitHub Releases v2.1.152](https://github.com/anthropics/claude-code/releases/tag/v2.1.152). Doc: [docs/07-hooks.md](/claude-code/07-hooks), [docs/19-changelog.md](/claude-code/19-changelog).
+- **`/code-review --fix`** (v2.1.152, 27 mag): nuovo flag applica automaticamente i suggerimenti di review (refactoring, semplificazioni, efficienze) al working tree; `/simplify` torna come alias di `/code-review --fix`, chiudendo il ciclo iniziato con la rinomina in v2.1.146. Fonte: [GitHub Releases v2.1.152](https://github.com/anthropics/claude-code/releases/tag/v2.1.152). Doc: [docs/03-slash-commands.md](/claude-code/03-slash-commands), [docs/19-changelog.md](/claude-code/19-changelog).
+- **`disallowed-tools` in frontmatter skill** (v2.1.152, 27 mag): le skill possono dichiarare nel frontmatter quali tool rimuovere dal modello durante la propria esecuzione — aumenta il focus del modello e riduce il rischio di uso accidentale di tool non pertinenti. Fonte: [GitHub Releases v2.1.152](https://github.com/anthropics/claude-code/releases/tag/v2.1.152). Doc: [docs/09-skills.md](/claude-code/09-skills), [docs/19-changelog.md](/claude-code/19-changelog).
+
+---
+
+## 2026-05-26
+
+> Nessuna novita' significativa nelle ultime 24 ore.
+
+---
+
+## 2026-05-25
+
+> Nessuna novita' significativa nelle ultime 24 ore.
+
+---
+
+## 2026-05-24
+
+> Nessuna novita' significativa nelle ultime 24 ore.
+
+---
+
+## 2026-05-23
+
+> Nessuna novita' significativa nelle ultime 24 ore.
+
+---
+
+## 2026-05-22
+
+- **`/code-review --comment`** (v2.1.147, 21 mag): il flag `--comment` su `/code-review` pubblica i risultati della review come commenti inline direttamente su GitHub PR — chiude il loop tra analisi locale e feedback remoto senza uscire dal terminale. Fonte: [GitHub Releases v2.1.147](https://github.com/anthropics/claude-code/releases/tag/v2.1.147). Doc: [docs/03-slash-commands.md](/claude-code/03-slash-commands), [docs/19-changelog.md](/claude-code/19-changelog).
+- **Sessioni background pinnate** (v2.1.147, 21 mag): le sessioni pinnate con `Ctrl+T` in `claude agents` restano attive anche quando idle e si riavviano automaticamente per applicare gli aggiornamenti di Claude Code — utile per agent di lunga durata che non devono essere interrotti da inattivita'. Fonte: [GitHub Releases v2.1.147](https://github.com/anthropics/claude-code/releases/tag/v2.1.147). Doc: [docs/08-subagents.md](/claude-code/08-subagents), [docs/19-changelog.md](/claude-code/19-changelog).
+
+---
+
+## 2026-05-21
+
+- **`/code-review` (ex `/simplify`)** (v2.1.146, 21 mag): `/simplify` rinominato `/code-review` con parametro effort opzionale (es. `/code-review high`) — il nuovo nome riflette meglio l'azione (3 review agent paralleli + apply fix) e allinea il comando all'interfaccia `/effort`. Il vecchio nome non e' piu' valido. Fonte: [GitHub Releases v2.1.146](https://github.com/anthropics/claude-code/releases/tag/v2.1.146). Doc: [docs/03-slash-commands.md](/claude-code/03-slash-commands), [docs/19-changelog.md](/claude-code/19-changelog).
+
+---
+
+## 2026-05-20
+
+- **`claude agents --json`** (v2.1.145, 19 mag): il flag `--json` su `claude agents` restituisce la lista delle sessioni live in formato JSON — abilita scripting, integrazione tmux-resurrect, status bar custom e automazioni che interrogano lo stato degli agenti attivi. Fonte: [GitHub Releases v2.1.145](https://github.com/anthropics/claude-code/releases/tag/v2.1.145). Doc: [docs/08-subagents.md](/claude-code/08-subagents), [docs/19-changelog.md](/claude-code/19-changelog).
+- **`/resume` per sessioni background** (v2.1.144, 19 mag): `/resume` include ora le sessioni avviate via `claude --bg` o Agent View — appaiono nella lista con tag `bg`, chiudendo il gap tra sessioni interattive e background nella navigazione storica. Fonte: [GitHub Releases v2.1.144](https://github.com/anthropics/claude-code/releases/tag/v2.1.144). Doc: [docs/03-slash-commands.md](/claude-code/03-slash-commands), [docs/19-changelog.md](/claude-code/19-changelog).
+- **`/plugin` pre-install preview** (v2.1.145, 19 mag): le tab Discover e Browse del marketplace mostrano comandi, agenti, skill, hook e server MCP/LSP forniti da un plugin prima dell'installazione — permette di valutare l'impatto senza committere. Fonte: [GitHub Releases v2.1.145](https://github.com/anthropics/claude-code/releases/tag/v2.1.145). Doc: [docs/11-plugins-marketplace.md](/claude-code/11-plugins-marketplace), [docs/19-changelog.md](/claude-code/19-changelog).
+
+---
+
+## 2026-05-19
+
+> Nessuna novita' significativa nelle ultime 24 ore.
+
+---
+
+## 2026-05-18
+
+> Nessuna novita' significativa nelle ultime 24 ore.
+
+---
+
+## 2026-05-17
+
+> Nessuna novita' significativa nelle ultime 24 ore.
+
+---
+
+## 2026-05-16
+
+- **Plugin dependency enforcement** (v2.1.143, 15 mag): `claude plugin disable` rifiuta la disabilitazione quando un altro plugin abilitato dipende dal target, mostrando un hint copy-pasteable con la catena completa da disabilitare; `claude plugin enable` forza l'abilitazione delle dipendenze transitive. Fonte: [GitHub Releases v2.1.143](https://github.com/anthropics/claude-code/releases/tag/v2.1.143). Doc: [docs/11-plugins-marketplace.md](/claude-code/11-plugins-marketplace), [docs/19-changelog.md](/claude-code/19-changelog).
+- **`worktree.bgIsolation: "none"`** (v2.1.143, 15 mag): nuova opzione settings che permette alle sessioni background di editare la working copy direttamente senza `EnterWorktree` — per repository dove i worktree git non sono pratici (monorepo con submodule, toolchain non compatibili). Fonte: [GitHub Releases v2.1.143](https://github.com/anthropics/claude-code/releases/tag/v2.1.143). Doc: [docs/18-settings-auth.md](/claude-code/18-settings-auth), [docs/19-changelog.md](/claude-code/19-changelog).
+
+---
+
+## 2026-05-15
+
+- **Fast Mode usa Opus 4.7 di default** (v2.1.142, 14 mag): Fast mode aggiorna il modello base da Opus 4.6 a Opus 4.7; chi vuole tornare a 4.6 usa `CLAUDE_CODE_OPUS_4_6_FAST_MODE_OVERRIDE=1`. Fonte: [GitHub Releases v2.1.142](https://github.com/anthropics/claude-code/releases/tag/v2.1.142). Doc: [docs/05-fast-mode-1m-context.md](/claude-code/05-fast-mode-1m-context), [docs/19-changelog.md](/claude-code/19-changelog).
+- **Plugin SKILL.md root come skill** (v2.1.142, 14 mag): plugin con `SKILL.md` nella directory root vengono esposti automaticamente come skill, senza richiedere la struttura `skills/<name>/SKILL.md` — semplifica i plugin mono-skill. Fonte: [GitHub Releases v2.1.142](https://github.com/anthropics/claude-code/releases/tag/v2.1.142). Doc: [docs/09-skills.md](/claude-code/09-skills), [docs/19-changelog.md](/claude-code/19-changelog).
+
+---
+
+## 2026-05-14
+
+- **Rewind "Summarize up to here"** (v2.1.141, 13 mag): il menu Rewind introduce l'opzione "Summarize up to here" che comprime il contesto accumulato mantenendo intatti i turni piu' recenti — utile per sessioni lunghe dove si vuole liberare context senza perdere il filo attivo. Fonte: [GitHub Releases v2.1.141](https://github.com/anthropics/claude-code/releases/tag/v2.1.141). Doc: [docs/00b-context-engineering.md](/claude-code/00b-context-engineering), [docs/19-changelog.md](/claude-code/19-changelog).
+- **Crediti mensili dedicati per uso programmatico** (annuncio 13 mag, attivo dal 15 giu): i piani paid Claude ottengono un credito mensile dedicato per uso programmatico — copre `claude -p`, Claude Agent SDK, Claude Code GitHub Actions e app terze parti basate sull'Agent SDK. Fonte: [@ClaudeDevs](https://x.com/ClaudeDevs/status/2054610152817619388). Doc: [docs/16-headless-agent-sdk.md](/claude-code/16-headless-agent-sdk), [docs/19-changelog.md](/claude-code/19-changelog).
+
+---
+
+## 2026-05-13
+
+> Nessuna novita' significativa nelle ultime 24 ore.
+
+---
+
+## 2026-05-12
+
+- **Agent View** (`claude agents`, research preview, v2.1.139): lista unificata di tutte le sessioni Claude Code — in esecuzione, in attesa di input o completate — navigabile con un unico comando CLI. Fonte: [@trq212](https://x.com/trq212/status/2053979505346425179), [ClaudeCodeLog](https://x.com/ClaudeCodeLog/status/2053913638197416198). Doc: [docs/08-subagents.md](/claude-code/08-subagents), [docs/03-slash-commands.md](/claude-code/03-slash-commands), [docs/19-changelog.md](/claude-code/19-changelog).
+- **`/goal`** (v2.1.139): nuovo slash command che imposta una condizione di completamento; Claude esegue task su piu' turni fino al raggiungimento, con overlay live di tempo/turni/token. Funziona in modalita' interattiva, `-p` e Remote Control. Fonte: [ClaudeCodeLog](https://x.com/ClaudeCodeLog/status/2053913638197416198). Doc: [docs/03-slash-commands.md](/claude-code/03-slash-commands), [docs/19-changelog.md](/claude-code/19-changelog).
+- **Hook exec form + `continueOnBlock`** (v2.1.139): `args: string[]` esegue il comando hook direttamente senza shell (previene injection); `continueOnBlock` su PostToolUse permette al turno di proseguire anche dopo un rifiuto hook. Fonte: [GitHub Releases v2.1.139](https://github.com/anthropics/claude-code/releases). Doc: [docs/07-hooks.md](/claude-code/07-hooks), [docs/19-changelog.md](/claude-code/19-changelog).
+
+---
+
+## 2026-05-11
+
+> Nessuna novita' significativa nelle ultime 24 ore.
+
+---
+
+## 2026-05-10
+
+> Nessuna novita' significativa nelle ultime 24 ore.
+
+---
+
+## 2026-05-09
+
+- **Plugin da `.zip` e URL** (v2.1.128–129): `--plugin-dir` accetta ora archivi `.zip` locali oltre alle directory; il nuovo flag `--plugin-url` scarica un plugin da URL per la sessione corrente — utile per testare plugin prima di pubblicarli su marketplace o distribuire plugin interni da uno store di artefatti. Fonte: [code.claude.com — Week 19](https://code.claude.com/docs/en/whats-new/2026-w19). Doc: [docs/11-plugins-marketplace.md](/claude-code/11-plugins-marketplace), [docs/19-changelog.md](/claude-code/19-changelog).
+- **`autoMode.hard_deny`** (v2.1.134–136): nuova chiave `settings.autoMode.hard_deny` blocca azioni in auto mode in modo assoluto, indipendentemente da eccezioni "allow" configurate — per azioni che non devono mai essere eseguite automaticamente anche quando allow rules piu' ampie lo permetterebbero. Fonte: [code.claude.com — Week 19](https://code.claude.com/docs/en/whats-new/2026-w19). Doc: [docs/04-modalita-permessi.md](/claude-code/04-modalita-permessi), [docs/19-changelog.md](/claude-code/19-changelog).
+
+---
+
+## 2026-05-08
+
+- **Hook input: `effort.level` + `$CLAUDE_EFFORT`** (v2.1.133): gli hook ricevono il livello di effort corrente nel JSON stdin (`effort.level`) e come variabile d'ambiente `$CLAUDE_EFFORT` — abilita logica condizionale nei hook in base all'effort (es. linting leggero a `low`, security scan completo a `xhigh`). Fonte: [GitHub Releases v2.1.133](https://github.com/anthropics/claude-code/releases). Doc: [07 Hooks](/claude-code/07-hooks), [19 Changelog](/claude-code/19-changelog).
+- **`worktree.baseRef`** (v2.1.133): nuova opzione settings (`"fresh"` | `"head"`) controlla se i worktree generati dall'harness si diramano da `origin/<default>` (clean) o da `HEAD` locale. Fonte: [GitHub Releases v2.1.133](https://github.com/anthropics/claude-code/releases). Doc: [18 Settings & Auth](/claude-code/18-settings-auth), [19 Changelog](/claude-code/19-changelog).
+
+---
+
+## 2026-05-07
+
+- **Limiti Claude Code raddoppiati** (annuncio 6 mag 2026, "Code with Claude" SF): Anthropic raddoppia i limiti di utilizzo a 5 ore per Pro, Max, Team e seat-based Enterprise; elimina i peak-hour limits per Pro e Max. L'accordo con SpaceX (Colossus 1, 300 MW+, 220K+ GPU NVIDIA) rende la capacita' aggiuntiva disponibile entro il mese. Fonte: [Anthropic blog](https://www.anthropic.com/news/higher-limits-spacex). Doc: [01-snapshot.md](/claude-code/01-snapshot), [19-changelog.md](/claude-code/19-changelog).
+
+---
+
+## 2026-05-06
+
+> Nessuna novita' significativa nelle ultime 24 ore.
+
+---
+
+## 2026-05-05
+
+> Nessuna novita' significativa nelle ultime 24 ore.
+
+---
+
+## 2026-05-04
+
+> Nessuna novita' significativa nelle ultime 24 ore.
+
+---
+
+## 2026-05-03
+
+> Nessuna novita' significativa nelle ultime 24 ore.
+
+---
+
+## 2026-05-02
+
+> Nessuna novita' significativa nelle ultime 24 ore.
+
+---
+
+## 2026-05-01
+
+- **`claude project purge`** (v2.1.126): nuovo subcomando elimina tutto lo stato di Claude Code per un progetto (trascrizioni, task, file history, config). Opzioni: `--dry-run`, `-i/--interactive`, `--all`. Fonte: [GitHub Releases](https://github.com/anthropics/claude-code/releases). Doc: [02 CLI](/claude-code/02-cli-installazione), [19 Changelog](/claude-code/19-changelog).
+- **OAuth paste-in-terminal** (v2.1.126): `claude auth login` accetta ora il codice OAuth incollato in terminale quando il browser non raggiunge localhost — risolve login in ambienti WSL2, SSH, container. Fonte: [GitHub Releases](https://github.com/anthropics/claude-code/releases). Doc: [18 Settings & Auth](/claude-code/18-settings-auth), [19 Changelog](/claude-code/19-changelog).
+
+---
+
+
+## 2026-04-30
+
+> Nessuna novita' significativa nelle ultime 24 ore.
+
+---
+
+## 2026-04-29
+
+- **`${CLAUDE_EFFORT}` nelle skill** (v2.1.120): il contenuto delle skill puo' ora referenziare il livello di effort corrente tramite `${CLAUDE_EFFORT}` — abilita comportamenti adattativi (istruzioni diverse a `low` vs `xhigh`). Doc: [09 Skills](/claude-code/09-skills).
+- **Windows: PowerShell senza Git Bash** (v2.1.120): Claude Code non richiede piu' Git Bash su Windows; quando assente, usa PowerShell come shell tool nativo. Doc: [02 CLI](/claude-code/02-cli-installazione).
+- **`/resume` con PR URL** (v2.1.122): incollare un URL di PR (GitHub, GitHub Enterprise, GitLab, Bitbucket) in `/resume` trova automaticamente la sessione che ha creato quella PR. Doc: [03 Slash commands](/claude-code/03-slash-commands).
+
+---
+
+## 2026-04-28
+
+- **PostToolUse output override universale** (v2.1.121): i PostToolUse hook possono ora sostituire l'output di qualsiasi tool tramite `hookSpecificOutput.updatedToolOutput`, non solo MCP — abilita trasformazioni inline prima che Claude legga il risultato. Doc: [07 Hooks](/claude-code/07-hooks).
+- **MCP `alwaysLoad`** (v2.1.121): il campo `alwaysLoad: true` su un server MCP bypassa la tool-search deferral, rendendo tutti i tool del server sempre disponibili senza ricerca preventiva. Doc: [10 MCP](/claude-code/10-mcp).
+
+---
+
+## Come consultare la storia completa
+
+```bash
+# Tutte le entry "What's new today" mai pubblicate
+git log --all --oneline --grep="what's new" -- README.md
+
+# Diff di una giornata specifica
+git log --all --grep="what's new YYYY-MM-DD" -p -- README.md
+```
+
+---
+
+## Riferimenti
+
+- [Automazione daily](https://github.com/giadaf-boosha/claude-code/blob/main/automations/daily-whats-new/) — README, prompt, setup
+- [docs/19 — Changelog completo](/claude-code/19-changelog) — versione per versione
+- [docs/13 — Routines cloud](/claude-code/13-routines-cloud) — come funziona la routine
+
+← [README master](/claude-code)

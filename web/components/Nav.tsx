@@ -7,6 +7,7 @@ const LINKS = [
   { href: "/digest", label: "Digest", short: "Digest" },
   { href: "/kb", label: "Knowledge base", short: "KB" },
   { href: "/radar", label: "Confronto AI", short: "Confronto" },
+  { href: "/claude-code", label: "Claude Code", short: "Claude Code" },
 ];
 
 export function Nav() {

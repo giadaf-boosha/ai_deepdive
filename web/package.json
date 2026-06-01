@@ -8,7 +8,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "sync:claude-code": "node scripts/sync-claude-code.mjs"
   },
   "dependencies": {
     "fuse.js": "^7.0.0",
