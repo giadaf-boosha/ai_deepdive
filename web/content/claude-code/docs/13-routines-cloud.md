@@ -249,3 +249,7 @@ Testa con `npm test`. Apri draft PR.
 ---
 
 ← [12 Agent Teams](/claude-code/12-agent-teams) · Successivo → [14 Loop & Monitor](/claude-code/14-loop-monitor)
+
+## 13.10 Routines vs /goal: quale scheduling
+
+Le routine girano **senza sessione aperta** (schedule/API/GitHub event sul cloud Anthropic). Per tenere viva la **sessione corrente** finche' una condizione e' soddisfatta, usa invece [25 — /goal](/claude-code/25-goal), che dopo ogni turno fa valutare la condizione a un modello terzo. In sintesi: lavoro che deve girare quando non sei al computer -> Routine; lavoro che deve completarsi adesso fino a una condizione -> /goal. Vedi anche "Compare scheduling options" nella doc ufficiale.

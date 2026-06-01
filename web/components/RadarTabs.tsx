@@ -1,17 +1,67 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import type { App, Benchmark, CatalogTool, Model, ModelId, ModelsData, UseRow } from "@/lib/models";
+import type {
+  App,
+  Benchmark,
+  CatalogTool,
+  ContainerRow,
+  DecisionRow,
+  LinkRef,
+  Model,
+  ModelId,
+  ModelsData,
+  UseRow,
+} from "@/lib/models";
 import { ModelCard } from "./ModelCard";
+import { Logo } from "./Logo";
 import { ArrowUpRight } from "./Icons";
 
-const BRAND: Record<ModelId, string> = {
+const BRAND: Record<string, string> = {
   claude: "#e8901b",
   chatgpt: "#0f766e",
   gemini: "#2563eb",
 };
+const brand = (id: ModelId) => BRAND[id] ?? "#7531e3";
 
-const TABS = ["Modelli", "App di testo", "Tools per categoria", "Cosa usare per cosa", "Benchmark"] as const;
+// Domini per i loghi nei chip "consigliati" della matrice.
+const NAME_DOMAINS: Record<string, string> = {
+  Claude: "claude.ai",
+  "Claude Code": "claude.com",
+  ChatGPT: "chatgpt.com",
+  "OpenAI Codex": "openai.com",
+  Gemini: "gemini.google.com",
+  Perplexity: "perplexity.ai",
+  Grok: "grok.com",
+  NotebookLM: "notebooklm.google.com",
+  "Microsoft Copilot": "copilot.microsoft.com",
+  Copilot: "copilot.microsoft.com",
+  Gamma: "gamma.app",
+  Midjourney: "midjourney.com",
+  Ideogram: "ideogram.ai",
+  "Adobe Firefly": "adobe.com",
+  Canva: "canva.com",
+  Sora: "sora.com",
+  Runway: "runwayml.com",
+  HeyGen: "heygen.com",
+  "Opus Clip": "opus.pro",
+  ElevenLabs: "elevenlabs.io",
+  Suno: "suno.com",
+  Zapier: "zapier.com",
+  n8n: "n8n.io",
+  Cursor: "cursor.com",
+  Lovable: "lovable.dev",
+  "Transcript LOL": "transcript.lol",
+};
+function domainFor(name: string): string | undefined {
+  if (NAME_DOMAINS[name]) return NAME_DOMAINS[name];
+  const hit = Object.keys(NAME_DOMAINS).find(
+    (k) => name.toLowerCase().includes(k.toLowerCase()) || k.toLowerCase().includes(name.toLowerCase()),
+  );
+  return hit ? NAME_DOMAINS[hit] : undefined;
+}
+
+const TABS = ["Modelli", "App e tool", "Tools per categoria", "Cosa usare per cosa", "Benchmark"] as const;
 type Tab = (typeof TABS)[number];
 
 export function RadarTabs({ data }: { data: ModelsData }) {
@@ -44,10 +94,14 @@ export function RadarTabs({ data }: { data: ModelsData }) {
       </div>
 
       {tab === "Modelli" && <ModelsPanel models={data.models} />}
-      {tab === "App di testo" && <AppsPanel apps={data.apps} />}
+      {tab === "App e tool" && (
+        <AppsPanel apps={data.apps} containers={data.containers} decisionTree={data.decisionTree} />
+      )}
       {tab === "Tools per categoria" && <ToolsPanel tools={data.tools} />}
       {tab === "Cosa usare per cosa" && <MatrixPanel rows={data.useMatrix} />}
-      {tab === "Benchmark" && <BenchmarkPanel benchmarks={data.benchmarks} nameById={nameById} />}
+      {tab === "Benchmark" && (
+        <BenchmarkPanel benchmarks={data.benchmarks} links={data.meta.benchmarkLinks} nameById={nameById} />
+      )}
     </div>
   );
 }
@@ -58,9 +112,9 @@ function ModelsPanel({ models }: { models: Model[] }) {
       <p className="max-w-prose text-sm text-muted">
         Il <span className="text-ink">modello</span> e&apos; il motore (es. Claude Opus 4.8);
         l&apos;<span className="text-ink">app</span> e&apos; il prodotto che lo usa (es. Claude.ai).
-        Qui i modelli di frontiera a confronto sul piano tecnico — le app nella tab accanto.
+        Qui {models.length} modelli di frontiera a confronto sul piano tecnico.
       </p>
-      <div className="grid grid-cols-1 gap-5 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
         {models.map((m) => (
           <ModelCard key={m.id} model={m} />
         ))}
@@ -69,45 +123,146 @@ function ModelsPanel({ models }: { models: Model[] }) {
   );
 }
 
-function AppsPanel({ apps }: { apps: App[] }) {
+function AppsPanel({
+  apps,
+  containers,
+  decisionTree,
+}: {
+  apps: App[];
+  containers: ContainerRow[];
+  decisionTree: DecisionRow[];
+}) {
   return (
-    <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-      {apps.map((app) => (
-        <article key={app.id} className="card flex flex-col gap-3 p-5">
-          <div className="flex items-start justify-between gap-3">
-            <div>
-              <h3 className="text-base font-semibold text-ink">{app.name}</h3>
-              <p className="font-mono text-xs text-faint">{app.provider} · {app.poweredBy}</p>
+    <div className="flex flex-col gap-12">
+      <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
+        {apps.map((app) => (
+          <article key={app.id} className="card flex flex-col gap-3 p-5">
+            <div className="flex items-start justify-between gap-3">
+              <div className="flex items-center gap-2.5">
+                <Logo url={app.url} name={app.name} size={28} />
+                <div>
+                  <h3 className="text-base font-semibold leading-tight text-ink">{app.name}</h3>
+                  <p className="font-mono text-[11px] text-faint">{app.provider}</p>
+                </div>
+              </div>
+              <a
+                href={app.url}
+                target="_blank"
+                rel="noreferrer"
+                className="shrink-0 text-[color:var(--primary-ink)]"
+                aria-label={`Apri ${app.name}`}
+              >
+                <ArrowUpRight className="h-4 w-4" />
+              </a>
             </div>
-            <a
-              href={app.url}
-              target="_blank"
-              rel="noreferrer"
-              className="shrink-0 text-[color:var(--primary-ink)]"
-              aria-label={`Apri ${app.name}`}
-            >
-              <ArrowUpRight className="h-4 w-4" />
-            </a>
-          </div>
-          <p className="text-sm leading-relaxed text-muted">{app.tagline}</p>
-          <div className="flex flex-wrap gap-1.5">
-            {app.features.map((f) => (
-              <span key={f} className="chip text-xs">{f}</span>
-            ))}
-          </div>
-          <dl className="mt-1 flex flex-col gap-1 border-t border-line pt-3 text-xs">
-            <div className="flex justify-between gap-3">
-              <dt className="text-faint">Free</dt>
-              <dd className="text-right text-muted">{app.pricingFree}</dd>
-            </div>
-            <div className="flex justify-between gap-3">
-              <dt className="text-faint">A pagamento</dt>
-              <dd className="text-right font-medium text-ink">{app.pricingPaid}</dd>
-            </div>
-          </dl>
-        </article>
-      ))}
+            <p className="text-sm leading-relaxed text-muted">{app.cosaFa}</p>
+            {app.funzionalita?.length > 0 && (
+              <ul className="flex flex-col gap-1 text-sm text-muted">
+                {app.funzionalita.slice(0, 6).map((f) => (
+                  <li key={f} className="flex gap-2">
+                    <span className="mt-1 text-[color:var(--primary-ink)]" aria-hidden>•</span>
+                    <span>{f}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
+            <dl className="mt-1 flex flex-col gap-2 border-t border-line pt-3 text-xs">
+              <Field label="Tier gratuito" value={app.tierGratuito} />
+              <Field label="Caveat" value={app.caveat} />
+              <Field label="Sweet spot" value={app.sweetSpot} accent />
+            </dl>
+          </article>
+        ))}
+      </div>
+
+      {containers.length > 0 && <ContainersTable rows={containers} />}
+      {decisionTree.length > 0 && <DecisionTree rows={decisionTree} />}
     </div>
+  );
+}
+
+function Field({ label, value, accent }: { label: string; value: string; accent?: boolean }) {
+  if (!value) return null;
+  return (
+    <div className="flex flex-col gap-0.5">
+      <dt className="font-mono uppercase tracking-wider text-faint">{label}</dt>
+      <dd className={accent ? "text-[color:var(--primary-ink)]" : "text-muted"}>{value}</dd>
+    </div>
+  );
+}
+
+const CONTAINER_COLS: { key: keyof ContainerRow; label: string; domain?: string }[] = [
+  { key: "customGpts", label: "Custom GPT", domain: "chatgpt.com" },
+  { key: "chatgptProjects", label: "ChatGPT Projects", domain: "chatgpt.com" },
+  { key: "claudeProjects", label: "Claude Projects", domain: "claude.ai" },
+  { key: "geminiGems", label: "Gemini Gems", domain: "gemini.google.com" },
+  { key: "perplexitySpaces", label: "Perplexity Spaces", domain: "perplexity.ai" },
+];
+
+function ContainersTable({ rows }: { rows: ContainerRow[] }) {
+  return (
+    <section className="flex flex-col gap-4">
+      <div>
+        <h3 className="font-mono text-sm font-semibold uppercase tracking-wider text-ink">
+          Contenitori a confronto
+        </h3>
+        <p className="mt-1 text-sm text-muted">
+          Le piattaforme per costruire un assistente con knowledge base allegata: stesso concetto,
+          declinazioni diverse.
+        </p>
+      </div>
+      <div className="overflow-x-auto rounded-2xl border border-line">
+        <table className="w-full border-collapse text-sm">
+          <thead>
+            <tr className="border-b border-line bg-surface text-left">
+              <th className="px-4 py-3 font-medium text-muted">Dimensione</th>
+              {CONTAINER_COLS.map((c) => (
+                <th key={c.key} className="px-4 py-3 font-medium text-ink">
+                  <span className="flex items-center gap-1.5">
+                    <Logo domain={c.domain} name={c.label} size={16} />
+                    {c.label}
+                  </span>
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((r) => (
+              <tr key={r.dimensione} className="border-b border-line align-top last:border-0">
+                <td className="px-4 py-3 font-medium text-ink">{r.dimensione}</td>
+                {CONTAINER_COLS.map((c) => (
+                  <td key={c.key} className="px-4 py-3 text-muted">{r[c.key]}</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  );
+}
+
+function DecisionTree({ rows }: { rows: DecisionRow[] }) {
+  return (
+    <section className="flex flex-col gap-4">
+      <h3 className="font-mono text-sm font-semibold uppercase tracking-wider text-ink">
+        Quale contenitore scegliere
+      </h3>
+      <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
+        {rows.map((r) => (
+          <div key={r.scenario} className="card flex items-start gap-3 p-4">
+            <span className="mt-0.5 shrink-0 text-[color:var(--primary-ink)]" aria-hidden>→</span>
+            <div>
+              <p className="text-sm text-ink">{r.scenario}</p>
+              <p className="mt-1 inline-flex items-center gap-1.5 text-sm font-medium text-[color:var(--primary-ink)]">
+                {domainFor(r.tool) && <Logo domain={domainFor(r.tool)} name={r.tool} size={16} />}
+                {r.tool}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
   );
 }
 
@@ -118,7 +273,6 @@ function ToolsPanel({ tools }: { tools: CatalogTool[] }) {
     return out;
   }, [tools]);
   const order = ["Immagini", "Video", "Audio", "Agent", "Coding"];
-
   return (
     <div className="flex flex-col gap-10">
       {order
@@ -138,8 +292,9 @@ function ToolsPanel({ tools }: { tools: CatalogTool[] }) {
                   rel="noreferrer"
                   className="card card-hover group flex flex-col gap-1.5 p-4"
                 >
-                  <span className="flex items-center justify-between gap-2">
-                    <span className="text-sm font-semibold text-ink">{t.name}</span>
+                  <span className="flex items-center gap-2">
+                    <Logo url={t.url} name={t.name} size={20} />
+                    <span className="flex-1 text-sm font-semibold leading-tight text-ink">{t.name}</span>
                     <ArrowUpRight className="h-3.5 w-3.5 shrink-0 text-faint group-hover:text-[color:var(--primary-ink)]" />
                   </span>
                   <span className="text-xs leading-relaxed text-muted">{t.oneLiner}</span>
@@ -156,7 +311,6 @@ function MatrixPanel({ rows }: { rows: UseRow[] }) {
   const categories = useMemo(() => Array.from(new Set(rows.map((r) => r.category))), [rows]);
   const [cat, setCat] = useState("all");
   const visible = cat === "all" ? categories : [cat];
-
   return (
     <div className="flex flex-col gap-6">
       <p className="max-w-prose text-sm text-muted">
@@ -169,7 +323,6 @@ function MatrixPanel({ rows }: { rows: UseRow[] }) {
           <CatBtn key={c} active={cat === c} onClick={() => setCat(c)}>{c}</CatBtn>
         ))}
       </div>
-
       <div className="flex flex-col gap-10">
         {visible.map((c) => (
           <section key={c} className="flex flex-col gap-4">
@@ -185,8 +338,9 @@ function MatrixPanel({ rows }: { rows: UseRow[] }) {
                       {r.recommended.map((t) => (
                         <span
                           key={t}
-                          className="rounded-full bg-primary/10 px-2.5 py-0.5 text-sm font-medium text-[color:var(--primary-ink)]"
+                          className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-2.5 py-0.5 text-sm font-medium text-[color:var(--primary-ink)]"
                         >
+                          {domainFor(t) && <Logo domain={domainFor(t)} name={t} size={15} />}
                           {t}
                         </span>
                       ))}
@@ -198,7 +352,6 @@ function MatrixPanel({ rows }: { rows: UseRow[] }) {
           </section>
         ))}
       </div>
-
       <p className="text-xs text-faint">
         Consigli indicativi su tool pubblici, per orientarti in fretta. Verifica sempre sul tuo caso reale.
       </p>
@@ -208,18 +361,39 @@ function MatrixPanel({ rows }: { rows: UseRow[] }) {
 
 function BenchmarkPanel({
   benchmarks,
+  links,
   nameById,
 }: {
   benchmarks: Benchmark[];
+  links: LinkRef[];
   nameById: Map<ModelId, string>;
 }) {
   return (
     <div className="flex flex-col gap-8">
-      <p className="max-w-prose text-sm text-muted">
-        Benchmark non confrontabili tra loro. SWE-Bench Pro, Computer Use e GPQA Diamond sono
-        percentuali (piu&apos; alto = meglio); per LMArena il valore e&apos; una posizione in classifica
-        (piu&apos; basso = meglio).
-      </p>
+      <div className="flex flex-col gap-3">
+        <p className="max-w-prose text-sm text-muted">
+          Benchmark non confrontabili tra loro. SWE-Bench Pro, Computer Use e GPQA Diamond sono
+          percentuali (piu&apos; alto = meglio); per LMArena il valore e&apos; una posizione (piu&apos; basso = meglio).
+        </p>
+        {links?.length > 0 && (
+          <div className="flex flex-wrap gap-2">
+            <span className="font-mono text-xs uppercase tracking-wider text-faint">Classifiche live:</span>
+            {links.map((l) => (
+              <a
+                key={l.url}
+                href={l.url}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1.5 rounded-full border border-line px-3 py-1 text-xs font-medium text-ink transition-colors hover:border-primary/50"
+              >
+                <Logo url={l.url} name={l.name} size={16} />
+                {l.name}
+                <ArrowUpRight className="h-3 w-3 text-faint" />
+              </a>
+            ))}
+          </div>
+        )}
+      </div>
       {benchmarks.map((b) => {
         const max = Math.max(...b.scores.map((s) => s.value), 1);
         return (
@@ -237,7 +411,7 @@ function BenchmarkPanel({
                     <div className="h-6 flex-1 overflow-hidden rounded bg-surface-alt">
                       <div
                         className="flex h-full items-center justify-end rounded px-2 text-xs font-medium text-white"
-                        style={{ width: `${Math.max(width, 14)}%`, backgroundColor: BRAND[s.modelId] }}
+                        style={{ width: `${Math.max(width, 14)}%`, backgroundColor: brand(s.modelId) }}
                       >
                         {b.lowerIsBetter ? `#${s.value}` : `${s.value}${b.unit}`}
                       </div>
@@ -253,15 +427,7 @@ function BenchmarkPanel({
   );
 }
 
-function CatBtn({
-  active,
-  onClick,
-  children,
-}: {
-  active: boolean;
-  onClick: () => void;
-  children: React.ReactNode;
-}) {
+function CatBtn({ active, onClick, children }: { active: boolean; onClick: () => void; children: React.ReactNode }) {
   return (
     <button
       type="button"

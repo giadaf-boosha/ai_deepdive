@@ -1,6 +1,6 @@
 import data from "@/data/models.json";
 
-export type ModelId = "claude" | "chatgpt" | "gemini";
+export type ModelId = string;
 export type PrivacyRating = "high" | "medium" | "low";
 export type ToolCategory =
   | "Testo"
@@ -16,7 +16,7 @@ export interface Model {
   provider: string;
   name: string;
   releaseDate: string;
-  tagline: string;
+  tagline?: string;
   contextWindow: string;
   apiInputPer1M: number;
   apiOutputPer1M: number;
@@ -24,32 +24,32 @@ export interface Model {
   supportsVideo: boolean;
   supportsCode: boolean;
   supportsAgents: boolean;
-  privacyRating: PrivacyRating;
-  enterpriseCertifications: string[];
-  dataResidency: string;
-  trainingPolicy: string;
+  privacyRating?: PrivacyRating;
+  enterpriseCertifications?: string[];
+  dataResidency?: string;
+  trainingPolicy?: string;
   strengths: string[];
   weaknesses: string[];
   bestFor: string[];
   verdict: string;
   lmarenaRank: number;
+  domain: string;
 }
 
-// App/prodotto consumer (livello prodotto): feature, prezzi consumer.
+// App/prodotto (scheda tool): cosa fa, funzionalita, tier, caveat, sweet spot.
 export interface App {
   id: string;
   name: string;
   url: string;
   provider: string;
-  poweredBy: string;
-  tagline: string;
-  pricingFree: string;
-  pricingPaid: string;
-  features: string[];
-  bestFor: string[];
+  poweredBy?: string;
+  cosaFa: string;
+  funzionalita: string[];
+  tierGratuito: string;
+  caveat: string;
+  sweetSpot: string;
 }
 
-// Tool del catalogo per categoria.
 export interface CatalogTool {
   category: ToolCategory;
   name: string;
@@ -57,12 +57,26 @@ export interface CatalogTool {
   oneLiner: string;
 }
 
-// Riga della matrice "cosa usare per cosa".
 export interface UseRow {
   category: string;
   task: string;
   recommended: string[];
   why: string;
+}
+
+// Tabella comparativa dei "contenitori" (assistenti con knowledge base).
+export interface ContainerRow {
+  dimensione: string;
+  customGpts: string;
+  chatgptProjects: string;
+  claudeProjects: string;
+  geminiGems: string;
+  perplexitySpaces: string;
+}
+
+export interface DecisionRow {
+  scenario: string;
+  tool: string;
 }
 
 export interface BenchmarkScore {
@@ -78,6 +92,11 @@ export interface Benchmark {
   scores: BenchmarkScore[];
 }
 
+export interface LinkRef {
+  name: string;
+  url: string;
+}
+
 export interface ChangelogEntry {
   date: string;
   summary: string;
@@ -89,6 +108,7 @@ export interface ModelsMeta {
   generatedBy: string;
   sourcesChecked: string[];
   nextScheduledUpdate: string;
+  benchmarkLinks: LinkRef[];
 }
 
 export interface ModelsData {
@@ -97,6 +117,8 @@ export interface ModelsData {
   apps: App[];
   tools: CatalogTool[];
   useMatrix: UseRow[];
+  containers: ContainerRow[];
+  decisionTree: DecisionRow[];
   benchmarks: Benchmark[];
   changelog: ChangelogEntry[];
 }
@@ -114,9 +136,4 @@ export function getModelById(id: ModelId): Model | undefined {
 }
 export function getApps(): App[] {
   return typed.apps;
-}
-export function getToolsByCategory(): Record<string, CatalogTool[]> {
-  const out: Record<string, CatalogTool[]> = {};
-  for (const t of typed.tools) (out[t.category] ??= []).push(t);
-  return out;
 }

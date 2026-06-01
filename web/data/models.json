@@ -18,7 +18,17 @@
       "https://notebooklm.google.com/",
       "https://one.google.com/about/google-ai-plans/"
     ],
-    "nextScheduledUpdate": "2026-06-07T08:00:00+02:00"
+    "nextScheduledUpdate": "2026-06-07T08:00:00+02:00",
+    "benchmarkLinks": [
+      {
+        "name": "Hugging Face — LLM Leaderboard",
+        "url": "https://huggingface.co/open-llm-leaderboard"
+      },
+      {
+        "name": "Artificial Analysis",
+        "url": "https://artificialanalysis.ai/"
+      }
+    ]
   },
   "models": [
     {
@@ -61,7 +71,8 @@
         "Reasoning lungo con 1M di contesto"
       ],
       "verdict": "La scelta per coding agentico, automazione e ragionamento lungo. Affidabile e con contesto ampio; non genera ne' interpreta immagini o video.",
-      "lmarenaRank": 1
+      "lmarenaRank": 1,
+      "domain": "claude.ai"
     },
     {
       "id": "chatgpt",
@@ -103,7 +114,8 @@
         "Team gia' su ecosistema OpenAI/Azure"
       ],
       "verdict": "Il piu' versatile e multimodale, con l'ecosistema piu' ampio. Ottimo tuttofare; l'output API resta il piu' costoso del gruppo.",
-      "lmarenaRank": 3
+      "lmarenaRank": 3,
+      "domain": "openai.com"
     },
     {
       "id": "gemini",
@@ -150,205 +162,477 @@
         "Volumi elevati a basso costo via API"
       ],
       "verdict": "Il piu' rapido ed economico, multimodale end-to-end. Ideale per volumi e video; sul coding agentico resta dietro a Claude.",
-      "lmarenaRank": 2
+      "lmarenaRank": 2,
+      "domain": "gemini.google.com"
+    },
+    {
+      "id": "grok",
+      "provider": "xAI",
+      "name": "Grok 4.3",
+      "releaseDate": "2026-05-01",
+      "contextWindow": "1M token",
+      "apiInputPer1M": 1.25,
+      "apiOutputPer1M": 2.5,
+      "supportsImages": true,
+      "supportsVideo": false,
+      "supportsCode": true,
+      "supportsAgents": true,
+      "strengths": [
+        "Reasoning di alto livello con effort configurabile (none/low/medium/high)",
+        "Tool nativi: web search, X search, code execution, file attachment",
+        "Context da 1M token senza limite di output",
+        "Cache input molto economica (~0.20/M)"
+      ],
+      "weaknesses": [
+        "Knowledge cutoff dichiarato a novembre 2024",
+        "Rank LMArena specifico per 4.3 non confermato ufficialmente"
+      ],
+      "bestFor": [
+        "Agenti multi-step con tool calling",
+        "Analisi di documenti lunghi",
+        "Coding assistito"
+      ],
+      "verdict": "Modello di frontiera xAI con reasoning regolabile, context da 1M e tool nativi integrati nell'API.",
+      "lmarenaRank": 0,
+      "domain": "x.ai"
+    },
+    {
+      "id": "llama",
+      "provider": "Meta",
+      "name": "Llama 4 Maverick",
+      "releaseDate": "2025-04",
+      "contextWindow": "1M token",
+      "apiInputPer1M": 0,
+      "apiOutputPer1M": 0,
+      "supportsImages": true,
+      "supportsVideo": false,
+      "supportsCode": true,
+      "supportsAgents": true,
+      "strengths": [
+        "Open-weight, dispiegabile self-hosted",
+        "Architettura MoE (17B attivi, 128 esperti)",
+        "Multimodale nativo (testo + immagini)"
+      ],
+      "weaknesses": [
+        "Generazione ferma a Llama 4 (nessun Llama 5 ufficiale a giugno 2026)",
+        "Context Maverick inferiore allo Scout (10M) e con valori discordanti tra fonti"
+      ],
+      "bestFor": [
+        "Deployment on-premise/privati",
+        "Casi d'uso open-source senza costo per token",
+        "Fine-tuning custom"
+      ],
+      "verdict": "Modello open-weight multimodale MoE di Meta, ancora la generazione corrente a giugno 2026.",
+      "lmarenaRank": 0,
+      "domain": "llama.com"
+    },
+    {
+      "id": "deepseek",
+      "provider": "DeepSeek",
+      "name": "DeepSeek V4 Pro",
+      "releaseDate": "2026-04-24",
+      "contextWindow": "1M token",
+      "apiInputPer1M": 0.435,
+      "apiOutputPer1M": 0.87,
+      "supportsImages": false,
+      "supportsVideo": false,
+      "supportsCode": true,
+      "supportsAgents": true,
+      "strengths": [
+        "Prezzo molto basso per la fascia di capacita (taglio 75% reso permanente a maggio 2026)",
+        "Context da 1M token, max output 384K",
+        "Modalita thinking e non-thinking, JSON e tool calls",
+        "Cache input estremamente economica (~0.0036/M)"
+      ],
+      "weaknesses": [
+        "Capacita multimodali (immagini) non documentate ufficialmente come supportate",
+        "Alias legacy deepseek-chat/deepseek-reasoner in deprecazione (24 lug 2026)"
+      ],
+      "bestFor": [
+        "Coding e reasoning a basso costo",
+        "Workload ad alto volume",
+        "Agenti con tool calling"
+      ],
+      "verdict": "Flagship DeepSeek V4 Pro con context da 1M e prezzo aggressivo dopo il taglio reso permanente.",
+      "lmarenaRank": 0,
+      "domain": "deepseek.com"
+    },
+    {
+      "id": "qwen",
+      "provider": "Alibaba",
+      "name": "Qwen 3.7-Max",
+      "releaseDate": "2026-05-19",
+      "contextWindow": "1M token",
+      "apiInputPer1M": 2.5,
+      "apiOutputPer1M": 7.5,
+      "supportsImages": true,
+      "supportsVideo": false,
+      "supportsCode": true,
+      "supportsAgents": true,
+      "strengths": [
+        "Context raddoppiato a 1M token vs Qwen3.6 Max (256K)",
+        "Extended-thinking nativo",
+        "Drop-in compatibile con protocollo Anthropic",
+        "Disponibile su Model Studio, OpenRouter, Together"
+      ],
+      "weaknesses": [
+        "Closed-weight (a differenza di altri modelli Qwen open)",
+        "Output costoso (7.50/M) rispetto ai concorrenti cinesi"
+      ],
+      "bestFor": [
+        "Reasoning agentico di livello enterprise",
+        "Task multilingua e mercato APAC",
+        "Analisi long-context"
+      ],
+      "verdict": "Flagship closed-weight di Alibaba con context da 1M e reasoning agentico, lanciato a maggio 2026.",
+      "lmarenaRank": 0,
+      "domain": "qwen.ai"
+    },
+    {
+      "id": "mistral",
+      "provider": "Mistral AI",
+      "name": "Mistral Medium 3.5",
+      "releaseDate": "2026-05",
+      "contextWindow": "256K token",
+      "apiInputPer1M": 1.5,
+      "apiOutputPer1M": 7.5,
+      "supportsImages": true,
+      "supportsVideo": false,
+      "supportsCode": true,
+      "supportsAgents": true,
+      "strengths": [
+        "Flagship ufficiale che unifica chat, reasoning e coding in un singolo modello denso 128B",
+        "Multimodale",
+        "Rilasciato anche con pesi aperti (licenza MIT modificata)",
+        "Powering dei remote agents in Vibe"
+      ],
+      "weaknesses": [
+        "Context 256K, inferiore a 1M dei concorrenti",
+        "Output costoso (7.50/M); piu caro per token di Mistral Large 3"
+      ],
+      "bestFor": [
+        "Assistenti unificati chat+reasoning+code",
+        "Agenti remoti (Vibe)",
+        "Deployment europeo con pesi aperti"
+      ],
+      "verdict": "Flagship Mistral che fonde chat, reasoning e coding in un denso 128B multimodale con pesi aperti.",
+      "lmarenaRank": 0,
+      "domain": "mistral.ai"
+    },
+    {
+      "id": "kimi",
+      "provider": "Moonshot AI",
+      "name": "Kimi K2.6",
+      "releaseDate": "2026-04-20",
+      "contextWindow": "256K token",
+      "apiInputPer1M": 0.95,
+      "apiOutputPer1M": 4,
+      "supportsImages": true,
+      "supportsVideo": true,
+      "supportsCode": true,
+      "supportsAgents": true,
+      "strengths": [
+        "Pensato per coding long-horizon e orchestrazione multi-agente",
+        "Input multimodale testo/immagine/video",
+        "Modalita thinking e tool calls",
+        "Cache input economica (~0.16/M)"
+      ],
+      "weaknesses": [
+        "Context 256K, sotto la soglia 1M dei top model",
+        "Prezzo output 4/M variabile per provider"
+      ],
+      "bestFor": [
+        "Coding long-horizon e UI/UX generation",
+        "Orchestrazione multi-agente",
+        "Workflow agentici"
+      ],
+      "verdict": "Modello multimodale Moonshot orientato a coding long-horizon e multi-agente, con context da 256K.",
+      "lmarenaRank": 0,
+      "domain": "moonshot.ai"
+    },
+    {
+      "id": "glm",
+      "provider": "Z.AI",
+      "name": "GLM-5.1",
+      "releaseDate": "2026-04-07",
+      "contextWindow": "203K token",
+      "apiInputPer1M": 0.98,
+      "apiOutputPer1M": 3.08,
+      "supportsImages": false,
+      "supportsVideo": false,
+      "supportsCode": true,
+      "supportsAgents": true,
+      "strengths": [
+        "Forte su planning agentico e workflow long-horizon",
+        "Reasoning backend e self-correction iterativo",
+        "Linea GLM-5 con pesi aperti e prezzo competitivo"
+      ],
+      "weaknesses": [
+        "Context 203K, inferiore ai flagship da 1M",
+        "Supporto multimodale immagini non confermato ufficialmente per questa variante"
+      ],
+      "bestFor": [
+        "Agenti per systems design complessi",
+        "Backend reasoning",
+        "Workflow long-horizon a basso costo"
+      ],
+      "verdict": "Flagship Z.AI della serie GLM-5, focalizzato su agentic planning e systems design complessi.",
+      "lmarenaRank": 0,
+      "domain": "z.ai"
     }
   ],
   "apps": [
     {
       "id": "chatgpt",
       "name": "ChatGPT",
-      "url": "https://chatgpt.com/",
+      "url": "https://chatgpt.com",
       "provider": "OpenAI",
-      "poweredBy": "GPT-5.5 (Instant, default da maggio 2026)",
-      "tagline": "L'assistente AI conversazionale piu' diffuso, con ricerca web, ragionamento e strumenti agentici.",
-      "pricingFree": "Gratis (modelli base con limiti d'uso)",
-      "pricingPaid": "ChatGPT Plus: 20 USD/mese",
-      "features": [
-        "GPTs (assistenti personalizzati)",
-        "Web Search",
-        "Canvas",
-        "Voice Mode",
-        "Reasoning models",
-        "Projects",
-        "Deep Research",
-        "Operator (agente)",
-        "Image Generation"
+      "cosaFa": "Assistente conversazionale generalista con GPT custom, Projects, Memory, Canvas e generazione immagini.",
+      "funzionalita": [
+        "GPTs custom (assistenti pubblicabili con istruzioni + knowledge files)",
+        "Projects: contenitore con file, istruzioni e chat persistenti",
+        "Memory cross-chat",
+        "Canvas (editing collaborativo testo/codice)",
+        "Generazione immagini",
+        "Modello core famiglia GPT-5.3 / GPT-5.5"
       ],
-      "bestFor": [
-        "Assistente generalista quotidiano",
-        "Ricerca e sintesi online",
-        "Scrittura e brainstorming",
-        "Ragionamento su problemi complessi",
-        "Generazione di immagini"
-      ]
+      "tierGratuito": "Si. Free con limiti: circa 10 messaggi con GPT-5.5 ogni 5 ore (rolling window), poi fallback automatico alla versione mini del modello.",
+      "caveat": "Su Free la finestra di accesso al modello full e' stretta (~10 msg/5h) e si scende al modello mini. I file su Projects/GPT consumano lo storage condiviso (cap 25 GB utente) e la rate di upload e' limitata.",
+      "sweetSpot": "Assistente versatile da pubblicare e condividere con piu' utenti via Custom GPT."
     },
     {
       "id": "claude-ai",
-      "name": "Claude.ai",
-      "url": "https://claude.ai/",
+      "name": "Claude",
+      "url": "https://claude.ai",
       "provider": "Anthropic",
-      "poweredBy": "Claude Opus 4.8",
-      "tagline": "Assistente orientato a scrittura, analisi e ragionamento approfondito con artifacts interattivi.",
-      "pricingFree": "Gratis (accesso con limiti d'uso)",
-      "pricingPaid": "Claude Pro: 20 USD/mese (17 USD/mese annuale)",
-      "features": [
-        "Projects",
-        "Artifacts",
+      "cosaFa": "Assistente AI con ragionamento profondo, Projects, Artifacts e connettori MCP.",
+      "funzionalita": [
+        "Projects con knowledge base (RAG automatico sui piani a pagamento)",
+        "Artifacts (anche Live/interattivi)",
         "Custom Styles",
-        "Extended thinking",
-        "Web Search (US / computer use con MCP)"
+        "Claude Design (research preview, Pro+)",
+        "Connettori MCP (Drive, Gmail, Notion, ecc.)",
+        "Controllo dell'effort sul task (nuovo in Opus 4.8)",
+        "Modello Opus 4.8 (rilasciato 28 maggio 2026)"
       ],
-      "bestFor": [
-        "Scrittura di qualita' e tono personalizzato",
-        "Analisi di documenti lunghi",
-        "Ragionamento esteso",
-        "Artifacts (codice, app, contenuti)",
-        "Progetti con contesto persistente"
-      ]
+      "tierGratuito": "Si. Free include accesso a Claude e Artifacts con limiti di utilizzo giornalieri.",
+      "caveat": "Finestra di contesto 200K token in chat sui piani non-Enterprise (500K Enterprise). Nei Projects il knowledge passa a RAG quando cresce (regressione segnalata: switch a ricerca RAG gia' a ~13 file), quindi il recupero completo in una singola risposta non e' garantito.",
+      "sweetSpot": "Workspace privato a lungo termine con ragionamento profondo su documenti propri."
+    },
+    {
+      "id": "gemini-app",
+      "name": "Gemini",
+      "url": "https://gemini.google.com",
+      "provider": "Google",
+      "cosaFa": "Assistente AI integrato con Google Workspace, con Gems personalizzabili e Deep Research.",
+      "funzionalita": [
+        "Gems (assistenti custom, fino a 10 file di knowledge)",
+        "Side panel integrato in Workspace (Gmail, Docs, Drive)",
+        "Generazione immagini Nano Banana",
+        "Deep Research",
+        "Riferimento a file su Google Drive"
+      ],
+      "tierGratuito": "Si, ma limitato (quote su Deep Research e modelli avanzati ridotte rispetto ai piani a pagamento).",
+      "caveat": "Le Gems accettano max 10 file di knowledge: insufficiente per knowledge base ampie. Il vero valore emerge dentro l'ecosistema Workspace.",
+      "sweetSpot": "Assistente integrato con Drive/Gmail per chi vive dentro Google Workspace."
+    },
+    {
+      "id": "pomelli",
+      "name": "Google Labs Pomelli",
+      "url": "https://labs.google.com/pomelli",
+      "provider": "Google (Labs)",
+      "cosaFa": "Marketing AI che parte dall'analisi del sito (Business DNA) per generare campagne e asset.",
+      "funzionalita": [
+        "Business DNA: estrazione identita' di brand dal sito",
+        "Generazione campagne e contenuti marketing",
+        "Animate (video con Veo 3.1)",
+        "Photoshoot (immagini prodotto)"
+      ],
+      "tierGratuito": "Si, in beta gratuita.",
+      "caveat": "Disponibilita' geografica limitata a US/CA/AU/NZ: non accessibile dall'Italia senza VPN. Essendo Labs/beta, funzionalita' e disponibilita' possono cambiare.",
+      "sweetSpot": "PMI che vogliono generare velocemente asset marketing coerenti col proprio brand."
+    },
+    {
+      "id": "mixboard",
+      "name": "Mixboard",
+      "url": "https://labs.google.com/mixboard",
+      "provider": "Google (Labs)",
+      "cosaFa": "Moodboard AI su canvas infinito basato su Nano Banana, per esplorazione visiva di concept.",
+      "funzionalita": [
+        "Canvas con generazione/editing immagini (Nano Banana)",
+        "Multi-board",
+        "Export degli asset"
+      ],
+      "tierGratuito": "Si, gratuito (Labs).",
+      "caveat": "Riservato ai 18+; disponibilita' in Italia da verificare (prodotto Labs, rollout geografico variabile). Essendo beta, puo' cambiare senza preavviso.",
+      "sweetSpot": "Brainstorming visivo e moodboard rapidi per progetti creativi."
     },
     {
       "id": "perplexity",
       "name": "Perplexity",
-      "url": "https://www.perplexity.ai/",
+      "url": "https://perplexity.ai",
       "provider": "Perplexity AI",
-      "poweredBy": "Modelli multipli (GPT, Claude, Gemini, Sonar)",
-      "tagline": "Motore di risposta con ricerca web citata e ragionamento, per la ricerca approfondita.",
-      "pricingFree": "Gratis (ricerche base illimitate, Pro Search limitato)",
-      "pricingPaid": "Perplexity Pro: 20 USD/mese (200 USD/anno)",
-      "features": [
-        "Web Search",
-        "Reasoning",
-        "Spaces",
+      "cosaFa": "Motore di risposta con fonti citate, Spaces, Deep Research e Labs.",
+      "funzionalita": [
+        "Spaces (contenitore con file + istruzioni)",
         "Deep Research",
-        "Image Generation"
+        "Labs",
+        "Export delle risposte",
+        "Citazioni delle fonti in linea"
       ],
-      "bestFor": [
-        "Ricerca con fonti citate",
-        "Deep Research multi-fonte",
-        "Organizzare ricerche in Spaces",
-        "Risposte aggiornate dal web",
-        "Sintesi rapida"
-      ]
+      "tierGratuito": "Si, con quote. L'upload file NON e' disponibile sul piano Free: serve Pro (fino a 50 file per Space) o Enterprise (fino a 500 file per Space).",
+      "caveat": "Su Free niente upload file: gli Spaces con knowledge richiedono Pro. File singolo fino a ~40 MB, max 10 file caricati per volta nell'upload standard.",
+      "sweetSpot": "Ricerca e sintesi con fonti aggiornate e verificabili."
     },
     {
       "id": "grok",
       "name": "Grok",
-      "url": "https://grok.com/",
+      "url": "https://grok.com",
       "provider": "xAI",
-      "poweredBy": "Grok 4.3",
-      "tagline": "L'assistente di xAI con ricerca su web e su X in tempo reale e ragionamento.",
-      "pricingFree": "Gratis (accesso con limiti d'uso)",
-      "pricingPaid": "SuperGrok: 30 USD/mese (300 USD/anno)",
-      "features": [
-        "Web Search",
-        "X Search",
-        "DeepSearch",
-        "Reasoning",
-        "Image Generation"
+      "cosaFa": "Assistente AI con ricerca su web e X in tempo reale, Think mode e generazione immagini.",
+      "funzionalita": [
+        "DeepSearch (web + X/Twitter)",
+        "Think mode (ragionamento esteso)",
+        "Generazione immagini",
+        "Capacita' multi-agent"
       ],
-      "bestFor": [
-        "Ricerca su X in tempo reale",
-        "Attualita' aggiornata",
-        "Reasoning e DeepSearch",
-        "Generazione di immagini",
-        "Conversazione diretta"
-      ]
-    },
-    {
-      "id": "gemini-app",
-      "name": "Gemini app",
-      "url": "https://gemini.google.com/app",
-      "provider": "Google",
-      "poweredBy": "Gemini 3.x",
-      "tagline": "L'assistente di Google con Deep Research, Canvas, Gems e voce Live.",
-      "pricingFree": "Gratis (modelli con limiti d'uso)",
-      "pricingPaid": "Google AI Pro: 19,99 USD/mese (1M token, 2 TB One)",
-      "features": [
-        "Deep Research",
-        "Canvas",
-        "Gems (assistenti personalizzati)",
-        "Gemini Live (voce)",
-        "Image Generation"
-      ],
-      "bestFor": [
-        "Integrazione ecosistema Google",
-        "Deep Research",
-        "Conversazione vocale (Live)",
-        "Assistenti personalizzati (Gems)",
-        "Documenti e codice con Canvas"
-      ]
-    },
-    {
-      "id": "microsoft-copilot",
-      "name": "Microsoft Copilot",
-      "url": "https://copilot.microsoft.com/",
-      "provider": "Microsoft",
-      "poweredBy": "GPT-5.x / Claude Opus 4.8",
-      "tagline": "L'assistente di Microsoft integrato in Windows e nelle app Microsoft 365.",
-      "pricingFree": "Gratis (Copilot consumer con limiti d'uso)",
-      "pricingPaid": "Copilot Pro: 20 USD/mese · M365 Copilot: 30 USD/seat/mese",
-      "features": [
-        "Integrazione Microsoft 365 (Word, Excel, PowerPoint, Outlook)",
-        "Agenti (Agent 365)",
-        "Web Search",
-        "Image Generation",
-        "Voice"
-      ],
-      "bestFor": [
-        "Produttivita' in Microsoft 365",
-        "Ecosistema Windows e Office",
-        "Automazione con agenti",
-        "Assistenza a scrittura e documenti",
-        "Aziende gia' su M365"
-      ]
-    },
-    {
-      "id": "google-ai-studio",
-      "name": "Google AI Studio",
-      "url": "https://aistudio.google.com/",
-      "provider": "Google",
-      "poweredBy": "Gemini (2.5 Pro/Flash, 3 Flash)",
-      "tagline": "Il playground per sviluppatori per prototipare prompt e app con i modelli Gemini.",
-      "pricingFree": "Gratis (interfaccia con rate limit)",
-      "pricingPaid": "n/d (interfaccia gratuita; costi solo con Gemini API a consumo)",
-      "features": [
-        "Prototipazione di prompt",
-        "Accesso a piu' modelli Gemini",
-        "Test e tuning dei parametri",
-        "Generazione di codice per API",
-        "Costruzione di agenti"
-      ],
-      "bestFor": [
-        "Sviluppatori che sperimentano con Gemini",
-        "Prototipazione rapida",
-        "Confronto tra modelli Gemini",
-        "Passaggio prototipo -> API",
-        "Esplorazione gratuita"
-      ]
+      "tierGratuito": "Si, con limiti di utilizzo.",
+      "caveat": "L'integrazione stretta con X puo' introdurre bias dai contenuti social; valutare con cautela le fonti in ambito sensibile.",
+      "sweetSpot": "Monitoraggio e sintesi di cio' che accade ora su X e sul web."
     },
     {
       "id": "notebooklm",
       "name": "NotebookLM",
-      "url": "https://notebooklm.google.com/",
+      "url": "https://notebooklm.google.com",
       "provider": "Google",
-      "poweredBy": "Gemini",
-      "tagline": "Assistente di ricerca sulle tue fonti, con Audio Overview in stile podcast.",
-      "pricingFree": "Gratis (100 notebook, 50 fonti/notebook, Audio Overview limitati)",
-      "pricingPaid": "NotebookLM Plus (Google AI Plus): 7,99 USD/mese",
-      "features": [
-        "Ricerca sulle tue fonti (RAG)",
-        "Audio Overview (podcast a due voci)",
-        "Interactive mode",
-        "Risposte con citazioni",
-        "Piu' notebook e documenti"
+      "cosaFa": "Assistente grounded esclusivamente sulle tue fonti, con Audio/Video Overview, Mind Map e Quiz.",
+      "funzionalita": [
+        "Risposte ancorate solo alle fonti caricate (grounded)",
+        "Audio Overview e Video Overview",
+        "Mind Map",
+        "Quiz",
+        "Citazioni alle fonti"
       ],
-      "bestFor": [
-        "Studio e sintesi di documenti propri",
-        "Risposte ancorate alle fonti",
-        "Riassunti audio in stile podcast",
-        "Studenti e ricercatori",
-        "Meno allucinazioni su materiale specifico"
-      ]
+      "tierGratuito": "Si. Free: fino a 50 fonti per notebook e circa 3 Audio Overview al giorno.",
+      "caveat": "Risponde solo sulle fonti caricate: non e' un assistente generalista. I limiti free su numero di notebook e generazioni audio sono presto raggiunti su lavori intensivi.",
+      "sweetSpot": "Studiare/sintetizzare un corpus chiuso di documenti senza allucinazioni esterne."
+    },
+    {
+      "id": "gamma",
+      "name": "Gamma",
+      "url": "https://gamma.app",
+      "provider": "Gamma",
+      "cosaFa": "Genera slide, documenti e siti da prompt o da contenuto importato.",
+      "funzionalita": [
+        "Generazione slide/doc/siti da prompt",
+        "Import di contenuti esistenti",
+        "Branding personalizzato (logo, colori)",
+        "Export senza watermark sui piani a pagamento",
+        "Modelli immagine avanzati"
+      ],
+      "tierGratuito": "Si. Free: 400 crediti una tantum (non rinnovabili) con watermark Gamma sugli export.",
+      "caveat": "Plus circa 8 USD/mese (annuale) o 10 USD/mese (mensile), 1.000 crediti/mese rinnovabili; Pro circa 18 USD/mese annuale (25 mensile), 4.000 crediti/mese. I crediti Free non si rinnovano. Verificare prezzi su gamma.app/pricing perche' variano per fatturazione.",
+      "sweetSpot": "Sfornare rapidamente una presentazione o un sito da un brief testuale."
+    },
+    {
+      "id": "google-ai-studio",
+      "name": "Google AI Studio",
+      "url": "https://aistudio.google.com",
+      "provider": "Google",
+      "cosaFa": "Ambiente di prototipazione per i modelli Google (Gemini/Imagen/Veo/Gemma) con accesso API e vibe coding.",
+      "funzionalita": [
+        "Prototipazione modelli Google (Gemini, Imagen, Veo, Gemma)",
+        "Accesso e generazione chiavi API",
+        "Vibe coding",
+        "Tuning parametri (temperature, system instruction, ecc.)"
+      ],
+      "tierGratuito": "Si, gratuito con rate limit (utile per test e prototipi).",
+      "caveat": "UI tecnica orientata a sviluppatori: non e' un assistente consumer. I rate limit del tier gratuito non sono adatti a carichi di produzione.",
+      "sweetSpot": "Prototipare e testare prompt/modelli Google prima di portarli in produzione via API."
+    },
+    {
+      "id": "zapier-agents",
+      "name": "Zapier Agents",
+      "url": "https://agents.zapier.com",
+      "provider": "Zapier",
+      "cosaFa": "Crea agenti AI che agiscono su 8000+ app, con MCP e builder assistito da Copilot.",
+      "funzionalita": [
+        "Agenti AI collegati a 8000+ app",
+        "Supporto MCP",
+        "Copilot builder (costruzione assistita)",
+        "Trigger e azioni automatizzate"
+      ],
+      "tierGratuito": "Si. Free circa 400 attivita'/mese.",
+      "caveat": "Le attivita' degli Agents possono richiedere una subscription separata rispetto ai classici Zap; verificare il conteggio attivita' sul proprio piano prima di scalare.",
+      "sweetSpot": "Automazioni cross-app azionate da un agente AI senza scrivere codice."
+    },
+    {
+      "id": "n8n",
+      "name": "n8n",
+      "url": "https://n8n.io",
+      "provider": "n8n",
+      "cosaFa": "Piattaforma di workflow automation open-source con nodi AI, self-host o cloud.",
+      "funzionalita": [
+        "Workflow automation visuale",
+        "Nodi AI / agenti",
+        "Open-source self-hostable",
+        "Cloud gestito",
+        "Workflow attivi illimitati su tutti i piani (da aprile 2026)"
+      ],
+      "tierGratuito": "La Community Edition self-host e' gratuita. Il Cloud non ha free permanente (trial).",
+      "caveat": "Cloud Starter circa 24 EUR/mese (mensile) o ~20 EUR/mese (annuale) per 2.500 esecuzioni. Attenzione: si paga a esecuzioni, e un trigger di polling ogni 5 minuti da solo consuma ~8.640 esecuzioni/mese, oltre il limite Starter.",
+      "sweetSpot": "Automazioni complesse e self-hosted con controllo totale su dati e logica."
+    },
+    {
+      "id": "claude-code",
+      "name": "Claude Code",
+      "url": "https://claude.com/product/claude-code",
+      "provider": "Anthropic",
+      "cosaFa": "Agente AI che opera nel terminale e sul filesystem per coding autonomo.",
+      "funzionalita": [
+        "Agente nel terminale con accesso al filesystem",
+        "Esecuzione comandi e modifica file",
+        "Dynamic workflows (problemi su larga scala, novita' con Opus 4.8)",
+        "Integrazione con MCP e tool esterni",
+        "Gira su Opus 4.8"
+      ],
+      "tierGratuito": "No. Richiede abbonamento Claude (Pro/Max) o accesso via API.",
+      "caveat": "Richiede CLI installata e dimestichezza col terminale: non e' uno strumento per non-tecnici. Nessun tier gratuito.",
+      "sweetSpot": "Sviluppatori che vogliono delegare task di coding direttamente nel proprio repo."
+    },
+    {
+      "id": "lovable",
+      "name": "Lovable",
+      "url": "https://lovable.dev",
+      "provider": "Lovable",
+      "cosaFa": "Vibe coding di web app full-stack a partire da un prompt in linguaggio naturale.",
+      "funzionalita": [
+        "Generazione web app full-stack da prompt",
+        "Progetti privati e collaboratori illimitati",
+        "Subdomini lovable.app",
+        "Export su GitHub (piani a pagamento)",
+        "Sistema a crediti basato sulla complessita' della richiesta"
+      ],
+      "tierGratuito": "Si. Free: 5 crediti al giorno (fino a 30/mese), progetti privati, collaboratori illimitati, 5 subdomini lovable.app.",
+      "caveat": "Starter circa 20 USD/mese (~100 crediti, toglie i cap giornalieri). I crediti hanno costo variabile per complessita': una richiesta pesante puo' bruciarne molti. Verificare su lovable.dev/pricing.",
+      "sweetSpot": "Prototipare/lanciare rapidamente una web app senza scrivere codice da zero."
+    },
+    {
+      "id": "transcript-lol",
+      "name": "Transcript LOL",
+      "url": "https://transcript.lol",
+      "provider": "Transcript LOL",
+      "cosaFa": "Trascrizione AI di audio/video con summary, Q&A e identificazione speaker.",
+      "funzionalita": [
+        "Trascrizione audio/video",
+        "Summary automatici",
+        "Q&A sul contenuto trascritto",
+        "Speaker identification",
+        "Supporto 98+ lingue con rilevamento del code-switching"
+      ],
+      "tierGratuito": "Si. Free: 2 trascrizioni al giorno senza carta di credito.",
+      "caveat": "Pricing: pay-as-you-go da ~6 USD/h senza abbonamento, oppure piani unlimited da ~10 USD/mese e team da ~20 USD/mese (le cifre variano tra le fonti; verificare su transcript.lol/pricing).",
+      "sweetSpot": "Trasformare interviste/meeting registrati in testo ricercabile e interrogabile."
     }
   ],
   "tools": [
@@ -571,150 +855,414 @@
   ],
   "useMatrix": [
     {
-      "category": "Testo",
-      "task": "Scrivere un testo lungo, strutturato e ragionato",
+      "category": "Scrittura & Comunicazione",
+      "task": "Scrivere una proposta commerciale o un documento lungo strutturato",
       "recommended": [
         "Claude",
         "ChatGPT"
       ],
-      "why": "Eccellono nella stesura di testi estesi e coerenti con ragionamento articolato."
+      "why": "Eccellono nel long-form ragionato e nel mantenere tono e struttura coerenti su testi articolati."
     },
     {
-      "category": "Testo",
-      "task": "Riassumere e interrogare molti documenti propri",
+      "category": "Scrittura & Comunicazione",
+      "task": "Rispondere a email professionali in modo veloce e nel tono giusto",
       "recommended": [
-        "NotebookLM"
-      ],
-      "why": "Risponde citando solo i tuoi documenti, riducendo le allucinazioni."
-    },
-    {
-      "category": "Reasoning",
-      "task": "Risolvere problemi complessi passo-passo",
-      "recommended": [
-        "Claude",
-        "ChatGPT",
+        "Microsoft Copilot",
         "Gemini"
       ],
-      "why": "I modelli di reasoning scompongono il problema e mostrano i passaggi logici."
+      "why": "Integrati in Outlook e Gmail, leggono il thread e generano risposte contestuali senza copia-incolla."
     },
     {
-      "category": "Ricerca",
-      "task": "Cercare informazioni aggiornate con fonti citate",
+      "category": "Scrittura & Comunicazione",
+      "task": "Tradurre e localizzare contenuti per mercati esteri",
+      "recommended": [
+        "ChatGPT",
+        "Claude",
+        "Gemini"
+      ],
+      "why": "Traduzione di alta qualita' con adattamento culturale e di tono, non solo letterale."
+    },
+    {
+      "category": "Scrittura & Comunicazione",
+      "task": "Generare un voiceover o un audiolibro dal testo in piu' lingue",
+      "recommended": [
+        "ElevenLabs"
+      ],
+      "why": "Voci sintetiche naturali e clonazione vocale multilingue, lo standard per TTS professionale."
+    },
+    {
+      "category": "Ricerca & Analisi",
+      "task": "Cercare informazioni aggiornate con fonti citate e verificabili",
+      "recommended": [
+        "Perplexity",
+        "Gemini"
+      ],
+      "why": "Rispondono con citazioni dirette e link, riducendo allucinazioni nelle ricerche fattuali."
+    },
+    {
+      "category": "Ricerca & Analisi",
+      "task": "Cercare normativa, bandi o documenti pubblici con riferimenti",
       "recommended": [
         "Perplexity"
       ],
-      "why": "Risponde in tempo reale dal web citando sempre le fonti consultate."
+      "why": "Search-grounded con fonti tracciabili, ideale per verificare ogni affermazione."
     },
     {
-      "category": "Ricerca",
-      "task": "Sapere cosa succede ora su un tema social/attualita'",
+      "category": "Ricerca & Analisi",
+      "task": "Studiare a fondo un corpus di documenti caricati e farci domande",
+      "recommended": [
+        "NotebookLM"
+      ],
+      "why": "Risponde solo sui tuoi documenti con citazioni alla pagina, niente contaminazione esterna."
+    },
+    {
+      "category": "Ricerca & Analisi",
+      "task": "Brainstorming strategico e analisi di scenari complessi",
+      "recommended": [
+        "Claude",
+        "ChatGPT"
+      ],
+      "why": "Ragionamento esteso e capacita' di esplorare trade-off e contro-argomenti in profondita'."
+    },
+    {
+      "category": "Ricerca & Analisi",
+      "task": "Captare segnali e opinioni in tempo reale dai social",
       "recommended": [
         "Grok"
       ],
-      "why": "Accesso diretto al flusso di X per il polso del momento."
+      "why": "Accesso diretto al flusso di X per il polso real-time su trend e sentiment."
     },
     {
-      "category": "Immagini",
-      "task": "Generare immagini foto-realistiche",
+      "category": "Marketing",
+      "task": "Creare immagini e visual per campagne social e ads",
       "recommended": [
         "Midjourney",
         "Adobe Firefly"
       ],
-      "why": "Massima qualita' fotografica e resa realistica di luce e dettagli."
+      "why": "Midjourney per qualita' estetica, Firefly per asset commercialmente sicuri e integrazione Adobe."
     },
     {
-      "category": "Immagini",
-      "task": "Creare un logo o asset grafico con testo leggibile",
+      "category": "Marketing",
+      "task": "Generare loghi e visual con testo leggibile e accurato",
       "recommended": [
-        "Ideogram",
-        "Adobe Firefly"
+        "Ideogram"
       ],
-      "why": "Gestiscono bene tipografia e testo nelle immagini, dove altri sbagliano."
+      "why": "Miglior modello per rendering del testo dentro le immagini, utile per scritte e claim."
     },
     {
-      "category": "Immagini",
-      "task": "Impaginare grafiche pronte (social, slide, volantini)",
+      "category": "Marketing",
+      "task": "Produrre grafiche e post social brandizzati senza designer",
       "recommended": [
         "Canva"
       ],
-      "why": "Template e strumenti AI per output finiti senza skill di design."
+      "why": "Template, brand kit e AI integrata per creare velocemente materiale on-brand."
     },
     {
-      "category": "Video",
-      "task": "Generare un video da testo o immagine",
+      "category": "Marketing",
+      "task": "Scrivere una sequenza email o calendario contenuti",
       "recommended": [
-        "Sora",
-        "Runway"
+        "ChatGPT",
+        "Claude"
       ],
-      "why": "Generazione text-to-video con qualita' e controllo della scena ai vertici."
+      "why": "Generano copy persuasivo e varianti A/B mantenendo voce del brand su piu' touchpoint."
     },
     {
-      "category": "Video",
-      "task": "Creare un avatar parlante per formazione/messaggi",
+      "category": "Marketing",
+      "task": "Tagliare video lunghi in clip verticali per i social",
       "recommended": [
-        "HeyGen"
+        "Opus Clip"
       ],
-      "why": "Avatar realistici con lip-sync multilingua a partire dal solo script."
+      "why": "Identifica i momenti virali e produce short pronti con sottotitoli automatici."
     },
     {
-      "category": "Video",
-      "task": "Estrarre clip brevi da un video lungo",
-      "recommended": [
-        "Opus Clip",
-        "Runway"
-      ],
-      "why": "Tagliano e riformattano automaticamente i momenti salienti per i social."
-    },
-    {
-      "category": "Audio",
-      "task": "Generare una voce sintetica naturale",
-      "recommended": [
-        "ElevenLabs"
-      ],
-      "why": "Voci espressive e clonazione vocale tra le piu' naturali sul mercato."
-    },
-    {
-      "category": "Audio",
-      "task": "Generare musica originale",
+      "category": "Marketing",
+      "task": "Creare una colonna sonora o jingle originale per un contenuto",
       "recommended": [
         "Suno"
       ],
-      "why": "Crea canzoni complete con voce e strumenti da una semplice descrizione."
+      "why": "Genera tracce musicali complete con voce da un prompt testuale, royalty-friendly."
     },
     {
-      "category": "Audio",
-      "task": "Trasformare documenti in un podcast da ascoltare",
+      "category": "Vendite",
+      "task": "Preparare materiale di outreach personalizzato per prospect",
       "recommended": [
+        "ChatGPT",
+        "Claude"
+      ],
+      "why": "Adattano messaggi al profilo e al contesto del cliente mantenendo un tono naturale."
+    },
+    {
+      "category": "Vendite",
+      "task": "Estrarre action item e prossimi passi da una call di vendita",
+      "recommended": [
+        "Transcript LOL",
+        "Microsoft Copilot"
+      ],
+      "why": "Trascrivono e sintetizzano la call in to-do e follow-up immediatamente utilizzabili."
+    },
+    {
+      "category": "Vendite",
+      "task": "Creare un avatar video per demo o onboarding clienti",
+      "recommended": [
+        "HeyGen"
+      ],
+      "why": "Genera presenter video realistici multilingue senza girare con telecamera e attori."
+    },
+    {
+      "category": "Legale",
+      "task": "Bozza di contratto o clausola da far rivedere a un legale",
+      "recommended": [
+        "Claude"
+      ],
+      "why": "Gestione affidabile di testi giuridici lunghi e ragionamento prudente sui rischi contrattuali."
+    },
+    {
+      "category": "Legale",
+      "task": "Riassumere e confrontare versioni di un documento legale",
+      "recommended": [
+        "Claude",
         "NotebookLM"
       ],
-      "why": "Genera un audio overview conversazionale a due voci dai tuoi materiali."
+      "why": "Sintesi accurata su documenti densi, con NotebookLM ancorato alle fonti caricate."
     },
     {
-      "category": "Agent",
-      "task": "Automatizzare un flusso tra app senza codice",
+      "category": "HR & Recruiting",
+      "task": "Screening di CV e stesura di job description",
+      "recommended": [
+        "ChatGPT",
+        "Claude"
+      ],
+      "why": "Confrontano profili con requisiti e producono annunci chiari e inclusivi rapidamente."
+    },
+    {
+      "category": "HR & Recruiting",
+      "task": "Creare un video di onboarding o policy con presenter virtuale",
+      "recommended": [
+        "HeyGen"
+      ],
+      "why": "Avatar parlanti per formazione interna scalabile e facilmente aggiornabile."
+    },
+    {
+      "category": "Finanza & Contabilita'",
+      "task": "Estrarre e riconciliare dati da fatture e documenti",
+      "recommended": [
+        "ChatGPT",
+        "Gemini"
+      ],
+      "why": "Capacita' multimodale di leggere PDF e immagini e strutturare i dati in tabelle."
+    },
+    {
+      "category": "Finanza & Contabilita'",
+      "task": "Analizzare un foglio dati e trarne insight numerici",
+      "recommended": [
+        "ChatGPT",
+        "Microsoft Copilot"
+      ],
+      "why": "ChatGPT esegue codice sui dati, Copilot opera nativamente dentro Excel."
+    },
+    {
+      "category": "Project Management & Operations",
+      "task": "Trasformare un brief in piano di progetto e lista di to-do",
+      "recommended": [
+        "ChatGPT",
+        "Claude"
+      ],
+      "why": "Scompongono obiettivi in milestone, task e dipendenze in modo strutturato."
+    },
+    {
+      "category": "Project Management & Operations",
+      "task": "Automatizzare un flusso ripetitivo tra app diverse",
       "recommended": [
         "Zapier",
         "n8n"
       ],
-      "why": "Collegano centinaia di app con trigger e azioni; n8n e' piu' flessibile e self-hosted."
+      "why": "Zapier per integrazioni no-code rapide, n8n per workflow complessi self-hosted."
     },
     {
-      "category": "Coding",
-      "task": "Prototipare un'app full-stack da una descrizione",
+      "category": "Customer Support",
+      "task": "Rispondere a ticket di supporto in modo coerente e veloce",
+      "recommended": [
+        "ChatGPT",
+        "Claude"
+      ],
+      "why": "Generano risposte empatiche e accurate riusando knowledge base e tono aziendale."
+    },
+    {
+      "category": "Customer Support",
+      "task": "Smistare e categorizzare automaticamente ticket in arrivo",
+      "recommended": [
+        "Zapier",
+        "n8n"
+      ],
+      "why": "Orchestrano classificazione e routing dei ticket collegando helpdesk e modelli AI."
+    },
+    {
+      "category": "Dati & Reportistica",
+      "task": "Creare un report mensile ricorrente con commento dei numeri",
+      "recommended": [
+        "Microsoft Copilot",
+        "ChatGPT"
+      ],
+      "why": "Copilot lavora su Excel e PowerPoint, ChatGPT analizza dati e scrive la narrativa."
+    },
+    {
+      "category": "Dati & Reportistica",
+      "task": "Trasformare un documento in una presentazione pronta",
+      "recommended": [
+        "Gamma"
+      ],
+      "why": "Genera deck completi e impaginati da testo grezzo in pochi secondi."
+    },
+    {
+      "category": "Formazione & Education",
+      "task": "Trasformare un manuale in podcast o quiz didattico",
+      "recommended": [
+        "NotebookLM"
+      ],
+      "why": "Crea audio overview in stile podcast e materiali di studio ancorati ai documenti."
+    },
+    {
+      "category": "Formazione & Education",
+      "task": "Produrre slide formative da appunti o materiale grezzo",
+      "recommended": [
+        "Gamma",
+        "Canva"
+      ],
+      "why": "Impaginazione automatica di contenuti didattici visivamente curati e modificabili."
+    },
+    {
+      "category": "Design & Creativita'",
+      "task": "Generare immagini o concept artistici per un brand",
+      "recommended": [
+        "Midjourney",
+        "Adobe Firefly"
+      ],
+      "why": "Massima qualita' creativa con Firefly sicuro per uso commerciale e workflow Adobe."
+    },
+    {
+      "category": "Design & Creativita'",
+      "task": "Creare clip video cinematografiche o effetti da prompt",
+      "recommended": [
+        "Sora",
+        "Runway"
+      ],
+      "why": "Sora per generazione text-to-video di alta qualita', Runway per editing e controllo creativo."
+    },
+    {
+      "category": "Sviluppo & Automazione",
+      "task": "Prototipare un'app interna senza scrivere molto codice",
       "recommended": [
         "Lovable",
         "Cursor"
       ],
-      "why": "Lovable genera l'app dal browser; Cursor da' pieno controllo nell'editor."
+      "why": "Lovable genera app full-stack da prompt, Cursor accelera lo sviluppo nell'IDE."
     },
     {
-      "category": "Coding",
-      "task": "Lavorare su un codebase reale da terminale",
+      "category": "Sviluppo & Automazione",
+      "task": "Sviluppare e refactorare codice in un progetto reale da terminale",
       "recommended": [
         "Claude Code",
-        "OpenAI Codex"
+        "Cursor"
       ],
-      "why": "Agenti che leggono, modificano ed eseguono il codice nel tuo progetto."
+      "why": "Agenti che leggono il repo, modificano file ed eseguono comandi in autonomia."
+    },
+    {
+      "category": "Produttivita' personale",
+      "task": "Riassumere una riunione registrata in punti chiave e decisioni",
+      "recommended": [
+        "Transcript LOL",
+        "NotebookLM"
+      ],
+      "why": "Trascrizione fedele e sintesi in decisioni, owner e azioni dalla registrazione."
+    },
+    {
+      "category": "Produttivita' personale",
+      "task": "Gestire email, calendario e documenti dell'ufficio in un posto",
+      "recommended": [
+        "Microsoft Copilot",
+        "Gemini"
+      ],
+      "why": "Integrati in Microsoft 365 e Google Workspace, agiscono direttamente sui tuoi dati."
+    }
+  ],
+  "containers": [
+    {
+      "dimensione": "File limit",
+      "customGpts": "Conta sui limiti knowledge del GPT + storage condiviso (25 GB utente / 100 GB org)",
+      "chatgptProjects": "20 file per progetto (max 10 caricati contemporaneamente)",
+      "claudeProjects": "File illimitati, fino a 30 MB/file; oltre ~13 file passa a recupero RAG",
+      "geminiGems": "10 file per Gem",
+      "perplexitySpaces": "Pro: 50 file per Space; Enterprise: 500. Free: nessun upload"
+    },
+    {
+      "dimensione": "Persistenza",
+      "customGpts": "Persistente e pubblicabile (l'assistente vive oltre la singola chat)",
+      "chatgptProjects": "Persistente: file + istruzioni + chat raggruppate",
+      "claudeProjects": "Persistente a lungo termine con knowledge base",
+      "geminiGems": "Persistente (la Gem resta riusabile)",
+      "perplexitySpaces": "Persistente: file + istruzioni nello Space"
+    },
+    {
+      "dimensione": "Tool nativi",
+      "customGpts": "Actions, web browsing, code interpreter, image gen",
+      "chatgptProjects": "Canvas, web, code interpreter, image gen, Memory",
+      "claudeProjects": "Artifacts, connettori MCP (Drive/Gmail/Notion), Custom Styles",
+      "geminiGems": "Integrazione Workspace (Drive/Gmail/Docs), Deep Research, Nano Banana",
+      "perplexitySpaces": "Ricerca web con fonti, Deep Research, Labs"
+    },
+    {
+      "dimensione": "Condivisione",
+      "customGpts": "Massima: pubblicabile a chiunque / store / link",
+      "claudeProjects": "Condivisione con team (piani Team/Enterprise)",
+      "chatgptProjects": "Personale (i progetti non sono pensati per pubblicazione multi-utente)",
+      "geminiGems": "Condivisibile (Gem privata o condivisa, anche via Workspace)",
+      "perplexitySpaces": "Condivisibile e collaborativo (invito al Space)"
+    },
+    {
+      "dimensione": "Tier per sbloccare",
+      "customGpts": "Creazione GPT richiede piano a pagamento (Plus+)",
+      "chatgptProjects": "Disponibile anche su Free (con cap inferiori), pieno su Plus+",
+      "claudeProjects": "Knowledge base con RAG solo sui piani a pagamento (Pro/Max/Team/Enterprise)",
+      "geminiGems": "Gems custom disponibili anche su Free; piu' valore con piani a pagamento",
+      "perplexitySpaces": "Upload file richiede Pro (Free non carica file)"
+    },
+    {
+      "dimensione": "Sweet spot",
+      "customGpts": "Pubblicare un assistente riusabile per molti utenti",
+      "chatgptProjects": "Lavoro personale organizzato per cliente/tema",
+      "claudeProjects": "Workspace privato a lungo termine con ragionamento profondo",
+      "geminiGems": "Assistente integrato nell'ecosistema Google Workspace",
+      "perplexitySpaces": "Hub di ricerca con fonti aggiornate e citate"
+    },
+    {
+      "dimensione": "Limite reale",
+      "customGpts": "Knowledge file consuma lo storage condiviso; non c'e' RAG ricco come Claude",
+      "chatgptProjects": "Solo 20 file/progetto e max 10 upload simultanei; personale, non pubblicabile",
+      "claudeProjects": "Switch a RAG gia' a ~13 file e contesto 200K (non-Enterprise) che si riempie coi file",
+      "geminiGems": "Solo 10 file di knowledge: troppo poco per KB ampie",
+      "perplexitySpaces": "Niente upload su Free; orientato a ricerca, non a output strutturati"
+    }
+  ],
+  "decisionTree": [
+    {
+      "scenario": "Pubblicare un assistente riusabile per piu' utenti",
+      "tool": "Custom GPT (ChatGPT)"
+    },
+    {
+      "scenario": "Workspace privato a lungo termine con ragionamento profondo su documenti propri",
+      "tool": "Claude Project"
+    },
+    {
+      "scenario": "Assistente integrato con Drive/Gmail dentro Google Workspace",
+      "tool": "Gemini Gem"
+    },
+    {
+      "scenario": "Ricerca e sintesi con fonti aggiornate e citate",
+      "tool": "Perplexity Space"
+    },
+    {
+      "scenario": "Progetto temporaneo organizzato per un singolo cliente",
+      "tool": "ChatGPT Project"
     }
   ],
   "benchmarks": [
@@ -800,6 +1348,14 @@
     }
   ],
   "changelog": [
+    {
+      "date": "2026-06-01",
+      "summary": "Radar ampliato: 10 modelli a confronto (aggiunti Grok 4.3, Llama 4, DeepSeek V4, Qwen 3.7-Max, Mistral Medium 3.5, Kimi K2.6, GLM-5.1); schede tool dettagliate (cosa fa, funzionalita, tier, caveat, sweet spot) + tabella contenitori e decision tree; 38 casi d'uso cross-dominio; link benchmark pinnati (Hugging Face, Artificial Analysis); loghi.",
+      "sources": [
+        "https://artificialanalysis.ai/",
+        "https://huggingface.co/open-llm-leaderboard"
+      ]
+    },
     {
       "date": "2026-06-01",
       "summary": "Aggiornate le versioni correnti dei tool: GPT Image 2, Midjourney V8.1, Nano Banana, FLUX.2, Sora 2, Runway Gen-4.5, Veo 3.1, Suno v5.5, Cursor 2.0 (Composer 2.5), Codex su GPT-5.5; app ChatGPT su GPT-5.5 Instant, Grok 4.3.",

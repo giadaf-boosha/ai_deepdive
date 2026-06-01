@@ -1,30 +1,26 @@
 import type { Model, ModelId } from "@/lib/models";
+import { Logo } from "./Logo";
 
-const BRAND: Record<ModelId, string> = {
+const BRAND: Record<string, string> = {
   claude: "#e8901b",
   chatgpt: "#0f766e",
   gemini: "#2563eb",
 };
+const FALLBACK = "#7531e3";
 
-export function ModelAccent({ id }: { id: ModelId }) {
-  return (
-    <span
-      className="inline-block h-2.5 w-2.5 rounded-full"
-      style={{ backgroundColor: BRAND[id] }}
-      aria-hidden
-    />
-  );
+function brand(id: ModelId): string {
+  return BRAND[id] ?? FALLBACK;
 }
 
 export function ModelCardCompact({ model }: { model: Model }) {
   return (
     <div className="card card-hover flex flex-col gap-2 p-5">
-      <div className="flex items-center gap-2">
-        <ModelAccent id={model.id} />
+      <div className="flex items-center gap-2.5">
+        <Logo domain={model.domain} name={model.name} size={22} />
         <span className="text-sm font-semibold text-ink">{model.name}</span>
       </div>
       <p className="font-mono text-xs text-faint">{model.provider}</p>
-      <p className="text-sm leading-relaxed text-muted">{model.tagline}</p>
+      <p className="text-sm leading-relaxed text-muted">{model.tagline ?? model.verdict}</p>
     </div>
   );
 }
@@ -33,15 +29,18 @@ export function ModelCard({ model }: { model: Model }) {
   return (
     <article
       className="card flex h-full flex-col gap-4 p-6"
-      style={{ borderTopColor: BRAND[model.id], borderTopWidth: 3 }}
+      style={{ borderTopColor: brand(model.id), borderTopWidth: 3 }}
     >
       <header className="flex flex-col gap-1">
         <div className="flex items-center justify-between gap-2">
-          <h3 className="text-lg font-semibold text-ink">{model.name}</h3>
-          <span className="chip">{model.provider}</span>
+          <div className="flex items-center gap-2.5">
+            <Logo domain={model.domain} name={model.name} size={24} />
+            <h3 className="text-lg font-semibold leading-tight text-ink">{model.name}</h3>
+          </div>
+          <span className="chip shrink-0">{model.provider}</span>
         </div>
-        <p className="font-mono text-xs text-faint">rilascio {model.releaseDate}</p>
-        <p className="mt-1 text-sm text-muted">{model.tagline}</p>
+        <p className="mt-1 font-mono text-xs text-faint">rilascio {model.releaseDate}</p>
+        {model.tagline && <p className="mt-1 text-sm text-muted">{model.tagline}</p>}
       </header>
 
       <Block title="Punti di forza" items={model.strengths} tone="pos" />
@@ -58,26 +57,17 @@ export function ModelCard({ model }: { model: Model }) {
         <Stat label="LMArena" value={model.lmarenaRank > 0 ? `#${model.lmarenaRank}` : "n/d"} />
         <Stat
           label="API in/out"
-          value={model.apiInputPer1M > 0 ? `$${model.apiInputPer1M}/$${model.apiOutputPer1M}` : "n/d"}
+          value={model.apiInputPer1M > 0 ? `$${model.apiInputPer1M}/$${model.apiOutputPer1M}` : "open / n/d"}
         />
-        <Stat label="Privacy" value={model.privacyRating} />
+        <Stat label="Multimodale" value={model.supportsImages ? "si" : "solo testo"} />
       </dl>
     </article>
   );
 }
 
-function Block({
-  title,
-  items,
-  tone,
-}: {
-  title: string;
-  items: string[];
-  tone: "pos" | "neg" | "neutral";
-}) {
-  if (items.length === 0) return null;
-  const marker =
-    tone === "pos" ? "text-cat-modelli" : tone === "neg" ? "text-cat-business" : "text-faint";
+function Block({ title, items, tone }: { title: string; items: string[]; tone: "pos" | "neg" | "neutral" }) {
+  if (!items?.length) return null;
+  const marker = tone === "pos" ? "text-cat-modelli" : tone === "neg" ? "text-cat-business" : "text-faint";
   return (
     <div>
       <p className="mb-1.5 font-mono text-xs uppercase tracking-wider text-faint">{title}</p>
@@ -97,7 +87,7 @@ function Stat({ label, value }: { label: string; value: string }) {
   return (
     <div className="flex items-baseline justify-between gap-2 border-b border-line py-1 last:border-0">
       <dt className="text-faint">{label}</dt>
-      <dd className="font-medium capitalize text-ink">{value}</dd>
+      <dd className="font-medium text-ink">{value}</dd>
     </div>
   );
 }
