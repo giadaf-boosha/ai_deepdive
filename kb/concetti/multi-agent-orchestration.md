@@ -3,8 +3,8 @@ name: Multi-agent orchestration
 aliases: [multi-agent, sistema multi-agente, orchestrazione di agenti, agent swarm, subagenti, sub-agent orchestration]
 categoria: paradigma
 created: 2026-06-01
-last_updated: 2026-06-01
-mentions_count: 8
+last_updated: 2026-06-02
+mentions_count: 11
 ---
 
 # Multi-agent orchestration
@@ -85,6 +85,10 @@ Eterogeneita' dei modelli. Se l'obiettivo e' affidabilita' (non solo throughput)
 Parallelismo non e' gratis. Il fan-out riduce la latenza percepita ma il costo in token e in chiamate scala linearmente con il numero di worker. Un benchmark valutato "senza cap al numero di chiamate o token" (come nel caveat dell'AI Co-Mathematician) non e' comparabile a parita' di costo con un sistema vincolato: nel valutare sistemi multi-agente, fissare il budget di inferenza e' parte della metodologia, non un dettaglio.
 
 ## Aggiornamenti
+
+### 2026-06-02
+
+Microsoft Build 2026 porta due nuovi esempi di orchestrazione multi-agente in produzione. GitHub Copilot Workspace GA introduce Fleet mode e Autopilot mode: Fleet esegue task circoscritti senza conferma per-step, Autopilot esegue task schedulati in background su repository senza sviluppatore presente — entrambe modalita' in cui un agente coordina sub-operazioni (lettura file, modifica, esecuzione test, apertura PR) senza supervisione continua, il che qualifica come orchestrazione interna. Azure Agent Mesh porta la multi-agent orchestration al livello di infrastruttura: un control plane che instrada task di agenti su piu' nodi (Windows on-prem, Cloud PC, Azure Arc) in base a latenza e GPU disponibile. Il pattern e' l'architettura fan-out distribuita — lo stesso orchestratore-worker che MDASH usa per la sicurezza e l'AI Co-Mathematician per la matematica — applicata questa volta a un deployment enterprise multi-sito. La combinazione dei due annunci segnala che l'orchestrazione multi-agente non e' piu' solo un pattern architetturale per ricercatori ma una feature di prodotto con GA e pricing a consumo. [Digest 2026-06-02](../../digest/2026/06/02.md)
 
 ### 2026-06-01
 
