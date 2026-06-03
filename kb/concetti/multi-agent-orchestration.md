@@ -3,8 +3,8 @@ name: Multi-agent orchestration
 aliases: [multi-agent, sistema multi-agente, orchestrazione di agenti, agent swarm, subagenti, sub-agent orchestration]
 categoria: paradigma
 created: 2026-06-01
-last_updated: 2026-06-02
-mentions_count: 11
+last_updated: 2026-06-03
+mentions_count: 12
 ---
 
 # Multi-agent orchestration
@@ -89,6 +89,10 @@ Parallelismo non e' gratis. Il fan-out riduce la latenza percepita ma il costo i
 ### 2026-06-02
 
 Microsoft Build 2026 porta due nuovi esempi di orchestrazione multi-agente in produzione. GitHub Copilot Workspace GA introduce Fleet mode e Autopilot mode: Fleet esegue task circoscritti senza conferma per-step, Autopilot esegue task schedulati in background su repository senza sviluppatore presente — entrambe modalita' in cui un agente coordina sub-operazioni (lettura file, modifica, esecuzione test, apertura PR) senza supervisione continua, il che qualifica come orchestrazione interna. Azure Agent Mesh porta la multi-agent orchestration al livello di infrastruttura: un control plane che instrada task di agenti su piu' nodi (Windows on-prem, Cloud PC, Azure Arc) in base a latenza e GPU disponibile. Il pattern e' l'architettura fan-out distribuita — lo stesso orchestratore-worker che MDASH usa per la sicurezza e l'AI Co-Mathematician per la matematica — applicata questa volta a un deployment enterprise multi-sito. La combinazione dei due annunci segnala che l'orchestrazione multi-agente non e' piu' solo un pattern architetturale per ricercatori ma una feature di prodotto con GA e pricing a consumo. [Digest 2026-06-02](../../digest/2026/06/02.md)
+
+### 2026-06-03
+
+GitHub Copilot App porta la multi-agent orchestration nel client desktop nativo con il pattern "sessioni parallele via worktree". Ogni sessione agentica e' isolata in un git worktree proprio — una copia reale del branch — e piu' sessioni possono correre in parallelo sullo stesso repository senza interferire. L'orchestrazione avviene a livello dell'app (My Work aggrega lo stato di tutte le sessioni), non a livello del singolo agente: il developer vede un pannello unificato delle sessioni attive, issue, PR e automazioni in background, e puo' reindirizzare o approvare ogni sessione dalla stessa superficie (Canvas). Il pattern non e' un orchestratore-worker classico (non c'e' un meta-agente che spawna i worker), ma un'interfaccia multi-sessione che rende pratico il parallelismo: il developer e' l'orchestratore che distribuisce i task, l'app gestisce l'isolamento. Rispetto a Copilot Workspace GA (Fleet mode, Autopilot mode, digest 06-02), l'app aggiunge il layer di interfaccia nativa che rende l'orchestrazione manuale del parallelismo realmente usabile. [Digest 2026-06-03](../../digest/2026/06/03.md)
 
 ### 2026-06-01
 

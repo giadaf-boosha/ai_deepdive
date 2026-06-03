@@ -3,8 +3,8 @@ name: Inference
 aliases: [inference, inferenza, serving, generation, decoding]
 categoria: infrastruttura
 created: 2026-04-28
-last_updated: 2026-06-01
-mentions_count: 14
+last_updated: 2026-06-03
+mentions_count: 15
 ---
 
 # Inference
@@ -156,3 +156,7 @@ Il pivot di Groq da chip a neocloud. Groq raccoglie $650M (scoop Axios 28 maggio
 Sul fronte silicio custom, Anthropic e Microsoft negoziano un accordo sul chip MAIA 200 (CNBC/Bloomberg 21 maggio), che sarebbe il primo deployment esterno del processore custom Microsoft (prestazioni dichiarate +30% nel fleet Azure): Anthropic diversifica la supply chain di compute, gia' distribuita tra AWS Trainium, Google TPU e GPU Nvidia via SpaceX. Sul fronte ricerca di base, fisici di Penn (25 maggio) dimostrano switching ottico a 4 attojoule con exciton-polaritons, tre ordini di grandezza sotto i transistor a silicio: non un chip pronto, ma un percorso verso acceleratori fotonici per l'inferenza ad altissimo volume, dove il consumo energetico e' uno dei tre colli di bottiglia sistemici (insieme a memory bandwidth e latenza inter-chip). [Digest 2026-05-25](../../digest/2026/05/25.md)
 
 In sintesi, il filo conduttore del mese e' la convergenza: tutta l'innovazione (wafer-scale, in-memory, NVFP4, linear attention, memoria unificata edge, neocloud) attacca lo stesso bersaglio, ovvero il bottleneck memory-bound del decode e il costo per token che ne discende.
+
+### 2026-06-03
+
+OpenAI porta GPT-5.5, GPT-5.4 e Codex in GA su Amazon Bedrock il 2 giugno con stesso pricing per-token di direct OpenAI e governance enterprise nativa (IAM, PrivateLink, GuardRails, CloudTrail). Il caso rilevante per l'inference e' la convergenza: Bedrock diventa il layer di accesso neutro di fatto per i modelli frontier in produzione enterprise, con Anthropic Claude, Google Gemini (su Vertex) e OpenAI GPT tutti accessibili con governance enterprise nativa. La conseguenza pratica e' che la scelta del provider di inference per il deployment enterprise non e' piu' vincolata alla famiglia di modelli: un'organizzazione puo' usare Bedrock come unico layer di governance e scegliere il modello migliore per ogni task indipendentemente dal vendor, riducendo il vendor lock-in e semplificando i contratti. Sul fronte on-device, Microsoft Aion 1.0 Plan (14B, 32K context, in-box Windows) porta l'inference agentica completamente on-device su un sistema operativo mainstream: nessun round-trip cloud per la pianificazione, con il hardware RTX Spark come substrato per i workload piu' esigenti. [Digest 2026-06-03](../../digest/2026/06/03.md)
