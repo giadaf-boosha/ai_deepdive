@@ -3,8 +3,8 @@ name: Inference
 aliases: [inference, inferenza, serving, generation, decoding]
 categoria: infrastruttura
 created: 2026-04-28
-last_updated: 2026-06-03
-mentions_count: 15
+last_updated: 2026-06-04
+mentions_count: 17
 ---
 
 # Inference
@@ -160,3 +160,7 @@ In sintesi, il filo conduttore del mese e' la convergenza: tutta l'innovazione (
 ### 2026-06-03
 
 OpenAI porta GPT-5.5, GPT-5.4 e Codex in GA su Amazon Bedrock il 2 giugno con stesso pricing per-token di direct OpenAI e governance enterprise nativa (IAM, PrivateLink, GuardRails, CloudTrail). Il caso rilevante per l'inference e' la convergenza: Bedrock diventa il layer di accesso neutro di fatto per i modelli frontier in produzione enterprise, con Anthropic Claude, Google Gemini (su Vertex) e OpenAI GPT tutti accessibili con governance enterprise nativa. La conseguenza pratica e' che la scelta del provider di inference per il deployment enterprise non e' piu' vincolata alla famiglia di modelli: un'organizzazione puo' usare Bedrock come unico layer di governance e scegliere il modello migliore per ogni task indipendentemente dal vendor, riducendo il vendor lock-in e semplificando i contratti. Sul fronte on-device, Microsoft Aion 1.0 Plan (14B, 32K context, in-box Windows) porta l'inference agentica completamente on-device su un sistema operativo mainstream: nessun round-trip cloud per la pianificazione, con il hardware RTX Spark come substrato per i workload piu' esigenti. [Digest 2026-06-03](../../digest/2026/06/03.md)
+
+### 2026-06-04
+
+Due segnali convergenti sull'economia dell'inference nel 2026. Alphabet raccoglie $80 miliardi (1 giugno, 5 fonti: abc.xyz, CNBC, Bloomberg, TechCrunch, Axios) con destinazione esplicita "AI compute infrastructure": la dimensione del fabbisogno di compute per l'inference di Google Cloud — backlog quasi raddoppiato a $460 miliardi trimestre su trimestre — richiede un'equity offering da record nella storia US per restare competitivi. Il capex dichiarato per il 2026 e' $180-190 miliardi, con il 2027 in ulteriore crescita: e' il segnale piu' concreto a oggi che il costo dell'inference a scala sistemica supera qualsiasi proiezione degli anni precedenti. MiniMax M3 (5 fonti, 1 giugno) introduce MiniMax Sparse Attention (MSA), un'architettura di attention sparsa che porta il decoding a 15,6x piu' veloce e il prefill a 9,7x piu' veloce rispetto al predecessore M2 su contesti da 1M token: un ottimizzazione architetturale specifica per il regime di inference a long context, dove il bottleneck memory-bound del decode diventa dominante. L'MSA e' un approccio diverso da GQA (condivisione key/value tra heads) e da PagedAttention (KV cache paginata): opera riducendo il numero di coppie key-value che ogni head di attention processa ad ogni step, mantenendo la qualita' su long-context a costo di throughput ridotto su context corto. Il risultato pratico rilevante per chi costruisce sistemi RAG o agenti a context lungo e' che l'ottimizzazione dell'inference su finestre da 500K-1M token e' ora una direzione di ricerca architetturale attiva, non solo un problema di hardware. [Digest 2026-06-04](../../digest/2026/06/04.md)

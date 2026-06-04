@@ -3,8 +3,8 @@ name: Evaluation / Benchmark AI
 aliases: [benchmark, eval, evaluation, valutazione LLM, AI benchmark, leaderboard]
 categoria: tecnica
 created: 2026-04-30
-last_updated: 2026-06-01
-mentions_count: 17
+last_updated: 2026-06-04
+mentions_count: 19
 ---
 
 # Evaluation / Benchmark AI
@@ -127,3 +127,7 @@ Secondo filone, l'harness come variabile di confondimento: il paper "Is Grep All
 Terzo filone, la diversificazione dei benchmark verticali e di nuove categorie: il Vals AI Finance Agent Benchmark (Opus 4.7 al 64,37%, digest 05-07), la leaderboard pubblica CyberGym dove MDASH di Microsoft raggiunge l'88,45% in prima posizione (digest 05-15), e i benchmark per interaction model — FD-bench, TimeSpeak, CueSpeak — introdotti con TML-Interaction-Small (digest 05-13), che integrano la latenza nella metrica di qualita'. In sezione Tool, Gemini 3.5 Flash al Google I/O usa GDPval-AA (1656 Elo) e Terminal-Bench 2.1 (76,2%) come assi di confronto (digest 05-20), confermando l'Elo agentico come formato di leaderboard ([Digest 2026-05-07](../../digest/2026/05/07.md), [Digest 2026-05-13](../../digest/2026/05/13.md), [Digest 2026-05-15](../../digest/2026/05/15.md), [Digest 2026-05-20](../../digest/2026/05/20.md)).
 
 Oltre all'aggiunta di TerminalWorld, questa revisione ha migliorato la chiarezza della scheda: la sezione "Varianti / approcci" ora distingue esplicitamente benchmark curati vs. derivati da dati reali e benchmark di inference performance vs. di capability; la sezione "Come funziona" integra il ruolo dell'harness; la sezione "Quando usarlo / quando no" aggiunge i caveat su harness non dichiarato e protocolli non comparabili.
+
+### 2026-06-04
+
+MiniMax M3 (Shanghai, 1 giugno 2026) introduce tre nuove misurazioni di benchmark nel panorama dei modelli open-weight. SWE-Bench Pro (59,0%): variante piu' recente e difficile di SWE-Bench Verified, diversa dalla variante standard usata da Cursor Composer 2.5 e Grok Build 0.1 — il cambio di variante rende il confronto diretto non immediato e segnala la tendenza dei laboratori a scegliere la variante di benchmark su cui il proprio modello performa meglio. Terminal-Bench 2.1 (66,0%): versione aggiornata del benchmark per task terminale, con 2.1 che aggiunge nuove categorie rispetto alla 2.0 usata da Claude Mythos Preview (82,0%, digest 05-27); il gap tra i due risultati e' consistente con la differenza di capacita' dei modelli, ma il punto di comparazione diverso (2.0 vs 2.1) rende il confronto non diretto. BrowseComp (83,5): benchmark di navigazione web introdotto da OpenAI a fine 2025 per valutare la capacita' di recuperare informazioni difficili da trovare online. I tre benchmark di M3 evidenziano il pattern ricorrente: ogni laboratorio seleziona la variante e la versione del benchmark che massimizza il profilo di lancio, rendendo la comparazione cross-modello sempre piu' complessa senza un framework di benchmarking unificato e condiviso. [Digest 2026-06-04](../../digest/2026/06/04.md)

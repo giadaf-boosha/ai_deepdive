@@ -3,8 +3,8 @@ name: AI Agent
 aliases: [agent, AI agent, agente autonomo, autonomous agent]
 categoria: paradigma
 created: 2026-04-28
-last_updated: 2026-06-03
-mentions_count: 68
+last_updated: 2026-06-04
+mentions_count: 71
 ---
 
 # AI Agent
@@ -227,3 +227,7 @@ Quattro segnali agentici nel digest di oggi da tre direzioni distinte. Nvidia RT
 ### 2026-06-03
 
 Tre segnali agentici nel digest di oggi. Anthropic espande Project Glasswing a 150 nuove organizzazioni in 15+ paesi e lancia Claude Security: il programma di security scanning agentico passa da 50 a oltre 200 partner, con l'estensione per la prima volta a operatori di infrastrutture critiche (energia, acqua, sanita', comunicazioni). La distinzione tra i due strumenti e' architetturalmente rilevante: Glasswing usa Mythos Preview (accesso ristretto) per scansione offensiva avanzata, Claude Security usa Opus 4.8 (pubblico) per difesa quotidiana — due tier di capacita' agentica per la sicurezza con diversi modelli di accesso e governance. Microsoft Aion 1.0 Plan (14B parametri, 32K context) e' il primo modello di ragionamento e tool-calling distribuito in-box con Windows: l'architettura prevede che l'agente riceva intenti in linguaggio naturale, pianifichi azioni, invochi tool e orchestri sub-agenti interamente on-device, senza round-trip cloud, con il hardware RTX Spark come substrato. Il pattern di deployment e' inedito per il concetto di agent: un modello di pianificazione che opera come componente del sistema operativo. GitHub Copilot App espande la technical preview con Canvases e parallel worktrees: ogni sessione agentica e' una copia isolata del branch (worktree git), le sessioni parallele girano indipendentemente, e la Canvas e' una superficie bidirezionale dove agente e developer modificano lo stesso artefatto. La novita' rispetto al Workspace browser-based e' che l'agente ha accesso a uno stato persistente (il worktree) e a una superficie di lavoro strutturata (la Canvas), riducendo la perdita di contesto nei task a lunga durata. [Digest 2026-06-03](../../digest/2026/06/03.md)
+
+### 2026-06-04
+
+Tre segnali agentici nel digest di oggi su tre fronti distinti. Uber limita a $1.500/mese per dipendente la spesa su strumenti agentici di coding (Bloomberg 2 giugno, TechCrunch 2 giugno, Simon Willison 3 giugno): primo caso documentato pubblicamente di una grande azienda tech che raziona l'accesso agli agenti per costi — il budget 2026 esaurito in quattro mesi, con picchi individuali di $500-$2.000/mese, segnala che il costo dell'adozione enterprise degli agenti e' reale e misurabile, non solo proiettato. Coralogix raccoglie $200M (Series F, 3 giugno) per costruire il layer di observability per agenti AI: il prodotto affronta un problema specifico degli agenti in produzione, ovvero che un agente che diverge dall'obiettivo non genera errori classici in log ma comportamenti anomali nel reasoning trail. Il fatto che questa categoria di monitoring attiri gia' un round da $200M a valutazione $1,6 miliardi e' un indicatore di maturita' industriale del paradigma agentico. MiniMax M3 (1 giugno, 5 fonti) usa il concetto di agente in modo implicito ma rilevante: la compatibilita' nativa con agent framework (Claude Code, Qwen Code, Cline, Kilo) come caso d'uso primario del modello — il primo open-weight cinese a dichiarare l'ecosistema agenti come target deployment principale, non il chat. [Digest 2026-06-04](../../digest/2026/06/04.md)
