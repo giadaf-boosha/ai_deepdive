@@ -14,12 +14,12 @@
 | [Chain of Thought / Reasoning](./concetti/chain-of-thought.md) | tecnica | chain of thought, CoT, catena di pensiero, reasoning, ragionamento esplicito, extended thinking | 2026-06-01 |
 | [Context window](./concetti/context-window.md) | architettura | context window, finestra di contesto, finestra contestuale, context length | 2026-06-01 |
 | [Embedding](./concetti/embedding.md) | tecnica | embedding, vector embedding, dense representation, rappresentazione densa | 2026-06-01 |
-| [Evaluation / Benchmark AI](./concetti/evaluation-benchmark.md) | tecnica | benchmark, eval, evaluation, valutazione LLM, AI benchmark, leaderboard | 2026-06-04 |
+| [Evaluation / Benchmark AI](./concetti/evaluation-benchmark.md) | tecnica | benchmark, eval, evaluation, valutazione LLM, AI benchmark, leaderboard | 2026-06-05 |
 | [Fine-tuning](./concetti/fine-tuning.md) | training | fine-tuning, fine tuning, SFT, supervised fine-tuning, adattamento di modello | 2026-06-01 |
-| [Inference](./concetti/inference.md) | infrastruttura | inference, inferenza, serving, generation, decoding | 2026-06-04 |
+| [Inference](./concetti/inference.md) | infrastruttura | inference, inferenza, serving, generation, decoding | 2026-06-05 |
 | [Interaction Model](./concetti/interaction-model.md) | architettura | interaction model, full-duplex AI, modello di interazione, full-duplex model | 2026-06-01 |
 | [Large Language Model](./concetti/llm.md) | architettura | LLM, modello linguistico di grandi dimensioni, foundation model | 2026-06-01 |
-| [Mixture of Experts](./concetti/mixture-of-experts.md) | architettura | MoE, mixture-of-experts, mixture of experts, modello sparso, sparse model, expert routing | 2026-06-01 |
+| [Mixture of Experts](./concetti/mixture-of-experts.md) | architettura | MoE, mixture-of-experts, mixture of experts, modello sparso, sparse model, expert routing | 2026-06-05 |
 | [Model Context Protocol](./concetti/mcp.md) | infrastruttura | MCP, Model Context Protocol, protocollo MCP | 2026-06-01 |
 | [Multi-agent orchestration](./concetti/multi-agent-orchestration.md) | paradigma | multi-agent, sistema multi-agente, orchestrazione di agenti, agent swarm, subagenti, sub-agent orchestration | 2026-06-03 |
 | [Prompt engineering](./concetti/prompt-engineering.md) | tecnica | prompt engineering, ingegneria dei prompt, prompting | 2026-06-01 |

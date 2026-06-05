@@ -3,8 +3,8 @@ name: Evaluation / Benchmark AI
 aliases: [benchmark, eval, evaluation, valutazione LLM, AI benchmark, leaderboard]
 categoria: tecnica
 created: 2026-04-30
-last_updated: 2026-06-04
-mentions_count: 19
+last_updated: 2026-06-05
+mentions_count: 21
 ---
 
 # Evaluation / Benchmark AI
@@ -127,6 +127,10 @@ Secondo filone, l'harness come variabile di confondimento: il paper "Is Grep All
 Terzo filone, la diversificazione dei benchmark verticali e di nuove categorie: il Vals AI Finance Agent Benchmark (Opus 4.7 al 64,37%, digest 05-07), la leaderboard pubblica CyberGym dove MDASH di Microsoft raggiunge l'88,45% in prima posizione (digest 05-15), e i benchmark per interaction model — FD-bench, TimeSpeak, CueSpeak — introdotti con TML-Interaction-Small (digest 05-13), che integrano la latenza nella metrica di qualita'. In sezione Tool, Gemini 3.5 Flash al Google I/O usa GDPval-AA (1656 Elo) e Terminal-Bench 2.1 (76,2%) come assi di confronto (digest 05-20), confermando l'Elo agentico come formato di leaderboard ([Digest 2026-05-07](../../digest/2026/05/07.md), [Digest 2026-05-13](../../digest/2026/05/13.md), [Digest 2026-05-15](../../digest/2026/05/15.md), [Digest 2026-05-20](../../digest/2026/05/20.md)).
 
 Oltre all'aggiunta di TerminalWorld, questa revisione ha migliorato la chiarezza della scheda: la sezione "Varianti / approcci" ora distingue esplicitamente benchmark curati vs. derivati da dati reali e benchmark di inference performance vs. di capability; la sezione "Come funziona" integra il ruolo dell'harness; la sezione "Quando usarlo / quando no" aggiunge i caveat su harness non dichiarato e protocolli non comparabili.
+
+### 2026-06-05
+
+MAI-Thinking-1 e MAI-Code-1-Flash (Microsoft Build 2026, 2 giugno) introducono due nuovi set di benchmark rilevanti. MAI-Thinking-1: 97,0% su AIME 2025 e 94,5% su AIME 2026 per il ragionamento matematico; SWE-Bench Pro alla pari con Claude Opus 4.6 per il coding; valutazioni blind Surge (human rating indipendente) con preferenza su Claude Sonnet 4.6 in side-by-side. Il pattern AIME 2026 e' nuovo: e' la prima volta che un modello viene valutato pubblicamente su una competizione matematica uscita dopo il potenziale cutoff di training, riducendo il rischio di data contamination rispetto ad AIME 2025. MAI-Code-1-Flash: SWE-Bench Pro a 51,2% (vs 35,2% di Claude Haiku 4.5, +16 punti), IF Bench per instruction following (+28,9 punti), efficienza su SWE-Bench Verified (60% meno token rispetto a competitor). Il punto metodologico rilevante: Microsoft usa quattro benchmark distinti per MAI-Code-1-Flash (SWE-Bench Pro, IF Bench, SWE-Bench Verified per efficienza, e un quarto non specificato nel comunicato ufficiale), consolidando il pattern in cui ogni laboratorio seleziona un set di benchmark che massimizza il profilo di lancio. Vedi [digest 2026-06-05](../../digest/2026/06/05.md).
 
 ### 2026-06-04
 

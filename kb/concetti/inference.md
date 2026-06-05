@@ -3,8 +3,8 @@ name: Inference
 aliases: [inference, inferenza, serving, generation, decoding]
 categoria: infrastruttura
 created: 2026-04-28
-last_updated: 2026-06-04
-mentions_count: 17
+last_updated: 2026-06-05
+mentions_count: 19
 ---
 
 # Inference
@@ -160,6 +160,10 @@ In sintesi, il filo conduttore del mese e' la convergenza: tutta l'innovazione (
 ### 2026-06-03
 
 OpenAI porta GPT-5.5, GPT-5.4 e Codex in GA su Amazon Bedrock il 2 giugno con stesso pricing per-token di direct OpenAI e governance enterprise nativa (IAM, PrivateLink, GuardRails, CloudTrail). Il caso rilevante per l'inference e' la convergenza: Bedrock diventa il layer di accesso neutro di fatto per i modelli frontier in produzione enterprise, con Anthropic Claude, Google Gemini (su Vertex) e OpenAI GPT tutti accessibili con governance enterprise nativa. La conseguenza pratica e' che la scelta del provider di inference per il deployment enterprise non e' piu' vincolata alla famiglia di modelli: un'organizzazione puo' usare Bedrock come unico layer di governance e scegliere il modello migliore per ogni task indipendentemente dal vendor, riducendo il vendor lock-in e semplificando i contratti. Sul fronte on-device, Microsoft Aion 1.0 Plan (14B, 32K context, in-box Windows) porta l'inference agentica completamente on-device su un sistema operativo mainstream: nessun round-trip cloud per la pianificazione, con il hardware RTX Spark come substrato per i workload piu' esigenti. [Digest 2026-06-03](../../digest/2026/06/03.md)
+
+### 2026-06-05
+
+Apple Private Cloud Compute (PCC) come architettura di inference per Siri rebuilt (annuncio atteso al WWDC 2026 dell'8 giugno, dettagli confermati il 4 giugno da TechCrunch e MacRumors). L'architettura: query dell'utente instradate verso server Apple con hardware-isolated enclaves dove i pesi di un modello Gemini customizzato da 1,2T parametri (partnership Apple-Google, gennaio 2026) girano in ambienti Apple-controllati; nessun dato utente condiviso con Google; i dati non vengono conservati dopo l'elaborazione. Il segnale per il concetto "inference" e' architetturale: PCC rappresenta un nuovo tier di inference che non e' ne' on-device ne' cloud pubblico tradizionale — e' confidential cloud computing, dove il vendor di modello (Google) fornisce i pesi ma non ha accesso agli input/output utente. Implica che per i modelli da 1T+ parametri, dove l'on-device e' praticabile solo in casi eccezionali (RTX Spark con 128GB unificata per modelli <120B), il confidential cloud computing diventa il template di riferimento per i vendor OS che vogliono preservare la privacy. Questa posizione intermedia — tra il on-device computing dove la privacy e' garantita fisicamente e il cloud tradizionale dove il vendor e' trusted per contratto — potrebbe diventare il pattern standard per OS-level AI inference. Vedi [digest 2026-06-05](../../digest/2026/06/05.md).
 
 ### 2026-06-04
 

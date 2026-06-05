@@ -3,8 +3,8 @@ name: Mixture of Experts
 aliases: [MoE, mixture-of-experts, mixture of experts, modello sparso, sparse model, expert routing]
 categoria: architettura
 created: 2026-06-01
-last_updated: 2026-06-01
-mentions_count: 5
+last_updated: 2026-06-05
+mentions_count: 7
 ---
 
 # Mixture of Experts
@@ -81,6 +81,10 @@ Quando un denso e' la scelta migliore. Per deployment su singola GPU, su edge o 
 Combinare gli assi di efficienza. MoE (sparsita' tra expert), quantizzazione (precisione ridotta dei pesi) e adaptive per-token compute (budget variabile) sono assi ortogonali e cumulabili. Un sistema di serving maturo li combina: un MoE quantizzato ad AWQ 4-bit con allocazione adattiva del compute per token e' lo stato dell'arte dell'ottimizzazione dell'inferenza nel 2026.
 
 ## Aggiornamenti
+
+### 2026-06-05
+
+MAI-Thinking-1, primo modello di ragionamento interno Microsoft (annunciato al Build 2026 il 2 giugno), e' un'architettura sparse MoE con 35 miliardi di parametri attivi e finestra di contesto da 256.000 token — addestrato senza distillazione da OpenAI o Anthropic. Conferma il pattern 2026: ogni nuova architettura di ragionamento frontier sceglie MoE per disaccoppiare capacita' e costo per token. Il dato operativo rilevante per chi pianifica il deployment: 35B attivi su un totale non dichiarato, con context 256K che implica un KV cache significativo — il servicing richiede istanze con memoria HBM adeguata al regime di long context. Vedi [digest 2026-06-05](../../digest/2026/06/05.md).
 
 ### 2026-06-01
 
