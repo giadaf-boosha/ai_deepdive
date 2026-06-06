@@ -3,8 +3,8 @@ name: Evaluation / Benchmark AI
 aliases: [benchmark, eval, evaluation, valutazione LLM, AI benchmark, leaderboard]
 categoria: tecnica
 created: 2026-04-30
-last_updated: 2026-06-05
-mentions_count: 21
+last_updated: 2026-06-06
+mentions_count: 23
 ---
 
 # Evaluation / Benchmark AI
@@ -135,3 +135,7 @@ MAI-Thinking-1 e MAI-Code-1-Flash (Microsoft Build 2026, 2 giugno) introducono d
 ### 2026-06-04
 
 MiniMax M3 (Shanghai, 1 giugno 2026) introduce tre nuove misurazioni di benchmark nel panorama dei modelli open-weight. SWE-Bench Pro (59,0%): variante piu' recente e difficile di SWE-Bench Verified, diversa dalla variante standard usata da Cursor Composer 2.5 e Grok Build 0.1 — il cambio di variante rende il confronto diretto non immediato e segnala la tendenza dei laboratori a scegliere la variante di benchmark su cui il proprio modello performa meglio. Terminal-Bench 2.1 (66,0%): versione aggiornata del benchmark per task terminale, con 2.1 che aggiunge nuove categorie rispetto alla 2.0 usata da Claude Mythos Preview (82,0%, digest 05-27); il gap tra i due risultati e' consistente con la differenza di capacita' dei modelli, ma il punto di comparazione diverso (2.0 vs 2.1) rende il confronto non diretto. BrowseComp (83,5): benchmark di navigazione web introdotto da OpenAI a fine 2025 per valutare la capacita' di recuperare informazioni difficili da trovare online. I tre benchmark di M3 evidenziano il pattern ricorrente: ogni laboratorio seleziona la variante e la versione del benchmark che massimizza il profilo di lancio, rendendo la comparazione cross-modello sempre piu' complessa senza un framework di benchmarking unificato e condiviso. [Digest 2026-06-04](../../digest/2026/06/04.md)
+
+### 2026-06-06
+
+Kaggle rilascia lo sviluppo locale dei benchmark AI (4-5 giugno, Google blog + 3 fonti secondarie). La novita' tecnica e' il trasferimento dell'intero ciclo di sviluppo dei task di evaluation dall'editor web-based alla CLI locale: `kaggle benchmarks create`, `validate`, `push`, `run`, `download` operano su task scritti nell'IDE dello sviluppatore. L'aspetto piu' rilevante per chi costruisce sistemi di evaluation e' il "write-kaggle-benchmarks skill": un set di istruzioni strutturate che insegna a un agente di coding (Claude Code, Cursor, Codex) come costruire task compliant con il SDK Kaggle. E' il primo esempio di un platform provider (Google/Kaggle) che pubblica uno "skill" esplicito per delegare la creazione di benchmark a un agente AI — il che suggerisce che la produzione di benchmark di evaluation diventa essa stessa un task delegabile agli agenti. Questo e' coerente con il trend di automazione del ciclo di evaluation tracciato nelle note precedenti (Is Grep All You Need, digest 05-16; TerminalWorld da registrazioni reali, digest 06-01). [Digest 2026-06-06](../../digest/2026/06/06.md)

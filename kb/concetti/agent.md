@@ -3,8 +3,8 @@ name: AI Agent
 aliases: [agent, AI agent, agente autonomo, autonomous agent]
 categoria: paradigma
 created: 2026-04-28
-last_updated: 2026-06-04
-mentions_count: 71
+last_updated: 2026-06-06
+mentions_count: 75
 ---
 
 # AI Agent
@@ -231,3 +231,7 @@ Tre segnali agentici nel digest di oggi. Anthropic espande Project Glasswing a 1
 ### 2026-06-04
 
 Tre segnali agentici nel digest di oggi su tre fronti distinti. Uber limita a $1.500/mese per dipendente la spesa su strumenti agentici di coding (Bloomberg 2 giugno, TechCrunch 2 giugno, Simon Willison 3 giugno): primo caso documentato pubblicamente di una grande azienda tech che raziona l'accesso agli agenti per costi — il budget 2026 esaurito in quattro mesi, con picchi individuali di $500-$2.000/mese, segnala che il costo dell'adozione enterprise degli agenti e' reale e misurabile, non solo proiettato. Coralogix raccoglie $200M (Series F, 3 giugno) per costruire il layer di observability per agenti AI: il prodotto affronta un problema specifico degli agenti in produzione, ovvero che un agente che diverge dall'obiettivo non genera errori classici in log ma comportamenti anomali nel reasoning trail. Il fatto che questa categoria di monitoring attiri gia' un round da $200M a valutazione $1,6 miliardi e' un indicatore di maturita' industriale del paradigma agentico. MiniMax M3 (1 giugno, 5 fonti) usa il concetto di agente in modo implicito ma rilevante: la compatibilita' nativa con agent framework (Claude Code, Qwen Code, Cline, Kilo) come caso d'uso primario del modello — il primo open-weight cinese a dichiarare l'ecosistema agenti come target deployment principale, non il chat. [Digest 2026-06-04](../../digest/2026/06/04.md)
+
+### 2026-06-06
+
+Tre segnali agentici nel digest di oggi da tre domini distinti. ChatGPT Dreaming V3 (OpenAI, 4-5 giugno, 5 fonti) introduce una memoria persistente sintetizzata in background con 82,8% di recall dei fatti — il pattern rilevante per il concetto di agente e' che la memoria persistente a lungo orizzonte passa da architettura di ricerca a feature consumer su larga scala: gli agenti (e gli assistenti che ne fanno da proxy) non devono piu' dipendere dal context window per mantenere coerenza attraverso conversazioni distanti nel tempo. La sintesi asincrona e' la meccanica chiave: un processo separato aggiorna le memorie in background senza interferire con la conversazione attiva, analogo al memory consolidation sleep-based nei modelli cognitivi umani. Supabase $500M Series F (5 giugno, 6 fonti): la crescita del 600% dei database Supabase e' direttamente attribuita dal CEO a Claude Code come maggior contributore singolo — il che quantifica per la prima volta la "infrastruttura agentica" non in modo qualitativo ma come driver di crescita verificabile in un round di finanziamento pubblico. La combinazione Postgres + vector search + auth multi-tenant + edge functions che Supabase fornisce e' esattamente il profilo backend di un sistema agentico a produzione: i dati di Supabase rendono misurabile quanti agenti di coding sono in produzione su infrastruttura standardizzata. Generalist AI $400M (4-5 giugno, 5 fonti): primo esempio nel digest di agente embodied con architettura software-only destinata a piattaforme robotiche di terze parti. Il modello di business (licenziare un AI engine software alla base hardware di chiunque, con un data flywheel che migliora dai deployment reali) e' strutturalmente diverso dai robot verticalmente integrati (Figure, Agility): Generalist AI scommette che il valore sta nell'intelligenza generale trasferibile, non nell'hardware specifico — lo stesso modello con cui gli LLM hanno commoditizzato il reasoning cognitivo. [Digest 2026-06-06](../../digest/2026/06/06.md)

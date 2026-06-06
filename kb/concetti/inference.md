@@ -3,8 +3,8 @@ name: Inference
 aliases: [inference, inferenza, serving, generation, decoding]
 categoria: infrastruttura
 created: 2026-04-28
-last_updated: 2026-06-05
-mentions_count: 19
+last_updated: 2026-06-06
+mentions_count: 21
 ---
 
 # Inference
@@ -168,3 +168,7 @@ Apple Private Cloud Compute (PCC) come architettura di inference per Siri rebuil
 ### 2026-06-04
 
 Due segnali convergenti sull'economia dell'inference nel 2026. Alphabet raccoglie $80 miliardi (1 giugno, 5 fonti: abc.xyz, CNBC, Bloomberg, TechCrunch, Axios) con destinazione esplicita "AI compute infrastructure": la dimensione del fabbisogno di compute per l'inference di Google Cloud — backlog quasi raddoppiato a $460 miliardi trimestre su trimestre — richiede un'equity offering da record nella storia US per restare competitivi. Il capex dichiarato per il 2026 e' $180-190 miliardi, con il 2027 in ulteriore crescita: e' il segnale piu' concreto a oggi che il costo dell'inference a scala sistemica supera qualsiasi proiezione degli anni precedenti. MiniMax M3 (5 fonti, 1 giugno) introduce MiniMax Sparse Attention (MSA), un'architettura di attention sparsa che porta il decoding a 15,6x piu' veloce e il prefill a 9,7x piu' veloce rispetto al predecessore M2 su contesti da 1M token: un ottimizzazione architetturale specifica per il regime di inference a long context, dove il bottleneck memory-bound del decode diventa dominante. L'MSA e' un approccio diverso da GQA (condivisione key/value tra heads) e da PagedAttention (KV cache paginata): opera riducendo il numero di coppie key-value che ogni head di attention processa ad ogni step, mantenendo la qualita' su long-context a costo di throughput ridotto su context corto. Il risultato pratico rilevante per chi costruisce sistemi RAG o agenti a context lungo e' che l'ottimizzazione dell'inference su finestre da 500K-1M token e' ora una direzione di ricerca architetturale attiva, non solo un problema di hardware. [Digest 2026-06-04](../../digest/2026/06/04.md)
+
+### 2026-06-06
+
+ChatGPT Dreaming V3 (OpenAI, 4-5 giugno, 5 fonti) introduce un pattern rilevante per il concetto di inference: la sintesi di memoria e' un processo di inference asincrono persistente che gira in background indipendentemente dalla sessione attiva. Strutturalmente, Dreaming V3 e' un loop di inference continuo che processa lo storico delle conversazioni per aggiornare un representation compatta dello stato utente. La riduzione 5x del compute rispetto a V2 e' il fatto tecnico chiave: rende il deployment di questo loop di inference in background economicamente scalabile su centinaia di milioni di utenti Free. Il pattern e' architetturalmente diverso dall'inference standard (input -> output in una singola call): e' inference persistente, non sincrona con la sessione, su dati propri del sistema (le conversazioni passate). Il termine che OpenAI usa — "dreaming" — e' un riferimento esplicito ai sistemi biologici dove la consolidazione della memoria avviene off-line (durante il sonno). Come sistema di inference, Dreaming V3 aggiunge un terzo tier al continuum on-device / cloud standard: inference asincrona di sfondo per la manutenzione dello stato. [Digest 2026-06-06](../../digest/2026/06/06.md)
