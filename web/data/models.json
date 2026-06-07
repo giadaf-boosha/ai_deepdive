@@ -1,24 +1,25 @@
 {
   "meta": {
-    "lastUpdated": "2026-06-01",
+    "lastUpdated": "2026-06-07",
     "generatedBy": "Claude Code Routine — ai-deepdive-weekly-radar",
     "sourcesChecked": [
       "https://www.anthropic.com/news/claude-opus-4-8",
-      "https://claude.com/pricing",
+      "https://www.anthropic.com/news/expanding-project-glasswing",
       "https://openai.com/index/introducing-gpt-5-5/",
       "https://developers.openai.com/api/docs/models/gpt-5.5",
-      "https://openai.com/chatgpt/pricing/",
+      "https://openai.com/api/pricing/",
       "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/",
       "https://ai.google.dev/gemini-api/docs/pricing",
-      "https://gemini.google/subscriptions/",
-      "https://www.perplexity.ai/",
-      "https://grok.com/",
-      "https://copilot.microsoft.com/",
-      "https://aistudio.google.com/",
-      "https://notebooklm.google.com/",
-      "https://one.google.com/about/google-ai-plans/"
+      "https://x.ai/news/grok-imagine-1-5",
+      "https://docs.x.ai/developers/models/grok-build-0.1",
+      "https://releasebot.io/updates/xai",
+      "https://mistral.ai/news/",
+      "https://www.marktechpost.com/2026/04/20/moonshot-ai-releases-kimi-k2-6-with-long-horizon-coding-agent-swarm-scaling-to-300-sub-agents-and-4000-coordinated-steps/",
+      "https://tokenmix.ai/blog/best-chinese-ai-models-2026-comparison-guide",
+      "https://arena.ai/leaderboard",
+      "https://artificialanalysis.ai/"
     ],
-    "nextScheduledUpdate": "2026-06-07T08:00:00+02:00",
+    "nextScheduledUpdate": "2026-06-14T08:00:00+02:00",
     "benchmarkLinks": [
       {
         "name": "Hugging Face — LLM Leaderboard",
@@ -489,11 +490,13 @@
       "name": "Grok",
       "url": "https://grok.com",
       "provider": "xAI",
-      "cosaFa": "Assistente AI con ricerca su web e X in tempo reale, Think mode e generazione immagini.",
+      "cosaFa": "Assistente AI con ricerca su web e X in tempo reale, Think mode, generazione immagini e interazione vocale.",
       "funzionalita": [
         "DeepSearch (web + X/Twitter)",
         "Think mode (ragionamento esteso)",
         "Generazione immagini",
+        "Grok Voice (interazione vocale, giu 2026)",
+        "Grok Imagine 1.5 Preview (image-to-video con audio sincronizzato, API, giu 2026)",
         "Capacita' multi-agent"
       ],
       "tierGratuito": "Si, con limiti di utilizzo.",
@@ -769,6 +772,12 @@
       "oneLiner": "Crea video-tutorial e documentazione step-by-step da un workflow, con voiceover AI."
     },
     {
+      "category": "Video",
+      "name": "Grok Imagine Video 1.5 Preview",
+      "url": "https://x.ai/news/grok-imagine-1-5",
+      "oneLiner": "#1 su Image-to-Video Arena (giu 2026): image-to-video con audio sincronizzato nativo (dialogo, SFX, musica), 720p/15 s, via API xAI."
+    },
+    {
       "category": "Audio",
       "name": "ElevenLabs",
       "url": "https://elevenlabs.io/",
@@ -797,6 +806,12 @@
       "name": "Suno v5.5",
       "url": "https://suno.com/",
       "oneLiner": "Genera canzoni complete con voce e strumenti; v5.5 (mar 2026) con Voices (clonazione), Custom Models e My Taste."
+    },
+    {
+      "category": "Audio",
+      "name": "Voxtral TTS",
+      "url": "https://mistral.ai/news/",
+      "oneLiner": "Text-to-speech Mistral con voice cloning zero-shot, multilingua e streaming in tempo reale (giu 2026)."
     },
     {
       "category": "Agent",
@@ -851,6 +866,12 @@
       "name": "OpenAI Codex (GPT-5.5)",
       "url": "https://openai.com/codex/",
       "oneLiner": "Agente di coding unificato OpenAI (terminale, IDE, web) su GPT-5.5 e il modello agentico GPT-5.3-Codex."
+    },
+    {
+      "category": "Coding",
+      "name": "Grok Build 0.1",
+      "url": "https://docs.x.ai/developers/models/grok-build-0.1",
+      "oneLiner": "Modello xAI per coding agentico con reasoning sempre attivo, context 256K e tool calling (beta pubblica, mag 2026, $1/$2 per 1M)."
     }
   ],
   "useMatrix": [
@@ -1278,7 +1299,15 @@
           "value": 69.2
         },
         {
+          "modelId": "qwen",
+          "value": 60.6
+        },
+        {
           "modelId": "chatgpt",
+          "value": 58.6
+        },
+        {
+          "modelId": "kimi",
           "value": 58.6
         },
         {
@@ -1348,6 +1377,19 @@
     }
   ],
   "changelog": [
+    {
+      "date": "2026-06-07",
+      "summary": "Nuovi tool: Grok Build 0.1 (coding agentico xAI, reasoning always-on, 256K context, $1/$2 per 1M, beta mag 2026); Grok Imagine Video 1.5 Preview (#1 Image-to-Video Arena, audio sincronizzato nativo dialogo+SFX+musica, 720p/15 s, API giu 2026); Voxtral TTS Mistral (voice cloning zero-shot, multilingua, streaming, giu 2026). App Grok aggiornata con Grok Voice e Grok Imagine 1.5. Score SWE-bench Pro aggiornati: Qwen 3.7-Max 60.6%, Kimi K2.6 58.6%. Note: Claude Mythos Preview (GPQA Diamond 94.6%, SWE-bench Verified 93.9%) riservato a Project Glasswing (~50 org sicurezza), non disponibile pubblicamente; project Glasswing esteso a 150 nuove org il 2 giu 2026.",
+      "sources": [
+        "https://docs.x.ai/developers/models/grok-build-0.1",
+        "https://x.ai/news/grok-imagine-1-5",
+        "https://releasebot.io/updates/xai",
+        "https://mistral.ai/news/",
+        "https://www.anthropic.com/news/expanding-project-glasswing",
+        "https://www.marktechpost.com/2026/04/20/moonshot-ai-releases-kimi-k2-6-with-long-horizon-coding-agent-swarm-scaling-to-300-sub-agents-and-4000-coordinated-steps/",
+        "https://tokenmix.ai/blog/best-chinese-ai-models-2026-comparison-guide"
+      ]
+    },
     {
       "date": "2026-06-01",
       "summary": "Radar ampliato: 10 modelli a confronto (aggiunti Grok 4.3, Llama 4, DeepSeek V4, Qwen 3.7-Max, Mistral Medium 3.5, Kimi K2.6, GLM-5.1); schede tool dettagliate (cosa fa, funzionalita, tier, caveat, sweet spot) + tabella contenitori e decision tree; 38 casi d'uso cross-dominio; link benchmark pinnati (Hugging Face, Artificial Analysis); loghi.",
