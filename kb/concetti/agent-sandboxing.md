@@ -3,8 +3,8 @@ name: Agent sandboxing
 aliases: [sandboxing, containment, isolamento agenti, agent containment, esecuzione isolata, sandbox]
 categoria: infrastruttura
 created: 2026-06-01
-last_updated: 2026-06-01
-mentions_count: 4
+last_updated: 2026-06-07
+mentions_count: 5
 ---
 
 # Agent sandboxing
@@ -83,6 +83,10 @@ Loop e esecuzione vanno disaccoppiati per la compliance. Il pattern "loop su pro
 La sandbox non sostituisce gli altri controlli. Contenimento, human-in-the-loop sulle azioni sensibili, controllo di policy separato dal modello e logging completo sono livelli complementari. Un agente sandboxato ma senza approvazione umana sulle azioni distruttive, o senza tracciamento dei tool call, e' ancora un rischio operativo. La sandbox limita il danno; gli altri controlli riducono la probabilita' che il danno si verifichi.
 
 ## Aggiornamenti
+
+### 2026-06-07
+
+Simon Willison rilascia micropython-wasm (6 giugno, alpha, github.com/simonw/micropython-wasm) e il plugin datasette-agent-micropython: una sandbox WASM leggera per esecuzione di Python da un agente, senza container o VM completa. Il contributo tecnico principale e' la gestione dello stato persistente nell'istanza MicroPython: il build WASM standard termina l'interprete dopo ogni chiamata, rendendo impossibile il riuso di variabili tra step agentici successivi; micropython-wasm mantiene l'istanza in vita. Il livello di isolamento e' process-level via WebAssembly (sotto gVisor e VM completa sullo spettro di forza), adatto a agenti locali trusted. Il test di sandbox escape con GPT-5.5 non ha prodotto breakout. L'HN thread (48425347) conferma la trazione. Il pattern e' trasferibile a qualsiasi framework che richieda un'opzione sandboxing piu' leggera dei container, in particolare per CLI agent e Datasette Agent ma non solo. [Digest 2026-06-07](../../digest/2026/06/07.md)
 
 ### 2026-06-01
 

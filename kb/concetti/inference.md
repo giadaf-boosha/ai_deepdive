@@ -3,8 +3,8 @@ name: Inference
 aliases: [inference, inferenza, serving, generation, decoding]
 categoria: infrastruttura
 created: 2026-04-28
-last_updated: 2026-06-06
-mentions_count: 21
+last_updated: 2026-06-07
+mentions_count: 23
 ---
 
 # Inference
@@ -168,6 +168,10 @@ Apple Private Cloud Compute (PCC) come architettura di inference per Siri rebuil
 ### 2026-06-04
 
 Due segnali convergenti sull'economia dell'inference nel 2026. Alphabet raccoglie $80 miliardi (1 giugno, 5 fonti: abc.xyz, CNBC, Bloomberg, TechCrunch, Axios) con destinazione esplicita "AI compute infrastructure": la dimensione del fabbisogno di compute per l'inference di Google Cloud — backlog quasi raddoppiato a $460 miliardi trimestre su trimestre — richiede un'equity offering da record nella storia US per restare competitivi. Il capex dichiarato per il 2026 e' $180-190 miliardi, con il 2027 in ulteriore crescita: e' il segnale piu' concreto a oggi che il costo dell'inference a scala sistemica supera qualsiasi proiezione degli anni precedenti. MiniMax M3 (5 fonti, 1 giugno) introduce MiniMax Sparse Attention (MSA), un'architettura di attention sparsa che porta il decoding a 15,6x piu' veloce e il prefill a 9,7x piu' veloce rispetto al predecessore M2 su contesti da 1M token: un ottimizzazione architetturale specifica per il regime di inference a long context, dove il bottleneck memory-bound del decode diventa dominante. L'MSA e' un approccio diverso da GQA (condivisione key/value tra heads) e da PagedAttention (KV cache paginata): opera riducendo il numero di coppie key-value che ogni head di attention processa ad ogni step, mantenendo la qualita' su long-context a costo di throughput ridotto su context corto. Il risultato pratico rilevante per chi costruisce sistemi RAG o agenti a context lungo e' che l'ottimizzazione dell'inference su finestre da 500K-1M token e' ora una direzione di ricerca architetturale attiva, non solo un problema di hardware. [Digest 2026-06-04](../../digest/2026/06/04.md)
+
+### 2026-06-07
+
+KVarN (arXiv 2606.03458, Huawei CSL, 2 giugno, 5 fonti: arXiv + GitHub + NYU Shanghai AI + NVIDIA Developer Forums + HN 48399974) introduce il contributo piu' diretto al tema KV cache quantization comparso nei digest fino a oggi. Il paper risolve il problema dell'accumulo di errore in decode autoregressivo — ignorato dalle tecniche esistenti che valutano la KV cache quantization in setting prefill — con una pipeline Hadamard + dual-scaling variance normalization che porta la 2-bit quantization calibration-free a SOTA su MATH500, AIME24 e HumanEval, con throughput superiore a FP16 e accuratezza FP16-equivalente. Il risultato pratico e' un backend nativo vLLM (un singolo flag) che abilita 3-5x piu' sequenze parallele nella stessa memoria: un modello che richiedeva 4 H100 in FP16 per 100 sessioni concorrenti ne puo' servire 300-500 con KVarN a 2-bit. Il connettore con il filo conduttore inference economics della settimana e' diretto: ridurre la pressione sulla KV cache e' equivalente ad aumentare la capacita' di serving senza aggiungere hardware. [Digest 2026-06-07](../../digest/2026/06/07.md)
 
 ### 2026-06-06
 

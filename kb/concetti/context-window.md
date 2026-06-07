@@ -3,8 +3,8 @@ name: Context window
 aliases: [context window, finestra di contesto, finestra contestuale, context length]
 categoria: architettura
 created: 2026-04-28
-last_updated: 2026-06-01
-mentions_count: 0
+last_updated: 2026-06-07
+mentions_count: 2
 ---
 
 # Context window
@@ -45,6 +45,7 @@ Modelli del 2025-2026 con i loro context window:
 | GPT-5 / GPT-4o | 128k - 256k | Variabile per tier |
 | GPT-Realtime-2 | 128k | Voice model con reasoning GPT-5, salito da 32k |
 | Gemini 3.5 Flash | 1M | Nativo multimodale, modello agentico Google I/O 2026 |
+| Gemini 3.5 Pro | 2M | GA attesa giugno 2026; Deep Think per Ultra; la finestra piu' grande tra i frontier |
 | Gemini 2 Pro | 2M | Standard, 10M sperimentale |
 | Qwen3.7-Max | 1M | Ottimizzato per CLI agent, run autonome fino a 35h |
 | Mistral Medium 3.5 | 256k | 128B open-weights |
@@ -103,7 +104,9 @@ Esternalizzazione dello stato. Quando il task supera per sua natura qualsiasi fi
 
 ## Aggiornamenti
 
-Nessun aggiornamento dopo la creazione (2026-04-28).
+### 2026-06-07
+
+Google conferma (TechTimes 6 giugno + 3 fonti secondarie: codersera.com, ofox.ai, aimlapi.com) che Gemini 3.5 Pro avra' una finestra di contesto da 2 milioni di token — la piu' grande annunciata per qualsiasi modello frontier a oggi — con GA attesa entro fine giugno 2026. Il modello e' gia' in limited preview per enterprise selezionati su Vertex. La finestra da 2M token ridisegna la soglia di utilizzo del RAG per i corpus sotto quella dimensione: una codebase di media taglia (~500k token, ~2M caratteri), una base documentale aziendale o un anno di transcript di meeting entrano in singola call senza preprocessing. Aggiornata la tabella modelli nella sezione Varianti / approcci. [Digest 2026-06-07](../../digest/2026/06/07.md)
 
 ### 2026-06-01
 
