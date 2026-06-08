@@ -3,8 +3,8 @@ name: Inference
 aliases: [inference, inferenza, serving, generation, decoding]
 categoria: infrastruttura
 created: 2026-04-28
-last_updated: 2026-06-07
-mentions_count: 23
+last_updated: 2026-06-08
+mentions_count: 28
 ---
 
 # Inference
@@ -172,6 +172,10 @@ Due segnali convergenti sull'economia dell'inference nel 2026. Alphabet raccogli
 ### 2026-06-07
 
 KVarN (arXiv 2606.03458, Huawei CSL, 2 giugno, 5 fonti: arXiv + GitHub + NYU Shanghai AI + NVIDIA Developer Forums + HN 48399974) introduce il contributo piu' diretto al tema KV cache quantization comparso nei digest fino a oggi. Il paper risolve il problema dell'accumulo di errore in decode autoregressivo — ignorato dalle tecniche esistenti che valutano la KV cache quantization in setting prefill — con una pipeline Hadamard + dual-scaling variance normalization che porta la 2-bit quantization calibration-free a SOTA su MATH500, AIME24 e HumanEval, con throughput superiore a FP16 e accuratezza FP16-equivalente. Il risultato pratico e' un backend nativo vLLM (un singolo flag) che abilita 3-5x piu' sequenze parallele nella stessa memoria: un modello che richiedeva 4 H100 in FP16 per 100 sessioni concorrenti ne puo' servire 300-500 con KVarN a 2-bit. Il connettore con il filo conduttore inference economics della settimana e' diretto: ridurre la pressione sulla KV cache e' equivalente ad aumentare la capacita' di serving senza aggiungere hardware. [Digest 2026-06-07](../../digest/2026/06/07.md)
+
+### 2026-06-08
+
+Quattro segnali convergenti sull'economia dell'inference nel digest di oggi. Apple WWDC 2026 (8 fonti: MacRumors, Tom's Guide, CNBC, AppleInsider, Bloomberg, cryptobriefing, letsdatascience, heygotrade) introduce Private Cloud Compute (PCC) come terzo tier architetturale dell'inference: non on-device (come llama.cpp locale), non cloud pubblico tradizionale (come Bedrock o Vertex), ma confidential cloud computing — i pesi di Gemini 1,2T girano in enclave hardware-isolated su server Apple Silicon, con garanzia contrattuale che Google non puo' leggere gli input/output utente. Il pattern PCC risolve il trade-off tra modelli frontier (1T+ parametri, non portabili on-device) e privacy utente: delegare l'inference al vendor di modello (Google) ma eseguirla in ambiente fisicamente controllato dall'OS vendor (Apple). E' il segnale piu' concreto che il confidential cloud computing diventa prassi ingegneristica standard per l'inference AI nei contesti consumer. Google paga SpaceX $920M/mese ($30B totale, 8 fonti: TechCrunch, Bloomberg, CNBC, Yahoo Finance, Slashdot, cryptobriefing, PYMNTS, New Straits Times): l'economia dell'inference frontier e' talmente tesa che anche Google — $180-190B di capex nel 2026 — deve acquisire bridge compute da un concorrente per soddisfare la domanda di Gemini Enterprise. Il dato quantifica il valore di un singolo GPU cluster (110K GPU per $920M/mese): un'unita' di compute equivalente a quella affittata da Google genera piu' di $11 miliardi di ricavi annui da un singolo cliente. Anthropic raddoppia i limiti Claude Code (Anthropic official + 6 fonti): il deal SpaceX Colossus 1 (220K GPU, 300MW) porta la finestra di utilizzo di 5h al doppio e alza il rate limit API Opus da 30K a 500K token/minuto per Tier 1 (16x). L'aspetto inference e' la scarsita' come variabile operativa: la mossa risponde direttamente alla domanda degli utenti che scontravano blocchi peak-hour, e ogni raddoppio di limite equivale a un'espansione della capacita' di inference agentica disponibile per run complessi. [Digest 2026-06-08](../../digest/2026/06/08.md)
 
 ### 2026-06-06
 

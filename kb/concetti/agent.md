@@ -3,8 +3,8 @@ name: AI Agent
 aliases: [agent, AI agent, agente autonomo, autonomous agent]
 categoria: paradigma
 created: 2026-04-28
-last_updated: 2026-06-06
-mentions_count: 75
+last_updated: 2026-06-08
+mentions_count: 78
 ---
 
 # AI Agent
@@ -231,6 +231,10 @@ Tre segnali agentici nel digest di oggi. Anthropic espande Project Glasswing a 1
 ### 2026-06-04
 
 Tre segnali agentici nel digest di oggi su tre fronti distinti. Uber limita a $1.500/mese per dipendente la spesa su strumenti agentici di coding (Bloomberg 2 giugno, TechCrunch 2 giugno, Simon Willison 3 giugno): primo caso documentato pubblicamente di una grande azienda tech che raziona l'accesso agli agenti per costi — il budget 2026 esaurito in quattro mesi, con picchi individuali di $500-$2.000/mese, segnala che il costo dell'adozione enterprise degli agenti e' reale e misurabile, non solo proiettato. Coralogix raccoglie $200M (Series F, 3 giugno) per costruire il layer di observability per agenti AI: il prodotto affronta un problema specifico degli agenti in produzione, ovvero che un agente che diverge dall'obiettivo non genera errori classici in log ma comportamenti anomali nel reasoning trail. Il fatto che questa categoria di monitoring attiri gia' un round da $200M a valutazione $1,6 miliardi e' un indicatore di maturita' industriale del paradigma agentico. MiniMax M3 (1 giugno, 5 fonti) usa il concetto di agente in modo implicito ma rilevante: la compatibilita' nativa con agent framework (Claude Code, Qwen Code, Cline, Kilo) come caso d'uso primario del modello — il primo open-weight cinese a dichiarare l'ecosistema agenti come target deployment principale, non il chat. [Digest 2026-06-04](../../digest/2026/06/04.md)
+
+### 2026-06-08
+
+Tre segnali agentici nel digest di oggi. Apple WWDC 2026 (8 fonti: MacRumors, Tom's Guide, CNBC, AppleInsider, Bloomberg, cryptobriefing, letsdatascience, heygotrade) lancia iOS 27 Extensions: il primo meccanismo OS-level che consente di configurare Claude (Anthropic), Gemini (Google) o ChatGPT (OpenAI) come agente AI di default sull'intero sistema operativo, con accesso agli stessi trigger di sistema di Siri — Dynamic Island, attivazione vocale, Spotlight, lock screen. Il pattern e' un passaggio dall'agente come app (che l'utente deve aprire) all'agente come strato computazionale ambientale (che il sistema invoca per conto dell'utente). La portata di distribuzione e' strutturalmente diversa da tutto cio' che era stato deployato fino a oggi: un modello selezionato come default su iPhone riceve le query di centinaia di milioni di utenti senza attivazione deliberata. iOS 27 Extensions estende il pattern dell'agente ambient — gia' tracciato con Writer, Agent 365, Gemini Intelligence a livello Android e Aion 1.0 su Windows — al sistema mobile piu' diffuso al mondo, con la variante che qui e' l'utente a scegliere il modello, non il vendor OS. Anthropic raddoppia i limiti Claude Code (Anthropic official + 6 fonti): il deal SpaceX Colossus 1 porta il budget di utilizzo agentico disponibile per sessione al doppio su tutti i piani a pagamento. L'impatto per il paradigma agentico e' operativo: i workflow piu' complessi (migrazione di codebase, multi-step test generation, refactoring cross-modulo) si interrompevano per esaurimento dei limiti orari; il raddoppio riduce la frequenza di interruzione nelle sessioni agentiche lunghe. Il sistema di limiti come vincolo operativo del loop agentico e' una della variabili non-tecniche piu' critiche nel deployment pratico di agenti di coding in ambienti enterprise. [Digest 2026-06-08](../../digest/2026/06/08.md)
 
 ### 2026-06-06
 
