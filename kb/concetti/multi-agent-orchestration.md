@@ -3,8 +3,8 @@ name: Multi-agent orchestration
 aliases: [multi-agent, sistema multi-agente, orchestrazione di agenti, agent swarm, subagenti, sub-agent orchestration]
 categoria: paradigma
 created: 2026-06-01
-last_updated: 2026-06-03
-mentions_count: 12
+last_updated: 2026-06-09
+mentions_count: 15
 ---
 
 # Multi-agent orchestration
@@ -93,6 +93,10 @@ Microsoft Build 2026 porta due nuovi esempi di orchestrazione multi-agente in pr
 ### 2026-06-03
 
 GitHub Copilot App porta la multi-agent orchestration nel client desktop nativo con il pattern "sessioni parallele via worktree". Ogni sessione agentica e' isolata in un git worktree proprio — una copia reale del branch — e piu' sessioni possono correre in parallelo sullo stesso repository senza interferire. L'orchestrazione avviene a livello dell'app (My Work aggrega lo stato di tutte le sessioni), non a livello del singolo agente: il developer vede un pannello unificato delle sessioni attive, issue, PR e automazioni in background, e puo' reindirizzare o approvare ogni sessione dalla stessa superficie (Canvas). Il pattern non e' un orchestratore-worker classico (non c'e' un meta-agente che spawna i worker), ma un'interfaccia multi-sessione che rende pratico il parallelismo: il developer e' l'orchestratore che distribuisce i task, l'app gestisce l'isolamento. Rispetto a Copilot Workspace GA (Fleet mode, Autopilot mode, digest 06-02), l'app aggiunge il layer di interfaccia nativa che rende l'orchestrazione manuale del parallelismo realmente usabile. [Digest 2026-06-03](../../digest/2026/06/03.md)
+
+### 2026-06-09
+
+Claude Opus 4.8 Dynamic Workflows coperto nel digest come missed coverage (28 maggio, 7 fonti: Anthropic, TechCrunch, MarkTechPost, The New Stack, VentureBeat, Vellum AI, codersera.com). Il rilascio conferma il pattern gia' citato in questo file al 2026-06-01 (che riportava la notizia come annuncio Anthropic senza digest dedicato): Dynamic Workflows e' ora in research preview effettiva per piani Enterprise, Team e Max, con documentazione pubblica e limite dichiarato di 1.000 subagenti totali per run (16 in parallelo). Il dettaglio operativo rilevante che emerge dalla copertura di Vellum AI e truefoundry.com e' il profilo dei costi: 1.000 subagenti consumano 1.000 context window separate, ciascuna con i propri token di input/output al prezzo standard di Opus 4.8 ($5/$25 per MTok). Un run a piena scala su 1.000 subagenti con 10K token input e 5K output ciascuno costerebbe circa $550: economicamente ragionevole per una migrazione di codebase enterprise, non per task che si risolve in un singolo loop. Questa aritmetica e' il vincolo pratico che distingue i casi d'uso per cui Dynamic Workflows ha senso (task decomponibili a scala) da quelli per cui e' overkill. [Digest 2026-06-09](../../digest/2026/06/09.md)
 
 ### 2026-06-01
 
