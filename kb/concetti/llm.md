@@ -3,8 +3,8 @@ name: Large Language Model
 aliases: [LLM, modello linguistico di grandi dimensioni, foundation model]
 categoria: architettura
 created: 2026-04-28
-last_updated: 2026-06-01
-mentions_count: 9
+last_updated: 2026-06-10
+mentions_count: 12
 ---
 
 # Large Language Model
@@ -150,3 +150,7 @@ Architetture alternative al transformer. Gated DeltaNet-2 (NVLabs, arXiv 2605.22
 Modelli verticali e capacita' di frontiera. Claude Mythos Preview (Project Glasswing) registra 93,9% su SWE-bench Verified, 82,0% su Terminal-Bench 2.0 e 97,6% su USAMO 2026, ma resta in accesso ristretto per ragioni di governance piu' che tecniche. OpenAI apre Rosalind Biodefense, programma di trusted access a GPT-Rosalind (modello life-science specializzato), consolidando il pattern dei modelli verticali derivati dalla stessa architettura base e distribuiti in modo controllato su domini ad alto rischio. AlphaProof Nexus (DeepMind, arXiv 2605.22763) combina Gemini 3.1 Pro con verifica formale Lean per risolvere 9 problemi aperti di Erdos: prima dimostrazione che un sistema basato su LLM contribuisce risultati originali alla matematica di ricerca, con verifica certificata anziche' plausibile. [Digest 2026-05-27](../../digest/2026/05/27.md), [Digest 2026-05-30](../../digest/2026/05/30.md), [Digest 2026-05-31](../../digest/2026/05/31.md)
 
 Valutazione su task reali. TerminalWorld (arXiv 2605.22535) costruisce un benchmark agentico da 1530 task derivati da registrazioni terminale reali: il pass rate massimo tra otto modelli frontier e' 62,5%, contro percentuali ben piu' alte sui benchmark sintetici, evidenziando il gap tra prestazioni dichiarate e workflow autentici da developer. [Digest 2026-06-01](../../digest/2026/06/01.md)
+
+### 2026-06-10
+
+Claude Fable 5 e Mythos 5 (Anthropic, 9 giugno, 14+ fonti) marcano una discontinuita' nella roadmap dei modelli Anthropic. Fable 5 e' il primo modello della famiglia Fable reso pubblicamente disponibile: pricing a $10/$50 per milione di token input/output, accesso gratuito su tutti i piani fino al 22 giugno, disponibile su AWS Bedrock, Google Cloud Vertex, GitHub Copilot e Microsoft AI Foundry dall'9 giugno. Mythos 5 — stessa architettura di base con guardrail rimossi per partner cyber autorizzati — e' il primo modello Mythos-class ad essere reso pubblicamente disponibile, seppur in modalita' restricted. Il pattern e' rilevante per il concetto LLM come categoria: la distinzione Fable/Mythos codifica la scelta dei guardrail come prodotto, non come prerequisito — primo caso in cui un frontier lab commercializza esplicitamente due varianti dello stesso modello con politiche di sicurezza differenti. La disponibilita' multi-cloud (AWS, Google Cloud, GitHub, Microsoft) al lancio e' il nuovo standard di rilascio per i modelli frontier: non piu' accesso progressivo ma distribuzione simultanea su tutti i principali provider enterprise. [Digest 2026-06-10](../../digest/2026/06/10.md)

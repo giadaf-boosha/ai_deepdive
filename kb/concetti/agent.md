@@ -3,8 +3,8 @@ name: AI Agent
 aliases: [agent, AI agent, agente autonomo, autonomous agent]
 categoria: paradigma
 created: 2026-04-28
-last_updated: 2026-06-09
-mentions_count: 83
+last_updated: 2026-06-10
+mentions_count: 89
 ---
 
 # AI Agent
@@ -231,15 +231,10 @@ Tre segnali agentici nel digest di oggi. Anthropic espande Project Glasswing a 1
 ### 2026-06-04
 
 Tre segnali agentici nel digest di oggi su tre fronti distinti. Uber limita a $1.500/mese per dipendente la spesa su strumenti agentici di coding (Bloomberg 2 giugno, TechCrunch 2 giugno, Simon Willison 3 giugno): primo caso documentato pubblicamente di una grande azienda tech che raziona l'accesso agli agenti per costi — il budget 2026 esaurito in quattro mesi, con picchi individuali di $500-$2.000/mese, segnala che il costo dell'adozione enterprise degli agenti e' reale e misurabile, non solo proiettato. Coralogix raccoglie $200M (Series F, 3 giugno) per costruire il layer di observability per agenti AI: il prodotto affronta un problema specifico degli agenti in produzione, ovvero che un agente che diverge dall'obiettivo non genera errori classici in log ma comportamenti anomali nel reasoning trail. Il fatto che questa categoria di monitoring attiri gia' un round da $200M a valutazione $1,6 miliardi e' un indicatore di maturita' industriale del paradigma agentico. MiniMax M3 (1 giugno, 5 fonti) usa il concetto di agente in modo implicito ma rilevante: la compatibilita' nativa con agent framework (Claude Code, Qwen Code, Cline, Kilo) come caso d'uso primario del modello — il primo open-weight cinese a dichiarare l'ecosistema agenti come target deployment principale, non il chat. [Digest 2026-06-04](../../digest/2026/06/04.md)
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
-=======
 
 ### 2026-06-09
 
 Tre segnali agentici nel digest di oggi. NVIDIA Cosmos 3 (1 giugno, missed coverage, 8 fonti) posiziona il physical AI come categoria emergente di agenti embodied: il modello non e' un assistente conversazionale ma un sistema che percepisce, ragiona, pianifica e agisce nel mondo fisico — robotica, veicoli autonomi, sistemi di visione industriale. La Cosmos Coalition (Agile Robots, Generalist AI, Skild AI e altri) raccoglie player che costruiscono agenti fisici su world model aperti, consolidando l'ecosistema attorno a un foundation model condiviso per gli agenti embodied, lo stesso pattern che Claude Agent SDK e OpenAI Agents SDK hanno applicato agli agenti software. Claude Opus 4.8 con Dynamic Workflows (28 maggio, missed coverage, 7 fonti): il rilascio ufficiale del modello porta Dynamic Workflows come prima implementazione GA di un framework di orchestrazione multi-subagente dentro un harness consumer (Claude Code, piani Enterprise/Team/Max). La meccanica e' quella dell'orchestrazione via script (vedi [multi-agent-orchestration](./multi-agent-orchestration.md)): l'orchestratore scrive JavaScript che spawna fino a 1.000 subagenti, ognuno con context window proprio, aggregando i risultati prima che raggiungano l'utente. Per chi usa Claude Code, questo abbassa la soglia per task a scala di repository (migrazione completa, refactoring cross-modulo, test generation estesa) che prima richiedevano sessioni manuali multiple. OpenAI Lockdown Mode (6-8 giugno, 6 fonti): la funzione disabilita Agent mode come opzione di sicurezza anti-esfiltrazione. Il fatto che "agent mode off" sia un controllo di sicurezza consumer segnala che l'uso di ChatGPT in modalita' agentica (con accesso a web, file, tool) e' ora abbastanza diffuso da richiedere un meccanismo di shutdown esplicito per gli utenti che gestiscono dati sensibili. E' un indicatore di maturita' di deployment: le funzioni agentiche sono uscite dalla fase "power user" e sono diventate un comportamento di default che richiede governance consumer. [Digest 2026-06-09](../../digest/2026/06/09.md)
->>>>>>> 0fd1069 (feat(daily): ai_deepdive 2026-06-09)
 
 ### 2026-06-08
 
@@ -248,7 +243,7 @@ Tre segnali agentici nel digest di oggi. Apple WWDC 2026 (8 fonti: MacRumors, To
 ### 2026-06-06
 
 Tre segnali agentici nel digest di oggi da tre domini distinti. ChatGPT Dreaming V3 (OpenAI, 4-5 giugno, 5 fonti) introduce una memoria persistente sintetizzata in background con 82,8% di recall dei fatti — il pattern rilevante per il concetto di agente e' che la memoria persistente a lungo orizzonte passa da architettura di ricerca a feature consumer su larga scala: gli agenti (e gli assistenti che ne fanno da proxy) non devono piu' dipendere dal context window per mantenere coerenza attraverso conversazioni distanti nel tempo. La sintesi asincrona e' la meccanica chiave: un processo separato aggiorna le memorie in background senza interferire con la conversazione attiva, analogo al memory consolidation sleep-based nei modelli cognitivi umani. Supabase $500M Series F (5 giugno, 6 fonti): la crescita del 600% dei database Supabase e' direttamente attribuita dal CEO a Claude Code come maggior contributore singolo — il che quantifica per la prima volta la "infrastruttura agentica" non in modo qualitativo ma come driver di crescita verificabile in un round di finanziamento pubblico. La combinazione Postgres + vector search + auth multi-tenant + edge functions che Supabase fornisce e' esattamente il profilo backend di un sistema agentico a produzione: i dati di Supabase rendono misurabile quanti agenti di coding sono in produzione su infrastruttura standardizzata. Generalist AI $400M (4-5 giugno, 5 fonti): primo esempio nel digest di agente embodied con architettura software-only destinata a piattaforme robotiche di terze parti. Il modello di business (licenziare un AI engine software alla base hardware di chiunque, con un data flywheel che migliora dai deployment reali) e' strutturalmente diverso dai robot verticalmente integrati (Figure, Agility): Generalist AI scommette che il valore sta nell'intelligenza generale trasferibile, non nell'hardware specifico — lo stesso modello con cui gli LLM hanno commoditizzato il reasoning cognitivo. [Digest 2026-06-06](../../digest/2026/06/06.md)
-<<<<<<< HEAD
-=======
->>>>>>> Stashed changes
->>>>>>> 0fd1069 (feat(daily): ai_deepdive 2026-06-09)
+
+### 2026-06-10
+
+Due segnali sul paradigma agentico nel digest di oggi. Claude Fable 5 e Mythos 5 (Anthropic, 9 giugno, 14+ fonti): Fable 5 stabilisce un nuovo SOTA sull'agenticita' di coding con 80,3% su SWE-Bench Pro e 95% su SWE-bench Verified — benchmark che misurano direttamente la capacita' di un modello di operare come agente in un repository reale (identificare il file corretto, pianificare la modifica, eseguire e verificare). Mythos 5 e' Fable 5 con i guardrail rimossi per partner cyber autorizzati: la stessa architettura di base usata per red teaming agentico offensivo, il che implica che la frontiera della capacita' agentica e quella della capacita' offensiva AI convergono sullo stesso modello. Apple Foundation Models SDK (WWDC State of Union, 9 giugno, 8 fonti) introduce Dynamic Profiles come meccanismo di configurazione dell'agente a runtime: un profilo puo' specificare quanta compute dedicare al reasoning, quali tool sono disponibili, e qual e' la soglia di confidenza prima di richiedere approvazione umana — una primitiva di governance agentica OS-level. La combinazione con il Swift LanguageModel protocol (provider-swappable: Claude, Gemini, on-device) crea un harness dove il provider del modello puo' essere cambiato senza modificare la logica dell'agente, separando la governance (Dynamic Profiles) dall'implementazione (provider specifico). [Digest 2026-06-10](../../digest/2026/06/10.md)

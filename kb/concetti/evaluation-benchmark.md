@@ -3,8 +3,8 @@ name: Evaluation / Benchmark AI
 aliases: [benchmark, eval, evaluation, valutazione LLM, AI benchmark, leaderboard]
 categoria: tecnica
 created: 2026-04-30
-last_updated: 2026-06-06
-mentions_count: 23
+last_updated: 2026-06-10
+mentions_count: 27
 ---
 
 # Evaluation / Benchmark AI
@@ -139,3 +139,7 @@ MiniMax M3 (Shanghai, 1 giugno 2026) introduce tre nuove misurazioni di benchmar
 ### 2026-06-06
 
 Kaggle rilascia lo sviluppo locale dei benchmark AI (4-5 giugno, Google blog + 3 fonti secondarie). La novita' tecnica e' il trasferimento dell'intero ciclo di sviluppo dei task di evaluation dall'editor web-based alla CLI locale: `kaggle benchmarks create`, `validate`, `push`, `run`, `download` operano su task scritti nell'IDE dello sviluppatore. L'aspetto piu' rilevante per chi costruisce sistemi di evaluation e' il "write-kaggle-benchmarks skill": un set di istruzioni strutturate che insegna a un agente di coding (Claude Code, Cursor, Codex) come costruire task compliant con il SDK Kaggle. E' il primo esempio di un platform provider (Google/Kaggle) che pubblica uno "skill" esplicito per delegare la creazione di benchmark a un agente AI — il che suggerisce che la produzione di benchmark di evaluation diventa essa stessa un task delegabile agli agenti. Questo e' coerente con il trend di automazione del ciclo di evaluation tracciato nelle note precedenti (Is Grep All You Need, digest 05-16; TerminalWorld da registrazioni reali, digest 06-01). [Digest 2026-06-06](../../digest/2026/06/06.md)
+
+### 2026-06-10
+
+Claude Fable 5 (Anthropic, 9 giugno, 14+ fonti) porta tre nuovi risultati di benchmark rilevanti per il concetto di evaluation. SWE-Bench Pro al 80,3%: variante piu' difficile di SWE-bench con task derivati da pull request reali su repository popolari, filtrate per escludere casi risolvibili con pattern di memorizzazione — il SOTA precedente era nell'intorno del 60-65%, e Fable 5 segna il primo superamento netto della soglia 80. SWE-bench Verified al 95%: il benchmark standard di bug fixing su repository Python reali (task verificati manualmente come risolvibili) — il punteggio indica che quasi tutti i task del corpus vengono risolti correttamente. FrontierCode Diamond al 29,3%: categoria piu' alta del benchmark FrontierCode (grading system Bronze/Silver/Gold/Diamond), che misura task di programmazione competitiva di difficolta' olimpica — primo modello frontier a superare la soglia Diamond in modo sistematico. Il valore comparativo dei tre benchmark e' che coprono dimensioni distinte della valutazione del coding agentico: correttezza su task di manutenzione reale (SWE-bench Pro), correttezza su task standard (SWE-bench Verified), capacita' algoritmica di frontiera (FrontierCode Diamond). La combinazione rivela la "forma" delle capacita' di un modello piu' di qualsiasi singolo benchmark — un modello puo' eccellere su SWE-bench Verified e fare peggio su FrontierCode Diamond, segnalando punti di forza diversi sul continuum manutenzione-creazione. [Digest 2026-06-10](../../digest/2026/06/10.md)
