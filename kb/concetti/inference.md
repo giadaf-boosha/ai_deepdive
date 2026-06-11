@@ -3,8 +3,8 @@ name: Inference
 aliases: [inference, inferenza, serving, generation, decoding]
 categoria: infrastruttura
 created: 2026-04-28
-last_updated: 2026-06-10
-mentions_count: 36
+last_updated: 2026-06-11
+mentions_count: 39
 ---
 
 # Inference
@@ -184,6 +184,10 @@ Due segnali sull'inference nel digest di oggi. NVIDIA Cosmos 3 (1 giugno, missed
 ### 2026-06-06
 
 ChatGPT Dreaming V3 (OpenAI, 4-5 giugno, 5 fonti) introduce un pattern rilevante per il concetto di inference: la sintesi di memoria e' un processo di inference asincrono persistente che gira in background indipendentemente dalla sessione attiva. Strutturalmente, Dreaming V3 e' un loop di inference continuo che processa lo storico delle conversazioni per aggiornare un representation compatta dello stato utente. La riduzione 5x del compute rispetto a V2 e' il fatto tecnico chiave: rende il deployment di questo loop di inference in background economicamente scalabile su centinaia di milioni di utenti Free. Il pattern e' architetturalmente diverso dall'inference standard (input -> output in una singola call): e' inference persistente, non sincrona con la sessione, su dati propri del sistema (le conversazioni passate). Il termine che OpenAI usa — "dreaming" — e' un riferimento esplicito ai sistemi biologici dove la consolidazione della memoria avviene off-line (durante il sonno). Come sistema di inference, Dreaming V3 aggiunge un terzo tier al continuum on-device / cloud standard: inference asincrona di sfondo per la manutenzione dello stato. [Digest 2026-06-06](../../digest/2026/06/06.md)
+
+### 2026-06-11
+
+Google Gemini 3.5 Live Translate (9 giugno, 9 fonti) introduce un caso d'uso di inference audio in streaming che ha vincoli tecnici distinti da quelli del decode testuale standard. Il modello processa il parlato in flusso continuo — non a frase completata — mantenendo una latenza di pochi secondi rispetto al parlante. Questo richiede un'architettura di inference che combina: (1) streaming input processing (i frame audio arrivano in finestre sovrapposte, non come batch completo); (2) overlapping generation (mentre il modello riceve i frame N+k, produce gia' i token di output per i frame N); (3) voice style transfer in parallelo al decode (l'intonazione e il pitch del parlante devono essere preservati nel segnale di uscita, il che aggiunge un secondo flusso di calcolo). Il deployment e' simultaneamente su consumer app, API developer e enterprise (Google Meet): tre tier con requisiti di latenza e throughput diversi, tutti serviti dallo stesso modello. Il fatto che Google distribuisca in un solo giorno un modello audio streaming su tutti e tre i layer segnala che l'infrastruttura di inference per audio real-time e' entrata in un regime di produzione stabile, non piu' sperimentale. ChatGPT memory upgrade (OpenAI, 11 giugno, 5 fonti): il loop di sintesi della memoria e' un processo di inference asincrono di background, distinto dalla sessione attiva. Opera continuamente sullo storico delle conversazioni per produrre una rappresentazione compatta dello stato utente, con aggiornamenti automatici temporali. Il segnale rilevante per il paradigma inference: si tratta del terzo tier di inference identificato nei digest (on-device, cloud sincrono, cloud asincrono di background), con caratteristiche di scheduling, budget e latency tolerance completamente diverse dai primi due. [Digest 2026-06-11](../../digest/2026/06/11.md)
 
 ### 2026-06-10
 

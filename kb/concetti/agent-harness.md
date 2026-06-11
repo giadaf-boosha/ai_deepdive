@@ -3,8 +3,8 @@ name: Agent harness
 aliases: [agent harness, harness, scaffolding agentico, agent runtime]
 categoria: infrastruttura
 created: 2026-04-28
-last_updated: 2026-06-01
-mentions_count: 1
+last_updated: 2026-06-11
+mentions_count: 4
 ---
 
 # Agent harness
@@ -144,6 +144,10 @@ Sicurezza dei tool. La superficie d'attacco principale di un harness e' nei tool
 ### 2026-05-02
 
 Claude Code v2.1.126 (rilasciato 1 maggio 2026) introduce miglioramenti significativi al harness: `claude project purge` per la gestione del ciclo di vita dei progetti, model picker che interroga `/v1/models` di gateway compatibili, OAuth via incolla in terminale per ambienti WSL2/SSH/container, e risoluzione del rilevamento PowerShell 7 su Windows. I progressi evidenziano come il harness di produzione evolva lungo tre assi: gestione dello stato persistente (project state lifecycle), integrazione con infrastrutture ibride (gateway, Bedrock service tier), e robustezza su ambienti non standard (WSL2, container, cloud IDE). [Digest 2026-05-02](../../digest/2026/05/02.md)
+
+### 2026-06-11
+
+Claude Managed Agents: Scheduled Deployments e Credential Vaults in public beta (Anthropic, 9 giugno, 5 fonti). Due funzionalita' infrastrutturali che risolvono la coppia di blocchi piu' frequente nel deployment di harness agentico in produzione. Scheduled Deployments: l'operatore assegna un cron schedule a un harness specifico (es. `0 5 * * *` per ogni giorno alle 5 UTC); la piattaforma Anthropic avvia la sessione, esegue il task e la chiude, senza che il team gestisca nessun scheduler esterno (nessun cron job server, Lambda, Airflow). L'harness diventa indistinguibile da un processo di sistema pianificato. Credential Vaults: le API key, i token OAuth e le password di database necessarie ai tool che l'harness usa non passano mai in chiaro nel prompt o nella history della sessione; vengono archiviate crittografate nella piattaforma e iniettate nell'ambiente di esecuzione al momento dell'avvio, come variabili d'ambiente. Insieme, le due funzionalita' risolvono la domanda "chi attiva l'agente quando non c'e' un umano, e come si autentica" che tiene la maggior parte dei progetti agentici fermi in pilota. Caso documentato: Rakuten usa scheduled deployments per analizzare dati e produrre report su base settimanale o mensile. La routine ai_deepdive di questo repo usa esattamente questo pattern (cron schedule + credenziali ambiente). [Digest 2026-06-11](../../digest/2026/06/11.md)
 
 ### 2026-06-01
 
