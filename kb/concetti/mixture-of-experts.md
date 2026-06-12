@@ -3,8 +3,8 @@ name: Mixture of Experts
 aliases: [MoE, mixture-of-experts, mixture of experts, modello sparso, sparse model, expert routing]
 categoria: architettura
 created: 2026-06-01
-last_updated: 2026-06-05
-mentions_count: 7
+last_updated: 2026-06-12
+mentions_count: 10
 ---
 
 # Mixture of Experts
@@ -89,3 +89,7 @@ MAI-Thinking-1, primo modello di ragionamento interno Microsoft (annunciato al B
 ### 2026-06-01
 
 Il MoE ricorre come scelta architetturale trasversale nei digest di maggio-giugno 2026. TML-Interaction-Small (Thinking Machines Lab, 11-12 maggio) e' un MoE 276B-A12B che combina capacita' alta e latenza bassa per il full-duplex (vedi [digest 2026-05-13](../../digest/2026/05/13.md)). LLaDA2.0-Uni (InclusionAI) usa un backbone MoE con masked diffusion per unificare understanding e generazione multimodale (vedi [digest 2026-05-03](../../digest/2026/05/03.md)). IBM Granite 4.1 fornisce il controesempio istruttivo: un 8B denso che batte un 32B MoE della generazione precedente (vedi [digest 2026-05-05](../../digest/2026/05/05.md)). Microsoft pre-annuncia Project Polaris come MoE per il coding con expert mappati a linguaggi e paradigmi distinti (vedi [digest 2026-06-01](../../digest/2026/06/01.md)). Sul fronte efficienza, il paper SOL (vedi [digest 2026-05-13](../../digest/2026/05/13.md)) e l'acquisizione di Eigen AI/AWQ da parte di Nebius (vedi [digest 2026-05-03](../../digest/2026/05/03.md)) mostrano assi complementari al routing tra expert. Il filo conduttore: separare capacita' (parametri totali) e costo (parametri attivi) e' la leva centrale dell'economia dell'inferenza frontier, ma non sostituisce un buon training — un denso ben fatto puo' ancora vincere.
+
+### 2026-06-12
+
+DiffusionGemma (Google, 10 giugno, 13+ fonti) introduce un nuovo caso d'uso del backbone MoE: utilizzato non per un LLM autoregressivo ma come base per un modello di text diffusion. Il backbone Gemma 4 26B MoE con 3,8B parametri attivi e' il fondamento su cui Google ha costruito la variante diffusiva: il MoE serve a garantire capacita' sufficiente (26B totali) con un footprint computazionale limitato per forward pass (3,8B attivi), essenziale per i passi di denoising iterativi dove ogni passo e' un forward pass completo. Il pattern "MoE come base per architetture non autoregressove" e' nuovo nel 2026: in precedenza il MoE era usato quasi esclusivamente in contesti autoregressivi (Mixtral, DeepSeek, Granite). DiffusionGemma dimostra che il beneficio di efficienza del MoE — costo attivo inferiore al costo totale — e' trasferibile a qualsiasi architettura che richieda piu' forward pass per produrre un output (diffusion, beam search, speculative decoding). [Digest 2026-06-12](../../digest/2026/06/12.md)

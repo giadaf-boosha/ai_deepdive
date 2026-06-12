@@ -3,8 +3,8 @@ name: Inference
 aliases: [inference, inferenza, serving, generation, decoding]
 categoria: infrastruttura
 created: 2026-04-28
-last_updated: 2026-06-11
-mentions_count: 39
+last_updated: 2026-06-12
+mentions_count: 43
 ---
 
 # Inference
@@ -192,3 +192,7 @@ Google Gemini 3.5 Live Translate (9 giugno, 9 fonti) introduce un caso d'uso di 
 ### 2026-06-10
 
 Due segnali sull'inference nel digest di oggi. Apple Foundation Models SDK (WWDC State of Union, 9 giugno, 8 fonti) introduce il Swift LanguageModel protocol come astrazione di routing dell'inference: la stessa chiamata API viene instradata verso Claude (Anthropic), Gemini (Google) o modelli on-device senza modificare il codice applicativo. Il pattern e' rilevante per l'inference engineering: il routing tra provider e' una funzione del runtime, non del codice applicativo — analogo a come JDBC astrae il database in Java. Il runtime determina quale backend e' disponibile (on-device, PCC, cloud) in base al profilo Dynamic e alle condizioni di rete, ottimizzando latenza e privacy per ogni singola chiamata. Claude Fable 5 (9 giugno, 14+ fonti): $10/$50 per milione di token input/output — un calo rispetto al pricing Opus 4.8 ($15/$75) pur mantenendo capacita' superiori su coding. Il pattern di repricing frontier conferma la tendenza: ogni generazione di modello SOTA porta un improvement price-performance, con il tier precedente che diventa la "fast/cheap option". Fable 5 e' disponibile su AWS Bedrock, Google Cloud Vertex, GitHub Copilot e Microsoft AI Foundry: inference multi-cloud come standard di rilascio per i modelli frontier. [Digest 2026-06-10](../../digest/2026/06/10.md)
+
+### 2026-06-12
+
+DiffusionGemma (Google, 10 giugno, 13+ fonti) introduce un pattern di inference radicalmente diverso da quello autoregressivo: invece di decodificare un token alla volta con un forward pass sequenziale, il modello genera fino a 256 token in parallelo in un singolo forward pass attraverso T passi di denoising (T=20-30 di default). Il risultato sul piano dell'inference e' 4x di throughput rispetto a Gemma 4 autoregressivo sullo stesso hardware: 1.000+ token/s su H100, 700+ su RTX 5090. Il trade-off e' la qualita' degradata su task di ragionamento multi-step (AIME 2026: 69,1% vs 88,3% autoregressivo), il che segnala che la sequenzialita' del decode autoregressivo e' parte del meccanismo di ragionamento, non solo un overhead. La combinazione backbone MoE (3,8B parametri attivi su 26B totali) + text diffusion e' un moltiplicatore di efficienza: MoE riduce il costo per token, la diffusione riduce il numero di forward pass per sequenza. L'adozione di quantizzazioni NVFP4 e GGUF nelle prime 24 ore conferma che il profilo di inference di DiffusionGemma e' adatto al deployment su hardware consumer senza ottimizzazioni specifiche. [Digest 2026-06-12](../../digest/2026/06/12.md)

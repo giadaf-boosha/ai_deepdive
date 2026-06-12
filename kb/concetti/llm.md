@@ -3,8 +3,8 @@ name: Large Language Model
 aliases: [LLM, modello linguistico di grandi dimensioni, foundation model]
 categoria: architettura
 created: 2026-04-28
-last_updated: 2026-06-10
-mentions_count: 12
+last_updated: 2026-06-12
+mentions_count: 15
 ---
 
 # Large Language Model
@@ -154,3 +154,7 @@ Valutazione su task reali. TerminalWorld (arXiv 2605.22535) costruisce un benchm
 ### 2026-06-10
 
 Claude Fable 5 e Mythos 5 (Anthropic, 9 giugno, 14+ fonti) marcano una discontinuita' nella roadmap dei modelli Anthropic. Fable 5 e' il primo modello della famiglia Fable reso pubblicamente disponibile: pricing a $10/$50 per milione di token input/output, accesso gratuito su tutti i piani fino al 22 giugno, disponibile su AWS Bedrock, Google Cloud Vertex, GitHub Copilot e Microsoft AI Foundry dall'9 giugno. Mythos 5 — stessa architettura di base con guardrail rimossi per partner cyber autorizzati — e' il primo modello Mythos-class ad essere reso pubblicamente disponibile, seppur in modalita' restricted. Il pattern e' rilevante per il concetto LLM come categoria: la distinzione Fable/Mythos codifica la scelta dei guardrail come prodotto, non come prerequisito — primo caso in cui un frontier lab commercializza esplicitamente due varianti dello stesso modello con politiche di sicurezza differenti. La disponibilita' multi-cloud (AWS, Google Cloud, GitHub, Microsoft) al lancio e' il nuovo standard di rilascio per i modelli frontier: non piu' accesso progressivo ma distribuzione simultanea su tutti i principali provider enterprise. [Digest 2026-06-10](../../digest/2026/06/10.md)
+
+### 2026-06-12
+
+DiffusionGemma (Google, 10 giugno, 13+ fonti) arricchisce il panorama degli LLM open con la prima architettura di text diffusion da un lab frontier. Il modello e' distinto dagli LLM autoregressivi convenzionali: usa attention bidirezionale invece di causale e genera testo tramite denoising iterativo parallelo anziche' decodifica sequenziale. Il suo posizionamento nel landscape degli LLM open e' come alternativa di throughput (4x piu' veloce) con compromesso di qualita' (gap di 19 punti su AIME 2026 rispetto a Gemma 4 autoregressivo). OpenAI estende la distribuzione dei propri modelli frontier alla piattaforma Oracle OCI (10 giugno, 7 fonti): con questo accordo, tutti i principali hyperscaler cloud (AWS, Google Cloud Vertex, Azure, Oracle OCI) ospitano modelli frontier OpenAI, consolidando il pattern di distribuzione multi-cloud diventato standard di rilascio nel 2026. Il landscape degli LLM open a giugno 2026 include ora un nuovo paradigma architetturale (text diffusion) accanto a MoE sparse (MiniMax M3, Mixtral) e dense (LLaMA 4, Qwen3). [Digest 2026-06-12](../../digest/2026/06/12.md)
