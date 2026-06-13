@@ -3,8 +3,8 @@ name: Agent harness
 aliases: [agent harness, harness, scaffolding agentico, agent runtime]
 categoria: infrastruttura
 created: 2026-04-28
-last_updated: 2026-06-11
-mentions_count: 4
+last_updated: 2026-06-13
+mentions_count: 7
 ---
 
 # Agent harness
@@ -162,3 +162,7 @@ Documentazione dell'isolamento. Il 30 maggio Anthropic pubblica "How we contain 
 Evidenza empirica sul peso dell'harness. Il paper "Is Grep All You Need?" (arXiv 2605.15184, 14 maggio) mostra che la varianza di accuratezza tra harness diversi supera quella tra metodi di retrieval a parita' di modello e dati. Integrato in Cos'e, negli anti-pattern e nella nota operativa sull'eval. [Digest 2026-05-16](../../digest/2026/05/16.md)
 
 Contesto competitivo e MCP production-grade. Aggiornata la mappa degli harness con Grok Build 0.1 (sub-agenti paralleli + Arena Mode, [Digest 2026-05-26](../../digest/2026/05/26.md)), Cursor Composer 2.5 ([Digest 2026-05-25](../../digest/2026/05/25.md)), Codex Goal mode ([Digest 2026-05-24](../../digest/2026/05/24.md)), Google Antigravity 2.0 con CLI/SDK/Managed Agents ([Digest 2026-05-20](../../digest/2026/05/20.md)), e ARIS come research harness open-source ([Digest 2026-05-07](../../digest/2026/05/07.md)). MCP entra nei workflow production con il Google Pay & Wallet MCP Server ([Digest 2026-05-29](../../digest/2026/05/29.md)).
+
+### 2026-06-13
+
+Claude Code v2.1.172 (10 giugno, 6 fonti) rimuove il vincolo che impediva ai subagenti di avviare propri subagenti. L'harness gestisce ora alberi di sessioni fino a 5 livelli di profondita': ogni nodo e' un'istanza harness completa con context window, system prompt e selezione di modello propri; il parent riceve solo il riepilogo del figlio. Dal punto di vista dell'harness la novita' e' strutturale: il loop agentico non e' piu' una struttura a due livelli (orchestratore + worker piatti) ma una gerarchia ricorsiva. Il context manager del parent e' parzialmente esonerato dal tenere traccia dello stato dei sotto-task profondi, che restano confinati nel context del nodo figlio. Il rovescio e' che la cost governance si complica: ogni nodo della gerarchia consuma token indipendentemente e il costo totale del run e' la somma dei costi dell'intero albero, senza visibilita' diretta dal nodo radice. [Digest 2026-06-13](../../digest/2026/06/13.md)

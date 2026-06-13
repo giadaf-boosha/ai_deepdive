@@ -3,8 +3,8 @@ name: Multi-agent orchestration
 aliases: [multi-agent, sistema multi-agente, orchestrazione di agenti, agent swarm, subagenti, sub-agent orchestration]
 categoria: paradigma
 created: 2026-06-01
-last_updated: 2026-06-09
-mentions_count: 15
+last_updated: 2026-06-13
+mentions_count: 18
 ---
 
 # Multi-agent orchestration
@@ -101,3 +101,7 @@ Claude Opus 4.8 Dynamic Workflows coperto nel digest come missed coverage (28 ma
 ### 2026-06-01
 
 La multi-agent orchestration e' passata da pattern di ricerca a feature di prodotto in poche settimane. Grok Build 0.1 (xAI, 14-20 maggio) introduce 8 sub-agenti paralleli e Arena Mode (vedi [digest 2026-05-26](../../digest/2026/05/26.md)). Claude Opus 4.8 (Anthropic, 28 maggio) introduce Dynamic Workflows con orchestrazione di fino a 1.000 subagenti via script JavaScript, spostando il coordinamento fuori dal context window (vedi [digest 2026-05-29](../../digest/2026/05/29.md)). Microsoft pre-annuncia la Copilot Agent Mode con swarm di sub-agenti generati da descrizioni in linguaggio naturale (vedi [digest 2026-06-01](../../digest/2026/06/01.md)). Sul lato ricerca, MDASH (Microsoft) orchestra 100+ agenti su un ensemble di modelli frontier e distillati per la scoperta di vulnerabilita' (vedi [digest 2026-05-15](../../digest/2026/05/15.md)), l'AI Co-Mathematician (Google DeepMind) usa un project coordinator stateful asincrono raggiungendo il 48% su FrontierMath Tier 4 (vedi [digest 2026-05-10](../../digest/2026/05/10.md)), e ARIS formalizza l'adversarial collaboration cross-model con executor e reviewer di famiglie diverse (vedi [digest 2026-05-07](../../digest/2026/05/07.md)). Anche MOSS (vedi [digest 2026-05-23](../../digest/2026/05/23.md)) e Google Antigravity 2.0 (vedi [digest 2026-05-20](../../digest/2026/05/20.md)) rientrano nel tema. Il filo conduttore tecnico: spostare lo stato di coordinamento fuori dal contesto, usare modelli eterogenei per la verifica, e accoppiare l'orchestrazione a [agent-sandboxing](./agent-sandboxing.md) per il deployment sicuro.
+
+### 2026-06-13
+
+Claude Code v2.1.172 (10 giugno, 6 fonti) aggiunge una dimensione di profondita' alla topologia multi-agente: i subagenti possono ora avviare propri subagenti, abilitando gerarchie ricorsive fino a 5 livelli. Ogni nodo e' un'istanza agentica completa con context window, system prompt e model selection propri; il coordinamento risale per riepilogo, non per log integrale. Il pattern distingue due approcci di orchestrazione gerarchica: in Dynamic Workflows (Opus 4.8) la gerarchia e' scritta in uno script JavaScript esplicito e l'orchestratore radice mantiene visibilita' sull'intero albero; in questa nuova modalita' la gerarchia emerge dall'interazione del modello con i tool, ed e' potenzialmente non deterministica e piu' difficile da ispezionare. Sul lato ricerca, EurekAgent (arXiv 2606.13662, 11 giugno, Tsinghua + Zhipu AI) propone un approccio ortogonale: invece di ottimizzare la topologia degli agenti (chi coordina chi), ottimizza l'ambiente — permessi, artefatti, budget, supervisione umana — ottenendo nuovo SOTA su circle packing matematico con meno di $11 di API. La combinazione dei due segnali indica che la frontiera del design multi-agente si e' biforcata: da un lato l'ingegneria della gerarchia (chi spawna chi, quanti livelli), dall'altro l'ingegneria dell'ambiente che circonda gli agenti. [Digest 2026-06-13](../../digest/2026/06/13.md)

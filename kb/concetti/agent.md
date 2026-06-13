@@ -3,8 +3,8 @@ name: AI Agent
 aliases: [agent, AI agent, agente autonomo, autonomous agent]
 categoria: paradigma
 created: 2026-04-28
-last_updated: 2026-06-11
-mentions_count: 94
+last_updated: 2026-06-13
+mentions_count: 98
 ---
 
 # AI Agent
@@ -231,6 +231,11 @@ Tre segnali agentici nel digest di oggi. Anthropic espande Project Glasswing a 1
 ### 2026-06-04
 
 Tre segnali agentici nel digest di oggi su tre fronti distinti. Uber limita a $1.500/mese per dipendente la spesa su strumenti agentici di coding (Bloomberg 2 giugno, TechCrunch 2 giugno, Simon Willison 3 giugno): primo caso documentato pubblicamente di una grande azienda tech che raziona l'accesso agli agenti per costi — il budget 2026 esaurito in quattro mesi, con picchi individuali di $500-$2.000/mese, segnala che il costo dell'adozione enterprise degli agenti e' reale e misurabile, non solo proiettato. Coralogix raccoglie $200M (Series F, 3 giugno) per costruire il layer di observability per agenti AI: il prodotto affronta un problema specifico degli agenti in produzione, ovvero che un agente che diverge dall'obiettivo non genera errori classici in log ma comportamenti anomali nel reasoning trail. Il fatto che questa categoria di monitoring attiri gia' un round da $200M a valutazione $1,6 miliardi e' un indicatore di maturita' industriale del paradigma agentico. MiniMax M3 (1 giugno, 5 fonti) usa il concetto di agente in modo implicito ma rilevante: la compatibilita' nativa con agent framework (Claude Code, Qwen Code, Cline, Kilo) come caso d'uso primario del modello — il primo open-weight cinese a dichiarare l'ecosistema agenti come target deployment principale, non il chat. [Digest 2026-06-04](../../digest/2026/06/04.md)
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+=======
+>>>>>>> 2dff95a (feat(daily): ai_deepdive 2026-06-13)
 
 ### 2026-06-09
 
@@ -251,3 +256,11 @@ Tre segnali agentici nel digest di oggi. Claude Managed Agents (Anthropic, 9 giu
 ### 2026-06-10
 
 Due segnali sul paradigma agentico nel digest di oggi. Claude Fable 5 e Mythos 5 (Anthropic, 9 giugno, 14+ fonti): Fable 5 stabilisce un nuovo SOTA sull'agenticita' di coding con 80,3% su SWE-Bench Pro e 95% su SWE-bench Verified — benchmark che misurano direttamente la capacita' di un modello di operare come agente in un repository reale (identificare il file corretto, pianificare la modifica, eseguire e verificare). Mythos 5 e' Fable 5 con i guardrail rimossi per partner cyber autorizzati: la stessa architettura di base usata per red teaming agentico offensivo, il che implica che la frontiera della capacita' agentica e quella della capacita' offensiva AI convergono sullo stesso modello. Apple Foundation Models SDK (WWDC State of Union, 9 giugno, 8 fonti) introduce Dynamic Profiles come meccanismo di configurazione dell'agente a runtime: un profilo puo' specificare quanta compute dedicare al reasoning, quali tool sono disponibili, e qual e' la soglia di confidenza prima di richiedere approvazione umana — una primitiva di governance agentica OS-level. La combinazione con il Swift LanguageModel protocol (provider-swappable: Claude, Gemini, on-device) crea un harness dove il provider del modello puo' essere cambiato senza modificare la logica dell'agente, separando la governance (Dynamic Profiles) dall'implementazione (provider specifico). [Digest 2026-06-10](../../digest/2026/06/10.md)
+<<<<<<< HEAD
+=======
+
+### 2026-06-13
+
+Due segnali agentici nel digest di oggi. Claude Code v2.1.172 (10 giugno, 6 fonti) rimuove il vincolo che impediva ai subagenti di generare ulteriori subagenti, abilitando alberi di sessioni fino a 5 livelli di profondita': ogni nodo ha context window, system prompt e selezione di modello propri, e il genitore riceve solo il riepilogo del figlio. Il pattern sblocca la decomposizione gerarchica multi-livello (modulo -> file -> operazione) che precedentemente richiedeva gestione manuale nel prompt dell'orchestratore con rischio di overflow. EurekAgent (arXiv 2606.13662, 11 giugno, 5 fonti, Tsinghua + Zhipu AI) applica l'architettura agentica alla scoperta scientifica con un approccio ortogonale ai workflow design: invece di ottimizzare il comportamento dell'agente, ottimizza l'ambiente — permessi, artefatti, budget, supervisione umana — e ottiene nuovo SOTA su circle packing matematico con meno di $11 di costo API. La combinazione dei due segnali suggerisce che la frontiera del design agentico si e' spostata dall'architettura del loop (ReAct, Reflexion, Tree-of-Thought) all'architettura dell'ambiente che circonda il loop. [Digest 2026-06-13](../../digest/2026/06/13.md)
+>>>>>>> Stashed changes
+>>>>>>> 2dff95a (feat(daily): ai_deepdive 2026-06-13)

@@ -3,8 +3,8 @@ name: Reinforcement Learning from Human Feedback
 aliases: [RLHF, reinforcement learning from human feedback, allineamento RL, RLAIF]
 categoria: training
 created: 2026-04-28
-last_updated: 2026-06-01
-mentions_count: 0
+last_updated: 2026-06-13
+mentions_count: 3
 ---
 
 # Reinforcement Learning from Human Feedback
@@ -124,3 +124,7 @@ Nessun aggiornamento dopo la creazione (2026-04-28).
 ### 2026-06-01
 
 Mese denso di ricerca su RLHF e dintorni, senza un singolo evento landmark ma con tre filoni convergenti. Sul fronte failure mode: formalizzazione dell'alignment collapse nell'RLHF iterativo e proposta di Foresighted Policy Optimization (Gauthier/Bach/Jordan, [digest 2026-05-08](../../digest/2026/05/08.md)); studio Anthropic che misura la sycophancy su 1M conversazioni e la riduce del 50% via preference optimization su Opus 4.7 ([digest 2026-05-04](../../digest/2026/05/04.md)). Sulla natura dell'RL: ReasonMaxxer mostra che il beneficio dell'RL per reasoning e' sparso e replicabile RL-free a ~1000x meno compute ([digest 2026-05-11](../../digest/2026/05/11.md)). Su scalabilita' ed efficienza: uPRM addestra Process Reward Model senza supervisione umana ([digest 2026-05-15](../../digest/2026/05/15.md)) e Cursor Composer 2.5 conferma lo spostamento del valore verso l'RL post-training su task sintetici verificabili ([digest 2026-05-25](../../digest/2026/05/25.md)). Scheda aggiornata con sezione GRPO/RLVR/PRM, esempio di targeting di failure mode, e note operative su alignment collapse e natura dell'RL.
+
+### 2026-06-13
+
+DRPO (arXiv 2606.09821, 8 giugno, 4 fonti, Yao et al., Tencent-Hunyuan UniRL). Il paper affronta l'instabilita' di training introdotta dalle regolarizzazioni a divergenza dura in algoritmi come DPPO, che mascherano i token dove la policy si allontana troppo dal modello di riferimento, creando discontinuita' nel gradiente. DRPO sostituisce la maschera dura con un regolarizzatore quadratico smooth pesato sull'advantage: l'aggiornamento e' sempre continuo, ma il peso del gradiente decresce man mano che la policy si discosta dal reference, realizzando un vincolo morbido al posto del taglio netto. Il risultato pratico dichiarato e' miglioramento di stabilita' e sample efficiency su scale di modello, architetture e precisioni diverse. Implementato nel framework UniRL di Tencent-Hunyuan. Nel panorama degli algoritmi di post-training (PPO, GRPO, DPO, GXPO, FPO), DRPO si posiziona come sostituto drop-in per i casi in cui la hard divergence regularization produce training instabile, senza richiedere cambiamenti architetturali. [Digest 2026-06-13](../../digest/2026/06/13.md)
