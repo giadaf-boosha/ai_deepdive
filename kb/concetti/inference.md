@@ -3,8 +3,8 @@ name: Inference
 aliases: [inference, inferenza, serving, generation, decoding]
 categoria: infrastruttura
 created: 2026-04-28
-last_updated: 2026-06-12
-mentions_count: 43
+last_updated: 2026-06-14
+mentions_count: 46
 ---
 
 # Inference
@@ -192,6 +192,10 @@ Google Gemini 3.5 Live Translate (9 giugno, 9 fonti) introduce un caso d'uso di 
 ### 2026-06-10
 
 Due segnali sull'inference nel digest di oggi. Apple Foundation Models SDK (WWDC State of Union, 9 giugno, 8 fonti) introduce il Swift LanguageModel protocol come astrazione di routing dell'inference: la stessa chiamata API viene instradata verso Claude (Anthropic), Gemini (Google) o modelli on-device senza modificare il codice applicativo. Il pattern e' rilevante per l'inference engineering: il routing tra provider e' una funzione del runtime, non del codice applicativo — analogo a come JDBC astrae il database in Java. Il runtime determina quale backend e' disponibile (on-device, PCC, cloud) in base al profilo Dynamic e alle condizioni di rete, ottimizzando latenza e privacy per ogni singola chiamata. Claude Fable 5 (9 giugno, 14+ fonti): $10/$50 per milione di token input/output — un calo rispetto al pricing Opus 4.8 ($15/$75) pur mantenendo capacita' superiori su coding. Il pattern di repricing frontier conferma la tendenza: ogni generazione di modello SOTA porta un improvement price-performance, con il tier precedente che diventa la "fast/cheap option". Fable 5 e' disponibile su AWS Bedrock, Google Cloud Vertex, GitHub Copilot e Microsoft AI Foundry: inference multi-cloud come standard di rilascio per i modelli frontier. [Digest 2026-06-10](../../digest/2026/06/10.md)
+
+### 2026-06-14
+
+MiMo-V2.5-Pro-UltraSpeed (Xiaomi + TileRT, 8-9 giugno, 9 fonti) introduce tre tecniche convergenti sull'inference ad alta velocita' su un modello MoE da un trilione di parametri. FP4 quantization-aware training: i pesi dell'intera architettura MoE da 1T sono addestrati e serviti in NVFP4 (floating point a 4 bit, nativo su Blackwell), riducendo la larghezza di banda di trasferimento dei pesi a un ottavo rispetto a BF16. DFlash speculative decoding: un modello draft leggero produce token speculativi che il modello target da 1T verifica in un singolo forward pass parallelo; con un tasso di accettazione del 3-4x rispetto alla baseline, ogni round di verifica porta 3-4 token accettati invece di uno. TileRT persistent kernel runtime (sviluppato dallo startup TileRT): elimina l'overhead di schedulazione kernel GPU fra step di decode mantenendo i kernel attivi in modo persistente attraverso i pass successivi, riducendo la latenza inter-step. Il risultato misurato su un nodo 8xH100 commodity (non wafer-scale) e' 1.000-1.200 token/s sostenuti — primo modello da un trilione di parametri a superare la soglia di 1.000 tok/s su hardware standard. L'API trial e' disponibile a 3x il prezzo di listino dall'9 al 23 giugno; il checkpoint open-weight e' su Hugging Face. [Digest 2026-06-14](../../digest/2026/06/14.md)
 
 ### 2026-06-12
 
