@@ -3,8 +3,8 @@ name: Inference
 aliases: [inference, inferenza, serving, generation, decoding]
 categoria: infrastruttura
 created: 2026-04-28
-last_updated: 2026-06-14
-mentions_count: 46
+last_updated: 2026-06-15
+mentions_count: 49
 ---
 
 # Inference
@@ -192,6 +192,10 @@ Google Gemini 3.5 Live Translate (9 giugno, 9 fonti) introduce un caso d'uso di 
 ### 2026-06-10
 
 Due segnali sull'inference nel digest di oggi. Apple Foundation Models SDK (WWDC State of Union, 9 giugno, 8 fonti) introduce il Swift LanguageModel protocol come astrazione di routing dell'inference: la stessa chiamata API viene instradata verso Claude (Anthropic), Gemini (Google) o modelli on-device senza modificare il codice applicativo. Il pattern e' rilevante per l'inference engineering: il routing tra provider e' una funzione del runtime, non del codice applicativo — analogo a come JDBC astrae il database in Java. Il runtime determina quale backend e' disponibile (on-device, PCC, cloud) in base al profilo Dynamic e alle condizioni di rete, ottimizzando latenza e privacy per ogni singola chiamata. Claude Fable 5 (9 giugno, 14+ fonti): $10/$50 per milione di token input/output — un calo rispetto al pricing Opus 4.8 ($15/$75) pur mantenendo capacita' superiori su coding. Il pattern di repricing frontier conferma la tendenza: ogni generazione di modello SOTA porta un improvement price-performance, con il tier precedente che diventa la "fast/cheap option". Fable 5 e' disponibile su AWS Bedrock, Google Cloud Vertex, GitHub Copilot e Microsoft AI Foundry: inference multi-cloud come standard di rilascio per i modelli frontier. [Digest 2026-06-10](../../digest/2026/06/10.md)
+
+### 2026-06-15
+
+MiniMax M3 pesi open pubblicati con rapporto tecnico arXiv:2606.13392 ("MiniMax Sparse Attention"). MSA e' un operatore di attenzione sparsa blockwise costruito su GQA (Grouped Query Attention): invece di calcolare l'attenzione su l'intera sequenza per ogni head, MSA riduce il numero di coppie key-value processate per step tramite block-sparse masking adattivo. Il risultato dichiarato nel technical report e' un decoding 15,6x piu' veloce e prefill 9,7x piu' veloce rispetto al predecessore M2 su contesti da 1M token. L'MSA affronta il collo di bottiglia specifico del long-context decode: a 1M token la KV cache in fp16 puo' superare la memoria disponibile di una H100 singola; la sparsita' blockwise riduce il footprint della KV cache attiva mantenendo la qualita' su benchmark di retrieval long-context. Rispetto alle tecniche esistenti: GQA condivide K e V tra heads (riduce il numero di heads, non i token processati per head); PagedAttention (vLLM) gestisce la KV cache come memoria virtuale paginata (riduce la frammentazione, non il costo computazionale per token); MSA riduce il numero di posizioni che ogni head deve attendere a ogni step, che e' il costo dominante nel long-context decode. Il risultato pratico per chi costruisce sistemi RAG o agenti con context lungo: MSA e' una tecnica verificabile e riproducibile (pesi e technical report pubblici) per l'inference efficiente su sequenze da 1M token senza richiedere hardware specializzato. [Digest 2026-06-15](../../digest/2026/06/15.md)
 
 ### 2026-06-14
 

@@ -3,8 +3,8 @@ name: Large Language Model
 aliases: [LLM, modello linguistico di grandi dimensioni, foundation model]
 categoria: architettura
 created: 2026-04-28
-last_updated: 2026-06-14
-mentions_count: 17
+last_updated: 2026-06-15
+mentions_count: 21
 ---
 
 # Large Language Model
@@ -158,6 +158,10 @@ Claude Fable 5 e Mythos 5 (Anthropic, 9 giugno, 14+ fonti) marcano una discontin
 ### 2026-06-14
 
 Claude Fable 5 e Mythos 5 diventano il primo caso documentato di LLM soggetti a direttiva di export control. Il 13 giugno 2026, il Bureau of Industry and Security (BIS) del Dipartimento del Commercio USA ha ordinato ad Anthropic la sospensione immediata dell'accesso ai modelli per qualsiasi cittadino straniero — inclusi i dipendenti Anthropic con cittadinanza non statunitense. I modelli erano stati lanciati quattro giorni prima (9 giugno). L'ordine, basato sulle "national security authorities" dell'EAR, ha reso impossibile la conformita' selettiva per giurisdizione e ha costretto alla disabilitazione globale. Il precedente rilevante per il concetto LLM come categoria: per la prima volta un governo classifica un modello-software-come-servizio come tecnologia soggetta a export control, non solo l'hardware (chip) su cui gira. Anthropic ha rispettato l'ordine e contestualmente ha rilasciato una dichiarazione pubblica di disaccordo. Claude Opus 4.8 rimane il modello frontier Anthropic disponibile a livello globale. [Digest 2026-06-14](../../digest/2026/06/14.md)
+
+### 2026-06-15
+
+MiniMax M3 open weights pubblicati su Hugging Face (~11 giugno, confermati oggi). MiniMaxAI/MiniMax-M3 e' ora scaricabile con licenza aperta (non open-source completo: mancano codice di training e operatori di inferenza custom). E' il primo modello open-weight a superare GPT-5.5 su SWE-Bench Pro (59%) con contesto da 1M token e multimodalita' nativa. Il rapporto tecnico arXiv:2606.13392 ("MiniMax Sparse Attention") documenta l'architettura MSA come tecnica per rendere economicamente sostenibile l'inference su sequenze da 1M token. Il parametro count non e' dichiarato ufficialmente; le stime della community indicano 200-400B totali. Segnale per il landscape LLM: la differenza di qualita' tra frontier closed e migliori open continua a ridursi sul benchmark SWE-Bench Pro, e M3 e' il primo open-weight cinese a raggiungere questo livello su coding con contesto lungo nativo. L'aggiornamento si lega alla storia parallela del ban Fable 5: mentre il modello frontier piu' capace di Anthropic rimane offline per tutti gli utenti non-US, il modello cinese open-weight che lo precede in SWE-Bench Pro e' liberamente scaricabile globalmente. [Digest 2026-06-15](../../digest/2026/06/15.md)
 
 ### 2026-06-12
 

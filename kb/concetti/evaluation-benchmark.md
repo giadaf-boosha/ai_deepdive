@@ -3,8 +3,8 @@ name: Evaluation / Benchmark AI
 aliases: [benchmark, eval, evaluation, valutazione LLM, AI benchmark, leaderboard]
 categoria: tecnica
 created: 2026-04-30
-last_updated: 2026-06-10
-mentions_count: 27
+last_updated: 2026-06-15
+mentions_count: 30
 ---
 
 # Evaluation / Benchmark AI
@@ -139,6 +139,10 @@ MiniMax M3 (Shanghai, 1 giugno 2026) introduce tre nuove misurazioni di benchmar
 ### 2026-06-06
 
 Kaggle rilascia lo sviluppo locale dei benchmark AI (4-5 giugno, Google blog + 3 fonti secondarie). La novita' tecnica e' il trasferimento dell'intero ciclo di sviluppo dei task di evaluation dall'editor web-based alla CLI locale: `kaggle benchmarks create`, `validate`, `push`, `run`, `download` operano su task scritti nell'IDE dello sviluppatore. L'aspetto piu' rilevante per chi costruisce sistemi di evaluation e' il "write-kaggle-benchmarks skill": un set di istruzioni strutturate che insegna a un agente di coding (Claude Code, Cursor, Codex) come costruire task compliant con il SDK Kaggle. E' il primo esempio di un platform provider (Google/Kaggle) che pubblica uno "skill" esplicito per delegare la creazione di benchmark a un agente AI — il che suggerisce che la produzione di benchmark di evaluation diventa essa stessa un task delegabile agli agenti. Questo e' coerente con il trend di automazione del ciclo di evaluation tracciato nelle note precedenti (Is Grep All You Need, digest 05-16; TerminalWorld da registrazioni reali, digest 06-01). [Digest 2026-06-06](../../digest/2026/06/06.md)
+
+### 2026-06-15
+
+MaxProof (arXiv:2606.13473, MiniMax, 11 giugno) introduce due nuovi benchmark come riferimento per la valutazione delle capacita' matematiche degli LLM a livello di competizione. IMO 2025 (35/42): International Mathematical Olympiad 2025, il benchmark di ragionamento matematico piu' difficile e standardizzato nel panorama AI; la soglia gold medal e' 29/42, e MaxProof supera il gold threshold. USAMO 2026 (36/42): United States of America Mathematical Olympiad 2026, competizione nazionale di difficolta' olimpica con gold threshold a 28/42. L'importanza metodologica di questi due benchmark e' che non sono contaminabili: le edizioni 2025 e 2026 sono successive al cutoff di training di quasi tutti i modelli frontier, rendendo il risultato difficilmente attribuibile a memorizzazione. Il framework MaxProof — generative verifier RL + population-level test-time scaling — porta M3 da 27/42 (one-shot) a 35/42 su IMO 2025 e da 26/42 a 36/42 su USAMO 2026: un delta di +8 e +10 punti rispettivamente, acquisito interamente a test time senza riaddestrare il modello. Il dato e' metodologicamente rilevante: dimostra che il test-time scaling con verifica formale e' un meccanismo distinto dalla capacita' base del modello, aggiungendo punti di benchmark in modo riproducibile e senza accesso ai parametri di training. MiniMax M3 introduce anche una misurazione aggiornata di SWE-Bench Pro (59%): i pesi ora pubblici permettono la verifica indipendente del claim, cosa che non era possibile al lancio API-only del 1 giugno. [Digest 2026-06-15](../../digest/2026/06/15.md)
 
 ### 2026-06-10
 

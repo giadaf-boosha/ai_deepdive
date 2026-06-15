@@ -3,8 +3,8 @@ name: AI Governance
 aliases: [AI governance, governance AI, export control AI, regolazione AI, AI regulation, AI policy, BIS AI, EAR AI models]
 categoria: regolazione
 created: 2026-06-14
-last_updated: 2026-06-14
-mentions_count: 6
+last_updated: 2026-06-15
+mentions_count: 10
 ---
 
 # AI Governance
@@ -77,3 +77,7 @@ Esempio 3: verifica della Responsible Scaling Policy prima di distribuire un mod
 ### 2026-06-14
 
 Prima direttiva di export control nella storia per un LLM come modello-servizio. Il 13 giugno 2026, il Bureau of Industry and Security del Dipartimento del Commercio USA ha ordinato ad Anthropic la sospensione immediata dell'accesso a Claude Fable 5 e Mythos 5 per qualsiasi cittadino straniero. L'ambito dell'ordine — inclusi i dipendenti Anthropic con cittadinanza straniera — ha reso impossibile la conformita' selettiva e costretto alla disabilitazione globale. E' il primo caso documentato di un governo che ordina la sospensione di un LLM gia' in produzione commerciale. Anthropic ha rispettato l'ordine e contestualmente ha rilasciato una dichiarazione pubblica di disaccordo, sostenendo che il precedente implica un blocco sistemico per tutti i futuri lanci frontier USA. I modelli erano stati lanciati quattro giorni prima (9 giugno). [Digest 2026-06-14](../../digest/2026/06/14.md)
+
+### 2026-06-15
+
+Nuovi dettagli sul ban Fable 5/Mythos 5 chiariscono la dinamica causale: il trigger immediato e' stato Andy Jassy (CEO Amazon, principale investitore e cloud host di Anthropic) che ha personalmente allertato Treasury Secretary Scott Bessent il 12 giugno, dopo che ricercatori Amazon avevano estratto da Fable 5 informazioni su vulnerabilita' software offensive tramite una sequenza di prompt. La comunicazione Jassy-Bessent (Treasury) ha avviato l'escalation verso il Commerce (BIS/Lutnick) che ha prodotto la direttiva in 24 ore. Questo introduce un elemento strutturale nuovo: Amazon agisce simultaneamente come investitore di Anthropic ($8 miliardi impegnati), cloud host primario delle API Anthropic e origine della segnalazione che ha innescato il ban — un conflitto di interessi triplicato documentato pubblicamente. David Sacks (13-14 giugno) ha indicato che il ban puo' essere revocato se Anthropic implementa la correzione richiesta; Anthropic mantiene che il jailbreak non e' sistemico. Il caso consolida un pattern di governance AI inedito: attori privati in posizioni di co-interesse (investitore + cloud host) diventano segnalatori regolatori, con tempi di risposta governativa di ore anziche' mesi. [Digest 2026-06-15](../../digest/2026/06/15.md)

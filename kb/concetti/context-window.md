@@ -3,8 +3,8 @@ name: Context window
 aliases: [context window, finestra di contesto, finestra contestuale, context length]
 categoria: architettura
 created: 2026-04-28
-last_updated: 2026-06-07
-mentions_count: 2
+last_updated: 2026-06-15
+mentions_count: 4
 ---
 
 # Context window
@@ -47,6 +47,7 @@ Modelli del 2025-2026 con i loro context window:
 | Gemini 3.5 Flash | 1M | Nativo multimodale, modello agentico Google I/O 2026 |
 | Gemini 3.5 Pro | 2M | GA attesa giugno 2026; Deep Think per Ultra; la finestra piu' grande tra i frontier |
 | Gemini 2 Pro | 2M | Standard, 10M sperimentale |
+| MiniMax M3 | 1M | Open-weight (pesi su HuggingFace); MSA come tecnica per long-context inference economica; 59% SWE-Bench Pro |
 | Qwen3.7-Max | 1M | Ottimizzato per CLI agent, run autonome fino a 35h |
 | Mistral Medium 3.5 | 256k | 128B open-weights |
 | IBM Granite 4.1 | 512k | Open-source Apache 2.0, long context nativo |
@@ -103,6 +104,10 @@ Pattern di compaction. Per agenti long-running serve una strategia di riassunto.
 Esternalizzazione dello stato. Quando il task supera per sua natura qualsiasi finestra (migrazioni su intere codebase, run agentiche di molte ore), la compaction non basta: conviene spostare il coordinamento fuori dal context con un'orchestrazione esplicita. Lo stato vive in uno script o in un layer applicativo, i sottoprocessi ricevono context freschi e mirati, e la finestra principale mantiene solo il sommario di avanzamento. E' un cambio di mentalita': il context window non e' la memoria dell'agente, e' solo la sua memoria di lavoro immediata.
 
 ## Aggiornamenti
+
+### 2026-06-15
+
+MiniMax M3 pesi open pubblicati (~11 giugno): primo modello open-weight con contesto da 1M token nativo al livello di qualita' frontier (59% SWE-Bench Pro). Il rapporto tecnico arXiv:2606.13392 documenta MiniMax Sparse Attention (MSA) come la tecnica che abilita il 1M token context a un costo di inference gestibile. Prima della pubblicazione dei pesi di M3, i modelli open-weight con 1M di contesto erano tutti significativamente inferiori ai modelli frontier per qualita' (gap di 15-25 punti su SWE-Bench Pro); M3 riduce il gap a zero su quel benchmark e lo rende disponibile per auto-hosting e fine-tuning. Aggiornata la tabella modelli nella sezione Varianti / approcci per includere MiniMax M3. [Digest 2026-06-15](../../digest/2026/06/15.md)
 
 ### 2026-06-07
 
