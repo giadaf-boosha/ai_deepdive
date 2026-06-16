@@ -3,8 +3,8 @@ name: Agent harness
 aliases: [agent harness, harness, scaffolding agentico, agent runtime]
 categoria: infrastruttura
 created: 2026-04-28
-last_updated: 2026-06-13
-mentions_count: 7
+last_updated: 2026-06-16
+mentions_count: 10
 ---
 
 # Agent harness
@@ -166,3 +166,7 @@ Contesto competitivo e MCP production-grade. Aggiornata la mappa degli harness c
 ### 2026-06-13
 
 Claude Code v2.1.172 (10 giugno, 6 fonti) rimuove il vincolo che impediva ai subagenti di avviare propri subagenti. L'harness gestisce ora alberi di sessioni fino a 5 livelli di profondita': ogni nodo e' un'istanza harness completa con context window, system prompt e selezione di modello propri; il parent riceve solo il riepilogo del figlio. Dal punto di vista dell'harness la novita' e' strutturale: il loop agentico non e' piu' una struttura a due livelli (orchestratore + worker piatti) ma una gerarchia ricorsiva. Il context manager del parent e' parzialmente esonerato dal tenere traccia dello stato dei sotto-task profondi, che restano confinati nel context del nodo figlio. Il rovescio e' che la cost governance si complica: ogni nodo della gerarchia consuma token indipendentemente e il costo totale del run e' la somma dei costi dell'intero albero, senza visibilita' diretta dal nodo radice. [Digest 2026-06-13](../../digest/2026/06/13.md)
+
+### 2026-06-16
+
+Claude Agent SDK (Anthropic, 15 giugno, 6 fonti) introduce pool di crediti separati per uso non-interattivo (CLI -p, GitHub Actions, agenti di terze parti): $20/mese Piano Pro, $100 Max 5x, $200 Max 20x, senza rollover mensile. Dal punto di vista dell'harness, la novita' e' la separazione finanziaria come primitiva di architettura: i run autonomi pianificati — cronjob, pipeline CI/CD, agenti embedded in prodotti di terze parti — consumano da un budget dedicato, separato dal budget dell'utente interattivo. Il costo di un harness in produzione diventa una linea di spesa configurabile e monitorabile indipendentemente dall'uso manuale. Le implicazioni pratiche per il design dell'harness: il pool di crediti e' il limite naturale per il rate limiting dei run autonomi (un harness che supera il budget mensile si blocca, non degrada silenziosamente); l'assenza di rollover impone di dimensionare correttamente il budget mensile al momento della sottoscrizione, non a consuntivo. Il pattern si inserisce nel piu' ampio movimento verso harness con cost governance esplicita: dopo la visibilita' sui costi per nodo introdotta con la gerarchia multi-livello (13 giugno), il pool dedicato introduce una frontiera finanziaria tra uso umano e uso agentico. [Digest 2026-06-16](../../digest/2026/06/16.md)

@@ -3,8 +3,8 @@ name: AI Governance
 aliases: [AI governance, governance AI, export control AI, regolazione AI, AI regulation, AI policy, BIS AI, EAR AI models]
 categoria: regolazione
 created: 2026-06-14
-last_updated: 2026-06-15
-mentions_count: 10
+last_updated: 2026-06-16
+mentions_count: 13
 ---
 
 # AI Governance
@@ -81,3 +81,7 @@ Prima direttiva di export control nella storia per un LLM come modello-servizio.
 ### 2026-06-15
 
 Nuovi dettagli sul ban Fable 5/Mythos 5 chiariscono la dinamica causale: il trigger immediato e' stato Andy Jassy (CEO Amazon, principale investitore e cloud host di Anthropic) che ha personalmente allertato Treasury Secretary Scott Bessent il 12 giugno, dopo che ricercatori Amazon avevano estratto da Fable 5 informazioni su vulnerabilita' software offensive tramite una sequenza di prompt. La comunicazione Jassy-Bessent (Treasury) ha avviato l'escalation verso il Commerce (BIS/Lutnick) che ha prodotto la direttiva in 24 ore. Questo introduce un elemento strutturale nuovo: Amazon agisce simultaneamente come investitore di Anthropic ($8 miliardi impegnati), cloud host primario delle API Anthropic e origine della segnalazione che ha innescato il ban — un conflitto di interessi triplicato documentato pubblicamente. David Sacks (13-14 giugno) ha indicato che il ban puo' essere revocato se Anthropic implementa la correzione richiesta; Anthropic mantiene che il jailbreak non e' sistemico. Il caso consolida un pattern di governance AI inedito: attori privati in posizioni di co-interesse (investitore + cloud host) diventano segnalatori regolatori, con tempi di risposta governativa di ore anziche' mesi. [Digest 2026-06-15](../../digest/2026/06/15.md)
+
+### 2026-06-16
+
+Nuovi dettagli sulla crisi Fable 5 emergono nelle ultime 24 ore. Il vettore tecnico del jailbreak "Fix this code" e' ora documentato: una sequenza di prompt che inizia con una richiesta di debug di codice legittimo e introduce progressivamente codice contenente placeholder per vulnerabilita' offensive, sfruttando la tendenza del modello a completare pattern sintatticamente coerenti. Dario Amodei ha rifiutato pubblicamente l'ultimatum governativo — implementare una correzione entro 48 ore o affrontare un ban esteso — sostenendo che il jailbreak non e' sistemico ma situazionale e che una correzione forzata in 48 ore introduce rischi di regressione superiori al rischio originale. Il 15 giugno, un team di ingegneri Anthropic e' a Washington per incontri con BIS e con il team di David Sacks (OSTP): la negoziazione tecnica e' sulla soglia di accettazione della correzione, non sulla natura del problema. Il caso consolida il pattern emerso il 14 giugno: un attore privato in posizione di co-interesse (investitore + cloud host) innesca una risposta regolatoria in 24 ore, e il lab deve negoziare la revoca del ban in tempo reale mentre mantiene il servizio per gli utenti non-stranieri. La variabile critica e' la definizione di "correzione sufficiente": se il governo accetta patching contestuale, il ban potrebbe essere revocato in settimana; se richiede una garanzia sistemica, i tempi si allungano a una nuova versione del modello. [Digest 2026-06-16](../../digest/2026/06/16.md)

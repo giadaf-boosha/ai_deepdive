@@ -8,10 +8,10 @@
 
 | Concetto | Categoria | Aliases | Ultimo aggiornamento |
 |---|---|---|---|
-| [AI Governance](./concetti/ai-governance.md) | regolazione | AI governance, governance AI, export control AI, regolazione AI, AI regulation, AI policy, BIS AI, EAR AI models | 2026-06-15 |
-| [Agent harness](./concetti/agent-harness.md) | infrastruttura | agent harness, harness, scaffolding agentico, agent runtime | 2026-06-13 |
+| [AI Governance](./concetti/ai-governance.md) | regolazione | AI governance, governance AI, export control AI, regolazione AI, AI regulation, AI policy, BIS AI, EAR AI models | 2026-06-16 |
+| [Agent harness](./concetti/agent-harness.md) | infrastruttura | agent harness, harness, scaffolding agentico, agent runtime | 2026-06-16 |
 | [Agent sandboxing](./concetti/agent-sandboxing.md) | infrastruttura | sandboxing, containment, isolamento agenti, agent containment, esecuzione isolata, sandbox | 2026-06-07 |
-| [AI Agent](./concetti/agent.md) | paradigma | agent, AI agent, agente autonomo, autonomous agent | 2026-06-13 |
+| [AI Agent](./concetti/agent.md) | paradigma | agent, AI agent, agente autonomo, autonomous agent | 2026-06-16 |
 | [Chain of Thought / Reasoning](./concetti/chain-of-thought.md) | tecnica | chain of thought, CoT, catena di pensiero, reasoning, ragionamento esplicito, extended thinking | 2026-06-01 |
 | [Context window](./concetti/context-window.md) | architettura | context window, finestra di contesto, finestra contestuale, context length | 2026-06-15 |
 | [Diffusion Language Models](./concetti/diffusion-language-models.md) | architettura | diffusion language model, text diffusion, DLM, modello di diffusione testuale, generazione diffusiva, non-autoregressive generation, masked diffusion | 2026-06-12 |
@@ -23,7 +23,7 @@
 | [Large Language Model](./concetti/llm.md) | architettura | LLM, modello linguistico di grandi dimensioni, foundation model | 2026-06-15 |
 | [Mixture of Experts](./concetti/mixture-of-experts.md) | architettura | MoE, mixture-of-experts, mixture of experts, modello sparso, sparse model, expert routing | 2026-06-12 |
 | [Model Context Protocol](./concetti/mcp.md) | infrastruttura | MCP, Model Context Protocol, protocollo MCP | 2026-06-01 |
-| [Multi-agent orchestration](./concetti/multi-agent-orchestration.md) | paradigma | multi-agent, sistema multi-agente, orchestrazione di agenti, agent swarm, subagenti, sub-agent orchestration | 2026-06-13 |
+| [Multi-agent orchestration](./concetti/multi-agent-orchestration.md) | paradigma | multi-agent, sistema multi-agente, orchestrazione di agenti, agent swarm, subagenti, sub-agent orchestration | 2026-06-16 |
 | [Private Cloud Compute](./concetti/private-cloud-compute.md) | infrastruttura | PCC, Private Cloud Compute, confidential cloud computing, confidential inference, Apple PCC, TEE cloud inference | 2026-06-08 |
 | [Prompt engineering](./concetti/prompt-engineering.md) | tecnica | prompt engineering, ingegneria dei prompt, prompting | 2026-06-01 |
 | [Reinforcement Learning from Human Feedback](./concetti/rlhf.md) | training | RLHF, reinforcement learning from human feedback, allineamento RL, RLAIF | 2026-06-13 |
