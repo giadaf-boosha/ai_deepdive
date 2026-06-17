@@ -3,8 +3,8 @@ name: AI Governance
 aliases: [AI governance, governance AI, export control AI, regolazione AI, AI regulation, AI policy, BIS AI, EAR AI models]
 categoria: regolazione
 created: 2026-06-14
-last_updated: 2026-06-16
-mentions_count: 13
+last_updated: 2026-06-17
+mentions_count: 18
 ---
 
 # AI Governance
@@ -85,3 +85,7 @@ Nuovi dettagli sul ban Fable 5/Mythos 5 chiariscono la dinamica causale: il trig
 ### 2026-06-16
 
 Nuovi dettagli sulla crisi Fable 5 emergono nelle ultime 24 ore. Il vettore tecnico del jailbreak "Fix this code" e' ora documentato: una sequenza di prompt che inizia con una richiesta di debug di codice legittimo e introduce progressivamente codice contenente placeholder per vulnerabilita' offensive, sfruttando la tendenza del modello a completare pattern sintatticamente coerenti. Dario Amodei ha rifiutato pubblicamente l'ultimatum governativo — implementare una correzione entro 48 ore o affrontare un ban esteso — sostenendo che il jailbreak non e' sistemico ma situazionale e che una correzione forzata in 48 ore introduce rischi di regressione superiori al rischio originale. Il 15 giugno, un team di ingegneri Anthropic e' a Washington per incontri con BIS e con il team di David Sacks (OSTP): la negoziazione tecnica e' sulla soglia di accettazione della correzione, non sulla natura del problema. Il caso consolida il pattern emerso il 14 giugno: un attore privato in posizione di co-interesse (investitore + cloud host) innesca una risposta regolatoria in 24 ore, e il lab deve negoziare la revoca del ban in tempo reale mentre mantiene il servizio per gli utenti non-stranieri. La variabile critica e' la definizione di "correzione sufficiente": se il governo accetta patching contestuale, il ban potrebbe essere revocato in settimana; se richiede una garanzia sistemica, i tempi si allungano a una nuova versione del modello. [Digest 2026-06-16](../../digest/2026/06/16.md)
+
+### 2026-06-17
+
+Due nuove dimensioni del caso Fable 5 aggiungono angoli non coperti nei digest precedenti. Primo, la reazione politica europea: 7 fonti distinte (Euronews, CEP, actuia.com, trendingtopics.eu, hyperight.com) documentano come il ban del 12 giugno abbia innescato in Europa un dibattito sulla dipendenza strutturale dall'AI americana. Il Centre for European Policy (CEP) caratterizza il provvedimento come "segnale geopolitico piu' che misura di sicurezza": Washington dimostra di poter scollegare l'accesso a un modello frontier in 24 ore, indipendentemente dalla localizzazione degli utenti. Il caso si inserisce nel Technological Sovereignty Package della Commissione europea, pubblicato pochi giorni prima del ban, e amplifica la narrativa politica interna favorevole allo sviluppo di alternative europee (Mistral). Il segnale di governance e' che export control USA su modelli AI si configura ora come strumento di pressione geopolitica su alleati oltre che su avversari — nuova variabile per chi valuta i rischi di dipendenza da provider AI americani in Europa. Secondo, la transizione billing del 22-23 giugno: Fable 5 esce dai piani Pro/Max/Team/Enterprise il 22 giugno e dal 23 richiede crediti prepagati a tariffe API ($10/M input, $50/M output). La gestione del billing post-ban da parte di Anthropic — refund window (9-20 giugno), transizione a metering API, comunicazione delle dotazioni entro il 19 giugno — e' un caso studio di governance operativa del ciclo di vita di un modello in seguito a intervento regolatorio esterno. [Digest 2026-06-17](../../digest/2026/06/17.md)

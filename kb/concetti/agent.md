@@ -3,8 +3,8 @@ name: AI Agent
 aliases: [agent, AI agent, agente autonomo, autonomous agent]
 categoria: paradigma
 created: 2026-04-28
-last_updated: 2026-06-16
-mentions_count: 103
+last_updated: 2026-06-17
+mentions_count: 105
 ---
 
 # AI Agent
@@ -259,3 +259,7 @@ Due segnali agentici nel digest di oggi. Claude Code v2.1.172 (10 giugno, 6 font
 ### 2026-06-16
 
 Tre segnali agentici nel digest di oggi. Arbor (arXiv:2606.11926, Renmin University / RUC-NLPIR, 15 giugno, 5 fonti) introduce un framework per ricerca scientifica autonoma basato su Hypothesis-Tree Refinement: un agente coordinatore propone ipotesi, agenti esecutori le testano in parallelo, i risultati aggiornano l'albero delle ipotesi in modo iterativo. Il pattern separa esplicitamente il piano di ricerca (struttura ad albero, compito del coordinatore) dall'esecuzione dei singoli esperimenti (subagenti paralleli), con miglioramenti documentati su ScienceWorld e Discovery Bench. MRAgent (arXiv:2606.06036, National University of Singapore, 4 giugno, ICLR 2026, 5 fonti) introduce memoria strutturata per agenti LLM tramite un grafo Cue-Tag-Content: i ricordi vengono indicizzati con cue (trigger contestuali) e tag (categorie semantiche) e recuperati selettivamente senza caricare l'intera storia nel context window. L'architettura e' ortogonale ad Arbor — MRAgent risolve la persistenza della memoria nell'agente singolo, Arbor il coordinamento tra agenti multipli. Claude Agent SDK (Anthropic, 15 giugno, 6 fonti) introduce pool di crediti separati per uso non-interattivo (CLI -p, GitHub Actions, agenti di terze parti): $20/mese Pro, $100 Max 5x, $200 Max 20x, senza rollover. La separazione finanziaria segnala un'infrastruttura di billing progettata per run autonomi pianificati — la stessa architettura economica che un harness in produzione deve contabilizzare come costo operativo. [Digest 2026-06-16](../../digest/2026/06/16.md)
+
+### 2026-06-17
+
+Il paper "Agentic Environment Engineering for Large Language Models" (arXiv:2606.12191, depositato 10 giugno, 15 autori, 4 fonti) formalizza la tassonomia del campo aperto da lavori come EurekAgent. Il survey propone il "lifecycle dell'ambiente agentico" come framework in quattro fasi: modellazione (8 attributi dell'ambiente: perzettivita', spazio delle azioni, persistenza, multi-agenza, dinamismo, osservabilita', feedback, scalabilita'), sintesi simbolica e neurale, valutazione (task completion, qualita' del processo, alignment), applicazione su 8 domini (coding, web, giochi, robotica, scienza, dialogo, enterprise, simulazione sociale). Per il concetto di agente, il contributo e' terminologico e strutturale: il campo aveva prodotto decine di paper su aspetti parziali senza vocabolario condiviso; il survey fornisce la prima mappa navigabile che permette di collocare un sistema agentico in una tassonomia coerente e diagnosticare i limiti dell'ambiente in cui opera. [Digest 2026-06-17](../../digest/2026/06/17.md)

@@ -3,8 +3,8 @@ name: Agent harness
 aliases: [agent harness, harness, scaffolding agentico, agent runtime]
 categoria: infrastruttura
 created: 2026-04-28
-last_updated: 2026-06-16
-mentions_count: 10
+last_updated: 2026-06-17
+mentions_count: 12
 ---
 
 # Agent harness
@@ -170,3 +170,7 @@ Claude Code v2.1.172 (10 giugno, 6 fonti) rimuove il vincolo che impediva ai sub
 ### 2026-06-16
 
 Claude Agent SDK (Anthropic, 15 giugno, 6 fonti) introduce pool di crediti separati per uso non-interattivo (CLI -p, GitHub Actions, agenti di terze parti): $20/mese Piano Pro, $100 Max 5x, $200 Max 20x, senza rollover mensile. Dal punto di vista dell'harness, la novita' e' la separazione finanziaria come primitiva di architettura: i run autonomi pianificati — cronjob, pipeline CI/CD, agenti embedded in prodotti di terze parti — consumano da un budget dedicato, separato dal budget dell'utente interattivo. Il costo di un harness in produzione diventa una linea di spesa configurabile e monitorabile indipendentemente dall'uso manuale. Le implicazioni pratiche per il design dell'harness: il pool di crediti e' il limite naturale per il rate limiting dei run autonomi (un harness che supera il budget mensile si blocca, non degrada silenziosamente); l'assenza di rollover impone di dimensionare correttamente il budget mensile al momento della sottoscrizione, non a consuntivo. Il pattern si inserisce nel piu' ampio movimento verso harness con cost governance esplicita: dopo la visibilita' sui costi per nodo introdotta con la gerarchia multi-livello (13 giugno), il pool dedicato introduce una frontiera finanziaria tra uso umano e uso agentico. [Digest 2026-06-16](../../digest/2026/06/16.md)
+
+### 2026-06-17
+
+A partire dal 23 giugno 2026, l'accesso a Fable 5 esce dai piani Pro/Max/Team/Enterprise e richiede un pool di crediti prepagati a tariffe API ($10/M input, $50/M output — circa 2,0 crediti/1k input e 10 crediti/1k output). Sommato al pool separato introdotto il 15 giugno per l'uso non-interattivo del Claude Agent SDK, un harness in produzione su piano Pro o Max deve ora tracciare due budget paralleli con semantiche diverse: il pool del 15 giugno copre `claude -p`, GitHub Actions e SDK headless (reset mensile); il pool del 23 giugno copre l'uso di Fable 5 via subscription indipendentemente dalla modalita'. Il pattern che emerge e' un'architettura di billing a strati: uso interattivo (incluso nel piano), uso agentico automatizzato (pool Agent SDK), uso del modello premium (pool Fable 5). Per chi progetta harness, questo implica monitoraggio separato dei tre canali di consumo, configurazione di alert per ciascun pool, e scelta deliberata del modello per minimizzare il costo del layer premium. [Digest 2026-06-17](../../digest/2026/06/17.md)
