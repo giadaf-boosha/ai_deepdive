@@ -3,8 +3,8 @@ name: Evaluation / Benchmark AI
 aliases: [benchmark, eval, evaluation, valutazione LLM, AI benchmark, leaderboard]
 categoria: tecnica
 created: 2026-04-30
-last_updated: 2026-06-15
-mentions_count: 30
+last_updated: 2026-06-18
+mentions_count: 33
 ---
 
 # Evaluation / Benchmark AI
@@ -147,3 +147,7 @@ MaxProof (arXiv:2606.13473, MiniMax, 11 giugno) introduce due nuovi benchmark co
 ### 2026-06-10
 
 Claude Fable 5 (Anthropic, 9 giugno, 14+ fonti) porta tre nuovi risultati di benchmark rilevanti per il concetto di evaluation. SWE-Bench Pro al 80,3%: variante piu' difficile di SWE-bench con task derivati da pull request reali su repository popolari, filtrate per escludere casi risolvibili con pattern di memorizzazione — il SOTA precedente era nell'intorno del 60-65%, e Fable 5 segna il primo superamento netto della soglia 80. SWE-bench Verified al 95%: il benchmark standard di bug fixing su repository Python reali (task verificati manualmente come risolvibili) — il punteggio indica che quasi tutti i task del corpus vengono risolti correttamente. FrontierCode Diamond al 29,3%: categoria piu' alta del benchmark FrontierCode (grading system Bronze/Silver/Gold/Diamond), che misura task di programmazione competitiva di difficolta' olimpica — primo modello frontier a superare la soglia Diamond in modo sistematico. Il valore comparativo dei tre benchmark e' che coprono dimensioni distinte della valutazione del coding agentico: correttezza su task di manutenzione reale (SWE-bench Pro), correttezza su task standard (SWE-bench Verified), capacita' algoritmica di frontiera (FrontierCode Diamond). La combinazione rivela la "forma" delle capacita' di un modello piu' di qualsiasi singolo benchmark — un modello puo' eccellere su SWE-bench Verified e fare peggio su FrontierCode Diamond, segnalando punti di forza diversi sul continuum manutenzione-creazione. [Digest 2026-06-10](../../digest/2026/06/10.md)
+
+### 2026-06-18
+
+Due nuovi benchmark pubblicati da OpenAI ampliano il panorama di valutazione in direzioni distinte. Deployment Simulation (16 giugno, openai.com) introduce un'eval method interna che usa dati di produzione reali come benchmark implicito: invece di task curati, il sistema riproduce ~1,3M conversazioni de-identificate con il modello candidato e cerca nuovi failure mode, producendo una stima del tasso di comportamenti indesiderati con errore mediano di 1,5x. E' una metodologia di valutazione sulla distribuzione reale degli utenti, non su benchmark costruiti a tavolino — complementare ai benchmark standard, non sostitutiva. Il paper companion su WildChat mostra che la tecnica funziona anche su dataset pubblici (meno precisa ma utile), abbassando la barriera per i lab che non hanno accesso a dati di produzione propri. LifeSciBench (17 giugno, openai.com) introduce 750 task expert-written su sette workflow di ricerca in life science (drug discovery, biologia molecolare, sviluppo farmaceutico), costruiti con 173 scienziati PhD da biotech e pharma; il miglior modello valutato supera solo il 36,1% dei task. LifeSciBench segna l'ingresso dei benchmark verticali specializzati in domini scientifici come categoria distinta: non misura conoscenza biologica generica (gia' coperta da MMLU Pro biologia) ma la capacita' di supportare workflow di ricerca reali con artifact allegati (sequenze, strutture, PDF) e ragionamento multi-step. La combinazione dei due rilasci in 48 ore segnala una diversificazione della strategia di valutazione di OpenAI: su un asse la valutazione sulla distribuzione di produzione (Deployment Simulation), sull'altro la valutazione verticale ad alta difficolta' (LifeSciBench). [Digest 2026-06-18](../../digest/2026/06/18.md)
