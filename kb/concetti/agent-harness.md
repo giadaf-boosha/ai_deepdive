@@ -3,8 +3,8 @@ name: Agent harness
 aliases: [agent harness, harness, scaffolding agentico, agent runtime]
 categoria: infrastruttura
 created: 2026-04-28
-last_updated: 2026-06-17
-mentions_count: 12
+last_updated: 2026-06-19
+mentions_count: 14
 ---
 
 # Agent harness
@@ -174,3 +174,7 @@ Claude Agent SDK (Anthropic, 15 giugno, 6 fonti) introduce pool di crediti separ
 ### 2026-06-17
 
 A partire dal 23 giugno 2026, l'accesso a Fable 5 esce dai piani Pro/Max/Team/Enterprise e richiede un pool di crediti prepagati a tariffe API ($10/M input, $50/M output — circa 2,0 crediti/1k input e 10 crediti/1k output). Sommato al pool separato introdotto il 15 giugno per l'uso non-interattivo del Claude Agent SDK, un harness in produzione su piano Pro o Max deve ora tracciare due budget paralleli con semantiche diverse: il pool del 15 giugno copre `claude -p`, GitHub Actions e SDK headless (reset mensile); il pool del 23 giugno copre l'uso di Fable 5 via subscription indipendentemente dalla modalita'. Il pattern che emerge e' un'architettura di billing a strati: uso interattivo (incluso nel piano), uso agentico automatizzato (pool Agent SDK), uso del modello premium (pool Fable 5). Per chi progetta harness, questo implica monitoraggio separato dei tre canali di consumo, configurazione di alert per ciascun pool, e scelta deliberata del modello per minimizzare il costo del layer premium. [Digest 2026-06-17](../../digest/2026/06/17.md)
+
+### 2026-06-19
+
+CORREZIONE ai digest del 16 e 17 giugno: il pool di crediti separato per Agent SDK non e' mai entrato in vigore. Anthropic ha sospeso il cambiamento il 15 giugno 2026 — stesso giorno previsto per l'entrata in vigore — comunicandolo via email agli utenti ("nothing changes for now"). Agent SDK, `claude -p` e GitHub Actions continuano a drenare dal pool standard della subscription senza pool separato. Le entry del 16 e 17 giugno in questa sezione descrivevano uno stato che non e' mai diventato operativo. Le cause della retromarcia: pressione developer (il pool a tariffe API avrebbe aumentato i costi per gli heavy user rispetto alla subscription flat), price war con OpenAI (che mantiene la propria subscription inclusiva dell'Agent SDK), e contesto pre-IPO. Il segnale per chi progetta harness e' che il modello finanziario del layer agentico rimane in corso di definizione; qualsiasi progettazione di cost governance per harness su subscription dovrebbe essere considerata provvisoria fino a conferma ufficiale. [Digest 2026-06-19](../../digest/2026/06/19.md)
