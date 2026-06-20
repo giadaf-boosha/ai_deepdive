@@ -3,8 +3,8 @@ name: Context window
 aliases: [context window, finestra di contesto, finestra contestuale, context length]
 categoria: architettura
 created: 2026-04-28
-last_updated: 2026-06-15
-mentions_count: 4
+last_updated: 2026-06-20
+mentions_count: 7
 ---
 
 # Context window
@@ -108,6 +108,10 @@ Esternalizzazione dello stato. Quando il task supera per sua natura qualsiasi fi
 ### 2026-06-15
 
 MiniMax M3 pesi open pubblicati (~11 giugno): primo modello open-weight con contesto da 1M token nativo al livello di qualita' frontier (59% SWE-Bench Pro). Il rapporto tecnico arXiv:2606.13392 documenta MiniMax Sparse Attention (MSA) come la tecnica che abilita il 1M token context a un costo di inference gestibile. Prima della pubblicazione dei pesi di M3, i modelli open-weight con 1M di contesto erano tutti significativamente inferiori ai modelli frontier per qualita' (gap di 15-25 punti su SWE-Bench Pro); M3 riduce il gap a zero su quel benchmark e lo rende disponibile per auto-hosting e fine-tuning. Aggiornata la tabella modelli nella sezione Varianti / approcci per includere MiniMax M3. [Digest 2026-06-15](../../digest/2026/06/15.md)
+
+### 2026-06-20
+
+Tre nuovi modelli con finestre di contesto rilevanti. GLM-5.2 (Zhipu/Z.ai, pesi MIT su Hugging Face dal 17 giugno) introduce un contesto da 1M token open-weight su un'architettura MoE a 744B/40B attivi — secondo modello open-weight (dopo MiniMax M3, coperto 15 giugno) a raggiungere questa soglia con qualita' frontier. Kimi K2.7-Code (Moonshot, 12 giugno) e Cohere North Mini Code (9 giugno) operano su 256K token, che rimane la fascia standard per i modelli di coding agentico. Grok 4.3, disponibile in GA su Amazon Bedrock dal 15 giugno, aggiunge 1M token in un contesto enterprise con serving su Mantle (nuovo inference engine Bedrock). Il pattern che emerge: nel segmento coding agentico open-weight il context standard si assesta su 256K (sufficiente per codebase di media taglia), mentre i modelli general-purpose con 1M token si moltiplicano. [Digest 2026-06-20](../../digest/2026/06/20.md).
 
 ### 2026-06-07
 

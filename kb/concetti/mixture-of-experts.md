@@ -3,8 +3,8 @@ name: Mixture of Experts
 aliases: [MoE, mixture-of-experts, mixture of experts, modello sparso, sparse model, expert routing]
 categoria: architettura
 created: 2026-06-01
-last_updated: 2026-06-12
-mentions_count: 10
+last_updated: 2026-06-20
+mentions_count: 14
 ---
 
 # Mixture of Experts
@@ -93,3 +93,7 @@ Il MoE ricorre come scelta architetturale trasversale nei digest di maggio-giugn
 ### 2026-06-12
 
 DiffusionGemma (Google, 10 giugno, 13+ fonti) introduce un nuovo caso d'uso del backbone MoE: utilizzato non per un LLM autoregressivo ma come base per un modello di text diffusion. Il backbone Gemma 4 26B MoE con 3,8B parametri attivi e' il fondamento su cui Google ha costruito la variante diffusiva: il MoE serve a garantire capacita' sufficiente (26B totali) con un footprint computazionale limitato per forward pass (3,8B attivi), essenziale per i passi di denoising iterativi dove ogni passo e' un forward pass completo. Il pattern "MoE come base per architetture non autoregressove" e' nuovo nel 2026: in precedenza il MoE era usato quasi esclusivamente in contesti autoregressivi (Mixtral, DeepSeek, Granite). DiffusionGemma dimostra che il beneficio di efficienza del MoE — costo attivo inferiore al costo totale — e' trasferibile a qualsiasi architettura che richieda piu' forward pass per produrre un output (diffusion, beam search, speculative decoding). [Digest 2026-06-12](../../digest/2026/06/12.md)
+
+### 2026-06-20
+
+Tre modelli open-weight per il coding agentico rilasciati nella settimana del ban Fable 5 confermano il MoE come architettura standard per disaccoppiare capacita' e costo di serving: Cohere North Mini Code (30B totali / 3B attivi via 128 expert, Apache 2.0, 256K context), Kimi K2.7-Code di Moonshot (1T totali / 32B attivi, 384 expert, Modified MIT, 256K context), GLM-5.2 di Zhipu/Z.ai (744B totali / 40B attivi, MIT, 1M context). I ratio active/total variano da 1:10 (Kimi K2.7-Code) a 1:18 (North Mini Code), un range piu' ampio rispetto ai modelli frontier della generazione precedente. Il pattern unificante e' la specializzazione degli expert per task di coding agentico: sia North Mini Code che K2.7-Code sono addestrati specificamente per agentic software engineering, mentre GLM-5.2 si posiziona come general-purpose con forte performance sul coding. Tutti e tre sono stati adottati da team enterprise come alternative a Fable 5 nel corso della stessa settimana del ban, documentando per la prima volta la velocita' con cui il mercato sostituisce un modello proprietario sospeso con modelli open-weight quando il gap di qualita' e' sufficientemente ridotto. Vedi [Digest 2026-06-20](../../digest/2026/06/20.md).

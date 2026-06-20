@@ -3,8 +3,8 @@ name: Inference
 aliases: [inference, inferenza, serving, generation, decoding]
 categoria: infrastruttura
 created: 2026-04-28
-last_updated: 2026-06-15
-mentions_count: 49
+last_updated: 2026-06-20
+mentions_count: 52
 ---
 
 # Inference
@@ -204,3 +204,7 @@ MiMo-V2.5-Pro-UltraSpeed (Xiaomi + TileRT, 8-9 giugno, 9 fonti) introduce tre te
 ### 2026-06-12
 
 DiffusionGemma (Google, 10 giugno, 13+ fonti) introduce un pattern di inference radicalmente diverso da quello autoregressivo: invece di decodificare un token alla volta con un forward pass sequenziale, il modello genera fino a 256 token in parallelo in un singolo forward pass attraverso T passi di denoising (T=20-30 di default). Il risultato sul piano dell'inference e' 4x di throughput rispetto a Gemma 4 autoregressivo sullo stesso hardware: 1.000+ token/s su H100, 700+ su RTX 5090. Il trade-off e' la qualita' degradata su task di ragionamento multi-step (AIME 2026: 69,1% vs 88,3% autoregressivo), il che segnala che la sequenzialita' del decode autoregressivo e' parte del meccanismo di ragionamento, non solo un overhead. La combinazione backbone MoE (3,8B parametri attivi su 26B totali) + text diffusion e' un moltiplicatore di efficienza: MoE riduce il costo per token, la diffusione riduce il numero di forward pass per sequenza. L'adozione di quantizzazioni NVFP4 e GGUF nelle prime 24 ore conferma che il profilo di inference di DiffusionGemma e' adatto al deployment su hardware consumer senza ottimizzazioni specifiche. [Digest 2026-06-12](../../digest/2026/06/12.md)
+
+### 2026-06-20
+
+Due sviluppi distinti ampliano il quadro dell'inference enterprise. Primo, Grok 4.3 raggiunge GA su Amazon Bedrock (15 giugno, missed coverage) servito su Mantle, il nuovo inference engine di Bedrock: persistent kernel, compute pipeline dedicati per i modelli di terze parti, ottimizzazione price/performance dichiarata da AWS. Mantle e' documentato come un runtime che sostituisce i backend di serving precedenti per i modelli partner su Bedrock, eliminando l'overhead di scheduling inter-step. Le caratteristiche operative di Grok 4.3 su Bedrock: 1M token di context, tre livelli di reasoning configurabili (low/medium/high effort), tool calling, structured output e response streaming nativi. Secondo, i tre modelli open-weight per il coding (Cohere North Mini Code, Kimi K2.7-Code, GLM-5.2) introducono tecniche di serving complementari. North Mini Code punta alla densita' operativa: 30B/3B attivi su FP8 su singola H100, throughput 2.8x superiore a Devstral Small 2 per il coding agentico. GLM-5.2 introduce un contesto da 1M token open-weight tramite MoE a 40B attivi su 744B totali, con pesi in formato quantizzato disponibili su Hugging Face (MXFP8 e NVFP4 non ufficiale). Kimi K2.7-Code riduce i token di reasoning del 30% rispetto al predecessore, un parametro di costo di inference rilevante per i loop agentici che richiedono molte iterazioni. [Digest 2026-06-20](../../digest/2026/06/20.md).
