@@ -1,26 +1,25 @@
 {
   "meta": {
-    "lastUpdated": "2026-06-14",
+    "lastUpdated": "2026-06-21",
     "generatedBy": "Claude Code Routine — ai-deepdive-weekly-radar",
     "sourcesChecked": [
-      "https://www.anthropic.com/news/claude-fable-5-mythos-5",
-      "https://www.anthropic.com/claude/fable",
-      "https://platform.claude.com/docs/en/about-claude/models/introducing-claude-fable-5-and-claude-mythos-5",
+      "https://www.anthropic.com/news/fable-mythos-access",
+      "https://www.anthropic.com/news/claude-opus-4-8",
+      "https://platform.claude.com/docs/en/about-claude/models/overview",
       "https://platform.claude.com/docs/en/about-claude/pricing",
-      "https://openai.com/index/introducing-chatgpt-go/",
+      "https://www.vellum.ai/blog/claude-opus-4-8-benchmarks-explained",
       "https://openai.com/api/pricing/",
+      "https://help.openai.com/en/articles/9624314-model-release-notes",
       "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/",
-      "https://thetechportal.com/2026/05/20/google-introduces-gemini-omni-gemini-3-5-flash-ai-powered-search-upgrades-and-more-at-i-o-2026/",
       "https://x.ai/news",
       "https://docs.x.ai/developers/release-notes",
-      "https://x.ai/build/changelog",
       "https://arena.ai/leaderboard/text",
       "https://arena.ai/blog/leaderboard-changelog/",
-      "https://www.morphllm.com/swe-bench-pro",
+      "https://www.morphllm.com/claude-benchmarks",
       "https://benchlm.ai/benchmarks/gpqa",
       "https://artificialanalysis.ai/"
     ],
-    "nextScheduledUpdate": "2026-06-21T08:00:00+02:00",
+    "nextScheduledUpdate": "2026-06-28T08:00:00+02:00",
     "benchmarkLinks": [
       {
         "name": "Hugging Face — LLM Leaderboard",
@@ -36,12 +35,12 @@
     {
       "id": "claude",
       "provider": "Anthropic",
-      "name": "Claude Fable 5",
-      "releaseDate": "2026-06-09",
-      "tagline": "Il modello piu' forte in assoluto: top su coding agentico e primo Anthropic con supporto immagini.",
+      "name": "Claude Opus 4.8",
+      "releaseDate": "2026-05-28",
+      "tagline": "Il modello Anthropic attivo: top su coding agentico, computer use e matematica. Fable 5 sospeso dal 12 giu 2026 per direttiva export-control USA.",
       "contextWindow": "1M token · 128K output",
-      "apiInputPer1M": 10,
-      "apiOutputPer1M": 50,
+      "apiInputPer1M": 5,
+      "apiOutputPer1M": 25,
       "supportsImages": true,
       "supportsVideo": false,
       "supportsCode": true,
@@ -57,22 +56,23 @@
       "dataResidency": "US; opzioni regionali via AWS Bedrock, Google Vertex AI e Microsoft Foundry",
       "trainingPolicy": "Nessun training sui dati di API e prodotti commerciali per default",
       "strengths": [
-        "SWE-Bench Pro 80.3% (+11 pp rispetto al secondo): top assoluto su coding agentico",
-        "OSWorld 85.0%: miglior computer use tra i modelli testati",
-        "Input immagini supportato (novita' rispetto a Opus 4.8)",
-        "#1 su LMArena overall e Code Arena (con vantaggio di 98 punti)"
+        "SWE-Bench Pro 69.2%: top su coding agentico (+10 pp su GPT-5.5, +14 pp su Gemini)",
+        "OSWorld 83.4%: miglior computer use disponibile tra i modelli accessibili",
+        "USAMO 2026 96.7%: balzo di +27 pp su Opus 4.7, leadership su matematica avanzata",
+        "#1 su LMArena overall (~1510 ELO) e coding arena dopo sospensione Fable 5"
       ],
       "weaknesses": [
+        "Fable 5 (SWE-Bench Pro 80.3%, +11 pp) sospeso dal 12 giu 2026 per direttiva export-control USA; data ripristino ignota",
         "Nessun input video (GPT-5.5 supporta video nativamente)",
-        "API output a $50/1M: il piu' costoso del gruppo (2x Opus 4.8)",
-        "Adaptive thinking sempre attivo: puo' aumentare il consumo di token su task semplici"
+        "GPQA Diamond 93.6%: statisticamente pari a Gemini 3.1 Pro (94.3%) e Opus 4.7 (94.2%)"
       ],
       "bestFor": [
         "Coding agentico e refactoring su larga scala",
         "Automazione di workflow multi-step",
-        "Reasoning lungo con 1M di contesto e analisi di immagini"
+        "Analisi di documenti e immagini con context da 1M token",
+        "Task matematici e scientifici avanzati"
       ],
-      "verdict": "La scelta per coding agentico, automazione e ragionamento lungo. Il primo modello Anthropic con supporto immagini in input; il piu' costoso del gruppo per l'output API.",
+      "verdict": "Modello Anthropic attivo dal 28 mag 2026 dopo la sospensione di Fable 5 il 12 giu (direttiva export-control USA). Top su coding agentico e computer use; $5/$25 per 1M token, meta' del prezzo di Fable 5.",
       "lmarenaRank": 1,
       "domain": "claude.ai"
     },
@@ -396,7 +396,7 @@
         "Memory cross-chat",
         "Canvas (editing collaborativo testo/codice)",
         "Generazione immagini",
-        "Modello core famiglia GPT-5.3 / GPT-5.5"
+        "Modello core GPT-5.5 (GPT-5.2 rimosso il 12 giu 2026; GPT-4.5 in pensione il 27 giu 2026)"
       ],
       "tierGratuito": "Si. Free con limiti: circa 10 messaggi con GPT-5.5 ogni 5 ore (rolling window), poi fallback automatico alla versione mini del modello.",
       "caveat": "Su Free la finestra di accesso al modello full e' stretta (~10 msg/5h) e si scende al modello mini. I file su Projects/GPT consumano lo storage condiviso (cap 25 GB utente) e la rate di upload e' limitata.",
@@ -414,11 +414,11 @@
         "Custom Styles",
         "Claude Design (research preview, Pro+)",
         "Connettori MCP (Drive, Gmail, Notion, ecc.)",
-        "Always-on adaptive thinking con Fable 5",
-        "Modello Fable 5 (rilasciato 9 giugno 2026, primo Anthropic con input immagini)"
+        "Dynamic workflows su Claude Code (multi-step agentico con sottoagenti paralleli)",
+        "Modello Opus 4.8 (attivo dal 28 mag 2026; Fable 5 sospeso il 12 giu 2026 per direttiva export-control USA)"
       ],
       "tierGratuito": "Si. Free include accesso a Claude e Artifacts con limiti di utilizzo giornalieri.",
-      "caveat": "Finestra di contesto 200K token in chat sui piani non-Enterprise (500K Enterprise). Nei Projects il knowledge passa a RAG quando cresce (regressione segnalata: switch a ricerca RAG gia' a ~13 file), quindi il recupero completo in una singola risposta non e' garantito.",
+      "caveat": "Finestra di contesto 200K token in chat sui piani non-Enterprise (500K Enterprise). Nei Projects il knowledge passa a RAG quando cresce (regressione segnalata: switch a ricerca RAG gia' a ~13 file), quindi il recupero completo in una singola risposta non e' garantito. Fable 5 sospeso globalmente dal 12 giu 2026: dal 22 giu 2026 esce dai piani inclusi.",
       "sweetSpot": "Workspace privato a lungo termine con ragionamento profondo su documenti propri."
     },
     {
@@ -596,9 +596,9 @@
       "funzionalita": [
         "Agente nel terminale con accesso al filesystem",
         "Esecuzione comandi e modifica file",
-        "Dynamic workflows (problemi su larga scala)",
+        "Dynamic workflows (problemi su larga scala, sottoagenti paralleli)",
         "Integrazione con MCP e tool esterni",
-        "Gira su Fable 5 (il piu' potente modello Anthropic)"
+        "Gira su Opus 4.8 (Fable 5 sospeso dal 12 giu 2026 per direttiva export-control USA)"
       ],
       "tierGratuito": "No. Richiede abbonamento Claude (Pro/Max) o accesso via API.",
       "caveat": "Richiede CLI installata e dimestichezza col terminale: non e' uno strumento per non-tecnici. Nessun tier gratuito.",
@@ -1297,7 +1297,7 @@
       "scores": [
         {
           "modelId": "claude",
-          "value": 80.3
+          "value": 69.2
         },
         {
           "modelId": "qwen",
@@ -1326,7 +1326,7 @@
       "scores": [
         {
           "modelId": "claude",
-          "value": 85.0
+          "value": 83.4
         },
         {
           "modelId": "chatgpt",
@@ -1343,7 +1343,7 @@
       "scores": [
         {
           "modelId": "claude",
-          "value": 94.5
+          "value": 93.6
         },
         {
           "modelId": "chatgpt",
@@ -1378,6 +1378,19 @@
     }
   ],
   "changelog": [
+    {
+      "date": "2026-06-21",
+      "summary": "AGGIORNAMENTO CRITICO — Sospensione Fable 5: il 12 giu 2026 il governo USA ha emesso una direttiva export-control che impone la sospensione di ogni accesso a Claude Fable 5 e Mythos 5 da parte di qualsiasi straniero, dentro e fuori gli USA. Anthropic ha disabilitato l'accesso globale per tutti gli utenti per garantire la conformita'; nessuna data di ripristino al 21 giu 2026. Dal 22 giu 2026 Fable 5 esce dai piani Claude inclusi (accesso solo a crediti quando e se ripristinato). Modello `claude` aggiornato a Claude Opus 4.8 (rilasciato 28 mag 2026, ora il modello Anthropic attivo): SWE-Bench Pro 69.2% (+10 pp su GPT-5.5), OSWorld 83.4%, GPQA Diamond 93.6%, USAMO 2026 96.7% (+27 pp su Opus 4.7); API standard $5/$25 per 1M token (meta' di Fable 5). #1 su LMArena overall (~1510 ELO) e coding arena. App claude.ai e Claude Code aggiornate a Opus 4.8. Benchmark scores per modello `claude` aggiornati (SWE-Bench Pro 80.3%→69.2%, OSWorld 85.0%→83.4%, GPQA Diamond 94.5%→93.6%). OpenAI: GPT-5.2 rimosso da ChatGPT il 12 giu (utenti migrati automaticamente a GPT-5.5); GPT-4.5 in pensione il 27 giu 2026. Nessuna variazione rilevante per Gemini 3.5 Flash, Grok 4.3, DeepSeek V4 Pro, Qwen 3.7-Max, Mistral Medium 3.5, Kimi K2.6, GLM-5.1, Llama 4.",
+      "sources": [
+        "https://www.anthropic.com/news/fable-mythos-access",
+        "https://www.anthropic.com/news/claude-opus-4-8",
+        "https://www.vellum.ai/blog/claude-opus-4-8-benchmarks-explained",
+        "https://arena.ai/leaderboard/text",
+        "https://arena.ai/blog/leaderboard-changelog/",
+        "https://help.openai.com/en/articles/9624314-model-release-notes",
+        "https://openai.com/api/pricing/"
+      ]
+    },
     {
       "date": "2026-06-14",
       "summary": "Claude Fable 5 (GA 9 giu 2026): nuovo modello flagship Anthropic della classe Mythos, sostituisce Opus 4.8. SWE-Bench Pro 80.3% (+11 pp vs secondo classificato), OSWorld 85.0%, GPQA Diamond ~94.5% (fonte BenchLM; benchmark prossimo alla saturazione). Primo modello Anthropic con input immagini (supportsImages: true). API $10/$50 per 1M token (2x Opus 4.8); context 1M token, fino a 128K output; adaptive thinking sempre attivo. Disponibile su Claude API, AWS Bedrock, Vertex AI e Microsoft Foundry. #1 su LMArena overall e Code Arena (aggiunto 10 giu, vantaggio +98 punti). Claude Mythos 5 (stessa base, safeguard ridotti) riservato a Project Glasswing; temporaneamente offline il 12 giu 2026. Aggiornati: scores SWE-bench Pro (80.3%), OSWorld (85.0%) e GPQA Diamond (94.5%) per il modello claude. App claude.ai e Claude Code aggiornate a Fable 5. Nessuna variazione rilevante per GPT-5.5, Gemini 3.5 Flash, Grok 4.3, DeepSeek V4, Qwen, Mistral, Kimi, GLM, Llama 4.",
