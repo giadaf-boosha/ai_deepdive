@@ -3,8 +3,8 @@ name: World Models
 aliases: [world model, world foundation model, WFM, modello del mondo, simulatore del mondo, physical AI world model]
 categoria: architettura
 created: 2026-06-09
-last_updated: 2026-06-09
-mentions_count: 8
+last_updated: 2026-06-21
+mentions_count: 10
 ---
 
 # World Models
@@ -74,6 +74,10 @@ Addestramento da video YouTube. Cosmos 3 e' stato preaddestrato su grandi corpus
 - Anthropic, "MolmoAct2 and robot action reasoning", arXiv 2605.02881, 2026. https://arxiv.org/abs/2605.02881
 
 ## Aggiornamenti
+
+### 2026-06-21
+
+DreamX-World 1.0 (AMAP-ML/Alibaba AutoNavi, arXiv:2606.16993, 15 giugno 2026): primo world model interattivo general-purpose open-source con benchmark superiori ai sistemi closed-source comparabili. Architettura basata su Wan2.2-T2V-5B, controllo camera a 6 DoF, risoluzione 704x1280 a 7,5 secondi per clip. Camera-control score 73.75 e overall score 84.76 su WorldTest, sopra HY-WorldPlay 1.5 (80.79) e LingBot-World (80.45). Pesi, codice e pipeline open-source su GitHub (AMAP-ML/DreamX-World). Il differenziale rispetto all'ecosistema esistente: WoRLD (Google) e WorldMaker (Meta) restano closed-source; DreamX-World 1.0 e' il primo world model navigabile general-purpose con pesi pubblici e benchmark verificabili da terze parti. [Digest 2026-06-21](../../digest/2026/06/21.md)
 
 ### 2026-06-09
 

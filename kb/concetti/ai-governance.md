@@ -3,8 +3,8 @@ name: AI Governance
 aliases: [AI governance, governance AI, export control AI, regolazione AI, AI regulation, AI policy, BIS AI, EAR AI models]
 categoria: regolazione
 created: 2026-06-14
-last_updated: 2026-06-20
-mentions_count: 27
+last_updated: 2026-06-21
+mentions_count: 31
 ---
 
 # AI Governance
@@ -97,6 +97,10 @@ Anthropic aggiorna la privacy policy il 15 giugno (efficace 8 luglio) introducen
 ### 2026-06-19
 
 Due sviluppi del 18 giugno aggiungono dimensioni nuove alla crisi Fable 5 e alla governance internazionale di Anthropic. Primo, Anthropic apre l'ufficio di Seoul (18 giugno) e firma un MOU con il Ministero della Scienza e ICT della Repubblica di Corea per la collaborazione su AI safety nel settore pubblico, test dei modelli e cybersecurity AI. L'apertura introduce un pattern di governance bilaterale: Anthropic negozia accordi di sicurezza direttamente con governi nazionali (dopo analoghi accordi con UK AI Safety Institute e Seoul AI Safety Institute nel 2024-2025), creando un network di istituzioni governative che partecipano alla definizione degli standard di sicurezza dei modelli. La complessita' specifica del caso coreano: SK Telecom — principale partner industriale annunciato il 18 giugno — e' stato identificato come la telco coreana con "legami storici con la Cina" che aveva avuto accesso a Mythos 5 tramite il programma Glasswing, secondo le fonti che hanno ricostruito la catena del ban. Il managing director internazionale di Anthropic si e' detto "molto confidente" in un ripristino di Fable 5 "nei prossimi giorni" all'apertura dell'ufficio. Secondo, le trattative Anthropic-Trump Administration producono per la prima volta un frame di accordo (Globe and Mail, 18 giugno): le fonti descrivono le due parti come "working toward a deal" — formulazione positiva assente negli aggiornamenti precedenti. Nessuna data di reattivazione e' stata fissata; Kalshi prezza al 57% la probabilita' di ripristino entro il 1 luglio. Le negoziazioni includono incontri quotidiani con il Dipartimento del Commercio. Il pattern di governance che emerge: l'export control su un singolo modello AI si risolve tramite negoziazione tecnica bilaterale — un meccanismo nuovo che combina elementi della diplomazia tecnologica tradizionale con la velocita' operativa tipica della gestione di un incidente di cybersecurity. [Digest 2026-06-19](../../digest/2026/06/19.md)
+
+### 2026-06-21
+
+Due sviluppi aggiungono nuove dimensioni alla governance AI nei giorni 19-21 giugno. Primo, Trump dichiara all'Axios Show (19 giugno) che Anthropic "non e' piu' una minaccia alla sicurezza nazionale" dopo il pranzo al G7 di Evian-les-Bains (17 giugno) con Amodei e Hassabis, che hanno proposto un coalition framework multilaterale sull'AI sicura. L'episodio introduce un pattern nuovo: ammorbidimento della posizione presidenziale senza atti formali di revoca. La direttiva Commerce del 12 giugno e il ban federale agenzie del Pentagono del 3 marzo restano in vigore. E' il primo caso documentato di risoluzione parziale di un export control su un LLM tramite diplomazia G7 — ma la dissociazione tra dichiarazione presidenziale e atto regolatorio evidenzia la complessita' del percorso formale di revoca. Secondo, Dario Amodei pubblica "Policy on the AI Exponential" (10 giugno, missed coverage): il primo manifesto di un CEO di frontier lab che chiede una regolazione obbligatoria vincolante, modellata sulla FAA, con testing di terze parti pre-deployment su cybersecurity, bioweapons, loss of control e automated R&D. Il saggio introduce due nuove dimensioni nella governance AI: il lab come soggetto che chiede attivamente di essere regolato (inversione del tradizionale lobbying contro la regolazione) e il rischio di regulatory capture segnalato esplicitamente da terze parti (Kingy AI). [Digest 2026-06-21](../../digest/2026/06/21.md)
 
 ### 2026-06-20
 

@@ -8,7 +8,7 @@
 
 | Concetto | Categoria | Aliases | Ultimo aggiornamento |
 |---|---|---|---|
-| [AI Governance](./concetti/ai-governance.md) | regolazione | AI governance, governance AI, export control AI, regolazione AI, AI regulation, AI policy, BIS AI, EAR AI models | 2026-06-20 |
+| [AI Governance](./concetti/ai-governance.md) | regolazione | AI governance, governance AI, export control AI, regolazione AI, AI regulation, AI policy, BIS AI, EAR AI models | 2026-06-21 |
 | [Agent harness](./concetti/agent-harness.md) | infrastruttura | agent harness, harness, scaffolding agentico, agent runtime | 2026-06-19 |
 | [Agent sandboxing](./concetti/agent-sandboxing.md) | infrastruttura | sandboxing, containment, isolamento agenti, agent containment, esecuzione isolata, sandbox | 2026-06-07 |
 | [AI Agent](./concetti/agent.md) | paradigma | agent, AI agent, agente autonomo, autonomous agent | 2026-06-17 |
@@ -31,4 +31,4 @@
 | [Tokenization](./concetti/tokenization.md) | tecnica | tokenization, tokenizzazione, BPE, subword, byte-pair encoding | 2026-06-01 |
 | [Tool use / Function calling](./concetti/tool-use.md) | tecnica | tool use, function calling, tool calling, chiamata di funzione | 2026-06-01 |
 | [Vector database](./concetti/vector-database.md) | infrastruttura | vector database, vector DB, vector store, database vettoriale, ANN index | 2026-06-01 |
-| [World Models](./concetti/world-models.md) | architettura | world model, world foundation model, WFM, modello del mondo, physical AI world model | 2026-06-09 |
+| [World Models](./concetti/world-models.md) | architettura | world model, world foundation model, WFM, modello del mondo, physical AI world model | 2026-06-21 |
