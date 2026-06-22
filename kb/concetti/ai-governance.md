@@ -3,8 +3,8 @@ name: AI Governance
 aliases: [AI governance, governance AI, export control AI, regolazione AI, AI regulation, AI policy, BIS AI, EAR AI models]
 categoria: regolazione
 created: 2026-06-14
-last_updated: 2026-06-21
-mentions_count: 31
+last_updated: 2026-06-22
+mentions_count: 35
 ---
 
 # AI Governance
@@ -101,6 +101,10 @@ Due sviluppi del 18 giugno aggiungono dimensioni nuove alla crisi Fable 5 e alla
 ### 2026-06-21
 
 Due sviluppi aggiungono nuove dimensioni alla governance AI nei giorni 19-21 giugno. Primo, Trump dichiara all'Axios Show (19 giugno) che Anthropic "non e' piu' una minaccia alla sicurezza nazionale" dopo il pranzo al G7 di Evian-les-Bains (17 giugno) con Amodei e Hassabis, che hanno proposto un coalition framework multilaterale sull'AI sicura. L'episodio introduce un pattern nuovo: ammorbidimento della posizione presidenziale senza atti formali di revoca. La direttiva Commerce del 12 giugno e il ban federale agenzie del Pentagono del 3 marzo restano in vigore. E' il primo caso documentato di risoluzione parziale di un export control su un LLM tramite diplomazia G7 — ma la dissociazione tra dichiarazione presidenziale e atto regolatorio evidenzia la complessita' del percorso formale di revoca. Secondo, Dario Amodei pubblica "Policy on the AI Exponential" (10 giugno, missed coverage): il primo manifesto di un CEO di frontier lab che chiede una regolazione obbligatoria vincolante, modellata sulla FAA, con testing di terze parti pre-deployment su cybersecurity, bioweapons, loss of control e automated R&D. Il saggio introduce due nuove dimensioni nella governance AI: il lab come soggetto che chiede attivamente di essere regolato (inversione del tradizionale lobbying contro la regolazione) e il rischio di regulatory capture segnalato esplicitamente da terze parti (Kingy AI). [Digest 2026-06-21](../../digest/2026/06/21.md)
+
+### 2026-06-22
+
+Tre sviluppi della giornata aggiungono nuove dimensioni alla governance dei frontier model. Primo, il Senatore Warner cita in audizione (21 giugno) il Generale Rudd (NSA/Cyber Command): Mythos ha violato "quasi tutti" i sistemi classificati NSA in ore durante un esercizio red-team autorizzato dell'11 giugno. La testimonianza rimodella il contesto del ban come valutazione di capacita' governativa sul modello gia' in produzione — Warner la usava per difendere Anthropic e argomentare per un testing obbligatorio pre-rilascio, non per condannare il lab. La convergenza tra la posizione di Warner e la proposta di Dario Amodei nel saggio del 10 giugno (coperto digest 06-21) e' la prima volta che il testing obbligatorio pre-rilascio trova sostegno bipartisan pubblico e documentato; questa convergenza introduce un incentivo politico a mantenere il ban come segnale anche dopo la risoluzione tecnica. Secondo, oggi (22 giugno) e' l'ultimo giorno in cui Fable 5 e' incluso nei piani subscription; dal 23 giugno richiede crediti a $10/$50 per milione di token. Il paradosso e' che la transizione avviene su un modello inaccessibile: illustra come la governance del ciclo di vita di un prodotto AI continui in modo indipendente dalla disponibilita' operativa del prodotto stesso. Terzo, la privacy policy aggiornata di Anthropic (efficace 8 luglio, via Persona Identities) introduce la raccolta di documento d'identita' governativo, selfie live e geometria facciale per gli utenti consumer — meccanismo che consente a Anthropic di riaprire Fable 5 ai soli utenti con cittadinanza USA verificata senza revoca formale dell'export control directive; introduce il pattern KYC biometrico come strumento di compliance agli export control per l'accesso a modelli AI. [Digest 2026-06-22](../../digest/2026/06/22.md)
 
 ### 2026-06-20
 
