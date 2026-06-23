@@ -3,8 +3,8 @@ name: Evaluation / Benchmark AI
 aliases: [benchmark, eval, evaluation, valutazione LLM, AI benchmark, leaderboard]
 categoria: tecnica
 created: 2026-04-30
-last_updated: 2026-06-18
-mentions_count: 33
+last_updated: 2026-06-23
+mentions_count: 35
 ---
 
 # Evaluation / Benchmark AI
@@ -147,6 +147,10 @@ MaxProof (arXiv:2606.13473, MiniMax, 11 giugno) introduce due nuovi benchmark co
 ### 2026-06-10
 
 Claude Fable 5 (Anthropic, 9 giugno, 14+ fonti) porta tre nuovi risultati di benchmark rilevanti per il concetto di evaluation. SWE-Bench Pro al 80,3%: variante piu' difficile di SWE-bench con task derivati da pull request reali su repository popolari, filtrate per escludere casi risolvibili con pattern di memorizzazione — il SOTA precedente era nell'intorno del 60-65%, e Fable 5 segna il primo superamento netto della soglia 80. SWE-bench Verified al 95%: il benchmark standard di bug fixing su repository Python reali (task verificati manualmente come risolvibili) — il punteggio indica che quasi tutti i task del corpus vengono risolti correttamente. FrontierCode Diamond al 29,3%: categoria piu' alta del benchmark FrontierCode (grading system Bronze/Silver/Gold/Diamond), che misura task di programmazione competitiva di difficolta' olimpica — primo modello frontier a superare la soglia Diamond in modo sistematico. Il valore comparativo dei tre benchmark e' che coprono dimensioni distinte della valutazione del coding agentico: correttezza su task di manutenzione reale (SWE-bench Pro), correttezza su task standard (SWE-bench Verified), capacita' algoritmica di frontiera (FrontierCode Diamond). La combinazione rivela la "forma" delle capacita' di un modello piu' di qualsiasi singolo benchmark — un modello puo' eccellere su SWE-bench Verified e fare peggio su FrontierCode Diamond, segnalando punti di forza diversi sul continuum manutenzione-creazione. [Digest 2026-06-10](../../digest/2026/06/10.md)
+
+### 2026-06-23
+
+OpenAI rilascia il 22 giugno GPT-5.5-Cyber in full release, introducendo tre benchmark specializzati nella valutazione delle capacita' cyber degli agenti AI: CyberGym (85,6% vs 81,8% di GPT-5.5: misura la capacita' di riprodurre vulnerabilita' note in ambienti di test controllati), ExploitGym (39,5% vs 25,95%: misura la capacita' di exploit development — il delta piu' ampio dell'annuncio, quasi raddoppio), SEC-bench Pro (69,8% vs 63,1%: ragionamento su scenari di sicurezza reali). I tre benchmark ampliano il panorama dei benchmark verticali specializzati per agenti: dopo CyberGym/ExploitGym/SEC-bench Pro, il dominio "capacita' cyber agentica" ha ora tre metriche distinte che coprono detection (riproduzione di vulnerabilita'), exploitation e ragionamento difensivo. Il salto su ExploitGym merita una nota editoriale di metodo: e' un benchmark che misura capacita' duale (utile a difensori e ad attaccanti), e il fatto che OpenAI scelga di pubblicarlo esplicitamente nel lancio segnala una strategia di trasparenza deliberata sulla capability — simile alla logica con cui Anthropic pubblica le evaluazioni di safety nei model card. In parallelo, Google DeepMind presenta nel proprio AI Control Roadmap (18 giugno) la tassonomia MITRE ATT&CK come framework di valutazione delle minacce agentiche: privilege escalation, data exfiltration, prompt injection e persistenza come categorie di rischio misurabili e monitorabili su agenti in produzione. La combinazione dei due annunci traccia un perimetro: il campo della "evaluation di sistemi agentici su task di sicurezza" ha ora sia benchmark standardizzati per il modello (CyberGym, ExploitGym, SEC-bench Pro) sia una tassonomia di minacce per i sistemi composti (MITRE ATT&CK agentico). [Digest 2026-06-23](../../digest/2026/06/23.md)
 
 ### 2026-06-18
 

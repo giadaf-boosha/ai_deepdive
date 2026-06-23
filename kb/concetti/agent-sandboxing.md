@@ -3,8 +3,8 @@ name: Agent sandboxing
 aliases: [sandboxing, containment, isolamento agenti, agent containment, esecuzione isolata, sandbox]
 categoria: infrastruttura
 created: 2026-06-01
-last_updated: 2026-06-07
-mentions_count: 5
+last_updated: 2026-06-23
+mentions_count: 8
 ---
 
 # Agent sandboxing
@@ -83,6 +83,10 @@ Loop e esecuzione vanno disaccoppiati per la compliance. Il pattern "loop su pro
 La sandbox non sostituisce gli altri controlli. Contenimento, human-in-the-loop sulle azioni sensibili, controllo di policy separato dal modello e logging completo sono livelli complementari. Un agente sandboxato ma senza approvazione umana sulle azioni distruttive, o senza tracciamento dei tool call, e' ancora un rischio operativo. La sandbox limita il danno; gli altri controlli riducono la probabilita' che il danno si verifichi.
 
 ## Aggiornamenti
+
+### 2026-06-23
+
+Google DeepMind pubblica il 18 giugno l'AI Control Roadmap (blog post Rohin Shah e Four Flynn, deepmind.google/blog/securing-the-future-of-ai-agents/): un framework defense-in-depth per agenti in produzione che assume il misalignment come scenario possibile da progettare, non da escludere. Le tre primitivi operative introdotte ampliano il vocabolario del sandboxing: (1) Supervisor Agent asincrono — un agente separato che monitora in tempo reale le traiettorie di esecuzione degli agenti operativi e scalata verso revisori umani in caso di comportamento anomalo, senza bloccare il flusso; (2) firma crittografica delle azioni, che rende ogni tool call auditabile e ricostruibile post-incident; (3) kill switch che interrompe un agente in esecuzione con serializzazione corretta dello stato. La tassonomia delle minacce e' derivata da MITRE ATT&CK adattato al contesto agentico AI (privilege escalation, data exfiltration tramite tool, prompt injection, persistenza via file di configurazione). Il sistema e' gia' in produzione su ~1 milione di task di coding agent interni a Google. Il contributo al campo del sandboxing e' concettuale oltre che tecnico: sposta la prospettiva da "costruire agenti allineati" a "costruire sistemi di controllo che funzionino anche se l'alignment e' imperfetto" — la stessa premessa che aveva portato Anthropic a descrivere le proprie sandbox di prodotto come "contenimento", non come "prevenzione". Il framework DeepMind e' il primo documento pubblico che sistematizza queste idee in una roadmap con componenti implementabili. [Digest 2026-06-23](../../digest/2026/06/23.md)
 
 ### 2026-06-07
 
