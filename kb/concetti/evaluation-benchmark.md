@@ -3,8 +3,8 @@ name: Evaluation / Benchmark AI
 aliases: [benchmark, eval, evaluation, valutazione LLM, AI benchmark, leaderboard]
 categoria: tecnica
 created: 2026-04-30
-last_updated: 2026-06-24
-mentions_count: 37
+last_updated: 2026-06-25
+mentions_count: 38
 ---
 
 # Evaluation / Benchmark AI
@@ -155,6 +155,12 @@ OpenAI rilascia il 22 giugno GPT-5.5-Cyber in full release, introducendo tre ben
 ### 2026-06-18
 
 Due nuovi benchmark pubblicati da OpenAI ampliano il panorama di valutazione in direzioni distinte. Deployment Simulation (16 giugno, openai.com) introduce un'eval method interna che usa dati di produzione reali come benchmark implicito: invece di task curati, il sistema riproduce ~1,3M conversazioni de-identificate con il modello candidato e cerca nuovi failure mode, producendo una stima del tasso di comportamenti indesiderati con errore mediano di 1,5x. E' una metodologia di valutazione sulla distribuzione reale degli utenti, non su benchmark costruiti a tavolino — complementare ai benchmark standard, non sostitutiva. Il paper companion su WildChat mostra che la tecnica funziona anche su dataset pubblici (meno precisa ma utile), abbassando la barriera per i lab che non hanno accesso a dati di produzione propri. LifeSciBench (17 giugno, openai.com) introduce 750 task expert-written su sette workflow di ricerca in life science (drug discovery, biologia molecolare, sviluppo farmaceutico), costruiti con 173 scienziati PhD da biotech e pharma; il miglior modello valutato supera solo il 36,1% dei task. LifeSciBench segna l'ingresso dei benchmark verticali specializzati in domini scientifici come categoria distinta: non misura conoscenza biologica generica (gia' coperta da MMLU Pro biologia) ma la capacita' di supportare workflow di ricerca reali con artifact allegati (sequenze, strutture, PDF) e ragionamento multi-step. La combinazione dei due rilasci in 48 ore segnala una diversificazione della strategia di valutazione di OpenAI: su un asse la valutazione sulla distribuzione di produzione (Deployment Simulation), sull'altro la valutazione verticale ad alta difficolta' (LifeSciBench). [Digest 2026-06-18](../../digest/2026/06/18.md)
+
+### 2026-06-24
+
+### 2026-06-25
+
+NatureBench (arXiv:2606.24530, 24 giugno) introduce un benchmark per agenti di coding scientifico derivato interamente da pubblicazioni della famiglia Nature: 90 task di ricerca computazionale che coprono scoperta (derivare un risultato nuovo) e riproduzione (replicare un risultato gia' pubblicato), costruiti su NatureGym, una pipeline automatizzata che containerizza l'ambiente computazionale di ogni paper (codice, dati, dipendenze) e verifica i risultati tramite test automatici. Il risultato piu' significativo e' la baseline SOTA: il modello migliore valutato raggiunge il 17,8% di corrispondenza con i risultati della pubblicazione originale con il criterio g>0,1 — un ceiling che quantifica per la prima volta il gap tra la capacita' di coding agentico generale e la capacita' di condurre discovery scientifica computazionale reale. I pattern di fallimento dominanti sono due: scelta errata del metodo (l'agente usa un approccio computazionalmente valido ma non quello usato nel paper) e budget computazionale insufficiente (il task richiede piu' step di quanti l'agente puo' sostenere entro il limite di token). Il pattern di successo e' la traduzione metodologica: gli agenti ottengono risultati piu' alti quando riescono a mappare la descrizione testuale del metodo del paper su una sequenza di operazioni concrete nel codice, piuttosto che applicare euristiche generali di data analysis. NatureBench distingue due dimensioni di valutazione distinte: matching quantitativo dei numeri (g-score) e matching del pattern qualitativo dei risultati — la seconda misura e' meno esigente della prima ma piu' rilevante per scoperta scientifica parziale. L'infrastruttura NatureGym e' il contributo tecnico ortogonale al benchmark stesso: la pipeline automatizzata di containerizzazione riduce il costo di costruzione di nuovi task e apre la strada a un living benchmark scientifico scalabile. Per chi costruisce agenti di research o knowledge work: NatureBench fissa le aspettative realistiche sulle capacita' attuali nei workflow scientifici — il 17,8% SOTA suggerisce che gli agenti attuali sono uno strumento di supporto alla ricerca, non un sostituto. [Digest 2026-06-25](../../digest/2026/06/25.md)
 
 ### 2026-06-24
 

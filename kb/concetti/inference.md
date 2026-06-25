@@ -3,8 +3,8 @@ name: Inference
 aliases: [inference, inferenza, serving, generation, decoding]
 categoria: infrastruttura
 created: 2026-04-28
-last_updated: 2026-06-20
-mentions_count: 52
+last_updated: 2026-06-25
+mentions_count: 53
 ---
 
 # Inference
@@ -204,6 +204,10 @@ MiMo-V2.5-Pro-UltraSpeed (Xiaomi + TileRT, 8-9 giugno, 9 fonti) introduce tre te
 ### 2026-06-12
 
 DiffusionGemma (Google, 10 giugno, 13+ fonti) introduce un pattern di inference radicalmente diverso da quello autoregressivo: invece di decodificare un token alla volta con un forward pass sequenziale, il modello genera fino a 256 token in parallelo in un singolo forward pass attraverso T passi di denoising (T=20-30 di default). Il risultato sul piano dell'inference e' 4x di throughput rispetto a Gemma 4 autoregressivo sullo stesso hardware: 1.000+ token/s su H100, 700+ su RTX 5090. Il trade-off e' la qualita' degradata su task di ragionamento multi-step (AIME 2026: 69,1% vs 88,3% autoregressivo), il che segnala che la sequenzialita' del decode autoregressivo e' parte del meccanismo di ragionamento, non solo un overhead. La combinazione backbone MoE (3,8B parametri attivi su 26B totali) + text diffusion e' un moltiplicatore di efficienza: MoE riduce il costo per token, la diffusione riduce il numero di forward pass per sequenza. L'adozione di quantizzazioni NVFP4 e GGUF nelle prime 24 ore conferma che il profilo di inference di DiffusionGemma e' adatto al deployment su hardware consumer senza ottimizzazioni specifiche. [Digest 2026-06-12](../../digest/2026/06/12.md)
+
+### 2026-06-25
+
+Qualcomm acquisisce Modular per 3,9 miliardi di dollari in uno scambio azionario tutto-stock (19,2 milioni di azioni Qualcomm) con chiusura attesa nella seconda meta' del 2026. L'acquisizione riguarda l'intero stack Modular: il linguaggio Mojo (superset Python con performance C, compilazione MLIR, tipizzazione progressiva) e il MAX inference engine, runtime di serving hardware-agnostico che supporta GPU Nvidia, AMD e Intel e processori Qualcomm senza richiedere CUDA. Il MAX engine e' il contributo piu' diretto al tema inference: e' un runtime di compilazione che astrae il backend hardware attraverso MLIR (Multi-Level Intermediate Representation), permettendo di compilare e ottimizzare un modello una volta sola e distribuirlo su hardware diverso senza riscrivere il codice di serving. Questo contrasta con l'architettura corrente dove TensorRT-LLM e' specifico per Nvidia, ROCm per AMD, e la portabilita' richiede adattamenti manuali per ogni backend. La strategia di Qualcomm e' usare MAX e Mojo per attrarre developer nel proprio ecosistema software — il punto debole storico di Qualcomm rispetto a Nvidia — rendendo i chip Snapdragon X e i processori AI edge programmabili con lo stesso toolchain dei datacenter. Per i developer che costruiscono sistemi di inference: MAX e' un percorso alternativo a vLLM e TGI che non presuppone Nvidia come substrato; la maturita' del progetto al momento della chiusura dell'acquisizione e' ancora da verificare su workload di produzione. Chris Lattner (fondatore di Modular, autore di LLVM e Swift) rimane nel progetto. [Digest 2026-06-25](../../digest/2026/06/25.md)
 
 ### 2026-06-20
 
