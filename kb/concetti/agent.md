@@ -3,8 +3,8 @@ name: AI Agent
 aliases: [agent, AI agent, agente autonomo, autonomous agent]
 categoria: paradigma
 created: 2026-04-28
-last_updated: 2026-06-17
-mentions_count: 105
+last_updated: 2026-06-26
+mentions_count: 107
 ---
 
 # AI Agent
@@ -263,3 +263,7 @@ Tre segnali agentici nel digest di oggi. Arbor (arXiv:2606.11926, Renmin Univers
 ### 2026-06-17
 
 Il paper "Agentic Environment Engineering for Large Language Models" (arXiv:2606.12191, depositato 10 giugno, 15 autori, 4 fonti) formalizza la tassonomia del campo aperto da lavori come EurekAgent. Il survey propone il "lifecycle dell'ambiente agentico" come framework in quattro fasi: modellazione (8 attributi dell'ambiente: perzettivita', spazio delle azioni, persistenza, multi-agenza, dinamismo, osservabilita', feedback, scalabilita'), sintesi simbolica e neurale, valutazione (task completion, qualita' del processo, alignment), applicazione su 8 domini (coding, web, giochi, robotica, scienza, dialogo, enterprise, simulazione sociale). Per il concetto di agente, il contributo e' terminologico e strutturale: il campo aveva prodotto decine di paper su aspetti parziali senza vocabolario condiviso; il survey fornisce la prima mappa navigabile che permette di collocare un sistema agentico in una tassonomia coerente e diagnosticare i limiti dell'ambiente in cui opera. [Digest 2026-06-17](../../digest/2026/06/17.md)
+
+### 2026-06-26
+
+WorkBench Revisited (arXiv:2606.13715, giugno 2026, copertura mancata dal 10 giugno) misura il progresso degli agenti su 50 task da ufficio nel periodo 2024-2026. Il miglior agente 2026 e' Claude Opus 4.8 con l'89% di task completion e il 2,5% di azioni dannose, contro il 43% e il 26% del miglior agente 2024 (GPT-4). La traiettoria documenta che la sicurezza e la capacita' si muovono nella stessa direzione — un dato rilevante perche' la narrative dominante nel campo postulava un trade-off tra i due. Il benchmark mantiene i task fissi nel tempo, rendendo il confronto cross-modello interpretabile senza la variabile confondente dei benchmark nuovi che cambiano distribuzione. 2025 AI Agent Index (arXiv:2602.17753, FAccT '26 Montreal, 25-28 giugno) audita 30 agenti su 8 dimensioni di documentazione della sicurezza. I risultati piu' rilevanti per il design agentico: gli incidenti si concentrano negli agenti browser (prompt injection come vettore dominante), e la copertura della documentazione di sicurezza varia da 8/8 (Claude Code) a 1/8 (Moonshot AI, Manus). L'indice formalizza la documentazione pubblica di sicurezza come asse di valutazione comparabile — complementare ai benchmark di capacita' ma distinto: un agente puo' avere alta capacita' e bassa copertura documentale, o viceversa. Per chi costruisce o sceglie agenti: la lista degli 8 campi dell'AI Agent Index diventa una checklist di accountability minima per qualsiasi deployment in contesti regolamentati. [Digest 2026-06-26](../../digest/2026/06/26.md)

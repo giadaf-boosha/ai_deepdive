@@ -3,8 +3,8 @@ name: Inference
 aliases: [inference, inferenza, serving, generation, decoding]
 categoria: infrastruttura
 created: 2026-04-28
-last_updated: 2026-06-25
-mentions_count: 53
+last_updated: 2026-06-26
+mentions_count: 54
 ---
 
 # Inference
@@ -212,3 +212,7 @@ Qualcomm acquisisce Modular per 3,9 miliardi di dollari in uno scambio azionario
 ### 2026-06-20
 
 Due sviluppi distinti ampliano il quadro dell'inference enterprise. Primo, Grok 4.3 raggiunge GA su Amazon Bedrock (15 giugno, missed coverage) servito su Mantle, il nuovo inference engine di Bedrock: persistent kernel, compute pipeline dedicati per i modelli di terze parti, ottimizzazione price/performance dichiarata da AWS. Mantle e' documentato come un runtime che sostituisce i backend di serving precedenti per i modelli partner su Bedrock, eliminando l'overhead di scheduling inter-step. Le caratteristiche operative di Grok 4.3 su Bedrock: 1M token di context, tre livelli di reasoning configurabili (low/medium/high effort), tool calling, structured output e response streaming nativi. Secondo, i tre modelli open-weight per il coding (Cohere North Mini Code, Kimi K2.7-Code, GLM-5.2) introducono tecniche di serving complementari. North Mini Code punta alla densita' operativa: 30B/3B attivi su FP8 su singola H100, throughput 2.8x superiore a Devstral Small 2 per il coding agentico. GLM-5.2 introduce un contesto da 1M token open-weight tramite MoE a 40B attivi su 744B totali, con pesi in formato quantizzato disponibili su Hugging Face (MXFP8 e NVFP4 non ufficiale). Kimi K2.7-Code riduce i token di reasoning del 30% rispetto al predecessore, un parametro di costo di inference rilevante per i loop agentici che richiedono molte iterazioni. [Digest 2026-06-20](../../digest/2026/06/20.md).
+
+### 2026-06-26
+
+OpenAI e Broadcom hanno annunciato il 24 giugno Jalapeño, primo ASIC custom per inferenza LLM di OpenAI (copertura mancata dal 24 giugno). Il chip e' reticle-sized, il ciclo design-to-tape-out di 9 mesi e' un record di settore. L'architettura ottimizza il movimento dati e il bilanciamento compute/memory/networking, con risparmio stimato del ~50% rispetto alle GPU correnti per i workload di inferenza OpenAI. Jalapeño esegue GPT-5.3-Codex-Spark in laboratorio a frequenza e potenza di produzione. Il deployment e' previsto fine 2026 in partnership con Microsoft per data center a scala gigawatt. Il punto metodologico piu' rilevante e' che il processo di design stesso e' stato accelerato usando i modelli OpenAI: l'AI ha contribuito alla progettazione del silicio che la eseguira', chiudendo il primo ciclo documentato di hardware design assistito dal modello che vi gira sopra. Il chip segna l'ingresso di OpenAI nella categoria dei provider con silicio proprietario, accanto a Google (TPU), Apple (Neural Engine), Amazon (Trainium/Inferentia) e Meta (MTIA). Per chi progetta architetture di inference: Jalapeño e' ottimizzato per i workload specifici di OpenAI — la trasferibilita' delle ottimizzazioni ad altri modelli e' ancora da documentare. [Digest 2026-06-26](../../digest/2026/06/26.md)
