@@ -3,8 +3,8 @@ name: AI Governance
 aliases: [AI governance, governance AI, export control AI, regolazione AI, AI regulation, AI policy, BIS AI, EAR AI models]
 categoria: regolazione
 created: 2026-06-14
-last_updated: 2026-06-26
-mentions_count: 42
+last_updated: 2026-06-27
+mentions_count: 44
 ---
 
 # AI Governance
@@ -121,3 +121,7 @@ Due sviluppi aggiungono nuove dimensioni alla governance dei frontier model. Pri
 ### 2026-06-26
 
 Fable 5 — Giorno 14 e scadenza risposta Lutnick. Il 26 giugno e' il termine per la risposta del Segretario al Commercio Howard Lutnick alla lettera bipartisan del 18 giugno (Liccardo et al.) sulla sospensione di Fable 5 e Mythos 5. Il 25 giugno il personale Anthropic ha confermato zero traffico verso entrambi i modelli nonostante artefatti UI fuorvianti in Claude Code v2.1.190. La risposta o il silenzio di Lutnick oggi definisce il prossimo marker strutturale: silenzio = nessun impegno congressuale esplicito per la prima meta' di luglio; risposta = apertura di un percorso legislativo o esecutivo per la modifica della direttiva BIS. I prossimi milestone strutturali indipendenti dalla risposta Lutnick: 8 luglio (entrata in vigore del requisito di verifica ID per Persona Identities), 1 agosto (scadenza EO 14179-A per il framework coordinato NSA/Treasury/CISA). Il caso Fable 5 ha gia' prodotto il primo ricorso giuridico (Legion LegalTech, 23 giugno) che testa la legittimita' dell'applicazione dell'IEEPA all'accesso API a un servizio cloud. L'esito del caso Legion e la risposta Lutnick sono i due driver principali dello stato della sospensione nel periodo luglio-agosto 2026. [Digest 2026-06-26](../../digest/2026/06/26.md)
+
+### 2026-06-27
+
+La scadenza congressuale del 26 giugno per la risposta di Lutnick e' passata senza risposta pubblica: nessuna giustificazione formale della direttiva BIS sul ban Fable 5/Mythos 5 e' stata resa disponibile. E' il giorno 15 della sospensione. Due sviluppi paralleli. Primo, una lettera aperta firmata da oltre 100 esperti di cybersecurity (organizzata da Alex Stamos, ex CSO Facebook, ora Corridor, indirizzata a Lutnick e al National Cyber Director Sean Cairncross) sostiene che il ban penalizza i difensori senza ridurre il rischio reale: Fable 5 e' efficace nell'individuare falle software ma non "unicamene superiore" agli strumenti gia' accessibili agli avversari; toglierlo ai blue team e' controproducente. Rep. Garbarino (R-NY, Chair House Homeland Security) conferma l'approccio bilanciato: il governo ha ragione sul principio, ma la misura non deve svantaggiare i difensori americani. Secondo, il rilascio di GPT-5.6 Sol/Terra/Luna (26-27 giugno) sotto le stesse restrizioni governative di accesso limitato (~20 aziende approvate) segnala che il framework di vetting pre-release si estende beyond Anthropic: OpenAI stessa ha acconsentito su richiesta dell'Amministrazione, dichiarando pero' che questo meccanismo "non dovrebbe diventare il default a lungo termine". Il caso Fable 5 ha introdotto de facto un meccanismo di approvazione governativa pre-commercializzazione per i modelli frontier; il suo consolidamento come pattern (non eccezione) e' il segnale di governance piu' rilevante emerso questa settimana. Prossimi marker: 8 luglio (verifica ID Persona Identities), 1 agosto (EO 14179-A), esito ingiunzione Legion LegalTech. [Digest 2026-06-27](../../digest/2026/06/27.md)

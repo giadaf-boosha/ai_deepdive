@@ -3,8 +3,8 @@ name: Chain of Thought / Reasoning
 aliases: [chain of thought, CoT, catena di pensiero, reasoning, ragionamento esplicito, extended thinking]
 categoria: tecnica
 created: 2026-04-28
-last_updated: 2026-06-01
-mentions_count: 0
+last_updated: 2026-06-27
+mentions_count: 1
 ---
 
 # Chain of Thought / Reasoning
@@ -127,6 +127,10 @@ Reasoning + tool. Combinare reasoning model con [tool use](./tool-use.md) e' par
 Costo del training del reasoning. Il risultato 2026 sui token entropy-gated suggerisce che non e' sempre necessario un ciclo RL completo per ottenere il comportamento reasoning: tecniche che applicano una correzione mirata solo ai pochi punti di decisione incerti possono replicare gran parte del beneficio a una frazione del compute. Per chi addestra o fine-tuna modelli reasoning interni, vale la pena valutare queste ricette RL-free prima di impegnare budget GPU in un ciclo RL completo.
 
 ## Aggiornamenti
+
+### 2026-06-27
+
+"The Deterministic Horizon: When Extended Reasoning Fails and Tool Delegation Becomes Necessary" (Guo, Wu, Yiu — arXiv:2606.00376, accettato ICML 2026) stabilisce il primo bound teorico formale sul limite del CoT puro in compiti di state-tracking. Il teorema dell'Attention Bottleneck dimostra che nei decoder-only transformer la capacita' di state-tracking e' limitata in modo determinato dalla profondita' del contesto; un modello di errore context-dipendente ne quantifica il decadimento. Il Deterministic Horizon d* — la soglia oltre la quale l'accuratezza crolla super-esponenzialmente — e' empiricamente stimato tra 19 e 31 step su 12 modelli e 8 task domain (SWE-bench, WebArena, SQL-Multi tra gli altri). Oltre quella soglia, il tool-integrated reasoning (reasoning + tool deterministici) ottiene 86-94% contro il 24-42% del CoT puro. Il contributo teorico e' che il limite non e' una questione di scala del modello o di dimensione del contesto, ma di capacita' intrinseca dei decoder-only transformer a mantenere stato deterministico su sequenze lunghe. Il contributo pratico e' una guida operativa: per task che richiedono state-tracking beyond d* — refactoring su codebase grandi, query SQL multi-step, navigazione web multi-hop — il tool use non e' un'ottimizzazione ma una necessita' strutturale. Il paper fornisce anche un metodo per stimare d* su un task specifico senza benchmark formali: tracciare la curva di accuratezza al variare della lunghezza della sequenza e identificare il punto di curvatura. Aggiornate di conseguenza le sezioni Note operative (aggiunto paragrafo su stima di d* per routing), Letture (aggiunto arXiv:2606.00376) e Varianti (aggiunto "tool-integrated reasoning" come variante distinta dal reasoning puro). [Digest 2026-06-27](../../digest/2026/06/27.md)
 
 ### 2026-06-01
 
