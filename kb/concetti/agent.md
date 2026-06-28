@@ -3,8 +3,8 @@ name: AI Agent
 aliases: [agent, AI agent, agente autonomo, autonomous agent]
 categoria: paradigma
 created: 2026-04-28
-last_updated: 2026-06-26
-mentions_count: 107
+last_updated: 2026-06-28
+mentions_count: 108
 ---
 
 # AI Agent
@@ -263,6 +263,10 @@ Tre segnali agentici nel digest di oggi. Arbor (arXiv:2606.11926, Renmin Univers
 ### 2026-06-17
 
 Il paper "Agentic Environment Engineering for Large Language Models" (arXiv:2606.12191, depositato 10 giugno, 15 autori, 4 fonti) formalizza la tassonomia del campo aperto da lavori come EurekAgent. Il survey propone il "lifecycle dell'ambiente agentico" come framework in quattro fasi: modellazione (8 attributi dell'ambiente: perzettivita', spazio delle azioni, persistenza, multi-agenza, dinamismo, osservabilita', feedback, scalabilita'), sintesi simbolica e neurale, valutazione (task completion, qualita' del processo, alignment), applicazione su 8 domini (coding, web, giochi, robotica, scienza, dialogo, enterprise, simulazione sociale). Per il concetto di agente, il contributo e' terminologico e strutturale: il campo aveva prodotto decine di paper su aspetti parziali senza vocabolario condiviso; il survey fornisce la prima mappa navigabile che permette di collocare un sistema agentico in una tassonomia coerente e diagnosticare i limiti dell'ambiente in cui opera. [Digest 2026-06-17](../../digest/2026/06/17.md)
+
+### 2026-06-28
+
+Claude Tag (Anthropic, 23 giugno, 5 fonti) introduce la variante "ambient team member" del paradigma agentico in ambienti enterprise: un agente con identita' condivisa che si unisce a un workspace Slack come membro del team, mantiene memoria tra sessioni distinte e opera in modalita' ambient (ascolta segnali nei canali e rientra autonomamente su task irrisolti senza essere ripromptato). La differenza strutturale rispetto al chatbot classico e' la condivisione di stato tra tutta l'organizzazione: invece di istanze private per ogni utente, un'unica istanza Claude riceve e continua task da chiunque nel workspace, con profili di accesso separati per canale. Il dato interno Anthropic (65% del codice prodotto internamente transita via Claude Tag) internalizza la validazione del pattern. Claude Tag si inserisce nella serie di realizzazioni del pattern "ambient agent" — gia' documentato in questo file per Writer, Agent 365, Gemini Intelligence, iOS 27 Extensions — con la specifica che qui il medium e' una piattaforma di comunicazione aziendale, non un OS. Il caso d'uso enterprise (coordinamento di task tra colleghi mediato dall'agente, handoff di sessioni parziali, accesso scoped per canale) e' la prima implementazione documentata dell'agente come infrastruttura di collaborazione, distinto dall'agente come automazione di task singoli. [Digest 2026-06-28](../../digest/2026/06/28.md)
 
 ### 2026-06-26
 

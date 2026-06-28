@@ -3,8 +3,8 @@ name: AI Governance
 aliases: [AI governance, governance AI, export control AI, regolazione AI, AI regulation, AI policy, BIS AI, EAR AI models]
 categoria: regolazione
 created: 2026-06-14
-last_updated: 2026-06-27
-mentions_count: 44
+last_updated: 2026-06-28
+mentions_count: 46
 ---
 
 # AI Governance
@@ -121,6 +121,10 @@ Due sviluppi aggiungono nuove dimensioni alla governance dei frontier model. Pri
 ### 2026-06-26
 
 Fable 5 — Giorno 14 e scadenza risposta Lutnick. Il 26 giugno e' il termine per la risposta del Segretario al Commercio Howard Lutnick alla lettera bipartisan del 18 giugno (Liccardo et al.) sulla sospensione di Fable 5 e Mythos 5. Il 25 giugno il personale Anthropic ha confermato zero traffico verso entrambi i modelli nonostante artefatti UI fuorvianti in Claude Code v2.1.190. La risposta o il silenzio di Lutnick oggi definisce il prossimo marker strutturale: silenzio = nessun impegno congressuale esplicito per la prima meta' di luglio; risposta = apertura di un percorso legislativo o esecutivo per la modifica della direttiva BIS. I prossimi milestone strutturali indipendenti dalla risposta Lutnick: 8 luglio (entrata in vigore del requisito di verifica ID per Persona Identities), 1 agosto (scadenza EO 14179-A per il framework coordinato NSA/Treasury/CISA). Il caso Fable 5 ha gia' prodotto il primo ricorso giuridico (Legion LegalTech, 23 giugno) che testa la legittimita' dell'applicazione dell'IEEPA all'accesso API a un servizio cloud. L'esito del caso Legion e la risposta Lutnick sono i due driver principali dello stato della sospensione nel periodo luglio-agosto 2026. [Digest 2026-06-26](../../digest/2026/06/26.md)
+
+### 2026-06-28
+
+Due sviluppi del 26-28 giugno aggiungono nuove dimensioni alla governance dei frontier model. Primo, il Segretario al Commercio Lutnick firma il 26 giugno una lettera ad Anthropic che concede accesso a Mythos 5 alle organizzazioni in Annex A: operatori di infrastruttura critica USA (energia, acqua, trasporti, finanza), agenzie governative federali e i relativi dipendenti stranieri che lavorano in questi contesti. Anthropic annuncia il 27 giugno il ripristino progressivo per questi soggetti. La lettera non include Fable 5, che rimane sospeso. Questo carve-out introduce un meccanismo di governance nuovo: invece di una revoca formale della direttiva BIS del 12 giugno, il governo concede esenzioni categoriali tramite allegato firmato — il che mantiene la direttiva formalmente attiva (con tutti i suoi requisiti e sanzioni) ma apre un canale di accesso controllato per soggetti pre-approvati. Il pattern ha implicazioni per i practitioner in ambienti regulated: l'accesso a modelli frontier puo' ora dipendere dall'appartenenza a una categoria esplicita di "trusted entity" definita dalla governance statale, non solo dall'accettazione dei termini di servizio del provider. Secondo, in sei giorni (18-24 giugno) quattro senior researcher lasciano Google DeepMind per OpenAI e Anthropic: Noam Shazeer (co-autore del Transformer) a OpenAI, John Jumper (Nobel Chimica 2024, AlphaFold), Jonas Adler (lead coding AI Gemini) e Alexander Pritzel (pretraining Gemini) ad Anthropic. Il dato rilevante per la governance e' la concentrazione di expertise verso i due lab con il profilo piu' aggressivo su safety e regolazione obbligatoria (Anthropic) e su deployment governativo (OpenAI + Defense contract). La distribuzione del talento senior tra i lab non e' neutrale rispetto alla governance futura: chi controlle le capability frontier influenza anche chi puo' proporre e implementare i framework di regolazione tecnica. [Digest 2026-06-28](../../digest/2026/06/28.md)
 
 ### 2026-06-27
 

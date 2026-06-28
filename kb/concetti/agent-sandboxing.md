@@ -3,8 +3,8 @@ name: Agent sandboxing
 aliases: [sandboxing, containment, isolamento agenti, agent containment, esecuzione isolata, sandbox]
 categoria: infrastruttura
 created: 2026-06-01
-last_updated: 2026-06-23
-mentions_count: 8
+last_updated: 2026-06-28
+mentions_count: 10
 ---
 
 # Agent sandboxing
@@ -83,6 +83,10 @@ Loop e esecuzione vanno disaccoppiati per la compliance. Il pattern "loop su pro
 La sandbox non sostituisce gli altri controlli. Contenimento, human-in-the-loop sulle azioni sensibili, controllo di policy separato dal modello e logging completo sono livelli complementari. Un agente sandboxato ma senza approvazione umana sulle azioni distruttive, o senza tracciamento dei tool call, e' ancora un rischio operativo. La sandbox limita il danno; gli altri controlli riducono la probabilita' che il danno si verifichi.
 
 ## Aggiornamenti
+
+### 2026-06-28
+
+Tenet Security divulga il 3 giugno la classe di attacco "Agentjacking" (CSA research note 12-14 giugno, 6 fonti): un singolo report di errore Sentry falsificato e' sufficiente per reindirizzare Claude Code, Cursor o Codex verso un server controllato dall'attaccante, che esegue codice arbitrario sulla macchina del developer. L'attacco sfrutta il fatto che gli agenti di coding consumano automaticamente l'output degli strumenti di error tracking (Sentry MCP) senza trattarlo come input non fidato — identica famiglia del prompt injection, ma con un vettore specifico: l'error tracking e' un canale considerato "safe" dall'agente, che lo eredita dall'ecosistema degli strumenti developer tradizionali dove un report di errore non puo' eseguire codice. Tenet ha identificato 2388 organizzazioni con DSN Sentry esposti; il tasso di successo nei test controllati e' stato dell'85% sui principali agenti di mercato. Sentry ha definito il problema "technically not defensible" e ha attivato un filtro su un payload specifico senza fix strutturale. L'Agentjacking aggiunge un vettore concreto allo spazio dei rischi di sandboxing: mentre il contenimento a livello OS (gVisor, Seatbelt, Bubblewrap, VM) limita il blast radius di codice arbitrario una volta eseguito, il vettore Sentry bypassa la sandbox agendo prima dell'esecuzione — influenzando la scelta del codice che l'agente decide di eseguire. La mitigazione pratica e' aggiungere un passaggio di revisione umana tra l'output degli strumenti di error tracking e qualsiasi agente a esecuzione autonoma, e trattare tutto l'output di questi strumenti come input non fidato anche se proviene dall'interno del perimetro aziendale. [Digest 2026-06-28](../../digest/2026/06/28.md)
 
 ### 2026-06-23
 
