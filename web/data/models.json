@@ -1,25 +1,23 @@
 {
   "meta": {
-    "lastUpdated": "2026-06-21",
+    "lastUpdated": "2026-06-28",
     "generatedBy": "Claude Code Routine — ai-deepdive-weekly-radar",
     "sourcesChecked": [
-      "https://www.anthropic.com/news/fable-mythos-access",
-      "https://www.anthropic.com/news/claude-opus-4-8",
       "https://platform.claude.com/docs/en/about-claude/models/overview",
-      "https://platform.claude.com/docs/en/about-claude/pricing",
-      "https://www.vellum.ai/blog/claude-opus-4-8-benchmarks-explained",
-      "https://openai.com/api/pricing/",
+      "https://www.anthropic.com/news/introducing-claude-tag",
+      "https://openai.com/index/previewing-gpt-5-6-sol/",
+      "https://openai.com/index/introducing-chatgpt-go/",
       "https://help.openai.com/en/articles/9624314-model-release-notes",
-      "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/",
       "https://x.ai/news",
       "https://docs.x.ai/developers/release-notes",
       "https://arena.ai/leaderboard/text",
-      "https://arena.ai/blog/leaderboard-changelog/",
-      "https://www.morphllm.com/claude-benchmarks",
-      "https://benchlm.ai/benchmarks/gpqa",
+      "https://www.kimi.com/resources/kimi-k2-7-code",
+      "https://platform.kimi.ai/docs/pricing/chat-k27-code",
+      "https://artificialanalysis.ai/models/glm-5-2",
+      "https://openrouter.ai/z-ai/glm-5.2",
       "https://artificialanalysis.ai/"
     ],
-    "nextScheduledUpdate": "2026-06-28T08:00:00+02:00",
+    "nextScheduledUpdate": "2026-07-05T08:00:00+02:00",
     "benchmarkLinks": [
       {
         "name": "Hugging Face — LLM Leaderboard",
@@ -81,7 +79,7 @@
       "provider": "OpenAI",
       "name": "GPT-5.5",
       "releaseDate": "2026-04-24",
-      "tagline": "Il modello multimodale piu' versatile, con l'ecosistema piu' ampio.",
+      "tagline": "Il modello multimodale piu' versatile, con l'ecosistema piu' ampio. GPT-5.6 Sol/Terra/Luna in preview limitata dal 26 giu 2026.",
       "contextWindow": "1M token (API) · 128K (chat)",
       "apiInputPer1M": 5,
       "apiOutputPer1M": 30,
@@ -324,61 +322,64 @@
     {
       "id": "kimi",
       "provider": "Moonshot AI",
-      "name": "Kimi K2.6",
-      "releaseDate": "2026-04-20",
+      "name": "Kimi K2.7 Code",
+      "releaseDate": "2026-06-12",
       "contextWindow": "256K token",
       "apiInputPer1M": 0.95,
       "apiOutputPer1M": 4,
       "supportsImages": true,
-      "supportsVideo": true,
+      "supportsVideo": false,
       "supportsCode": true,
       "supportsAgents": true,
       "strengths": [
         "Pensato per coding long-horizon e orchestrazione multi-agente",
-        "Input multimodale testo/immagine/video",
-        "Modalita thinking e tool calls",
-        "Cache input economica (~0.16/M)"
+        "Input multimodale testo/immagine nativo (encoder vision integrato)",
+        "Modalita thinking sempre attiva con tool calls",
+        "Riduzione uso token thinking ~30% rispetto a K2.6",
+        "Open-weight: pesi disponibili su Hugging Face"
       ],
       "weaknesses": [
         "Context 256K, sotto la soglia 1M dei top model",
-        "Prezzo output 4/M variabile per provider"
+        "Max output 16K token (molto inferiore ai flagship)",
+        "Solo testo/immagine: nessun input video"
       ],
       "bestFor": [
         "Coding long-horizon e UI/UX generation",
         "Orchestrazione multi-agente",
-        "Workflow agentici"
+        "Workflow agentici a basso costo"
       ],
-      "verdict": "Modello multimodale Moonshot orientato a coding long-horizon e multi-agente, con context da 256K.",
+      "verdict": "Open-weight MoE di Moonshot AI (1T param, 32B attivi) per coding long-horizon; K2.7 Code migliora l'efficienza del reasoning con ~30% di token thinking in meno rispetto a K2.6.",
       "lmarenaRank": 0,
       "domain": "moonshot.ai"
     },
     {
       "id": "glm",
       "provider": "Z.AI",
-      "name": "GLM-5.1",
-      "releaseDate": "2026-04-07",
-      "contextWindow": "203K token",
-      "apiInputPer1M": 0.98,
-      "apiOutputPer1M": 3.08,
+      "name": "GLM-5.2",
+      "releaseDate": "2026-06-16",
+      "contextWindow": "1M token",
+      "apiInputPer1M": 1.40,
+      "apiOutputPer1M": 4.40,
       "supportsImages": false,
       "supportsVideo": false,
       "supportsCode": true,
       "supportsAgents": true,
       "strengths": [
-        "Forte su planning agentico e workflow long-horizon",
-        "Reasoning backend e self-correction iterativo",
-        "Linea GLM-5 con pesi aperti e prezzo competitivo"
+        "Context window saltato da 203K a 1M token (salto generazionale)",
+        "SWE-bench Pro 62.1%: supera GPT-5.5 (58.6%) sul coding agentico",
+        "Open-weight MIT: pesi disponibili per self-hosting",
+        "MoE 753B param totali, 40B attivi; max output 128K token"
       ],
       "weaknesses": [
-        "Context 203K, inferiore ai flagship da 1M",
-        "Supporto multimodale immagini non confermato ufficialmente per questa variante"
+        "Solo testo: nessun supporto multimodale immagini/video",
+        "Prezzo input aumentato rispetto a GLM-5.1 ($1.40 vs $0.98 per 1M)"
       ],
       "bestFor": [
+        "Coding agentico long-horizon su documenti ampi",
         "Agenti per systems design complessi",
-        "Backend reasoning",
-        "Workflow long-horizon a basso costo"
+        "Deployment self-hosted open-weight a costo controllato"
       ],
-      "verdict": "Flagship Z.AI della serie GLM-5, focalizzato su agentic planning e systems design complessi.",
+      "verdict": "GLM-5.2 (Z.AI, giu 2026): salto netto su context (203K→1M), SWE-bench Pro 62.1% (supera GPT-5.5), open-weight MIT 753B/40B attivi. Avanti su planning vs Kimi K2.7 Code.",
       "lmarenaRank": 0,
       "domain": "z.ai"
     }
@@ -396,9 +397,10 @@
         "Memory cross-chat",
         "Canvas (editing collaborativo testo/codice)",
         "Generazione immagini",
-        "Modello core GPT-5.5 (GPT-5.2 rimosso il 12 giu 2026; GPT-4.5 in pensione il 27 giu 2026)"
+        "Modello core GPT-5.5 (GPT-5.2 rimosso il 12 giu 2026; GPT-4.5 ritirato il 26 giu 2026)",
+        "GPT-5.6 Sol/Terra/Luna in preview limitata dal 26 giu 2026 (Sol $5/$30, Terra $2.50/$15, Luna $1/$6 per 1M token)"
       ],
-      "tierGratuito": "Si. Free con limiti: circa 10 messaggi con GPT-5.5 ogni 5 ore (rolling window), poi fallback automatico alla versione mini del modello.",
+      "tierGratuito": "Si. Free con limiti: circa 10 messaggi con GPT-5.5 ogni 5 ore (rolling window), poi fallback automatico alla versione mini del modello. ChatGPT Go: $8/mese per accesso espanso con piu' messaggi e upload.",
       "caveat": "Su Free la finestra di accesso al modello full e' stretta (~10 msg/5h) e si scende al modello mini. I file su Projects/GPT consumano lo storage condiviso (cap 25 GB utente) e la rate di upload e' limitata.",
       "sweetSpot": "Assistente versatile da pubblicare e condividere con piu' utenti via Custom GPT."
     },
@@ -415,6 +417,7 @@
         "Claude Design (research preview, Pro+)",
         "Connettori MCP (Drive, Gmail, Notion, ecc.)",
         "Dynamic workflows su Claude Code (multi-step agentico con sottoagenti paralleli)",
+        "Claude Tag (beta Enterprise/Team, 23 giu 2026): agente @Claude in Slack con identita' condivisa, memoria e modalita' ambient proattiva",
         "Modello Opus 4.8 (attivo dal 28 mag 2026; Fable 5 sospeso il 12 giu 2026 per direttiva export-control USA)"
       ],
       "tierGratuito": "Si. Free include accesso a Claude e Artifacts con limiti di utilizzo giornalieri.",
@@ -1300,6 +1303,10 @@
           "value": 69.2
         },
         {
+          "modelId": "glm",
+          "value": 62.1
+        },
+        {
           "modelId": "qwen",
           "value": 60.6
         },
@@ -1378,6 +1385,20 @@
     }
   ],
   "changelog": [
+    {
+      "date": "2026-06-28",
+      "summary": "Kimi aggiornato a K2.7 Code (12 giu 2026): open-weight MoE 1T param/32B attivi, 256K context, $0.95/$4 per 1M, thinking sempre attivo con ~30% di token thinking in meno vs K2.6; supportsVideo aggiornato a false (solo testo/immagine). GLM aggiornato a GLM-5.2 (16 giu 2026): salto context 203K→1M, SWE-bench Pro 62.1% (supera GPT-5.5 58.6%), $1.40/$4.40 per 1M, open-weight MIT 753B/40B attivi, max output 128K; score aggiunto in benchmark swe-bench-pro (nuovo #2 dopo Claude). GPT-5.6 Sol/Terra/Luna (OpenAI) in preview limitata dal 26 giu 2026: Sol $5/$30, Terra $2.50/$15, Luna $1/$6 per 1M; GPT-4.5 ritirato il 26 giu 2026. ChatGPT Go: nuovo piano OpenAI a $8/mese per accesso espanso. Claude Tag (Anthropic, 23 giu 2026): agente @Claude per Slack in beta Enterprise/Team con identita' condivisa, memoria cross-canale e modalita' ambient proattiva. Nessuna variazione rilevante per Claude Opus 4.8, Gemini 3.5 Flash, Grok 4.3, DeepSeek V4 Pro, Qwen 3.7-Max, Mistral Medium 3.5, Llama 4.",
+      "sources": [
+        "https://www.kimi.com/resources/kimi-k2-7-code",
+        "https://platform.kimi.ai/docs/pricing/chat-k27-code",
+        "https://openrouter.ai/z-ai/glm-5.2",
+        "https://artificialanalysis.ai/models/glm-5-2",
+        "https://openai.com/index/previewing-gpt-5-6-sol/",
+        "https://openai.com/index/introducing-chatgpt-go/",
+        "https://www.anthropic.com/news/introducing-claude-tag",
+        "https://arena.ai/leaderboard/text"
+      ]
+    },
     {
       "date": "2026-06-21",
       "summary": "AGGIORNAMENTO CRITICO — Sospensione Fable 5: il 12 giu 2026 il governo USA ha emesso una direttiva export-control che impone la sospensione di ogni accesso a Claude Fable 5 e Mythos 5 da parte di qualsiasi straniero, dentro e fuori gli USA. Anthropic ha disabilitato l'accesso globale per tutti gli utenti per garantire la conformita'; nessuna data di ripristino al 21 giu 2026. Dal 22 giu 2026 Fable 5 esce dai piani Claude inclusi (accesso solo a crediti quando e se ripristinato). Modello `claude` aggiornato a Claude Opus 4.8 (rilasciato 28 mag 2026, ora il modello Anthropic attivo): SWE-Bench Pro 69.2% (+10 pp su GPT-5.5), OSWorld 83.4%, GPQA Diamond 93.6%, USAMO 2026 96.7% (+27 pp su Opus 4.7); API standard $5/$25 per 1M token (meta' di Fable 5). #1 su LMArena overall (~1510 ELO) e coding arena. App claude.ai e Claude Code aggiornate a Opus 4.8. Benchmark scores per modello `claude` aggiornati (SWE-Bench Pro 80.3%→69.2%, OSWorld 85.0%→83.4%, GPQA Diamond 94.5%→93.6%). OpenAI: GPT-5.2 rimosso da ChatGPT il 12 giu (utenti migrati automaticamente a GPT-5.5); GPT-4.5 in pensione il 27 giu 2026. Nessuna variazione rilevante per Gemini 3.5 Flash, Grok 4.3, DeepSeek V4 Pro, Qwen 3.7-Max, Mistral Medium 3.5, Kimi K2.6, GLM-5.1, Llama 4.",
