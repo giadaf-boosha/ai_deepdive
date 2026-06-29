@@ -3,8 +3,8 @@ name: Large Language Model
 aliases: [LLM, modello linguistico di grandi dimensioni, foundation model]
 categoria: architettura
 created: 2026-04-28
-last_updated: 2026-06-15
-mentions_count: 21
+last_updated: 2026-06-29
+mentions_count: 23
 ---
 
 # Large Language Model
@@ -166,3 +166,7 @@ MiniMax M3 open weights pubblicati su Hugging Face (~11 giugno, confermati oggi)
 ### 2026-06-12
 
 DiffusionGemma (Google, 10 giugno, 13+ fonti) arricchisce il panorama degli LLM open con la prima architettura di text diffusion da un lab frontier. Il modello e' distinto dagli LLM autoregressivi convenzionali: usa attention bidirezionale invece di causale e genera testo tramite denoising iterativo parallelo anziche' decodifica sequenziale. Il suo posizionamento nel landscape degli LLM open e' come alternativa di throughput (4x piu' veloce) con compromesso di qualita' (gap di 19 punti su AIME 2026 rispetto a Gemma 4 autoregressivo). OpenAI estende la distribuzione dei propri modelli frontier alla piattaforma Oracle OCI (10 giugno, 7 fonti): con questo accordo, tutti i principali hyperscaler cloud (AWS, Google Cloud Vertex, Azure, Oracle OCI) ospitano modelli frontier OpenAI, consolidando il pattern di distribuzione multi-cloud diventato standard di rilascio nel 2026. Il landscape degli LLM open a giugno 2026 include ora un nuovo paradigma architetturale (text diffusion) accanto a MoE sparse (MiniMax M3, Mixtral) e dense (LLaMA 4, Qwen3). [Digest 2026-06-12](../../digest/2026/06/12.md)
+
+### 2026-06-29
+
+Due sviluppi aggiornano il landscape degli LLM frontier e open-weight. GLM-5.2 (Zhipu AI/Z.ai, 28 giugno, 7 fonti: Semgrep, TechTimes, explainx.ai, cryptopolitan, letsdatascience, trendingtopics.eu, Digg) e' il nuovo modello flagship di Zhipu AI con licenza MIT, architettura MoE a 744B totali e 40B parametri attivi, contesto nativo da 1M token. Il risultato piu' rilevante e' il benchmark Semgrep su IDOR detection: F1 39% contro 32% di Claude Mythos — primo caso documentato in cui un modello open-weight supera un frontier Anthropic-class su un task di security specifico. Su CyBT-CTF il modello pareggia Opus 4.8. Il lancio di GLM-5.2 conferma il pattern gia' tracciato da MiniMax M3 (coperto il 15 giugno): la differenza di qualita' tra frontier closed e migliori open continua a ridursi su benchmark specializzati, con i modelli open-weight cinesi a guidare la convergenza. Gemini 3.5 Pro (Google, copertura mancata dal 25-26 giugno, 6 fonti: Business Insider, Reuters, cryptobriefing, analyticsinsight, investing.com, newsbytesapp) slitta da fine giugno a luglio 2026. Il contesto: Gemini 3.5 Flash e' gia' in produzione dal 20 maggio (coperto digest 05-20); Gemini 3.5 Pro e' il flagship della generazione con finestra di contesto 2M token. Il rinvio e' attribuito a feedback di early tester su benchmark di performance interni non soddisfacenti — primo caso documentato di posticipo di un flagship Google citando i propri benchmark interni come ragione. [Digest 2026-06-29](../../digest/2026/06/29.md)

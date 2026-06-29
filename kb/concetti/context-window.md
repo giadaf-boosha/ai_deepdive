@@ -3,8 +3,8 @@ name: Context window
 aliases: [context window, finestra di contesto, finestra contestuale, context length]
 categoria: architettura
 created: 2026-04-28
-last_updated: 2026-06-20
-mentions_count: 7
+last_updated: 2026-06-29
+mentions_count: 8
 ---
 
 # Context window
@@ -120,3 +120,7 @@ Google conferma (TechTimes 6 giugno + 3 fonti secondarie: codersera.com, ofox.ai
 ### 2026-06-01
 
 Mese intenso di rilasci che confermano il long context come terreno competitivo. Sul fronte modelli: Mistral Medium 3.5 (256k, [01.md](../../digest/2026/05/01.md)), IBM Granite 4.1 con 512k token nativi ([05.md](../../digest/2026/05/05.md)), GPT-Realtime-2 salito da 32k a 128k ([08.md](../../digest/2026/05/08.md)), Gemini 3.5 Flash con 1M token nativo a Google I/O ([20.md](../../digest/2026/05/20.md)), Qwen3.7-Max con 1M token e run autonome fino a 35 ore con 1.000+ tool call ([23.md](../../digest/2026/05/23.md)), Grok Build 0.1 (256k, cached $0,20/1M, [26.md](../../digest/2026/05/26.md)). Due novita' strutturali oltre i numeri di finestra: le Dynamic Workflows di Claude Opus 4.8, che spostano il coordinamento di task multi-step fuori dal context via orchestrazione di subagenti ([29.md](../../digest/2026/05/29.md)), e l'hardware per il long context locale con Nvidia RTX Spark (128 GB unificati, context fino a 1M su laptop, [06/01.md](../../digest/2026/06/01.md)). Sul lato efficienza: il paper SOL sul compute adattivo per token ([13.md](../../digest/2026/05/13.md)) e l'acquisizione di Eigen AI (AWQ) da parte di Nebius ([03.md](../../digest/2026/05/03.md)). Aggiornati tabella modelli, sezioni Come funziona e Varianti, aggiunto Esempio 4 e una nota operativa sull'esternalizzazione dello stato.
+
+### 2026-06-29
+
+CompressKV (arXiv:2606.24467, 23 giugno, 5 fonti: arXiv abs/HTML/OpenReview/Semantic Scholar/moonlight.io) affronta il problema dell'esplosione della KV cache su context lunghi con un approccio basato su Semantic Retrieval Heads: le teste di attenzione che eseguono retrieval semantico vengono identificate e mantenute con KV cache completa; le altre vengono compresse o eliminate. Il risultato misurato e' 97% di qualita' con 3% della dimensione originale della KV cache — riduzione di oltre 30x. Per il concetto di context window, l'implicazione e' diretta: la barriera pratica all'utilizzo di contesti da 1M token non e' solo il limite dichiarato del modello ma la memoria GPU richiesta dalla KV cache a runtime (vedi sezione Come funziona). CompressKV riduce questa barriera di un ordine di grandezza, avvicinando il context window lungo nominalmente dichiarato alla finestra effettivamente usabile in produzione senza hardware dedicato. Il paper si inserisce in un filone di ottimizzazione della KV cache che include GQA (condivisione key/value tra heads), PagedAttention (vLLM, gestione paginata), KVarN (quantizzazione 2-bit, coperto digest 07 giugno) e MiniMax MSA (sparsita' blockwise, coperto digest 15 giugno): CompressKV aggiunge la dimensione della selezione strutturale per testa, invece di applicare la stessa compressione uniformemente a tutte le posizioni. [Digest 2026-06-29](../../digest/2026/06/29.md)

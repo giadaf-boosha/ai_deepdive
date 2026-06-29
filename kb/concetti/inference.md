@@ -3,8 +3,8 @@ name: Inference
 aliases: [inference, inferenza, serving, generation, decoding]
 categoria: infrastruttura
 created: 2026-04-28
-last_updated: 2026-06-26
-mentions_count: 54
+last_updated: 2026-06-29
+mentions_count: 56
 ---
 
 # Inference
@@ -216,3 +216,7 @@ Due sviluppi distinti ampliano il quadro dell'inference enterprise. Primo, Grok 
 ### 2026-06-26
 
 OpenAI e Broadcom hanno annunciato il 24 giugno Jalapeño, primo ASIC custom per inferenza LLM di OpenAI (copertura mancata dal 24 giugno). Il chip e' reticle-sized, il ciclo design-to-tape-out di 9 mesi e' un record di settore. L'architettura ottimizza il movimento dati e il bilanciamento compute/memory/networking, con risparmio stimato del ~50% rispetto alle GPU correnti per i workload di inferenza OpenAI. Jalapeño esegue GPT-5.3-Codex-Spark in laboratorio a frequenza e potenza di produzione. Il deployment e' previsto fine 2026 in partnership con Microsoft per data center a scala gigawatt. Il punto metodologico piu' rilevante e' che il processo di design stesso e' stato accelerato usando i modelli OpenAI: l'AI ha contribuito alla progettazione del silicio che la eseguira', chiudendo il primo ciclo documentato di hardware design assistito dal modello che vi gira sopra. Il chip segna l'ingresso di OpenAI nella categoria dei provider con silicio proprietario, accanto a Google (TPU), Apple (Neural Engine), Amazon (Trainium/Inferentia) e Meta (MTIA). Per chi progetta architetture di inference: Jalapeño e' ottimizzato per i workload specifici di OpenAI — la trasferibilita' delle ottimizzazioni ad altri modelli e' ancora da documentare. [Digest 2026-06-26](../../digest/2026/06/26.md)
+
+### 2026-06-29
+
+Due sviluppi distinti avanzano il fronte dell'ottimizzazione dell'inference. CompressKV (arXiv:2606.24467, 23 giugno, 5 fonti: arXiv abs/HTML/OpenReview/Semantic Scholar/moonlight.io) introduce Semantic Retrieval Heads, un meccanismo che identifica le teste di attenzione che eseguono retrieval semantico e le separa dalle altre. Il risultato misurato: 97% di performance mantenuta riducendo la KV cache al 3% della dimensione originale — riduzione di oltre 30x. Il valore tecnico e' complementare a KVarN (coperto digest 07 giugno, quantizzazione a 2-bit) e a MiniMax MSA (coperto digest 15 giugno, sparsita' blockwise): invece di quantizzare o distribuire l'attention su meno posizioni, CompressKV elimina la KV cache per le teste che non fanno retrieval semantico, mantenendola solo dove serve. L'impatto pratico per chi costruisce pipeline con context lungo: a 97% di qualita' con 3% di KV cache, la memoria richiesta per sequenze da 1M token scende da decine di GB a pochi GB, rendendo l'inference su context lungo economicamente diversa dall'attuale. Qualcomm avvia trattative per acquisire Tenstorrent per $8-10 miliardi (copertura mancata dal 15-16 giugno, 6 fonti: Reuters, Yahoo Finance, The Register, TechTimes, gurufocus, DataCenterDynamics). Tenstorrent produce chip RISC-V open-source per l'inference AI — RISC-V non e' soggetto alle EAR, rendendolo strategicamente diverso da GPU Nvidia. L'acquisizione si inserirebbe nella strategia Qualcomm di costruire uno stack end-to-end senza dipendenza da Nvidia: Modular/MAX per il software (acquisita il 19 giugno, coperto digest 25 giugno), Tenstorrent per il silicio alternativo, Snapdragon X per l'edge. E' il terzo pilastro della strategia AI hardware di Qualcomm: il competitor piu' diretto all'egemonia Nvidia nell'inference stack. [Digest 2026-06-29](../../digest/2026/06/29.md)

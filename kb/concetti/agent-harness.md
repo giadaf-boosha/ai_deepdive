@@ -3,8 +3,8 @@ name: Agent harness
 aliases: [agent harness, harness, scaffolding agentico, agent runtime]
 categoria: infrastruttura
 created: 2026-04-28
-last_updated: 2026-06-19
-mentions_count: 14
+last_updated: 2026-06-29
+mentions_count: 15
 ---
 
 # Agent harness
@@ -178,3 +178,7 @@ A partire dal 23 giugno 2026, l'accesso a Fable 5 esce dai piani Pro/Max/Team/En
 ### 2026-06-19
 
 CORREZIONE ai digest del 16 e 17 giugno: il pool di crediti separato per Agent SDK non e' mai entrato in vigore. Anthropic ha sospeso il cambiamento il 15 giugno 2026 — stesso giorno previsto per l'entrata in vigore — comunicandolo via email agli utenti ("nothing changes for now"). Agent SDK, `claude -p` e GitHub Actions continuano a drenare dal pool standard della subscription senza pool separato. Le entry del 16 e 17 giugno in questa sezione descrivevano uno stato che non e' mai diventato operativo. Le cause della retromarcia: pressione developer (il pool a tariffe API avrebbe aumentato i costi per gli heavy user rispetto alla subscription flat), price war con OpenAI (che mantiene la propria subscription inclusiva dell'Agent SDK), e contesto pre-IPO. Il segnale per chi progetta harness e' che il modello finanziario del layer agentico rimane in corso di definizione; qualsiasi progettazione di cost governance per harness su subscription dovrebbe essere considerata provvisoria fino a conferma ufficiale. [Digest 2026-06-19](../../digest/2026/06/19.md)
+
+### 2026-06-29
+
+Google chiude Gemini CLI (copertura mancata dal 18 giugno, 6 fonti: The Register, The New Stack, aibuilderclub, byteiota, TechTimes, cloudnews.tech): il progetto open-source Apache 2.0, con 6.000 pull request aperte da contributor esterni, viene rimpiazzato da Antigravity CLI, un fork closed-source scritto in Go senza partecipazione della community. L'episodio e' rilevante per il concetto di harness per due ragioni. Prima, il pattern open/closed-source nelle CLI agentiche: Gemini CLI aveva lanciato il 25 maggio come CLI agentica open-source, generando 6.000 PR di community in tre settimane; la chiusura del repo e il lancio di Antigravity CLI senza migrare nessuna delle 6.000 PR e' un caso documentato di "bait-and-switch" (The Register), che solleva la questione del rischio per chi investe in contribuzioni a harness open-source di grandi vendor. Seconda, il pattern architetturale: Antigravity CLI in Go e' distinto dall'SDK Python/TypeScript di Google Antigravity 2.0 (lanciato il 20 maggio, coperto digest 05-20); Google gestisce ora tre harness separati (Antigravity CLI, Antigravity SDK, Vertex AI Agent Builder) con gradi di apertura diversi, illustrando la tensione tra harness di sviluppo open e harness di produzione closed. La decisione di non migrare le PR aperte conferma su scala di prodotto il finding del paper "Is Grep All You Need?": l'harness specifico — non solo il modello — e' la variabile che il vendor vuole controllare. [Digest 2026-06-29](../../digest/2026/06/29.md)

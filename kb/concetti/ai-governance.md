@@ -3,8 +3,8 @@ name: AI Governance
 aliases: [AI governance, governance AI, export control AI, regolazione AI, AI regulation, AI policy, BIS AI, EAR AI models]
 categoria: regolazione
 created: 2026-06-14
-last_updated: 2026-06-28
-mentions_count: 46
+last_updated: 2026-06-29
+mentions_count: 47
 ---
 
 # AI Governance
@@ -129,3 +129,7 @@ Due sviluppi del 26-28 giugno aggiungono nuove dimensioni alla governance dei fr
 ### 2026-06-27
 
 La scadenza congressuale del 26 giugno per la risposta di Lutnick e' passata senza risposta pubblica: nessuna giustificazione formale della direttiva BIS sul ban Fable 5/Mythos 5 e' stata resa disponibile. E' il giorno 15 della sospensione. Due sviluppi paralleli. Primo, una lettera aperta firmata da oltre 100 esperti di cybersecurity (organizzata da Alex Stamos, ex CSO Facebook, ora Corridor, indirizzata a Lutnick e al National Cyber Director Sean Cairncross) sostiene che il ban penalizza i difensori senza ridurre il rischio reale: Fable 5 e' efficace nell'individuare falle software ma non "unicamene superiore" agli strumenti gia' accessibili agli avversari; toglierlo ai blue team e' controproducente. Rep. Garbarino (R-NY, Chair House Homeland Security) conferma l'approccio bilanciato: il governo ha ragione sul principio, ma la misura non deve svantaggiare i difensori americani. Secondo, il rilascio di GPT-5.6 Sol/Terra/Luna (26-27 giugno) sotto le stesse restrizioni governative di accesso limitato (~20 aziende approvate) segnala che il framework di vetting pre-release si estende beyond Anthropic: OpenAI stessa ha acconsentito su richiesta dell'Amministrazione, dichiarando pero' che questo meccanismo "non dovrebbe diventare il default a lungo termine". Il caso Fable 5 ha introdotto de facto un meccanismo di approvazione governativa pre-commercializzazione per i modelli frontier; il suo consolidamento come pattern (non eccezione) e' il segnale di governance piu' rilevante emerso questa settimana. Prossimi marker: 8 luglio (verifica ID Persona Identities), 1 agosto (EO 14179-A), esito ingiunzione Legion LegalTech. [Digest 2026-06-27](../../digest/2026/06/27.md)
+
+### 2026-06-29
+
+Fable 5 — Giorno 17 e scadenza Polymarket. Il mercato Polymarket "Fable 5 restored by June 30" e' scaduto NO: la probabilita' era prezzata al 20-25% nelle ultime 48 ore. Fable 5 rimane sospeso per il diciassettesimo giorno consecutivo; l'unica apertura formale rimane il carve-out Annex A per Mythos 5 firmato da Lutnick il 26 giugno (infrastruttura critica + agenzie federali, coperto digest 28 giugno). Il prossimo marker strutturale e' l'8 luglio: entrata in vigore del requisito di verifica ID via Persona Identities (privacy policy aggiornata, coperta digest 18 giugno), che crea la capacita' tecnica per distinguere cittadini USA da foreign national e rende possibile un ripristino selettivo di Fable 5 per gli utenti verificati senza revoca formale della direttiva BIS. Parallelamente, il rilascio di GLM-5.2 (Zhipu AI, 28 giugno, licenza MIT) con performance pari o superiori a Claude Mythos su benchmark cyber (IDOR F1 39% vs 32%, pareggio con Opus 4.8 su CyBT-CTF) indebolisce il razionale della direttiva BIS: il modello open-weight cinese senza export control raggiunge la stessa soglia di capacita' su security task che ha motivato la sospensione. E' il primo segnale empirico che il ban non ha l'effetto atteso di ridurre la disponibilita' globale di capacita' simili. Il caso Legion LegalTech (ricorso depositato il 23 giugno, ingiunzione preliminare richiesta) resta il percorso giuridico principale per una revoca anticipata. Prossimi marker: 8 luglio (Persona Identities), 1 agosto (EO 14179-A). [Digest 2026-06-29](../../digest/2026/06/29.md)
