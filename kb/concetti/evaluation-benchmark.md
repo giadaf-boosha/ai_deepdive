@@ -3,8 +3,8 @@ name: Evaluation / Benchmark AI
 aliases: [benchmark, eval, evaluation, valutazione LLM, AI benchmark, leaderboard]
 categoria: tecnica
 created: 2026-04-30
-last_updated: 2026-06-29
-mentions_count: 44
+last_updated: 2026-06-30
+mentions_count: 45
 ---
 
 # Evaluation / Benchmark AI
@@ -177,3 +177,7 @@ Due sviluppi aprono una nuova dimensione nella valutazione dei modelli: l'integr
 ### 2026-06-29
 
 Due sviluppi aggiornano il panorama dei benchmark nel dominio della sicurezza e del coding. GLM-5.2 (Zhipu AI, 28 giugno, 7 fonti: Semgrep/TechTimes/explainx.ai/cryptopolitan/letsdatascience/trendingtopics.eu/Digg) produce il primo risultato di benchmark open-weight cinese che supera Claude Mythos su un task di sicurezza specifico: IDOR (Insecure Direct Object Reference) detection F1 score 39% contro 32% di Claude, con performance pari a Opus 4.8 su CyBT-CTF. Il risultato metodologico e' rilevante: Semgrep — lo strumento usato per la misurazione — e' un benchmark di analisi statica del codice in produzione, non un dataset curato ad-hoc. Che un modello open-weight MIT superi il modello frontier Anthropic in un task di security specifico illustra la frammentazione del landscape dei benchmark: non c'e' un singolo modello dominante su tutti i benchmark di sicurezza, e la posizione di leadership e' task-specific. Gemini 3.5 Pro (Google, copertura mancata dal 25-26 giugno, 6 fonti: Business Insider/Reuters/cryptobriefing/analyticsinsight/investing.com/newsbytesapp) slitta da fine giugno a luglio 2026: il rinvio e' attribuito a feedback di early tester su performance di benchmark in-house non soddisfacenti. E' il primo caso documentato di un modello Google flagship posticipato citando i propri benchmark interni come motivo — inversione del pattern in cui i lab posticipano per ragioni di safety o di capacita' inferiori alle aspettative. Il dato aggiunge una variabile: i benchmark interni dei lab diventano uno strumento di decisione pubblica sul timing di rilascio, non solo di comunicazione post-lancio. [Digest 2026-06-29](../../digest/2026/06/29.md)
+
+### 2026-06-30
+
+Gemini 2.5 Pro con Deep Think (22 giugno, missed coverage nel digest) stabilisce nuovi record su benchmark science-intensive: GPQA Diamond 82,4% (precedente SOTA: Fable 5 79,1%, GPT-5.5 76,3%), MMLU-Pro 89,8%, posizione di testa su Humanity's Last Exam. Il modello usa Deep Think, un regime di extended inference che genera ipotesi parallele e le confronta prima della risposta finale — una variante del parallel sampling come strategia di test-time compute, applicata per la prima volta da Google a livello di modalita' UI/prodotto e non solo in sperimentazione interna. Il dato strutturale piu' rilevante: GPQA Diamond a 82,4% lascia un gap di soli 4,6 punti percentuali rispetto alla performance media di esperti umani specializzati (87%), su un benchmark progettato per essere difficile per i non-specialisti. Il caso editoriale e' altrettanto informativo: il lancio del 22 giugno e' stato oscurato dai contemporanei annunci Daybreak di OpenAI (GPT-5.5-Cyber, Patch the Planet) ed e' rimasto fuori dai digest per 8 giorni consecutivi, illustrando un limite del ciclo editoriale a 24 ore quando due annunci di rilievo cadono nello stesso giorno da lab diversi. [Digest 2026-06-30](../../digest/2026/06/30.md)
