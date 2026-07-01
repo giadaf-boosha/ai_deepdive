@@ -3,8 +3,8 @@ name: Evaluation / Benchmark AI
 aliases: [benchmark, eval, evaluation, valutazione LLM, AI benchmark, leaderboard]
 categoria: tecnica
 created: 2026-04-30
-last_updated: 2026-06-30
-mentions_count: 45
+last_updated: 2026-07-01
+mentions_count: 47
 ---
 
 # Evaluation / Benchmark AI
@@ -181,3 +181,7 @@ Due sviluppi aggiornano il panorama dei benchmark nel dominio della sicurezza e 
 ### 2026-06-30
 
 Gemini 2.5 Pro con Deep Think (22 giugno, missed coverage nel digest) stabilisce nuovi record su benchmark science-intensive: GPQA Diamond 82,4% (precedente SOTA: Fable 5 79,1%, GPT-5.5 76,3%), MMLU-Pro 89,8%, posizione di testa su Humanity's Last Exam. Il modello usa Deep Think, un regime di extended inference che genera ipotesi parallele e le confronta prima della risposta finale — una variante del parallel sampling come strategia di test-time compute, applicata per la prima volta da Google a livello di modalita' UI/prodotto e non solo in sperimentazione interna. Il dato strutturale piu' rilevante: GPQA Diamond a 82,4% lascia un gap di soli 4,6 punti percentuali rispetto alla performance media di esperti umani specializzati (87%), su un benchmark progettato per essere difficile per i non-specialisti. Il caso editoriale e' altrettanto informativo: il lancio del 22 giugno e' stato oscurato dai contemporanei annunci Daybreak di OpenAI (GPT-5.5-Cyber, Patch the Planet) ed e' rimasto fuori dai digest per 8 giorni consecutivi, illustrando un limite del ciclo editoriale a 24 ore quando due annunci di rilievo cadono nello stesso giorno da lab diversi. [Digest 2026-06-30](../../digest/2026/06/30.md)
+
+### 2026-07-01
+
+Stanford HAI AI Index Report 2026 (arXiv:2606.15708, hai.stanford.edu) fissa tre misurazioni di benchmark di valore strutturale. SWE-Bench Verified: dal 60% di gennaio 2025 al ~100% di fine 2025, in un anno. Il dato non e' un punto su una leaderboard ma un trend temporale che documenta la velocita' di saturazione di un benchmark agentico mainstream — SWE-Bench Verified e' passato da benchmark di riferimento per il coding agentico a benchmark saturato nel giro di dodici mesi, lo stesso ciclo di GLUE/SuperGLUE per il NLP classico (2-3 anni). E' il segnale piu' chiaro finora della velocita' con cui i benchmark agentici di generazione corrente diventano obsoleti. Adozione GenAI: il 53% della popolazione globale ha usato GenAI nei primi tre anni dalla sua diffusione di massa, contro il 20-25% che usava PC o internet nello stesso periodo dall'introduzione. Il paragone calibra le aspettative sull'adozione tecnologica: GenAI si diffonde a 2-3x la velocita' delle tecnologie precedenti sulla stessa finestra temporale. Valore per i consumatori USA: $172 miliardi annui; mediana del valore individuale triplicata tra 2025 e 2026. Queste misurazioni — adozione e valore percepito — si affiancano ai benchmark tecnici come metriche di valutazione dell'impatto reale dei sistemi AI, distinte dalla capacita' su task curati. Foundation Model Transparency Index: sceso da 58 a 40 punti. Il calo documenta che la trasparenza dichiarata dei principali lab e' diminuita nel 2025-2026, in controtendenza con l'aumento delle capacita' — il che introduce una tensione tra misurazione esterna (benchmark tecnici) e verificabilita' esterna (documentazione dei modelli). [Digest 2026-07-01](../../digest/2026/07/01.md)
