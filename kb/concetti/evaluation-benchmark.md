@@ -3,8 +3,8 @@ name: Evaluation / Benchmark AI
 aliases: [benchmark, eval, evaluation, valutazione LLM, AI benchmark, leaderboard]
 categoria: tecnica
 created: 2026-04-30
-last_updated: 2026-07-01
-mentions_count: 47
+last_updated: 2026-07-02
+mentions_count: 48
 ---
 
 # Evaluation / Benchmark AI
@@ -181,6 +181,10 @@ Due sviluppi aggiornano il panorama dei benchmark nel dominio della sicurezza e 
 ### 2026-06-30
 
 Gemini 2.5 Pro con Deep Think (22 giugno, missed coverage nel digest) stabilisce nuovi record su benchmark science-intensive: GPQA Diamond 82,4% (precedente SOTA: Fable 5 79,1%, GPT-5.5 76,3%), MMLU-Pro 89,8%, posizione di testa su Humanity's Last Exam. Il modello usa Deep Think, un regime di extended inference che genera ipotesi parallele e le confronta prima della risposta finale — una variante del parallel sampling come strategia di test-time compute, applicata per la prima volta da Google a livello di modalita' UI/prodotto e non solo in sperimentazione interna. Il dato strutturale piu' rilevante: GPQA Diamond a 82,4% lascia un gap di soli 4,6 punti percentuali rispetto alla performance media di esperti umani specializzati (87%), su un benchmark progettato per essere difficile per i non-specialisti. Il caso editoriale e' altrettanto informativo: il lancio del 22 giugno e' stato oscurato dai contemporanei annunci Daybreak di OpenAI (GPT-5.5-Cyber, Patch the Planet) ed e' rimasto fuori dai digest per 8 giorni consecutivi, illustrando un limite del ciclo editoriale a 24 ore quando due annunci di rilievo cadono nello stesso giorno da lab diversi. [Digest 2026-06-30](../../digest/2026/06/30.md)
+
+### 2026-07-02
+
+GeneBench-Pro (OpenAI, 30 giugno) introduce il primo benchmark sintetico per agenti AI su biologia computazionale con ground truth verificabile: 129 task su genomica, biologia quantitativa e medicina traslazionale, generati da data-generating process noti. La distinzione metodologica rispetto ai benchmark scientifici esistenti (LifeSciBench, NatureBench, AutoResearchBench) e' che ogni problema nasce da un processo generativo noto: il benchmark puo' valutare la correttezza rispetto al ground truth, regolare sistematicamente la difficolta' e verificare tramite ablation che le analisi plausibili ma errate effettivamente falliscano. I dataset presentati agli agenti sono deliberatamente rumorosi con un target estimand legato a una decisione clinica o biologica a valle. Risultati al lancio: GPT-5.6 Sol Pro 31,5% (top), GPT-5.6 Sol 28,7%, Claude Opus 4.8 16,0% (il piu' alto tra i modelli non-GPT). I due pattern di fallimento dominanti identificati dal benchmark sono gli stessi di NatureBench (digest 25 giugno): scelta metodologica errata e budget di compute insufficiente. OpenAI ha open-sourcato 50 domande rappresentative per benchmarking indipendente. Il lancio coincide con quello di Claude Science lo stesso 30 giugno: i due sono complementari — GeneBench-Pro misura il reasoning scientifico puro su task non riproducibili via pattern matching, Claude Science affronta lo stesso dominio come workflow infrastrutturale. [Digest 2026-07-02](../../digest/2026/07/02.md)
 
 ### 2026-07-01
 

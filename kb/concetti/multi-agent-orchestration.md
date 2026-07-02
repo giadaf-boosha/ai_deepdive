@@ -3,8 +3,8 @@ name: Multi-agent orchestration
 aliases: [multi-agent, sistema multi-agente, orchestrazione di agenti, agent swarm, subagenti, sub-agent orchestration]
 categoria: paradigma
 created: 2026-06-01
-last_updated: 2026-06-16
-mentions_count: 22
+last_updated: 2026-07-02
+mentions_count: 23
 ---
 
 # Multi-agent orchestration
@@ -105,6 +105,10 @@ La multi-agent orchestration e' passata da pattern di ricerca a feature di prodo
 ### 2026-06-13
 
 Claude Code v2.1.172 (10 giugno, 6 fonti) aggiunge una dimensione di profondita' alla topologia multi-agente: i subagenti possono ora avviare propri subagenti, abilitando gerarchie ricorsive fino a 5 livelli. Ogni nodo e' un'istanza agentica completa con context window, system prompt e model selection propri; il coordinamento risale per riepilogo, non per log integrale. Il pattern distingue due approcci di orchestrazione gerarchica: in Dynamic Workflows (Opus 4.8) la gerarchia e' scritta in uno script JavaScript esplicito e l'orchestratore radice mantiene visibilita' sull'intero albero; in questa nuova modalita' la gerarchia emerge dall'interazione del modello con i tool, ed e' potenzialmente non deterministica e piu' difficile da ispezionare. Sul lato ricerca, EurekAgent (arXiv 2606.13662, 11 giugno, Tsinghua + Zhipu AI) propone un approccio ortogonale: invece di ottimizzare la topologia degli agenti (chi coordina chi), ottimizza l'ambiente — permessi, artefatti, budget, supervisione umana — ottenendo nuovo SOTA su circle packing matematico con meno di $11 di API. La combinazione dei due segnali indica che la frontiera del design multi-agente si e' biforcata: da un lato l'ingegneria della gerarchia (chi spawna chi, quanti livelli), dall'altro l'ingegneria dell'ambiente che circonda gli agenti. [Digest 2026-06-13](../../digest/2026/06/13.md)
+
+### 2026-07-02
+
+Claude Science (Anthropic, 30 giugno) introduce l'architettura multi-agente piu' articolata finora nel dominio scientifico: un agente coordinatore riceve la richiesta del ricercatore in linguaggio naturale, la decompone in subtask e delega a sub-agenti specializzati per dominio (genomica, single-cell RNA sequencing, proteomica, biologia strutturale, cheminformatica). La distinzione rispetto ad altri sistemi multi-agente e' operativa: i dati grezzi restano sui sistemi dell'organizzazione (distribuzione locale su macOS/Linux o via SSH su cluster HPC), mentre i sub-agenti operano su 60+ database scientifici pre-configurati (NCBI, PDB, ChEMBL, UniProt). Il sistema gira su Claude Opus 4.8 senza capacita' aggiuntive rispetto all'API standard — il valore e' architetturale (workflow e topologia), non di inferenza. Claude Science porta la multi-agent orchestration nella ricerca scientifica come prodotto di workflow, non come demo research. [Digest 2026-07-02](../../digest/2026/07/02.md)
 
 ### 2026-06-16
 

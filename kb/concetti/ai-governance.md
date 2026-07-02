@@ -3,8 +3,8 @@ name: AI Governance
 aliases: [AI governance, governance AI, export control AI, regolazione AI, AI regulation, AI policy, BIS AI, EAR AI models]
 categoria: regolazione
 created: 2026-06-14
-last_updated: 2026-07-01
-mentions_count: 52
+last_updated: 2026-07-02
+mentions_count: 53
 ---
 
 # AI Governance
@@ -137,6 +137,10 @@ Fable 5 — Giorno 17 e scadenza Polymarket. Il mercato Polymarket "Fable 5 rest
 ### 2026-06-30
 
 Colorado AI Act — oggi e' la data di entrata in vigore originale della prima legge AI risk-based statale degli USA, che non entrera' mai in vigore nella sua forma originale. Il Governor Polis ha firmato il 14 maggio 2026 la SB 189, che rimuove integralmente dal Colorado Artificial Intelligence Act (SB 205, 2024) i requisiti core: duty of care contro la discriminazione algoritmica, risk management program obbligatori, impact assessment periodici per i sistemi ad alto rischio (impiego, housing, salute, educazione), private right of action per i consumatori. Li sostituisce con obblighi di disclosure e transparency verso i consumatori, conserva l'enforcement tramite solo Colorado AG, e sposta l'entrata in vigore al 1° gennaio 2027. Il risultato finale e' una legge risk-based che ha perso tutti i requisiti risk-based prima ancora di entrare in vigore. La revisione e' attribuita alla pressione combinata dell'EO federale del 2 giugno 2026 ("Promoting Advanced AI Innovation and Security", che assegna al governo federale la standardizzazione dell'AI regulation) e al lobbying di Amazon, Google, Microsoft e Anthropic (stima costo impact assessment: $5.000-$50.000 per sistema per ciclo). Il caso Colorado fissa il pattern definitivo della governance AI statale americana nel ciclo politico corrente: i requisiti che l'industria non tollera vengono rimossi prima ancora che la legge entri in vigore, sotto pressione combinata di lobby e preemption federale implicita. Il riferimento regolatorio USA per l'AI si e' definitivamente spostato dal modello risk-based EU-inspired verso un modello disclosure-based. Fable 5 — Giorno 18: nessun nuovo sviluppo rispetto al digest del 29 giugno; prossimo marker: 8 luglio (Persona Identities ID verification). [Digest 2026-06-30](../../digest/2026/06/30.md)
+
+### 2026-07-02
+
+La California (Governatore Newsom, 29 giugno) firma il primo accordo di adozione AI a scala statale negli USA: Claude disponibile a tutte le agenzie statali e ai governi locali (citta' e contee) tramite il portale centralizzato Statewide IT Shared Services del California Department of Technology, con sconto del 50%, formazione gratuita per i dipendenti pubblici e assistenza tecnica Anthropic. Il contratto copre circa 230.000 dipendenti statali. Il pattern di governance introdotto e' quello dello "statewide AI procurement" — primo caso documentato in cui un governo statale USA adotta un singolo strumento AI come piattaforma per l'intera pubblica amministrazione, non per singola agenzia o progetto pilota. Si inserisce sull'executive order californiano del marzo 2026 che aveva rafforzato i requisiti di civil rights e privacy negli acquisti pubblici di AI. Casi d'uso gia' attivi: Department of Motor Vehicles (customer service), California Department of Health Care Services (workflow interni). Questo accordo si affianca all'accordo Anthropic-Trump Administration del 30 giugno (ripristino Fable 5 con tre impegni formali) e configura un pattern dual-track nella governance AI di Anthropic: impegni formali con il governo federale (sicurezza, pre-disclosure) e contratti di fornitura con i governi statali (accesso, formazione, sconto). [Digest 2026-07-02](../../digest/2026/07/02.md)
 
 ### 2026-07-01
 
