@@ -3,8 +3,8 @@ name: Evaluation / Benchmark AI
 aliases: [benchmark, eval, evaluation, valutazione LLM, AI benchmark, leaderboard]
 categoria: tecnica
 created: 2026-04-30
-last_updated: 2026-07-02
-mentions_count: 48
+last_updated: 2026-07-03
+mentions_count: 49
 ---
 
 # Evaluation / Benchmark AI
@@ -189,3 +189,7 @@ GeneBench-Pro (OpenAI, 30 giugno) introduce il primo benchmark sintetico per age
 ### 2026-07-01
 
 Stanford HAI AI Index Report 2026 (arXiv:2606.15708, hai.stanford.edu) fissa tre misurazioni di benchmark di valore strutturale. SWE-Bench Verified: dal 60% di gennaio 2025 al ~100% di fine 2025, in un anno. Il dato non e' un punto su una leaderboard ma un trend temporale che documenta la velocita' di saturazione di un benchmark agentico mainstream — SWE-Bench Verified e' passato da benchmark di riferimento per il coding agentico a benchmark saturato nel giro di dodici mesi, lo stesso ciclo di GLUE/SuperGLUE per il NLP classico (2-3 anni). E' il segnale piu' chiaro finora della velocita' con cui i benchmark agentici di generazione corrente diventano obsoleti. Adozione GenAI: il 53% della popolazione globale ha usato GenAI nei primi tre anni dalla sua diffusione di massa, contro il 20-25% che usava PC o internet nello stesso periodo dall'introduzione. Il paragone calibra le aspettative sull'adozione tecnologica: GenAI si diffonde a 2-3x la velocita' delle tecnologie precedenti sulla stessa finestra temporale. Valore per i consumatori USA: $172 miliardi annui; mediana del valore individuale triplicata tra 2025 e 2026. Queste misurazioni — adozione e valore percepito — si affiancano ai benchmark tecnici come metriche di valutazione dell'impatto reale dei sistemi AI, distinte dalla capacita' su task curati. Foundation Model Transparency Index: sceso da 58 a 40 punti. Il calo documenta che la trasparenza dichiarata dei principali lab e' diminuita nel 2025-2026, in controtendenza con l'aumento delle capacita' — il che introduce una tensione tra misurazione esterna (benchmark tecnici) e verificabilita' esterna (documentazione dei modelli). [Digest 2026-07-01](../../digest/2026/07/01.md)
+
+### 2026-07-03
+
+"Can Agents Generalize to the Open World?" (arXiv:2607.01084, 1 luglio) introduce una tassonomia a 4 livelli per la valutazione della generalizzazione degli agenti in ambienti non visti: Perception (osservare lo stato del mondo), Interaction (agire sull'ambiente), Reasoning (pianificare e dedurre), Internalization (adattarsi a nuovi contesti). Il contributo centrale non e' la tassonomia ma la misura: sia il supervised fine-tuning (SFT) sia il reinforcement learning (RL) degradano le performance degli agenti in presenza di distributional shift — ovvero quando l'ambiente di test differisce statisticamente da quello di training. Il finding e' controintuitivo rispetto all'expectation che RL produca generalizzazione robusta: sull'insieme di benchmark open-world testati, sia SFT sia RL producono agenti che eccellono in-distribution ma collassano out-of-distribution. Questo ha rilevanza diretta per chi valuta agenti AI su benchmark curati: le performance su set di test fissi possono sopravvalutare sistematicamente la generalizzazione reale, in modo analogo a come SWE-Bench Verified ha saturato senza che gli agenti risolvessero i bug software fuori dal benchmark. Il paper propone cinque direzioni per colmare il gap: trasferimento cross-domain, meta-learning, esplorazione autonoma, human-in-the-loop, architetture world model. [Digest 2026-07-03](../../digest/2026/07/03.md)

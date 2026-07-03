@@ -3,8 +3,8 @@ name: Inference
 aliases: [inference, inferenza, serving, generation, decoding]
 categoria: infrastruttura
 created: 2026-04-28
-last_updated: 2026-06-29
-mentions_count: 56
+last_updated: 2026-07-03
+mentions_count: 58
 ---
 
 # Inference
@@ -220,3 +220,7 @@ OpenAI e Broadcom hanno annunciato il 24 giugno Jalapeño, primo ASIC custom per
 ### 2026-06-29
 
 Due sviluppi distinti avanzano il fronte dell'ottimizzazione dell'inference. CompressKV (arXiv:2606.24467, 23 giugno, 5 fonti: arXiv abs/HTML/OpenReview/Semantic Scholar/moonlight.io) introduce Semantic Retrieval Heads, un meccanismo che identifica le teste di attenzione che eseguono retrieval semantico e le separa dalle altre. Il risultato misurato: 97% di performance mantenuta riducendo la KV cache al 3% della dimensione originale — riduzione di oltre 30x. Il valore tecnico e' complementare a KVarN (coperto digest 07 giugno, quantizzazione a 2-bit) e a MiniMax MSA (coperto digest 15 giugno, sparsita' blockwise): invece di quantizzare o distribuire l'attention su meno posizioni, CompressKV elimina la KV cache per le teste che non fanno retrieval semantico, mantenendola solo dove serve. L'impatto pratico per chi costruisce pipeline con context lungo: a 97% di qualita' con 3% di KV cache, la memoria richiesta per sequenze da 1M token scende da decine di GB a pochi GB, rendendo l'inference su context lungo economicamente diversa dall'attuale. Qualcomm avvia trattative per acquisire Tenstorrent per $8-10 miliardi (copertura mancata dal 15-16 giugno, 6 fonti: Reuters, Yahoo Finance, The Register, TechTimes, gurufocus, DataCenterDynamics). Tenstorrent produce chip RISC-V open-source per l'inference AI — RISC-V non e' soggetto alle EAR, rendendolo strategicamente diverso da GPU Nvidia. L'acquisizione si inserirebbe nella strategia Qualcomm di costruire uno stack end-to-end senza dipendenza da Nvidia: Modular/MAX per il software (acquisita il 19 giugno, coperto digest 25 giugno), Tenstorrent per il silicio alternativo, Snapdragon X per l'edge. E' il terzo pilastro della strategia AI hardware di Qualcomm: il competitor piu' diretto all'egemonia Nvidia nell'inference stack. [Digest 2026-06-29](../../digest/2026/06/29.md)
+
+### 2026-07-03
+
+DSpark (DeepSeek + Peking University, 27 giugno, arXiv:2606.19348) porta il confidence-scheduled speculative decoding in produzione su DeepSeek-V4-Pro e V4-Flash: il draft model propone 6 token per passo, il modello target verifica in un singolo forward pass parallelo, con la soglia di accettazione adattata dinamicamente alla confidenza del draft. Il risultato misurato e' uno speedup del 57–85% per singolo utente e un aumento del throughput batch del 51–400%. Il checkpoint e' disponibile su Hugging Face con licenza MIT. Il contributo tecnico rispetto allo speculative decoding standard (Leviathan et al., 2022) e' la schedulazione adattiva della confidenza: invece di una soglia fissa di accettazione, DSpark calibra il budget di verifica in base all'incertezza stimata del draft, riducendo i false reject su token ad alta confidenza. Together AI chiude un Series C da $800 milioni a $8,3 miliardi di valutazione (1 luglio, guidato da Aramco Ventures) con bookings annui a $1,15 miliardi e volume open-source triplicato nell'ultimo anno. Together e' il neocloud di riferimento per l'inference su modelli open-weight (Llama, Mistral, Qwen, DeepSeek): il round consolida l'ipotesi che il mercato dell'inference per modelli open-source sia abbastanza grande da sostenere un'azienda a valutazione multi-miliardaria indipendente dai provider frontier. [Digest 2026-07-03](../../digest/2026/07/03.md)

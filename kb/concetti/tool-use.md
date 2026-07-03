@@ -3,8 +3,8 @@ name: Tool use / Function calling
 aliases: [tool use, function calling, tool calling, chiamata di funzione]
 categoria: tecnica
 created: 2026-04-28
-last_updated: 2026-06-01
-mentions_count: 3
+last_updated: 2026-07-03
+mentions_count: 4
 ---
 
 # Tool use / Function calling
@@ -171,3 +171,7 @@ Maggio 2026 ha confermato che tool use e' ormai il criterio centrale con cui i n
 - Gemini 3.1 Flash-Lite passa alla disponibilita' generale ($0,25/1M input) posizionato esplicitamente sulla capacita' di tool calling e orchestrazione per task agentici a bassa latenza: il tool use diventa requisito anche nella fascia economica. Vedi [digest 2026-05-10](../../digest/2026/05/10.md). Mistral Vibe (remote agents) mostra invece tool call e file diff in tempo reale nella UI, segnale che l'osservabilita' delle chiamate e' diventata feature di prodotto. Vedi [digest 2026-05-01](../../digest/2026/05/01.md).
 
 Sul fronte API/tecniche, oltre ai digest sono verificabili tre evoluzioni recenti che ho integrato nelle sezioni Varianti, Note operative ed Esempi: (1) il tool search tool di Anthropic per scoprire i tool on-demand (riduzione token fino all'85%, accuracy Opus 4.5 dal 79,5% all'88,1%); (2) il programmatic tool calling, in cui il modello orchestra i tool scrivendo codice in un container, con calo del consumo medio da 43.588 a 27.297 token (circa 37%) su task di ricerca complessi e la versione tool `code_execution_20260120` come raccomandata; (3) i tool use examples, che alzano l'accuracy sui parametri dal 72% al 90%. Lato valutazione, il Berkeley Function Calling Leaderboard (V4, ultimo aggiornamento aprile 2026) ha spostato il focus "from tool use to agentic evaluation", ribadendo che il single-turn e' largamente risolto mentre memoria, decisioni dinamiche e long-horizon restano la sfida aperta. Nessuna voce e' stata inventata: ogni dato ha riscontro nei digest o nelle fonti web citate nelle Letture.
+
+### 2026-07-03
+
+SkillWeaver (Alibaba DAMO Academy, 2 luglio) introduce Skill-Aware Decomposition (SAD), una tecnica di routing degli agenti basata su DAG: dato un task complesso, il sistema costruisce un grafo diretto aciclico di subtask, assegna ogni nodo allo skill (tool o sub-agente) piu' adatto, ed esegue i rami indipendenti in parallelo. Il risultato chiave dichiarato e' una riduzione del 99,9% del consumo di token per il routing (da 884.000 a 1.160 token in un caso di riferimento), ottenuta eliminando il context pollution tipico degli approcci che passano l'intera storia di esecuzione ad ogni step di decisione. Il meccanismo tecnico e' che il DAG trasporta solo il delta di output rilevante tra un nodo e il successivo, non il context accumulato. Per chi progetta sistemi multi-agente con molti tool: SkillWeaver e' un caso concreto di come la struttura del routing (grafo vs sequenza lineare) possa dominare il costo token dell'orchestrazione su task complessi. [Digest 2026-07-03](../../digest/2026/07/03.md)
