@@ -3,7 +3,7 @@ name: Mixture of Experts
 aliases: [MoE, mixture-of-experts, mixture of experts, modello sparso, sparse model, expert routing]
 categoria: architettura
 created: 2026-06-01
-last_updated: 2026-06-20
+last_updated: 2026-07-05
 mentions_count: 14
 ---
 
@@ -93,6 +93,10 @@ Il MoE ricorre come scelta architetturale trasversale nei digest di maggio-giugn
 ### 2026-06-12
 
 DiffusionGemma (Google, 10 giugno, 13+ fonti) introduce un nuovo caso d'uso del backbone MoE: utilizzato non per un LLM autoregressivo ma come base per un modello di text diffusion. Il backbone Gemma 4 26B MoE con 3,8B parametri attivi e' il fondamento su cui Google ha costruito la variante diffusiva: il MoE serve a garantire capacita' sufficiente (26B totali) con un footprint computazionale limitato per forward pass (3,8B attivi), essenziale per i passi di denoising iterativi dove ogni passo e' un forward pass completo. Il pattern "MoE come base per architetture non autoregressove" e' nuovo nel 2026: in precedenza il MoE era usato quasi esclusivamente in contesti autoregressivi (Mixtral, DeepSeek, Granite). DiffusionGemma dimostra che il beneficio di efficienza del MoE — costo attivo inferiore al costo totale — e' trasferibile a qualsiasi architettura che richieda piu' forward pass per produrre un output (diffusion, beam search, speculative decoding). [Digest 2026-06-12](../../digest/2026/06/12.md)
+
+### 2026-07-05
+
+LongCat-2.0 (Meituan, 30 giugno, missed coverage) introduce un nuovo caso d'uso rilevante per il MoE: primo modello frontier addestrato interamente su chip domestici cinesi senza alcun hardware NVIDIA. L'architettura e' un MoE da 1,6 trilioni di parametri totali con circa 48 miliardi attivi per token (range 33B-56B a seconda del routing), contesto nativo da 1 milione di token, licenza MIT. Il substrate hardware e' il dato strutturalmente nuovo: cluster da 50.000 chip Huawei Ascend 910, con parallelismi custom e libreria HCCL sviluppati da Meituan per scalare il training a questa dimensione. Prima del rilascio ufficiale, LongCat-2.0 era disponibile su OpenRouter come "Owl Alpha" e guidava i ranking per sviluppatori della piattaforma per circa due mesi. Benchmark al lancio: SWE-Bench Pro 59.5, Terminal-Bench 70.8 — in fascia competitiva con i modelli frontier non-flagship. Il caso e' rilevante per due ragioni: (1) dimostra empiricamente che un MoE a scala frontier puo' essere addestrato senza chip Nvidia, riducendo la dipendenza dal supply chain americano che le misure BIS del 2022-2026 intendevano creare; (2) il ratio active/total (48B/1.6T ≈ 1:33) e' piu' sparso dei modelli della generazione precedente (Kimi K2.7 1:10, GLM-5.2 1:18), un segnale che l'architettura MoE si sta spingendo verso una sparsita' piu' estrema per massimizzare la capacita' a parita' di costo di inferenza. Al momento del rilascio, i pesi non erano ancora scaricabili (repository in stato "coming soon"). [Digest 2026-07-05](../../digest/2026/07/05.md)
 
 ### 2026-06-20
 
