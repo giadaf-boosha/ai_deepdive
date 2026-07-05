@@ -1,23 +1,19 @@
 {
   "meta": {
-    "lastUpdated": "2026-06-28",
+    "lastUpdated": "2026-07-05",
     "generatedBy": "Claude Code Routine — ai-deepdive-weekly-radar",
     "sourcesChecked": [
       "https://platform.claude.com/docs/en/about-claude/models/overview",
-      "https://www.anthropic.com/news/introducing-claude-tag",
-      "https://openai.com/index/previewing-gpt-5-6-sol/",
-      "https://openai.com/index/introducing-chatgpt-go/",
-      "https://help.openai.com/en/articles/9624314-model-release-notes",
-      "https://x.ai/news",
+      "https://www.anthropic.com/news/redeploying-fable-5",
+      "https://www.anthropic.com/news/claude-sonnet-5",
+      "https://www.cnbc.com/2026/06/30/anthropic-says-trump-admin-has-lifted-export-controls-on-claude-fable-5-and-mythos-5.html",
       "https://docs.x.ai/developers/release-notes",
+      "https://help.openai.com/en/articles/9624314-model-release-notes",
+      "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
       "https://arena.ai/leaderboard/text",
-      "https://www.kimi.com/resources/kimi-k2-7-code",
-      "https://platform.kimi.ai/docs/pricing/chat-k27-code",
-      "https://artificialanalysis.ai/models/glm-5-2",
-      "https://openrouter.ai/z-ai/glm-5.2",
       "https://artificialanalysis.ai/"
     ],
-    "nextScheduledUpdate": "2026-07-05T08:00:00+02:00",
+    "nextScheduledUpdate": "2026-07-12T08:00:00+02:00",
     "benchmarkLinks": [
       {
         "name": "Hugging Face — LLM Leaderboard",
@@ -33,12 +29,12 @@
     {
       "id": "claude",
       "provider": "Anthropic",
-      "name": "Claude Opus 4.8",
-      "releaseDate": "2026-05-28",
-      "tagline": "Il modello Anthropic attivo: top su coding agentico, computer use e matematica. Fable 5 sospeso dal 12 giu 2026 per direttiva export-control USA.",
+      "name": "Claude Fable 5",
+      "releaseDate": "2026-06-09",
+      "tagline": "Il flagship Anthropic, ripristinato il 1 lug 2026 dopo la revoca delle export control USA. SWE-Bench Pro 80.3%, top assoluto su coding agentico. Claude Sonnet 5 (30 giu 2026) e' il nuovo modello agile default su Free/Pro.",
       "contextWindow": "1M token · 128K output",
-      "apiInputPer1M": 5,
-      "apiOutputPer1M": 25,
+      "apiInputPer1M": 10,
+      "apiOutputPer1M": 50,
       "supportsImages": true,
       "supportsVideo": false,
       "supportsCode": true,
@@ -54,23 +50,23 @@
       "dataResidency": "US; opzioni regionali via AWS Bedrock, Google Vertex AI e Microsoft Foundry",
       "trainingPolicy": "Nessun training sui dati di API e prodotti commerciali per default",
       "strengths": [
-        "SWE-Bench Pro 69.2%: top su coding agentico (+10 pp su GPT-5.5, +14 pp su Gemini)",
-        "OSWorld 83.4%: miglior computer use disponibile tra i modelli accessibili",
-        "USAMO 2026 96.7%: balzo di +27 pp su Opus 4.7, leadership su matematica avanzata",
-        "#1 su LMArena overall (~1510 ELO) e coding arena dopo sospensione Fable 5"
+        "SWE-Bench Pro 80.3%: top assoluto su coding agentico (+21 pp su GPT-5.5, +25 pp su Gemini)",
+        "OSWorld 85.0%: miglior computer use disponibile",
+        "GPQA Diamond 94.5%: leadership su ragionamento scientifico PhD-level",
+        "Adaptive thinking always-on; 1M context, 128K output; Claude Sonnet 5 a $3/$15 per workload agentici a costo inferiore"
       ],
       "weaknesses": [
-        "Fable 5 (SWE-Bench Pro 80.3%, +11 pp) sospeso dal 12 giu 2026 per direttiva export-control USA; data ripristino ignota",
+        "Prezzo API $10/$50 per 1M token (2x Opus 4.8 e Sonnet 5)",
         "Nessun input video (GPT-5.5 supporta video nativamente)",
-        "GPQA Diamond 93.6%: statisticamente pari a Gemini 3.1 Pro (94.3%) e Opus 4.7 (94.2%)"
+        "Accesso incluso su Pro/Max/Team soggetto a crediti dopo il 7 luglio 2026; LMArena non ancora rimisurato post-redeployment"
       ],
       "bestFor": [
         "Coding agentico e refactoring su larga scala",
-        "Automazione di workflow multi-step",
+        "Automazione di workflow multi-step ad alta complessita'",
         "Analisi di documenti e immagini con context da 1M token",
         "Task matematici e scientifici avanzati"
       ],
-      "verdict": "Modello Anthropic attivo dal 28 mag 2026 dopo la sospensione di Fable 5 il 12 giu (direttiva export-control USA). Top su coding agentico e computer use; $5/$25 per 1M token, meta' del prezzo di Fable 5.",
+      "verdict": "Flagship Anthropic (GA 9 giu 2026, sospeso 12 giu, ripristinato 1 lug 2026). SWE-Bench Pro 80.3%, OSWorld 85.0%, GPQA Diamond 94.5%. API $10/$50 per 1M; Sonnet 5 a $3/$15 (intro $2/$10) per workload agentici a minor costo.",
       "lmarenaRank": 1,
       "domain": "claude.ai"
     },
@@ -395,10 +391,11 @@
         "GPTs custom (assistenti pubblicabili con istruzioni + knowledge files)",
         "Projects: contenitore con file, istruzioni e chat persistenti",
         "Memory cross-chat",
-        "Canvas (editing collaborativo testo/codice)",
+        "Writing blocks e code blocks (Canvas deprecato giu 2026; scrittura e codice ora integrati nella chat)",
         "Generazione immagini",
         "Modello core GPT-5.5 (GPT-5.2 rimosso il 12 giu 2026; GPT-4.5 ritirato il 26 giu 2026)",
-        "GPT-5.6 Sol/Terra/Luna in preview limitata dal 26 giu 2026 (Sol $5/$30, Terra $2.50/$15, Luna $1/$6 per 1M token)"
+        "GPT-5.6 Sol/Terra/Luna in preview limitata (Sol $5/$30, Terra $2.50/$15, Luna $1/$6 per 1M token): non ancora GA; solo partner selezionati via API/Codex",
+        "ChatGPT Workspace Agents: pricing effettivo dal 6 luglio 2026"
       ],
       "tierGratuito": "Si. Free con limiti: circa 10 messaggi con GPT-5.5 ogni 5 ore (rolling window), poi fallback automatico alla versione mini del modello. ChatGPT Go: $8/mese per accesso espanso con piu' messaggi e upload.",
       "caveat": "Su Free la finestra di accesso al modello full e' stretta (~10 msg/5h) e si scende al modello mini. I file su Projects/GPT consumano lo storage condiviso (cap 25 GB utente) e la rate di upload e' limitata.",
@@ -418,10 +415,11 @@
         "Connettori MCP (Drive, Gmail, Notion, ecc.)",
         "Dynamic workflows su Claude Code (multi-step agentico con sottoagenti paralleli)",
         "Claude Tag (beta Enterprise/Team, 23 giu 2026): agente @Claude in Slack con identita' condivisa, memoria e modalita' ambient proattiva",
-        "Modello Opus 4.8 (attivo dal 28 mag 2026; Fable 5 sospeso il 12 giu 2026 per direttiva export-control USA)"
+        "Modello Claude Fable 5 ripristinato il 1 lug 2026 (export control revocate il 30 giu; su Pro/Max/Team via crediti dopo il 7 lug)",
+        "Claude Sonnet 5 (30 giu 2026): default su Free e Pro; $2/$10 intro fino al 31 ago 2026 (poi $3/$15), 1M context, adaptive thinking, SWE-bench 63.2%"
       ],
-      "tierGratuito": "Si. Free include accesso a Claude e Artifacts con limiti di utilizzo giornalieri.",
-      "caveat": "Finestra di contesto 200K token in chat sui piani non-Enterprise (500K Enterprise). Nei Projects il knowledge passa a RAG quando cresce (regressione segnalata: switch a ricerca RAG gia' a ~13 file), quindi il recupero completo in una singola risposta non e' garantito. Fable 5 sospeso globalmente dal 12 giu 2026: dal 22 giu 2026 esce dai piani inclusi.",
+      "tierGratuito": "Si. Free include accesso a Claude Sonnet 5 e Artifacts con limiti di utilizzo giornalieri.",
+      "caveat": "Finestra di contesto 200K token in chat sui piani non-Enterprise (500K Enterprise). Nei Projects il knowledge passa a RAG quando cresce (regressione segnalata: switch a ricerca RAG gia' a ~13 file), quindi il recupero completo in una singola risposta non e' garantito. Fable 5 ripristinato il 1 luglio 2026: incluso fino al 50% dei limiti settimanali su Pro/Max/Team fino al 7 luglio, poi via crediti.",
       "sweetSpot": "Workspace privato a lungo termine con ragionamento profondo su documenti propri."
     },
     {
@@ -500,8 +498,10 @@
         "Think mode (ragionamento esteso)",
         "Generazione immagini",
         "Grok Voice (interazione vocale, giu 2026)",
-        "Grok Imagine 1.5 Preview (image-to-video con audio sincronizzato, API, giu 2026)",
-        "Capacita' multi-agent"
+        "Grok Imagine Video 1.5 (image-to-video con audio sincronizzato, API GA)",
+        "Speech-to-Text API GA (lug 2026): trascrizione in 25 lingue con batch e streaming",
+        "Text-to-Speech API GA (lug 2026)",
+        "Capacita' multi-agent; agent tools -50% (max $5/1000 chiamate riuscite)"
       ],
       "tierGratuito": "Si, con limiti di utilizzo.",
       "caveat": "L'integrazione stretta con X puo' introdurre bias dai contenuti social; valutare con cautela le fonti in ambito sensibile.",
@@ -873,9 +873,9 @@
     },
     {
       "category": "Coding",
-      "name": "Grok Build 0.1",
-      "url": "https://docs.x.ai/developers/models/grok-build-0.1",
-      "oneLiner": "Modello xAI per coding agentico con reasoning sempre attivo, context 256K e tool calling (beta pubblica, mag 2026, $1/$2 per 1M)."
+      "name": "Grok Build / Grok 4.1 Fast",
+      "url": "https://docs.x.ai/developers/models",
+      "oneLiner": "Modello xAI per coding agentico; Grok 4.1 Fast in Enterprise API (lug 2026): $0.20/$0.50 per 1M token, 2M context, reasoning sempre attivo."
     }
   ],
   "useMatrix": [
@@ -1300,7 +1300,7 @@
       "scores": [
         {
           "modelId": "claude",
-          "value": 69.2
+          "value": 80.3
         },
         {
           "modelId": "glm",
@@ -1333,7 +1333,7 @@
       "scores": [
         {
           "modelId": "claude",
-          "value": 83.4
+          "value": 85.0
         },
         {
           "modelId": "chatgpt",
@@ -1350,7 +1350,7 @@
       "scores": [
         {
           "modelId": "claude",
-          "value": 93.6
+          "value": 94.5
         },
         {
           "modelId": "chatgpt",
@@ -1385,6 +1385,19 @@
     }
   ],
   "changelog": [
+    {
+      "date": "2026-07-05",
+      "summary": "Claude Fable 5 ripristinato globalmente il 1 lug 2026: export control USA revocate il 30 giu 2026; Fable 5 e Mythos 5 tornati su Claude API, Claude.ai, Claude Code e Claude Cowork con nuovo safety classifier (blocca il jailbreak segnalato in >99% dei casi, fallback a Opus 4.8). Su Pro/Max/Team incluso fino al 50% dei limiti settimanali fino al 7 luglio, poi via crediti. Modello claude aggiornato a Claude Fable 5: API $10/$50 per 1M, benchmark ripristinati ai valori pre-sospensione (SWE-Bench Pro 80.3%, OSWorld 85.0%, GPQA Diamond 94.5%). Claude Sonnet 5 (30 giu 2026): nuovo modello agentico Anthropic, $2/$10 intro fino al 31 ago 2026 (poi $3/$15), 1M context, 128K output, adaptive thinking, SWE-bench 63.2%; default su Free e Pro Claude.ai. xAI: Grok 4.1 Fast in Enterprise API ($0.20/$0.50 per 1M, 2M context); Speech-to-Text API GA (25 lingue, batch+streaming); Text-to-Speech API GA; agent tools -50% prezzo (max $5/1000 chiamate riuscite). OpenAI: ChatGPT Workspace Agents pricing effettivo dal 6 lug 2026; Canvas deprecato in ChatGPT (scrittura e codice ora come writing blocks e code blocks); GPT-5.6 Sol/Terra/Luna ancora in preview limitata (solo partner API/Codex, nessuna data GA). Nessuna variazione rilevante per Gemini 3.5 Flash, DeepSeek V4 Pro, Qwen 3.7-Max, Mistral Medium 3.5, Kimi K2.7 Code, GLM-5.2, Llama 4.",
+      "sources": [
+        "https://www.anthropic.com/news/redeploying-fable-5",
+        "https://www.anthropic.com/news/claude-sonnet-5",
+        "https://platform.claude.com/docs/en/about-claude/models/overview",
+        "https://www.cnbc.com/2026/06/30/anthropic-says-trump-admin-has-lifted-export-controls-on-claude-fable-5-and-mythos-5.html",
+        "https://docs.x.ai/developers/release-notes",
+        "https://help.openai.com/en/articles/9624314-model-release-notes",
+        "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+      ]
+    },
     {
       "date": "2026-06-28",
       "summary": "Kimi aggiornato a K2.7 Code (12 giu 2026): open-weight MoE 1T param/32B attivi, 256K context, $0.95/$4 per 1M, thinking sempre attivo con ~30% di token thinking in meno vs K2.6; supportsVideo aggiornato a false (solo testo/immagine). GLM aggiornato a GLM-5.2 (16 giu 2026): salto context 203K→1M, SWE-bench Pro 62.1% (supera GPT-5.5 58.6%), $1.40/$4.40 per 1M, open-weight MIT 753B/40B attivi, max output 128K; score aggiunto in benchmark swe-bench-pro (nuovo #2 dopo Claude). GPT-5.6 Sol/Terra/Luna (OpenAI) in preview limitata dal 26 giu 2026: Sol $5/$30, Terra $2.50/$15, Luna $1/$6 per 1M; GPT-4.5 ritirato il 26 giu 2026. ChatGPT Go: nuovo piano OpenAI a $8/mese per accesso espanso. Claude Tag (Anthropic, 23 giu 2026): agente @Claude per Slack in beta Enterprise/Team con identita' condivisa, memoria cross-canale e modalita' ambient proattiva. Nessuna variazione rilevante per Claude Opus 4.8, Gemini 3.5 Flash, Grok 4.3, DeepSeek V4 Pro, Qwen 3.7-Max, Mistral Medium 3.5, Llama 4.",
