@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   },
   description:
     "La mia raccolta quotidiana di segnali AI, in italiano. Digest curati, knowledge base tecnica e radar dei modelli AI.",
-  metadataBase: new URL("https://ai-deepdive.vercel.app"),
+  metadataBase: new URL("https://aideepdive.vercel.app"),
   openGraph: {
     title: "AI Deep Dive",
     description: "La mia raccolta quotidiana di segnali AI, in italiano.",

@@ -3,7 +3,7 @@ import typography from "@tailwindcss/typography";
 
 // Identita' visiva ai_deepdive: editoriale, tecnica, densa.
 // Sfondo quasi-bianco / quasi-nero in base al modo (prefers-color-scheme),
-// colore primario forte = burnt orange (non viola AI generico).
+// colore primario Boosha = viola, secondario = arancione.
 const config: Config = {
   darkMode: "media",
   content: [
