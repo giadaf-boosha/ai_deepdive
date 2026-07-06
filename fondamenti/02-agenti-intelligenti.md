@@ -17,9 +17,87 @@ Il valore del capitolo non sta in un algoritmo specifico, ma in un metodo di ana
 
 Il capitolo introduce anche una tassonomia di architetture di agente — dal riflesso puro all'agente che pianifica massimizzando l'utilita' attesa — che funziona come una scala di complessita' crescente. Ogni gradino aggiunge una capacita' (memoria, previsione, preferenze, apprendimento) e ha un costo. Capire questa scala aiuta a leggere i sistemi moderni: molti prodotti "agentici" attuali sono combinazioni di questi schemi di base, non invenzioni radicalmente nuove.
 
+<figure class="diagram">
+<svg viewBox="0 0 760 496" role="img" aria-label="Mappa concettuale del capitolo 2: l'agente e' descritto dalla funzione agente e implementato dal programma agente; la misura di prestazione definisce l'agente razionale, che richiede la specifica PEAS; le proprieta' dell'ambiente determinano le quattro architetture, che possono tutte apprendere">
+<defs><marker id="arr-c02" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="dg-arrow"/></marker></defs>
+<line x1="290" y1="40" x2="226" y2="40" class="dg-edge" marker-end="url(#arr-c02)"/>
+<text x="258" y="32" text-anchor="middle" class="dg-edge-label">descritto da</text>
+<line x1="120" y1="68" x2="120" y2="112" class="dg-edge" marker-end="url(#arr-c02)"/>
+<text x="128" y="94" text-anchor="start" class="dg-edge-label">implementata da</text>
+<line x1="380" y1="68" x2="380" y2="112" class="dg-edge-primary" marker-end="url(#arr-c02)"/>
+<text x="388" y="94" text-anchor="start" class="dg-edge-label">fa la cosa giusta</text>
+<line x1="550" y1="144" x2="484" y2="144" class="dg-edge" marker-end="url(#arr-c02)"/>
+<text x="517" y="136" text-anchor="middle" class="dg-edge-label">definisce</text>
+<line x1="460" y1="172" x2="600" y2="218" class="dg-edge" marker-end="url(#arr-c02)"/>
+<text x="545" y="214" text-anchor="end" class="dg-edge-label">richiede la specifica</text>
+<line x1="647" y1="276" x2="646" y2="322" class="dg-edge" marker-end="url(#arr-c02)"/>
+<line x1="540" y1="352" x2="484" y2="352" class="dg-edge" marker-end="url(#arr-c02)"/>
+<text x="512" y="344" text-anchor="middle" class="dg-edge-label">determinano</text>
+<line x1="380" y1="172" x2="380" y2="320" class="dg-edge-primary" marker-end="url(#arr-c02)"/>
+<line x1="120" y1="172" x2="120" y2="216" class="dg-edge" marker-end="url(#arr-c02)"/>
+<text x="128" y="198" text-anchor="start" class="dg-edge-label">rappresentano lo stato</text>
+<line x1="380" y1="380" x2="380" y2="424" class="dg-edge" marker-end="url(#arr-c02)"/>
+<text x="388" y="406" text-anchor="start" class="dg-edge-label">ogni tipo puo' apprendere</text>
+<rect x="290" y="12" width="180" height="56" rx="10" class="dg-node-primary"/>
+<text x="380" y="36" text-anchor="middle" class="dg-label">Agente</text>
+<text x="380" y="52" text-anchor="middle" class="dg-sublabel">sensori e attuatori</text>
+<rect x="20" y="12" width="200" height="56" rx="10" class="dg-node"/>
+<text x="120" y="36" text-anchor="middle" class="dg-label">Funzione agente</text>
+<text x="120" y="52" text-anchor="middle" class="dg-sublabel">sequenza percettiva -> azione</text>
+<rect x="20" y="116" width="200" height="56" rx="10" class="dg-node"/>
+<text x="120" y="140" text-anchor="middle" class="dg-label">Programma agente</text>
+<text x="120" y="156" text-anchor="middle" class="dg-sublabel">implementazione concreta</text>
+<rect x="280" y="116" width="200" height="56" rx="10" class="dg-node-primary"/>
+<text x="380" y="140" text-anchor="middle" class="dg-label">Agente razionale</text>
+<text x="380" y="156" text-anchor="middle" class="dg-sublabel">massimizza il risultato atteso</text>
+<rect x="550" y="116" width="195" height="56" rx="10" class="dg-node"/>
+<text x="647" y="140" text-anchor="middle" class="dg-label">Misura di prestazione</text>
+<text x="647" y="156" text-anchor="middle" class="dg-sublabel">valuta gli stati dell'ambiente</text>
+<rect x="20" y="220" width="210" height="56" rx="10" class="dg-node"/>
+<text x="125" y="244" text-anchor="middle" class="dg-label">Rappresentazioni</text>
+<text x="125" y="260" text-anchor="middle" class="dg-sublabel">atomica, fattorizzata, strutturata</text>
+<rect x="550" y="220" width="195" height="56" rx="10" class="dg-node"/>
+<text x="647" y="244" text-anchor="middle" class="dg-label">Specifica PEAS</text>
+<text x="647" y="260" text-anchor="middle" class="dg-sublabel">descrivere l'ambiente operativo</text>
+<rect x="280" y="324" width="200" height="56" rx="10" class="dg-node-primary"/>
+<text x="380" y="348" text-anchor="middle" class="dg-label">Quattro architetture</text>
+<text x="380" y="364" text-anchor="middle" class="dg-sublabel">dal riflesso all'utilita'</text>
+<rect x="540" y="324" width="210" height="56" rx="10" class="dg-node"/>
+<text x="645" y="348" text-anchor="middle" class="dg-label">Proprieta' dell'ambiente</text>
+<text x="645" y="364" text-anchor="middle" class="dg-sublabel">osservabile? dinamico? ignoto?</text>
+<rect x="280" y="428" width="200" height="56" rx="10" class="dg-node-accent"/>
+<text x="380" y="452" text-anchor="middle" class="dg-label">Agente che apprende</text>
+<text x="380" y="468" text-anchor="middle" class="dg-sublabel">migliora i propri componenti</text>
+</svg>
+<figcaption>Mappa del capitolo 2 — dall'agente alla razionalita', dalla specifica PEAS alle architetture che apprendono</figcaption>
+</figure>
+
 ## Percepire e agire: la definizione minima di agente
 
 Un agente e' qualunque sistema che riceve informazioni dall'ambiente tramite sensori e interviene su di esso tramite attuatori. La definizione e' volutamente larga: copre un umano (occhi e mani), un robot (telecamere e motori), ma anche un puro software che legge file e pacchetti di rete e risponde scrivendo dati o mostrando informazioni. L'ambiente non e' "il mondo intero": e' la porzione di mondo che influenza cio' che l'agente percepisce e che le sue azioni possono modificare.
+
+<figure class="diagram">
+<svg viewBox="0 0 760 300" role="img" aria-label="Schema dell'interazione agente-ambiente: l'agente riceve percezioni dall'ambiente tramite i sensori, il programma agente (il punto interrogativo) sceglie l'azione e gli attuatori agiscono sull'ambiente">
+<defs><marker id="arr-c02-b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="dg-arrow"/></marker></defs>
+<rect x="70" y="25" width="320" height="250" rx="10" class="dg-node-primary"/>
+<text x="135" y="58" text-anchor="middle" class="dg-label">agente</text>
+<rect x="600" y="25" width="140" height="250" rx="10" class="dg-node"/>
+<text x="670" y="155" text-anchor="middle" class="dg-label">ambiente</text>
+<line x1="600" y1="58" x2="374" y2="58" class="dg-edge" marker-end="url(#arr-c02-b)"/>
+<text x="480" y="50" text-anchor="middle" class="dg-edge-label">percezioni</text>
+<line x1="370" y1="242" x2="596" y2="242" class="dg-edge" marker-end="url(#arr-c02-b)"/>
+<text x="480" y="234" text-anchor="middle" class="dg-edge-label">azioni</text>
+<line x1="310" y1="76" x2="310" y2="112" class="dg-edge" marker-end="url(#arr-c02-b)"/>
+<line x1="310" y1="185" x2="310" y2="221" class="dg-edge" marker-end="url(#arr-c02-b)"/>
+<rect x="250" y="40" width="120" height="36" rx="10" class="dg-node"/>
+<text x="310" y="62" text-anchor="middle" class="dg-label">sensori</text>
+<rect x="260" y="115" width="100" height="70" rx="10" class="dg-node"/>
+<text x="310" y="158" text-anchor="middle" class="dg-label">?</text>
+<rect x="250" y="224" width="120" height="36" rx="10" class="dg-node"/>
+<text x="310" y="246" text-anchor="middle" class="dg-label">attuatori</text>
+</svg>
+<figcaption>Gli agenti interagiscono con l'ambiente attraverso sensori e attuatori — schema ripreso dalla Figura 2.1 del cap. 2, AIMA 4a ed.</figcaption>
+</figure>
 
 Il comportamento dell'agente si descrive matematicamente con la funzione agente: una corrispondenza che associa a ogni possibile storia di percezioni (la sequenza percettiva) un'azione. In linea di principio la si potrebbe scrivere come una tabella gigantesca; in pratica la tabella e' astrazione pura, e cio' che gira davvero dentro la macchina e' il programma agente, un'implementazione concreta e finita di quella funzione. La distinzione tra descrizione esterna (funzione) e implementazione interna (programma) e' uno dei punti concettuali piu' utili del capitolo.
 
