@@ -16,6 +16,66 @@ La motivazione e' pragmatica. I progettisti non possono anticipare tutte le situ
 
 Il cuore del capitolo e' l'apprendimento supervisionato: partire da coppie input-output generate da una funzione ignota e trovare un'ipotesi che la approssimi bene anche su input mai visti. Attorno a questa idea si sviluppano le classi di modelli classiche — alberi di decisione, modelli lineari, metodi non parametrici, ensemble — e la teoria che spiega quando e perche' generalizzano.
 
+<figure class="diagram">
+<svg viewBox="0 0 760 360" role="img" aria-label="Mappa concettuale del capitolo 19: dall'apprendimento supervisionato al compromesso distorsione-varianza, le classi di modelli (alberi di decisione, modelli lineari, non parametrici, ensemble), la valutazione fondata sulla teoria PAC e la costruzione di sistemi reali">
+<defs><marker id="arr-c19" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="dg-arrow"/></marker></defs>
+<line x1="295" y1="68" x2="150" y2="94" class="dg-edge" marker-end="url(#arr-c19)"/>
+<text x="195" y="74" text-anchor="middle" class="dg-edge-label">cerca h in</text>
+<line x1="365" y1="68" x2="390" y2="94" class="dg-edge-primary" marker-end="url(#arr-c19)"/>
+<line x1="435" y1="68" x2="632" y2="94" class="dg-edge" marker-end="url(#arr-c19)"/>
+<text x="548" y="76" text-anchor="middle" class="dg-edge-label">obiettivo</text>
+<line x1="499" y1="124" x2="563" y2="124" class="dg-edge" marker-end="url(#arr-c19)"/>
+<text x="531" y="116" text-anchor="middle" class="dg-edge-label">equilibrio</text>
+<line x1="130" y1="152" x2="97" y2="182" class="dg-edge" marker-end="url(#arr-c19)"/>
+<line x1="152" y1="152" x2="268" y2="182" class="dg-edge" marker-end="url(#arr-c19)"/>
+<line x1="175" y1="152" x2="428" y2="182" class="dg-edge" marker-end="url(#arr-c19)"/>
+<line x1="100" y1="240" x2="252" y2="278" class="dg-edge" marker-end="url(#arr-c19)"/>
+<line x1="272" y1="240" x2="279" y2="278" class="dg-edge" marker-end="url(#arr-c19)"/>
+<line x1="430" y1="240" x2="315" y2="278" class="dg-edge" marker-end="url(#arr-c19)"/>
+<text x="330" y="262" text-anchor="middle" class="dg-edge-label">combina</text>
+<line x1="645" y1="184" x2="645" y2="156" class="dg-edge" marker-end="url(#arr-c19)"/>
+<text x="688" y="172" text-anchor="middle" class="dg-edge-label">misura</text>
+<line x1="578" y1="240" x2="537" y2="278" class="dg-edge" marker-end="url(#arr-c19)"/>
+<text x="505" y="260" text-anchor="middle" class="dg-edge-label">in pratica</text>
+<line x1="668" y1="278" x2="657" y2="242" class="dg-edge" marker-end="url(#arr-c19)"/>
+<text x="712" y="262" text-anchor="middle" class="dg-edge-label">fondamento</text>
+<rect x="250" y="12" width="220" height="56" rx="10" class="dg-node-primary"/>
+<text x="360" y="36" text-anchor="middle" class="dg-label">Apprendimento supervisionato</text>
+<text x="360" y="52" text-anchor="middle" class="dg-sublabel">coppie (x, y) -> ipotesi h</text>
+<rect x="58" y="96" width="164" height="56" rx="10" class="dg-node"/>
+<text x="140" y="120" text-anchor="middle" class="dg-label">Spazio delle ipotesi</text>
+<text x="140" y="136" text-anchor="middle" class="dg-sublabel">scelto dal progettista</text>
+<rect x="283" y="96" width="214" height="56" rx="10" class="dg-node-primary"/>
+<text x="390" y="120" text-anchor="middle" class="dg-label">Distorsione-varianza</text>
+<text x="390" y="136" text-anchor="middle" class="dg-sublabel">sottoadattamento vs sovradattamento</text>
+<rect x="567" y="96" width="156" height="56" rx="10" class="dg-node"/>
+<text x="645" y="120" text-anchor="middle" class="dg-label">Generalizzazione</text>
+<text x="645" y="136" text-anchor="middle" class="dg-sublabel">predire su dati mai visti</text>
+<rect x="16" y="184" width="158" height="56" rx="10" class="dg-node"/>
+<text x="95" y="208" text-anchor="middle" class="dg-label">Alberi di decisione</text>
+<text x="95" y="224" text-anchor="middle" class="dg-sublabel">guadagno informativo</text>
+<rect x="190" y="184" width="164" height="56" rx="10" class="dg-node"/>
+<text x="272" y="208" text-anchor="middle" class="dg-label">Modelli lineari</text>
+<text x="272" y="224" text-anchor="middle" class="dg-sublabel">discesa del gradiente, SGD</text>
+<rect x="365" y="184" width="140" height="56" rx="10" class="dg-node"/>
+<text x="435" y="208" text-anchor="middle" class="dg-label">Non parametrici</text>
+<text x="435" y="224" text-anchor="middle" class="dg-sublabel">k-NN, SVM, kernel</text>
+<rect x="550" y="184" width="190" height="56" rx="10" class="dg-node"/>
+<text x="645" y="208" text-anchor="middle" class="dg-label">Valutazione e selezione</text>
+<text x="645" y="224" text-anchor="middle" class="dg-sublabel">test set, convalida incrociata</text>
+<rect x="200" y="280" width="160" height="56" rx="10" class="dg-node"/>
+<text x="280" y="304" text-anchor="middle" class="dg-label">Ensemble</text>
+<text x="280" y="320" text-anchor="middle" class="dg-sublabel">bagging, foreste, boosting</text>
+<rect x="393" y="280" width="194" height="56" rx="10" class="dg-node-accent"/>
+<text x="490" y="304" text-anchor="middle" class="dg-label">Costruire sistemi reali</text>
+<text x="490" y="320" text-anchor="middle" class="dg-sublabel">dati, monitoraggio, manutenzione</text>
+<rect x="608" y="280" width="134" height="56" rx="10" class="dg-node"/>
+<text x="675" y="304" text-anchor="middle" class="dg-label">Teoria PAC</text>
+<text x="675" y="320" text-anchor="middle" class="dg-sublabel">quanti esempi servono</text>
+</svg>
+<figcaption>Mappa del capitolo 19 — dall'apprendimento supervisionato, attraverso il compromesso distorsione-varianza e le classi di modelli, fino alla valutazione e ai sistemi reali</figcaption>
+</figure>
+
 ## Indurre funzioni dai dati: ipotesi, bias e varianza
 
 Il problema formale e' questo: dato un insieme di addestramento di N coppie (x, y) prodotte da una funzione ignota f, cercare una funzione h — l'ipotesi — che approssimi f. L'ipotesi vive in uno spazio delle ipotesi scelto dal progettista: rette, polinomi, alberi, reti. La misura che conta non e' l'aderenza ai dati di addestramento ma la capacita' di generalizzare, cioe' di predire correttamente su un insieme di test mai visto prima.
@@ -27,6 +87,99 @@ C'e' anche un compromesso computazionale: uno spazio delle ipotesi molto espress
 ## Alberi di decisione: imparare regole leggibili
 
 L'albero di decisione e' la prima classe di modelli trattata in dettaglio, sull'esempio ricorrente del capitolo: decidere se aspettare un tavolo al ristorante dati dieci attributi (affollamento, attesa stimata, fame, tipo di cucina e cosi' via). Un albero esegue una sequenza di test sugli attributi e arriva a una foglia che contiene la decisione. Ogni albero booleano equivale a una formula in forma normale disgiuntiva: e' logica proposizionale appresa dai dati.
+
+<figure class="diagram">
+<svg viewBox="0 0 760 440" role="img" aria-label="Albero di decisione per decidere se attendere che si liberi un tavolo al ristorante: radice Affollato, poi AttesaStimata e test su Alternativa, Fame, Prenotazione, Bar, Ven/Sab e Pioggia fino alle foglie si o no">
+<defs><marker id="arr-c19-b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="dg-arrow"/></marker></defs>
+<line x1="150" y1="46" x2="46" y2="84" class="dg-edge" marker-end="url(#arr-c19-b)"/>
+<text x="72" y="62" text-anchor="middle" class="dg-edge-label">Nessuno</text>
+<line x1="162" y1="46" x2="113" y2="84" class="dg-edge" marker-end="url(#arr-c19-b)"/>
+<text x="168" y="66" text-anchor="middle" class="dg-edge-label">Qualcuno</text>
+<line x1="185" y1="46" x2="325" y2="84" class="dg-edge" marker-end="url(#arr-c19-b)"/>
+<text x="272" y="62" text-anchor="middle" class="dg-edge-label">Pieno</text>
+<line x1="285" y1="120" x2="146" y2="160" class="dg-edge" marker-end="url(#arr-c19-b)"/>
+<text x="190" y="138" text-anchor="middle" class="dg-edge-label">&gt;60</text>
+<line x1="315" y1="120" x2="281" y2="160" class="dg-edge" marker-end="url(#arr-c19-b)"/>
+<text x="268" y="138" text-anchor="middle" class="dg-edge-label">30-60</text>
+<line x1="350" y1="120" x2="515" y2="160" class="dg-edge" marker-end="url(#arr-c19-b)"/>
+<text x="430" y="134" text-anchor="middle" class="dg-edge-label">10-30</text>
+<line x1="375" y1="120" x2="700" y2="160" class="dg-edge" marker-end="url(#arr-c19-b)"/>
+<text x="560" y="140" text-anchor="middle" class="dg-edge-label">0-10</text>
+<line x1="255" y1="196" x2="176" y2="236" class="dg-edge" marker-end="url(#arr-c19-b)"/>
+<text x="198" y="218" text-anchor="middle" class="dg-edge-label">No</text>
+<line x1="305" y1="196" x2="327" y2="236" class="dg-edge" marker-end="url(#arr-c19-b)"/>
+<text x="336" y="218" text-anchor="middle" class="dg-edge-label">Si'</text>
+<line x1="505" y1="196" x2="464" y2="236" class="dg-edge" marker-end="url(#arr-c19-b)"/>
+<text x="470" y="216" text-anchor="middle" class="dg-edge-label">No</text>
+<line x1="535" y1="196" x2="585" y2="236" class="dg-edge" marker-end="url(#arr-c19-b)"/>
+<text x="576" y="216" text-anchor="middle" class="dg-edge-label">Si'</text>
+<line x1="145" y1="272" x2="104" y2="312" class="dg-edge" marker-end="url(#arr-c19-b)"/>
+<text x="132" y="294" text-anchor="middle" class="dg-edge-label">No</text>
+<line x1="195" y1="272" x2="208" y2="312" class="dg-edge" marker-end="url(#arr-c19-b)"/>
+<text x="216" y="294" text-anchor="middle" class="dg-edge-label">Si'</text>
+<line x1="318" y1="272" x2="302" y2="312" class="dg-edge" marker-end="url(#arr-c19-b)"/>
+<text x="295" y="294" text-anchor="middle" class="dg-edge-label">No</text>
+<line x1="342" y1="272" x2="362" y2="312" class="dg-edge" marker-end="url(#arr-c19-b)"/>
+<text x="369" y="294" text-anchor="middle" class="dg-edge-label">Si'</text>
+<line x1="570" y1="272" x2="525" y2="312" class="dg-edge" marker-end="url(#arr-c19-b)"/>
+<text x="536" y="294" text-anchor="middle" class="dg-edge-label">No</text>
+<line x1="610" y1="272" x2="627" y2="312" class="dg-edge" marker-end="url(#arr-c19-b)"/>
+<text x="635" y="294" text-anchor="middle" class="dg-edge-label">Si'</text>
+<line x1="90" y1="348" x2="68" y2="388" class="dg-edge" marker-end="url(#arr-c19-b)"/>
+<text x="60" y="370" text-anchor="middle" class="dg-edge-label">No</text>
+<line x1="110" y1="348" x2="132" y2="388" class="dg-edge" marker-end="url(#arr-c19-b)"/>
+<text x="140" y="370" text-anchor="middle" class="dg-edge-label">Si'</text>
+<line x1="620" y1="348" x2="598" y2="388" class="dg-edge" marker-end="url(#arr-c19-b)"/>
+<text x="590" y="370" text-anchor="middle" class="dg-edge-label">No</text>
+<line x1="640" y1="348" x2="662" y2="388" class="dg-edge" marker-end="url(#arr-c19-b)"/>
+<text x="670" y="370" text-anchor="middle" class="dg-edge-label">Si'</text>
+<rect x="122" y="12" width="96" height="34" rx="10" class="dg-node-primary"/>
+<text x="170" y="34" text-anchor="middle" class="dg-label">Affollato?</text>
+<rect x="18" y="86" width="44" height="34" rx="10" class="dg-node"/>
+<text x="40" y="108" text-anchor="middle" class="dg-label">No</text>
+<rect x="88" y="86" width="44" height="34" rx="10" class="dg-node-accent"/>
+<text x="110" y="108" text-anchor="middle" class="dg-label">Si'</text>
+<rect x="270" y="86" width="120" height="34" rx="10" class="dg-node"/>
+<text x="330" y="108" text-anchor="middle" class="dg-label">AttesaStimata?</text>
+<rect x="118" y="162" width="44" height="34" rx="10" class="dg-node"/>
+<text x="140" y="184" text-anchor="middle" class="dg-label">No</text>
+<rect x="229" y="162" width="102" height="34" rx="10" class="dg-node"/>
+<text x="280" y="184" text-anchor="middle" class="dg-label">Alternativa?</text>
+<rect x="491" y="162" width="58" height="34" rx="10" class="dg-node"/>
+<text x="520" y="184" text-anchor="middle" class="dg-label">Fame?</text>
+<rect x="688" y="162" width="44" height="34" rx="10" class="dg-node-accent"/>
+<text x="710" y="184" text-anchor="middle" class="dg-label">Si'</text>
+<rect x="115" y="238" width="110" height="34" rx="10" class="dg-node"/>
+<text x="170" y="260" text-anchor="middle" class="dg-label">Prenotazione?</text>
+<rect x="293" y="238" width="74" height="34" rx="10" class="dg-node"/>
+<text x="330" y="260" text-anchor="middle" class="dg-label">Ven/Sab?</text>
+<rect x="438" y="238" width="44" height="34" rx="10" class="dg-node-accent"/>
+<text x="460" y="260" text-anchor="middle" class="dg-label">Si'</text>
+<rect x="539" y="238" width="102" height="34" rx="10" class="dg-node"/>
+<text x="590" y="260" text-anchor="middle" class="dg-label">Alternativa?</text>
+<rect x="75" y="314" width="50" height="34" rx="10" class="dg-node"/>
+<text x="100" y="336" text-anchor="middle" class="dg-label">Bar?</text>
+<rect x="188" y="314" width="44" height="34" rx="10" class="dg-node-accent"/>
+<text x="210" y="336" text-anchor="middle" class="dg-label">Si'</text>
+<rect x="278" y="314" width="44" height="34" rx="10" class="dg-node"/>
+<text x="300" y="336" text-anchor="middle" class="dg-label">No</text>
+<rect x="343" y="314" width="44" height="34" rx="10" class="dg-node-accent"/>
+<text x="365" y="336" text-anchor="middle" class="dg-label">Si'</text>
+<rect x="498" y="314" width="44" height="34" rx="10" class="dg-node-accent"/>
+<text x="520" y="336" text-anchor="middle" class="dg-label">Si'</text>
+<rect x="593" y="314" width="74" height="34" rx="10" class="dg-node"/>
+<text x="630" y="336" text-anchor="middle" class="dg-label">Pioggia?</text>
+<rect x="43" y="390" width="44" height="34" rx="10" class="dg-node"/>
+<text x="65" y="412" text-anchor="middle" class="dg-label">No</text>
+<rect x="113" y="390" width="44" height="34" rx="10" class="dg-node-accent"/>
+<text x="135" y="412" text-anchor="middle" class="dg-label">Si'</text>
+<rect x="573" y="390" width="44" height="34" rx="10" class="dg-node"/>
+<text x="595" y="412" text-anchor="middle" class="dg-label">No</text>
+<rect x="643" y="390" width="44" height="34" rx="10" class="dg-node-accent"/>
+<text x="665" y="412" text-anchor="middle" class="dg-label">Si'</text>
+</svg>
+<figcaption>Albero di decisione per decidere se attendere che si liberi un tavolo — schema ripreso dalla Figura 19.3 del cap. 19, AIMA 4a ed.</figcaption>
+</figure>
 
 L'algoritmo di apprendimento e' greedy e ricorsivo: a ogni nodo sceglie l'attributo "piu' importante" e suddivide gli esempi, ripetendo sui sottoinsiemi. L'importanza si misura con il guadagno informativo, cioe' la riduzione attesa di entropia — il concetto di Shannon che quantifica l'incertezza di una variabile casuale. Un attributo che separa nettamente esempi positivi e negativi ha guadagno alto e finisce vicino alla radice; uno che li mescola ha guadagno quasi nullo e viene ignorato. Il risultato notevole e' che dodici esempi bastano a produrre un albero piu' semplice di quello mentale della persona che li ha generati, e con pattern inattesi ma corretti.
 

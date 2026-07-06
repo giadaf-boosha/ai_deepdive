@@ -17,9 +17,102 @@ L'idea storica viene dai primi tentativi di modellare i neuroni come circuiti co
 
 Il capitolo costruisce il quadro completo: dalle reti feedforward piu' semplici ai grafi computazionali generali, dalle reti convoluzionali per la visione alle reti ricorrenti per le sequenze, fino ai metodi non supervisionati e al transfer learning.
 
+<figure class="diagram">
+<svg viewBox="0 0 760 460" role="img" aria-label="Mappa concettuale del capitolo 21: dal deep learning come circuiti con cammini lunghi al grafo computazionale con pesi regolabili, addestrato con retropropagazione; ai lati le reti feedforward, convoluzionali e ricorrenti, in basso generalizzazione, apprendimento non supervisionato e transfer learning fino alle applicazioni">
+<defs><marker id="arr-c21" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="dg-arrow"/></marker></defs>
+<line x1="330" y1="68" x2="140" y2="101" class="dg-edge" marker-end="url(#arr-c21)"/>
+<text x="235" y="80" text-anchor="middle" class="dg-edge-label">caso piu' semplice</text>
+<line x1="380" y1="68" x2="380" y2="101" class="dg-edge-primary" marker-end="url(#arr-c21)"/>
+<line x1="430" y1="68" x2="620" y2="101" class="dg-edge" marker-end="url(#arr-c21)"/>
+<text x="535" y="82" text-anchor="middle" class="dg-edge-label">per le immagini</text>
+<line x1="204" y1="132" x2="267" y2="132" class="dg-edge" marker-end="url(#arr-c21)"/>
+<line x1="380" y1="160" x2="380" y2="193" class="dg-edge-primary" marker-end="url(#arr-c21)"/>
+<text x="470" y="180" text-anchor="middle" class="dg-edge-label">discesa del gradiente</text>
+<line x1="460" y1="160" x2="610" y2="193" class="dg-edge" marker-end="url(#arr-c21)"/>
+<text x="535" y="176" text-anchor="middle" class="dg-edge-label">cicli con ritardo</text>
+<line x1="270" y1="224" x2="207" y2="224" class="dg-edge" marker-end="url(#arr-c21)"/>
+<text x="238" y="216" text-anchor="middle" class="dg-edge-label">problema</text>
+<line x1="380" y1="252" x2="380" y2="285" class="dg-edge" marker-end="url(#arr-c21)"/>
+<text x="470" y="272" text-anchor="middle" class="dg-edge-label">adattarsi non basta</text>
+<line x1="380" y1="344" x2="380" y2="381" class="dg-edge" marker-end="url(#arr-c21)"/>
+<line x1="140" y1="344" x2="295" y2="381" class="dg-edge" marker-end="url(#arr-c21)"/>
+<line x1="610" y1="344" x2="465" y2="381" class="dg-edge" marker-end="url(#arr-c21)"/>
+<text x="545" y="362" text-anchor="middle" class="dg-edge-label">meno etichette</text>
+<rect x="270" y="12" width="220" height="56" rx="10" class="dg-node-primary"/>
+<text x="380" y="36" text-anchor="middle" class="dg-label">Deep learning</text>
+<text x="380" y="52" text-anchor="middle" class="dg-sublabel">circuiti con cammini lunghi</text>
+<rect x="8" y="104" width="196" height="56" rx="10" class="dg-node"/>
+<text x="106" y="128" text-anchor="middle" class="dg-label">Rete feedforward</text>
+<text x="106" y="144" text-anchor="middle" class="dg-sublabel">somma pesata + attivazione</text>
+<rect x="270" y="104" width="220" height="56" rx="10" class="dg-node-primary"/>
+<text x="380" y="128" text-anchor="middle" class="dg-label">Grafo computazionale</text>
+<text x="380" y="144" text-anchor="middle" class="dg-sublabel">pesi come manopole regolabili</text>
+<rect x="546" y="104" width="206" height="56" rx="10" class="dg-node"/>
+<text x="649" y="128" text-anchor="middle" class="dg-label">Reti convoluzionali</text>
+<text x="649" y="144" text-anchor="middle" class="dg-sublabel">localita' e invarianza spaziale</text>
+<rect x="8" y="196" width="196" height="56" rx="10" class="dg-node"/>
+<text x="106" y="220" text-anchor="middle" class="dg-label">Scomparsa del gradiente</text>
+<text x="106" y="236" text-anchor="middle" class="dg-sublabel">risolta dalle reti residuali</text>
+<rect x="270" y="196" width="220" height="56" rx="10" class="dg-node-primary"/>
+<text x="380" y="220" text-anchor="middle" class="dg-label">Retropropagazione</text>
+<text x="380" y="236" text-anchor="middle" class="dg-sublabel">l'errore risale la rete</text>
+<rect x="546" y="196" width="206" height="56" rx="10" class="dg-node"/>
+<text x="649" y="220" text-anchor="middle" class="dg-label">Reti ricorrenti e LSTM</text>
+<text x="649" y="236" text-anchor="middle" class="dg-sublabel">memoria per le sequenze</text>
+<rect x="8" y="288" width="196" height="56" rx="10" class="dg-node"/>
+<text x="106" y="312" text-anchor="middle" class="dg-label">Non supervisionato</text>
+<text x="106" y="328" text-anchor="middle" class="dg-sublabel">autoencoder, VAE, GAN</text>
+<rect x="270" y="288" width="220" height="56" rx="10" class="dg-node"/>
+<text x="380" y="312" text-anchor="middle" class="dg-label">Generalizzazione</text>
+<text x="380" y="328" text-anchor="middle" class="dg-sublabel">architettura, decadimento, dropout</text>
+<rect x="546" y="288" width="206" height="56" rx="10" class="dg-node"/>
+<text x="649" y="312" text-anchor="middle" class="dg-label">Transfer learning</text>
+<text x="649" y="328" text-anchor="middle" class="dg-sublabel">preaddestra, poi regola finemente</text>
+<rect x="255" y="384" width="250" height="56" rx="10" class="dg-node-accent"/>
+<text x="380" y="408" text-anchor="middle" class="dg-label">Applicazioni</text>
+<text x="380" y="424" text-anchor="middle" class="dg-sublabel">visione, linguaggio, RL deep</text>
+</svg>
+<figcaption>Mappa del capitolo 21 — dal circuito con pesi regolabili alla retropropagazione, fino alle applicazioni in visione, linguaggio e rinforzo</figcaption>
+</figure>
+
 ## Reti come composizione di funzioni
 
 Una rete feedforward e' un grafo aciclico orientato in cui ogni nodo, detto unita', calcola una somma pesata dei propri input e vi applica una funzione di attivazione non lineare. La non linearita' e' il punto cruciale: comporre funzioni lineari produce ancora una funzione lineare, mentre comporre unita' non lineari permette a reti abbastanza grandi di approssimare qualsiasi funzione continua (teorema di approssimazione universale, che vale gia' con due soli strati). Le attivazioni piu' usate sono la sigmoide, la ReLU (che restituisce il massimo tra zero e l'input), la sua versione smussata softplus e la tangente iperbolica.
+
+<figure class="diagram">
+<svg viewBox="0 0 760 280" role="img" aria-label="Rete neurale feedforward con due input x1 e x2, uno strato nascosto di due unita' (3 e 4) e una unita' di output (5) che produce l'output y previsto; sui collegamenti i pesi w1,3 w1,4 w2,3 w2,4 w3,5 w4,5">
+<defs><marker id="arr-c21-b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="dg-arrow"/></marker></defs>
+<line x1="170" y1="78" x2="326" y2="78" class="dg-edge" marker-end="url(#arr-c21-b)"/>
+<text x="250" y="70" text-anchor="middle" class="dg-edge-label">w1,3</text>
+<line x1="170" y1="98" x2="326" y2="200" class="dg-edge" marker-end="url(#arr-c21-b)"/>
+<text x="200" y="135" text-anchor="middle" class="dg-edge-label">w1,4</text>
+<line x1="170" y1="198" x2="326" y2="96" class="dg-edge" marker-end="url(#arr-c21-b)"/>
+<text x="200" y="168" text-anchor="middle" class="dg-edge-label">w2,3</text>
+<line x1="170" y1="218" x2="326" y2="218" class="dg-edge" marker-end="url(#arr-c21-b)"/>
+<text x="250" y="236" text-anchor="middle" class="dg-edge-label">w2,4</text>
+<line x1="450" y1="92" x2="586" y2="136" class="dg-edge" marker-end="url(#arr-c21-b)"/>
+<text x="505" y="98" text-anchor="middle" class="dg-edge-label">w3,5</text>
+<line x1="450" y1="204" x2="586" y2="160" class="dg-edge" marker-end="url(#arr-c21-b)"/>
+<text x="505" y="200" text-anchor="middle" class="dg-edge-label">w4,5</text>
+<line x1="710" y1="148" x2="744" y2="148" class="dg-edge" marker-end="url(#arr-c21-b)"/>
+<rect x="60" y="50" width="110" height="56" rx="10" class="dg-node"/>
+<text x="115" y="74" text-anchor="middle" class="dg-label">x1</text>
+<text x="115" y="90" text-anchor="middle" class="dg-sublabel">input</text>
+<rect x="60" y="190" width="110" height="56" rx="10" class="dg-node"/>
+<text x="115" y="214" text-anchor="middle" class="dg-label">x2</text>
+<text x="115" y="230" text-anchor="middle" class="dg-sublabel">input</text>
+<rect x="330" y="50" width="120" height="56" rx="10" class="dg-node-primary"/>
+<text x="390" y="74" text-anchor="middle" class="dg-label">3</text>
+<text x="390" y="90" text-anchor="middle" class="dg-sublabel">strato nascosto</text>
+<rect x="330" y="190" width="120" height="56" rx="10" class="dg-node-primary"/>
+<text x="390" y="214" text-anchor="middle" class="dg-label">4</text>
+<text x="390" y="230" text-anchor="middle" class="dg-sublabel">strato nascosto</text>
+<rect x="590" y="120" width="120" height="56" rx="10" class="dg-node-accent"/>
+<text x="650" y="144" text-anchor="middle" class="dg-label">5</text>
+<text x="650" y="160" text-anchor="middle" class="dg-sublabel">output y previsto</text>
+</svg>
+<figcaption>Rete neurale con due input, uno strato nascosto di due unita' e una unita' di output — schema ripreso dalla figura 21.3 del cap. 21, AIMA 4a ed.</figcaption>
+</figure>
 
 Il modo piu' generale di guardare una rete e' come grafo computazionale: un circuito in cui ogni nodo rappresenta un'operazione elementare e i pesi sono parametri regolabili, manopole che decidono quanto ogni nodo "ascolta" i suoi predecessori. L'apprendimento consiste nel ruotare queste manopole finche' l'output della rete si avvicina ai valori osservati nei dati di addestramento.
 

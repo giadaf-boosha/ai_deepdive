@@ -17,6 +17,60 @@ Questa prospettiva unifica temi che altrove appaiono separati: la scelta tra ipo
 
 Il valore del capitolo sta nel mostrare che dietro tecniche apparentemente diverse — regressione lineare, classificatori bayesiani ingenui, clustering, modelli di Markov nascosti — c'e' un unico principio: trovare il modello che rende i dati osservati piu' plausibili, temperato da una preferenza a priori per la semplicita'.
 
+<figure class="diagram">
+<svg viewBox="0 0 760 460" role="img" aria-label="Mappa concettuale del capitolo 20: l'apprendimento bayesiano puro viene approssimato dall'ipotesi MAP, il cui prior realizza il rasoio di Occam; con prior uniforme si arriva alla massima verosimiglianza, che con dati completi si riduce a frequenze (naive Bayes), con pochi dati e' corretta dai prior coniugati e con dati incompleti porta alle variabili nascoste, risolte dall'algoritmo EM applicato a miscele di gaussiane e HMM">
+<defs><marker id="arr-c20" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="dg-arrow"/></marker></defs>
+<line x1="380" y1="68" x2="380" y2="104" class="dg-edge-primary" marker-end="url(#arr-c20)"/>
+<text x="298" y="90" text-anchor="middle" class="dg-edge-label">approssimazione</text>
+<line x1="470" y1="116" x2="600" y2="68" class="dg-edge" marker-end="url(#arr-c20)"/>
+<text x="545" y="82" text-anchor="middle" class="dg-edge-label">il prior penalizza</text>
+<line x1="380" y1="160" x2="380" y2="196" class="dg-edge-primary" marker-end="url(#arr-c20)"/>
+<text x="298" y="182" text-anchor="middle" class="dg-edge-label">prior uniforme</text>
+<line x1="450" y1="224" x2="545" y2="224" class="dg-edge" marker-end="url(#arr-c20)"/>
+<text x="497" y="216" text-anchor="middle" class="dg-edge-label">pochi dati</text>
+<line x1="300" y1="252" x2="165" y2="288" class="dg-edge" marker-end="url(#arr-c20)"/>
+<text x="195" y="262" text-anchor="middle" class="dg-edge-label">dati completi</text>
+<line x1="383" y1="252" x2="385" y2="288" class="dg-edge-primary" marker-end="url(#arr-c20)"/>
+<text x="475" y="272" text-anchor="middle" class="dg-edge-label">dati incompleti</text>
+<line x1="125" y1="344" x2="125" y2="380" class="dg-edge" marker-end="url(#arr-c20)"/>
+<text x="175" y="366" text-anchor="middle" class="dg-edge-label">esempio</text>
+<line x1="385" y1="344" x2="385" y2="380" class="dg-edge-primary" marker-end="url(#arr-c20)"/>
+<text x="460" y="366" text-anchor="middle" class="dg-edge-label">risolte da</text>
+<line x1="490" y1="408" x2="530" y2="408" class="dg-edge" marker-end="url(#arr-c20)"/>
+<rect x="280" y="12" width="200" height="56" rx="10" class="dg-node-primary"/>
+<text x="380" y="36" text-anchor="middle" class="dg-label">Apprendimento bayesiano</text>
+<text x="380" y="52" text-anchor="middle" class="dg-sublabel">predizione ottima ma intrattabile</text>
+<rect x="520" y="12" width="225" height="56" rx="10" class="dg-node"/>
+<text x="632" y="36" text-anchor="middle" class="dg-label">Rasoio di Occam / MDL</text>
+<text x="632" y="52" text-anchor="middle" class="dg-sublabel">l'apprendimento come compressione</text>
+<rect x="290" y="104" width="180" height="56" rx="10" class="dg-node-primary"/>
+<text x="380" y="128" text-anchor="middle" class="dg-label">Ipotesi MAP</text>
+<text x="380" y="144" text-anchor="middle" class="dg-sublabel">la piu' probabile dati i dati</text>
+<rect x="260" y="196" width="190" height="56" rx="10" class="dg-node-primary"/>
+<text x="355" y="220" text-anchor="middle" class="dg-label">Massima verosimiglianza</text>
+<text x="355" y="236" text-anchor="middle" class="dg-sublabel">MAP con prior uniforme</text>
+<rect x="545" y="196" width="205" height="56" rx="10" class="dg-node"/>
+<text x="647" y="220" text-anchor="middle" class="dg-label">Prior coniugati (beta)</text>
+<text x="647" y="236" text-anchor="middle" class="dg-sublabel">iperparametri = contatori virtuali</text>
+<rect x="20" y="288" width="210" height="56" rx="10" class="dg-node"/>
+<text x="125" y="312" text-anchor="middle" class="dg-label">Stima con dati completi</text>
+<text x="125" y="328" text-anchor="middle" class="dg-sublabel">parametri = frequenze osservate</text>
+<rect x="290" y="288" width="190" height="56" rx="10" class="dg-node-primary"/>
+<text x="385" y="312" text-anchor="middle" class="dg-label">Variabili nascoste</text>
+<text x="385" y="328" text-anchor="middle" class="dg-sublabel">mai osservate, meno parametri</text>
+<rect x="20" y="380" width="210" height="56" rx="10" class="dg-node"/>
+<text x="125" y="404" text-anchor="middle" class="dg-label">Naive Bayes</text>
+<text x="125" y="420" text-anchor="middle" class="dg-sublabel">indipendenza data la classe</text>
+<rect x="280" y="380" width="210" height="56" rx="10" class="dg-node-accent"/>
+<text x="385" y="404" text-anchor="middle" class="dg-label">Algoritmo EM</text>
+<text x="385" y="420" text-anchor="middle" class="dg-sublabel">alterna passo E e passo M</text>
+<rect x="530" y="380" width="215" height="56" rx="10" class="dg-node"/>
+<text x="637" y="404" text-anchor="middle" class="dg-label">Miscele di gaussiane, HMM</text>
+<text x="637" y="420" text-anchor="middle" class="dg-sublabel">clustering, forward-backward</text>
+</svg>
+<figcaption>Mappa concettuale del capitolo 20: dall'apprendimento bayesiano puro, attraverso le approssimazioni MAP e di massima verosimiglianza, fino alle variabili nascoste e all'algoritmo EM.</figcaption>
+</figure>
+
 ## Imparare e' aggiornare credenze: la visione bayesiana
 
 L'esempio conduttore e' volutamente giocoso: sacchetti di caramelle con proporzioni ignote di due gusti, ciliegia e lime, incartate in modo indistinguibile. Cinque ipotesi possibili descrivono la composizione del sacchetto, dal 100% ciliegia al 100% lime. Ogni caramella scartata e' un dato; il compito e' predire il gusto della prossima.

@@ -16,9 +16,76 @@ Il punto di partenza pratico e' che definire una funzione di ricompensa e' quasi
 
 Il quadro formale e' quello dei processi decisionali di Markov (MDP), ma con una differenza cruciale: l'agente non e' fuori dall'MDP a risolverlo su carta, e' dentro l'MDP, e spesso non ne conosce ne' il modello di transizione ne' la funzione di ricompensa. Il capitolo esplora l'intero ventaglio di strategie per questa situazione: gli approcci basati su modello, che apprendono una mappa dell'ambiente e da quella derivano le utilita' degli stati, e quelli senza modello, che imparano direttamente una funzione azione-utilita' o una politica.
 
+<figure class="diagram">
+<svg viewBox="0 0 760 470" role="img" aria-label="Mappa concettuale del capitolo 22: dall'apprendimento per rinforzo passivo con ADP e differenze temporali al RL attivo con Q-learning e SARSA, fino all'approssimazione di funzione con il deep RL; rami paralleli per la ricerca delle politiche, il reward shaping e l'apprendimento per apprendistato con RL inverso">
+<defs><marker id="arr-c22" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="dg-arrow"/></marker></defs>
+<line x1="320" y1="68" x2="200" y2="110" class="dg-edge" marker-end="url(#arr-c22)"/>
+<line x1="385" y1="68" x2="390" y2="110" class="dg-edge-primary" marker-end="url(#arr-c22)"/>
+<line x1="450" y1="68" x2="630" y2="110" class="dg-edge" marker-end="url(#arr-c22)"/>
+<text x="560" y="74" text-anchor="middle" class="dg-edge-label">senza funzioni valore</text>
+<line x1="180" y1="166" x2="176" y2="216" class="dg-edge" marker-end="url(#arr-c22)"/>
+<line x1="392" y1="166" x2="398" y2="216" class="dg-edge-primary" marker-end="url(#arr-c22)"/>
+<line x1="260" y1="248" x2="310" y2="248" class="dg-edge" marker-end="url(#arr-c22)"/>
+<text x="285" y="240" text-anchor="middle" class="dg-edge-label">idea TD</text>
+<line x1="398" y1="272" x2="392" y2="322" class="dg-edge-primary" marker-end="url(#arr-c22)"/>
+<text x="480" y="300" text-anchor="middle" class="dg-edge-label">tabelle non scalano</text>
+<line x1="495" y1="338" x2="583" y2="274" class="dg-edge" marker-end="url(#arr-c22)"/>
+<text x="610" y="318" text-anchor="middle" class="dg-edge-label">ricompense sparse</text>
+<path d="M270,40 L45,40 L45,430 L286,430" class="dg-edge" marker-end="url(#arr-c22)"/>
+<text x="165" y="422" text-anchor="middle" class="dg-edge-label">ricompensa non specificabile</text>
+<rect x="270" y="12" width="220" height="56" rx="10" class="dg-node-primary"/>
+<text x="380" y="36" text-anchor="middle" class="dg-label">Apprendimento per rinforzo</text>
+<text x="380" y="52" text-anchor="middle" class="dg-sublabel">massimizzare la ricompensa attesa</text>
+<rect x="90" y="110" width="190" height="56" rx="10" class="dg-node"/>
+<text x="185" y="134" text-anchor="middle" class="dg-label">RL passivo</text>
+<text x="185" y="150" text-anchor="middle" class="dg-sublabel">valuta una politica fissata</text>
+<rect x="300" y="110" width="180" height="56" rx="10" class="dg-node-primary"/>
+<text x="390" y="134" text-anchor="middle" class="dg-label">RL attivo</text>
+<text x="390" y="150" text-anchor="middle" class="dg-sublabel">esplorazione vs sfruttamento</text>
+<rect x="550" y="110" width="194" height="56" rx="10" class="dg-node"/>
+<text x="647" y="134" text-anchor="middle" class="dg-label">Ricerca delle politiche</text>
+<text x="647" y="150" text-anchor="middle" class="dg-sublabel">REINFORCE, PEGASUS</text>
+<rect x="90" y="216" width="170" height="56" rx="10" class="dg-node"/>
+<text x="175" y="240" text-anchor="middle" class="dg-label">ADP e TD</text>
+<text x="175" y="256" text-anchor="middle" class="dg-sublabel">Bellman vs update locali</text>
+<rect x="310" y="216" width="180" height="56" rx="10" class="dg-node-primary"/>
+<text x="400" y="240" text-anchor="middle" class="dg-label">Q-learning e SARSA</text>
+<text x="400" y="256" text-anchor="middle" class="dg-sublabel">senza modello: off/on-policy</text>
+<rect x="550" y="216" width="194" height="56" rx="10" class="dg-node"/>
+<text x="647" y="240" text-anchor="middle" class="dg-label">Shaping e RL gerarchico</text>
+<text x="647" y="256" text-anchor="middle" class="dg-sublabel">contro le ricompense sparse</text>
+<rect x="285" y="322" width="210" height="56" rx="10" class="dg-node-primary"/>
+<text x="390" y="346" text-anchor="middle" class="dg-label">Approssimazione di funzione</text>
+<text x="390" y="362" text-anchor="middle" class="dg-sublabel">deep RL: DQN, AlphaGo</text>
+<rect x="288" y="402" width="204" height="56" rx="10" class="dg-node-accent"/>
+<text x="390" y="426" text-anchor="middle" class="dg-label">Apprendistato e RL inverso</text>
+<text x="390" y="442" text-anchor="middle" class="dg-sublabel">imitazione o ricompensa dedotta</text>
+</svg>
+<figcaption>Mappa del capitolo 22 — dal RL passivo al deep RL lungo il filo senza modello, con le vie alternative della ricerca delle politiche e dell'apprendistato</figcaption>
+</figure>
+
 ## Imparare guardando: il caso passivo
 
 Il caso piu' semplice e' quello dell'agente passivo: la politica e' gia' fissata e il compito e' solo stimare quanto vale ogni stato, cioe' la somma attesa delle ricompense future se si segue quella politica. E' l'equivalente della valutazione della politica negli MDP, ma senza conoscere transizioni e ricompense: bisogna scoprirle provando.
+
+<figure class="diagram">
+<svg viewBox="0 0 760 250" role="img" aria-label="Il ciclo dell'apprendimento per rinforzo: l'agente esegue un'azione a sull'ambiente e riceve come percezione lo stato corrente s' e un segnale di ricompensa r">
+<defs><marker id="arr-c22-b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="dg-arrow"/></marker></defs>
+<line x1="280" y1="108" x2="480" y2="108" class="dg-edge-primary" marker-end="url(#arr-c22-b)"/>
+<text x="380" y="100" text-anchor="middle" class="dg-edge-label">azione a</text>
+<line x1="480" y1="150" x2="280" y2="150" class="dg-edge" marker-end="url(#arr-c22-b)"/>
+<text x="380" y="142" text-anchor="middle" class="dg-edge-label">stato corrente s'</text>
+<line x1="480" y1="172" x2="280" y2="172" class="dg-edge" marker-end="url(#arr-c22-b)"/>
+<text x="380" y="164" text-anchor="middle" class="dg-edge-label">segnale di ricompensa r</text>
+<rect x="70" y="90" width="210" height="92" rx="10" class="dg-node-primary"/>
+<text x="175" y="126" text-anchor="middle" class="dg-label">Agente</text>
+<text x="175" y="142" text-anchor="middle" class="dg-sublabel">impara dall'esperienza</text>
+<rect x="480" y="90" width="210" height="92" rx="10" class="dg-node"/>
+<text x="585" y="126" text-anchor="middle" class="dg-label">Ambiente</text>
+<text x="585" y="142" text-anchor="middle" class="dg-sublabel">MDP con P(s'|s,a) e R(s,a,s')</text>
+</svg>
+<figcaption>Il ciclo dell'apprendimento per rinforzo — l'agente agisce e percepisce stato e ricompensa; schema ripreso dal par. 22.1-22.2, AIMA 4a ed.</figcaption>
+</figure>
 
 La strada piu' ingenua e' la stima diretta dell'utilita': ogni tentativo completo fornisce, per ciascuno stato visitato, un campione della ricompensa totale ottenuta da li' in avanti, e basta fare la media dei campioni. Funziona, ma converge lentamente perche' ignora un vincolo prezioso: le utilita' degli stati non sono indipendenti, sono legate tra loro dalle equazioni di Bellman. Se uno stato porta quasi sempre a uno stato di alto valore, anche lui vale molto, e non serve aspettare decine di tentativi per accorgersene.
 
