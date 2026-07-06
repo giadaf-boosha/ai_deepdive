@@ -25,6 +25,56 @@ agenti razionali, cioe' sistemi che fanno "la cosa giusta" rispetto a un
 obiettivo. Ma proprio questa definizione, avvertono gli autori, va corretta
 quando le macchine diventano abbastanza potenti da operare nel mondo reale.
 
+<figure class="diagram">
+<svg viewBox="0 0 760 400" role="img" aria-label="Mappa concettuale del capitolo 1: le quattro definizioni di intelligenza artificiale, il modello standard degli agenti razionali, la razionalita' limitata e il problema dell'allineamento dei valori che porta alle macchine benefiche">
+<defs><marker id="arr-c01" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="dg-arrow"/></marker></defs>
+<line x1="380" y1="68" x2="97" y2="113" class="dg-edge" marker-end="url(#arr-c01)"/>
+<line x1="380" y1="68" x2="277" y2="113" class="dg-edge" marker-end="url(#arr-c01)"/>
+<line x1="380" y1="68" x2="467" y2="113" class="dg-edge" marker-end="url(#arr-c01)"/>
+<line x1="380" y1="68" x2="657" y2="113" class="dg-edge-primary" marker-end="url(#arr-c01)"/>
+<line x1="661" y1="176" x2="661" y2="223" class="dg-edge-primary" marker-end="url(#arr-c01)"/>
+<line x1="570" y1="254" x2="513" y2="254" class="dg-edge" marker-end="url(#arr-c01)"/>
+<text x="541" y="246" text-anchor="middle" class="dg-edge-label">limiti di calcolo</text>
+<line x1="661" y1="282" x2="653" y2="313" class="dg-edge" marker-end="url(#arr-c01)"/>
+<line x1="550" y1="344" x2="493" y2="344" class="dg-edge" marker-end="url(#arr-c01)"/>
+<text x="521" y="336" text-anchor="middle" class="dg-edge-label">risposta</text>
+<rect x="280" y="12" width="200" height="56" rx="10" class="dg-node-primary"/>
+<text x="380" y="36" text-anchor="middle" class="dg-label">Intelligenza artificiale</text>
+<text x="380" y="52" text-anchor="middle" class="dg-sublabel">costruire agenti che agiscono</text>
+<rect x="8" y="116" width="166" height="60" rx="10" class="dg-node"/>
+<text x="91" y="140" text-anchor="middle" class="dg-label">Pensare umanamente</text>
+<text x="91" y="156" text-anchor="middle" class="dg-sublabel">modellazione cognitiva</text>
+<rect x="198" y="116" width="166" height="60" rx="10" class="dg-node"/>
+<text x="281" y="140" text-anchor="middle" class="dg-label">Agire umanamente</text>
+<text x="281" y="156" text-anchor="middle" class="dg-sublabel">test di Turing</text>
+<rect x="388" y="116" width="166" height="60" rx="10" class="dg-node"/>
+<text x="471" y="140" text-anchor="middle" class="dg-label">Pensare razionalmente</text>
+<text x="471" y="156" text-anchor="middle" class="dg-sublabel">leggi del pensiero</text>
+<rect x="578" y="116" width="166" height="60" rx="10" class="dg-node-primary"/>
+<text x="661" y="140" text-anchor="middle" class="dg-label">Agire razionalmente</text>
+<text x="661" y="156" text-anchor="middle" class="dg-sublabel">agenti razionali</text>
+<rect x="570" y="226" width="182" height="56" rx="10" class="dg-node-primary"/>
+<text x="661" y="250" text-anchor="middle" class="dg-label">Modello standard</text>
+<text x="661" y="266" text-anchor="middle" class="dg-sublabel">fare la cosa giusta</text>
+<rect x="330" y="226" width="183" height="56" rx="10" class="dg-node"/>
+<text x="421" y="250" text-anchor="middle" class="dg-label">Razionalita' limitata</text>
+<text x="421" y="266" text-anchor="middle" class="dg-sublabel">agire bene senza calcolare tutto</text>
+<rect x="550" y="316" width="202" height="56" rx="10" class="dg-node"/>
+<text x="651" y="340" text-anchor="middle" class="dg-label">Allineamento dei valori</text>
+<text x="651" y="356" text-anchor="middle" class="dg-sublabel">obiettivi incompleti o errati</text>
+<rect x="253" y="316" width="240" height="56" rx="10" class="dg-node-accent"/>
+<text x="373" y="340" text-anchor="middle" class="dg-label">Macchine benefiche</text>
+<text x="373" y="356" text-anchor="middle" class="dg-sublabel">incerte sull'obiettivo, deferenti</text>
+<rect x="8" y="226" width="250" height="56" rx="10" class="dg-node"/>
+<text x="133" y="250" text-anchor="middle" class="dg-label">Otto discipline fondatrici</text>
+<text x="133" y="266" text-anchor="middle" class="dg-sublabel">dalla filosofia alla linguistica</text>
+<rect x="8" y="316" width="222" height="56" rx="10" class="dg-node"/>
+<text x="119" y="340" text-anchor="middle" class="dg-label">Storia a cicli</text>
+<text x="119" y="356" text-anchor="middle" class="dg-sublabel">entusiasmi, inverni, deep learning</text>
+</svg>
+<figcaption>Mappa del capitolo 1 — le quattro definizioni di IA e la traiettoria dal modello standard alle macchine benefiche</figcaption>
+</figure>
+
 ## Quattro modi di definire l'intelligenza artificiale
 
 Le definizioni storiche di AI si dispongono lungo due assi: fedelta' al
