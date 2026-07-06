@@ -17,6 +17,64 @@ Il problema e' che le lingue naturali non si comportano come i linguaggi formali
 
 Il capitolo percorre una scala di modelli sempre piu' espressivi: dai conteggi di parole isolate, agli n-grammi, alle grammatiche probabilistiche con parsing, fino alle grammatiche aumentate con semantica logica. Chiude con le complicazioni del linguaggio reale e con una rassegna dei compiti applicativi. E' il ponte concettuale tra l'AI classica e i modelli neurali del capitolo successivo.
 
+<figure class="diagram">
+<svg viewBox="0 0 760 400" role="img" aria-label="Mappa concettuale del capitolo 23: dal linguaggio naturale al modello di linguaggio come distribuzione di probabilita', la scala di modelli da borsa di parole a n-grammi, PCFG e grammatiche aumentate, con POS tagging, semantica composizionale, ambiguita' e disambiguazione, fino al ponte verso i word embedding del capitolo 24">
+<defs><marker id="arr-c23" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="dg-arrow"/></marker></defs>
+<line x1="116" y1="68" x2="116" y2="118" class="dg-edge-primary" marker-end="url(#arr-c23)"/>
+<line x1="224" y1="118" x2="300" y2="68" class="dg-edge" marker-end="url(#arr-c23)"/>
+<text x="330" y="100" text-anchor="middle" class="dg-edge-label">strumento centrale</text>
+<line x1="646" y1="68" x2="646" y2="118" class="dg-edge" marker-end="url(#arr-c23)"/>
+<line x1="224" y1="146" x2="540" y2="146" class="dg-edge" marker-end="url(#arr-c23)"/>
+<text x="382" y="138" text-anchor="middle" class="dg-edge-label">una delle 4 fonti</text>
+<line x1="116" y1="174" x2="88" y2="224" class="dg-edge-primary" marker-end="url(#arr-c23)"/>
+<line x1="168" y1="252" x2="200" y2="252" class="dg-edge-primary" marker-end="url(#arr-c23)"/>
+<line x1="360" y1="252" x2="392" y2="252" class="dg-edge-primary" marker-end="url(#arr-c23)"/>
+<line x1="552" y1="252" x2="584" y2="252" class="dg-edge-primary" marker-end="url(#arr-c23)"/>
+<line x1="230" y1="280" x2="110" y2="330" class="dg-edge" marker-end="url(#arr-c23)"/>
+<text x="130" y="300" text-anchor="middle" class="dg-edge-label">dare struttura</text>
+<line x1="310" y1="280" x2="375" y2="330" class="dg-edge" marker-end="url(#arr-c23)"/>
+<text x="420" y="300" text-anchor="middle" class="dg-edge-label">niente generalizzazione</text>
+<line x1="668" y1="280" x2="654" y2="330" class="dg-edge" marker-end="url(#arr-c23)"/>
+<rect x="8" y="12" width="216" height="56" rx="10" class="dg-node"/>
+<text x="116" y="36" text-anchor="middle" class="dg-label">Linguaggio naturale</text>
+<text x="116" y="52" text-anchor="middle" class="dg-sublabel">nessun confine grammaticale netto</text>
+<rect x="288" y="12" width="190" height="56" rx="10" class="dg-node"/>
+<text x="383" y="36" text-anchor="middle" class="dg-label">Compiti applicativi</text>
+<text x="383" y="52" text-anchor="middle" class="dg-sublabel">traduzione, speech, QA</text>
+<rect x="540" y="12" width="212" height="56" rx="10" class="dg-node"/>
+<text x="646" y="36" text-anchor="middle" class="dg-label">Ambiguita' pervasiva</text>
+<text x="646" y="52" text-anchor="middle" class="dg-sublabel">lessicale, sintattica, semantica</text>
+<rect x="8" y="118" width="216" height="56" rx="10" class="dg-node-primary"/>
+<text x="116" y="142" text-anchor="middle" class="dg-label">Modello di linguaggio</text>
+<text x="116" y="158" text-anchor="middle" class="dg-sublabel">probabilita' sulle sequenze</text>
+<rect x="540" y="118" width="212" height="56" rx="10" class="dg-node"/>
+<text x="646" y="142" text-anchor="middle" class="dg-label">Disambiguazione</text>
+<text x="646" y="158" text-anchor="middle" class="dg-sublabel">interpretazione piu' probabile</text>
+<rect x="8" y="224" width="160" height="56" rx="10" class="dg-node"/>
+<text x="88" y="248" text-anchor="middle" class="dg-label">Borsa di parole</text>
+<text x="88" y="264" text-anchor="middle" class="dg-sublabel">Bayes ingenuo</text>
+<rect x="200" y="224" width="160" height="56" rx="10" class="dg-node"/>
+<text x="280" y="248" text-anchor="middle" class="dg-label">N-grammi</text>
+<text x="280" y="264" text-anchor="middle" class="dg-sublabel">catena di Markov</text>
+<rect x="392" y="224" width="160" height="56" rx="10" class="dg-node"/>
+<text x="472" y="248" text-anchor="middle" class="dg-label">PCFG e parsing</text>
+<text x="472" y="264" text-anchor="middle" class="dg-sublabel">alberi sintattici, CYK</text>
+<rect x="584" y="224" width="168" height="56" rx="10" class="dg-node"/>
+<text x="668" y="248" text-anchor="middle" class="dg-label">Grammatiche aumentate</text>
+<text x="668" y="264" text-anchor="middle" class="dg-sublabel">caso, teste lessicali</text>
+<rect x="8" y="330" width="170" height="56" rx="10" class="dg-node"/>
+<text x="93" y="354" text-anchor="middle" class="dg-label">POS tagging</text>
+<text x="93" y="370" text-anchor="middle" class="dg-sublabel">HMM o regressione logistica</text>
+<rect x="290" y="330" width="200" height="56" rx="10" class="dg-node-accent"/>
+<text x="390" y="354" text-anchor="middle" class="dg-label">Word embedding</text>
+<text x="390" y="370" text-anchor="middle" class="dg-sublabel">verso i modelli neurali (cap. 24)</text>
+<rect x="548" y="330" width="204" height="56" rx="10" class="dg-node"/>
+<text x="650" y="354" text-anchor="middle" class="dg-label">Semantica composizionale</text>
+<text x="650" y="370" text-anchor="middle" class="dg-sublabel">dalla frase alla forma logica</text>
+</svg>
+<figcaption>Mappa del capitolo 23 — dal modello di linguaggio alla scala di modelli sempre piu' espressivi, fino al ponte verso i word embedding</figcaption>
+</figure>
+
 ## Contare le parole: borsa di parole e n-grammi
 
 Il modello piu' semplice tratta un testo come una borsa di parole: per classificare una frase in una categoria (business, meteo, spam) basta guardare quali parole contiene, ignorando completamente l'ordine. E' il modello di Bayes ingenuo riletto come modello di linguaggio generativo: immaginiamo una borsa per categoria, piena di foglietti con le parole, ed estraiamo parole a caso. L'assunzione di indipendenza tra le parole e' palesemente falsa, eppure il modello classifica con buona accuratezza: "azioni" e "guadagni" segnalano un testo finanziario, "pioggia" e "nuvoloso" uno meteorologico. I parametri si stimano contando le occorrenze in un corpus etichettato, e gia' qui emerge un dettaglio non banale: decidere che cosa sia una parola (come spezzare "c'e'"?) richiede un processo di tokenizzazione.

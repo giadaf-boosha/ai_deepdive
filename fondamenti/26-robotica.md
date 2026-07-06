@@ -15,6 +15,51 @@ Un robot e' un agente con un corpo: percepisce il mondo fisico attraverso sensor
 
 La robotica e' anche il banco di prova piu' severo per l'IA perche' il mondo reale non concede sconti. Gli ambienti sono parzialmente osservabili e stocastici, gli spazi di stati e azioni sono continui e ad alta dimensionalita', il tempo non si puo' accelerare come in simulazione e gli errori hanno costi fisici: un braccio che stringe troppo rompe la lampadina, un'auto che sbaglia una predizione mette in pericolo persone. Per questo i ricercatori scompongono il problema in strati (percezione, pianificazione, controllo, interazione) e poi lavorano per ricucirli, perche' ogni separazione semplifica ma sacrifica qualcosa.
 
+<figure class="diagram">
+<svg viewBox="0 0 760 430" role="img" aria-label="Mappa concettuale del capitolo 26: il robot come agente con un corpo, la scomposizione in strati di percezione, pianificazione del movimento, controllo e interazione con le persone, con localizzazione e SLAM, spazio delle configurazioni, reinforcement learning e apprendimento da dimostrazioni come nodi di supporto">
+<defs><marker id="arr-c26" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="dg-arrow"/></marker></defs>
+<line x1="330" y1="68" x2="95" y2="117" class="dg-edge-primary" marker-end="url(#arr-c26)"/>
+<text x="215" y="84" text-anchor="middle" class="dg-edge-label">scompone in strati</text>
+<line x1="158" y1="148" x2="171" y2="148" class="dg-edge-primary" marker-end="url(#arr-c26)"/>
+<line x1="382" y1="148" x2="395" y2="148" class="dg-edge-primary" marker-end="url(#arr-c26)"/>
+<line x1="544" y1="148" x2="557" y2="148" class="dg-edge-primary" marker-end="url(#arr-c26)"/>
+<line x1="83" y1="176" x2="93" y2="247" class="dg-edge" marker-end="url(#arr-c26)"/>
+<line x1="307" y1="250" x2="287" y2="179" class="dg-edge" marker-end="url(#arr-c26)"/>
+<line x1="500" y1="250" x2="478" y2="179" class="dg-edge" marker-end="url(#arr-c26)"/>
+<text x="565" y="216" text-anchor="middle" class="dg-edge-label">modello non noto</text>
+<line x1="640" y1="357" x2="653" y2="179" class="dg-edge" marker-end="url(#arr-c26)"/>
+<text x="570" y="340" text-anchor="middle" class="dg-edge-label">preferenze umane</text>
+<rect x="270" y="12" width="220" height="56" rx="10" class="dg-node-primary"/>
+<text x="380" y="36" text-anchor="middle" class="dg-label">Robot: agente con corpo</text>
+<text x="380" y="52" text-anchor="middle" class="dg-sublabel">sensori e attuatori nel mondo fisico</text>
+<rect x="8" y="120" width="150" height="56" rx="10" class="dg-node-primary"/>
+<text x="83" y="144" text-anchor="middle" class="dg-label">Percezione</text>
+<text x="83" y="160" text-anchor="middle" class="dg-sublabel">stato-credenza, filtri</text>
+<rect x="172" y="120" width="210" height="56" rx="10" class="dg-node-primary"/>
+<text x="277" y="144" text-anchor="middle" class="dg-label">Pianificazione movimento</text>
+<text x="277" y="160" text-anchor="middle" class="dg-sublabel">cammino nello spazio libero</text>
+<rect x="396" y="120" width="148" height="56" rx="10" class="dg-node-primary"/>
+<text x="470" y="144" text-anchor="middle" class="dg-label">Controllo</text>
+<text x="470" y="160" text-anchor="middle" class="dg-sublabel">PID, LQR, MPC</text>
+<rect x="558" y="120" width="194" height="56" rx="10" class="dg-node-accent"/>
+<text x="655" y="144" text-anchor="middle" class="dg-label">Interazione con persone</text>
+<text x="655" y="160" text-anchor="middle" class="dg-sublabel">predire e farsi prevedere</text>
+<rect x="8" y="250" width="180" height="56" rx="10" class="dg-node"/>
+<text x="98" y="274" text-anchor="middle" class="dg-label">Localizzazione e SLAM</text>
+<text x="98" y="290" text-anchor="middle" class="dg-sublabel">particle filter, EKF</text>
+<rect x="202" y="250" width="210" height="56" rx="10" class="dg-node"/>
+<text x="307" y="274" text-anchor="middle" class="dg-label">Spazio delle configurazioni</text>
+<text x="307" y="290" text-anchor="middle" class="dg-sublabel">il robot come un punto</text>
+<rect x="430" y="250" width="180" height="56" rx="10" class="dg-node"/>
+<text x="520" y="274" text-anchor="middle" class="dg-label">Reinforcement learning</text>
+<text x="520" y="290" text-anchor="middle" class="dg-sublabel">efficienza campionaria</text>
+<rect x="500" y="360" width="252" height="56" rx="10" class="dg-node"/>
+<text x="626" y="384" text-anchor="middle" class="dg-label">Apprendimento da dimostrazioni</text>
+<text x="626" y="400" text-anchor="middle" class="dg-sublabel">clonazione comportamentale, DAgger</text>
+</svg>
+<figcaption>Mappa del capitolo 26 — la scomposizione a strati del problema robotico, dalla percezione all'interazione con le persone</figcaption>
+</figure>
+
 ## Corpi, sensori e attuatori
 
 L'hardware determina cosa un robot puo' fare. Le due grandi famiglie sono i manipolatori (bracci robotici, dalle celle industriali ai bracci montati su carrozzine per l'assistenza) e i robot mobili: veicoli su ruote, droni quadricottero, veicoli subacquei autonomi, rover planetari, robot con gambe per terreni impraticabili.

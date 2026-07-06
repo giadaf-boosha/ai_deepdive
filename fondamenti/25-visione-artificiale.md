@@ -16,6 +16,60 @@ Il problema e' difficile perche' le immagini sono ambigue per costruzione. La pr
 
 Il percorso va dalla fisica alla semantica: prima la geometria e l'ottica della formazione delle immagini, poi le caratteristiche di basso livello estraibili dai pixel, quindi la classificazione e il rilevamento di oggetti con reti neurali convoluzionali, la ricostruzione del mondo tridimensionale e infine una rassegna di applicazioni, dalla guida autonoma alla generazione di immagini.
 
+<figure class="diagram">
+<svg viewBox="0 0 760 470" role="img" aria-label="Mappa concettuale del capitolo 25: dalla formazione delle immagini al problema inverso della visione artificiale, i due problemi fondamentali di riconoscimento e ricostruzione, le caratteristiche di basso livello, le CNN con la svolta di ImageNet, il rilevamento di oggetti, la terza dimensione e le applicazioni finali">
+<defs><marker id="arr-c25" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="dg-arrow"/></marker></defs>
+<line x1="183" y1="40" x2="300" y2="40" class="dg-edge" marker-end="url(#arr-c25)"/>
+<text x="241" y="32" text-anchor="middle" class="dg-edge-label">problema inverso</text>
+<line x1="400" y1="68" x2="400" y2="110" class="dg-edge-primary" marker-end="url(#arr-c25)"/>
+<line x1="470" y1="68" x2="630" y2="110" class="dg-edge-primary" marker-end="url(#arr-c25)"/>
+<text x="455" y="92" text-anchor="middle" class="dg-edge-label">due problemi</text>
+<line x1="95" y1="68" x2="95" y2="110" class="dg-edge" marker-end="url(#arr-c25)"/>
+<text x="148" y="92" text-anchor="middle" class="dg-edge-label">dai pixel</text>
+<line x1="204" y1="138" x2="302" y2="138" class="dg-edge" marker-end="url(#arr-c25)"/>
+<line x1="400" y1="166" x2="400" y2="210" class="dg-edge" marker-end="url(#arr-c25)"/>
+<text x="480" y="192" text-anchor="middle" class="dg-edge-label">classificatori appresi</text>
+<line x1="652" y1="166" x2="652" y2="210" class="dg-edge" marker-end="url(#arr-c25)"/>
+<line x1="204" y1="238" x2="302" y2="238" class="dg-edge" marker-end="url(#arr-c25)"/>
+<text x="253" y="230" text-anchor="middle" class="dg-edge-label">svolta 2012</text>
+<line x1="400" y1="266" x2="400" y2="310" class="dg-edge" marker-end="url(#arr-c25)"/>
+<text x="455" y="292" text-anchor="middle" class="dg-edge-label">anche dove</text>
+<line x1="400" y1="366" x2="400" y2="400" class="dg-edge" marker-end="url(#arr-c25)"/>
+<line x1="650" y1="266" x2="470" y2="400" class="dg-edge" marker-end="url(#arr-c25)"/>
+<rect x="8" y="12" width="175" height="56" rx="10" class="dg-node"/>
+<text x="96" y="36" text-anchor="middle" class="dg-label">Dalla scena ai pixel</text>
+<text x="96" y="52" text-anchor="middle" class="dg-sublabel">proiezione prospettica, luce</text>
+<rect x="300" y="12" width="200" height="56" rx="10" class="dg-node-primary"/>
+<text x="400" y="36" text-anchor="middle" class="dg-label">Visione artificiale</text>
+<text x="400" y="52" text-anchor="middle" class="dg-sublabel">da pixel a descrizione del mondo</text>
+<rect x="8" y="110" width="196" height="56" rx="10" class="dg-node"/>
+<text x="106" y="134" text-anchor="middle" class="dg-label">Basso livello</text>
+<text x="106" y="150" text-anchor="middle" class="dg-sublabel">bordi, texture, flusso, regioni</text>
+<rect x="302" y="110" width="196" height="56" rx="10" class="dg-node"/>
+<text x="400" y="134" text-anchor="middle" class="dg-label">Riconoscimento</text>
+<text x="400" y="150" text-anchor="middle" class="dg-sublabel">che cosa, dove, che cosa fa</text>
+<rect x="556" y="110" width="196" height="56" rx="10" class="dg-node"/>
+<text x="654" y="134" text-anchor="middle" class="dg-label">Ricostruzione</text>
+<text x="654" y="150" text-anchor="middle" class="dg-sublabel">modello del mondo dalle immagini</text>
+<rect x="8" y="210" width="196" height="56" rx="10" class="dg-node"/>
+<text x="106" y="234" text-anchor="middle" class="dg-label">ImageNet</text>
+<text x="106" y="250" text-anchor="middle" class="dg-sublabel">14M immagini, dal 70% al 98%</text>
+<rect x="302" y="210" width="196" height="56" rx="10" class="dg-node"/>
+<text x="400" y="234" text-anchor="middle" class="dg-label">CNN</text>
+<text x="400" y="250" text-anchor="middle" class="dg-sublabel">pattern locali appresi dai dati</text>
+<rect x="548" y="210" width="204" height="56" rx="10" class="dg-node"/>
+<text x="650" y="234" text-anchor="middle" class="dg-label">Terza dimensione</text>
+<text x="650" y="250" text-anchor="middle" class="dg-sublabel">stereo, movimento, vista singola</text>
+<rect x="295" y="310" width="210" height="56" rx="10" class="dg-node"/>
+<text x="400" y="334" text-anchor="middle" class="dg-label">Rilevamento di oggetti</text>
+<text x="400" y="350" text-anchor="middle" class="dg-sublabel">bounding box, objectness</text>
+<rect x="300" y="400" width="200" height="56" rx="10" class="dg-node-accent"/>
+<text x="400" y="424" text-anchor="middle" class="dg-label">Applicazioni</text>
+<text x="400" y="440" text-anchor="middle" class="dg-sublabel">guida autonoma, captioning, GAN</text>
+</svg>
+<figcaption>Mappa del capitolo 25 — dal problema inverso della proiezione ai due compiti di riconoscimento e ricostruzione, fino alle applicazioni</figcaption>
+</figure>
+
 ## Dalla scena ai pixel: geometria e luce
 
 Tutto parte dal modello piu' semplice di fotocamera: una scatola con un foro (lo stenoscopio, o pinhole camera). Ogni punto della scena proietta un raggio attraverso il foro fino al piano immagine, e la geometria che ne risulta e' la proiezione prospettica: le coordinate immagine sono proporzionali a quelle della scena divise per la profondita' Z. Da qui discendono gli effetti che conosciamo dalle fotografie: gli oggetti lontani appaiono piccoli, le rette parallele convergono verso un punto di fuga, l'immagine e' invertita. Quando la profondita' degli oggetti varia poco rispetto alla distanza, si puo' usare un modello semplificato, la proiezione ortografica scalata, in cui il fattore prospettico diventa una costante.

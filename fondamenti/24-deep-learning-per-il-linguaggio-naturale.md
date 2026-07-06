@@ -17,6 +17,58 @@ La risposta del capitolo e' un percorso in cinque tappe: rappresentare le parole
 
 E' il capitolo che descrive la genealogia diretta dei modelli linguistici odierni: word embedding, seq2seq, attention, transformer, preaddestramento. Chi vuole capire da dove arrivano GPT e i suoi successori trova qui i pezzi fondamentali, nell'ordine in cui la ricerca li ha messi insieme.
 
+<figure class="diagram">
+<svg viewBox="0 0 760 420" role="img" aria-label="Mappa concettuale del capitolo 24: dai vettori one-hot ai word embedding, alle reti ricorrenti, ai modelli sequenza-sequenza con attenzione e ricerca beam, al transformer con query chiave e valore, fino al preaddestramento, ai modelli con maschera e al momento ImageNet dell'elaborazione del linguaggio naturale">
+<defs><marker id="arr-c24" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="dg-arrow"/></marker></defs>
+<line x1="176" y1="42" x2="228" y2="42" class="dg-edge" marker-end="url(#arr-c24)"/>
+<line x1="430" y1="42" x2="518" y2="42" class="dg-edge-primary" marker-end="url(#arr-c24)"/>
+<line x1="630" y1="70" x2="630" y2="122" class="dg-edge-primary" marker-end="url(#arr-c24)"/>
+<line x1="518" y1="152" x2="432" y2="152" class="dg-edge-primary" marker-end="url(#arr-c24)"/>
+<line x1="630" y1="180" x2="630" y2="232" class="dg-edge" marker-end="url(#arr-c24)"/>
+<text x="684" y="210" text-anchor="middle" class="dg-edge-label">decodifica</text>
+<line x1="330" y1="180" x2="330" y2="232" class="dg-edge-primary" marker-end="url(#arr-c24)"/>
+<line x1="228" y1="262" x2="190" y2="262" class="dg-edge" marker-end="url(#arr-c24)"/>
+<line x1="330" y1="290" x2="330" y2="342" class="dg-edge-primary" marker-end="url(#arr-c24)"/>
+<line x1="228" y1="372" x2="190" y2="372" class="dg-edge" marker-end="url(#arr-c24)"/>
+<line x1="432" y1="372" x2="518" y2="372" class="dg-edge" marker-end="url(#arr-c24)"/>
+<text x="475" y="364" text-anchor="middle" class="dg-edge-label">messa a punto</text>
+<rect x="8" y="14" width="168" height="56" rx="10" class="dg-node"/>
+<text x="92" y="38" text-anchor="middle" class="dg-label">Vettori one-hot</text>
+<text x="92" y="54" text-anchor="middle" class="dg-sublabel">ogni parola un'isola</text>
+<rect x="230" y="14" width="200" height="56" rx="10" class="dg-node-primary"/>
+<text x="330" y="38" text-anchor="middle" class="dg-label">Word embedding</text>
+<text x="330" y="54" text-anchor="middle" class="dg-sublabel">vettori densi appresi dai dati</text>
+<rect x="520" y="14" width="220" height="56" rx="10" class="dg-node-primary"/>
+<text x="630" y="38" text-anchor="middle" class="dg-label">RNN e LSTM</text>
+<text x="630" y="54" text-anchor="middle" class="dg-sublabel">contesto nello stato nascosto</text>
+<rect x="520" y="124" width="220" height="56" rx="10" class="dg-node-primary"/>
+<text x="630" y="148" text-anchor="middle" class="dg-label">Sequenza-sequenza</text>
+<text x="630" y="164" text-anchor="middle" class="dg-sublabel">encoder e decoder per tradurre</text>
+<rect x="230" y="124" width="200" height="56" rx="10" class="dg-node-primary"/>
+<text x="330" y="148" text-anchor="middle" class="dg-label">Attenzione</text>
+<text x="330" y="164" text-anchor="middle" class="dg-sublabel">riassunto dinamico dell'origine</text>
+<rect x="520" y="234" width="220" height="56" rx="10" class="dg-node"/>
+<text x="630" y="258" text-anchor="middle" class="dg-label">Ricerca beam</text>
+<text x="630" y="274" text-anchor="middle" class="dg-sublabel">meglio della scelta greedy</text>
+<rect x="230" y="234" width="200" height="56" rx="10" class="dg-node-primary"/>
+<text x="330" y="258" text-anchor="middle" class="dg-label">Transformer</text>
+<text x="330" y="274" text-anchor="middle" class="dg-sublabel">solo auto-attenzione</text>
+<rect x="8" y="234" width="180" height="56" rx="10" class="dg-node"/>
+<text x="98" y="258" text-anchor="middle" class="dg-label">Query, chiave, valore</text>
+<text x="98" y="274" text-anchor="middle" class="dg-sublabel">proiezioni apprese dell'input</text>
+<rect x="230" y="344" width="200" height="56" rx="10" class="dg-node-primary"/>
+<text x="330" y="368" text-anchor="middle" class="dg-label">Preaddestramento</text>
+<text x="330" y="384" text-anchor="middle" class="dg-sublabel">corpus enormi non etichettati</text>
+<rect x="8" y="344" width="180" height="56" rx="10" class="dg-node"/>
+<text x="98" y="368" text-anchor="middle" class="dg-label">Modello con maschera</text>
+<text x="98" y="384" text-anchor="middle" class="dg-sublabel">predice le parole mascherate</text>
+<rect x="520" y="344" width="220" height="56" rx="10" class="dg-node-accent"/>
+<text x="630" y="368" text-anchor="middle" class="dg-label">Momento ImageNet dell'NLP</text>
+<text x="630" y="384" text-anchor="middle" class="dg-sublabel">si parte da un modello preaddestrato</text>
+</svg>
+<figcaption>Mappa del capitolo 24 — dai vettori one-hot al preaddestramento, la genealogia dei modelli linguistici odierni</figcaption>
+</figure>
+
 ## Le parole diventano punti in uno spazio
 
 Una rete neurale lavora con numeri, quindi la prima domanda e' come codificare una parola. Il vettore one-hot — un 1 nella posizione della parola e 0 altrove — e' la soluzione ingenua, ma tratta ogni parola come un'isola: "gatto" e "gattino" risultano distanti quanto "gatto" e "carburatore". L'alternativa segue l'intuizione del linguista John Firth: una parola si riconosce dalle parole che la accompagnano. Comprimendo le statistiche di co-occorrenza in un vettore denso di poche centinaia di dimensioni si ottiene un word embedding, una rappresentazione appresa dai dati in cui parole simili finiscono vicine nello spazio.
@@ -34,6 +86,76 @@ Un modello di linguaggio RNN, addestrato a predire la parola successiva, puo' an
 ## Tradurre e' trasformare una sequenza in un'altra
 
 La traduzione automatica non e' un tagging parola per parola: le lingue riordinano, fondono e spezzano le parole. Serve leggere l'intera frase di origine e generare la frase di destinazione un pezzo alla volta, condizionando ogni parola generata sia sull'origine sia su quanto gia' prodotto. Il modello sequenza-sequenza di base fa esattamente questo con due RNN: la prima codifica la frase di origine, e il suo stato nascosto finale inizializza la seconda, che genera la traduzione. L'approccio ha ridotto drasticamente gli errori rispetto ai metodi statistici precedenti, ma soffre di tre limiti: lo stato nascosto privilegia il contesto recente e sbiadisce quello lontano, l'intera frase deve stare in un vettore di dimensione fissa, e l'elaborazione strettamente sequenziale sfrutta male l'hardware parallelo.
+
+<figure class="diagram">
+<svg viewBox="0 0 760 250" role="img" aria-label="Modello sequenza-sequenza di base: quattro blocchi LSTM di origine leggono la frase inglese The man is tall, lo stato nascosto finale inizializza cinque blocchi LSTM di destinazione che generano la traduzione spagnola El hombre es alto parola per parola, fino al tag di fine frase">
+<defs><marker id="arr-c24-b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="dg-arrow"/></marker></defs>
+<line x1="69" y1="130" x2="79" y2="130" class="dg-edge" marker-end="url(#arr-c24-b)"/>
+<line x1="139" y1="130" x2="149" y2="130" class="dg-edge" marker-end="url(#arr-c24-b)"/>
+<line x1="209" y1="130" x2="219" y2="130" class="dg-edge" marker-end="url(#arr-c24-b)"/>
+<line x1="279" y1="130" x2="289" y2="130" class="dg-edge-primary" marker-end="url(#arr-c24-b)"/>
+<line x1="373" y1="130" x2="383" y2="130" class="dg-edge" marker-end="url(#arr-c24-b)"/>
+<line x1="467" y1="130" x2="477" y2="130" class="dg-edge" marker-end="url(#arr-c24-b)"/>
+<line x1="561" y1="130" x2="571" y2="130" class="dg-edge" marker-end="url(#arr-c24-b)"/>
+<line x1="655" y1="130" x2="665" y2="130" class="dg-edge" marker-end="url(#arr-c24-b)"/>
+<line x1="40" y1="184" x2="40" y2="160" class="dg-edge" marker-end="url(#arr-c24-b)"/>
+<line x1="110" y1="184" x2="110" y2="160" class="dg-edge" marker-end="url(#arr-c24-b)"/>
+<line x1="180" y1="184" x2="180" y2="160" class="dg-edge" marker-end="url(#arr-c24-b)"/>
+<line x1="250" y1="184" x2="250" y2="160" class="dg-edge" marker-end="url(#arr-c24-b)"/>
+<line x1="332" y1="184" x2="332" y2="160" class="dg-edge" marker-end="url(#arr-c24-b)"/>
+<line x1="426" y1="184" x2="426" y2="160" class="dg-edge" marker-end="url(#arr-c24-b)"/>
+<line x1="520" y1="184" x2="520" y2="160" class="dg-edge" marker-end="url(#arr-c24-b)"/>
+<line x1="614" y1="184" x2="614" y2="160" class="dg-edge" marker-end="url(#arr-c24-b)"/>
+<line x1="708" y1="184" x2="708" y2="160" class="dg-edge" marker-end="url(#arr-c24-b)"/>
+<line x1="332" y1="102" x2="332" y2="80" class="dg-edge" marker-end="url(#arr-c24-b)"/>
+<line x1="426" y1="102" x2="426" y2="80" class="dg-edge" marker-end="url(#arr-c24-b)"/>
+<line x1="520" y1="102" x2="520" y2="80" class="dg-edge" marker-end="url(#arr-c24-b)"/>
+<line x1="614" y1="102" x2="614" y2="80" class="dg-edge" marker-end="url(#arr-c24-b)"/>
+<line x1="708" y1="102" x2="708" y2="80" class="dg-edge" marker-end="url(#arr-c24-b)"/>
+<rect x="11" y="104" width="58" height="52" rx="10" class="dg-node"/>
+<text x="40" y="125" text-anchor="middle" class="dg-label">LSTM</text>
+<text x="40" y="141" text-anchor="middle" class="dg-sublabel">origine</text>
+<rect x="81" y="104" width="58" height="52" rx="10" class="dg-node"/>
+<text x="110" y="125" text-anchor="middle" class="dg-label">LSTM</text>
+<text x="110" y="141" text-anchor="middle" class="dg-sublabel">origine</text>
+<rect x="151" y="104" width="58" height="52" rx="10" class="dg-node"/>
+<text x="180" y="125" text-anchor="middle" class="dg-label">LSTM</text>
+<text x="180" y="141" text-anchor="middle" class="dg-sublabel">origine</text>
+<rect x="221" y="104" width="58" height="52" rx="10" class="dg-node"/>
+<text x="250" y="125" text-anchor="middle" class="dg-label">LSTM</text>
+<text x="250" y="141" text-anchor="middle" class="dg-sublabel">origine</text>
+<rect x="291" y="104" width="82" height="52" rx="10" class="dg-node-primary"/>
+<text x="332" y="125" text-anchor="middle" class="dg-label">LSTM</text>
+<text x="332" y="141" text-anchor="middle" class="dg-sublabel">destinazione</text>
+<rect x="385" y="104" width="82" height="52" rx="10" class="dg-node-primary"/>
+<text x="426" y="125" text-anchor="middle" class="dg-label">LSTM</text>
+<text x="426" y="141" text-anchor="middle" class="dg-sublabel">destinazione</text>
+<rect x="479" y="104" width="82" height="52" rx="10" class="dg-node-primary"/>
+<text x="520" y="125" text-anchor="middle" class="dg-label">LSTM</text>
+<text x="520" y="141" text-anchor="middle" class="dg-sublabel">destinazione</text>
+<rect x="573" y="104" width="82" height="52" rx="10" class="dg-node-primary"/>
+<text x="614" y="125" text-anchor="middle" class="dg-label">LSTM</text>
+<text x="614" y="141" text-anchor="middle" class="dg-sublabel">destinazione</text>
+<rect x="667" y="104" width="82" height="52" rx="10" class="dg-node-primary"/>
+<text x="708" y="125" text-anchor="middle" class="dg-label">LSTM</text>
+<text x="708" y="141" text-anchor="middle" class="dg-sublabel">destinazione</text>
+<text x="332" y="70" text-anchor="middle" class="dg-label">El</text>
+<text x="426" y="70" text-anchor="middle" class="dg-label">hombre</text>
+<text x="520" y="70" text-anchor="middle" class="dg-label">es</text>
+<text x="614" y="70" text-anchor="middle" class="dg-label">alto</text>
+<text x="708" y="70" text-anchor="middle" class="dg-edge-label">&lt;end&gt;</text>
+<text x="40" y="202" text-anchor="middle" class="dg-label">The</text>
+<text x="110" y="202" text-anchor="middle" class="dg-label">man</text>
+<text x="180" y="202" text-anchor="middle" class="dg-label">is</text>
+<text x="250" y="202" text-anchor="middle" class="dg-label">tall</text>
+<text x="332" y="202" text-anchor="middle" class="dg-edge-label">&lt;start&gt;</text>
+<text x="426" y="202" text-anchor="middle" class="dg-label">El</text>
+<text x="520" y="202" text-anchor="middle" class="dg-label">hombre</text>
+<text x="614" y="202" text-anchor="middle" class="dg-label">es</text>
+<text x="708" y="202" text-anchor="middle" class="dg-label">alto</text>
+</svg>
+<figcaption>Modello sequenza-sequenza di base: lo stato nascosto finale dell'origine inizializza la destinazione, e ogni parola generata rientra come input al passo successivo — schema ripreso dalla figura 24.6 del cap. 24, AIMA 4a ed.</figcaption>
+</figure>
 
 Il meccanismo di attenzione attacca i primi due limiti. Invece di comprimere tutto nell'ultimo stato, il decoder calcola a ogni passo un punteggio di affinita' tra il proprio stato corrente e ciascuno stato dell'encoder, lo normalizza con una softmax e usa i pesi risultanti per costruire una media pesata degli stati di origine: un riassunto dinamico, ricalcolato parola per parola. L'attenzione non ha pesi propri e funziona con sequenze di lunghezza qualsiasi; il modello impara da solo dove guardare, e nelle traduzioni i pesi di attenzione ricalcano spesso gli allineamenti parola-parola che farebbe un traduttore umano — una rara isola di interpretabilita' nelle reti neurali.
 
