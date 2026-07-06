@@ -1,16 +1,6 @@
-import type { Model, ModelId } from "@/lib/models";
+import type { Model } from "@/lib/models";
+import { brandColor } from "@/lib/brand";
 import { Logo } from "./Logo";
-
-const BRAND: Record<string, string> = {
-  claude: "#e8901b",
-  chatgpt: "#0f766e",
-  gemini: "#2563eb",
-};
-const FALLBACK = "#7531e3";
-
-function brand(id: ModelId): string {
-  return BRAND[id] ?? FALLBACK;
-}
 
 export function ModelCardCompact({ model }: { model: Model }) {
   return (
@@ -29,7 +19,7 @@ export function ModelCard({ model }: { model: Model }) {
   return (
     <article
       className="card flex h-full flex-col gap-4 p-6"
-      style={{ borderTopColor: brand(model.id), borderTopWidth: 3 }}
+      style={{ borderTopColor: brandColor(model.id), borderTopWidth: 3 }}
     >
       <header className="flex flex-col gap-1">
         <div className="flex items-center justify-between gap-2">

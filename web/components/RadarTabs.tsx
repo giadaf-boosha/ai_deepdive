@@ -13,16 +13,10 @@ import type {
   ModelsData,
   UseRow,
 } from "@/lib/models";
+import { brandColor } from "@/lib/brand";
 import { ModelCard } from "./ModelCard";
 import { Logo } from "./Logo";
 import { ArrowUpRight } from "./Icons";
-
-const BRAND: Record<string, string> = {
-  claude: "#e8901b",
-  chatgpt: "#0f766e",
-  gemini: "#2563eb",
-};
-const brand = (id: ModelId) => BRAND[id] ?? "#7531e3";
 
 // Domini per i loghi nei chip "consigliati" della matrice.
 const NAME_DOMAINS: Record<string, string> = {
@@ -411,7 +405,7 @@ function BenchmarkPanel({
                     <div className="h-6 flex-1 overflow-hidden rounded bg-surface-alt">
                       <div
                         className="flex h-full items-center justify-end rounded px-2 text-xs font-medium text-white"
-                        style={{ width: `${Math.max(width, 14)}%`, backgroundColor: brand(s.modelId) }}
+                        style={{ width: `${Math.max(width, 14)}%`, backgroundColor: brandColor(s.modelId) }}
                       >
                         {b.lowerIsBetter ? `#${s.value}` : `${s.value}${b.unit}`}
                       </div>

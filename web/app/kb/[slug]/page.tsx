@@ -7,7 +7,7 @@ import {
   digestMentionCount,
   relatedConcepts,
 } from "@/lib/relations";
-import { extractToc } from "@/lib/markdown";
+import { extractToc, stripLeadingH1 } from "@/lib/markdown";
 import { formatLong, formatShort } from "@/lib/dates";
 import { MarkdownContent } from "@/components/MarkdownContent";
 import { Toc } from "@/components/Toc";
@@ -28,11 +28,6 @@ export async function generateMetadata({
   const concept = getConceptBySlug(slug);
   if (!concept) return { title: "Concetto non trovato" };
   return { title: concept.name, description: concept.excerpt };
-}
-
-// Rimuove l'H1 iniziale: il titolo e' gia' reso dall'header di pagina.
-function stripLeadingH1(content: string): string {
-  return content.replace(/^\s*#\s+.*\n/, "");
 }
 
 export default async function KBConceptPage({

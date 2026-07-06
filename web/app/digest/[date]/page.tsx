@@ -7,6 +7,7 @@ import {
   getAdjacentDigests,
 } from "@/lib/digest";
 import { conceptsMentionedIn } from "@/lib/relations";
+import { stripLeadingH1 } from "@/lib/markdown";
 import { formatLong } from "@/lib/dates";
 import { MarkdownContent } from "@/components/MarkdownContent";
 import { Eyebrow } from "@/components/Eyebrow";
@@ -32,11 +33,6 @@ export async function generateMetadata({
       .map((e) => e.title)
       .join("; ")}`,
   };
-}
-
-// Rimuove l'H1 iniziale del markdown (lo sostituiamo con l'header di pagina).
-function stripLeadingH1(content: string): string {
-  return content.replace(/^\s*#\s+.*\n/, "");
 }
 
 // Rimuove la sezione "Note di produzione" (e l'eventuale separatore che la precede)

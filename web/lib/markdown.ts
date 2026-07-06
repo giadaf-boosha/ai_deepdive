@@ -6,6 +6,11 @@ export interface TocItem {
   id: string;
 }
 
+// Rimuove l'H1 iniziale del markdown: il titolo e' gia' reso dall'header di pagina.
+export function stripLeadingH1(content: string): string {
+  return content.replace(/^\s*#\s+.*\n/, "");
+}
+
 // I file KB linkano con path relativi sia altri concetti (es. ./rag.md,
 // ../concetti/rag.md) sia i digest (es. ../../digest/2026/05/20.md). Nel web
 // vanno riscritti verso /kb/<slug> e /digest/YYYY-MM-DD. I link esterni
