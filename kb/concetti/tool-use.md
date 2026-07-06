@@ -4,7 +4,6 @@ aliases: [tool use, function calling, tool calling, chiamata di funzione]
 categoria: tecnica
 created: 2026-04-28
 last_updated: 2026-07-03
-mentions_count: 4
 ---
 
 # Tool use / Function calling

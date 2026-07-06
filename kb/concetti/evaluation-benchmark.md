@@ -4,7 +4,6 @@ aliases: [benchmark, eval, evaluation, valutazione LLM, AI benchmark, leaderboar
 categoria: tecnica
 created: 2026-04-30
 last_updated: 2026-07-03
-mentions_count: 49
 ---
 
 # Evaluation / Benchmark AI

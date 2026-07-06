@@ -4,7 +4,6 @@ aliases: [knowledge distillation, distillazione, model distillation, distillazio
 categoria: training
 created: 2026-06-25
 last_updated: 2026-06-25
-mentions_count: 6
 ---
 
 # Knowledge Distillation

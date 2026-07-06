@@ -4,7 +4,6 @@ aliases: [fine-tuning, fine tuning, SFT, supervised fine-tuning, adattamento di 
 categoria: training
 created: 2026-04-28
 last_updated: 2026-06-01
-mentions_count: 0
 ---
 
 # Fine-tuning

@@ -4,7 +4,6 @@ aliases: [sandboxing, containment, isolamento agenti, agent containment, esecuzi
 categoria: infrastruttura
 created: 2026-06-01
 last_updated: 2026-06-28
-mentions_count: 10
 ---
 
 # Agent sandboxing

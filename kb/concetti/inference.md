@@ -4,7 +4,6 @@ aliases: [inference, inferenza, serving, generation, decoding]
 categoria: infrastruttura
 created: 2026-04-28
 last_updated: 2026-07-03
-mentions_count: 58
 ---
 
 # Inference

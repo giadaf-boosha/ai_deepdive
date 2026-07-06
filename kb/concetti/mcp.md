@@ -4,7 +4,6 @@ aliases: [MCP, Model Context Protocol, protocollo MCP]
 categoria: infrastruttura
 created: 2026-04-28
 last_updated: 2026-06-01
-mentions_count: 4
 ---
 
 # Model Context Protocol

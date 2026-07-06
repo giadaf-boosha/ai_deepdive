@@ -4,7 +4,6 @@ aliases: [agent harness, harness, scaffolding agentico, agent runtime]
 categoria: infrastruttura
 created: 2026-04-28
 last_updated: 2026-06-29
-mentions_count: 15
 ---
 
 # Agent harness

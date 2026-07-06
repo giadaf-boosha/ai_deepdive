@@ -4,7 +4,6 @@ aliases: [context window, finestra di contesto, finestra contestuale, context le
 categoria: architettura
 created: 2026-04-28
 last_updated: 2026-06-29
-mentions_count: 8
 ---
 
 # Context window

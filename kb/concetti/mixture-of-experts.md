@@ -4,7 +4,6 @@ aliases: [MoE, mixture-of-experts, mixture of experts, modello sparso, sparse mo
 categoria: architettura
 created: 2026-06-01
 last_updated: 2026-07-05
-mentions_count: 14
 ---
 
 # Mixture of Experts

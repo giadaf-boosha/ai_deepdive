@@ -4,7 +4,6 @@ aliases: [PCC, Private Cloud Compute, confidential cloud computing, confidential
 categoria: infrastruttura
 created: 2026-06-08
 last_updated: 2026-06-08
-mentions_count: 4
 ---
 
 # Private Cloud Compute

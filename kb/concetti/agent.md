@@ -4,7 +4,6 @@ aliases: [agent, AI agent, agente autonomo, autonomous agent]
 categoria: paradigma
 created: 2026-04-28
 last_updated: 2026-06-28
-mentions_count: 108
 ---
 
 # AI Agent

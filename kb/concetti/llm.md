@@ -4,7 +4,6 @@ aliases: [LLM, modello linguistico di grandi dimensioni, foundation model]
 categoria: architettura
 created: 2026-04-28
 last_updated: 2026-07-01
-mentions_count: 26
 ---
 
 # Large Language Model

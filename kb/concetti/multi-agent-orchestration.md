@@ -4,7 +4,6 @@ aliases: [multi-agent, sistema multi-agente, orchestrazione di agenti, agent swa
 categoria: paradigma
 created: 2026-06-01
 last_updated: 2026-07-06
-mentions_count: 24
 ---
 
 # Multi-agent orchestration

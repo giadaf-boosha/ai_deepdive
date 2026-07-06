@@ -4,7 +4,6 @@ aliases: [world model, world foundation model, WFM, modello del mondo, simulator
 categoria: architettura
 created: 2026-06-09
 last_updated: 2026-06-21
-mentions_count: 10
 ---
 
 # World Models

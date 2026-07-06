@@ -4,7 +4,6 @@ aliases: [chain of thought, CoT, catena di pensiero, reasoning, ragionamento esp
 categoria: tecnica
 created: 2026-04-28
 last_updated: 2026-06-27
-mentions_count: 1
 ---
 
 # Chain of Thought / Reasoning

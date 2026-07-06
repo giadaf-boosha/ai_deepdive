@@ -4,7 +4,6 @@ aliases: [interaction model, full-duplex AI, modello di interazione, full-duplex
 categoria: architettura
 created: 2026-05-13
 last_updated: 2026-06-01
-mentions_count: 5
 ---
 
 # Interaction Model

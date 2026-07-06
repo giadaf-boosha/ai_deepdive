@@ -4,7 +4,6 @@ aliases: [RLHF, reinforcement learning from human feedback, allineamento RL, RLA
 categoria: training
 created: 2026-04-28
 last_updated: 2026-06-13
-mentions_count: 3
 ---
 
 # Reinforcement Learning from Human Feedback

@@ -4,7 +4,6 @@ aliases: [tokenization, tokenizzazione, BPE, subword, byte-pair encoding]
 categoria: tecnica
 created: 2026-04-28
 last_updated: 2026-06-01
-mentions_count: 0
 ---
 
 # Tokenization

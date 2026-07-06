@@ -4,7 +4,6 @@ aliases: [diffusion language model, text diffusion, DLM, modello di diffusione t
 categoria: architettura
 created: 2026-06-12
 last_updated: 2026-06-12
-mentions_count: 5
 ---
 
 # Diffusion Language Models

@@ -4,7 +4,6 @@ aliases: [AI governance, governance AI, export control AI, regolazione AI, AI re
 categoria: regolazione
 created: 2026-06-14
 last_updated: 2026-07-06
-mentions_count: 59
 ---
 
 # AI Governance
