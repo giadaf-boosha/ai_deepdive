@@ -1,7 +1,9 @@
 import type { Digest } from "./digest";
 import type { KBConcept } from "./kb";
+import type { Capitolo } from "./fondamenti";
 import { getAllConcepts } from "./kb";
 import { getAllDigests } from "./digest";
+import { getAllChapters } from "./fondamenti";
 
 function escapeRegExp(s: string): string {
   return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
@@ -54,5 +56,40 @@ export function digestMentionCount(concept: KBConcept): number {
 export function relatedConcepts(concept: KBConcept, limit = 5): KBConcept[] {
   return getAllConcepts()
     .filter((c) => c.slug !== concept.slug && c.categoria === concept.categoria)
+    .slice(0, limit);
+}
+
+// Soglia sui match regex nei capitoli: i testi sono lunghi e gli alias corti
+// (es. "agent") matchano ovunque; sotto 2 occorrenze il legame non e' segnale.
+const CHAPTER_MATCH_THRESHOLD = 2;
+
+/** Concetti KB correlati a un capitolo: prima gli slug espliciti del frontmatter, poi i match testuali. */
+export function kbConceptsInChapter(cap: Capitolo, limit = 6): KBConcept[] {
+  const all = getAllConcepts();
+  const explicit = cap.concetti
+    .map((slug) => all.find((c) => c.slug === slug))
+    .filter((c): c is KBConcept => Boolean(c));
+  const explicitSlugs = new Set(explicit.map((c) => c.slug));
+  const matched = all
+    .filter((c) => !explicitSlugs.has(c.slug))
+    .map((concept) => ({
+      concept,
+      hits: countOccurrences(cap.content, conceptMatcher(concept)),
+    }))
+    .filter((r) => r.hits >= CHAPTER_MATCH_THRESHOLD)
+    .sort((a, b) => b.hits - a.hits)
+    .map((r) => r.concept);
+  return [...explicit, ...matched].slice(0, limit);
+}
+
+/** Capitoli fondamenti che trattano un concetto KB, in ordine di capitolo. */
+export function chaptersMentioning(concept: KBConcept, limit = 6): Capitolo[] {
+  const re = conceptMatcher(concept);
+  return getAllChapters()
+    .filter(
+      (cap) =>
+        cap.concetti.includes(concept.slug) ||
+        countOccurrences(cap.content, re) >= CHAPTER_MATCH_THRESHOLD,
+    )
     .slice(0, limit);
 }

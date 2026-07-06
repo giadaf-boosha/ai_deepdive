@@ -5,3 +5,4 @@ import path from "node:path";
 export const REPO_ROOT = path.join(process.cwd(), "..");
 export const DIGEST_DIR = path.join(REPO_ROOT, "digest");
 export const KB_DIR = path.join(REPO_ROOT, "kb", "concetti");
+export const FONDAMENTI_DIR = path.join(REPO_ROOT, "fondamenti");

@@ -4,7 +4,7 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
 import rehypeSlug from "rehype-slug";
-import { rewriteKbLinks } from "@/lib/markdown";
+import { rewriteKbLinks, rewriteFondamentiLinks } from "@/lib/markdown";
 
 function Anchor({ href, children, ...rest }: ComponentPropsWithoutRef<"a">) {
   if (!href) return <a {...rest}>{children}</a>;
@@ -25,11 +25,17 @@ function Anchor({ href, children, ...rest }: ComponentPropsWithoutRef<"a">) {
 export function MarkdownContent({
   content,
   rewriteKb = false,
+  rewriteFondamenti = false,
 }: {
   content: string;
   rewriteKb?: boolean;
+  rewriteFondamenti?: boolean;
 }) {
-  const source = rewriteKb ? rewriteKbLinks(content) : content;
+  const source = rewriteKb
+    ? rewriteKbLinks(content)
+    : rewriteFondamenti
+      ? rewriteFondamentiLinks(content)
+      : content;
   return (
     <div className="prose-deepdive">
       <ReactMarkdown

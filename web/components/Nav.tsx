@@ -6,8 +6,9 @@ import { usePathname } from "next/navigation";
 const LINKS = [
   { href: "/digest", label: "Digest", short: "Digest" },
   { href: "/kb", label: "Knowledge base", short: "KB" },
+  { href: "/fondamenti", label: "Fondamenti di AI", short: "Fondamenti" },
   { href: "/radar", label: "Confronto AI", short: "Confronto" },
-  { href: "/claude-code", label: "Claude Code", short: "Claude Code" },
+  { href: "/claude-code", label: "Claude Code", short: "Claude" },
 ];
 
 const BOOSHA_URL = "https://boosha.it/";

@@ -6,6 +6,7 @@ import {
   digestsMentioning,
   digestMentionCount,
   relatedConcepts,
+  chaptersMentioning,
 } from "@/lib/relations";
 import { extractToc, stripLeadingH1 } from "@/lib/markdown";
 import { formatLong, formatShort } from "@/lib/dates";
@@ -44,6 +45,7 @@ export default async function KBConceptPage({
   const mentions = digestsMentioning(concept);
   const mentionCount = digestMentionCount(concept);
   const related = relatedConcepts(concept);
+  const capitoli = chaptersMentioning(concept);
 
   return (
     <div className="container-wide grid grid-cols-1 gap-10 lg:grid-cols-[1fr_16rem]">
@@ -113,6 +115,25 @@ export default async function KBConceptPage({
                     className="text-muted transition-colors hover:text-[color:var(--primary-ink)]"
                   >
                     {c.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+        {capitoli.length > 0 && (
+          <div className="text-sm">
+            <p className="mb-3 font-mono text-xs uppercase tracking-wider text-faint">
+              Nei Fondamenti di AI
+            </p>
+            <ul className="flex flex-col gap-1.5">
+              {capitoli.map((c) => (
+                <li key={c.slug}>
+                  <Link
+                    href={`/fondamenti/${c.slug}`}
+                    className="text-muted transition-colors hover:text-[color:var(--primary-ink)]"
+                  >
+                    Cap. {c.capitolo} — {c.titolo}
                   </Link>
                 </li>
               ))}
