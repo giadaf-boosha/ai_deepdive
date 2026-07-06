@@ -11,7 +11,6 @@ export interface KBConcept {
   categoria: string;
   created: string | null;
   lastUpdated: string | null;
-  mentionsCount: number;
   content: string; // corpo markdown senza frontmatter
   excerpt: string; // primo paragrafo significativo
   wordCount: number;
@@ -91,7 +90,6 @@ function parseConceptFile(file: string): KBConcept {
         : "altro",
     created: toIsoDate(data.created ?? data.first_seen),
     lastUpdated: toIsoDate(data.last_updated),
-    mentionsCount: typeof data.mentions_count === "number" ? data.mentions_count : 0,
     content,
     excerpt: firstParagraph(content),
     wordCount,

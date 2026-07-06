@@ -134,6 +134,3 @@ export function getModels(): Model[] {
 export function getModelById(id: ModelId): Model | undefined {
   return typed.models.find((m) => m.id === id);
 }
-export function getApps(): App[] {
-  return typed.apps;
-}

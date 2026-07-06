@@ -36,11 +36,3 @@ export function ArrowRight(props: SVGProps<SVGSVGElement>) {
   );
 }
 
-export function Sparkles(props: SVGProps<SVGSVGElement>) {
-  return (
-    <svg {...base(props)}>
-      <path d="M12 3v4M12 17v4M3 12h4M17 12h4" />
-      <path d="m6.3 6.3 2.4 2.4M15.3 15.3l2.4 2.4M17.7 6.3l-2.4 2.4M8.7 15.3l-2.4 2.4" />
-    </svg>
-  );
-}
