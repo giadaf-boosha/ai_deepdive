@@ -17,6 +17,57 @@ La risposta e' un cambio di prospettiva. Invece di disegnare grafi, si scrivono 
 
 Il capitolo percorre due strade che convergono sullo stesso traguardo. La prima e' logica: definire distribuzioni di probabilita' sui mondi possibili della logica del primo ordine, prima in versione chiusa (modelli relazionali) e poi aperta (universo aperto). La seconda e' informatica: prendere un normale linguaggio di programmazione, aggiungergli scelte casuali e considerare ogni esecuzione del programma come un mondo possibile.
 
+<figure class="diagram">
+<svg viewBox="0 0 760 480" role="img" aria-label="Mappa concettuale del capitolo 15: dalle reti bayesiane che non scalano alla programmazione probabilistica, con la strada logica dei modelli relazionali e a universo aperto e la strada informatica dei programmi generativi, che convergono sull'inferenza approssimata e sul dividendo della modularita'">
+<defs><marker id="arr-c15" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="dg-arrow"/></marker></defs>
+<line x1="220" y1="40" x2="296" y2="40" class="dg-edge" marker-end="url(#arr-c15)"/>
+<text x="258" y="32" text-anchor="middle" class="dg-edge-label">non scalano</text>
+<line x1="380" y1="68" x2="205" y2="117" class="dg-edge-primary" marker-end="url(#arr-c15)"/>
+<text x="252" y="90" text-anchor="middle" class="dg-edge-label">strada logica</text>
+<line x1="460" y1="68" x2="575" y2="117" class="dg-edge-primary" marker-end="url(#arr-c15)"/>
+<text x="580" y="86" text-anchor="middle" class="dg-edge-label">strada informatica</text>
+<line x1="180" y1="176" x2="155" y2="217" class="dg-edge" marker-end="url(#arr-c15)"/>
+<text x="255" y="200" text-anchor="middle" class="dg-edge-label">semantica piena FOL</text>
+<line x1="610" y1="176" x2="610" y2="217" class="dg-edge" marker-end="url(#arr-c15)"/>
+<line x1="150" y1="276" x2="150" y2="317" class="dg-edge" marker-end="url(#arr-c15)"/>
+<text x="212" y="300" text-anchor="middle" class="dg-edge-label">nel tempo</text>
+<line x1="230" y1="276" x2="370" y2="314" class="dg-edge" marker-end="url(#arr-c15)"/>
+<text x="300" y="283" text-anchor="middle" class="dg-edge-label">MCMC sui mondi</text>
+<line x1="490" y1="176" x2="490" y2="314" class="dg-edge" marker-end="url(#arr-c15)"/>
+<text x="482" y="250" text-anchor="end" class="dg-edge-label">MCMC sui tracciati</text>
+<line x1="420" y1="376" x2="420" y2="407" class="dg-edge" marker-end="url(#arr-c15)"/>
+<text x="515" y="396" text-anchor="middle" class="dg-edge-label">dividendo pratico</text>
+<rect x="40" y="12" width="180" height="56" rx="10" class="dg-node"/>
+<text x="130" y="36" text-anchor="middle" class="dg-label">Reti bayesiane</text>
+<text x="130" y="52" text-anchor="middle" class="dg-sublabel">variabili fisse e finite</text>
+<rect x="300" y="12" width="240" height="56" rx="10" class="dg-node-primary"/>
+<text x="420" y="36" text-anchor="middle" class="dg-label">Programmazione probabilistica</text>
+<text x="420" y="52" text-anchor="middle" class="dg-sublabel">linguaggi con potenza di Turing</text>
+<rect x="80" y="120" width="220" height="56" rx="10" class="dg-node"/>
+<text x="190" y="144" text-anchor="middle" class="dg-label">Modelli relazionali (RPM)</text>
+<text x="190" y="160" text-anchor="middle" class="dg-sublabel">semantica dei database</text>
+<rect x="480" y="120" width="220" height="56" rx="10" class="dg-node"/>
+<text x="590" y="144" text-anchor="middle" class="dg-label">Programmi generativi</text>
+<text x="590" y="160" text-anchor="middle" class="dg-sublabel">tracciati di esecuzione</text>
+<rect x="40" y="220" width="220" height="56" rx="10" class="dg-node"/>
+<text x="150" y="244" text-anchor="middle" class="dg-label">Universo aperto (OUPM)</text>
+<text x="150" y="260" text-anchor="middle" class="dg-sublabel">esistenza e identita' incerte</text>
+<rect x="510" y="220" width="200" height="56" rx="10" class="dg-node"/>
+<text x="610" y="244" text-anchor="middle" class="dg-label">Analisi per sintesi</text>
+<text x="610" y="260" text-anchor="middle" class="dg-sublabel">invertire il processo generativo</text>
+<rect x="40" y="320" width="220" height="56" rx="10" class="dg-node"/>
+<text x="150" y="344" text-anchor="middle" class="dg-label">Associazione dei dati</text>
+<text x="150" y="360" text-anchor="middle" class="dg-sublabel">oggetti nel tempo (radar)</text>
+<rect x="310" y="320" width="220" height="56" rx="10" class="dg-node"/>
+<text x="420" y="344" text-anchor="middle" class="dg-label">Inferenza approssimata</text>
+<text x="420" y="360" text-anchor="middle" class="dg-sublabel">MCMC, particle filtering</text>
+<rect x="290" y="410" width="260" height="56" rx="10" class="dg-node-accent"/>
+<text x="420" y="434" text-anchor="middle" class="dg-label">Modularita'</text>
+<text x="420" y="450" text-anchor="middle" class="dg-sublabel">modello migliore, inferenza invariata</text>
+</svg>
+<figcaption>Mappa del capitolo 15 — le due strade verso i linguaggi probabilistici e la loro convergenza sull'inferenza approssimata</figcaption>
+</figure>
+
 ## Template invece di tabelle: i modelli relazionali
 
 Immaginiamo una libreria online che vuole stimare la qualita' di ogni libro a partire dalle recensioni dei clienti. Una media dei voti ignora un fatto essenziale: alcuni clienti sono piu' generosi di altri, e alcuni sono disonesti e votano per ragioni che nulla hanno a che fare con la qualita'. Con due clienti e due libri si puo' ancora disegnare una rete bayesiana a mano; con milioni di entrambi, no. Pero' la struttura si ripete: ogni voto dipende sempre dall'onesta' e dalla generosita' di chi lo scrive e dalla qualita' del libro votato, con le stesse tabelle di probabilita' condizionata.

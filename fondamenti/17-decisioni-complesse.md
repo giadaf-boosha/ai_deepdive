@@ -17,11 +17,106 @@ Il capitolo aggiunge un secondo ingrediente: l'incertezza. Le azioni non produco
 
 Il percorso e' progressivo. Prima gli MDP completamente osservabili e gli algoritmi per risolverli; poi i problemi dei banditi, dove il dilemma e' quanto esplorare l'ignoto rispetto a sfruttare cio' che gia' funziona; infine i POMDP, in cui l'agente non sa nemmeno con certezza in quale stato si trova e deve ragionare su credenze invece che su fatti.
 
+<figure class="diagram">
+<svg viewBox="0 0 760 496" role="img" aria-label="Mappa concettuale del capitolo 17: i problemi di decisione sequenziali si formalizzano come MDP, il fattore di sconto rende finite le utilita', l'equazione di Bellman porta a iterazione dei valori e delle politiche fino alla politica ottima; rami laterali per i banditi e per i POMDP con gli stati-credenza">
+<defs><marker id="arr-c17" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="dg-arrow"/></marker></defs>
+<line x1="360" y1="68" x2="360" y2="113" class="dg-edge-primary" marker-end="url(#arr-c17)"/>
+<line x1="460" y1="40" x2="555" y2="40" class="dg-edge" marker-end="url(#arr-c17)"/>
+<text x="508" y="32" text-anchor="middle" class="dg-edge-label">vincite ignote</text>
+<line x1="178" y1="146" x2="275" y2="146" class="dg-edge" marker-end="url(#arr-c17)"/>
+<text x="227" y="138" text-anchor="middle" class="dg-edge-label">utilita' finita</text>
+<line x1="440" y1="146" x2="555" y2="146" class="dg-edge" marker-end="url(#arr-c17)"/>
+<line x1="360" y1="174" x2="360" y2="219" class="dg-edge-primary" marker-end="url(#arr-c17)"/>
+<line x1="250" y1="252" x2="225" y2="252" class="dg-edge" marker-end="url(#arr-c17)"/>
+<line x1="320" y1="280" x2="288" y2="325" class="dg-edge" marker-end="url(#arr-c17)"/>
+<line x1="430" y1="280" x2="492" y2="325" class="dg-edge" marker-end="url(#arr-c17)"/>
+<line x1="300" y1="386" x2="343" y2="423" class="dg-edge" marker-end="url(#arr-c17)"/>
+<line x1="480" y1="386" x2="418" y2="423" class="dg-edge" marker-end="url(#arr-c17)"/>
+<line x1="652" y1="174" x2="652" y2="219" class="dg-edge" marker-end="url(#arr-c17)"/>
+<text x="660" y="202" class="dg-edge-label">ragiona su</text>
+<rect x="260" y="12" width="200" height="56" rx="10" class="dg-node"/>
+<text x="360" y="36" text-anchor="middle" class="dg-label">Decisioni sequenziali</text>
+<text x="360" y="52" text-anchor="middle" class="dg-sublabel">utilita' su intere storie</text>
+<rect x="560" y="12" width="184" height="56" rx="10" class="dg-node"/>
+<text x="652" y="36" text-anchor="middle" class="dg-label">Banditi con n braccia</text>
+<text x="652" y="52" text-anchor="middle" class="dg-sublabel">esplorare vs sfruttare</text>
+<rect x="8" y="118" width="170" height="56" rx="10" class="dg-node"/>
+<text x="93" y="142" text-anchor="middle" class="dg-label">Fattore di sconto</text>
+<text x="93" y="158" text-anchor="middle" class="dg-sublabel">gamma: il futuro pesa meno</text>
+<rect x="280" y="118" width="160" height="56" rx="10" class="dg-node-primary"/>
+<text x="360" y="142" text-anchor="middle" class="dg-label">MDP</text>
+<text x="360" y="158" text-anchor="middle" class="dg-sublabel">transizioni e ricompense</text>
+<rect x="560" y="118" width="184" height="56" rx="10" class="dg-node"/>
+<text x="652" y="142" text-anchor="middle" class="dg-label">POMDP</text>
+<text x="652" y="158" text-anchor="middle" class="dg-sublabel">parzialmente osservabile</text>
+<rect x="40" y="224" width="185" height="56" rx="10" class="dg-node"/>
+<text x="132" y="248" text-anchor="middle" class="dg-label">Funzione Q(s,a)</text>
+<text x="132" y="264" text-anchor="middle" class="dg-sublabel">argmax da' la politica</text>
+<rect x="250" y="224" width="220" height="56" rx="10" class="dg-node-primary"/>
+<text x="360" y="248" text-anchor="middle" class="dg-label">Equazione di Bellman</text>
+<text x="360" y="264" text-anchor="middle" class="dg-sublabel">ricompensa + futuro scontato</text>
+<rect x="560" y="224" width="184" height="56" rx="10" class="dg-node"/>
+<text x="652" y="248" text-anchor="middle" class="dg-label">Stato-credenza</text>
+<text x="652" y="264" text-anchor="middle" class="dg-sublabel">distribuzione sugli stati</text>
+<rect x="180" y="330" width="190" height="56" rx="10" class="dg-node"/>
+<text x="275" y="354" text-anchor="middle" class="dg-label">Iterazione dei valori</text>
+<text x="275" y="370" text-anchor="middle" class="dg-sublabel">convergenza per contrazione</text>
+<rect x="400" y="330" width="210" height="56" rx="10" class="dg-node"/>
+<text x="505" y="354" text-anchor="middle" class="dg-label">Iterazione delle politiche</text>
+<text x="505" y="370" text-anchor="middle" class="dg-sublabel">valuta e migliora</text>
+<rect x="290" y="428" width="180" height="56" rx="10" class="dg-node-accent"/>
+<text x="380" y="452" text-anchor="middle" class="dg-label">Politica ottima</text>
+<text x="380" y="468" text-anchor="middle" class="dg-sublabel">un'azione per ogni stato</text>
+</svg>
+<figcaption>Mappa concettuale del capitolo: dai problemi di decisione sequenziali agli MDP e all'equazione di Bellman fino alla politica ottima, con i rami dei banditi e dei POMDP.</figcaption>
+</figure>
+
 ## Il mondo come processo di Markov
 
 Un MDP e' definito da pochi elementi: un insieme di stati con uno stato iniziale, le azioni disponibili in ogni stato, un modello di transizione che assegna una probabilita' a ogni possibile esito di ogni azione, e una funzione di ricompensa che attribuisce un valore numerico a ogni transizione. L'ipotesi markoviana dice che la probabilita' di arrivare in uno stato dipende solo dallo stato corrente e dall'azione scelta, non da tutta la storia precedente: il presente riassume il passato.
 
 Il libro usa un mondo giocattolo, una griglia 4x3 con due uscite (una buona, una cattiva) e movimenti inaffidabili: l'azione voluta riesce con probabilita' 0,8, ma nel 20% dei casi l'agente scivola di lato. In un ambiente cosi' una sequenza fissa di mosse non basta, perche' l'agente puo' ritrovarsi ovunque. La soluzione deve dire cosa fare in ogni stato raggiungibile: si chiama politica, e si indica con la lettera greca pi. Una politica ottima e' quella che massimizza l'utilita' attesa sulle possibili storie che genera. Un dettaglio istruttivo: la forma della politica ottima cambia radicalmente al variare della ricompensa dei passi intermedi. Se ogni passo costa molto, l'agente corre verso l'uscita piu' vicina anche se e' quella cattiva; se ogni passo produce una piccola ricompensa positiva, l'agente evita entrambe le uscite e vaga per sempre. Il design della ricompensa e' gia' design del comportamento.
+
+<figure class="diagram">
+<svg viewBox="0 0 760 300" role="img" aria-label="Il mondo a griglia 4x3 del capitolo 17: stati terminali +1 in (4,3) e -1 in (4,2), muro in (2,2), partenza INIZIO in (1,1); a destra il modello di transizione, con probabilita' 0,8 nella direzione voluta e 0,1 per ciascuna direzione ortogonale">
+<defs><marker id="arr-c17-b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="dg-arrow"/></marker></defs>
+<line x1="600" y1="125" x2="600" y2="74" class="dg-edge-primary" marker-end="url(#arr-c17-b)"/>
+<text x="600" y="64" text-anchor="middle" class="dg-edge-label">0,8</text>
+<line x1="560" y1="156" x2="510" y2="156" class="dg-edge" marker-end="url(#arr-c17-b)"/>
+<text x="535" y="148" text-anchor="middle" class="dg-edge-label">0,1</text>
+<line x1="640" y1="156" x2="690" y2="156" class="dg-edge" marker-end="url(#arr-c17-b)"/>
+<text x="665" y="148" text-anchor="middle" class="dg-edge-label">0,1</text>
+<rect x="70" y="50" width="85" height="62" rx="4" class="dg-node"/>
+<rect x="155" y="50" width="85" height="62" rx="4" class="dg-node"/>
+<rect x="240" y="50" width="85" height="62" rx="4" class="dg-node"/>
+<rect x="325" y="50" width="85" height="62" rx="4" class="dg-node-accent"/>
+<text x="367" y="86" text-anchor="middle" class="dg-label">+1</text>
+<rect x="70" y="112" width="85" height="62" rx="4" class="dg-node"/>
+<rect x="155" y="112" width="85" height="62" rx="4" class="dg-node"/>
+<line x1="162" y1="119" x2="233" y2="167" class="dg-edge"/>
+<line x1="233" y1="119" x2="162" y2="167" class="dg-edge"/>
+<rect x="240" y="112" width="85" height="62" rx="4" class="dg-node"/>
+<rect x="325" y="112" width="85" height="62" rx="4" class="dg-node"/>
+<text x="367" y="148" text-anchor="middle" class="dg-label">-1</text>
+<rect x="70" y="174" width="85" height="62" rx="4" class="dg-node"/>
+<text x="112" y="209" text-anchor="middle" class="dg-sublabel">INIZIO</text>
+<rect x="155" y="174" width="85" height="62" rx="4" class="dg-node"/>
+<rect x="240" y="174" width="85" height="62" rx="4" class="dg-node"/>
+<rect x="325" y="174" width="85" height="62" rx="4" class="dg-node"/>
+<text x="52" y="85" text-anchor="middle" class="dg-sublabel">3</text>
+<text x="52" y="147" text-anchor="middle" class="dg-sublabel">2</text>
+<text x="52" y="209" text-anchor="middle" class="dg-sublabel">1</text>
+<text x="112" y="256" text-anchor="middle" class="dg-sublabel">1</text>
+<text x="197" y="256" text-anchor="middle" class="dg-sublabel">2</text>
+<text x="282" y="256" text-anchor="middle" class="dg-sublabel">3</text>
+<text x="367" y="256" text-anchor="middle" class="dg-sublabel">4</text>
+<text x="240" y="282" text-anchor="middle" class="dg-sublabel">(a) ambiente 4x3</text>
+<rect x="560" y="125" width="80" height="62" rx="4" class="dg-node"/>
+<text x="600" y="212" text-anchor="middle" class="dg-sublabel">modello di transizione</text>
+<text x="600" y="282" text-anchor="middle" class="dg-sublabel">(b)</text>
+</svg>
+<figcaption>Il mondo 4x3: terminali +1 e -1, muro in (2,2), partenza in (1,1); l'azione voluta riesce con probabilita' 0,8, con 0,1 si scivola di lato e le altre transizioni valgono -0,04 — schema ripreso dalla figura 17.1 del cap. 17, AIMA 4a ed.</figcaption>
+</figure>
 
 Resta da definire l'utilita' di una storia infinita. La risposta standard e' lo sconto: le ricompense future vengono moltiplicate per un fattore gamma tra 0 e 1 elevato al tempo, cosi' che il futuro remoto pesi sempre meno. Lo sconto ha giustificazioni economiche (un euro oggi vale piu' di un euro domani), probabilistiche (equivale a una piccola probabilita' di terminazione a ogni passo) e matematiche: rende finita la somma di una sequenza infinita di ricompense, ed e' l'unica forma di aggregazione coerente con preferenze stazionarie nel tempo. C'e' anche un risultato elegante sul reward shaping: aggiungere alla ricompensa un termine a forma di gradiente di potenziale non cambia la politica ottima, il che consente di "aiutare" l'agente con segnali intermedi senza distorcere l'obiettivo. E' esattamente cio' che fa un addestratore di animali con i piccoli premi lungo il percorso.
 

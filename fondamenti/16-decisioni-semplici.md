@@ -17,6 +17,60 @@ La risposta nasce dall'incontro di due teorie. La teoria della probabilita' desc
 
 Il capitolo si chiama "decisioni semplici" perche' considera decisioni singole ed episodiche, non sequenze di azioni concatenate (quelle arrivano nel capitolo successivo). Ma anche in questo caso apparentemente elementare emergono questioni profonde: perche' proprio la media delle utilita' e non un altro criterio, come si misura l'utilita' del denaro o della vita umana, cosa fare quando gli esseri umani si comportano in modo incoerente, e — tema sorprendentemente attuale — come deve agire una macchina che non conosce le preferenze della persona che serve.
 
+<figure class="diagram">
+<svg viewBox="0 0 760 480" role="img" aria-label="Mappa concettuale del capitolo 16: probabilita' e utilita' si combinano nella teoria delle decisioni con il principio della massima utilita' attesa, che si dirama in utilita' del denaro, utilita' multiattributo e reti di decisione con il valore dell'informazione, fino alla macchina incerta sulle preferenze umane che si lascia spegnere">
+<defs><marker id="arr-c16" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="dg-arrow"/></marker></defs>
+<line x1="190" y1="68" x2="330" y2="112" class="dg-edge-primary" marker-end="url(#arr-c16)"/>
+<line x1="450" y1="68" x2="415" y2="112" class="dg-edge-primary" marker-end="url(#arr-c16)"/>
+<line x1="606" y1="40" x2="542" y2="40" class="dg-edge" marker-end="url(#arr-c16)"/>
+<text x="574" y="32" text-anchor="middle" class="dg-edge-label">fondano</text>
+<line x1="305" y1="168" x2="130" y2="212" class="dg-edge" marker-end="url(#arr-c16)"/>
+<line x1="360" y1="168" x2="322" y2="212" class="dg-edge" marker-end="url(#arr-c16)"/>
+<line x1="450" y1="168" x2="535" y2="212" class="dg-edge" marker-end="url(#arr-c16)"/>
+<line x1="410" y1="168" x2="420" y2="312" class="dg-edge-primary" marker-end="url(#arr-c16)"/>
+<text x="475" y="196" text-anchor="middle" class="dg-edge-label">utilita' non nota</text>
+<line x1="108" y1="268" x2="120" y2="312" class="dg-edge" marker-end="url(#arr-c16)"/>
+<line x1="565" y1="268" x2="565" y2="312" class="dg-edge" marker-end="url(#arr-c16)"/>
+<line x1="370" y1="368" x2="420" y2="412" class="dg-edge-primary" marker-end="url(#arr-c16)"/>
+<line x1="540" y1="368" x2="478" y2="412" class="dg-edge" marker-end="url(#arr-c16)"/>
+<text x="560" y="388" text-anchor="middle" class="dg-edge-label">scelta = informazione</text>
+<rect x="56" y="12" width="200" height="56" rx="10" class="dg-node"/>
+<text x="156" y="36" text-anchor="middle" class="dg-label">Teoria della probabilita'</text>
+<text x="156" y="52" text-anchor="middle" class="dg-sublabel">cio' che l'agente crede</text>
+<rect x="380" y="12" width="160" height="56" rx="10" class="dg-node"/>
+<text x="460" y="36" text-anchor="middle" class="dg-label">Teoria dell'utilita'</text>
+<text x="460" y="52" text-anchor="middle" class="dg-sublabel">cio' che desidera</text>
+<rect x="606" y="12" width="145" height="56" rx="10" class="dg-node"/>
+<text x="678" y="36" text-anchor="middle" class="dg-label">Sei assiomi</text>
+<text x="678" y="52" text-anchor="middle" class="dg-sublabel">von Neumann-Morgenstern</text>
+<rect x="275" y="112" width="210" height="56" rx="10" class="dg-node-primary"/>
+<text x="380" y="136" text-anchor="middle" class="dg-label">Teoria delle decisioni</text>
+<text x="380" y="152" text-anchor="middle" class="dg-sublabel">principio MEU: max utilita' attesa</text>
+<rect x="12" y="212" width="185" height="56" rx="10" class="dg-node"/>
+<text x="104" y="236" text-anchor="middle" class="dg-label">Utilita' del denaro</text>
+<text x="104" y="252" text-anchor="middle" class="dg-sublabel">concava, avversione al rischio</text>
+<rect x="222" y="212" width="182" height="56" rx="10" class="dg-node"/>
+<text x="313" y="236" text-anchor="middle" class="dg-label">Utilita' multiattributo</text>
+<text x="313" y="252" text-anchor="middle" class="dg-sublabel">dominanza stocastica</text>
+<rect x="470" y="212" width="190" height="56" rx="10" class="dg-node"/>
+<text x="565" y="236" text-anchor="middle" class="dg-label">Reti di decisione</text>
+<text x="565" y="252" text-anchor="middle" class="dg-sublabel">rete bayesiana + nodi decisione</text>
+<rect x="8" y="312" width="234" height="56" rx="10" class="dg-node"/>
+<text x="125" y="336" text-anchor="middle" class="dg-label">Maledizione dell'ottimizzatore</text>
+<text x="125" y="352" text-anchor="middle" class="dg-sublabel">massimizzare su stime rumorose</text>
+<rect x="248" y="312" width="200" height="56" rx="10" class="dg-node"/>
+<text x="348" y="336" text-anchor="middle" class="dg-label">Preferenze umane ignote</text>
+<text x="348" y="352" text-anchor="middle" class="dg-sublabel">gioco del pulsante di spegnimento</text>
+<rect x="465" y="312" width="200" height="56" rx="10" class="dg-node"/>
+<text x="565" y="336" text-anchor="middle" class="dg-label">Valore dell'informazione</text>
+<text x="565" y="352" text-anchor="middle" class="dg-sublabel">VPI: cosa chiedere prima di agire</text>
+<rect x="356" y="412" width="178" height="56" rx="10" class="dg-node-accent"/>
+<text x="445" y="436" text-anchor="middle" class="dg-label">Macchina deferente</text>
+<text x="445" y="452" text-anchor="middle" class="dg-sublabel">si lascia spegnere dall'umano</text>
+</svg>
+<figcaption>Mappa concettuale del capitolo: probabilita' e utilita' si combinano nel principio MEU, che regge denaro e rischio, decisioni multiattributo, reti di decisione e valore dell'informazione, fino alla macchina che deferisce all'umano.</figcaption>
+</figure>
+
 ## La bussola dell'utilita' attesa
 
 Il punto di partenza e' un agente che deve scegliere un'azione con esito incerto. Per ogni azione a, l'agente puo' calcolare la probabilita' di ciascun esito possibile, combinando l'incertezza sullo stato corrente con il modello di transizione. L'utilita' attesa EU(a) e' la media delle utilita' degli esiti, pesata con le rispettive probabilita'. Il principio della massima utilita' attesa (MEU, maximum expected utility) prescrive di scegliere l'azione con EU piu' alta.

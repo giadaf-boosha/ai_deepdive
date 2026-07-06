@@ -17,6 +17,67 @@ Il capitolo 12 di Russell e Norvig affronta esattamente questa domanda: come si 
 
 La posta in gioco non e' solo rappresentare l'incertezza, ma agire razionalmente sotto incertezza. Il capitolo introduce cosi' anche il principio che collega credenze e scelte: un agente razionale seleziona l'azione con la massima utilita' attesa, combinando probabilita' degli esiti e preferenze su di essi.
 
+<figure class="diagram">
+<svg viewBox="0 0 760 464" role="img" aria-label="Mappa concettuale del capitolo 12: dall'incertezza al fallimento dell'agente logico, alla teoria della probabilita' come gradi di credenza; la distribuzione congiunta completa e il suo muro esponenziale, compressa da indipendenza assoluta e condizionale; la regola di Bayes e il modello di Bayes ingenuo, il mondo del wumpus e la teoria delle decisioni con la massima utilita' attesa">
+<defs><marker id="arr-c12" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="dg-arrow"/></marker></defs>
+<line x1="233" y1="40" x2="272" y2="40" class="dg-edge" marker-end="url(#arr-c12)"/>
+<line x1="380" y1="68" x2="380" y2="105" class="dg-edge-primary" marker-end="url(#arr-c12)"/>
+<text x="470" y="90" text-anchor="middle" class="dg-edge-label">pigrizia e ignoranza</text>
+<line x1="213" y1="136" x2="272" y2="136" class="dg-edge" marker-end="url(#arr-c12)"/>
+<text x="242" y="128" text-anchor="middle" class="dg-edge-label">vincolano</text>
+<line x1="635" y1="68" x2="635" y2="105" class="dg-edge" marker-end="url(#arr-c12)"/>
+<line x1="488" y1="136" x2="527" y2="136" class="dg-edge-primary" marker-end="url(#arr-c12)"/>
+<line x1="380" y1="164" x2="380" y2="201" class="dg-edge-primary" marker-end="url(#arr-c12)"/>
+<text x="290" y="188" text-anchor="middle" class="dg-edge-label">inferenza per enumerazione</text>
+<line x1="470" y1="164" x2="605" y2="201" class="dg-edge" marker-end="url(#arr-c12)"/>
+<text x="560" y="178" text-anchor="middle" class="dg-edge-label">regola del prodotto</text>
+<line x1="330" y1="260" x2="165" y2="297" class="dg-edge" marker-end="url(#arr-c12)"/>
+<line x1="383" y1="260" x2="385" y2="297" class="dg-edge" marker-end="url(#arr-c12)"/>
+<text x="460" y="282" text-anchor="middle" class="dg-edge-label">da O(2^n) a O(n)</text>
+<line x1="635" y1="260" x2="635" y2="297" class="dg-edge" marker-end="url(#arr-c12)"/>
+<line x1="498" y1="328" x2="527" y2="328" class="dg-edge" marker-end="url(#arr-c12)"/>
+<line x1="385" y1="356" x2="385" y2="393" class="dg-edge" marker-end="url(#arr-c12)"/>
+<text x="470" y="378" text-anchor="middle" class="dg-edge-label">solo la frontiera conta</text>
+<rect x="20" y="12" width="210" height="56" rx="10" class="dg-node"/>
+<text x="125" y="36" text-anchor="middle" class="dg-label">Incertezza</text>
+<text x="125" y="52" text-anchor="middle" class="dg-sublabel">sensori parziali, esiti incerti</text>
+<rect x="275" y="12" width="210" height="56" rx="10" class="dg-node"/>
+<text x="380" y="36" text-anchor="middle" class="dg-label">Agente logico</text>
+<text x="380" y="52" text-anchor="middle" class="dg-sublabel">stati-credenza: scala male</text>
+<rect x="530" y="12" width="210" height="56" rx="10" class="dg-node"/>
+<text x="635" y="36" text-anchor="middle" class="dg-label">Teoria dell'utilita'</text>
+<text x="635" y="52" text-anchor="middle" class="dg-sublabel">preferenze sugli esiti</text>
+<rect x="10" y="108" width="200" height="56" rx="10" class="dg-node"/>
+<text x="110" y="132" text-anchor="middle" class="dg-label">Assiomi di Kolmogorov</text>
+<text x="110" y="148" text-anchor="middle" class="dg-sublabel">violarli espone a perdite certe</text>
+<rect x="275" y="108" width="210" height="56" rx="10" class="dg-node-primary"/>
+<text x="380" y="132" text-anchor="middle" class="dg-label">Teoria della probabilita'</text>
+<text x="380" y="148" text-anchor="middle" class="dg-sublabel">gradi di credenza da 0 a 1</text>
+<rect x="530" y="108" width="210" height="56" rx="10" class="dg-node-accent"/>
+<text x="635" y="132" text-anchor="middle" class="dg-label">Teoria delle decisioni</text>
+<text x="635" y="148" text-anchor="middle" class="dg-sublabel">MEU: massima utilita' attesa</text>
+<rect x="275" y="204" width="210" height="56" rx="10" class="dg-node"/>
+<text x="380" y="228" text-anchor="middle" class="dg-label">Distribuzione congiunta</text>
+<text x="380" y="244" text-anchor="middle" class="dg-sublabel">2^n valori: muro esponenziale</text>
+<rect x="530" y="204" width="210" height="56" rx="10" class="dg-node"/>
+<text x="635" y="228" text-anchor="middle" class="dg-label">Regola di Bayes</text>
+<text x="635" y="244" text-anchor="middle" class="dg-sublabel">dal causale al diagnostico</text>
+<rect x="20" y="300" width="210" height="56" rx="10" class="dg-node"/>
+<text x="125" y="324" text-anchor="middle" class="dg-label">Indipendenza assoluta</text>
+<text x="125" y="340" text-anchor="middle" class="dg-sublabel">fattorizza la congiunta</text>
+<rect x="275" y="300" width="220" height="56" rx="10" class="dg-node"/>
+<text x="385" y="324" text-anchor="middle" class="dg-label">Indipendenza condizionale</text>
+<text x="385" y="340" text-anchor="middle" class="dg-sublabel">la causa separa gli effetti</text>
+<rect x="530" y="300" width="210" height="56" rx="10" class="dg-node"/>
+<text x="635" y="324" text-anchor="middle" class="dg-label">Bayes ingenuo</text>
+<text x="635" y="340" text-anchor="middle" class="dg-sublabel">costo O(n), filtri antispam</text>
+<rect x="275" y="396" width="220" height="56" rx="10" class="dg-node"/>
+<text x="385" y="420" text-anchor="middle" class="dg-label">Mondo del wumpus</text>
+<text x="385" y="436" text-anchor="middle" class="dg-sublabel">quantifica il rischio (31% vs 86%)</text>
+</svg>
+<figcaption>Mappa del capitolo 12 — la probabilita' come risposta all'incertezza e le indipendenze che rendono l'inferenza trattabile</figcaption>
+</figure>
+
 ## I limiti della logica e i gradi di credenza
 
 Provare a codificare un dominio come la diagnosi medica in regole logiche fallisce sistematicamente. Una regola che lega un sintomo a una causa non e' mai valida in senso stretto: lo stesso dolore puo' derivare da decine di condizioni diverse, e la stessa condizione non produce sempre il sintomo. Gli autori individuano tre ragioni del fallimento: la pigrizia (elencare tutte le eccezioni costa troppo), l'ignoranza teorica (nessuna teoria completa del dominio esiste) e l'ignoranza pratica (anche con la teoria, mancano i dati sul caso specifico).

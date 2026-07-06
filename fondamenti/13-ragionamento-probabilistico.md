@@ -15,11 +15,99 @@ Un agente che opera in un mondo incerto ha bisogno di rappresentare probabilita'
 
 La risposta sono le reti bayesiane: grafi orientati aciclici in cui ogni nodo e' una variabile casuale e ogni arco codifica un'influenza diretta. Sfruttando le relazioni di indipendenza condizionale del dominio, una rete bayesiana puo' rappresentare la stessa distribuzione congiunta con una frazione minuscola dei parametri, e in molti casi rende l'inferenza trattabile. Il capitolo copre l'intero arco: sintassi e semantica delle reti, tecniche per specificare le distribuzioni locali, algoritmi di inferenza esatta e approssimata, e infine le reti causali, che permettono di distinguere tra osservare un evento e provocarlo.
 
+<figure class="diagram">
+<svg viewBox="0 0 760 440" role="img" aria-label="Mappa concettuale del capitolo 13: la rete bayesiana rappresenta in forma compatta la distribuzione congiunta, codifica l'indipendenza condizionale, supporta inferenza esatta e approssimata fino ai metodi MCMC, e con le reti causali e l'operatore do distingue osservazioni e interventi">
+<defs><marker id="arr-c13" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="dg-arrow"/></marker></defs>
+<line x1="320" y1="120" x2="160" y2="72" class="dg-edge" marker-end="url(#arr-c13)"/>
+<text x="240" y="88" text-anchor="middle" class="dg-edge-label">definisce come prodotto</text>
+<line x1="600" y1="72" x2="440" y2="120" class="dg-edge" marker-end="url(#arr-c13)"/>
+<text x="520" y="88" text-anchor="middle" class="dg-edge-label">rende compatta</text>
+<line x1="280" y1="148" x2="208" y2="148" class="dg-edge" marker-end="url(#arr-c13)"/>
+<text x="244" y="140" text-anchor="middle" class="dg-edge-label">codifica</text>
+<line x1="552" y1="148" x2="480" y2="148" class="dg-edge" marker-end="url(#arr-c13)"/>
+<text x="516" y="140" text-anchor="middle" class="dg-edge-label">per le CPT</text>
+<line x1="320" y1="176" x2="140" y2="250" class="dg-edge" marker-end="url(#arr-c13)"/>
+<line x1="385" y1="176" x2="385" y2="250" class="dg-edge" marker-end="url(#arr-c13)"/>
+<text x="452" y="215" text-anchor="middle" class="dg-edge-label">per reti grandi</text>
+<line x1="430" y1="176" x2="600" y2="250" class="dg-edge-primary" marker-end="url(#arr-c13)"/>
+<text x="560" y="207" text-anchor="middle" class="dg-edge-label">sottoclasse</text>
+<line x1="206" y1="278" x2="285" y2="278" class="dg-edge" marker-end="url(#arr-c13)"/>
+<text x="245" y="270" text-anchor="middle" class="dg-edge-label">NP-difficile</text>
+<line x1="385" y1="306" x2="385" y2="360" class="dg-edge" marker-end="url(#arr-c13)"/>
+<line x1="630" y1="306" x2="630" y2="360" class="dg-edge-primary" marker-end="url(#arr-c13)"/>
+<rect x="30" y="16" width="210" height="56" rx="10" class="dg-node"/>
+<text x="135" y="40" text-anchor="middle" class="dg-label">Distribuzione congiunta</text>
+<text x="135" y="56" text-anchor="middle" class="dg-sublabel">crescita esponenziale</text>
+<rect x="520" y="16" width="210" height="56" rx="10" class="dg-node"/>
+<text x="625" y="40" text-anchor="middle" class="dg-label">Ordinamento causale</text>
+<text x="625" y="56" text-anchor="middle" class="dg-sublabel">le cause prima degli effetti</text>
+<rect x="8" y="120" width="200" height="56" rx="10" class="dg-node"/>
+<text x="108" y="144" text-anchor="middle" class="dg-label">Indipendenza condizionale</text>
+<text x="108" y="160" text-anchor="middle" class="dg-sublabel">coperta di Markov, d-separazione</text>
+<rect x="280" y="120" width="200" height="56" rx="10" class="dg-node-primary"/>
+<text x="380" y="144" text-anchor="middle" class="dg-label">Rete bayesiana</text>
+<text x="380" y="160" text-anchor="middle" class="dg-sublabel">DAG + una CPT per nodo</text>
+<rect x="552" y="120" width="200" height="56" rx="10" class="dg-node"/>
+<text x="652" y="144" text-anchor="middle" class="dg-label">Distribuzioni compatte</text>
+<text x="652" y="160" text-anchor="middle" class="dg-sublabel">OR rumoroso, gaussiana lineare</text>
+<rect x="16" y="250" width="190" height="56" rx="10" class="dg-node"/>
+<text x="111" y="274" text-anchor="middle" class="dg-label">Inferenza esatta</text>
+<text x="111" y="290" text-anchor="middle" class="dg-sublabel">eliminazione delle variabili</text>
+<rect x="285" y="250" width="200" height="56" rx="10" class="dg-node"/>
+<text x="385" y="274" text-anchor="middle" class="dg-label">Inferenza approssimata</text>
+<text x="385" y="290" text-anchor="middle" class="dg-sublabel">campionamento Monte Carlo</text>
+<rect x="530" y="250" width="200" height="56" rx="10" class="dg-node-accent"/>
+<text x="630" y="274" text-anchor="middle" class="dg-label">Reti causali</text>
+<text x="630" y="290" text-anchor="middle" class="dg-sublabel">dalle correlazioni alle cause</text>
+<rect x="285" y="360" width="200" height="56" rx="10" class="dg-node"/>
+<text x="385" y="384" text-anchor="middle" class="dg-label">MCMC</text>
+<text x="385" y="400" text-anchor="middle" class="dg-sublabel">Gibbs, Metropolis-Hastings</text>
+<rect x="530" y="360" width="200" height="56" rx="10" class="dg-node"/>
+<text x="630" y="384" text-anchor="middle" class="dg-label">Operatore do e back-door</text>
+<text x="630" y="400" text-anchor="middle" class="dg-sublabel">osservare vs intervenire</text>
+</svg>
+<figcaption>Mappa del capitolo 13 — la rete bayesiana come rappresentazione compatta, l'inferenza esatta e approssimata, e l'approdo alle reti causali</figcaption>
+</figure>
+
 ## Un grafo che codifica l'indipendenza
 
 Una rete bayesiana e' definita da tre elementi: un insieme di nodi, uno per ogni variabile casuale (discreta o continua); archi orientati che formano un DAG, dove un arco da X a Y indica che X influenza direttamente Y; e per ogni nodo una distribuzione condizionata dati i suoi genitori, tipicamente una tabella delle probabilita' condizionate (CPT) nel caso discreto.
 
 L'esempio guida e' l'antifurto ideato da Judea Pearl: un allarme che puo' scattare per un'intrusione ma anche per un piccolo terremoto, e due vicini, John e Mary, che telefonano (in modo non del tutto affidabile) quando lo sentono. La topologia della rete cattura le ipotesi del dominio: le telefonate dipendono solo dall'allarme, non direttamente da intrusioni o terremoti. Tutto cio' che la rete non modella esplicitamente — batterie scariche, elicotteri di passaggio, la musica di Mary a tutto volume — resta riassunto nell'incertezza dei numeri nelle CPT. E' questo che consente a un agente piccolo di cavarsela in un mondo grande.
+
+<figure class="diagram">
+<svg viewBox="0 0 760 360" role="img" aria-label="Rete bayesiana dell'antifurto: Intrusione e Terremoto influenzano Allarme, che a sua volta influenza JohnTelefona e MaryTelefona; accanto a ogni nodo la tabella delle probabilita' condizionate">
+<defs><marker id="arr-c13-b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="dg-arrow"/></marker></defs>
+<line x1="205" y1="64" x2="320" y2="130" class="dg-edge" marker-end="url(#arr-c13-b)"/>
+<line x1="475" y1="64" x2="360" y2="130" class="dg-edge" marker-end="url(#arr-c13-b)"/>
+<line x1="310" y1="174" x2="215" y2="250" class="dg-edge" marker-end="url(#arr-c13-b)"/>
+<line x1="370" y1="174" x2="465" y2="250" class="dg-edge" marker-end="url(#arr-c13-b)"/>
+<rect x="110" y="20" width="140" height="44" rx="10" class="dg-node"/>
+<text x="180" y="47" text-anchor="middle" class="dg-label">Intrusione</text>
+<text x="180" y="12" text-anchor="middle" class="dg-edge-label">P(I=true) = 0,001</text>
+<rect x="430" y="20" width="140" height="44" rx="10" class="dg-node"/>
+<text x="500" y="47" text-anchor="middle" class="dg-label">Terremoto</text>
+<text x="500" y="12" text-anchor="middle" class="dg-edge-label">P(T=true) = 0,002</text>
+<rect x="270" y="130" width="140" height="44" rx="10" class="dg-node-primary"/>
+<text x="340" y="157" text-anchor="middle" class="dg-label">Allarme</text>
+<text x="445" y="118" class="dg-edge-label">I  T  P(A=true|I,T)</text>
+<text x="445" y="134" class="dg-edge-label">t  t  0,95</text>
+<text x="445" y="150" class="dg-edge-label">t  f  0,94</text>
+<text x="445" y="166" class="dg-edge-label">f  t  0,29</text>
+<text x="445" y="182" class="dg-edge-label">f  f  0,01</text>
+<rect x="110" y="250" width="150" height="44" rx="10" class="dg-node"/>
+<text x="185" y="277" text-anchor="middle" class="dg-label">JohnTelefona</text>
+<text x="115" y="316" class="dg-edge-label">A  P(J=true|A)</text>
+<text x="115" y="332" class="dg-edge-label">t  0,90</text>
+<text x="115" y="348" class="dg-edge-label">f  0,05</text>
+<rect x="430" y="250" width="150" height="44" rx="10" class="dg-node"/>
+<text x="505" y="277" text-anchor="middle" class="dg-label">MaryTelefona</text>
+<text x="435" y="316" class="dg-edge-label">A  P(M=true|A)</text>
+<text x="435" y="332" class="dg-edge-label">t  0,70</text>
+<text x="435" y="348" class="dg-edge-label">f  0,01</text>
+</svg>
+<figcaption>La rete dell'antifurto con le tabelle delle probabilita' condizionate — schema ripreso dalla figura 13.2 del cap. 13, AIMA 4a ed.</figcaption>
+</figure>
 
 La semantica e' precisa: la probabilita' di un assegnamento completo di tutte le variabili e' il prodotto, su tutti i nodi, della probabilita' condizionata del valore del nodo dati i valori dei genitori. Da questa definizione discendono le proprieta' di indipendenza: ogni variabile e' condizionalmente indipendente dai suoi non discendenti dati i genitori, e piu' in generale e' indipendente da tutto il resto della rete data la sua coperta di Markov (genitori, figli e genitori dei figli). Il criterio di d-separazione permette di leggere direttamente dal grafo se due insiemi di variabili sono indipendenti dato un terzo insieme.
 

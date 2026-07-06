@@ -17,6 +17,56 @@ Il capitolo copre un arco ampio: come pianificare quando piu' attori eseguono az
 
 Conta perche' quasi nessun sistema di IA reale opera nel vuoto. Router che si contendono banda, veicoli a un incrocio, offerenti in un'asta pubblicitaria, robot che si dividono compiti in un magazzino: sono tutti sistemi multiagente, e senza gli strumenti di questo capitolo il comportamento collettivo resta imprevedibile o inefficiente.
 
+<figure class="diagram">
+<svg viewBox="0 0 760 380" role="img" aria-label="Mappa concettuale del capitolo 18: dalle decisioni multiagente alla pianificazione multiattuatore e alla teoria dei giochi, con equilibrio di Nash, dilemma del prigioniero, giochi ripetuti, forma estesa, giochi cooperativi e progettazione di meccanismi, fino ai giochi di assistenza">
+<defs><marker id="arr-c18" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="dg-arrow"/></marker></defs>
+<line x1="350" y1="68" x2="128" y2="101" class="dg-edge" marker-end="url(#arr-c18)"/>
+<text x="235" y="79" text-anchor="middle" class="dg-edge-label">stesso obiettivo</text>
+<line x1="380" y1="68" x2="380" y2="101" class="dg-edge-primary" marker-end="url(#arr-c18)"/>
+<text x="452" y="88" text-anchor="middle" class="dg-edge-label">preferenze divergenti</text>
+<line x1="315" y1="160" x2="82" y2="201" class="dg-edge" marker-end="url(#arr-c18)"/>
+<line x1="360" y1="160" x2="267" y2="201" class="dg-edge" marker-end="url(#arr-c18)"/>
+<line x1="405" y1="160" x2="485" y2="201" class="dg-edge" marker-end="url(#arr-c18)"/>
+<line x1="455" y1="160" x2="686" y2="201" class="dg-edge" marker-end="url(#arr-c18)"/>
+<line x1="79" y1="232" x2="97" y2="306" class="dg-edge" marker-end="url(#arr-c18)"/>
+<line x1="194" y1="340" x2="297" y2="340" class="dg-edge" marker-end="url(#arr-c18)"/>
+<text x="245" y="331" text-anchor="middle" class="dg-edge-label">se ripetuto</text>
+<line x1="689" y1="232" x2="640" y2="306" class="dg-edge" marker-end="url(#arr-c18)"/>
+<text x="580" y="272" text-anchor="middle" class="dg-edge-label">l'umano sceglie per primo</text>
+<rect x="280" y="12" width="200" height="56" rx="10" class="dg-node-primary"/>
+<text x="380" y="36" text-anchor="middle" class="dg-label">Decisioni multiagente</text>
+<text x="380" y="52" text-anchor="middle" class="dg-sublabel">piu' agenti, obiettivi propri</text>
+<rect x="8" y="104" width="230" height="56" rx="10" class="dg-node"/>
+<text x="123" y="128" text-anchor="middle" class="dg-label">Pianificazione multiattuatore</text>
+<text x="123" y="144" text-anchor="middle" class="dg-sublabel">coordinamento, convenzioni</text>
+<rect x="290" y="104" width="180" height="56" rx="10" class="dg-node-primary"/>
+<text x="380" y="128" text-anchor="middle" class="dg-label">Teoria dei giochi</text>
+<text x="380" y="144" text-anchor="middle" class="dg-sublabel">ragionamento ricorsivo</text>
+<rect x="4" y="204" width="150" height="56" rx="10" class="dg-node"/>
+<text x="79" y="228" text-anchor="middle" class="dg-label">Equilibrio di Nash</text>
+<text x="79" y="244" text-anchor="middle" class="dg-sublabel">deviare non conviene</text>
+<rect x="186" y="204" width="162" height="56" rx="10" class="dg-node"/>
+<text x="267" y="228" text-anchor="middle" class="dg-label">Giochi cooperativi</text>
+<text x="267" y="244" text-anchor="middle" class="dg-sublabel">nucleo e valore di Shapley</text>
+<rect x="380" y="204" width="210" height="56" rx="10" class="dg-node"/>
+<text x="485" y="228" text-anchor="middle" class="dg-label">Progettazione di meccanismi</text>
+<text x="485" y="244" text-anchor="middle" class="dg-sublabel">aste, voto, contrattazione</text>
+<rect x="622" y="204" width="134" height="56" rx="10" class="dg-node"/>
+<text x="689" y="228" text-anchor="middle" class="dg-label">Forma estesa</text>
+<text x="689" y="244" text-anchor="middle" class="dg-sublabel">induzione a ritroso</text>
+<rect x="4" y="312" width="190" height="56" rx="10" class="dg-node"/>
+<text x="99" y="336" text-anchor="middle" class="dg-label">Dilemma del prigioniero</text>
+<text x="99" y="352" text-anchor="middle" class="dg-sublabel">equilibrio non Pareto-ottimo</text>
+<rect x="300" y="312" width="190" height="56" rx="10" class="dg-node"/>
+<text x="395" y="336" text-anchor="middle" class="dg-label">Giochi ripetuti</text>
+<text x="395" y="352" text-anchor="middle" class="dg-sublabel">cooperazione via folk theorem</text>
+<rect x="510" y="312" width="242" height="56" rx="10" class="dg-node-accent"/>
+<text x="631" y="336" text-anchor="middle" class="dg-label">Giochi di assistenza</text>
+<text x="631" y="352" text-anchor="middle" class="dg-sublabel">IA incerta sugli obiettivi umani</text>
+</svg>
+<figcaption>Mappa del capitolo 18 — dalla pianificazione con piu' attori alla teoria dei giochi, fino a coalizioni, meccanismi e giochi di assistenza</figcaption>
+</figure>
+
 ## Piu' attori nello stesso ambiente: coordinare i piani
 
 Il primo passo e' distinguere gli scenari. Se c'e' un solo decisore che pianifica per piu' attori esecutori (ipotesi dell'agente benevolo), il problema e' di pianificazione multiattuatore o multibody: serve gestire la sincronizzazione delle azioni congiunte, ma la mente e' una sola. Se invece ogni attore decide per se', abbiamo veri decisori multipli: quando condividono l'obiettivo, il problema centrale e' il coordinamento; quando le preferenze divergono, serve l'apparato completo della teoria dei giochi.

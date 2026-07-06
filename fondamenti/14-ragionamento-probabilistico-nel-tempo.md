@@ -17,11 +17,97 @@ La risposta combina due ingredienti gia' noti — lo stato-credenza e le reti ba
 
 Il capitolo e' anche una lezione di metodo: quando l'inferenza esatta diventa computazionalmente intrattabile, come accade appena lo stato ha molte variabili, si passa ad approssimazioni basate su campioni. Il particle filtering, che chiude il capitolo, e' uno degli algoritmi approssimati piu' usati in robotica e nel tracking.
 
+<figure class="diagram">
+<svg viewBox="0 0 760 472" role="img" aria-label="Mappa concettuale del capitolo 14: il modello temporale con ipotesi di Markov, modello di transizione e modello sensoriale, i quattro compiti di inferenza, le famiglie HMM, filtro di Kalman e DBN, fino al particle filtering">
+<defs><marker id="arr-c14" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="dg-arrow"/></marker></defs>
+<line x1="345" y1="68" x2="291" y2="97" class="dg-edge" marker-end="url(#arr-c14)"/>
+<line x1="415" y1="68" x2="490" y2="97" class="dg-edge" marker-end="url(#arr-c14)"/>
+<line x1="140" y1="100" x2="277" y2="58" class="dg-edge" marker-end="url(#arr-c14)"/>
+<text x="196" y="76" text-anchor="middle" class="dg-edge-label">rende finito</text>
+<line x1="380" y1="68" x2="380" y2="193" class="dg-edge-primary" marker-end="url(#arr-c14)"/>
+<line x1="380" y1="168" x2="102" y2="193" class="dg-edge" marker-end="url(#arr-c14)"/>
+<line x1="380" y1="168" x2="549" y2="193" class="dg-edge" marker-end="url(#arr-c14)"/>
+<line x1="380" y1="168" x2="686" y2="193" class="dg-edge" marker-end="url(#arr-c14)"/>
+<line x1="338" y1="252" x2="150" y2="297" class="dg-edge" marker-end="url(#arr-c14)"/>
+<line x1="380" y1="252" x2="380" y2="297" class="dg-edge" marker-end="url(#arr-c14)"/>
+<line x1="422" y1="252" x2="612" y2="297" class="dg-edge" marker-end="url(#arr-c14)"/>
+<path d="M620,356 L620,380 L430,380 L430,401" fill="none" class="dg-edge" marker-end="url(#arr-c14)"/>
+<text x="525" y="376" text-anchor="middle" class="dg-edge-label">inferenza esatta intrattabile</text>
+<rect x="280" y="12" width="200" height="56" rx="10" class="dg-node-primary"/>
+<text x="380" y="36" text-anchor="middle" class="dg-label">Modello temporale</text>
+<text x="380" y="52" text-anchor="middle" class="dg-sublabel">time slice: stato + evidenza</text>
+<rect x="8" y="100" width="170" height="56" rx="10" class="dg-node"/>
+<text x="93" y="124" text-anchor="middle" class="dg-label">Ipotesi di Markov</text>
+<text x="93" y="140" text-anchor="middle" class="dg-sublabel">basta il presente</text>
+<rect x="190" y="100" width="178" height="56" rx="10" class="dg-node"/>
+<text x="279" y="124" text-anchor="middle" class="dg-label">Modello di transizione</text>
+<text x="279" y="140" text-anchor="middle" class="dg-sublabel">come evolve lo stato</text>
+<rect x="412" y="100" width="178" height="56" rx="10" class="dg-node"/>
+<text x="501" y="124" text-anchor="middle" class="dg-label">Modello sensoriale</text>
+<text x="501" y="140" text-anchor="middle" class="dg-sublabel">evidenza dato lo stato</text>
+<rect x="8" y="196" width="170" height="56" rx="10" class="dg-node"/>
+<text x="93" y="220" text-anchor="middle" class="dg-label">Predizione</text>
+<text x="93" y="236" text-anchor="middle" class="dg-sublabel">filtraggio senza evidenze</text>
+<rect x="292" y="196" width="176" height="56" rx="10" class="dg-node-primary"/>
+<text x="380" y="220" text-anchor="middle" class="dg-label">Filtraggio</text>
+<text x="380" y="236" text-anchor="middle" class="dg-sublabel">stima dello stato corrente</text>
+<rect x="492" y="196" width="120" height="56" rx="10" class="dg-node"/>
+<text x="552" y="220" text-anchor="middle" class="dg-label">Smoothing</text>
+<text x="552" y="236" text-anchor="middle" class="dg-sublabel">avanti + indietro</text>
+<rect x="626" y="196" width="126" height="56" rx="10" class="dg-node"/>
+<text x="689" y="220" text-anchor="middle" class="dg-label">Viterbi</text>
+<text x="689" y="236" text-anchor="middle" class="dg-sublabel">max invece di somma</text>
+<rect x="60" y="300" width="160" height="56" rx="10" class="dg-node"/>
+<text x="140" y="324" text-anchor="middle" class="dg-label">HMM</text>
+<text x="140" y="340" text-anchor="middle" class="dg-sublabel">stato discreto singolo</text>
+<rect x="300" y="300" width="160" height="56" rx="10" class="dg-node"/>
+<text x="380" y="324" text-anchor="middle" class="dg-label">Filtro di Kalman</text>
+<text x="380" y="340" text-anchor="middle" class="dg-sublabel">stato continuo gaussiano</text>
+<rect x="540" y="300" width="160" height="56" rx="10" class="dg-node"/>
+<text x="620" y="324" text-anchor="middle" class="dg-label">DBN</text>
+<text x="620" y="340" text-anchor="middle" class="dg-sublabel">stato in piu' variabili</text>
+<rect x="280" y="404" width="200" height="56" rx="10" class="dg-node-accent"/>
+<text x="380" y="428" text-anchor="middle" class="dg-label">Particle filtering</text>
+<text x="380" y="444" text-anchor="middle" class="dg-sublabel">campioni + ricampionamento</text>
+</svg>
+<figcaption>Mappa del capitolo 14 — dal modello temporale ai quattro compiti di inferenza e alle tre famiglie di modelli, fino al particle filtering</figcaption>
+</figure>
+
 ## Un mondo a fette: stati, sensori e ipotesi di Markov
 
 Il modello temporale di base ha tre componenti. Una distribuzione a priori sullo stato iniziale dice da dove si parte. Un modello di transizione specifica come lo stato evolve da un istante al successivo. Un modello sensoriale specifica quanto e' probabile ogni osservazione dato lo stato corrente. L'esempio conduttore del capitolo e' volutamente minimale: una guardia chiusa in un bunker vuole sapere se fuori piove, e la sua unica evidenza e' se il direttore arriva al mattino con o senza ombrello.
 
 Il problema tecnico e' che la storia degli stati cresce senza limite: condizionare lo stato di oggi su tutta la storia passata e' impraticabile. Qui entra l'ipotesi di Markov: per predire lo stato presente basta una finestra limitata di passato, un orizzonte di ampiezza prefissata oltre il quale la storia piu' remota non aggiunge nulla. Nel caso del primo ordine, il presente rende il futuro indipendente dal passato — lo stato di oggi contiene gia' tutto cio' che serve per predire domani. Un'ipotesi analoga vale per i sensori: l'osservazione corrente dipende solo dallo stato corrente. Aggiungendo l'assunzione che le leggi del mondo non cambino nel tempo (omogeneita' temporale), bastano due tabelle di probabilita' condizionate per descrivere un processo di durata arbitraria.
+
+<figure class="diagram">
+<svg viewBox="0 0 760 260" role="img" aria-label="Rete bayesiana srotolata del mondo dell'ombrello: catena degli stati Pioggia a t-1, t e t+1 con le evidenze Ombrello sotto ogni stato, tabella di transizione 0,7/0,3 e tabella sensoriale 0,9/0,2">
+<defs><marker id="arr-c14-b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="dg-arrow"/></marker></defs>
+<line x1="20" y1="85" x2="74" y2="85" class="dg-edge-primary" marker-end="url(#arr-c14-b)"/>
+<line x1="230" y1="85" x2="300" y2="85" class="dg-edge-primary" marker-end="url(#arr-c14-b)"/>
+<line x1="455" y1="85" x2="525" y2="85" class="dg-edge-primary" marker-end="url(#arr-c14-b)"/>
+<line x1="680" y1="85" x2="738" y2="85" class="dg-edge-primary" marker-end="url(#arr-c14-b)"/>
+<line x1="155" y1="110" x2="155" y2="187" class="dg-edge" marker-end="url(#arr-c14-b)"/>
+<line x1="380" y1="110" x2="380" y2="187" class="dg-edge" marker-end="url(#arr-c14-b)"/>
+<line x1="605" y1="110" x2="605" y2="187" class="dg-edge" marker-end="url(#arr-c14-b)"/>
+<text x="266" y="36" text-anchor="middle" class="dg-edge-label">P(Rt|Rt-1)</text>
+<text x="266" y="50" text-anchor="middle" class="dg-edge-label">t: 0,7   f: 0,3</text>
+<text x="460" y="140" text-anchor="middle" class="dg-edge-label">P(Ut|Rt)</text>
+<text x="460" y="154" text-anchor="middle" class="dg-edge-label">t: 0,9   f: 0,2</text>
+<rect x="80" y="60" width="150" height="50" rx="10" class="dg-node-primary"/>
+<text x="155" y="90" text-anchor="middle" class="dg-label">Pioggia t-1</text>
+<rect x="305" y="60" width="150" height="50" rx="10" class="dg-node-primary"/>
+<text x="380" y="90" text-anchor="middle" class="dg-label">Pioggia t</text>
+<rect x="530" y="60" width="150" height="50" rx="10" class="dg-node-primary"/>
+<text x="605" y="90" text-anchor="middle" class="dg-label">Pioggia t+1</text>
+<rect x="80" y="190" width="150" height="50" rx="10" class="dg-node"/>
+<text x="155" y="220" text-anchor="middle" class="dg-label">Ombrello t-1</text>
+<rect x="305" y="190" width="150" height="50" rx="10" class="dg-node"/>
+<text x="380" y="220" text-anchor="middle" class="dg-label">Ombrello t</text>
+<rect x="530" y="190" width="150" height="50" rx="10" class="dg-node"/>
+<text x="605" y="220" text-anchor="middle" class="dg-label">Ombrello t+1</text>
+</svg>
+<figcaption>Struttura della rete bayesiana del mondo dell'ombrello: modello di transizione P(Pioggia_t|Pioggia_t-1) e modello sensoriale P(Ombrello_t|Pioggia_t) — schema ripreso dalla figura 14.2 del cap. 14, AIMA 4a ed.</figcaption>
+</figure>
 
 L'ipotesi di Markov e' spesso solo approssimativamente vera, e il capitolo indica due rimedi: aumentare l'ordine del modello (far dipendere lo stato anche da istanti piu' remoti) oppure, in modo equivalente, arricchire l'insieme delle variabili di stato finche' non diventa "autosufficiente". Un robot la cui velocita' dipende dalla carica della batteria viola la proprieta' di Markov se la batteria non e' nello stato; includerla la ripristina. Modellare bene un processo significa in sostanza capire quale fisica lo governa.
 
