@@ -15,7 +15,7 @@ Due tracce parallele:
 
 Ogni mattina alle **07:00 Europe/Rome** una routine remota Claude Code (girata su Anthropic cloud) esegue questi step:
 
-1. **Scrape**: legge ~17 newsletter/blog + 40-60 account X curati (lista canonica in [`config/sources.yaml`](./config/sources.yaml))
+1. **Scrape**: legge 19 newsletter/blog + 40-60 account X curati (lista canonica in [`config/sources.yaml`](./config/sources.yaml))
 2. **Filtra**: applica criterio editoriale stretto — solo segnali ad alto valore (release modello, lancio tool, paper rilevante, mossa strategica). Scarta fix minori, tip generici, marketing senza sostanza.
 3. **Cluster**: raggruppa news segnalate da fonti multiple in una singola voce con elenco fonti.
 4. **Digest**: produce `digest/YYYY/MM/DD.md` con TLDR italiano in 4 sezioni tematiche.
@@ -36,7 +36,7 @@ Un layer web (Next.js 15, App Router, TypeScript, Tailwind) in [`web/`](./web) e
   - `/digest/[date]` — singolo digest con sezioni tematiche, navigazione prev/next, concetti KB correlati.
   - `/kb` — indice dei concetti con filtro per categoria.
   - `/kb/[slug]` — articolo con TOC auto-generato, digest che lo citano, concetti correlati.
-  - `/radar` — **Modelli e tools AI a confronto**: distinzione modelli (motore) vs app (prodotto), catalogo tool per categoria (Immagini/Video/Audio/Agent/Coding), matrice "cosa usare per cosa", benchmark. Analisi generale, non verticale.
+  - `/radar` — **Confronto AI**: distinzione modelli (motore) vs app (prodotto), catalogo tool per categoria (Immagini/Video/Audio/Agent/Coding), matrice "cosa usare per cosa", benchmark. Analisi generale, non verticale.
   - `/claude-code` — guida a Claude Code in italiano (sincronizzata dal repo [`giadaf-boosha/claude-code`](https://github.com/giadaf-boosha/claude-code)): capitoli + "What's new".
 
 Sviluppo locale: `cd web && npm install && npm run dev`. Build: `npm run build` (output statico in `web/out`).

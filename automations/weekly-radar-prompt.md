@@ -26,6 +26,7 @@ interface Model {
   id; provider; name; releaseDate; tagline?; contextWindow; domain;  // domain = dominio provider per il logo
   apiInputPer1M: number; apiOutputPer1M: number;  // 0 se open-weight/n/d
   supportsImages; supportsVideo; supportsCode; supportsAgents: boolean;
+  privacyRating?: "high"|"medium"|"low"; enterpriseCertifications?: string[]; dataResidency?; trainingPolicy?;
   strengths: string[]; weaknesses: string[]; bestFor: string[]; verdict; lmarenaRank: number  // verdict GENERALE, non finance
 }
 interface App { id; name; url; provider; poweredBy?; cosaFa; funzionalita: string[]; tierGratuito; caveat; sweetSpot }
@@ -80,6 +81,7 @@ interface ChangelogEntry { date; summary; sources: string[] }
 - Non inventare dati. Solo variazioni con fonte verificata e citata.
 - Prezzi da siti ufficiali: anthropic.com, openai.com, ai.google.dev / cloud.google.com, microsoft.com.
 - Benchmark da pubblicazioni ufficiali vendor o lmarena.ai.
+- **Copertura benchmark**: quando trovi score ufficiali verificabili, estendi `benchmarks[].scores` anche oltre claude/chatgpt/gemini (deepseek, qwen, kimi, ecc.). Aggiungi solo score con fonte primaria; se per un modello non esiste uno score pubblicato, lascialo fuori (niente stime).
 - **Non modificare file fuori da `web/data/models.json`** (salvo il commit). Non toccare `digest/`, `kb/`, `config/`, la routine daily.
 - Lingua italiana, apostrofi ASCII, nomi di prodotti/modelli inalterati.
 

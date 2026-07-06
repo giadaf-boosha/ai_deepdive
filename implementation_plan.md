@@ -1,19 +1,19 @@
 # implementation_plan.md — ai_deepdive
 
 > Piano operativo. Suddivisione fasi, owner, deliverable, criteri di accettazione.
-> Ultima revisione: 2026-04-28
+> Ultima revisione: 2026-07-06
 
 ## Fase 0 — Scaffold (locale)
 
 **Owner**: Giada (lead)
-**Stato**: in corso
+**Stato**: completata
 
 - [x] Init repo locale `~/code/ai_deepdive` con `git init -b main` e remote `giadaf-boosha/ai_deepdive`
 - [x] Struttura directory: `digest/2026/04/`, `kb/concetti/`, `config/`, `.github/workflows/`
 - [x] `.gitignore` + `LICENSE` (MIT)
 - [x] `spec.md` (questa specifica)
-- [ ] `implementation_plan.md` (questo file)
-- [ ] `README.md` (front page)
+- [x] `implementation_plan.md` (questo file)
+- [x] `README.md` (front page)
 
 ## Fase 1 — Lavoro parallelo team (4 agenti)
 
@@ -47,7 +47,6 @@ aliases: [Alias 1, Alias 2]
 categoria: [architettura | tecnica | infrastruttura | training]
 created: 2026-04-28
 last_updated: 2026-04-28
-mentions_count: 0
 ---
 
 # Nome concetto
@@ -123,7 +122,7 @@ Scrive `automations/whats-new-daily-prompt.md` con il prompt finale (filosofia e
 Layer web `web/` deployato su Vercel + routine settimanale radar preparata.
 
 - [x] Scaffold `web/` (Next.js 15 App Router, TS, Tailwind v3, font Geist locali)
-- [x] `lib/digest.ts` + `lib/kb.ts`: parser robusto ai due formati storici (frontmatter IT/EN, voci bootstrap/auto)
+- [x] `lib/digest.ts` + `lib/kb.ts`: parser dei digest (frontmatter + sezioni canoniche) e del frontmatter KB
 - [x] `lib/relations.ts`: cross-link digest ↔ KB; `lib/markdown.ts`: riscrittura link relativi + TOC
 - [x] Route: `/`, `/digest` (+archivio Fuse.js), `/digest/[date]`, `/kb`, `/kb/[slug]`, `/radar`
 - [x] `data/models.json`: seed maggio 2026 + dati verificati da fonti ufficiali (Claude Opus 4.8, GPT-5.5, Gemini 3.1 Pro, Microsoft 365 Copilot)
@@ -141,10 +140,10 @@ Il progetto è considerato live quando tutte queste condizioni sono vere:
 
 1. ✅ Repo `giadaf-boosha/ai_deepdive` ha branch `main` con scaffold + KB seed + primo digest
 2. ✅ `spec.md`, `implementation_plan.md`, `README.md` presenti e coerenti
-3. ✅ `config/sources.yaml` con 17 newsletter + 40-60 X account documentati
+3. ✅ `config/sources.yaml` con 19 newsletter + 40-60 X account documentati
 4. ✅ `kb/concetti/` ha 15 file deep dive completi
 5. ✅ `digest/2026/04/28.md` esiste con almeno 4 sezioni tematiche
-6. ✅ Routine remota `whats-new-ai-deepdive` creata, abilitata, prossimo run schedulato
+6. ✅ Routine remota `ai-deepdive-daily` creata, abilitata, prossimo run schedulato
 7. ✅ Test run della routine completato con successo (commit + email recapitata)
 8. ✅ README ha link al routine dashboard e istruzioni per modifica fonti
 

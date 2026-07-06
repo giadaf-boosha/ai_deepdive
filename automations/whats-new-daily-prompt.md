@@ -32,7 +32,7 @@ Per evitare doppioni e dare contesto editoriale:
 
 - Leggi gli ultimi 7 file `digest/YYYY/MM/DD.md` (i 7 piu' recenti per data) per sapere cosa e' gia' stato coperto.
 - Leggi `kb/README.md` per l'indice corrente dei concetti.
-- Leggi tutti i file `kb/concetti/*.md` (almeno il frontmatter YAML) per ricavare `mentions_count` e `last_updated` di ogni concetto.
+- Leggi tutti i file `kb/concetti/*.md` (almeno il frontmatter YAML) per ricavare `last_updated` e gli `aliases` di ogni concetto.
 
 ### 4. Filtro editoriale stretto
 
@@ -75,7 +75,7 @@ entries_count: <numero voci totali nel digest>
 # AI Deepdive — YYYY-MM-DD
 
 ## Modelli & framework
-- **Titolo voce**. Sintesi 2-4 righe in italiano, presente indicativo. [Fonte: <nome>](<url>)
+- **Titolo voce**. Sintesi 2-4 righe in italiano, presente indicativo. [Fonte: <nome>](<url>) — [<nome 2>](<url>) — [<nome 3>](<url>)
 
 ## Tool & prodotti
 ...
@@ -96,7 +96,7 @@ Vincoli redazionali:
 - Lingua italiana, presente indicativo, tono editoriale asciutto.
 - Apostrofi ASCII (`'`), non tipografici.
 - No emoji.
-- Ogni voce ha almeno una fonte linkata.
+- Ogni voce ha almeno una fonte linkata; fonti multiple della stessa voce separate da em-dash (` — `), la prima con prefisso `Fonte:`.
 
 ### 6. Aggiorna knowledge base
 
@@ -109,7 +109,7 @@ Estrai i concetti tecnici menzionati nel digest di oggi (modelli, architetture, 
 **Se il concetto merita un file KB:**
 - `slug = lowercase, kebab-case del nome canonico`. Path: `kb/concetti/<slug>.md`.
 - Se il file esiste:
-  - Aggiorna nel frontmatter: `mentions_count` (incrementa di N occorrenze odierne), `last_updated: YYYY-MM-DD`.
+  - Aggiorna nel frontmatter: `last_updated: YYYY-MM-DD` (le menzioni nei digest sono calcolate dinamicamente dal web layer, non vanno tracciate nel frontmatter).
   - Aggiungi una entry datata in fondo, sezione `## Aggiornamenti`:
     ```
     ### YYYY-MM-DD
@@ -118,12 +118,11 @@ Estrai i concetti tecnici menzionati nel digest di oggi (modelli, architetture, 
 - Se il file non esiste, creane uno nuovo con questo template:
   ```
   ---
-  slug: <slug>
-  title: <Nome canonico>
-  first_seen: YYYY-MM-DD
+  name: <Nome canonico>
+  aliases: [<alias 1>, <alias 2>]
+  categoria: <architettura | tecnica | infrastruttura | training | paradigma | regolazione | altro>
+  created: YYYY-MM-DD
   last_updated: YYYY-MM-DD
-  mentions_count: <N>
-  tags: [<tag1>, <tag2>]
   ---
 
   # <Nome canonico>
@@ -154,7 +153,7 @@ Estrai i concetti tecnici menzionati nel digest di oggi (modelli, architetture, 
 - Se un concetto e' ambiguo (nome che collide, scope incerto): skip update KB, log per review umana.
 
 **Aggiorna `kb/README.md`:**
-- Mantiene un indice tabellare alfabetico dei concetti con colonne: `Concetto | Slug | Mentions | Last updated`.
+- Mantiene un indice tabellare alfabetico dei concetti con colonne: `Concetto | Categoria | Aliases | Ultimo aggiornamento` (il nome concetto linka `./concetti/<slug>.md`).
 - Riallinea la tabella ogni volta che aggiungi/aggiorni un file.
 
 ### 7. Commit + push
