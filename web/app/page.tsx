@@ -2,6 +2,7 @@ import Link from "next/link";
 import { getAllDigests } from "@/lib/digest";
 import { getAllConcepts } from "@/lib/kb";
 import { getModelById, getModels } from "@/lib/models";
+import { getAllChapters, PARTI } from "@/lib/fondamenti";
 import { getLatestNews } from "@/lib/claudecode";
 import { formatLong } from "@/lib/dates";
 import { SectionBadge } from "@/components/SectionBadge";
@@ -38,6 +39,7 @@ export default function HomePage() {
         <div className="mt-2 flex flex-wrap gap-2.5">
           <Stat value={digests.length} label="digest" href="/digest" />
           <Stat value={concepts.length} label="concetti spiegati" href="/kb" />
+          <Stat value={getAllChapters().length} label="capitoli di fondamenti" href="/fondamenti" />
           <Stat value={getModels().length} label="modelli a confronto" href="/radar" />
         </div>
       </section>
@@ -117,6 +119,26 @@ export default function HomePage() {
               <span className="mt-auto inline-flex items-center gap-1.5 pt-1 text-sm font-medium text-[color:var(--primary-ink)]">
                 Approfondisci <ArrowRight className="h-4 w-4" />
               </span>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      <section className="flex flex-col gap-6">
+        <SectionHeader eyebrow="Fondamenti di AI" href="/fondamenti" cta="Inizia il percorso" />
+        <p className="-mt-3 max-w-prose text-[15px] leading-relaxed text-muted">
+          La teoria dietro le notizie: {getAllChapters().length} capitoli in 7
+          parti basati su Russell &amp; Norvig, <em>Intelligenza Artificiale: Un
+          Approccio Moderno</em>. Dal test di Turing al futuro dell&apos;AI.
+        </p>
+        <div className="flex flex-wrap gap-2">
+          {PARTI.map((p) => (
+            <Link
+              key={p.numero}
+              href={`/fondamenti#parte-${p.numero}`}
+              className="chip transition-colors hover:border-primary/50 hover:text-ink"
+            >
+              <span className="text-faint">{p.numero}.</span> {p.titolo}
             </Link>
           ))}
         </div>
