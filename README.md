@@ -10,7 +10,7 @@ Tre tracce parallele:
 
 1. **[`digest/`](./digest)** — Un file markdown al giorno con i segnali AI rilevanti delle ultime 24 ore. Organizzato in 4 sezioni: Modelli & framework, Tool & prodotti, Paper & ricerca, Business & strategia. Max 10 voci, criterio editoriale stretto.
 2. **[`kb/`](./kb)** — Knowledge base in crescita. Concetti tecnici (LLM, RAG, agent harness, MCP, RLHF…) raccontati in italiano deep dive (1500-3000 parole), aggiornati man mano che ricorrono nei digest.
-3. **[`fondamenti/`](./fondamenti)** — Fondamenti di AI: la teoria in 7 parti e 28 capitoli, sintesi originali in italiano basate su Russell & Norvig, *Intelligenza Artificiale: Un Approccio Moderno* (4a ed. italiana, Pearson), con riferimenti a volume/capitolo/pagine e cross-link alla KB.
+3. **[`fondamenti/`](./fondamenti)** — Fondamenti di AI: la teoria in 7 parti e 28 capitoli, sintesi originali in italiano basate su Russell & Norvig, *Intelligenza Artificiale: Un Approccio Moderno* (4a ed. italiana, Pearson), con riferimenti a volume/capitolo/pagine, cross-link alla KB e 41 diagrammi SVG (una mappa concettuale per capitolo + gli schemi canonici del libro nei capitoli chiave).
 
 ## Come funziona
 
