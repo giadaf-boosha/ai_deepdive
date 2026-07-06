@@ -1,7 +1,7 @@
 # spec.md — ai_deepdive
 
 > Specifica del progetto. Sorgente di verità per scope, requisiti, decisioni di design.
-> Ultima revisione: 2026-05-31
+> Ultima revisione: 2026-07-06
 
 ## 1. Scopo
 
@@ -118,7 +118,16 @@ Layer web in `web/` (Next.js 15 App Router, TypeScript, Tailwind) deployato su V
 - **Parser** dei digest (frontmatter YAML + 4 sezioni canoniche) e del frontmatter KB.
 - **Radar**: dati in `web/data/models.json` (schema TypeScript in `web/lib/models.ts`), aggiornati dalla routine settimanale.
 
-### 3.8 Routine settimanale radar (aggiunto 2026-05-31)
+### 3.8 Fondamenti di AI (aggiunto 2026-07-06)
+
+Sezione teorica del sito: 7 parti / 28 capitoli speculari a Russell & Norvig, *Intelligenza Artificiale: Un Approccio Moderno*, 4a ed. italiana (Pearson, Vol. 1 2021 + Vol. 2 2022).
+
+- **Contenuti**: `fondamenti/NN-<slug>.md` in root repo (fuori da `kb/` per non interferire con il `git add digest/ kb/` della routine daily). Frontmatter: `titolo, capitolo, parte, volume, pagine, concetti, created, last_updated`. Indice e tabella capitolo→volume/pagine in `fondamenti/README.md`.
+- **Vincolo copyright**: prosa originale in italiano, nessuna riproduzione verbatim del testo Pearson, attribuzione (volume, capitolo, pagine) sempre presente in `## Riferimenti`.
+- **Web**: route `/fondamenti` (indice per parti) e `/fondamenti/[slug]` (capitolo con TOC, prev/next). Loader `web/lib/fondamenti.ts`; cross-link bidirezionali con la KB via `web/lib/relations.ts` (slug espliciti nel frontmatter + match testuale con soglia).
+- **Manutenzione**: contenuti statici, non toccati dalle routine; aggiornamenti manuali o via sessioni dedicate.
+
+### 3.9 Routine settimanale radar (aggiunto 2026-05-31)
 
 `ai-deepdive-weekly-radar` aggiorna `web/data/models.json` ogni domenica alle 08:00 Europe/Rome (cron `0 6 * * 0` UTC, guard `RADAR_UPDATE`). Ricerca web su fonti ufficiali dei vendor, aggiorna campi + changelog, valida con `tsc --noEmit`, committa e pusha (Vercel ricostruisce). Prompt e body in `automations/weekly-radar-*`. Non modifica file fuori da `web/data/models.json`.
 
