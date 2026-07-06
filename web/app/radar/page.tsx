@@ -4,7 +4,7 @@ import { RadarTabs } from "@/components/RadarTabs";
 import { Eyebrow } from "@/components/Eyebrow";
 
 export const metadata: Metadata = {
-  title: "Modelli e tools AI a confronto",
+  title: "Confronto AI",
   description:
     "Modelli, app e tool AI messi uno di fianco all'altro: cosa usare per cosa, feature, benchmark e prezzi. In italiano.",
 };
@@ -16,9 +16,9 @@ export default function RadarPage() {
   return (
     <div className="container-wide flex flex-col gap-8 pt-4">
       <header className="flex flex-col gap-3">
-        <Eyebrow>Confronto AI</Eyebrow>
+        <Eyebrow>Radar settimanale</Eyebrow>
         <h1 className="max-w-3xl text-balance text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">
-          Modelli e tools AI a confronto<span className="text-accent">.</span>
+          Confronto AI<span className="text-accent">.</span>
         </h1>
         <p className="max-w-prose text-lg text-muted">
           Quale strumento per quale lavoro. Distinguiamo il <span className="text-ink">modello</span> (il

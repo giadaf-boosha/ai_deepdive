@@ -16,8 +16,8 @@ export default function KBPage() {
   return (
     <div className="container-wide flex flex-col gap-8 pt-4">
       <header className="flex flex-col gap-3">
-        <Eyebrow>Knowledge base</Eyebrow>
-        <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">Concetti</h1>
+        <Eyebrow>Concetti spiegati</Eyebrow>
+        <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">Knowledge base</h1>
         <p className="max-w-prose text-lg text-muted">
           {concepts.length} concetti documentati. Deep dive in italiano, nomi
           tecnici inalterati.

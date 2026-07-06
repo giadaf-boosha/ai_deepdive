@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { getAllDigests } from "@/lib/digest";
 import { getAllConcepts } from "@/lib/kb";
-import { getModelById } from "@/lib/models";
+import { getModelById, getModels } from "@/lib/models";
 import { getLatestNews } from "@/lib/claudecode";
 import { formatLong } from "@/lib/dates";
 import { SectionBadge } from "@/components/SectionBadge";
@@ -38,7 +38,7 @@ export default function HomePage() {
         <div className="mt-2 flex flex-wrap gap-2.5">
           <Stat value={digests.length} label="digest" href="/digest" />
           <Stat value={concepts.length} label="concetti spiegati" href="/kb" />
-          <Stat value={4} label="modelli a confronto" href="/radar" />
+          <Stat value={getModels().length} label="modelli a confronto" href="/radar" />
         </div>
       </section>
 
@@ -123,7 +123,7 @@ export default function HomePage() {
       </section>
 
       <section className="flex flex-col gap-6">
-        <SectionHeader eyebrow="Modelli e tools AI" href="/radar" cta="Vai al confronto" />
+        <SectionHeader eyebrow="Confronto AI" href="/radar" cta="Vai al confronto" />
         <p className="-mt-3 max-w-prose text-[15px] leading-relaxed text-muted">
           Quale strumento per quale lavoro. Modelli, app e tool messi uno di
           fianco all&apos;altro — per scegliere in fretta, senza provare tutto.
