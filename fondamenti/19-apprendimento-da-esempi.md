@@ -10,7 +10,7 @@ last_updated: 2026-07-06
 ---
 # Apprendimento da esempi
 
-Fino a questo punto del libro gli agenti ricevono la loro conoscenza dal progettista: regole, modelli del mondo, funzioni di utilita'. Il capitolo 19 ribalta la prospettiva e chiede: come puo' un agente migliorare da solo, osservando i dati? Quando l'agente e' un computer si parla di machine learning: il sistema osserva esempi, costruisce un modello e lo usa sia come ipotesi sul mondo sia come componente software per risolvere problemi nuovi.
+Fino a questo punto del libro gli agenti ricevono la loro conoscenza dal progettista: regole, modelli del mondo, funzioni di utilita'. Il capitolo 19 ribalta la prospettiva e chiede: come puo' un agente migliorare da solo, osservando i dati? Quando l'agente e' un computer si parla di machine learning: il sistema osserva esempi e costruisce un modello che gli fa da teoria del mondo e, insieme, da modulo software riutilizzabile su problemi nuovi.
 
 La motivazione e' pragmatica. I progettisti non possono anticipare tutte le situazioni che il sistema incontrera', e per molti compiti — riconoscere un volto, per esempio — nessun essere umano sa scrivere esplicitamente il programma giusto, perche' la competenza e' subconscia. L'apprendimento automatico e' ormai parte integrante dell'ingegneria del software: quasi ogni componente di un agente puo' essere appreso dai dati anziche' programmato a mano.
 

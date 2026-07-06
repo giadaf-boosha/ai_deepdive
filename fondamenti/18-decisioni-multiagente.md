@@ -55,7 +55,7 @@ Per allocare risorse scarse ci sono le aste. L'asta al rialzo (inglese) e' effic
 
 Per aggregare preferenze c'e' il voto. Il paradosso di Condorcet mostra che con tre candidati le preferenze collettive possono essere cicliche; il teorema di Arrow dimostra che nessuna funzione di benessere sociale soddisfa insieme quattro condizioni ragionevoli (Pareto, vincitore di Condorcet, indipendenza dalle alternative irrilevanti, assenza di dittatura); il teorema di Gibbard-Satterthwaite aggiunge che ogni procedura non dittatoriale e' manipolabile con dichiarazioni non veritiere. Non e' la fine della democrazia, ma il promemoria che ogni sistema di voto ha casi patologici.
 
-Infine la contrattazione: nel protocollo a offerte alternate di Rubinstein, con agenti impazienti (fattore di sconto), l'accordo di equilibrio si raggiunge al primo turno e premia il giocatore piu' paziente. Nei domini orientati ai compiti, il protocollo di concessione monotona e la strategia di Zeuthen — concede chi ha meno da perdere dal conflitto, e concede il minimo per invertire i ruoli — producono accordi Pareto-ottimi e individualmente razionali.
+Infine la contrattazione: nel protocollo a offerte alternate di Rubinstein, con agenti impazienti (fattore di sconto), l'accordo di equilibrio si raggiunge al primo turno e premia il giocatore piu' paziente. Nei domini orientati ai compiti, il protocollo di concessione monotona e la strategia di Zeuthen — concede chi ha piu' da perdere dal conflitto (la minore propensione al rischio), e concede il minimo per invertire i ruoli — producono accordi Pareto-ottimi e individualmente razionali.
 
 ## Idee chiave
 
