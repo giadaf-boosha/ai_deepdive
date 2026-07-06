@@ -38,6 +38,35 @@ export default function RadarPage() {
 
       <RadarTabs data={data} />
 
+      {data.changelog.length > 0 && (
+        <section className="flex flex-col gap-4 border-t border-line pt-6">
+          <p className="font-mono text-xs uppercase tracking-wider text-faint">
+            Novita recenti dal radar
+          </p>
+          <ul className="flex flex-col gap-4">
+            {data.changelog.map((entry) => (
+              <li key={`${entry.date}-${entry.summary.slice(0, 24)}`} className="flex flex-col gap-1.5">
+                <span className="font-mono text-xs text-faint">{entry.date}</span>
+                <p className="max-w-prose text-sm leading-relaxed text-muted">{entry.summary}</p>
+                <p className="flex flex-wrap gap-x-3 gap-y-1 text-xs">
+                  {entry.sources.map((s) => (
+                    <a
+                      key={s}
+                      href={s}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-faint underline-offset-2 hover:text-[color:var(--primary-ink)] hover:underline"
+                    >
+                      {new URL(s).hostname.replace(/^www\./, "")}
+                    </a>
+                  ))}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
       <section className="flex flex-col gap-2 border-t border-line pt-6 text-xs text-faint">
         <p className="font-mono uppercase tracking-wider">Fonti verificate</p>
         <ul className="flex flex-col gap-1">
