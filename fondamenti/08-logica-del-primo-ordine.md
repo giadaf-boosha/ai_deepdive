@@ -17,6 +17,58 @@ La risposta e' la logica del primo ordine (FOL, first-order logic), il linguaggi
 
 Il capitolo non si limita alla teoria: mostra come usare la logica del primo ordine su domini concreti (parentela, numeri, insiemi, il mondo del wumpus) e chiude con una metodologia completa di ingegneria della conoscenza, applicata passo passo al dominio dei circuiti digitali. E' il ponte tra "avere un linguaggio logico" e "costruire una base di conoscenza che funziona davvero".
 
+<figure class="diagram">
+<svg viewBox="0 0 760 460" role="img" aria-label="Mappa concettuale del capitolo 8: la logica del primo ordine nasce dalla sintesi tra la semantica dichiarativa della logica proposizionale e gli oggetti e relazioni del linguaggio naturale; si articola in impegno ontologico, modelli e interpretazioni, quantificatori e uguaglianza; i tre domini di esempio portano all'ingegneria della conoscenza in sette passi e alla base di conoscenza del sommatore a un bit">
+<defs><marker id="arr-c08" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="dg-arrow"/></marker></defs>
+<line x1="230" y1="68" x2="325" y2="116" class="dg-edge" marker-end="url(#arr-c08)"/>
+<text x="185" y="98" text-anchor="middle" class="dg-edge-label">semantica dichiarativa</text>
+<line x1="560" y1="68" x2="435" y2="116" class="dg-edge" marker-end="url(#arr-c08)"/>
+<text x="575" y="100" text-anchor="middle" class="dg-edge-label">oggetti e relazioni</text>
+<line x1="330" y1="176" x2="120" y2="210" class="dg-edge" marker-end="url(#arr-c08)"/>
+<line x1="355" y1="176" x2="290" y2="210" class="dg-edge" marker-end="url(#arr-c08)"/>
+<line x1="420" y1="176" x2="470" y2="210" class="dg-edge" marker-end="url(#arr-c08)"/>
+<line x1="450" y1="176" x2="640" y2="210" class="dg-edge" marker-end="url(#arr-c08)"/>
+<line x1="290" y1="266" x2="370" y2="300" class="dg-edge" marker-end="url(#arr-c08)"/>
+<text x="295" y="288" text-anchor="middle" class="dg-edge-label">TELL/ASK</text>
+<line x1="481" y1="266" x2="435" y2="300" class="dg-edge" marker-end="url(#arr-c08)"/>
+<line x1="640" y1="266" x2="480" y2="300" class="dg-edge" marker-end="url(#arr-c08)"/>
+<text x="570" y="298" text-anchor="middle" class="dg-edge-label">contare</text>
+<line x1="340" y1="356" x2="285" y2="390" class="dg-edge-primary" marker-end="url(#arr-c08)"/>
+<line x1="370" y1="418" x2="460" y2="418" class="dg-edge-primary" marker-end="url(#arr-c08)"/>
+<rect x="60" y="12" width="210" height="56" rx="10" class="dg-node"/>
+<text x="165" y="36" text-anchor="middle" class="dg-label">Logica proposizionale</text>
+<text x="165" y="52" text-anchor="middle" class="dg-sublabel">fatti atomici e indivisibili</text>
+<rect x="490" y="12" width="210" height="56" rx="10" class="dg-node"/>
+<text x="595" y="36" text-anchor="middle" class="dg-label">Linguaggio naturale</text>
+<text x="595" y="52" text-anchor="middle" class="dg-sublabel">espressivo ma ambiguo</text>
+<rect x="270" y="116" width="220" height="60" rx="10" class="dg-node-primary"/>
+<text x="380" y="140" text-anchor="middle" class="dg-label">Logica del primo ordine</text>
+<text x="380" y="156" text-anchor="middle" class="dg-sublabel">oggetti, relazioni, funzioni</text>
+<rect x="8" y="210" width="176" height="56" rx="10" class="dg-node"/>
+<text x="96" y="234" text-anchor="middle" class="dg-label">Impegno ontologico</text>
+<text x="96" y="250" text-anchor="middle" class="dg-sublabel">cosa esiste nel mondo</text>
+<rect x="192" y="210" width="196" height="56" rx="10" class="dg-node"/>
+<text x="290" y="234" text-anchor="middle" class="dg-label">Modelli e interpretazioni</text>
+<text x="290" y="250" text-anchor="middle" class="dg-sublabel">mondi possibili formalizzati</text>
+<rect x="396" y="210" width="170" height="56" rx="10" class="dg-node"/>
+<text x="481" y="234" text-anchor="middle" class="dg-label">Quantificatori</text>
+<text x="481" y="250" text-anchor="middle" class="dg-sublabel">universale ed esistenziale</text>
+<rect x="578" y="210" width="174" height="56" rx="10" class="dg-node"/>
+<text x="665" y="234" text-anchor="middle" class="dg-label">Uguaglianza</text>
+<text x="665" y="250" text-anchor="middle" class="dg-sublabel">stesso oggetto o distinti</text>
+<rect x="300" y="300" width="200" height="56" rx="10" class="dg-node"/>
+<text x="400" y="324" text-anchor="middle" class="dg-label">Tre domini alla prova</text>
+<text x="400" y="340" text-anchor="middle" class="dg-sublabel">parentela, numeri, wumpus</text>
+<rect x="140" y="390" width="230" height="56" rx="10" class="dg-node-primary"/>
+<text x="255" y="414" text-anchor="middle" class="dg-label">Ingegneria della conoscenza</text>
+<text x="255" y="430" text-anchor="middle" class="dg-sublabel">sette passi, dall'ontologia al debug</text>
+<rect x="460" y="390" width="240" height="56" rx="10" class="dg-node-accent"/>
+<text x="580" y="414" text-anchor="middle" class="dg-label">Base di conoscenza</text>
+<text x="580" y="430" text-anchor="middle" class="dg-sublabel">il sommatore risponde per inferenza</text>
+</svg>
+<figcaption>Mappa del capitolo 8 — dalla sintesi tra logica proposizionale e linguaggio naturale all'ingegneria della conoscenza</figcaption>
+</figure>
+
 ## Cosa manca ai linguaggi di programmazione (e al linguaggio naturale)
 
 Il capitolo apre con un confronto illuminante. I linguaggi di programmazione come Python o Java sanno rappresentare fatti — una matrice puo' codificare la mappa del mondo del wumpus — ma non hanno un meccanismo generale per derivare fatti da altri fatti: ogni inferenza va programmata a mano, e la conoscenza del dominio resta intrecciata alla procedura che la usa. Inoltre non gestiscono bene l'informazione parziale: dire "c'e' un pozzo in [2,2] oppure in [3,1]" e' immediato in logica, macchinoso in un programma.

@@ -17,6 +17,54 @@ La questione conta perche' nei domini giocattolo quasi ogni rappresentazione fun
 
 Il capitolo attraversa cosi' tre livelli: prima costruisce un'ontologia generale del mondo (categorie, parti, misure, sostanze, eventi, tempo, oggetti mentali), poi presenta i formalismi nati per ragionare in modo efficiente su queste strutture (reti semantiche e logiche descrittive), infine affronta il problema delle eccezioni e del ragionamento con informazione di default, dove la logica classica mostra i suoi limiti.
 
+<figure class="diagram">
+<svg viewBox="0 0 760 420" role="img" aria-label="Mappa concettuale del capitolo 10: l'ingegneria ontologica organizza categorie e parti, misure, cose e roba, eventi e tempo e oggetti mentali; dalle categorie discendono reti semantiche e logiche descrittive, dai valori di default le logiche non monotone e infine i sistemi di mantenimento della verita'">
+<defs><marker id="arr-c10" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="dg-arrow"/></marker></defs>
+<line x1="380" y1="68" x2="85" y2="106" class="dg-edge" marker-end="url(#arr-c10)"/>
+<line x1="380" y1="68" x2="232" y2="106" class="dg-edge" marker-end="url(#arr-c10)"/>
+<line x1="380" y1="68" x2="380" y2="106" class="dg-edge" marker-end="url(#arr-c10)"/>
+<line x1="380" y1="68" x2="528" y2="106" class="dg-edge" marker-end="url(#arr-c10)"/>
+<line x1="380" y1="68" x2="675" y2="106" class="dg-edge" marker-end="url(#arr-c10)"/>
+<line x1="80" y1="166" x2="85" y2="236" class="dg-edge" marker-end="url(#arr-c10)"/>
+<line x1="80" y1="166" x2="255" y2="236" class="dg-edge" marker-end="url(#arr-c10)"/>
+<text x="205" y="200" text-anchor="middle" class="dg-edge-label">efficienza</text>
+<line x1="85" y1="296" x2="95" y2="344" class="dg-edge" marker-end="url(#arr-c10)"/>
+<text x="160" y="322" text-anchor="middle" class="dg-edge-label">valori di default</text>
+<line x1="180" y1="376" x2="236" y2="376" class="dg-edge" marker-end="url(#arr-c10)"/>
+<rect x="280" y="12" width="200" height="56" rx="10" class="dg-node-primary"/>
+<text x="380" y="36" text-anchor="middle" class="dg-label">Ingegneria ontologica</text>
+<text x="380" y="52" text-anchor="middle" class="dg-sublabel">un'ontologia generale del mondo</text>
+<rect x="10" y="110" width="140" height="56" rx="10" class="dg-node"/>
+<text x="80" y="134" text-anchor="middle" class="dg-label">Categorie e parti</text>
+<text x="80" y="150" text-anchor="middle" class="dg-sublabel">ereditarieta', ParteDi</text>
+<rect x="160" y="110" width="140" height="56" rx="10" class="dg-node"/>
+<text x="230" y="134" text-anchor="middle" class="dg-label">Misure</text>
+<text x="230" y="150" text-anchor="middle" class="dg-sublabel">unita' e ordinamenti</text>
+<rect x="310" y="110" width="140" height="56" rx="10" class="dg-node"/>
+<text x="380" y="134" text-anchor="middle" class="dg-label">Cose e roba</text>
+<text x="380" y="150" text-anchor="middle" class="dg-sublabel">sostanze vs oggetti</text>
+<rect x="460" y="110" width="140" height="56" rx="10" class="dg-node"/>
+<text x="530" y="134" text-anchor="middle" class="dg-label">Eventi e tempo</text>
+<text x="530" y="150" text-anchor="middle" class="dg-sublabel">fluenti, intervalli</text>
+<rect x="610" y="110" width="140" height="56" rx="10" class="dg-node"/>
+<text x="680" y="134" text-anchor="middle" class="dg-label">Oggetti mentali</text>
+<text x="680" y="150" text-anchor="middle" class="dg-sublabel">logica modale</text>
+<rect x="10" y="240" width="150" height="56" rx="10" class="dg-node"/>
+<text x="85" y="264" text-anchor="middle" class="dg-label">Reti semantiche</text>
+<text x="85" y="280" text-anchor="middle" class="dg-sublabel">nodi e archi etichettati</text>
+<rect x="180" y="240" width="160" height="56" rx="10" class="dg-node"/>
+<text x="260" y="264" text-anchor="middle" class="dg-label">Logiche descrittive</text>
+<text x="260" y="280" text-anchor="middle" class="dg-sublabel">sussunzione trattabile</text>
+<rect x="10" y="348" width="170" height="56" rx="10" class="dg-node"/>
+<text x="95" y="372" text-anchor="middle" class="dg-label">Logiche non monotone</text>
+<text x="95" y="388" text-anchor="middle" class="dg-sublabel">circoscrizione e default</text>
+<rect x="240" y="348" width="210" height="56" rx="10" class="dg-node-accent"/>
+<text x="345" y="372" text-anchor="middle" class="dg-label">Mantenimento della verita'</text>
+<text x="345" y="388" text-anchor="middle" class="dg-sublabel">ritrattare le conclusioni</text>
+</svg>
+<figcaption>Mappa del capitolo 10 — dall'ingegneria ontologica ai formalismi per le categorie, fino al ragionamento di default e ai TMS</figcaption>
+</figure>
+
 ## Un'ontologia per (quasi) tutto
 
 Rappresentare l'intero mondo e' impossibile, ma si puo' progettare uno scheletro concettuale generale — un'ontologia superiore — con i concetti piu' astratti in cima (Tutto, OggettiAstratti, EventiGeneralizzati) e le specializzazioni via via piu' concrete sotto. L'analogia proposta dal libro e' quella dei framework object-oriented: chi progetta una libreria grafica definisce il concetto generale di finestra, sapendo che altri lo specializzeranno in tipi concreti.

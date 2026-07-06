@@ -17,11 +17,93 @@ La risposta della comunita' di ricerca e' una rappresentazione fattorizzata: inv
 
 Il capitolo conta perche' la pianificazione e' il punto di incontro tra le due anime storiche dell'AI, la ricerca e la logica, e perche' i temi che tocca — scomporre obiettivi complessi in sottopassi, agire con informazione incompleta, monitorare l'esecuzione e correggere il tiro — sono esattamente quelli che oggi riemergono nella progettazione di sistemi agentici basati su LLM.
 
+<figure class="diagram">
+<svg viewBox="0 0 760 400" role="img" aria-label="Mappa concettuale del capitolo 11: la pianificazione classica descritta con la rappresentazione fattorizzata PDDL, gli algoritmi di ricerca in avanti, all'indietro e SAT, le euristiche automatiche, le gerarchie HTN, gli stati-credenza, la pianificazione online e lo scheduling">
+<defs><marker id="arr-c11" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="dg-arrow"/></marker></defs>
+<line x1="385" y1="68" x2="385" y2="97" class="dg-edge-primary" marker-end="url(#arr-c11)"/>
+<line x1="318" y1="68" x2="112" y2="97" class="dg-edge" marker-end="url(#arr-c11)"/>
+<text x="215" y="76" text-anchor="middle" class="dg-edge-label">incertezza</text>
+<path d="M490,32 L746,32 L746,320" class="dg-edge" marker-end="url(#arr-c11)"/>
+<text x="630" y="24" text-anchor="middle" class="dg-edge-label">aggiunge tempo e risorse</text>
+<line x1="515" y1="128" x2="569" y2="128" class="dg-edge" marker-end="url(#arr-c11)"/>
+<text x="542" y="120" text-anchor="middle" class="dg-edge-label">estende</text>
+<line x1="275" y1="156" x2="185" y2="321" class="dg-edge-primary" marker-end="url(#arr-c11)"/>
+<line x1="350" y1="156" x2="329" y2="209" class="dg-edge" marker-end="url(#arr-c11)"/>
+<line x1="420" y1="156" x2="505" y2="209" class="dg-edge" marker-end="url(#arr-c11)"/>
+<line x1="500" y1="156" x2="655" y2="209" class="dg-edge" marker-end="url(#arr-c11)"/>
+<text x="600" y="168" text-anchor="middle" class="dg-edge-label">proposizionalizza</text>
+<line x1="98" y1="156" x2="98" y2="209" class="dg-edge" marker-end="url(#arr-c11)"/>
+<text x="170" y="186" text-anchor="middle" class="dg-edge-label">durante l'esecuzione</text>
+<line x1="240" y1="324" x2="315" y2="271" class="dg-edge" marker-end="url(#arr-c11)"/>
+<text x="272" y="300" text-anchor="middle" class="dg-edge-label">rende praticabile</text>
+<rect x="280" y="12" width="210" height="56" rx="10" class="dg-node"/>
+<text x="385" y="36" text-anchor="middle" class="dg-label">Pianificazione classica</text>
+<text x="385" y="52" text-anchor="middle" class="dg-sublabel">deterministico e osservabile</text>
+<rect x="255" y="100" width="260" height="56" rx="10" class="dg-node-primary"/>
+<text x="385" y="124" text-anchor="middle" class="dg-label">Rappresentazione fattorizzata</text>
+<text x="385" y="140" text-anchor="middle" class="dg-sublabel">PDDL: fluenti e schemi di azione</text>
+<rect x="8" y="100" width="180" height="56" rx="10" class="dg-node"/>
+<text x="98" y="124" text-anchor="middle" class="dg-label">Stati-credenza</text>
+<text x="98" y="140" text-anchor="middle" class="dg-sublabel">conformante e condizionale</text>
+<rect x="572" y="100" width="164" height="56" rx="10" class="dg-node"/>
+<text x="654" y="124" text-anchor="middle" class="dg-label">Gerarchica (HTN)</text>
+<text x="654" y="140" text-anchor="middle" class="dg-sublabel">HLA e semantica angelica</text>
+<rect x="8" y="212" width="180" height="56" rx="10" class="dg-node-accent"/>
+<text x="98" y="236" text-anchor="middle" class="dg-label">Pianificazione online</text>
+<text x="98" y="252" text-anchor="middle" class="dg-sublabel">monitora e ripianifica</text>
+<rect x="250" y="212" width="158" height="56" rx="10" class="dg-node"/>
+<text x="329" y="236" text-anchor="middle" class="dg-label">Ricerca in avanti</text>
+<text x="329" y="252" text-anchor="middle" class="dg-sublabel">dallo stato iniziale</text>
+<rect x="426" y="212" width="158" height="56" rx="10" class="dg-node"/>
+<text x="505" y="236" text-anchor="middle" class="dg-label">Ricerca all'indietro</text>
+<text x="505" y="252" text-anchor="middle" class="dg-sublabel">solo azioni rilevanti</text>
+<rect x="604" y="212" width="136" height="56" rx="10" class="dg-node"/>
+<text x="672" y="236" text-anchor="middle" class="dg-label">Codifica SAT</text>
+<text x="672" y="252" text-anchor="middle" class="dg-sublabel">sistema SATPlan</text>
+<rect x="60" y="324" width="240" height="56" rx="10" class="dg-node"/>
+<text x="180" y="348" text-anchor="middle" class="dg-label">Euristiche automatiche</text>
+<text x="180" y="364" text-anchor="middle" class="dg-sublabel">rilassamenti, astrazioni, scomposizione</text>
+<rect x="560" y="324" width="192" height="56" rx="10" class="dg-node"/>
+<text x="656" y="348" text-anchor="middle" class="dg-label">Scheduling</text>
+<text x="656" y="364" text-anchor="middle" class="dg-sublabel">tempo, risorse, cammino critico</text>
+</svg>
+<figcaption>Mappa del capitolo 11 — la rappresentazione fattorizzata PDDL al centro: algoritmi di ricerca, euristiche automatiche, gerarchie, incertezza e scheduling</figcaption>
+</figure>
+
 ## Descrivere il mondo a fattori: il linguaggio PDDL
 
 La pianificazione classica assume un ambiente discreto, deterministico, statico e completamente osservabile. In questo quadro, il linguaggio PDDL (planning domain definition language) descrive uno stato come una congiunzione di fatti elementari ground (senza variabili), detti fluenti, con la convenzione che tutto cio' che non e' menzionato e' falso. Un problema di consegne, per esempio, si riduce a fatti come "il camion 1 e' a Melbourne" e "il pacco A e' sul camion 1".
 
 Le azioni sono definite tramite schemi: un nome con variabili, una precondizione (cosa deve valere per poter agire) e un effetto (quali fluenti l'azione aggiunge e quali elimina). Un unico schema "Vola(aereo, da, a)" cattura tutte le possibili tratte di tutti gli aerei; e' questa compattezza che manca alle rappresentazioni atomiche. Il risultato di un'azione si calcola con una regola meccanica: si tolgono dallo stato i fluenti negati dall'effetto e si aggiungono quelli affermati.
+
+<figure class="diagram">
+<svg viewBox="0 0 760 260" role="img" aria-label="Schema di azione PDDL Vola: la precondizione elenca i fluenti che devono valere nello stato, l'effetto i fluenti eliminati e aggiunti, e sostituendo le variabili con costanti si ottiene l'azione ground Vola P1 SFO JFK">
+<defs><marker id="arr-c11-b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="dg-arrow"/></marker></defs>
+<line x1="198" y1="100" x2="287" y2="100" class="dg-edge" marker-end="url(#arr-c11-b)"/>
+<text x="242" y="92" text-anchor="middle" class="dg-edge-label">se vale in s</text>
+<line x1="470" y1="100" x2="557" y2="100" class="dg-edge" marker-end="url(#arr-c11-b)"/>
+<text x="513" y="92" text-anchor="middle" class="dg-edge-label">risultato</text>
+<line x1="380" y1="128" x2="380" y2="187" class="dg-edge" marker-end="url(#arr-c11-b)"/>
+<text x="475" y="162" text-anchor="middle" class="dg-edge-label">istanzia le variabili</text>
+<rect x="8" y="48" width="190" height="104" rx="10" class="dg-node"/>
+<text x="103" y="72" text-anchor="middle" class="dg-label">Precondizione</text>
+<text x="103" y="90" text-anchor="middle" class="dg-sublabel">Posizione(p, da)</text>
+<text x="103" y="106" text-anchor="middle" class="dg-sublabel">Aereo(p)</text>
+<text x="103" y="122" text-anchor="middle" class="dg-sublabel">Aeroporto(da)</text>
+<text x="103" y="138" text-anchor="middle" class="dg-sublabel">Aeroporto(a)</text>
+<rect x="290" y="72" width="180" height="56" rx="10" class="dg-node-primary"/>
+<text x="380" y="96" text-anchor="middle" class="dg-label">Azione</text>
+<text x="380" y="112" text-anchor="middle" class="dg-sublabel">Vola(p, da, a)</text>
+<rect x="560" y="64" width="192" height="72" rx="10" class="dg-node"/>
+<text x="656" y="88" text-anchor="middle" class="dg-label">Effetto</text>
+<text x="656" y="106" text-anchor="middle" class="dg-sublabel">¬Posizione(p, da)</text>
+<text x="656" y="122" text-anchor="middle" class="dg-sublabel">Posizione(p, a)</text>
+<rect x="270" y="190" width="220" height="56" rx="10" class="dg-node"/>
+<text x="380" y="214" text-anchor="middle" class="dg-label">Azione ground</text>
+<text x="380" y="230" text-anchor="middle" class="dg-sublabel">Vola(P1, SFO, JFK)</text>
+</svg>
+<figcaption>Schema di azione Vola in PDDL — precondizione, effetto e istanza ground; schema ripreso dal Paragrafo 11.1 e dalla Figura 11.1 del cap. 11, AIMA 4a ed.</figcaption>
+</figure>
 
 Il libro illustra il formalismo con tre domini che sono diventati classici: il trasporto aereo di merci (caricare, scaricare, volare), il cambio di una ruota bucata e il mondo dei blocchi, dove un braccio robotico impila cubi su un tavolo. Sono esempi giocattolo, ma mostrano anche le insidie della modellazione: definire correttamente cosa significa "libero" per un blocco o per il tavolo richiede piu' attenzione di quanto sembri, e un modello impreciso produce piani sbagliati o spazi di ricerca inutilmente grandi.
 

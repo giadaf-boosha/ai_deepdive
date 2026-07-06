@@ -17,6 +17,61 @@ La risposta del capitolo si articola in un percorso preciso. Prima si dimostra c
 
 Il capitolo contiene anche uno dei risultati piu' profondi di tutta l'informatica teorica: la conseguenza logica nel primo ordine e' semidecidibile. Esistono algoritmi che confermano ogni formula che segue davvero dalla base di conoscenza, ma nessun algoritmo puo' rispondere "no" in tutti i casi in cui la formula non segue. E' un limite strutturale, non un difetto ingegneristico, e condiziona il design di ogni sistema di ragionamento automatico.
 
+<figure class="diagram">
+<svg viewBox="0 0 760 470" role="img" aria-label="Mappa concettuale del capitolo 9: l'inferenza nel primo ordine si affronta prima con la proposizionalizzazione, che porta alla semidecidibilita', poi con l'unificazione, da cui derivano il Modus Ponens generalizzato, le concatenazioni in avanti e all'indietro con Datalog e Prolog, e la risoluzione su formule in CNF, unica procedura completa">
+<defs><marker id="arr-c09" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="dg-arrow"/></marker></defs>
+<line x1="320" y1="68" x2="140" y2="107" class="dg-edge" marker-end="url(#arr-c09)"/>
+<text x="217" y="80" text-anchor="middle" class="dg-edge-label">forza bruta</text>
+<line x1="380" y1="68" x2="380" y2="107" class="dg-edge-primary" marker-end="url(#arr-c09)"/>
+<line x1="115" y1="166" x2="115" y2="207" class="dg-edge" marker-end="url(#arr-c09)"/>
+<text x="123" y="192" class="dg-edge-label">teorema di Herbrand</text>
+<line x1="380" y1="166" x2="380" y2="207" class="dg-edge-primary" marker-end="url(#arr-c09)"/>
+<text x="390" y="192" class="dg-edge-label">lifting</text>
+<line x1="475" y1="155" x2="612" y2="307" class="dg-edge" marker-end="url(#arr-c09)"/>
+<text x="560" y="290" text-anchor="middle" class="dg-edge-label">letterali complementari</text>
+<line x1="650" y1="166" x2="650" y2="307" class="dg-edge" marker-end="url(#arr-c09)"/>
+<line x1="295" y1="266" x2="145" y2="307" class="dg-edge" marker-end="url(#arr-c09)"/>
+<line x1="380" y1="266" x2="380" y2="307" class="dg-edge" marker-end="url(#arr-c09)"/>
+<line x1="115" y1="366" x2="115" y2="397" class="dg-edge" marker-end="url(#arr-c09)"/>
+<text x="123" y="386" class="dg-edge-label">senza funzioni</text>
+<line x1="380" y1="366" x2="380" y2="397" class="dg-edge" marker-end="url(#arr-c09)"/>
+<rect x="270" y="12" width="220" height="56" rx="10" class="dg-node-primary"/>
+<text x="380" y="36" text-anchor="middle" class="dg-label">Inferenza nel primo ordine</text>
+<text x="380" y="52" text-anchor="middle" class="dg-sublabel">procedura meccanica di deduzione</text>
+<rect x="22" y="110" width="186" height="56" rx="10" class="dg-node"/>
+<text x="115" y="134" text-anchor="middle" class="dg-label">Proposizionalizzazione</text>
+<text x="115" y="150" text-anchor="middle" class="dg-sublabel">istanziare i quantificatori</text>
+<rect x="280" y="110" width="200" height="56" rx="10" class="dg-node-primary"/>
+<text x="380" y="134" text-anchor="middle" class="dg-label">Unificazione</text>
+<text x="380" y="150" text-anchor="middle" class="dg-sublabel">sostituzione piu' generale (MGU)</text>
+<rect x="560" y="110" width="180" height="56" rx="10" class="dg-node"/>
+<text x="650" y="134" text-anchor="middle" class="dg-label">CNF e skolemizzazione</text>
+<text x="650" y="150" text-anchor="middle" class="dg-sublabel">funzioni di Skolem</text>
+<rect x="30" y="210" width="170" height="56" rx="10" class="dg-node"/>
+<text x="115" y="234" text-anchor="middle" class="dg-label">Semidecidibilita'</text>
+<text x="115" y="250" text-anchor="middle" class="dg-sublabel">nessun 'no' garantito</text>
+<rect x="275" y="210" width="210" height="56" rx="10" class="dg-node-primary"/>
+<text x="380" y="234" text-anchor="middle" class="dg-label">Modus Ponens generalizzato</text>
+<text x="380" y="250" text-anchor="middle" class="dg-sublabel">regola per clausole definite</text>
+<rect x="17" y="310" width="196" height="56" rx="10" class="dg-node"/>
+<text x="115" y="334" text-anchor="middle" class="dg-label">Concatenazione in avanti</text>
+<text x="115" y="350" text-anchor="middle" class="dg-sublabel">dai fatti al punto fisso</text>
+<rect x="273" y="310" width="214" height="56" rx="10" class="dg-node"/>
+<text x="380" y="334" text-anchor="middle" class="dg-label">Concatenazione all'indietro</text>
+<text x="380" y="350" text-anchor="middle" class="dg-sublabel">ricerca AND/OR sugli obiettivi</text>
+<rect x="560" y="310" width="180" height="56" rx="10" class="dg-node-accent"/>
+<text x="650" y="334" text-anchor="middle" class="dg-label">Risoluzione</text>
+<text x="650" y="350" text-anchor="middle" class="dg-sublabel">completa per refutazione</text>
+<rect x="40" y="400" width="150" height="56" rx="10" class="dg-node"/>
+<text x="115" y="424" text-anchor="middle" class="dg-label">Datalog</text>
+<text x="115" y="440" text-anchor="middle" class="dg-sublabel">decidibile e polinomiale</text>
+<rect x="300" y="400" width="160" height="56" rx="10" class="dg-node"/>
+<text x="380" y="424" text-anchor="middle" class="dg-label">Prolog</text>
+<text x="380" y="440" text-anchor="middle" class="dg-sublabel">incompleto senza tabling</text>
+</svg>
+<figcaption>Mappa concettuale del capitolo: l'unificazione e il lifting collegano la proposizionalizzazione alle tre famiglie di algoritmi, fino alla risoluzione, unica procedura completa.</figcaption>
+</figure>
+
 ## Dai quantificatori alle proposizioni: la via forza bruta
 
 Il primo approccio e' quasi ingenuo: eliminare i quantificatori sostituendo le variabili con termini concreti. La regola di istanziazione universale dice che da una formula valida per ogni x si puo' derivare la stessa formula con x rimpiazzato da qualunque termine ground, cioe' privo di variabili. Se la base di conoscenza afferma che ogni re avido e' malvagio, posso istanziarla su Giovanni, su Riccardo, sul padre di Giovanni e cosi' via. La regola di istanziazione esistenziale funziona in modo speculare: una formula che afferma "esiste un x tale che" viene sostituita da una singola istanza con un nuovo simbolo di costante, mai usato prima, detto costante di Skolem. E' l'atto di dare un nome a un oggetto di cui si sa solo che esiste.
