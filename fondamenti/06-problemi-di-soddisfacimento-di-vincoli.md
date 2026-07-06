@@ -17,11 +17,106 @@ La domanda di fondo del capitolo e': cosa guadagniamo quando smettiamo di tratta
 
 Il capitolo costruisce l'intero arsenale: come si definisce formalmente un CSP, come l'inferenza propaga i vincoli riducendo i domini, come la ricerca con backtracking si combina con l'inferenza, come la ricerca locale attacca il problema da assegnamenti completi, e infine come la struttura del grafo dei vincoli determina quanto e' difficile il problema.
 
+<figure class="diagram">
+<svg viewBox="0 0 760 430" role="img" aria-label="Mappa concettuale del capitolo 6: dalla rappresentazione fattorizzata al CSP, i tre approcci di soluzione — propagazione dei vincoli, backtracking, ricerca locale — con euristiche generali, backjumping e struttura del problema, fino alla potatura dello spazio di ricerca">
+<defs><marker id="arr-c06" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="dg-arrow"/></marker></defs>
+<line x1="240" y1="40" x2="280" y2="40" class="dg-edge-primary" marker-end="url(#arr-c06)"/>
+<line x1="450" y1="40" x2="540" y2="40" class="dg-edge" marker-end="url(#arr-c06)"/>
+<line x1="365" y1="68" x2="110" y2="130" class="dg-edge" marker-end="url(#arr-c06)"/>
+<text x="237" y="92" text-anchor="middle" class="dg-edge-label">inferenza</text>
+<line x1="365" y1="68" x2="320" y2="130" class="dg-edge" marker-end="url(#arr-c06)"/>
+<text x="316" y="95" text-anchor="middle" class="dg-edge-label">ricerca</text>
+<line x1="365" y1="68" x2="485" y2="130" class="dg-edge" marker-end="url(#arr-c06)"/>
+<text x="452" y="92" text-anchor="middle" class="dg-edge-label">riparazione</text>
+<line x1="645" y1="68" x2="665" y2="130" class="dg-edge" marker-end="url(#arr-c06)"/>
+<text x="576" y="99" text-anchor="middle" class="dg-edge-label">decide la difficolta'</text>
+<line x1="110" y1="186" x2="115" y2="250" class="dg-edge" marker-end="url(#arr-c06)"/>
+<line x1="320" y1="186" x2="175" y2="250" class="dg-edge" marker-end="url(#arr-c06)"/>
+<line x1="320" y1="186" x2="380" y2="250" class="dg-edge" marker-end="url(#arr-c06)"/>
+<text x="310" y="214" text-anchor="middle" class="dg-edge-label">guidato da</text>
+<line x1="320" y1="186" x2="600" y2="250" class="dg-edge" marker-end="url(#arr-c06)"/>
+<text x="520" y="224" text-anchor="middle" class="dg-edge-label">al fallimento</text>
+<line x1="130" y1="306" x2="300" y2="360" class="dg-edge" marker-end="url(#arr-c06)"/>
+<line x1="380" y1="306" x2="380" y2="360" class="dg-edge" marker-end="url(#arr-c06)"/>
+<line x1="632" y1="306" x2="460" y2="360" class="dg-edge" marker-end="url(#arr-c06)"/>
+<rect x="10" y="12" width="230" height="56" rx="10" class="dg-node-primary"/>
+<text x="125" y="36" text-anchor="middle" class="dg-label">Rappresentazione fattorizzata</text>
+<text x="125" y="52" text-anchor="middle" class="dg-sublabel">stati non piu' atomici</text>
+<rect x="280" y="12" width="170" height="56" rx="10" class="dg-node-primary"/>
+<text x="365" y="36" text-anchor="middle" class="dg-label">CSP</text>
+<text x="365" y="52" text-anchor="middle" class="dg-sublabel">variabili, domini, vincoli</text>
+<rect x="540" y="12" width="210" height="56" rx="10" class="dg-node"/>
+<text x="645" y="36" text-anchor="middle" class="dg-label">Grafo dei vincoli</text>
+<text x="645" y="52" text-anchor="middle" class="dg-sublabel">nodi variabili, archi vincoli</text>
+<rect x="10" y="130" width="200" height="56" rx="10" class="dg-node"/>
+<text x="110" y="154" text-anchor="middle" class="dg-label">Propagazione dei vincoli</text>
+<text x="110" y="170" text-anchor="middle" class="dg-sublabel">consistenza d'arco, AC-3</text>
+<rect x="240" y="130" width="160" height="56" rx="10" class="dg-node"/>
+<text x="320" y="154" text-anchor="middle" class="dg-label">Backtracking</text>
+<text x="320" y="170" text-anchor="middle" class="dg-sublabel">assegnamenti parziali</text>
+<rect x="420" y="130" width="130" height="56" rx="10" class="dg-node"/>
+<text x="485" y="154" text-anchor="middle" class="dg-label">Ricerca locale</text>
+<text x="485" y="170" text-anchor="middle" class="dg-sublabel">min-conflicts</text>
+<rect x="575" y="130" width="180" height="56" rx="10" class="dg-node"/>
+<text x="665" y="154" text-anchor="middle" class="dg-label">Struttura del problema</text>
+<text x="665" y="170" text-anchor="middle" class="dg-sublabel">alberi in tempo lineare</text>
+<rect x="20" y="250" width="220" height="56" rx="10" class="dg-node"/>
+<text x="130" y="274" text-anchor="middle" class="dg-label">Forward checking e MAC</text>
+<text x="130" y="290" text-anchor="middle" class="dg-sublabel">inferenza durante la ricerca</text>
+<rect x="280" y="250" width="200" height="56" rx="10" class="dg-node"/>
+<text x="380" y="274" text-anchor="middle" class="dg-label">Euristiche generali</text>
+<text x="380" y="290" text-anchor="middle" class="dg-sublabel">MRV, grado, meno vincolante</text>
+<rect x="520" y="250" width="225" height="56" rx="10" class="dg-node"/>
+<text x="632" y="274" text-anchor="middle" class="dg-label">Backjumping e no-good</text>
+<text x="632" y="290" text-anchor="middle" class="dg-sublabel">apprendimento dei vincoli</text>
+<rect x="250" y="360" width="260" height="56" rx="10" class="dg-node-accent"/>
+<text x="380" y="384" text-anchor="middle" class="dg-label">Potare lo spazio di ricerca</text>
+<text x="380" y="400" text-anchor="middle" class="dg-sublabel">euristiche indipendenti dal dominio</text>
+</svg>
+<figcaption>Mappa del capitolo 6 — dal CSP come rappresentazione fattorizzata alle tecniche che potano lo spazio di ricerca</figcaption>
+</figure>
+
 ## Variabili, domini, vincoli: la grammatica dei CSP
 
 Un CSP e' una tripla: variabili, domini, vincoli. Ogni vincolo specifica una relazione su una tupla di variabili, cioe' l'insieme delle combinazioni di valori che accetta. Un assegnamento che non viola nulla e' consistente; se copre tutte le variabili e' completo; una soluzione e' entrambe le cose.
 
 L'esempio didattico del capitolo e' la colorazione della mappa dell'Australia: sette variabili (una per stato o territorio), dominio {rosso, verde, blu}, e un vincolo di disuguaglianza per ogni coppia di regioni confinanti. Il problema si visualizza come grafo dei vincoli, con le variabili come nodi e i vincoli binari come archi. La potenza del formalismo si vede subito: fissato SA = blu, le cinque regioni adiacenti perdono il blu dai loro domini e le combinazioni da esaminare crollano da 243 a 32.
+
+<figure class="diagram">
+<svg viewBox="0 0 760 310" role="img" aria-label="Grafo dei vincoli della colorazione della mappa dell'Australia: sette nodi WA, NT, SA, Q, NSW, V e T; SA e' collegata a WA, NT, Q, NSW e V; WA a NT, NT a Q, Q a NSW, NSW a V; la Tasmania T e' isolata">
+<line x1="105" y1="146" x2="305" y2="56" class="dg-edge"/>
+<line x1="105" y1="146" x2="330" y2="176" class="dg-edge"/>
+<line x1="305" y1="56" x2="330" y2="176" class="dg-edge"/>
+<line x1="305" y1="56" x2="520" y2="56" class="dg-edge"/>
+<line x1="330" y1="176" x2="520" y2="56" class="dg-edge"/>
+<line x1="330" y1="176" x2="565" y2="176" class="dg-edge"/>
+<line x1="330" y1="176" x2="505" y2="266" class="dg-edge"/>
+<line x1="520" y1="56" x2="565" y2="176" class="dg-edge"/>
+<line x1="565" y1="176" x2="505" y2="266" class="dg-edge"/>
+<rect x="240" y="30" width="130" height="52" rx="10" class="dg-node"/>
+<text x="305" y="52" text-anchor="middle" class="dg-label">NT</text>
+<text x="305" y="68" text-anchor="middle" class="dg-sublabel">Northern Territory</text>
+<rect x="460" y="30" width="120" height="52" rx="10" class="dg-node"/>
+<text x="520" y="52" text-anchor="middle" class="dg-label">Q</text>
+<text x="520" y="68" text-anchor="middle" class="dg-sublabel">Queensland</text>
+<rect x="40" y="120" width="130" height="52" rx="10" class="dg-node"/>
+<text x="105" y="142" text-anchor="middle" class="dg-label">WA</text>
+<text x="105" y="158" text-anchor="middle" class="dg-sublabel">Western Australia</text>
+<rect x="270" y="150" width="120" height="52" rx="10" class="dg-node-primary"/>
+<text x="330" y="172" text-anchor="middle" class="dg-label">SA</text>
+<text x="330" y="188" text-anchor="middle" class="dg-sublabel">South Australia</text>
+<rect x="500" y="150" width="130" height="52" rx="10" class="dg-node"/>
+<text x="565" y="172" text-anchor="middle" class="dg-label">NSW</text>
+<text x="565" y="188" text-anchor="middle" class="dg-sublabel">New South Wales</text>
+<rect x="450" y="240" width="110" height="52" rx="10" class="dg-node"/>
+<text x="505" y="262" text-anchor="middle" class="dg-label">V</text>
+<text x="505" y="278" text-anchor="middle" class="dg-sublabel">Victoria</text>
+<rect x="630" y="240" width="110" height="52" rx="10" class="dg-node"/>
+<text x="685" y="262" text-anchor="middle" class="dg-label">T</text>
+<text x="685" y="278" text-anchor="middle" class="dg-sublabel">Tasmania</text>
+</svg>
+<figcaption>Grafo dei vincoli della colorazione della mappa dell'Australia: un arco per ogni coppia di regioni confinanti, la Tasmania resta isolata — schema ripreso dalla figura 6.1, AIMA 4a ed.</figcaption>
+</figure>
 
 Il secondo esempio e' industriale: la programmazione dei compiti nell'assemblaggio di un'auto. Qui le variabili sono i tempi di inizio dei compiti, e i vincoli sono aritmetici (un compito piu' la sua durata deve precedere il successivo) o disgiuntivi (due compiti che condividono uno strumento non possono sovrapporsi). Il formalismo si adatta poi a molte varianti: domini finiti o infiniti, discreti o continui (la programmazione lineare e' un CSP a dominio continuo), vincoli unari, binari, di ordine superiore, e vincoli globali come Tuttediverse, che impone valori tutti distinti a un gruppo arbitrario di variabili. Esistono anche vincoli di preferenza, che non proibiscono ma penalizzano: in quel caso si parla di problema di ottimizzazione di vincoli (COP).
 

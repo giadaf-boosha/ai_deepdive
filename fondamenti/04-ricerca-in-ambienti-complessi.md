@@ -16,6 +16,61 @@ La domanda di fondo e' come un agente possa comportarsi in modo razionale quando
 
 Conta perche' quasi nessun problema reale rispetta le ipotesi del capitolo 3. Un robot ha attuatori che slittano e sensori rumorosi; un sistema di scheduling industriale cerca una configurazione buona, non un percorso; un agente software opera in ambienti che scopre solo interagendovi. Gli strumenti concettuali introdotti qui — funzione obiettivo, piano condizionale, stato-credenza, ricerca online — sono il vocabolario minimo per ragionare su tutti questi casi.
 
+<figure class="diagram">
+<svg viewBox="0 0 760 380" role="img" aria-label="Mappa concettuale del capitolo 4: dagli ambienti complessi partono cinque risposte — ricerca locale con hill climbing, simulated annealing e algoritmi evolutivi, ottimizzazione negli spazi continui, piani condizionali, stati-credenza e ricerca online che con LRTA* porta all'apprendimento">
+<defs><marker id="arr-c04" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="dg-arrow"/></marker></defs>
+<line x1="270" y1="68" x2="74" y2="112" class="dg-edge" marker-end="url(#arr-c04)"/>
+<line x1="330" y1="68" x2="220" y2="112" class="dg-edge" marker-end="url(#arr-c04)"/>
+<text x="275" y="90" text-anchor="middle" class="dg-edge-label">variabili continue</text>
+<line x1="390" y1="68" x2="374" y2="112" class="dg-edge" marker-end="url(#arr-c04)"/>
+<text x="382" y="102" text-anchor="middle" class="dg-edge-label">esiti imprevedibili</text>
+<line x1="450" y1="68" x2="521" y2="112" class="dg-edge" marker-end="url(#arr-c04)"/>
+<text x="478" y="90" text-anchor="middle" class="dg-edge-label">sensori insufficienti</text>
+<line x1="505" y1="68" x2="675" y2="112" class="dg-edge-primary" marker-end="url(#arr-c04)"/>
+<text x="622" y="96" text-anchor="middle" class="dg-edge-label">ambiente sconosciuto</text>
+<line x1="55" y1="168" x2="103" y2="212" class="dg-edge" marker-end="url(#arr-c04)"/>
+<line x1="95" y1="168" x2="295" y2="212" class="dg-edge" marker-end="url(#arr-c04)"/>
+<line x1="125" y1="168" x2="492" y2="212" class="dg-edge" marker-end="url(#arr-c04)"/>
+<line x1="675" y1="168" x2="678" y2="212" class="dg-edge-primary" marker-end="url(#arr-c04)"/>
+<text x="676" y="196" text-anchor="middle" class="dg-edge-label">aggiunge memoria</text>
+<line x1="678" y1="268" x2="645" y2="310" class="dg-edge-primary" marker-end="url(#arr-c04)"/>
+<rect x="230" y="12" width="300" height="56" rx="10" class="dg-node-primary"/>
+<text x="380" y="36" text-anchor="middle" class="dg-label">Ambienti complessi</text>
+<text x="380" y="52" text-anchor="middle" class="dg-sublabel">il mondo non collabora</text>
+<rect x="8" y="112" width="132" height="56" rx="10" class="dg-node"/>
+<text x="74" y="136" text-anchor="middle" class="dg-label">Ricerca locale</text>
+<text x="74" y="152" text-anchor="middle" class="dg-sublabel">solo lo stato finale</text>
+<rect x="152" y="112" width="136" height="56" rx="10" class="dg-node"/>
+<text x="220" y="136" text-anchor="middle" class="dg-label">Spazi continui</text>
+<text x="220" y="152" text-anchor="middle" class="dg-sublabel">discesa del gradiente</text>
+<rect x="300" y="112" width="148" height="56" rx="10" class="dg-node"/>
+<text x="374" y="136" text-anchor="middle" class="dg-label">Piano condizionale</text>
+<text x="374" y="152" text-anchor="middle" class="dg-sublabel">rami if-then-else</text>
+<rect x="456" y="112" width="130" height="56" rx="10" class="dg-node"/>
+<text x="521" y="136" text-anchor="middle" class="dg-label">Stato-credenza</text>
+<text x="521" y="152" text-anchor="middle" class="dg-sublabel">mondi possibili</text>
+<rect x="598" y="112" width="154" height="56" rx="10" class="dg-node-primary"/>
+<text x="675" y="136" text-anchor="middle" class="dg-label">Ricerca online</text>
+<text x="675" y="152" text-anchor="middle" class="dg-sublabel">alterna calcolo e azione</text>
+<rect x="8" y="212" width="190" height="56" rx="10" class="dg-node"/>
+<text x="103" y="236" text-anchor="middle" class="dg-label">Hill climbing</text>
+<text x="103" y="252" text-anchor="middle" class="dg-sublabel">massimi locali, creste, plateau</text>
+<rect x="210" y="212" width="170" height="56" rx="10" class="dg-node"/>
+<text x="295" y="236" text-anchor="middle" class="dg-label">Simulated annealing</text>
+<text x="295" y="252" text-anchor="middle" class="dg-sublabel">accetta mosse peggiorative</text>
+<rect x="392" y="212" width="200" height="56" rx="10" class="dg-node"/>
+<text x="492" y="236" text-anchor="middle" class="dg-label">Algoritmi evolutivi</text>
+<text x="492" y="252" text-anchor="middle" class="dg-sublabel">popolazione, crossover, mutazione</text>
+<rect x="604" y="212" width="148" height="56" rx="10" class="dg-node-primary"/>
+<text x="678" y="236" text-anchor="middle" class="dg-label">LRTA*</text>
+<text x="678" y="252" text-anchor="middle" class="dg-sublabel">impara dall'esperienza</text>
+<rect x="524" y="310" width="228" height="56" rx="10" class="dg-node-accent"/>
+<text x="638" y="334" text-anchor="middle" class="dg-label">Apprendimento</text>
+<text x="638" y="350" text-anchor="middle" class="dg-sublabel">ponte verso il reinforcement learning</text>
+</svg>
+<figcaption>Mappa del capitolo 4 — cinque risposte agli ambienti che non collaborano, dalla ricerca locale alla ricerca online che apre all'apprendimento</figcaption>
+</figure>
+
 ## Quando conta la destinazione, non il viaggio
 
 In molti problemi la soluzione e' uno stato, non un cammino: nel rompicapo delle 8 regine interessa la configurazione finale della scacchiera, non la sequenza di mosse per costruirla. Lo stesso vale per il layout di circuiti integrati, il job-shop scheduling, la gestione di portafogli. Qui entra la ricerca locale: si parte da uno stato e ci si sposta tra stati vicini senza tenere traccia del percorso. Il prezzo e' la perdita di sistematicita' (nessuna garanzia di esplorare tutto lo spazio), il guadagno e' una memoria minima e la capacita' di lavorare in spazi enormi o infiniti.

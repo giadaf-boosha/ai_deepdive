@@ -17,6 +17,58 @@ Il banco di prova storico sono i giochi da tavolo: scacchi, Go, backgammon, poke
 
 Il filo conduttore e' che il calcolo esatto della mossa ottima e' quasi sempre fuori portata: l'albero di gioco degli scacchi supera i 10^40 nodi. Tutta la disciplina consiste quindi nel decidere che cosa non calcolare — quali rami potare, quando fermarsi, come stimare cio' che non si e' esplorato.
 
+<figure class="diagram">
+<svg viewBox="0 0 760 496" role="img" aria-label="Mappa concettuale del capitolo 5: dal gioco a somma zero e dall'albero di gioco a minimax, potatura alfa-beta e funzione di valutazione, con le estensioni expectiminimax e stati-credenza, fino alla ricerca Monte Carlo e ad AlphaZero">
+<defs><marker id="arr-c05" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="dg-arrow"/></marker></defs>
+<line x1="290" y1="68" x2="290" y2="93" class="dg-edge" marker-end="url(#arr-c05)"/>
+<line x1="404" y1="40" x2="630" y2="40" class="dg-edge"/>
+<line x1="630" y1="40" x2="630" y2="93" class="dg-edge" marker-end="url(#arr-c05)"/>
+<text x="517" y="32" text-anchor="middle" class="dg-edge-label">informazione nascosta</text>
+<line x1="290" y1="152" x2="290" y2="177" class="dg-edge-primary" marker-end="url(#arr-c05)"/>
+<line x1="290" y1="236" x2="290" y2="261" class="dg-edge-primary" marker-end="url(#arr-c05)"/>
+<line x1="290" y1="320" x2="290" y2="345" class="dg-edge-primary" marker-end="url(#arr-c05)"/>
+<line x1="290" y1="404" x2="290" y2="429" class="dg-edge" marker-end="url(#arr-c05)"/>
+<text x="372" y="421" text-anchor="middle" class="dg-edge-label">se stimare e' difficile</text>
+<line x1="390" y1="206" x2="512" y2="206" class="dg-edge" marker-end="url(#arr-c05)"/>
+<text x="451" y="198" text-anchor="middle" class="dg-edge-label">con il caso</text>
+<line x1="405" y1="376" x2="512" y2="376" class="dg-edge" marker-end="url(#arr-c05)"/>
+<text x="458" y="368" text-anchor="middle" class="dg-edge-label">due patologie</text>
+<line x1="405" y1="460" x2="512" y2="460" class="dg-edge" marker-end="url(#arr-c05)"/>
+<text x="458" y="452" text-anchor="middle" class="dg-edge-label">+ reti neurali</text>
+<rect x="176" y="12" width="228" height="56" rx="10" class="dg-node"/>
+<text x="290" y="36" text-anchor="middle" class="dg-label">Gioco a somma zero</text>
+<text x="290" y="52" text-anchor="middle" class="dg-sublabel">MAX contro MIN, turni alternati</text>
+<rect x="195" y="96" width="190" height="56" rx="10" class="dg-node"/>
+<text x="290" y="120" text-anchor="middle" class="dg-label">Albero di gioco</text>
+<text x="290" y="136" text-anchor="middle" class="dg-sublabel">scacchi: oltre 10^40 nodi</text>
+<rect x="515" y="96" width="230" height="56" rx="10" class="dg-node"/>
+<text x="630" y="120" text-anchor="middle" class="dg-label">Stati-credenza</text>
+<text x="630" y="136" text-anchor="middle" class="dg-sublabel">posizioni compatibili col percepito</text>
+<rect x="190" y="180" width="200" height="56" rx="10" class="dg-node-primary"/>
+<text x="290" y="204" text-anchor="middle" class="dg-label">Minimax</text>
+<text x="290" y="220" text-anchor="middle" class="dg-sublabel">ottimo nel caso peggiore, O(b^m)</text>
+<rect x="515" y="180" width="230" height="56" rx="10" class="dg-node"/>
+<text x="630" y="204" text-anchor="middle" class="dg-label">Expectiminimax</text>
+<text x="630" y="220" text-anchor="middle" class="dg-sublabel">nodi di casualita', valore atteso</text>
+<rect x="182" y="264" width="216" height="56" rx="10" class="dg-node-primary"/>
+<text x="290" y="288" text-anchor="middle" class="dg-label">Potatura alfa-beta</text>
+<text x="290" y="304" text-anchor="middle" class="dg-sublabel">stessa mossa, meno nodi: O(b^(m/2))</text>
+<rect x="175" y="348" width="230" height="56" rx="10" class="dg-node-primary"/>
+<text x="290" y="372" text-anchor="middle" class="dg-label">Funzione di valutazione</text>
+<text x="290" y="388" text-anchor="middle" class="dg-sublabel">fermarsi prima e stimare la posizione</text>
+<rect x="515" y="348" width="230" height="56" rx="10" class="dg-node"/>
+<text x="630" y="372" text-anchor="middle" class="dg-label">Patologie del taglio</text>
+<text x="630" y="388" text-anchor="middle" class="dg-sublabel">quiescenza, effetto orizzonte</text>
+<rect x="175" y="432" width="230" height="56" rx="10" class="dg-node"/>
+<text x="290" y="456" text-anchor="middle" class="dg-label">Ricerca Monte Carlo (MCTS)</text>
+<text x="290" y="472" text-anchor="middle" class="dg-sublabel">media di molte partite simulate</text>
+<rect x="515" y="432" width="230" height="56" rx="10" class="dg-node-accent"/>
+<text x="630" y="456" text-anchor="middle" class="dg-label">AlphaZero</text>
+<text x="630" y="472" text-anchor="middle" class="dg-sublabel">MCTS + reti neurali in self-play</text>
+</svg>
+<figcaption>Mappa del capitolo 5 — decidere che cosa non calcolare: da minimax alla potatura alfa-beta e alla valutazione euristica, fino a MCTS e AlphaZero</figcaption>
+</figure>
+
 ## Il gioco come problema formale
 
 Un gioco a due giocatori si definisce con pochi ingredienti: uno stato iniziale, una funzione che dice a chi tocca muovere, l'insieme delle mosse legali in ogni stato, un modello di transizione che calcola lo stato successivo, un test che riconosce la fine della partita e una funzione di utilita' che assegna un punteggio agli stati terminali (per gli scacchi: vittoria, pareggio, sconfitta). Da questi ingredienti nasce l'albero di gioco: la radice e' la posizione corrente e ogni livello — ogni "strato" o ply — corrisponde alla mossa di un giocatore.
@@ -26,6 +78,69 @@ I giochi piu' studiati sono quelli a somma zero con informazione perfetta: entra
 ## Minimax: assumere il peggio per scegliere il meglio
 
 L'algoritmo minimax formalizza un ragionamento che ogni giocatore da tavolo conosce: "se muovo qui, lui rispondera' con la mossa che mi fa piu' male, e allora io...". Il valore minimax di uno stato e' l'utilita' che MAX puo' garantirsi assumendo che entrambi giochino in modo ottimo da li' in poi: nei nodi terminali e' l'utilita' del gioco, nei nodi MAX e' il massimo dei valori dei successori, nei nodi MIN il minimo. L'algoritmo scende in profondita' fino alle foglie e "riporta su" i valori; alla radice, la mossa migliore e' quella che porta al successore con valore piu' alto.
+
+<figure class="diagram">
+<svg viewBox="0 0 760 300" role="img" aria-label="Albero di gioco minimax a due strati: la radice MAX A ha valore 3; i nodi MIN B, C e D hanno valori minimax 3, 2 e 2; le nove foglie terminali hanno utilita' 3, 12, 8, 2, 4, 6, 14, 5 e 2; la mossa migliore per MAX e' a1 e la risposta migliore per MIN e' b1">
+<defs><marker id="arr-c05-b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="dg-arrow"/></marker></defs>
+<line x1="380" y1="82" x2="160" y2="137" class="dg-edge-primary" marker-end="url(#arr-c05-b)"/>
+<text x="255" y="102" text-anchor="middle" class="dg-edge-label">a1</text>
+<line x1="380" y1="82" x2="380" y2="137" class="dg-edge" marker-end="url(#arr-c05-b)"/>
+<text x="392" y="112" text-anchor="middle" class="dg-edge-label">a2</text>
+<line x1="380" y1="82" x2="600" y2="137" class="dg-edge" marker-end="url(#arr-c05-b)"/>
+<text x="505" y="102" text-anchor="middle" class="dg-edge-label">a3</text>
+<line x1="160" y1="192" x2="90" y2="237" class="dg-edge-primary" marker-end="url(#arr-c05-b)"/>
+<text x="108" y="210" text-anchor="middle" class="dg-edge-label">b1</text>
+<line x1="160" y1="192" x2="160" y2="237" class="dg-edge" marker-end="url(#arr-c05-b)"/>
+<text x="172" y="218" text-anchor="middle" class="dg-edge-label">b2</text>
+<line x1="160" y1="192" x2="230" y2="237" class="dg-edge" marker-end="url(#arr-c05-b)"/>
+<text x="212" y="210" text-anchor="middle" class="dg-edge-label">b3</text>
+<line x1="380" y1="192" x2="310" y2="237" class="dg-edge" marker-end="url(#arr-c05-b)"/>
+<text x="328" y="210" text-anchor="middle" class="dg-edge-label">c1</text>
+<line x1="380" y1="192" x2="380" y2="237" class="dg-edge" marker-end="url(#arr-c05-b)"/>
+<text x="392" y="218" text-anchor="middle" class="dg-edge-label">c2</text>
+<line x1="380" y1="192" x2="450" y2="237" class="dg-edge" marker-end="url(#arr-c05-b)"/>
+<text x="432" y="210" text-anchor="middle" class="dg-edge-label">c3</text>
+<line x1="600" y1="192" x2="530" y2="237" class="dg-edge" marker-end="url(#arr-c05-b)"/>
+<text x="548" y="210" text-anchor="middle" class="dg-edge-label">d1</text>
+<line x1="600" y1="192" x2="600" y2="237" class="dg-edge" marker-end="url(#arr-c05-b)"/>
+<text x="612" y="218" text-anchor="middle" class="dg-edge-label">d2</text>
+<line x1="600" y1="192" x2="670" y2="237" class="dg-edge" marker-end="url(#arr-c05-b)"/>
+<text x="652" y="210" text-anchor="middle" class="dg-edge-label">d3</text>
+<text x="45" y="62" text-anchor="middle" class="dg-label">MAX</text>
+<text x="45" y="171" text-anchor="middle" class="dg-label">MIN</text>
+<rect x="350" y="30" width="60" height="52" rx="10" class="dg-node-primary"/>
+<text x="380" y="52" text-anchor="middle" class="dg-label">A</text>
+<text x="380" y="68" text-anchor="middle" class="dg-sublabel">3</text>
+<rect x="130" y="140" width="60" height="52" rx="10" class="dg-node-primary"/>
+<text x="160" y="162" text-anchor="middle" class="dg-label">B</text>
+<text x="160" y="178" text-anchor="middle" class="dg-sublabel">3</text>
+<rect x="350" y="140" width="60" height="52" rx="10" class="dg-node"/>
+<text x="380" y="162" text-anchor="middle" class="dg-label">C</text>
+<text x="380" y="178" text-anchor="middle" class="dg-sublabel">2</text>
+<rect x="570" y="140" width="60" height="52" rx="10" class="dg-node"/>
+<text x="600" y="162" text-anchor="middle" class="dg-label">D</text>
+<text x="600" y="178" text-anchor="middle" class="dg-sublabel">2</text>
+<rect x="68" y="240" width="44" height="40" rx="10" class="dg-node-accent"/>
+<text x="90" y="265" text-anchor="middle" class="dg-label">3</text>
+<rect x="138" y="240" width="44" height="40" rx="10" class="dg-node"/>
+<text x="160" y="265" text-anchor="middle" class="dg-label">12</text>
+<rect x="208" y="240" width="44" height="40" rx="10" class="dg-node"/>
+<text x="230" y="265" text-anchor="middle" class="dg-label">8</text>
+<rect x="288" y="240" width="44" height="40" rx="10" class="dg-node"/>
+<text x="310" y="265" text-anchor="middle" class="dg-label">2</text>
+<rect x="358" y="240" width="44" height="40" rx="10" class="dg-node"/>
+<text x="380" y="265" text-anchor="middle" class="dg-label">4</text>
+<rect x="428" y="240" width="44" height="40" rx="10" class="dg-node"/>
+<text x="450" y="265" text-anchor="middle" class="dg-label">6</text>
+<rect x="508" y="240" width="44" height="40" rx="10" class="dg-node"/>
+<text x="530" y="265" text-anchor="middle" class="dg-label">14</text>
+<rect x="578" y="240" width="44" height="40" rx="10" class="dg-node"/>
+<text x="600" y="265" text-anchor="middle" class="dg-label">5</text>
+<rect x="648" y="240" width="44" height="40" rx="10" class="dg-node"/>
+<text x="670" y="265" text-anchor="middle" class="dg-label">2</text>
+</svg>
+<figcaption>Albero di gioco a due strati: i valori minimax risalgono dalle foglie alla radice, la mossa migliore per MAX e' a1 e la risposta migliore per MIN e' b1 — schema ripreso dalla Figura 5.2 del cap. 5, AIMA 4a ed.</figcaption>
+</figure>
 
 Un dettaglio spesso trascurato: giocare la mossa minimax contro un avversario debole garantisce almeno il risultato calcolato, ma non e' sempre la scelta piu' redditizia. Contro un giocatore che difficilmente trovera' l'unica confutazione, una mossa "rischiosa" con nove esiti favorevoli su dieci puo' valere piu' di un pareggio certo. Il minimax e' ottimo nel senso del caso peggiore, non del valore atteso.
 

@@ -17,6 +17,63 @@ Il capitolo lavora in un mondo volutamente semplificato: ambienti a singolo agen
 
 La domanda centrale del capitolo e' doppia. Primo: come si trasforma un obiettivo vago ("voglio arrivare a Bucarest") in un problema formale su cui un algoritmo puo' lavorare? Secondo: tra i tanti modi di esplorare le alternative, quali strategie trovano una soluzione, quali trovano la soluzione migliore, e a quale costo in tempo e memoria?
 
+<figure class="diagram">
+<svg viewBox="0 0 760 470" role="img" aria-label="Mappa concettuale del capitolo 3: dall'agente risolutore di problemi alla formulazione del problema e all'albero di ricerca con la frontiera, fino allo schema best-first da cui derivano le strategie non informate, la ricerca greedy e A*, con la funzione euristica, le sue origini e le varianti a memoria limitata">
+<defs><marker id="arr-c03" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="dg-arrow"/></marker></defs>
+<line x1="310" y1="66" x2="160" y2="110" class="dg-edge" marker-end="url(#arr-c03)"/>
+<text x="215" y="84" text-anchor="middle" class="dg-edge-label">formula</text>
+<line x1="390" y1="66" x2="400" y2="110" class="dg-edge-primary" marker-end="url(#arr-c03)"/>
+<line x1="240" y1="136" x2="290" y2="136" class="dg-edge" marker-end="url(#arr-c03)"/>
+<line x1="640" y1="162" x2="618" y2="206" class="dg-edge" marker-end="url(#arr-c03)"/>
+<line x1="370" y1="162" x2="245" y2="206" class="dg-edge-primary" marker-end="url(#arr-c03)"/>
+<line x1="185" y1="258" x2="120" y2="302" class="dg-edge" marker-end="url(#arr-c03)"/>
+<text x="85" y="288" text-anchor="middle" class="dg-edge-label">senza euristica</text>
+<line x1="250" y1="258" x2="370" y2="302" class="dg-edge" marker-end="url(#arr-c03)"/>
+<line x1="315" y1="236" x2="525" y2="302" class="dg-edge" marker-end="url(#arr-c03)"/>
+<line x1="540" y1="258" x2="430" y2="302" class="dg-edge" marker-end="url(#arr-c03)"/>
+<line x1="605" y1="258" x2="605" y2="302" class="dg-edge" marker-end="url(#arr-c03)"/>
+<text x="672" y="283" text-anchor="middle" class="dg-edge-label">h ammissibile</text>
+<line x1="110" y1="354" x2="110" y2="398" class="dg-edge" marker-end="url(#arr-c03)"/>
+<text x="180" y="379" text-anchor="middle" class="dg-edge-label">compromesso</text>
+<line x1="605" y1="354" x2="605" y2="398" class="dg-edge" marker-end="url(#arr-c03)"/>
+<text x="678" y="379" text-anchor="middle" class="dg-edge-label">scambia garanzie</text>
+<rect x="260" y="14" width="240" height="52" rx="10" class="dg-node-primary"/>
+<text x="380" y="36" text-anchor="middle" class="dg-label">Agente risolutore di problemi</text>
+<text x="380" y="52" text-anchor="middle" class="dg-sublabel">simula sequenze di azioni</text>
+<rect x="40" y="110" width="200" height="52" rx="10" class="dg-node"/>
+<text x="140" y="132" text-anchor="middle" class="dg-label">Formulazione del problema</text>
+<text x="140" y="148" text-anchor="middle" class="dg-sublabel">stati, azioni, costi, obiettivo</text>
+<rect x="290" y="110" width="230" height="52" rx="10" class="dg-node-primary"/>
+<text x="405" y="132" text-anchor="middle" class="dg-label">Albero di ricerca</text>
+<text x="405" y="148" text-anchor="middle" class="dg-sublabel">la frontiera separa esplorato e ignoto</text>
+<rect x="550" y="110" width="195" height="52" rx="10" class="dg-node"/>
+<text x="647" y="132" text-anchor="middle" class="dg-label">Origine delle euristiche</text>
+<text x="647" y="148" text-anchor="middle" class="dg-sublabel">rilassamenti, pattern, landmark</text>
+<rect x="125" y="206" width="190" height="52" rx="10" class="dg-node-primary"/>
+<text x="220" y="228" text-anchor="middle" class="dg-label">Ricerca best-first</text>
+<text x="220" y="244" text-anchor="middle" class="dg-sublabel">espandi il nodo con f(n) minima</text>
+<rect x="510" y="206" width="190" height="52" rx="10" class="dg-node"/>
+<text x="605" y="228" text-anchor="middle" class="dg-label">Funzione euristica h(n)</text>
+<text x="605" y="244" text-anchor="middle" class="dg-sublabel">stima del costo residuo</text>
+<rect x="15" y="302" width="190" height="52" rx="10" class="dg-node"/>
+<text x="110" y="324" text-anchor="middle" class="dg-label">Strategie non informate</text>
+<text x="110" y="340" text-anchor="middle" class="dg-sublabel">ampiezza, profondita', Dijkstra</text>
+<rect x="292" y="302" width="186" height="52" rx="10" class="dg-node"/>
+<text x="385" y="324" text-anchor="middle" class="dg-label">Ricerca greedy</text>
+<text x="385" y="340" text-anchor="middle" class="dg-sublabel">f = h(n): veloce, non ottima</text>
+<rect x="510" y="302" width="190" height="52" rx="10" class="dg-node-accent"/>
+<text x="605" y="324" text-anchor="middle" class="dg-label">Ricerca A*</text>
+<text x="605" y="340" text-anchor="middle" class="dg-sublabel">f = g + h: completa e ottima</text>
+<rect x="10" y="398" width="200" height="52" rx="10" class="dg-node"/>
+<text x="110" y="420" text-anchor="middle" class="dg-label">Approfondimento iterativo</text>
+<text x="110" y="436" text-anchor="middle" class="dg-sublabel">memoria lineare, tempo O(b^d)</text>
+<rect x="500" y="398" width="210" height="52" rx="10" class="dg-node"/>
+<text x="605" y="420" text-anchor="middle" class="dg-label">Varianti a memoria limitata</text>
+<text x="605" y="436" text-anchor="middle" class="dg-sublabel">beam, IDA*, RBFS, SMA*</text>
+</svg>
+<figcaption>Mappa del capitolo 3 — dalla formulazione del problema allo schema best-first, che genera le strategie non informate, la greedy e A*</figcaption>
+</figure>
+
 ## Formulare il problema: stati, azioni e astrazione
 
 Prima di cercare bisogna definire cosa si cerca. Un problema di ricerca e' descritto da cinque ingredienti: lo spazio degli stati (tutte le configurazioni possibili dell'ambiente), lo stato iniziale, le azioni disponibili in ogni stato, un modello di transizione che dice in quale stato si finisce applicando un'azione, e una funzione di costo che assegna un prezzo a ogni azione. Uno o piu' stati sono designati come obiettivo. Una sequenza di azioni forma un cammino; una soluzione e' un cammino dallo stato iniziale a un obiettivo, e la soluzione ottima e' quella di costo minimo.
@@ -28,6 +85,43 @@ Il capitolo passa in rassegna problemi standardizzati (mondi a griglia, rompicap
 ## L'albero di ricerca e la frontiera
 
 Come si esplora concretamente uno spazio degli stati? Sovrapponendogli un albero di ricerca. La radice e' lo stato iniziale; espandere un nodo significa generare un figlio per ogni azione applicabile. I nodi generati ma non ancora espansi formano la frontiera, che separa la regione gia' esplorata da quella ancora sconosciuta: ogni cammino dallo stato iniziale verso l'esterno deve attraversarla.
+<figure class="diagram">
+<svg viewBox="0 0 760 310" role="img" aria-label="Albero di ricerca parziale per l'itinerario da Arad a Bucarest: la radice Arad e' stata espansa generando Sibiu, Timisoara e Zerind; poi e' stato espanso Sibiu, generando Arad, Fagaras, Oradea e Rimnicu Vilcea; i nodi non espansi formano la frontiera e il nodo Arad sotto Sibiu e' uno stato ripetuto dovuto a un ciclo">
+<defs><marker id="arr-c03-b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="dg-arrow"/></marker></defs>
+<line x1="355" y1="66" x2="245" y2="120" class="dg-edge-primary" marker-end="url(#arr-c03-b)"/>
+<line x1="400" y1="66" x2="465" y2="120" class="dg-edge" marker-end="url(#arr-c03-b)"/>
+<line x1="420" y1="66" x2="640" y2="120" class="dg-edge" marker-end="url(#arr-c03-b)"/>
+<line x1="205" y1="172" x2="105" y2="226" class="dg-edge" marker-end="url(#arr-c03-b)"/>
+<line x1="230" y1="172" x2="235" y2="226" class="dg-edge" marker-end="url(#arr-c03-b)"/>
+<line x1="260" y1="172" x2="360" y2="226" class="dg-edge" marker-end="url(#arr-c03-b)"/>
+<line x1="285" y1="172" x2="510" y2="226" class="dg-edge" marker-end="url(#arr-c03-b)"/>
+<rect x="330" y="14" width="100" height="52" rx="10" class="dg-node-primary"/>
+<text x="380" y="36" text-anchor="middle" class="dg-label">Arad</text>
+<text x="380" y="52" text-anchor="middle" class="dg-sublabel">espanso</text>
+<rect x="170" y="120" width="120" height="52" rx="10" class="dg-node-primary"/>
+<text x="230" y="142" text-anchor="middle" class="dg-label">Sibiu</text>
+<text x="230" y="158" text-anchor="middle" class="dg-sublabel">espanso</text>
+<rect x="415" y="120" width="130" height="52" rx="10" class="dg-node"/>
+<text x="480" y="142" text-anchor="middle" class="dg-label">Timisoara</text>
+<text x="480" y="158" text-anchor="middle" class="dg-sublabel">frontiera</text>
+<rect x="595" y="120" width="120" height="52" rx="10" class="dg-node"/>
+<text x="655" y="142" text-anchor="middle" class="dg-label">Zerind</text>
+<text x="655" y="158" text-anchor="middle" class="dg-sublabel">frontiera</text>
+<rect x="30" y="226" width="120" height="52" rx="10" class="dg-node"/>
+<text x="90" y="248" text-anchor="middle" class="dg-label">Arad</text>
+<text x="90" y="264" text-anchor="middle" class="dg-sublabel">stato ripetuto</text>
+<rect x="175" y="226" width="120" height="52" rx="10" class="dg-node"/>
+<text x="235" y="248" text-anchor="middle" class="dg-label">Fagaras</text>
+<text x="235" y="264" text-anchor="middle" class="dg-sublabel">frontiera</text>
+<rect x="320" y="226" width="120" height="52" rx="10" class="dg-node"/>
+<text x="380" y="248" text-anchor="middle" class="dg-label">Oradea</text>
+<text x="380" y="264" text-anchor="middle" class="dg-sublabel">frontiera</text>
+<rect x="465" y="226" width="130" height="52" rx="10" class="dg-node"/>
+<text x="530" y="248" text-anchor="middle" class="dg-label">Rimnicu Vilcea</text>
+<text x="530" y="264" text-anchor="middle" class="dg-sublabel">frontiera</text>
+</svg>
+<figcaption>Albero di ricerca parziale da Arad a Bucarest dopo l'espansione di Arad e Sibiu: i nodi non espansi formano la frontiera e il ciclo Arad-Sibiu-Arad genera uno stato ripetuto — schema ripreso dalla figura 3.4 del cap. 3, AIMA 4a ed.</figcaption>
+</figure>
 
 Lo schema generale e' la ricerca best-first: a ogni passo si estrae dalla frontiera il nodo che minimizza una funzione di valutazione f(n) e lo si espande. Cambiando f si ottengono quasi tutti gli algoritmi del capitolo, il che rende questo schema una specie di stampo universale. La frontiera si implementa con una coda: con priorita' per best-first, FIFO per la ricerca in ampiezza, LIFO per quella in profondita'.
 
