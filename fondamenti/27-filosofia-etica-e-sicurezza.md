@@ -17,6 +17,59 @@ Sono tre livelli di discussione distinti ma intrecciati. Il primo e' filosofico:
 
 La tesi di fondo del capitolo e' pragmatica: le dispute filosofiche sulla coscienza delle macchine restano aperte ma non bloccano la ricerca, mentre le questioni etiche e di sicurezza sono urgenti e concrete, perche' i sistemi di AI prendono gia' oggi decisioni con conseguenze reali sulle persone.
 
+<figure class="diagram">
+<svg viewBox="0 0 760 420" role="img" aria-label="Mappa concettuale del capitolo 27: dalle questioni filosofiche su IA debole e IA forte agli obblighi etici su armi autonome, privacy, equita' e lavoro, fino al percorso di sicurezza che va dalla funzione obiettivo errata al problema di Re Mida e ai giochi di assistenza">
+<defs><marker id="arr-c27" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="dg-arrow"/></marker></defs>
+<line x1="390" y1="68" x2="82" y2="104" class="dg-edge" marker-end="url(#arr-c27)"/>
+<line x1="390" y1="68" x2="226" y2="104" class="dg-edge" marker-end="url(#arr-c27)"/>
+<text x="200" y="84" text-anchor="middle" class="dg-edge-label">filosofia</text>
+<line x1="395" y1="68" x2="409" y2="104" class="dg-edge" marker-end="url(#arr-c27)"/>
+<line x1="390" y1="68" x2="650" y2="104" class="dg-edge-primary" marker-end="url(#arr-c27)"/>
+<text x="540" y="84" text-anchor="middle" class="dg-edge-label">ingegneria</text>
+<line x1="410" y1="164" x2="97" y2="204" class="dg-edge" marker-end="url(#arr-c27)"/>
+<line x1="410" y1="164" x2="280" y2="204" class="dg-edge" marker-end="url(#arr-c27)"/>
+<line x1="410" y1="164" x2="483" y2="204" class="dg-edge" marker-end="url(#arr-c27)"/>
+<line x1="410" y1="164" x2="381" y2="304" class="dg-edge" marker-end="url(#arr-c27)"/>
+<line x1="655" y1="164" x2="655" y2="204" class="dg-edge-primary" marker-end="url(#arr-c27)"/>
+<line x1="655" y1="264" x2="655" y2="304" class="dg-edge-primary" marker-end="url(#arr-c27)"/>
+<text x="702" y="289" text-anchor="middle" class="dg-edge-label">risposta</text>
+<rect x="270" y="12" width="240" height="56" rx="10" class="dg-node-primary"/>
+<text x="390" y="36" text-anchor="middle" class="dg-label">Filosofia, etica e sicurezza</text>
+<text x="390" y="52" text-anchor="middle" class="dg-sublabel">tre livelli di discussione</text>
+<rect x="8" y="108" width="134" height="56" rx="10" class="dg-node"/>
+<text x="75" y="132" text-anchor="middle" class="dg-label">IA debole</text>
+<text x="75" y="148" text-anchor="middle" class="dg-sublabel">informalita', Goedel</text>
+<rect x="156" y="108" width="140" height="56" rx="10" class="dg-node"/>
+<text x="226" y="132" text-anchor="middle" class="dg-label">IA forte</text>
+<text x="226" y="148" text-anchor="middle" class="dg-sublabel">stanza cinese, qualia</text>
+<rect x="310" y="108" width="200" height="56" rx="10" class="dg-node"/>
+<text x="410" y="132" text-anchor="middle" class="dg-label">Obblighi etici e sociali</text>
+<text x="410" y="148" text-anchor="middle" class="dg-sublabel">usare bene una tecnologia potente</text>
+<rect x="558" y="108" width="194" height="56" rx="10" class="dg-node-primary"/>
+<text x="655" y="132" text-anchor="middle" class="dg-label">Funzione obiettivo errata</text>
+<text x="655" y="148" text-anchor="middle" class="dg-sublabel">effetti collaterali inattesi</text>
+<rect x="8" y="208" width="170" height="56" rx="10" class="dg-node"/>
+<text x="93" y="232" text-anchor="middle" class="dg-label">Armi letali autonome</text>
+<text x="93" y="248" text-anchor="middle" class="dg-sublabel">scalabili, tecnologia duale</text>
+<rect x="190" y="208" width="176" height="56" rx="10" class="dg-node"/>
+<text x="278" y="232" text-anchor="middle" class="dg-label">Sorveglianza e privacy</text>
+<text x="278" y="248" text-anchor="middle" class="dg-sublabel">privacy differenziale</text>
+<rect x="410" y="208" width="150" height="56" rx="10" class="dg-node"/>
+<text x="485" y="232" text-anchor="middle" class="dg-label">Equita' e fiducia</text>
+<text x="485" y="248" text-anchor="middle" class="dg-sublabel">criteri in tensione, XAI</text>
+<rect x="567" y="208" width="176" height="56" rx="10" class="dg-node-primary"/>
+<text x="655" y="232" text-anchor="middle" class="dg-label">Problema di Re Mida</text>
+<text x="655" y="248" text-anchor="middle" class="dg-sublabel">allineamento dei valori</text>
+<rect x="288" y="308" width="184" height="56" rx="10" class="dg-node"/>
+<text x="380" y="332" text-anchor="middle" class="dg-label">Lavoro e disuguaglianza</text>
+<text x="380" y="348" text-anchor="middle" class="dg-sublabel">conta il ritmo del cambiamento</text>
+<rect x="560" y="308" width="190" height="56" rx="10" class="dg-node-accent"/>
+<text x="655" y="332" text-anchor="middle" class="dg-label">Giochi di assistenza</text>
+<text x="655" y="348" text-anchor="middle" class="dg-sublabel">preferenze apprese, incertezza</text>
+</svg>
+<figcaption>Mappa del capitolo 27 — i tre livelli del capitolo e il percorso di sicurezza dalla funzione obiettivo errata ai giochi di assistenza</figcaption>
+</figure>
+
 ## Cosa non possono fare le macchine: le obiezioni classiche
 
 Nel 1980 John Searle distingue tra IA debole, l'ipotesi che le macchine possano comportarsi come se fossero intelligenti, e IA forte, l'ipotesi che le macchine che lo fanno pensino realmente. Gia' Turing, nel 1950, aveva anticipato quasi tutte le obiezioni alla prima ipotesi.

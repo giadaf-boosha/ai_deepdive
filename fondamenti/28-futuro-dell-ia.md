@@ -17,6 +17,62 @@ La maggior parte degli esperti si aspetta che i progressi continuino: le stime m
 
 Gli autori affrontano la domanda su due piani. Prima passano in rassegna i singoli componenti di un sistema di IA, chiedendosi per ciascuno se possa accelerare o frenare il progresso complessivo. Poi salgono di livello e ragionano sulle architetture: come combinare quei componenti in agenti che funzionino davvero nel mondo reale, sotto vincoli di tempo e di risorse computazionali.
 
+<figure class="diagram">
+<svg viewBox="0 0 760 460" role="img" aria-label="Mappa concettuale del capitolo 28: l'IA come assemblaggio di componenti — selezione delle azioni, sensori e attuatori, rappresentazione del mondo, apprendimento — e il percorso dalle architetture di agenti al metaragionamento, all'ottimalita' limitata e all'IA generale">
+<defs><marker id="arr-c28" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="dg-arrow"/></marker></defs>
+<line x1="380" y1="68" x2="96" y2="97" class="dg-edge" marker-end="url(#arr-c28)"/>
+<line x1="380" y1="68" x2="289" y2="97" class="dg-edge" marker-end="url(#arr-c28)"/>
+<line x1="380" y1="68" x2="482" y2="97" class="dg-edge" marker-end="url(#arr-c28)"/>
+<line x1="380" y1="68" x2="672" y2="97" class="dg-edge" marker-end="url(#arr-c28)"/>
+<line x1="380" y1="68" x2="380" y2="197" class="dg-edge-primary" marker-end="url(#arr-c28)"/>
+<text x="452" y="184" text-anchor="middle" class="dg-edge-label">come combinarli</text>
+<line x1="96" y1="156" x2="96" y2="197" class="dg-edge" marker-end="url(#arr-c28)"/>
+<text x="192" y="183" text-anchor="middle" class="dg-edge-label">che cosa ottimizzare?</text>
+<line x1="672" y1="197" x2="672" y2="159" class="dg-edge" marker-end="url(#arr-c28)"/>
+<text x="618" y="182" text-anchor="middle" class="dg-edge-label">alimentano</text>
+<line x1="672" y1="256" x2="672" y2="297" class="dg-edge" marker-end="url(#arr-c28)"/>
+<text x="612" y="282" text-anchor="middle" class="dg-edge-label">il vero salto</text>
+<line x1="380" y1="256" x2="380" y2="297" class="dg-edge-primary" marker-end="url(#arr-c28)"/>
+<text x="474" y="282" text-anchor="middle" class="dg-edge-label">metaragionamento</text>
+<line x1="380" y1="356" x2="380" y2="387" class="dg-edge-primary" marker-end="url(#arr-c28)"/>
+<text x="498" y="378" text-anchor="middle" class="dg-edge-label">oltre i compiti ristretti</text>
+<rect x="280" y="12" width="200" height="56" rx="10" class="dg-node-primary"/>
+<text x="380" y="36" text-anchor="middle" class="dg-label">Agenti razionali</text>
+<text x="380" y="52" text-anchor="middle" class="dg-sublabel">assemblaggio di componenti</text>
+<rect x="8" y="100" width="176" height="56" rx="10" class="dg-node"/>
+<text x="96" y="124" text-anchor="middle" class="dg-label">Selezione delle azioni</text>
+<text x="96" y="140" text-anchor="middle" class="dg-sublabel">orizzonti lunghi, gerarchie</text>
+<rect x="206" y="100" width="166" height="56" rx="10" class="dg-node"/>
+<text x="289" y="124" text-anchor="middle" class="dg-label">Sensori e attuatori</text>
+<text x="289" y="140" text-anchor="middle" class="dg-sublabel">robotica come i PC anni '80</text>
+<rect x="394" y="100" width="176" height="56" rx="10" class="dg-node"/>
+<text x="482" y="124" text-anchor="middle" class="dg-label">Rappresentare il mondo</text>
+<text x="482" y="140" text-anchor="middle" class="dg-sublabel">manca un formato generale</text>
+<rect x="592" y="100" width="160" height="56" rx="10" class="dg-node"/>
+<text x="672" y="124" text-anchor="middle" class="dg-label">Apprendimento</text>
+<text x="672" y="140" text-anchor="middle" class="dg-sublabel">meno supervisione</text>
+<rect x="8" y="200" width="176" height="56" rx="10" class="dg-node"/>
+<text x="96" y="224" text-anchor="middle" class="dg-label">Preferenze incerte</text>
+<text x="96" y="240" text-anchor="middle" class="dg-sublabel">rinforzo inverso, clic</text>
+<rect x="285" y="200" width="190" height="56" rx="10" class="dg-node-primary"/>
+<text x="380" y="224" text-anchor="middle" class="dg-label">Architetture di agenti</text>
+<text x="380" y="240" text-anchor="middle" class="dg-sublabel">simbolico + connessionista</text>
+<rect x="592" y="200" width="160" height="56" rx="10" class="dg-node"/>
+<text x="672" y="224" text-anchor="middle" class="dg-label">Dati e calcolo</text>
+<text x="672" y="240" text-anchor="middle" class="dg-sublabel">non il collo di bottiglia</text>
+<rect x="285" y="300" width="190" height="56" rx="10" class="dg-node-primary"/>
+<text x="380" y="324" text-anchor="middle" class="dg-label">Ottimalita' limitata</text>
+<text x="380" y="340" text-anchor="middle" class="dg-sublabel">il miglior programma eseguibile</text>
+<rect x="592" y="300" width="160" height="56" rx="10" class="dg-node"/>
+<text x="672" y="324" text-anchor="middle" class="dg-label">Modelli condivisi</text>
+<text x="672" y="340" text-anchor="middle" class="dg-sublabel">pre-addestrati via API</text>
+<rect x="270" y="390" width="220" height="56" rx="10" class="dg-node-accent"/>
+<text x="380" y="414" text-anchor="middle" class="dg-label">IA generale</text>
+<text x="380" y="430" text-anchor="middle" class="dg-sublabel">manca maturita' ingegneristica</text>
+</svg>
+<figcaption>Mappa del capitolo 28 — dai componenti dell'agente alle architetture, fino all'ottimalita' limitata e all'IA generale</figcaption>
+</figure>
+
 ## Il corpo dell'agente: sensori e attuatori maturano
 
 Per decenni i sistemi di IA sono vissuti quasi solo nel software: input e output passavano comunque per mani umane, mentre la robotica restava confinata a compiti di basso livello. La ragione era duplice: costruire robot affidabili costava troppo, e ne' la potenza di calcolo ne' gli algoritmi erano in grado di digerire flussi percettivi ad alta larghezza di banda come il video.
