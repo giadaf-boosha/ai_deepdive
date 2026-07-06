@@ -13,3 +13,6 @@ venv/
 *.tmp
 *.log
 .vercel
+
+# Materiale protetto da copyright: mai committare
+*.pdf
