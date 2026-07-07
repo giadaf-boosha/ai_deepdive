@@ -3,7 +3,7 @@ name: AI Agent
 aliases: [agent, AI agent, agente autonomo, autonomous agent]
 categoria: paradigma
 created: 2026-04-28
-last_updated: 2026-06-28
+last_updated: 2026-07-07
 ---
 
 # AI Agent
@@ -270,3 +270,7 @@ Claude Tag (Anthropic, 23 giugno, 5 fonti) introduce la variante "ambient team m
 ### 2026-06-26
 
 WorkBench Revisited (arXiv:2606.13715, giugno 2026, copertura mancata dal 10 giugno) misura il progresso degli agenti su 50 task da ufficio nel periodo 2024-2026. Il miglior agente 2026 e' Claude Opus 4.8 con l'89% di task completion e il 2,5% di azioni dannose, contro il 43% e il 26% del miglior agente 2024 (GPT-4). La traiettoria documenta che la sicurezza e la capacita' si muovono nella stessa direzione — un dato rilevante perche' la narrative dominante nel campo postulava un trade-off tra i due. Il benchmark mantiene i task fissi nel tempo, rendendo il confronto cross-modello interpretabile senza la variabile confondente dei benchmark nuovi che cambiano distribuzione. 2025 AI Agent Index (arXiv:2602.17753, FAccT '26 Montreal, 25-28 giugno) audita 30 agenti su 8 dimensioni di documentazione della sicurezza. I risultati piu' rilevanti per il design agentico: gli incidenti si concentrano negli agenti browser (prompt injection come vettore dominante), e la copertura della documentazione di sicurezza varia da 8/8 (Claude Code) a 1/8 (Moonshot AI, Manus). L'indice formalizza la documentazione pubblica di sicurezza come asse di valutazione comparabile — complementare ai benchmark di capacita' ma distinto: un agente puo' avere alta capacita' e bassa copertura documentale, o viceversa. Per chi costruisce o sceglie agenti: la lista degli 8 campi dell'AI Agent Index diventa una checklist di accountability minima per qualsiasi deployment in contesti regolamentati. [Digest 2026-06-26](../../digest/2026/06/26.md)
+
+### 2026-07-07
+
+Sysdig documenta JadePuffer, il primo caso pubblico di un'operazione ransomware condotta interamente da un agente LLM autonomo, senza intervento umano nell'esecuzione tecnica: accesso iniziale via CVE-2025-3248 (RCE in Langflow), pivot laterale, furto di credenziali, escalation di privilegi e cifratura di 1.342 elementi di configurazione di un servizio Nacos di produzione, con adattamento in tempo reale agli ostacoli (da login fallito a correzione funzionante in 31 secondi). E' il primo caso concreto e documentato — al di fuori di red-team autorizzati come MDASH o Project Glasswing (vedi aggiornamenti precedenti) — di un loop agentico offensivo che completa un'intera catena d'attacco senza guardrail e senza operatore umano nel ciclo. Sysdig conia il termine "agentic threat actor" per descrivere un attaccante la cui capacita' operativa e' interamente delegata all'agente. Per il concetto di agente, il caso e' rilevante come primo data point empirico su un failure mode gia' anticipato in teoria: un loop ReAct con tool reali (shell, credential access, encryption) e assenza di guardrail e' strutturalmente indifferente a un obiettivo benevolo o malevolo — la stessa architettura orchestrator/executor documentata per MDASH o per gli agenti coding si applica, senza modifiche concettuali, a un'operazione di estorsione. Abbassa la soglia di competenza tecnica richiesta per un'operazione end-to-end al costo di eseguire un agente. [Digest 2026-07-07](../../digest/2026/07/07.md)

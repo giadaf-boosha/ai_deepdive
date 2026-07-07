@@ -3,7 +3,7 @@ name: Inference
 aliases: [inference, inferenza, serving, generation, decoding]
 categoria: infrastruttura
 created: 2026-04-28
-last_updated: 2026-07-03
+last_updated: 2026-07-07
 ---
 
 # Inference
@@ -223,3 +223,7 @@ Due sviluppi distinti avanzano il fronte dell'ottimizzazione dell'inference. Com
 ### 2026-07-03
 
 DSpark (DeepSeek + Peking University, 27 giugno, arXiv:2606.19348) porta il confidence-scheduled speculative decoding in produzione su DeepSeek-V4-Pro e V4-Flash: il draft model propone 6 token per passo, il modello target verifica in un singolo forward pass parallelo, con la soglia di accettazione adattata dinamicamente alla confidenza del draft. Il risultato misurato e' uno speedup del 57–85% per singolo utente e un aumento del throughput batch del 51–400%. Il checkpoint e' disponibile su Hugging Face con licenza MIT. Il contributo tecnico rispetto allo speculative decoding standard (Leviathan et al., 2022) e' la schedulazione adattiva della confidenza: invece di una soglia fissa di accettazione, DSpark calibra il budget di verifica in base all'incertezza stimata del draft, riducendo i false reject su token ad alta confidenza. Together AI chiude un Series C da $800 milioni a $8,3 miliardi di valutazione (1 luglio, guidato da Aramco Ventures) con bookings annui a $1,15 miliardi e volume open-source triplicato nell'ultimo anno. Together e' il neocloud di riferimento per l'inference su modelli open-weight (Llama, Mistral, Qwen, DeepSeek): il round consolida l'ipotesi che il mercato dell'inference per modelli open-source sia abbastanza grande da sostenere un'azienda a valutazione multi-miliardaria indipendente dai provider frontier. [Digest 2026-07-03](../../digest/2026/07/03.md)
+
+### 2026-07-07
+
+Baseten chiude una Series F da $1,5 miliardi (22 giugno, missed coverage) a una valutazione fino a $13 miliardi, guidato da Altimeter Capital, Conviction e Spark Capital: ricavi cresciuti 20x anno su anno, oltre 1 miliardo di chiamate di inferenza al giorno su 87 cluster distribuiti su 18 cloud provider. Il salto rispetto al round precedente ($300M a $5B, gennaio 2026) e il confronto diretto con Together AI ($8,3B, coperto 3 luglio) consolidano lo stesso pattern: il layer di serving/inferenza indipendente dai lab frontier — non i modelli, non l'hardware — attrae valutazioni multi-miliardarie proprie, con la crescita dei ricavi trainata dal volume assoluto di chiamate servite piuttosto che da un'unica innovazione tecnica di prodotto. [Digest 2026-07-07](../../digest/2026/07/07.md)
