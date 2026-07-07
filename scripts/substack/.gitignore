@@ -1,0 +1,4 @@
+out/
+.secrets/
+__pycache__/
+*.pyc

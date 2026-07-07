@@ -120,10 +120,10 @@ Layer web in `web/` (Next.js 15 App Router, TypeScript, Tailwind) deployato su V
 
 ### 3.8 Fondamenti di AI (aggiunto 2026-07-06)
 
-Sezione teorica del sito: 7 parti / 28 capitoli speculari a Russell & Norvig, *Intelligenza Artificiale: Un Approccio Moderno*, 4a ed. italiana (Pearson, Vol. 1 2021 + Vol. 2 2022).
+Sezione teorica del sito: 7 parti / 28 capitoli, dal test di Turing al futuro dell'AI. Sintesi originali in italiano.
 
-- **Contenuti**: `fondamenti/NN-<slug>.md` in root repo (fuori da `kb/` per non interferire con il `git add digest/ kb/` della routine daily). Frontmatter: `titolo, capitolo, parte, volume, pagine, concetti, created, last_updated`. Indice e tabella capitolo→volume/pagine in `fondamenti/README.md`.
-- **Vincolo copyright**: prosa originale in italiano, nessuna riproduzione verbatim del testo Pearson, attribuzione (volume, capitolo, pagine) sempre presente in `## Riferimenti`.
+- **Contenuti**: `fondamenti/NN-<slug>.md` in root repo (fuori da `kb/` per non interferire con il `git add digest/ kb/` della routine daily). Frontmatter: `titolo, capitolo, parte, concetti, created, last_updated`. Indice e format capitolo in `fondamenti/README.md`.
+- **Originalità e attribuzione**: le pagine rese sono contenuto originale senza riferimenti alla fonte nel corpo; un'unica attribuzione dell'opera di riferimento (Russell & Norvig, *Intelligenza Artificiale: Un Approccio Moderno*, 4a ed., Pearson) è in coda alla pagina indice `/fondamenti`.
 - **Web**: route `/fondamenti` (indice per parti, con mappa del percorso SVG) e `/fondamenti/[slug]` (capitolo con TOC, prev/next). Loader `web/lib/fondamenti.ts`; cross-link bidirezionali con la KB via `web/lib/relations.ts` (slug espliciti nel frontmatter + match testuale con soglia).
 - **Diagrammi**: ogni capitolo apre con una mappa concettuale SVG inline (dopo l'introduzione, prima del primo h2); i 13 capitoli con figure canoniche del libro hanno anche uno schema dedicato (ciclo agente-ambiente, albero di ricerca, minimax, grafo di vincoli, mondo del wumpus, azione PDDL, rete bayesiana, modello temporale, griglia MDP, albero di decisione, rete feed-forward, ciclo RL, attention). Vocabolario grafico condiviso: classi `dg-*` in `web/app/globals.css` (colori da CSS vars, light/dark automatico); niente stili hardcoded negli SVG; `role="img"` + `aria-label` obbligatori. Fedelta': ogni nodo/etichetta deriva dal testo del capitolo (a sua volta verificato contro il libro).
 - **Manutenzione**: contenuti statici, non toccati dalle routine; aggiornamenti manuali o via sessioni dedicate.
@@ -131,6 +131,15 @@ Sezione teorica del sito: 7 parti / 28 capitoli speculari a Russell & Norvig, *I
 ### 3.9 Routine settimanale radar (aggiunto 2026-05-31)
 
 `ai-deepdive-weekly-radar` aggiorna `web/data/models.json` ogni domenica alle 08:00 Europe/Rome (cron `0 6 * * 0` UTC, guard `RADAR_UPDATE`). Ricerca web su fonti ufficiali dei vendor, aggiorna campi + changelog, valida con `tsc --noEmit`, committa e pusha (Vercel ricostruisce). Prompt e body in `automations/weekly-radar-*`. Non modifica file fuori da `web/data/models.json`.
+
+### 3.10 Pubblicazione su Substack (aggiunto 2026-07-07)
+
+Pipeline per portare i capitoli Fondamenti sulla newsletter Substack *Minimum Viable Knowledge* (giadaf.substack.com) come serie a pagamento "Fondamenti di AI".
+
+- **Vincolo piattaforma**: Substack non ha API pubblica di scrittura (il Developer API 2025 è solo lettura). La pubblicazione programmatica passa solo da librerie non ufficiali (`ma2za/python-substack`) autenticate con cookie di sessione — zona grigia sui ToS. Substack non importa Markdown né SVG.
+- **Modalità scelta**: solo bozze via API (nessuna pubblicazione automatica); l'autrice rivede e pubblica manualmente. Post `only_paid`, assegnati alla Section "Fondamenti di AI".
+- **Fase 1 (in repo)**: `scripts/substack/convert.py` converte ogni `fondamenti/NN-<slug>.md` in un pacchetto `out/NN-<slug>/` (`post.json` a blocchi + `images/*.png` + `preview.html`): SVG rasterizzati in PNG con rsvg-convert (CSS tema chiaro iniettato, sfondo bianco), link relativi riscritti in assoluti verso aideepdive.vercel.app, attribuzione in coda a ogni articolo. Output e credenziali gitignored.
+- **Fase 2 (fuori repo, richiede accesso)**: `scripts/substack/publish.py` mappa `post.json` sul builder ProseMirror di python-substack, carica i PNG, crea le bozze `only_paid` nella Section. Cookie di sessione fornito come segreto locale (mai committato). Pilota (cap. 1) → validazione → batch dei restanti 27.
 
 ## 4. Requisiti non funzionali
 

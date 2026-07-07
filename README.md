@@ -68,8 +68,14 @@ ai_deepdive/
 ├── fondamenti/
 │   ├── README.md             ← indice 7 parti + format capitolo
 │   └── NN-<slug>.md          ← un file per capitolo (28, sintesi originali)
+├── scripts/
+│   └── substack/             ← pipeline capitoli → Substack (convert.py; out/ e .secrets/ gitignored)
 └── web/                      ← layer Next.js deployato su Vercel (app/, lib/, components/, data/)
 ```
+
+## Pubblicazione su Substack
+
+I capitoli Fondamenti possono essere pubblicati come serie a pagamento sulla newsletter Substack [*Minimum Viable Knowledge*](https://giadaf.substack.com/). Substack non ha API pubblica di scrittura né importa Markdown/SVG, quindi la pipeline in [`scripts/substack/`](./scripts/substack) opera in due fasi: `convert.py` trasforma ogni capitolo in un pacchetto pubblicabile (`post.json` a blocchi + diagrammi rasterizzati in PNG + `preview.html`), poi `publish.py` (via la libreria non ufficiale `python-substack`, autenticata con un cookie di sessione fornito come segreto locale) crea le **bozze** `only_paid` nella Section "Fondamenti di AI" — la pubblicazione resta un'azione manuale dell'autrice. Output e credenziali sono gitignored.
 
 ## Fonti monitorate
 
