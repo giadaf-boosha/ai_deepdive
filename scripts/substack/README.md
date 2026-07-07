@@ -39,13 +39,15 @@ python3 -m venv .venv
 ```
 
 1. **Crea la Section** "Fondamenti di AI" su Substack: Settings → Sections → New section.
-2. **Estrai il cookie di sessione**: fai login su substack.com, apri DevTools (F12) →
-   Application → Cookies → `https://substack.com` → copia il valore di `connect.sid`
-   (e `substack.sid` se presente).
+2. **Estrai il cookie di sessione** (metodo più affidabile — prende tutti i cookie giusti,
+   `substack.sid` incluso): fai login su substack.com, apri DevTools (F12) → tab **Network** →
+   clicca una qualsiasi richiesta a `substack.com` → sezione **Request Headers** → copia
+   l'**intero valore** dell'header `Cookie:` (una stringa lunga tipo `ajs_anonymous_id=...;
+   substack.sid=...; connect.sid=...`).
 3. **Configura** (file gitignored):
    ```bash
    mkdir -p .secrets && cp config.example.json .secrets/config.json
-   # incolla il cookie in .secrets/config.json
+   # incolla la stringa Cookie in "cookies_string" dentro .secrets/config.json
    ```
 4. **Crea le bozze**:
    ```bash

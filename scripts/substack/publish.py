@@ -44,7 +44,14 @@ def load_config():
     cfg = json.load(open(SECRETS, encoding="utf-8"))
     if not cfg.get("publication_url"):
         sys.exit("config.json: 'publication_url' mancante.")
-    if not (cfg.get("cookies_string") or (cfg.get("email") and cfg.get("password"))):
+    cookies = (cfg.get("cookies_string") or "").strip()
+    if "INSERISCI_QUI" in cookies or "INCOLLA_QUI" in cookies:
+        sys.exit(
+            "config.json: non hai ancora inserito il cookie (c'e' ancora il segnaposto).\n"
+            "Apri substack.com loggata -> DevTools (F12) -> tab Network -> clicca una richiesta a\n"
+            "substack.com -> Request Headers -> copia l'INTERO valore dell'header 'Cookie:' e\n"
+            "incollalo in 'cookies_string' in .secrets/config.json.")
+    if not (cookies or (cfg.get("email") and cfg.get("password"))):
         sys.exit("config.json: fornisci 'cookies_string' oppure 'email'+'password'.")
     return cfg
 
@@ -117,11 +124,16 @@ def build_post(api, user_id, sections, data, base_dir):
 def main():
     arg = sys.argv[1] if len(sys.argv) > 1 else "01"
     cfg = load_config()
-    api = Api(
-        email=cfg.get("email"), password=cfg.get("password"),
-        cookies_string=cfg.get("cookies_string"),
-        publication_url=cfg["publication_url"],
-    )
+    try:
+        api = Api(
+            email=(cfg.get("email") or None), password=(cfg.get("password") or None),
+            cookies_string=(cfg.get("cookies_string") or None),
+            publication_url=cfg["publication_url"],
+        )
+    except SubstackAPIException as e:
+        sys.exit(f"Autenticazione fallita ({e}).\n"
+                 "Il cookie e' scaduto o incompleto. Ri-copia l'INTERO header 'Cookie:' di\n"
+                 "una richiesta a substack.com (DevTools -> Network) in .secrets/config.json.")
     user_id = api.get_user_id()
     sections = api.get_sections()
     if not any(s.get("name") == SECTION_NAME for s in sections):
