@@ -2,8 +2,6 @@
 titolo: Robotica
 capitolo: 26
 parte: 6
-volume: 2
-pagine: "283-338"
 concetti: [agent, world-models, rlhf, multi-agent-orchestration]
 created: 2026-07-06
 last_updated: 2026-07-06
@@ -11,7 +9,7 @@ last_updated: 2026-07-06
 
 # Robotica
 
-Un robot e' un agente con un corpo: percepisce il mondo fisico attraverso sensori e lo modifica attraverso attuatori. La domanda che attraversa tutto il capitolo e' come colmare l'enorme distanza tra i due estremi del problema: da un lato flussi grezzi di pixel e letture laser, dall'altro correnti elettriche da inviare ai motori, e in mezzo obiettivi di alto livello come "porta il pasto al paziente". Nessun capitolo del libro mette cosi' tanto alla prova, tutte insieme, le tecniche viste in precedenza: stima probabilistica dello stato, ricerca, MDP e POMDP, teoria dei giochi, apprendimento per rinforzo.
+Un robot e' un agente con un corpo: percepisce il mondo fisico attraverso sensori e lo modifica attraverso attuatori. La domanda che attraversa tutto il capitolo e' come colmare l'enorme distanza tra i due estremi del problema: da un lato flussi grezzi di pixel e letture laser, dall'altro correnti elettriche da inviare ai motori, e in mezzo obiettivi di alto livello come "porta il pasto al paziente". Nessun altro capitolo mette cosi' tanto alla prova, tutte insieme, le tecniche viste in precedenza: stima probabilistica dello stato, ricerca, MDP e POMDP, teoria dei giochi, apprendimento per rinforzo.
 
 La robotica e' anche il banco di prova piu' severo per l'IA perche' il mondo reale non concede sconti. Gli ambienti sono parzialmente osservabili e stocastici, gli spazi di stati e azioni sono continui e ad alta dimensionalita', il tempo non si puo' accelerare come in simulazione e gli errori hanno costi fisici: un braccio che stringe troppo rompe la lampadina, un'auto che sbaglia una predizione mette in pericolo persone. Per questo i ricercatori scompongono il problema in strati (percezione, pianificazione, controllo, interazione) e poi lavorano per ricucirli, perche' ogni separazione semplifica ma sacrifica qualcosa.
 
@@ -116,7 +114,3 @@ La seconda sfida e' capire cosa vogliono le persone. Due strade: apprendere la f
 Il capitolo descrive, con vent'anni di anticipo sul lessico attuale, l'anatomia di qualsiasi [agente](../kb/concetti/agent.md) che opera in un ambiente reale: percepire, mantenere una credenza sullo stato, pianificare gerarchicamente, agire, ripianificare quando le cose cambiano. Il ciclo MPC (pianifica su orizzonte breve, esegui la prima azione, osserva, ripianifica) e' esattamente il loop di un agente LLM che alterna ragionamento e [tool use](../kb/concetti/tool-use.md) dentro un [agent harness](../kb/concetti/agent-harness.md), e la separazione tra pianificazione dei compiti, pianificazione del movimento e controllo prefigura le architetture a piu' livelli con cui oggi si orchestrano sotto-agenti specializzati in un sistema di [multi-agent orchestration](../kb/concetti/multi-agent-orchestration.md).
 
 Anche i temi di apprendimento sono attualissimi. L'apprendimento delle preferenze da dimostrazioni e correzioni umane e' l'antenato diretto di [RLHF](../kb/concetti/rlhf.md): il problema di fondo, inferire cio' che l'utente vuole davvero invece di ottimizzare una ricompensa scritta male, e' identico. E il trasferimento sim-to-real, con la sua dipendenza da simulatori fedeli della dinamica, anticipa il ruolo dei [world models](../kb/concetti/world-models.md) nell'addestrare agenti (robotici e non) in ambienti sintetici prima di esporli al mondo reale, dove oggi i modelli fondazionali per la robotica (vision-language-action) stanno riportando queste idee al centro della scena.
-
-## Riferimenti
-
-- Stuart J. Russell, Peter Norvig — *Intelligenza Artificiale: Un Approccio Moderno*, 4a edizione italiana, Pearson Italia, Vol. 2 (2022), Capitolo 26, pp. 283-338.

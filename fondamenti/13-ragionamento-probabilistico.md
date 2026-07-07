@@ -2,8 +2,6 @@
 titolo: Ragionamento probabilistico
 capitolo: 13
 parte: 4
-volume: 1
-pagine: "423-470"
 concetti: [world-models, inference, agent, llm]
 created: 2026-07-06
 last_updated: 2026-07-06
@@ -106,7 +104,7 @@ L'esempio guida e' l'antifurto ideato da Judea Pearl: un allarme che puo' scatta
 <text x="435" y="332" class="dg-edge-label">t  0,70</text>
 <text x="435" y="348" class="dg-edge-label">f  0,01</text>
 </svg>
-<figcaption>La rete dell'antifurto con le tabelle delle probabilita' condizionate — schema ripreso dalla figura 13.2 del cap. 13, AIMA 4a ed.</figcaption>
+<figcaption>La rete dell'antifurto con le tabelle delle probabilita' condizionate.</figcaption>
 </figure>
 
 La semantica e' precisa: la probabilita' di un assegnamento completo di tutte le variabili e' il prodotto, su tutti i nodi, della probabilita' condizionata del valore del nodo dati i valori dei genitori. Da questa definizione discendono le proprieta' di indipendenza: ogni variabile e' condizionalmente indipendente dai suoi non discendenti dati i genitori, e piu' in generale e' indipendente da tutto il resto della rete data la sua coperta di Markov (genitori, figli e genitori dei figli). Il criterio di d-separazione permette di leggere direttamente dal grafo se due insiemi di variabili sono indipendenti dato un terzo insieme.
@@ -160,7 +158,3 @@ Questa scelta ripaga quando si vogliono prevedere gli effetti degli interventi. 
 Le reti bayesiane restano il linguaggio di riferimento per costruire [world models](../kb/concetti/world-models.md) espliciti e interpretabili: ogni numero ha un significato preciso, ogni indipendenza e' dichiarata, e si puo' verificare perche' il sistema ha tratto una conclusione. E' un contrasto istruttivo con gli [LLM](../kb/concetti/llm.md), che comprimono le regolarita' del mondo in pesi opachi: molte delle domande aperte sulla loro affidabilita' — quando una correlazione appresa e' anche una relazione causale, quanto e' calibrata una risposta — sono esattamente le domande che questo capitolo affronta in forma esplicita. La distinzione tra osservare e intervenire, formalizzata dal do-calculus, e' oggi centrale anche nel dibattito su cosa i modelli linguistici capiscono davvero dei meccanismi che descrivono.
 
 Sul piano algoritmico, l'eredita' e' diretta. Il campionamento e la stima di distribuzioni a posteriori sono il cuore dell'[inference](../kb/concetti/inference.md) moderna, e i metodi MCMC del capitolo sono tuttora la colonna portante della statistica bayesiana usata per valutare e calibrare i modelli. Per un [agent](../kb/concetti/agent.md) che deve decidere sotto incertezza — quale tool invocare, quanto fidarsi di un'osservazione, se un'azione causera' l'effetto voluto — il ragionamento probabilistico strutturato e' il complemento naturale delle capacita' generative: architetture che combinano LLM con modelli probabilistici espliciti, ad esempio in pipeline di [tool use](../kb/concetti/tool-use.md) con stime di confidenza, riprendono precisamente questa divisione dei compiti.
-
-## Riferimenti
-
-- Stuart J. Russell, Peter Norvig — *Intelligenza Artificiale: Un Approccio Moderno*, 4a edizione italiana, Pearson Italia, Vol. 1 (2021), Capitolo 13, pp. 423-470.

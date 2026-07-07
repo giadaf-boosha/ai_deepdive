@@ -2,8 +2,6 @@
 titolo: Inferenza nella logica del primo ordine
 capitolo: 9
 parte: 3
-volume: 1
-pagine: "287-322"
 concetti: [inference, embedding, chain-of-thought, rag]
 created: 2026-07-06
 last_updated: 2026-07-06
@@ -84,7 +82,7 @@ La proposizionalizzazione genera montagne di istanziazioni inutili. L'osservazio
 
 Il processo che calcola queste sostituzioni si chiama unificazione. L'algoritmo UNIFY prende due espressioni e restituisce, se esiste, un unificatore: una sostituzione che le rende identiche. Tra i tanti unificatori possibili, ne esiste sempre uno "piu' generale" (MGU), quello che impone il minimo di vincoli sulle variabili; e' il risultato canonico dell'algoritmo. Due dettagli pratici meritano attenzione. Primo, la standardizzazione separata: prima di unificare due formule occorre rinominare le variabili di una delle due, altrimenti collisioni puramente sintattiche di nomi fanno fallire unificazioni legittime. Secondo, il controllo di occorrenza: una variabile non puo' essere unificata con un termine che la contiene (x con F(x)), pena inferenze scorrette; molti sistemi Prolog lo omettono per velocita', accettando il rischio.
 
-Sull'unificazione si costruisce il Modus Ponens generalizzato: se le premesse di un'implicazione unificano, tramite una sostituzione condivisa, con fatti presenti nella base di conoscenza, allora si puo' asserire il conseguente con quella stessa sostituzione applicata. Il libro chiama lifting questo passaggio: prendere una regola di inferenza proposizionale e "sollevarla" al primo ordine, facendole eseguire solo le sostituzioni davvero necessarie. Tutto il resto del capitolo e' lifting applicato ad algoritmi noti. Il capitolo discute anche il problema, molto concreto, di recuperare in fretta i fatti unificabili con una query dentro basi di conoscenza enormi: indicizzazione per predicato, chiavi combinate predicato-argomento, reticoli di sussunzione. E' il punto in cui la logica incontra l'ingegneria dei database.
+Sull'unificazione si costruisce il Modus Ponens generalizzato: se le premesse di un'implicazione unificano, tramite una sostituzione condivisa, con fatti presenti nella base di conoscenza, allora si puo' asserire il conseguente con quella stessa sostituzione applicata. Questo passaggio si chiama lifting: prendere una regola di inferenza proposizionale e "sollevarla" al primo ordine, facendole eseguire solo le sostituzioni davvero necessarie. Tutto il resto del capitolo e' lifting applicato ad algoritmi noti. Il capitolo discute anche il problema, molto concreto, di recuperare in fretta i fatti unificabili con una query dentro basi di conoscenza enormi: indicizzazione per predicato, chiavi combinate predicato-argomento, reticoli di sussunzione. E' il punto in cui la logica incontra l'ingegneria dei database.
 
 ## Concatenazione in avanti: dai fatti verso le conclusioni
 
@@ -126,7 +124,3 @@ Restano due questioni pratiche. L'uguaglianza non e' gestita nativamente: si puo
 Gli LLM ragionano in modo statistico, non deduttivo, e proprio per questo i temi del capitolo tornano attuali come contrappeso. Quando un modello scompone un problema passo per passo con il [chain-of-thought](../kb/concetti/chain-of-thought.md), sta imitando in linguaggio naturale la struttura di una concatenazione all'indietro: obiettivo, sotto-obiettivi, fatti di appoggio — ma senza le garanzie di correttezza di un motore di [inference](../kb/concetti/inference.md) logica. Le pipeline neuro-simboliche piu' solide usano l'LLM per tradurre il problema in forma formale e delegano la deduzione a un solver o a un dimostratore, esattamente la divisione dei ruoli che il capitolo anticipa parlando di DeepHOL, dove [embedding](../kb/concetti/embedding.md) neurali guidano la selezione delle premesse dentro un dimostratore classico.
 
 Anche l'ingegneria intorno agli LLM ricalca schemi del capitolo. Il problema di FETCH — recuperare in fretta i fatti unificabili con una query da una base enorme, con indici e reticoli di sussunzione — e' l'antenato simbolico del retrieval che alimenta i sistemi [RAG](../kb/concetti/rag.md). E un [agent](../kb/concetti/agent.md) moderno che decide quale strumento invocare tramite [tool-use](../kb/concetti/tool-use.md), verifica precondizioni e concatena i risultati sta eseguendo, di fatto, un ciclo di forward chaining su regole apprese anziche' scritte a mano. La semidecidibilita' resta il monito di fondo: qualunque sistema che ragiona su conoscenza espressiva deve accettare che alcune domande non ammettono un "no" garantito, e progettare timeout, euristiche e fallback di conseguenza.
-
-## Riferimenti
-
-- Stuart J. Russell, Peter Norvig — *Intelligenza Artificiale: Un Approccio Moderno*, 4a edizione italiana, Pearson Italia, Vol. 1 (2021), Capitolo 9, pp. 287-322.

@@ -2,8 +2,6 @@
 titolo: Agenti logici
 capitolo: 7
 parte: 3
-volume: 1
-pagine: "215-256"
 concetti: [agent, world-models, chain-of-thought, tool-use]
 created: 2026-07-06
 last_updated: 2026-07-06
@@ -79,7 +77,7 @@ Il punto chiave e' che rispondere a un Ask puo' richiedere inferenza: la KB deve
 
 ## Il mondo del wumpus come palestra
 
-Per rendere concreti questi concetti il libro usa un ambiente giocattolo: una caverna a griglia 4x4 con un mostro (il wumpus), pozzi senza fondo e un mucchio d'oro. L'agente percepisce solo indizi locali — fetore vicino al wumpus, brezza vicino ai pozzi, scintillio dove c'e' l'oro — e deve recuperare l'oro senza morire. L'ambiente e' deterministico ma parzialmente osservabile: l'agente non vede dove sono i pericoli, deve dedurlo.
+Per rendere concreti questi concetti consideriamo un ambiente giocattolo: una caverna a griglia 4x4 con un mostro (il wumpus), pozzi senza fondo e un mucchio d'oro. L'agente percepisce solo indizi locali — fetore vicino al wumpus, brezza vicino ai pozzi, scintillio dove c'e' l'oro — e deve recuperare l'oro senza morire. L'ambiente e' deterministico ma parzialmente osservabile: l'agente non vede dove sono i pericoli, deve dedurlo.
 
 <figure class="diagram">
 <svg viewBox="0 0 760 440" role="img" aria-label="Il mondo del wumpus: griglia 4x4 con l'agente in [1,1] rivolto a est, il wumpus in [1,3], l'oro in [2,3] e pozzi in [3,1], [3,3] e [4,4]; fetore nelle stanze adiacenti al wumpus e brezza in quelle adiacenti ai pozzi">
@@ -131,7 +129,7 @@ Per rendere concreti questi concetti il libro usa un ambiente giocattolo: una ca
 <text x="560" y="208" text-anchor="start" class="dg-sublabel">scintillio: oro nella stanza</text>
 <text x="560" y="234" text-anchor="start" class="dg-sublabel">agente in [1,1], rivolto a est</text>
 </svg>
-<figcaption>Un tipico mondo del wumpus: schema ripreso dalla figura 7.2 del cap. 7, AIMA 4a ed.</figcaption>
+<figcaption>Un tipico mondo del wumpus.</figcaption>
 </figure>
 
 Ed e' proprio qui che il ragionamento paga. Se in una stanza non si sente brezza, nessuna stanza adiacente contiene un pozzo; se in un'altra si sente fetore ma le stanze gia' escluse non possono ospitare il wumpus, la posizione del mostro resta univocamente determinata. Combinando percezioni raccolte in momenti e luoghi diversi, l'agente identifica stanze sicure che nessuna singola osservazione garantirebbe. La proprieta' cruciale: se le premesse sono vere, le conclusioni del ragionamento logico sono garantite vere. Non e' una euristica, e' una garanzia.
@@ -190,7 +188,3 @@ Infine SATPlan mostra che perfino la pianificazione si riduce a soddisfacibilita
 Il vocabolario di questo capitolo e' il vocabolario con cui oggi si progettano e si valutano gli [agenti](../kb/concetti/agent.md) basati su LLM. Il ciclo Tell/Ask della KB e' l'antenato concettuale del loop percezione-ragionamento-azione di un agent harness moderno; la distinzione tra livello della conoscenza e livello dell'implementazione e' esattamente la lente con cui ci si chiede se un [LLM](../kb/concetti/llm.md) "sappia" qualcosa o si limiti a manipolare token. E il problema del grounding — come garantire che la KB rifletta il mondo reale — riappare identico quando si aggancia un modello a fonti esterne con la [RAG](../kb/concetti/rag.md) o a sensori e API tramite il [tool use](../kb/concetti/tool-use.md).
 
 C'e' anche un contrasto istruttivo. L'inferenza logica offre garanzie (correttezza, completezza, monotonicita') che il ragionamento in linguaggio naturale di un LLM non ha: una catena di [chain-of-thought](../kb/concetti/chain-of-thought.md) somiglia a una dimostrazione, ma nessun teorema ne assicura la validita'. Per questo i sistemi neuro-simbolici e i verificatori formali (i discendenti diretti dei risolutori SAT del capitolo) tornano di moda come complemento dei modelli generativi: il modello propone, la logica verifica. Anche la stima dello stato con approssimazioni conservative e gli assiomi di stato successore prefigurano i [world models](../kb/concetti/world-models.md) con cui gli agenti attuali tengono traccia di ambienti parzialmente osservabili.
-
-## Riferimenti
-
-- Stuart J. Russell, Peter Norvig — *Intelligenza Artificiale: Un Approccio Moderno*, 4a edizione italiana, Pearson Italia, Vol. 1 (2021), Capitolo 7, pp. 215-256.

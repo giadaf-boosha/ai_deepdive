@@ -2,8 +2,6 @@
 titolo: Introduzione
 capitolo: 1
 parte: 1
-volume: 1
-pagine: "3-38"
 concetti: [agent, ai-governance, evaluation-benchmark]
 created: 2026-07-06
 last_updated: 2026-07-06
@@ -12,7 +10,7 @@ last_updated: 2026-07-06
 # Introduzione
 
 Che cosa significa costruire una macchina intelligente? Il capitolo di apertura
-di Russell e Norvig affronta la domanda da tre direzioni: una definizione
+affronta la domanda da tre direzioni: una definizione
 operativa di intelligenza artificiale, una ricostruzione delle discipline che le
 hanno fornito idee e strumenti, e una storia del campo dalle origini al deep
 learning. L'obiettivo dichiarato dell'AI non e' solo comprendere l'intelligenza,
@@ -22,7 +20,7 @@ nuove.
 Il punto di arrivo del capitolo e' una presa di posizione netta: tra i possibili
 modi di definire l'AI, quello che ha vinto storicamente e' l'approccio degli
 agenti razionali, cioe' sistemi che fanno "la cosa giusta" rispetto a un
-obiettivo. Ma proprio questa definizione, avvertono gli autori, va corretta
+obiettivo. Ma proprio questa definizione va corretta
 quando le macchine diventano abbastanza potenti da operare nel mondo reale.
 
 <figure class="diagram">
@@ -108,7 +106,7 @@ qualcosa che agisce, e un agente razionale agisce per ottenere il miglior
 risultato atteso rispetto a un obiettivo. Questo approccio e' piu' generale
 (l'inferenza corretta e' solo uno dei meccanismi per la razionalita') e piu'
 trattabile scientificamente (la razionalita' e' definita matematicamente, il
-comportamento umano no). Russell e Norvig lo chiamano il modello standard
+comportamento umano no). Questo assetto si chiama il modello standard
 dell'AI, e notano che pervade anche teoria del controllo, ricerca operativa,
 statistica ed economia. Un aggiustamento necessario: la razionalita' perfetta
 e' impraticabile in ambienti complessi, e va sostituita dalla razionalita'
@@ -125,7 +123,7 @@ tanto piu' grave quanto piu' il sistema e' capace: una macchina che persegue un
 obiettivo sbagliato con grande intelligenza produce conseguenze peggiori di una
 maldestra.
 
-La conclusione degli autori anticipa il resto dell'opera: non vogliamo macchine
+La conclusione anticipa il resto del percorso: non vogliamo macchine
 che perseguono i loro obiettivi, ma i nostri — e se non sappiamo trasferirli in
 modo perfetto, servono macchine che sanno di non conoscere l'obiettivo
 completo, e per questo agiscono con cautela, chiedono il permesso, imparano le
@@ -158,7 +156,7 @@ decisionali di Markov (Bellman) e la soddisfazione di Herbert Simon — decision
 
 Le neuroscienze hanno mostrato che un insieme di cellule semplici puo'
 produrre pensiero: il neurone come unita', le tecniche di imaging, il confronto
-quantitativo tra cervello e computer. La lezione degli autori e' prudente:
+quantitativo tra cervello e computer. La lezione e' prudente:
 senza la teoria giusta, macchine piu' veloci forniscono solo risposte sbagliate
 piu' rapidamente.
 
@@ -220,7 +218,7 @@ studenti e investimenti in crescita di un ordine di grandezza; sistemi pari o
 superiori all'uomo in giochi, riconoscimento di oggetti e ambiti diagnostici
 ristretti; applicazioni mature in guida autonoma, traduzione, riconoscimento
 vocale, raccomandazioni. Sul futuro dell'AI a livello umano gli esperti si
-dividono tra pochi decenni e "mai" — e gli autori ricordano, con Tetlock, che
+dividono tra pochi decenni e "mai" — e vale la pena ricordare, con Tetlock, che
 nel prevedere gli esperti non battono i dilettanti.
 
 I rischi elencati sono concreti e attuali: armi autonome letali, sorveglianza e
@@ -269,9 +267,3 @@ problema di allineamento dei valori e' diventato disciplina ingegneristica con
 regolamentazione trattate in chiusura sono oggi materia di
 [AI governance](../kb/concetti/ai-governance.md). Rileggere la storia dei cicli
 di hype e inverno aiuta a calibrare le aspettative anche sull'ondata attuale.
-
-## Riferimenti
-
-- Stuart J. Russell, Peter Norvig — *Intelligenza Artificiale: Un Approccio
-  Moderno*, 4a edizione italiana, Pearson Italia, Vol. 1 (2021), Capitolo 1,
-  pp. 3-38.

@@ -2,8 +2,6 @@
 titolo: Decisioni multiagente
 capitolo: 18
 parte: 4
-volume: 1
-pagine: "609-658"
 concetti: [agent, multi-agent-orchestration, interaction-model, world-models]
 created: 2026-07-06
 last_updated: 2026-07-06
@@ -11,7 +9,7 @@ last_updated: 2026-07-06
 
 # Decisioni multiagente
 
-Fino a questo punto del libro l'agente e' solo: percepisce, pianifica e agisce come se il mondo contenesse un unico decisore. Il capitolo 18 rimuove questa semplificazione e chiede: che cosa cambia quando nell'ambiente operano altri agenti, ciascuno con i propri obiettivi? La risposta breve e' che cambia quasi tutto. Un agente razionale non puo' piu' limitarsi a modellare l'ambiente fisico: deve modellare il ragionamento altrui, sapendo che gli altri stanno facendo lo stesso con lui. Questo ragionamento ricorsivo — io penso a cosa pensi tu di cosa penso io — e' il territorio della teoria dei giochi, che sta alle decisioni multiagente come la teoria delle decisioni sta all'agente singolo.
+Fino a questo punto del percorso l'agente e' solo: percepisce, pianifica e agisce come se il mondo contenesse un unico decisore. Il capitolo 18 rimuove questa semplificazione e chiede: che cosa cambia quando nell'ambiente operano altri agenti, ciascuno con i propri obiettivi? La risposta breve e' che cambia quasi tutto. Un agente razionale non puo' piu' limitarsi a modellare l'ambiente fisico: deve modellare il ragionamento altrui, sapendo che gli altri stanno facendo lo stesso con lui. Questo ragionamento ricorsivo — io penso a cosa pensi tu di cosa penso io — e' il territorio della teoria dei giochi, che sta alle decisioni multiagente come la teoria delle decisioni sta all'agente singolo.
 
 Il capitolo copre un arco ampio: come pianificare quando piu' attori eseguono azioni in concorrenza, come analizzare giochi non cooperativi (strategie dominanti, equilibrio di Nash, giochi ripetuti e sequenziali), come formare coalizioni e spartirne il valore nei giochi cooperativi, e infine come progettare i meccanismi collettivi — aste, votazioni, contrattazioni — con cui gruppi di agenti prendono decisioni condivise. Due prospettive attraversano tutto il materiale: la progettazione di agenti (data la situazione, qual e' la strategia migliore?) e la progettazione di meccanismi (date le strategie razionali, quali regole del gioco producono il miglior esito collettivo?).
 
@@ -71,7 +69,7 @@ Conta perche' quasi nessun sistema di IA reale opera nel vuoto. Router che si co
 
 Il primo passo e' distinguere gli scenari. Se c'e' un solo decisore che pianifica per piu' attori esecutori (ipotesi dell'agente benevolo), il problema e' di pianificazione multiattuatore o multibody: serve gestire la sincronizzazione delle azioni congiunte, ma la mente e' una sola. Se invece ogni attore decide per se', abbiamo veri decisori multipli: quando condividono l'obiettivo, il problema centrale e' il coordinamento; quando le preferenze divergono, serve l'apparato completo della teoria dei giochi.
 
-Sul piano tecnico, il nodo e' la concorrenza: i piani di agenti diversi vengono eseguiti insieme, e occorre un modello di come le azioni interagiscono. Il libro esamina tre approcci — l'esecuzione interleaved (tutte le possibili alternanze delle azioni atomiche, corretta ma esponenziale), l'ordinamento parziale e la sincronizzazione perfetta su un orologio globale, che e' il modello adottato per la sua semantica semplice. Gli schemi d'azione vengono estesi con vincoli di azione concorrente: alcune azioni falliscono se eseguite insieme (due tennisti che colpiscono la stessa palla), altre riescono solo se eseguite insieme (due persone che trasportano un oggetto pesante).
+Sul piano tecnico, il nodo e' la concorrenza: i piani di agenti diversi vengono eseguiti insieme, e occorre un modello di come le azioni interagiscono. Si esaminano tre approcci — l'esecuzione interleaved (tutte le possibili alternanze delle azioni atomiche, corretta ma esponenziale), l'ordinamento parziale e la sincronizzazione perfetta su un orologio globale, che e' il modello adottato per la sua semantica semplice. Gli schemi d'azione vengono estesi con vincoli di azione concorrente: alcune azioni falliscono se eseguite insieme (due tennisti che colpiscono la stessa palla), altre riescono solo se eseguite insieme (due persone che trasportano un oggetto pesante).
 
 Anche con obiettivi e conoscenze condivisi, resta il problema che possono esistere piu' piani congiunti ugualmente validi ma incompatibili tra loro: se ognuno ne sceglie uno diverso, il risultato e' il fallimento. Le vie d'uscita sono le convenzioni (vincoli condivisi sulla scelta, come "si guida a destra"; quando diffuse diventano norme sociali), la comunicazione esplicita, oppure il riconoscimento del piano: osservare le prime mosse dell'altro e dedurne il piano congiunto che sta seguendo.
 
@@ -124,7 +122,3 @@ Infine la contrattazione: nel protocollo a offerte alternate di Rubinstein, con 
 I sistemi costruiti attorno agli [LLM](../kb/concetti/llm.md) stanno rendendo questo capitolo improvvisamente operativo. Le architetture di [multi-agent orchestration](../kb/concetti/multi-agent-orchestration.md) — un agente coordinatore che delega sottocompiti ad agenti specializzati — sono contract net protocol in forma moderna: annuncio del compito, valutazione delle capacita', aggiudicazione. I problemi che il capitolo formalizza (concorrenza tra piani, azioni che interferiscono, necessita' di convenzioni condivise) sono esattamente quelli che un [agent](../kb/concetti/agent.md) incontra quando piu' istanze lavorano sullo stesso codebase o sulla stessa risorsa, e che gli [agent harness](../kb/concetti/agent-harness.md) devono gestire con lock, code e protocolli di comunicazione.
 
 C'e' poi un filo piu' profondo. I giochi di assistenza sono il fondamento teorico dell'allineamento moderno: l'idea che la macchina debba restare incerta sulle preferenze umane e apprenderle dall'interazione e' la stessa che motiva [RLHF](../kb/concetti/rlhf.md) e il design dei [interaction model](../kb/concetti/interaction-model.md) tra utente e assistente. E la progettazione di meccanismi — regole che rendono la strategia onesta quella dominante — e' una lente utile per la [AI governance](../kb/concetti/ai-governance.md): quando piu' attori (aziende, agenti autonomi, piattaforme) interagiscono, non basta chiedere comportamenti virtuosi; bisogna progettare incentivi per cui la virtu' sia l'equilibrio.
-
-## Riferimenti
-
-- Stuart J. Russell, Peter Norvig — *Intelligenza Artificiale: Un Approccio Moderno*, 4a edizione italiana, Pearson Italia, Vol. 1 (2021), Capitolo 18, pp. 609-658.

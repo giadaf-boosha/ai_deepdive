@@ -2,8 +2,6 @@
 titolo: Deep learning
 capitolo: 21
 parte: 5
-volume: 2
-pagine: "103-140"
 concetti: [llm, embedding, fine-tuning, inference]
 created: 2026-07-06
 last_updated: 2026-07-06
@@ -11,7 +9,7 @@ last_updated: 2026-07-06
 
 # Deep learning
 
-Il capitolo 21 di Russell e Norvig affronta una domanda precisa: come si costruiscono e si addestrano ipotesi che non siano semplici funzioni lineari, ma circuiti algebrici profondi, con molti strati tra input e output? La regressione lineare o logistica calcola l'output in pochissimi passi e tratta ogni variabile di input in modo indipendente: questo limita drasticamente cio' che il modello puo' rappresentare. Il deep learning ribalta l'impostazione: si addestrano circuiti con cammini computazionali lunghi, in cui tutte le variabili di input possono interagire tra loro in modi complessi.
+Questo capitolo affronta una domanda precisa: come si costruiscono e si addestrano ipotesi che non siano semplici funzioni lineari, ma circuiti algebrici profondi, con molti strati tra input e output? La regressione lineare o logistica calcola l'output in pochissimi passi e tratta ogni variabile di input in modo indipendente: questo limita drasticamente cio' che il modello puo' rappresentare. Il deep learning ribalta l'impostazione: si addestrano circuiti con cammini computazionali lunghi, in cui tutte le variabili di input possono interagire tra loro in modi complessi.
 
 L'idea storica viene dai primi tentativi di modellare i neuroni come circuiti computazionali (McCulloch e Pitts, 1943), motivo per cui questi modelli si chiamano ancora reti neurali, anche se la somiglianza con il cervello resta superficiale. Il motivo pratico del successo e' un altro: su dati ad alta dimensionalita' come immagini, audio e testo, il deep learning supera ogni altro approccio di apprendimento automatico, ed e' oggi la base del riconoscimento visivo, della traduzione automatica, della sintesi vocale e di buona parte dell'apprendimento con rinforzo.
 
@@ -111,7 +109,7 @@ Una rete feedforward e' un grafo aciclico orientato in cui ogni nodo, detto unit
 <text x="650" y="144" text-anchor="middle" class="dg-label">5</text>
 <text x="650" y="160" text-anchor="middle" class="dg-sublabel">output y previsto</text>
 </svg>
-<figcaption>Rete neurale con due input, uno strato nascosto di due unita' e una unita' di output — schema ripreso dalla figura 21.3 del cap. 21, AIMA 4a ed.</figcaption>
+<figcaption>Rete neurale con due input, uno strato nascosto di due unita' e una unita' di output.</figcaption>
 </figure>
 
 Il modo piu' generale di guardare una rete e' come grafo computazionale: un circuito in cui ogni nodo rappresenta un'operazione elementare e i pesi sono parametri regolabili, manopole che decidono quanto ogni nodo "ascolta" i suoi predecessori. L'apprendimento consiste nel ruotare queste manopole finche' l'output della rete si avvicina ai valori osservati nei dati di addestramento.
@@ -178,7 +176,3 @@ Il capitolo chiude con le applicazioni. Nella visione, la svolta e' AlexNet a Im
 Questo capitolo descrive, senza nominarli, i mattoni degli attuali [LLM](../kb/concetti/llm.md): i modelli autoregressivi deep che predicono l'elemento successivo di una sequenza sono esattamente il principio generativo di GPT e Claude, i word [embedding](../kb/concetti/embedding.md) sono l'antenato diretto delle rappresentazioni vettoriali su cui si fondano ricerca semantica e RAG, e l'apprendimento per trasferimento con modelli preaddestrati e' diventato il paradigma dominante del [fine-tuning](../kb/concetti/fine-tuning.md). Anche i problemi indicati come aperti nel 2021 sono ancora attuali: gli esempi ostili prefigurano i jailbreak e le prompt injection, e la finestra fissa delle reti feedforward e' il limite che oggi chiamiamo [context window](../kb/concetti/context-window.md).
 
 Colpisce, in retrospettiva, cio' che il capitolo non contiene: il Transformer viene rimandato ai capitoli sul linguaggio, e LSTM e CNN occupano il centro della scena. Eppure la meccanica di fondo — grafi computazionali, SGD su minibatch, retropropagazione, normalizzazione, hardware parallelo — e' identica a quella con cui si addestrano e si eseguono i modelli di frontiera: capire questi fondamenti significa capire cosa succede davvero durante l'addestramento e l'[inference](../kb/concetti/inference.md) di qualsiasi sistema AI moderno.
-
-## Riferimenti
-
-- Stuart J. Russell, Peter Norvig — *Intelligenza Artificiale: Un Approccio Moderno*, 4a edizione italiana, Pearson Italia, Vol. 2 (2022), Capitolo 21, pp. 103-140.

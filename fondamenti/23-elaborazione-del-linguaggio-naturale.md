@@ -2,8 +2,6 @@
 titolo: Elaborazione del linguaggio naturale
 capitolo: 23
 parte: 6
-volume: 2
-pagine: "179-212"
 concetti: [tokenization, embedding, llm, evaluation-benchmark]
 created: 2026-07-06
 last_updated: 2026-07-06
@@ -11,7 +9,7 @@ last_updated: 2026-07-06
 
 # Elaborazione del linguaggio naturale
 
-Il linguaggio e' il tratto che piu' di ogni altro distingue la nostra specie, e non a caso Turing lo scelse come terreno del suo test: chi parla pianifica un messaggio per trasmettere conoscenza e raggiungere un obiettivo, chi ascolta percepisce e inferisce il significato inteso. Il capitolo 23 di Russell e Norvig affronta la domanda di fondo del natural language processing (NLP): come possa una macchina servirsi della lingua per dialogare con le persone e per attingere al sapere sterminato che l'umanita' ha depositato nei testi scritti.
+Il linguaggio e' il tratto che piu' di ogni altro distingue la nostra specie, e non a caso Turing lo scelse come terreno del suo test: chi parla pianifica un messaggio per trasmettere conoscenza e raggiungere un obiettivo, chi ascolta percepisce e inferisce il significato inteso. Questo capitolo affronta la domanda di fondo del natural language processing (NLP): come possa una macchina servirsi della lingua per dialogare con le persone e per attingere al sapere sterminato che l'umanita' ha depositato nei testi scritti.
 
 Il problema e' che le lingue naturali non si comportano come i linguaggi formali. Non esiste una definizione netta di frase corretta, i giudizi dei parlanti divergono e cambiano nel tempo, le espressioni sono ambigue e vaghe, e la corrispondenza tra parole e cose non e' fissata da nessuna specifica. La risposta del capitolo e' pragmatica: se non possiamo tracciare un confine booleano tra frasi grammaticali e non grammaticali, possiamo almeno assegnare a ogni stringa una probabilita'. Da qui nasce l'idea di modello di linguaggio, una distribuzione di probabilita' sulle sequenze di parole, che si rivela lo strumento centrale per quasi tutti i compiti linguistici: completamento del testo, correzione ortografica, traduzione, risposta a domande.
 
@@ -128,10 +126,6 @@ La rassegna finale copre i grandi compiti dell'NLP. Il riconoscimento vocale, do
 
 ## Perche conta oggi
 
-Questo capitolo e' la genealogia diretta degli [LLM](../kb/concetti/llm.md). L'idea fondante — un modello di linguaggio come distribuzione di probabilita' sulla parola successiva — e' esattamente cio' che un transformer moderno ottimizza; e' cambiata la rappresentazione, non la domanda. La [tokenizzazione](../kb/concetti/tokenization.md), qui liquidata come dettaglio ("che cosa e' una parola?"), e' oggi una scelta di progetto che condiziona costi, multilinguismo e persino le capacita' aritmetiche dei modelli. Il limite degli n-grammi denunciato da Russell e Norvig — parole atomiche, zero generalizzazione — e' precisamente il problema che gli [embedding](../kb/concetti/embedding.md) risolvono, ed e' il filo che porta al capitolo 24.
+Questo capitolo e' la genealogia diretta degli [LLM](../kb/concetti/llm.md). L'idea fondante — un modello di linguaggio come distribuzione di probabilita' sulla parola successiva — e' esattamente cio' che un transformer moderno ottimizza; e' cambiata la rappresentazione, non la domanda. La [tokenizzazione](../kb/concetti/tokenization.md), qui liquidata come dettaglio ("che cosa e' una parola?"), e' oggi una scelta di progetto che condiziona costi, multilinguismo e persino le capacita' aritmetiche dei modelli. Il limite degli n-grammi — parole atomiche, zero generalizzazione — e' precisamente il problema che gli [embedding](../kb/concetti/embedding.md) risolvono, ed e' il filo che porta al capitolo 24.
 
 Anche i temi apparentemente datati hanno eredi diretti. La finestra di n-1 parole degli n-grammi e' l'antenata della [context window](../kb/concetti/context-window.md), e la tensione tra contesto piu' lungo e parametri piu' numerosi non e' mai sparita. Il problema della disambiguazione tramite modello del mondo e modello mentale del parlante riemerge ogni volta che si scrive un prompt: gran parte del [prompt engineering](../kb/concetti/prompt-engineering.md) consiste nel fornire al modello il contesto pragmatico che il capitolo attribuiva all'ascoltatore umano. E l'osservazione che i modelli si confrontano su compiti condivisi per misurare i progressi anticipa la pratica moderna degli [evaluation benchmark](../kb/concetti/evaluation-benchmark.md). Ironia della storia: le pipeline esplicite di parsing e semantica composizionale sono state in gran parte assorbite dai modelli end-to-end, ma i concetti — struttura, ambiguita', composizionalita', atti linguistici — restano il vocabolario con cui si diagnosticano i fallimenti degli LLM.
-
-## Riferimenti
-
-- Stuart J. Russell, Peter Norvig — *Intelligenza Artificiale: Un Approccio Moderno*, 4a edizione italiana, Pearson Italia, Vol. 2 (2022), Capitolo 23, pp. 179-212.

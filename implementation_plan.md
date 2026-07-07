@@ -1,7 +1,7 @@
 # implementation_plan.md — ai_deepdive
 
 > Piano operativo. Suddivisione fasi, owner, deliverable, criteri di accettazione.
-> Ultima revisione: 2026-07-06
+> Ultima revisione: 2026-07-07
 
 ## Fase 0 — Scaffold (locale)
 
@@ -183,3 +183,4 @@ Prossimo run automatico: domani 2026-04-29 alle 07:00 Europe/Rome.
 | 2026-07-06 | Nuova sezione "Fondamenti di AI": 28 capitoli in 7 parti da Russell & Norvig AIMA 4a ed. it. (fondamenti/ in root, route /fondamenti, lib/fondamenti.ts, cross-link bidirezionali KB<->capitoli, nav a 5 voci, stat e sezione in home). Generazione via workflow multi-agente con lettura integrale dei PDF; lint deterministico ok su tutti |
 | 2026-07-06 | Verifica adversariale (fedelta' + anti-verbatim vs PDF) completata su tutti i 28 capitoli Fondamenti: 14 approvati, 14 bocciati e corretti da agenti fix (riformulazioni anti-verbatim e correzioni di fedelta': Godel cap 9, VPI cap 16, reward cap 17, Zeuthen cap 18, HMM cap 14, ...) |
 | 2026-07-07 | Diagrammi Fondamenti: 41 SVG inline (mappa concettuale in ogni capitolo + 13 schemi canonici AIMA letti dal PDF: agente-ambiente, albero di ricerca, minimax, vincoli Australia, wumpus, PDDL, rete bayesiana furto/allarme, modello temporale, griglia MDP 4x3, albero ristorante, feed-forward, ciclo RL, attention) + mappa del percorso in /fondamenti. Infrastruttura: classi dg-* in globals.css (CSS vars, light/dark). Workflow genera->verifica adversariale->fix (22 approvati, 5 corretti); lint SVG deterministico ok su 41/41 |
+| 2026-07-07 | Fondamenti resi contenuto originale: rimossi da tutte le pagine rese i riferimenti alla fonte e agli autori (Russell/Norvig/AIMA/Pearson, "il libro"/"il manuale"/"gli autori", figure/pagine numerate, 28 sezioni `## Riferimenti`, attribuzioni delle figcaption, frontmatter `volume`/`pagine`). Rimossa la riga meta (parole/data/AIMA vol-pp) dalla pagina capitolo; header/home/mappa ripuliti. Unica attribuzione mantenuta in coda a `/fondamenti` (e in `fondamenti/README.md`). Conservati i riferimenti storici legittimi (es. Perceptrons di Minsky e Papert) e gli esempi non-fonte (ISBN, libro votato). Typecheck+build verdi (28 pagine) |

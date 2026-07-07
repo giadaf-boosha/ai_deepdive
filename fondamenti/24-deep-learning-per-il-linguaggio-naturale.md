@@ -2,8 +2,6 @@
 titolo: Deep learning per l'elaborazione del linguaggio naturale
 capitolo: 24
 parte: 6
-volume: 2
-pagine: "213-238"
 concetti: [embedding, llm, fine-tuning, context-window, tokenization]
 created: 2026-07-06
 last_updated: 2026-07-06
@@ -154,7 +152,7 @@ La traduzione automatica non e' un tagging parola per parola: le lingue riordina
 <text x="614" y="202" text-anchor="middle" class="dg-label">es</text>
 <text x="708" y="202" text-anchor="middle" class="dg-label">alto</text>
 </svg>
-<figcaption>Modello sequenza-sequenza di base: lo stato nascosto finale dell'origine inizializza la destinazione, e ogni parola generata rientra come input al passo successivo — schema ripreso dalla figura 24.6 del cap. 24, AIMA 4a ed.</figcaption>
+<figcaption>Modello sequenza-sequenza di base: lo stato nascosto finale dell'origine inizializza la destinazione, e ogni parola generata rientra come input al passo successivo.</figcaption>
 </figure>
 
 Il meccanismo di attenzione attacca i primi due limiti. Invece di comprimere tutto nell'ultimo stato, il decoder calcola a ogni passo un punteggio di affinita' tra il proprio stato corrente e ciascuno stato dell'encoder, lo normalizza con una softmax e usa i pesi risultanti per costruire una media pesata degli stati di origine: un riassunto dinamico, ricalcolato parola per parola. L'attenzione non ha pesi propri e funziona con sequenze di lunghezza qualsiasi; il modello impara da solo dove guardare, e nelle traduzioni i pesi di attenzione ricalcano spesso gli allineamenti parola-parola che farebbe un traduttore umano — una rara isola di interpretabilita' nelle reti neurali.
@@ -196,10 +194,6 @@ Gli autori chiudono con una domanda onesta: perche' i modelli puramente guidati 
 
 ## Perche conta oggi
 
-Questo capitolo descrive, con qualche anno di anticipo, esattamente la pila su cui poggiano gli [LLM](../kb/concetti/llm.md) attuali: [embedding](../kb/concetti/embedding.md) come rappresentazione di base, transformer come architettura, preaddestramento su scala web come strategia. Cio' che il libro chiama messa a punto per il dominio di destinazione e' oggi il [fine-tuning](../kb/concetti/fine-tuning.md), arricchito da tecniche come RLHF che il capitolo non poteva anticipare. Anche i limiti segnalati sono profetici: il vincolo delle poche centinaia di parole di contesto e' diventato la corsa alla [context window](../kb/concetti/context-window.md), passata da centinaia di token a milioni, e la domanda su cosa succederebbe aggiungendo immagini e video ai dati di addestramento ha trovato risposta nei modelli multimodali.
+Questo capitolo descrive, con qualche anno di anticipo, esattamente la pila su cui poggiano gli [LLM](../kb/concetti/llm.md) attuali: [embedding](../kb/concetti/embedding.md) come rappresentazione di base, transformer come architettura, preaddestramento su scala web come strategia. La cosiddetta messa a punto per il dominio di destinazione e' oggi il [fine-tuning](../kb/concetti/fine-tuning.md), arricchito da tecniche come RLHF che il capitolo non poteva anticipare. Anche i limiti segnalati sono profetici: il vincolo delle poche centinaia di parole di contesto e' diventato la corsa alla [context window](../kb/concetti/context-window.md), passata da centinaia di token a milioni, e la domanda su cosa succederebbe aggiungendo immagini e video ai dati di addestramento ha trovato risposta nei modelli multimodali.
 
-Rileggere il capitolo aiuta anche a non dare per scontate le scelte di design: la [tokenization](../kb/concetti/tokenization.md) moderna discende dal dilemma tra modelli a livello di parole e di caratteri discusso qui; la tensione tra decodifica greedy e ricerca beam e' ancora il compromesso che regola temperatura e campionamento nella [inference](../kb/concetti/inference.md) di ogni API. E l'ammissione finale degli autori — non sappiamo se questi modelli apprendano grammatiche latenti o qualcosa di del tutto diverso — resta la domanda aperta al centro dell'interpretabilita' dei modelli attuali.
-
-## Riferimenti
-
-- Stuart J. Russell, Peter Norvig — *Intelligenza Artificiale: Un Approccio Moderno*, 4a edizione italiana, Pearson Italia, Vol. 2 (2022), Capitolo 24, pp. 213-238.
+Rileggere il capitolo aiuta anche a non dare per scontate le scelte di design: la [tokenization](../kb/concetti/tokenization.md) moderna discende dal dilemma tra modelli a livello di parole e di caratteri discusso qui; la tensione tra decodifica greedy e ricerca beam e' ancora il compromesso che regola temperatura e campionamento nella [inference](../kb/concetti/inference.md) di ogni API. E un'ammissione onesta — non sappiamo se questi modelli apprendano grammatiche latenti o qualcosa di del tutto diverso — resta la domanda aperta al centro dell'interpretabilita' dei modelli attuali.

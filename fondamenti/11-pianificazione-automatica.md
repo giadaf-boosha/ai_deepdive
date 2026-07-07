@@ -2,8 +2,6 @@
 titolo: Pianificazione automatica
 capitolo: 11
 parte: 3
-volume: 1
-pagine: "353-394"
 concetti: [agent, world-models, chain-of-thought, tool-use]
 created: 2026-07-06
 last_updated: 2026-07-06
@@ -102,10 +100,10 @@ Le azioni sono definite tramite schemi: un nome con variabili, una precondizione
 <text x="380" y="214" text-anchor="middle" class="dg-label">Azione ground</text>
 <text x="380" y="230" text-anchor="middle" class="dg-sublabel">Vola(P1, SFO, JFK)</text>
 </svg>
-<figcaption>Schema di azione Vola in PDDL — precondizione, effetto e istanza ground; schema ripreso dal Paragrafo 11.1 e dalla Figura 11.1 del cap. 11, AIMA 4a ed.</figcaption>
+<figcaption>Schema di azione Vola in PDDL — precondizione, effetto e istanza ground.</figcaption>
 </figure>
 
-Il libro illustra il formalismo con tre domini che sono diventati classici: il trasporto aereo di merci (caricare, scaricare, volare), il cambio di una ruota bucata e il mondo dei blocchi, dove un braccio robotico impila cubi su un tavolo. Sono esempi giocattolo, ma mostrano anche le insidie della modellazione: definire correttamente cosa significa "libero" per un blocco o per il tavolo richiede piu' attenzione di quanto sembri, e un modello impreciso produce piani sbagliati o spazi di ricerca inutilmente grandi.
+Il formalismo si illustra con tre domini che sono diventati classici: il trasporto aereo di merci (caricare, scaricare, volare), il cambio di una ruota bucata e il mondo dei blocchi, dove un braccio robotico impila cubi su un tavolo. Sono esempi giocattolo, ma mostrano anche le insidie della modellazione: definire correttamente cosa significa "libero" per un blocco o per il tavolo richiede piu' attenzione di quanto sembri, e un modello impreciso produce piani sbagliati o spazi di ricerca inutilmente grandi.
 
 ## Cercare un piano: in avanti, all'indietro, o come formula logica
 
@@ -125,7 +123,7 @@ Un secondo asse di attacco e' l'astrazione di stato: si ignorano fluenti irrilev
 
 Pianificare una vacanza in termini di comandi motori richiederebbe miliardi di azioni. Gli umani ragionano per livelli di astrazione, e la pianificazione gerarchica (HTN, hierarchical task network) formalizza questa intuizione: accanto alle azioni primitive esistono azioni di alto livello (HLA), come "vai all'aeroporto", ciascuna con uno o piu' raffinamenti possibili in sequenze di azioni piu' fini (guidare e parcheggiare, oppure prendere un taxi). Il beneficio computazionale e' potenzialmente esponenziale: con una libreria di raffinamenti piccola e ben fatta, il costo della ricerca puo' passare da esponenziale a quasi lineare nella lunghezza della soluzione.
 
-L'algoritmo di base sostituisce ripetutamente una HLA con uno dei suoi raffinamenti finche' il piano diventa tutto primitivo e raggiunge l'obiettivo. Ma raffinare fino alle azioni primitive per verificare un piano tradisce lo spirito dell'astrazione: vorremmo poter certificare un piano di alto livello senza scendere nei dettagli. Qui il libro introduce la semantica angelica: poiche' e' l'agente stesso (non un avversario) a scegliere quale implementazione eseguire, a ogni HLA si associa un insieme raggiungibile di stati, e un piano astratto funziona se tale insieme interseca gli stati obiettivo. Con descrizioni approssimate — ottimistiche e pessimistiche — si possono scartare subito i piani che certamente falliscono e adottare con fiducia quelli che certamente funzionano, rimandando il raffinamento solo ai casi ambigui. E' un modello fedele di come deliberiamo noi: decidiamo "due settimane alle Hawaii" e lasciamo i dettagli dei voli a dopo.
+L'algoritmo di base sostituisce ripetutamente una HLA con uno dei suoi raffinamenti finche' il piano diventa tutto primitivo e raggiunge l'obiettivo. Ma raffinare fino alle azioni primitive per verificare un piano tradisce lo spirito dell'astrazione: vorremmo poter certificare un piano di alto livello senza scendere nei dettagli. Qui si introduce la semantica angelica: poiche' e' l'agente stesso (non un avversario) a scegliere quale implementazione eseguire, a ogni HLA si associa un insieme raggiungibile di stati, e un piano astratto funziona se tale insieme interseca gli stati obiettivo. Con descrizioni approssimate — ottimistiche e pessimistiche — si possono scartare subito i piani che certamente falliscono e adottare con fiducia quelli che certamente funzionano, rimandando il raffinamento solo ai casi ambigui. E' un modello fedele di come deliberiamo noi: decidiamo "due settimane alle Hawaii" e lasciamo i dettagli dei voli a dopo.
 
 ## Quando il mondo non collabora: incertezza, percezione, ripianificazione
 
@@ -159,7 +157,3 @@ Senza vincoli di risorse, minimizzare la durata totale (makespan) e' facile: il 
 I sistemi agentici costruiti sugli LLM stanno riscoprendo, spesso senza citarlo, il vocabolario di questo capitolo. Un [agente](../kb/concetti/agent.md) che scompone un compito in sottotask sta facendo pianificazione gerarchica informale: le "azioni di alto livello" sono i passi di un ragionamento [chain-of-thought](../kb/concetti/chain-of-thought.md), e i raffinamenti sono le chiamate concrete a strumenti esterni via [tool use](../kb/concetti/tool-use.md). Il ciclo pianifica-esegui-monitora-ripianifica descritto nel Paragrafo 11.5 e' esattamente il loop operativo di un [agent harness](../kb/concetti/agent-harness.md) moderno: osservare il risultato di un'azione, confrontarlo con l'atteso, riparare il piano.
 
 Le differenze sono altrettanto istruttive. La pianificazione classica offre garanzie formali (un piano trovato e' corretto rispetto al modello) al prezzo di un modello del mondo esplicito e fragile; un [LLM](../kb/concetti/llm.md) pianifica in modo flessibile su descrizioni in linguaggio naturale, ma senza garanzie e con [world models](../kb/concetti/world-models.md) impliciti e imperfetti. Le lezioni del capitolo restano attuali proprio per questo: gli stati-credenza ricordano che un agente deve rappresentare la propria incertezza, la semantica angelica che conviene validare i piani al livello di astrazione giusto, e il monitoraggio dell'esecuzione che nessun sistema autonomo e' affidabile se si fida ciecamente del proprio modello. Non a caso le architetture ibride che accoppiano LLM e pianificatori simbolici sono una delle direzioni piu' studiate per dare affidabilita' agli agenti.
-
-## Riferimenti
-
-- Stuart J. Russell, Peter Norvig — *Intelligenza Artificiale: Un Approccio Moderno*, 4a edizione italiana, Pearson Italia, Vol. 1 (2021), Capitolo 11, pp. 353-394.

@@ -7,7 +7,7 @@ import { ArrowRight } from "@/components/Icons";
 export const metadata: Metadata = {
   title: "Fondamenti di AI",
   description:
-    "La teoria dell'intelligenza artificiale in italiano: percorso in 7 parti e 28 capitoli basato su Russell & Norvig, AIMA 4a edizione.",
+    "La teoria dell'intelligenza artificiale in italiano: percorso in 7 parti e 28 capitoli, dal test di Turing al futuro dell'AI.",
 };
 
 // Mappa del percorso: le 7 parti dell'opera come flusso progressivo.
@@ -66,7 +66,7 @@ function MappaPercorso() {
           </a>
         ))}
       </svg>
-      <figcaption>Il percorso in 7 parti, da AIMA 4a ed. — clicca una parte per saltare ai capitoli</figcaption>
+      <figcaption>Il percorso in 7 parti — clicca una parte per saltare ai capitoli</figcaption>
     </figure>
   );
 }
@@ -84,9 +84,8 @@ export default function FondamentiPage() {
         </h1>
         <p className="max-w-prose text-lg text-muted">
           I concetti teorici dell&apos;intelligenza artificiale, spiegati in
-          italiano capitolo per capitolo. {totale} capitoli in 7 parti, basati
-          su Russell &amp; Norvig, <em>Intelligenza Artificiale: Un Approccio
-          Moderno</em>, 4a edizione italiana (Pearson).
+          italiano capitolo per capitolo. {totale} capitoli in 7 parti, dal
+          test di Turing al futuro dell&apos;AI.
         </p>
       </header>
 
@@ -139,8 +138,7 @@ export default function FondamentiPage() {
         I capitoli sono sintesi originali in italiano dei temi trattati
         nell&apos;opera di riferimento: Stuart J. Russell, Peter Norvig,{" "}
         <em>Intelligenza Artificiale: Un Approccio Moderno</em>, 4a edizione,
-        Pearson Italia (Vol. 1, 2021; Vol. 2, 2022). Ogni capitolo cita volume,
-        capitolo e pagine di riferimento.
+        Pearson Italia (Vol. 1, 2021; Vol. 2, 2022).
       </p>
     </div>
   );

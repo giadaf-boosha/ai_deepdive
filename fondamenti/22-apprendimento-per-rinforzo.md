@@ -2,8 +2,6 @@
 titolo: Apprendimento per rinforzo
 capitolo: 22
 parte: 5
-volume: 2
-pagine: "141-176"
 concetti: [rlhf, agent, world-models, llm, fine-tuning]
 created: 2026-07-06
 last_updated: 2026-07-06
@@ -84,7 +82,7 @@ Il caso piu' semplice e' quello dell'agente passivo: la politica e' gia' fissata
 <text x="585" y="126" text-anchor="middle" class="dg-label">Ambiente</text>
 <text x="585" y="142" text-anchor="middle" class="dg-sublabel">MDP con P(s'|s,a) e R(s,a,s')</text>
 </svg>
-<figcaption>Il ciclo dell'apprendimento per rinforzo — l'agente agisce e percepisce stato e ricompensa; schema ripreso dal par. 22.1-22.2, AIMA 4a ed.</figcaption>
+<figcaption>Il ciclo dell'apprendimento per rinforzo — l'agente agisce e percepisce stato e ricompensa.</figcaption>
 </figure>
 
 La strada piu' ingenua e' la stima diretta dell'utilita': ogni tentativo completo fornisce, per ciascuno stato visitato, un campione della ricompensa totale ottenuta da li' in avanti, e basta fare la media dei campioni. Funziona, ma converge lentamente perche' ignora un vincolo prezioso: le utilita' degli stati non sono indipendenti, sono legate tra loro dalle equazioni di Bellman. Se uno stato porta quasi sempre a uno stato di alto valore, anche lui vale molto, e non serve aspettare decine di tentativi per accorgersene.
@@ -140,8 +138,4 @@ La via indiretta e' l'apprendimento per rinforzo inverso (IRL): osservare il com
 
 Questo capitolo si legge oggi come il glossario concettuale dell'allineamento dei modelli linguistici. Il [fine-tuning](../kb/concetti/fine-tuning.md) con [RLHF](../kb/concetti/rlhf.md) che rende utilizzabile un [LLM](../kb/concetti/llm.md) e' in sostanza reinforcement learning inverso piu' ottimizzazione della politica: si apprende un reward model dalle preferenze umane — perche' nessuno sa scrivere a mano la ricompensa per "risposta utile e sicura", esattamente il problema descritto nel paragrafo sull'apprendistato — e poi si ottimizza il modello con discendenti diretti di REINFORCE. Anche il monito sulle pseudoricompense e' attualissimo: il reward hacking dei modelli che imparano a compiacere il valutatore invece di risolvere il compito e' la versione moderna del robot che vibra accanto alla palla per accumulare contatti.
 
-La seconda ondata riguarda gli [agenti](../kb/concetti/agent.md): un sistema che opera in autonomia dentro un [agent harness](../kb/concetti/agent-harness.md) affronta esattamente i problemi del capitolo — assegnazione del credito su lunghe sequenze di azioni, esplorazione sicura dove le azioni sono irreversibili, decomposizione gerarchica dei compiti. E la tesi finale di Russell e Norvig, secondo cui al crescere della complessita' dell'ambiente gli approcci basati su modello diventano piu' vantaggiosi, riecheggia nel dibattito corrente sui [world models](../kb/concetti/world-models.md) come ingrediente mancante degli agenti capaci di pianificare davvero.
-
-## Riferimenti
-
-- Stuart J. Russell, Peter Norvig — *Intelligenza Artificiale: Un Approccio Moderno*, 4a edizione italiana, Pearson Italia, Vol. 2 (2022), Capitolo 22, pp. 141-176.
+La seconda ondata riguarda gli [agenti](../kb/concetti/agent.md): un sistema che opera in autonomia dentro un [agent harness](../kb/concetti/agent-harness.md) affronta esattamente i problemi del capitolo — assegnazione del credito su lunghe sequenze di azioni, esplorazione sicura dove le azioni sono irreversibili, decomposizione gerarchica dei compiti. E la tesi conclusiva, secondo cui al crescere della complessita' dell'ambiente gli approcci basati su modello diventano piu' vantaggiosi, riecheggia nel dibattito corrente sui [world models](../kb/concetti/world-models.md) come ingrediente mancante degli agenti capaci di pianificare davvero.

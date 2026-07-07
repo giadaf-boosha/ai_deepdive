@@ -2,8 +2,6 @@
 titolo: Problemi di soddisfacimento di vincoli
 capitolo: 6
 parte: 2
-volume: 1
-pagine: "185-212"
 concetti: [agent, world-models, chain-of-thought, inference]
 created: 2026-07-06
 last_updated: 2026-07-06
@@ -115,7 +113,7 @@ L'esempio didattico del capitolo e' la colorazione della mappa dell'Australia: s
 <text x="685" y="262" text-anchor="middle" class="dg-label">T</text>
 <text x="685" y="278" text-anchor="middle" class="dg-sublabel">Tasmania</text>
 </svg>
-<figcaption>Grafo dei vincoli della colorazione della mappa dell'Australia: un arco per ogni coppia di regioni confinanti, la Tasmania resta isolata — schema ripreso dalla figura 6.1, AIMA 4a ed.</figcaption>
+<figcaption>Grafo dei vincoli della colorazione della mappa dell'Australia: un arco per ogni coppia di regioni confinanti, la Tasmania resta isolata.</figcaption>
 </figure>
 
 Il secondo esempio e' industriale: la programmazione dei compiti nell'assemblaggio di un'auto. Qui le variabili sono i tempi di inizio dei compiti, e i vincoli sono aritmetici (un compito piu' la sua durata deve precedere il successivo) o disgiuntivi (due compiti che condividono uno strumento non possono sovrapporsi). Il formalismo si adatta poi a molte varianti: domini finiti o infiniti, discreti o continui (la programmazione lineare e' un CSP a dominio continuo), vincoli unari, binari, di ordine superiore, e vincoli globali come Tuttediverse, che impone valori tutti distinti a un gruppo arbitrario di variabili. Esistono anche vincoli di preferenza, che non proibiscono ma penalizzano: in quel caso si parla di problema di ottimizzazione di vincoli (COP).
@@ -173,10 +171,6 @@ Infine c'e' la struttura nei valori: se le soluzioni sono equivalenti a meno di 
 
 ## Perche conta oggi
 
-I CSP sono il primo punto del libro in cui l'AI smette di usare conoscenza specifica del dominio e inizia a sfruttare la struttura della rappresentazione: euristiche generali che funzionano su qualunque problema formulato nel linguaggio giusto. E' la stessa scommessa che regge un [llm](../kb/concetti/llm.md) moderno, che applica un meccanismo unico a qualunque compito espresso come testo. E le tecniche del capitolo non sono archeologia: i solver di vincoli e i SAT solver, diretti discendenti di backtracking con apprendimento dei no-good, girano oggi dentro compilatori, sistemi di scheduling e verifica formale, e sono esattamente il tipo di strumento esterno che un [agent](../kb/concetti/agent.md) basato su LLM richiama via [tool-use](../kb/concetti/tool-use.md) quando il problema richiede garanzie di correttezza che la generazione statistica non offre.
+I CSP sono il primo punto del percorso in cui l'AI smette di usare conoscenza specifica del dominio e inizia a sfruttare la struttura della rappresentazione: euristiche generali che funzionano su qualunque problema formulato nel linguaggio giusto. E' la stessa scommessa che regge un [llm](../kb/concetti/llm.md) moderno, che applica un meccanismo unico a qualunque compito espresso come testo. E le tecniche del capitolo non sono archeologia: i solver di vincoli e i SAT solver, diretti discendenti di backtracking con apprendimento dei no-good, girano oggi dentro compilatori, sistemi di scheduling e verifica formale, e sono esattamente il tipo di strumento esterno che un [agent](../kb/concetti/agent.md) basato su LLM richiama via [tool-use](../kb/concetti/tool-use.md) quando il problema richiede garanzie di correttezza che la generazione statistica non offre.
 
 C'e' anche un parallelismo metodologico. La propagazione dei vincoli e' una forma di [inference](../kb/concetti/inference.md) che riduce lo spazio delle possibilita' prima di decidere, cosi' come la scomposizione di un problema in sottoproblemi piu' semplici — il cuore di cutset conditioning e tree decomposition — riecheggia nelle strategie di [chain-of-thought](../kb/concetti/chain-of-thought.md), dove il modello affronta un problema complesso un passaggio verificabile alla volta. Chi progetta sistemi ibridi LLM + solver oggi sta di fatto ricombinando i due paradigmi: il modello linguistico formula il problema in variabili e vincoli, il risolutore CSP lo chiude con la sistematicita' che il capitolo 6 ha codificato quarant'anni fa.
-
-## Riferimenti
-
-- Stuart J. Russell, Peter Norvig — *Intelligenza Artificiale: Un Approccio Moderno*, 4a edizione italiana, Pearson Italia, Vol. 1 (2021), Capitolo 6, pp. 185-212.

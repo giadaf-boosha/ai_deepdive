@@ -128,8 +128,7 @@ export default function HomePage() {
         <SectionHeader eyebrow="Fondamenti di AI" href="/fondamenti" cta="Inizia il percorso" />
         <p className="-mt-3 max-w-prose text-[15px] leading-relaxed text-muted">
           La teoria dietro le notizie: {getAllChapters().length} capitoli in 7
-          parti basati su Russell &amp; Norvig, <em>Intelligenza Artificiale: Un
-          Approccio Moderno</em>. Dal test di Turing al futuro dell&apos;AI.
+          parti, dal test di Turing al futuro dell&apos;AI.
         </p>
         <div className="flex flex-wrap gap-2">
           {PARTI.map((p) => (

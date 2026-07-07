@@ -2,8 +2,6 @@
 titolo: Rappresentazione della conoscenza
 capitolo: 10
 parte: 3
-volume: 1
-pagine: "323-352"
 concetti: [world-models, rag, agent, llm]
 created: 2026-07-06
 last_updated: 2026-07-06
@@ -13,7 +11,7 @@ last_updated: 2026-07-06
 
 I capitoli precedenti spiegano come un agente logico ragiona a partire da una base di conoscenza. Questo capitolo affronta la domanda complementare, e per certi versi piu' difficile: che cosa mettere dentro quella base di conoscenza. Come si descrivono, in un linguaggio formale come la logica del primo ordine, le cose di cui e' fatto il mondo reale — oggetti, sostanze, misure, eventi, tempo, e perfino le credenze degli altri agenti?
 
-La questione conta perche' nei domini giocattolo quasi ogni rappresentazione funziona, mentre nei domini reali — fare acquisti online, guidare nel traffico — servono schemi generali e flessibili, capaci di unificare aree di conoscenza diverse dentro un unico quadro coerente. Russell e Norvig chiamano questo lavoro ingegneria ontologica: progettare i concetti astratti che ricorrono in quasi tutti i domini, lasciando dei punti di aggancio dove inserire poi i dettagli specifici.
+La questione conta perche' nei domini giocattolo quasi ogni rappresentazione funziona, mentre nei domini reali — fare acquisti online, guidare nel traffico — servono schemi generali e flessibili, capaci di unificare aree di conoscenza diverse dentro un unico quadro coerente. Questo lavoro si chiama ingegneria ontologica: progettare i concetti astratti che ricorrono in quasi tutti i domini, lasciando dei punti di aggancio dove inserire poi i dettagli specifici.
 
 Il capitolo attraversa cosi' tre livelli: prima costruisce un'ontologia generale del mondo (categorie, parti, misure, sostanze, eventi, tempo, oggetti mentali), poi presenta i formalismi nati per ragionare in modo efficiente su queste strutture (reti semantiche e logiche descrittive), infine affronta il problema delle eccezioni e del ragionamento con informazione di default, dove la logica classica mostra i suoi limiti.
 
@@ -77,7 +75,7 @@ Il mattone fondamentale e' la categoria: anche se il mondo e' fatto di oggetti i
 
 In logica del primo ordine le categorie si esprimono come predicati oppure, tramite reificazione, come veri e propri oggetti su cui quantificare. Le relazioni chiave sono l'appartenenza (un oggetto e' membro di una categoria), la sottoclasse (una categoria e' inclusa in un'altra) e l'ereditarieta': se ogni cibo e' commestibile e le mele sono un tipo di frutta, che e' un tipo di cibo, ogni singola mela eredita la commestibilita' senza doverla affermare una per una. Le catene di sottoclassi formano gerarchie tassonomiche, uno strumento antichissimo (dalla biologia al sistema decimale Dewey) che l'AI formalizza. Concetti come categorie disgiunte, scomposizioni esaustive e partizioni permettono di dire con precisione come una categoria si divide nelle sue sottocategorie.
 
-Accanto alla tassonomia c'e' la composizione fisica: la relazione ParteDi (transitiva e riflessiva) descrive gerarchie di parti — una citta' e' parte di una nazione, che e' parte di un continente. Gli oggetti composti si caratterizzano per la struttura delle loro parti; per aggregati senza struttura il libro introduce il concetto di mucchio, l'oggetto fisico composto da certi elementi, distinto dall'insieme matematico che quegli elementi contiene (un insieme non pesa due chili, un mucchio di mele si').
+Accanto alla tassonomia c'e' la composizione fisica: la relazione ParteDi (transitiva e riflessiva) descrive gerarchie di parti — una citta' e' parte di una nazione, che e' parte di un continente. Gli oggetti composti si caratterizzano per la struttura delle loro parti; per aggregati senza struttura si introduce il concetto di mucchio, l'oggetto fisico composto da certi elementi, distinto dall'insieme matematico che quegli elementi contiene (un insieme non pesa due chili, un mucchio di mele si').
 
 ## Misure, cose e roba
 
@@ -120,8 +118,4 @@ Infine, se le conclusioni di default possono rivelarsi sbagliate, serve un modo 
 
 Gli [LLM](../kb/concetti/llm.md) sembrano aver scavalcato il problema: la conoscenza sta nei pesi della rete, non in assiomi scritti a mano. Ma le domande del capitolo sono tornate intatte sotto altre forme. Un modello linguistico ha conoscenza implicita, opaca e non ritrattabile — esattamente cio' che i TMS e le logiche non monotone volevano evitare — e la risposta pratica dell'industria e' stata reintrodurre conoscenza esplicita e aggiornabile accanto al modello: il [RAG](../kb/concetti/rag.md) e i [vector database](../kb/concetti/vector-database.md) fanno oggi il lavoro che le basi di conoscenza strutturate facevano ieri, con gli [embedding](../kb/concetti/embedding.md) al posto dei predicati come meccanismo di indicizzazione semantica. I knowledge graph in stile DBpedia, citati nel capitolo, restano infrastruttura viva nei motori di ricerca e nei sistemi enterprise.
 
-Anche il resto dell'ontologia di Russell e Norvig riemerge nella pratica degli [agenti](../kb/concetti/agent.md): un agente che pianifica azioni con effetti nel tempo, ritratta conclusioni davanti a errori e ragiona su cio' che sa e non sa sta affrontando eventi, fluenti, default e oggetti mentali, anche se lo fa in linguaggio naturale invece che in logica del primo ordine. La ricerca sui [world models](../kb/concetti/world-models.md) ripropone la domanda centrale del capitolo in forma neurale: quale rappresentazione interna del mondo serve per predire e agire bene? Le note storiche del capitolo ammettevano gia' che integrare rappresentazioni neurali e semantica simbolica resta un problema aperto: e' precisamente il fronte su cui il campo si muove oggi.
-
-## Riferimenti
-
-- Stuart J. Russell, Peter Norvig — *Intelligenza Artificiale: Un Approccio Moderno*, 4a edizione italiana, Pearson Italia, Vol. 1 (2021), Capitolo 10, pp. 323-352.
+Anche il resto di questa ontologia riemerge nella pratica degli [agenti](../kb/concetti/agent.md): un agente che pianifica azioni con effetti nel tempo, ritratta conclusioni davanti a errori e ragiona su cio' che sa e non sa sta affrontando eventi, fluenti, default e oggetti mentali, anche se lo fa in linguaggio naturale invece che in logica del primo ordine. La ricerca sui [world models](../kb/concetti/world-models.md) ripropone la domanda centrale del capitolo in forma neurale: quale rappresentazione interna del mondo serve per predire e agire bene? Le note storiche del capitolo ammettevano gia' che integrare rappresentazioni neurali e semantica simbolica resta un problema aperto: e' precisamente il fronte su cui il campo si muove oggi.

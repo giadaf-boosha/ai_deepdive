@@ -2,15 +2,13 @@
 titolo: Ricerca in ambienti complessi
 capitolo: 4
 parte: 2
-volume: 1
-pagine: "115-150"
 concetti: [agent, world-models, tool-use]
 created: 2026-07-06
 last_updated: 2026-07-06
 ---
 # Ricerca in ambienti complessi
 
-Il capitolo 3 di Russell e Norvig lavora sotto ipotesi comode: ambiente completamente osservabile, deterministico, statico e noto in anticipo. In quelle condizioni risolvere un problema significa calcolare una sequenza di azioni e poi eseguirla a occhi chiusi. Il capitolo 4 toglie queste stampelle una alla volta e si chiede: cosa succede quando all'agente interessa solo lo stato finale e non il cammino? Quando le variabili sono continue anziche' discrete? Quando le azioni hanno esiti imprevedibili, quando i sensori non bastano a sapere dove ci si trova, quando l'ambiente stesso e' sconosciuto e va esplorato?
+La ricerca classica lavora sotto ipotesi comode: ambiente completamente osservabile, deterministico, statico e noto in anticipo. In quelle condizioni risolvere un problema significa calcolare una sequenza di azioni e poi eseguirla a occhi chiusi. Il capitolo 4 toglie queste stampelle una alla volta e si chiede: cosa succede quando all'agente interessa solo lo stato finale e non il cammino? Quando le variabili sono continue anziche' discrete? Quando le azioni hanno esiti imprevedibili, quando i sensori non bastano a sapere dove ci si trova, quando l'ambiente stesso e' sconosciuto e va esplorato?
 
 La domanda di fondo e' come un agente possa comportarsi in modo razionale quando il mondo non collabora. Le risposte formano un repertorio che va dalla ricerca locale (algoritmi leggeri che tengono in memoria un solo stato o poco piu') ai piani condizionali con rami "se-allora", dagli stati-credenza che rappresentano l'incertezza come insieme di mondi possibili, fino agli agenti online che alternano azione e calcolo imparando strada facendo.
 
@@ -89,7 +87,7 @@ La via piu' potente sfrutta il calcolo differenziale: il gradiente della funzion
 
 ## Pianificare quando le azioni tradiscono
 
-Se le azioni hanno esiti multipli possibili, una sequenza fissa non basta piu'. Il libro usa un aspirapolvere "erratico": l'azione di aspirazione a volte pulisce anche la casella adiacente, a volte sporca un tappeto pulito. La generalizzazione formale sostituisce la funzione che restituisce un singolo stato risultante con una funzione che restituisce un insieme di stati possibili. La soluzione diventa un piano condizionale: una struttura con rami if-then-else che dice cosa fare a seconda di cio' che l'agente osservera' durante l'esecuzione. E' la stessa logica per cui si guida guardando la strada invece di memorizzare in anticipo ogni sterzata.
+Se le azioni hanno esiti multipli possibili, una sequenza fissa non basta piu'. L'esempio canonico e' un aspirapolvere "erratico": l'azione di aspirazione a volte pulisce anche la casella adiacente, a volte sporca un tappeto pulito. La generalizzazione formale sostituisce la funzione che restituisce un singolo stato risultante con una funzione che restituisce un insieme di stati possibili. La soluzione diventa un piano condizionale: una struttura con rami if-then-else che dice cosa fare a seconda di cio' che l'agente osservera' durante l'esecuzione. E' la stessa logica per cui si guida guardando la strada invece di memorizzare in anticipo ogni sterzata.
 
 Lo strumento per trovare questi piani e' l'albero di ricerca AND-OR. Nei nodi OR l'agente sceglie quale azione compiere; nei nodi AND e' l'ambiente a "scegliere" l'esito, e il piano deve coprire ogni ramo. Una soluzione e' un sottoalbero con un obiettivo in ogni foglia, una sola azione per ogni nodo OR e tutti i rami coperti in ogni nodo AND. L'algoritmo ricorsivo che esplora questi grafi taglia i cicli: se lo stato corrente coincide con uno gia' presente sul cammino dalla radice, quel ramo fallisce, il che garantisce la terminazione negli spazi finiti.
 
@@ -109,7 +107,7 @@ Tutti gli approcci precedenti sono offline: prima si calcola la soluzione comple
 
 Le prestazioni si misurano con il rapporto di competitivita': il costo del cammino effettivamente percorso rispetto al cammino ottimo che si sarebbe seguito conoscendo l'ambiente. Nessun algoritmo puo' garantire un rapporto limitato in generale: i vicoli ciechi e le azioni irreversibili possono intrappolare qualsiasi esploratore, come mostra l'argomentazione dell'avversario che costruisce il labirinto apposta contro l'agente. Ci si limita quindi agli spazi esplorabili in modo sicuro, dove da ogni stato raggiungibile si puo' sempre arrivare a un obiettivo.
 
-Un agente online deve espandere solo nodi che occupa fisicamente, il che rende naturale la ricerca in profondita' con backtracking fisico: si torna sui propri passi nel mondo reale, e serve quindi che le azioni siano reversibili. Il random walk e' completo negli spazi finiti sicuri ma puo' impiegare un numero esponenziale di passi. La mossa vincente e' aggiungere memoria: LRTA* (learning real-time A*) mantiene per ogni stato visitato una stima aggiornabile del costo verso l'obiettivo e la corregge man mano che l'esperienza smentisce l'euristica iniziale, "riempiendo" cosi' i minimi locali fino a uscirne. Il suo ottimismo in condizioni di incertezza — assumere che le azioni mai provate portino al meglio — spinge l'agente a esplorare cammini nuovi. Piu' in generale, la ricerca online e' una palestra di apprendimento: l'agente impara la mappa dell'ambiente memorizzando gli esiti delle azioni e affina le stime di valore degli stati, un ponte diretto verso il reinforcement learning trattato piu' avanti nel libro.
+Un agente online deve espandere solo nodi che occupa fisicamente, il che rende naturale la ricerca in profondita' con backtracking fisico: si torna sui propri passi nel mondo reale, e serve quindi che le azioni siano reversibili. Il random walk e' completo negli spazi finiti sicuri ma puo' impiegare un numero esponenziale di passi. La mossa vincente e' aggiungere memoria: LRTA* (learning real-time A*) mantiene per ogni stato visitato una stima aggiornabile del costo verso l'obiettivo e la corregge man mano che l'esperienza smentisce l'euristica iniziale, "riempiendo" cosi' i minimi locali fino a uscirne. Il suo ottimismo in condizioni di incertezza — assumere che le azioni mai provate portino al meglio — spinge l'agente a esplorare cammini nuovi. Piu' in generale, la ricerca online e' una palestra di apprendimento: l'agente impara la mappa dell'ambiente memorizzando gli esiti delle azioni e affina le stime di valore degli stati, un ponte diretto verso il reinforcement learning trattato piu' avanti nel percorso.
 
 ## Idee chiave
 
@@ -120,14 +118,10 @@ Un agente online deve espandere solo nodi che occupa fisicamente, il che rende n
 - In ambienti non deterministici la soluzione e' un piano condizionale, trovato con la ricerca su alberi AND-OR; i piani ciclici del tipo "riprova finche' funziona" sono legittimi se i fallimenti sono indipendenti.
 - Con osservabilita' parziale l'agente ragiona su stati-credenza; il problema fisico si riformula come problema completamente osservabile nello spazio degli stati-credenza, su cui girano gli algoritmi standard.
 - Il ciclo predizione-aggiornamento mantiene lo stato-credenza durante l'esecuzione ed e' il meccanismo alla base di monitoraggio, filtri e localizzazione.
-- Negli ambienti sconosciuti la ricerca online alterna azione e calcolo; agenti come LRTA* sfuggono ai minimi locali aggiornando le stime euristiche con l'esperienza, prima forma di apprendimento incontrata nel libro.
+- Negli ambienti sconosciuti la ricerca online alterna azione e calcolo; agenti come LRTA* sfuggono ai minimi locali aggiornando le stime euristiche con l'esperienza, prima forma di apprendimento incontrata nel percorso.
 
 ## Perche conta oggi
 
 Questo capitolo e' una miniera di concetti che l'era degli LLM ha reso di nuovo centrali. Un [agente](../kb/concetti/agent.md) moderno basato su un [LLM](../kb/concetti/llm.md) opera esattamente nelle condizioni descritte qui: ambiente parzialmente osservabile (vede solo cio' che gli strumenti restituiscono), azioni non deterministiche (una chiamata API puo' fallire o dare esiti imprevisti), spazio in gran parte sconosciuto da esplorare online. Il pattern "agisci, osserva, aggiorna, decidi" degli agenti che usano il [tool use](../kb/concetti/tool-use.md) e' la ricerca online del paragrafo 4.5 con altri panni; i piani condizionali con retry sono la versione formale dei loop "prova, verifica, riprova" che ogni [agent harness](../kb/concetti/agent-harness.md) implementa; lo stato-credenza e' l'antenato concettuale dei [world models](../kb/concetti/world-models.md) con cui i sistemi attuali mantengono una rappresentazione interna dell'ambiente.
 
 Anche il versante ottimizzazione e' tutt'altro che archeologia: la discesa del gradiente descritta per il problema degli aeroporti e' lo stesso principio che addestra ogni rete neurale, e gli algoritmi evolutivi sono tornati attuali per la ricerca di architetture deep. Persino l'ottimismo in condizioni di incertezza di LRTA* riecheggia nelle strategie di esplorazione del reinforcement learning che sta dietro a tecniche come [RLHF](../kb/concetti/rlhf.md). Leggere questo capitolo significa riconoscere che molti pattern degli agenti moderni hanno fondamenta teoriche vecchie di decenni, con proprieta' e limiti gia' studiati.
-
-## Riferimenti
-
-- Stuart J. Russell, Peter Norvig — *Intelligenza Artificiale: Un Approccio Moderno*, 4a edizione italiana, Pearson Italia, Vol. 1 (2021), Capitolo 4, pp. 115-150.

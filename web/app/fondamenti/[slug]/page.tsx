@@ -9,7 +9,6 @@ import {
 } from "@/lib/fondamenti";
 import { kbConceptsInChapter } from "@/lib/relations";
 import { extractToc, stripLeadingH1 } from "@/lib/markdown";
-import { formatShort } from "@/lib/dates";
 import { MarkdownContent } from "@/components/MarkdownContent";
 import { Toc } from "@/components/Toc";
 
@@ -71,15 +70,6 @@ export default async function CapitoloPage({
           <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
             {cap.titolo}
           </h1>
-          <p className="flex flex-wrap gap-x-4 font-mono text-xs text-faint">
-            <span>{cap.wordCount.toLocaleString("it-IT")} parole</span>
-            {cap.lastUpdated && (
-              <span>ultima modifica: {formatShort(cap.lastUpdated)}</span>
-            )}
-            <span>
-              AIMA 4a ed., Vol. {cap.volume}, pp. {cap.pagine}
-            </span>
-          </p>
         </header>
 
         <article>

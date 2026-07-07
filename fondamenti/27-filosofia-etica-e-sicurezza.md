@@ -2,8 +2,6 @@
 titolo: Filosofia, etica e sicurezza dell'intelligenza artificiale
 capitolo: 27
 parte: 7
-volume: 2
-pagine: "341-372"
 concetti: [ai-governance, agent, rlhf, llm, evaluation-benchmark]
 created: 2026-07-06
 last_updated: 2026-07-06
@@ -11,9 +9,9 @@ last_updated: 2026-07-06
 
 # Filosofia, etica e sicurezza dell'intelligenza artificiale
 
-Il capitolo 27 chiude il percorso di Russell e Norvig affrontando le domande che accompagnano l'AI fin dalla sua nascita: le macchine possono davvero pensare, o si limitano a simulare il pensiero? Quali obblighi etici ricadono su chi progetta sistemi intelligenti? E come si costruiscono macchine che restino sicure anche quando diventano molto capaci?
+Il capitolo 27 chiude il percorso affrontando le domande che accompagnano l'AI fin dalla sua nascita: le macchine possono davvero pensare, o si limitano a simulare il pensiero? Quali obblighi etici ricadono su chi progetta sistemi intelligenti? E come si costruiscono macchine che restino sicure anche quando diventano molto capaci?
 
-Sono tre livelli di discussione distinti ma intrecciati. Il primo e' filosofico: riguarda i limiti teorici dell'AI e la natura della mente. Il secondo e' etico e sociale: armi autonome, sorveglianza, privacy, equita' degli algoritmi, impatto sul lavoro. Il terzo e' ingegneristico: come si specifica un obiettivo a una macchina senza ottenere effetti collaterali indesiderati, un problema che gli autori chiamano allineamento dei valori.
+Sono tre livelli di discussione distinti ma intrecciati. Il primo e' filosofico: riguarda i limiti teorici dell'AI e la natura della mente. Il secondo e' etico e sociale: armi autonome, sorveglianza, privacy, equita' degli algoritmi, impatto sul lavoro. Il terzo e' ingegneristico: come si specifica un obiettivo a una macchina senza ottenere effetti collaterali indesiderati, un problema noto come allineamento dei valori.
 
 La tesi di fondo del capitolo e' pragmatica: le dispute filosofiche sulla coscienza delle macchine restano aperte ma non bloccano la ricerca, mentre le questioni etiche e di sicurezza sono urgenti e concrete, perche' i sistemi di AI prendono gia' oggi decisioni con conseguenze reali sulle persone.
 
@@ -88,13 +86,13 @@ La domanda dell'IA forte e' se una macchina intelligente pensi realmente o stia 
 
 Searle rifiuta questa convenzione con l'esperimento mentale della stanza cinese: una persona che non conosce il cinese, chiusa in una stanza con un manuale di regole, manipola simboli e produce risposte corrette in cinese senza capirne nulla. Per Searle il sistema non genera comprensione, e per la stessa ragione non la genererebbe un computer. Dietro l'argomento c'e' il suo naturalismo biologico: gli stati mentali sarebbero proprieta' emergenti dei neuroni in quanto tali. La replica classica e' che l'argomento, applicato simmetricamente, potrebbe portare un alieno a negare che ammassi di cellule di carne siano senzienti.
 
-Il nodo piu' profondo e' la coscienza: l'esperienza soggettiva, i qualia. Quando in *2001 Odissea nello spazio* HAL dice di "sentire" la propria mente svanire, prova davvero qualcosa o e' solo output? Il problema resta mal definito dopo secoli di dibattito, anche se filosofi e neuroscienziati stanno provando a renderlo sperimentale confrontando le due teorie principali, lo spazio di lavoro neuronale globale e l'informazione integrata. La posizione degli autori ricalca quella di Turing: il mistero esiste, ma non serve risolverlo per costruire programmi che si comportino in modo intelligente.
+Il nodo piu' profondo e' la coscienza: l'esperienza soggettiva, i qualia. Quando in *2001 Odissea nello spazio* HAL dice di "sentire" la propria mente svanire, prova davvero qualcosa o e' solo output? Il problema resta mal definito dopo secoli di dibattito, anche se filosofi e neuroscienziati stanno provando a renderlo sperimentale confrontando le due teorie principali, lo spazio di lavoro neuronale globale e l'informazione integrata. La posizione qui adottata ricalca quella di Turing: il mistero esiste, ma non serve risolverlo per costruire programmi che si comportino in modo intelligente.
 
 ## Armi autonome, sorveglianza, privacy
 
 Con la sezione etica il capitolo cambia registro: l'AI e' una tecnologia potente e chi la sviluppa ha l'obbligo morale di usarla bene. I benefici sono concreti, dalla diagnosi medica alla sicurezza stradale, ma ogni tecnologia ha effetti collaterali negativi non previsti, e le organizzazioni hanno codificato principi ricorrenti: sicurezza, equita', privacy, trasparenza, responsabilita', tutela dei diritti umani.
 
-Il caso piu' netto sono le armi letali autonome: sistemi in grado di localizzare, selezionare e uccidere bersagli umani senza supervisione. Alcuni sistemi esistenti sembrano gia' oltre la soglia della piena autonomia. Il problema pratico decisivo e' la scalabilita': non servendo un operatore per arma, un milione di piccoli droni esplosivi sta in un container, e questo le rende armi di distruzione di massa selettive, tracciabili con difficolta' e attraenti per attori non statali. Per gli autori la risposta razionale dei governi e' negoziare un controllo internazionale invece di alimentare una corsa agli armamenti, con la complicazione che l'AI e' una tecnologia duale: la stessa navigazione autonoma serve sia usi civili sia militari.
+Il caso piu' netto sono le armi letali autonome: sistemi in grado di localizzare, selezionare e uccidere bersagli umani senza supervisione. Alcuni sistemi esistenti sembrano gia' oltre la soglia della piena autonomia. Il problema pratico decisivo e' la scalabilita': non servendo un operatore per arma, un milione di piccoli droni esplosivi sta in un container, e questo le rende armi di distruzione di massa selettive, tracciabili con difficolta' e attraenti per attori non statali. La risposta razionale dei governi e' negoziare un controllo internazionale invece di alimentare una corsa agli armamenti, con la complicazione che l'AI e' una tecnologia duale: la stessa navigazione autonoma serve sia usi civili sia militari.
 
 Sul fronte della sorveglianza, riconoscimento vocale e facciale rendono economico cio' che prima richiedeva risorse umane enormi, con rischi per le liberta' civili. La privacy dei dati ha pero' contromisure tecniche precise, che il capitolo passa in rassegna: la de-identificazione e' fragile, perche' pochi attributi residui bastano a re-identificare gran parte della popolazione, come dimostrato dal Netflix Prize; il k-anonimato generalizza i campi finche' ogni record e' indistinguibile da almeno k-1 altri; la privacy differenziale aggiunge rumore calibrato alle risposte, cosi' che la presenza o assenza di un individuo nel database non cambi in modo apprezzabile i risultati; l'apprendimento federato tiene i dati sui dispositivi degli utenti e condivide solo parametri di modello, protetti da aggregazione sicura contro il reverse engineering.
 
@@ -104,7 +102,7 @@ Il machine learning decide sempre piu' spesso su credito, liberta' condizionale,
 
 Ci sono poi distorsioni piu' subdole: i dati sulla recidiva registrano chi e' stato condannato, non chi ha commesso reati; le classi minoritarie hanno meno esempi nel dataset e quindi accuratezza minore, come nei sistemi di visione molto precisi sui volti maschili chiari e molto meno su quelli femminili scuri. Le contromisure includono documentare i dataset con schede tecniche, team di sviluppo diversificati, metriche tracciate per sottogruppo e correzioni del campionamento.
 
-Accanto all'equita' c'e' la fiducia: i sistemi devono passare per verifica e validazione, eventualmente certificazione da enti terzi, ed essere trasparenti. Un sistema di AI spiegabile (XAI) deve motivare le proprie decisioni, requisito che in Europa il GDPR rende esigibile; gli autori avvertono pero' che una spiegazione e' un racconto della decisione, non la decisione stessa, e va affiancata da audit aggregati sulle decisioni passate. La trasparenza include sapere se si sta parlando con una macchina: la California vieta i bot che nascondono la propria natura artificiale.
+Accanto all'equita' c'e' la fiducia: i sistemi devono passare per verifica e validazione, eventualmente certificazione da enti terzi, ed essere trasparenti. Un sistema di AI spiegabile (XAI) deve motivare le proprie decisioni, requisito che in Europa il GDPR rende esigibile; occorre pero' avvertire che una spiegazione e' un racconto della decisione, non la decisione stessa, e va affiancata da audit aggregati sulle decisioni passate. La trasparenza include sapere se si sta parlando con una macchina: la California vieta i bot che nascondono la propria natura artificiale.
 
 ## Lavoro, disuguaglianza e statuto dei robot
 
@@ -136,7 +134,3 @@ Sul lungo periodo, l'ipotesi della macchina ultraintelligente di Good e la singo
 Il capitolo, scritto prima dell'esplosione dei modelli generativi, descrive con precisione i problemi che oggi occupano chi costruisce e regola gli [LLM](../kb/concetti/llm.md). Il problema di Re Mida e' il fondamento teorico delle tecniche di allineamento moderne: l'idea di apprendere le preferenze umane invece di specificarle a mano e' esattamente cio' che fa il [RLHF](../kb/concetti/rlhf.md), e la difficolta' di misurare cio' che vogliamo davvero si riflette nella cura con cui si progettano [benchmark di valutazione](../kb/concetti/evaluation-benchmark.md), dove i modelli mostrano ancora oggi comportamenti da "specifica hackerata" analoghi a quelli catalogati da Krakovna.
 
 Le sezioni su equita', trasparenza e certificazione anticipano l'agenda della [governance dell'AI](../kb/concetti/ai-governance.md), dall'AI Act europeo agli obblighi di spiegabilita' e audit. E il tema degli effetti collaterali di un [agente](../kb/concetti/agent.md) che ottimizza un obiettivo nel mondo reale e' diventato pratica quotidiana con gli agenti basati su LLM, dove il contenimento delle azioni passa da tecniche come il [sandboxing degli agenti](../kb/concetti/agent-sandboxing.md): la lezione del capitolo, agire con cautela e chiedere prima di compiere azioni irreversibili, e' oggi un requisito di prodotto.
-
-## Riferimenti
-
-- Stuart J. Russell, Peter Norvig — *Intelligenza Artificiale: Un Approccio Moderno*, 4a edizione italiana, Pearson Italia, Vol. 2 (2022), Capitolo 27, pp. 341-372.

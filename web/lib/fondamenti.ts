@@ -4,8 +4,7 @@ import matter from "gray-matter";
 import { FONDAMENTI_DIR } from "./content-paths";
 import { toIsoDate } from "./dates";
 
-// Le 7 parti di Russell & Norvig, "Intelligenza Artificiale: Un Approccio
-// Moderno", 4a ed. italiana (Pearson). I capitoli sono file markdown in
+// Le 7 parti del percorso Fondamenti di AI. I capitoli sono file markdown in
 // fondamenti/NN-<slug>.md; lo slug della route e' il filename senza prefisso.
 export interface Parte {
   numero: number;
@@ -32,8 +31,6 @@ export interface Capitolo {
   titolo: string;
   capitolo: number;
   parte: number;
-  volume: number;
-  pagine: string; // range di pagine stampate nel volume di riferimento
   concetti: string[]; // slug KB correlati espliciti
   created: string | null;
   lastUpdated: string | null;
@@ -84,8 +81,6 @@ function parseChapterFile(file: string): Capitolo {
     titolo: typeof data.titolo === "string" && data.titolo.trim() ? data.titolo.trim() : slug,
     capitolo: Number(data.capitolo) || 0,
     parte: Number(data.parte) || 0,
-    volume: Number(data.volume) || 1,
-    pagine: typeof data.pagine === "string" ? data.pagine : String(data.pagine ?? ""),
     concetti: toStringArray(data.concetti),
     created: toIsoDate(data.created),
     lastUpdated: toIsoDate(data.last_updated),

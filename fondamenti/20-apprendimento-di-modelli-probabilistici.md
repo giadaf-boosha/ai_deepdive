@@ -2,8 +2,6 @@
 titolo: Apprendimento di modelli probabilistici
 capitolo: 20
 parte: 5
-volume: 2
-pagine: "75-102"
 concetti: [llm, fine-tuning, world-models, mixture-of-experts]
 created: 2026-07-06
 last_updated: 2026-07-06
@@ -11,7 +9,7 @@ last_updated: 2026-07-06
 
 # Apprendimento di modelli probabilistici
 
-Un agente che opera nel mondo reale non conosce con certezza le regole che lo governano: deve ricavarle dall'esperienza. Il capitolo 20 affronta esattamente questa domanda: come si impara una teoria probabilistica del mondo a partire dai dati osservati? La risposta proposta da Russell e Norvig e' elegante nella sua circolarita': l'apprendimento stesso puo' essere formulato come un problema di inferenza probabilistica. Osservare dati significa accumulare evidenza, e aggiornare le proprie credenze sulle ipotesi candidate e' un'applicazione diretta della regola di Bayes.
+Un agente che opera nel mondo reale non conosce con certezza le regole che lo governano: deve ricavarle dall'esperienza. Questo capitolo affronta esattamente questa domanda: come si impara una teoria probabilistica del mondo a partire dai dati osservati? La risposta proposta e' elegante nella sua circolarita': l'apprendimento stesso puo' essere formulato come un problema di inferenza probabilistica. Osservare dati significa accumulare evidenza, e aggiornare le proprie credenze sulle ipotesi candidate e' un'applicazione diretta della regola di Bayes.
 
 Questa prospettiva unifica temi che altrove appaiono separati: la scelta tra ipotesi in competizione, la stima di parametri numerici, il compromesso tra semplicita' del modello e aderenza ai dati, il sovradattamento. Il capitolo percorre una scala di difficolta' crescente: prima l'apprendimento bayesiano puro e le sue approssimazioni (MAP e massima verosimiglianza), poi la stima di parametri con dati completi, infine il caso piu' spinoso in cui alcune variabili non sono mai osservate, risolto dall'algoritmo expectation-maximization.
 
@@ -133,7 +131,3 @@ EM non e' una bacchetta magica: converge a massimi locali, puo' degenerare (una 
 Le idee di questo capitolo sono il substrato concettuale su cui poggia l'addestramento dei modelli moderni. Un [LLM](../kb/concetti/llm.md) e' a tutti gli effetti un gigantesco stimatore di massima verosimiglianza: il pre-training minimizza la log-loss sul token successivo, che e' esattamente la verosimiglianza logaritmica negativa dei dati sotto il modello. Il compromesso tra complessita' e adattamento discusso via MAP e MDL riappare ovunque si parli di regolarizzazione e sovradattamento, incluso il [fine-tuning](../kb/concetti/fine-tuning.md), dove pochi dati specifici devono aggiornare un modello senza fargli dimenticare il prior implicito acquisito in pre-training — una dinamica che ricorda da vicino l'aggiornamento bayesiano con conteggi virtuali.
 
 Anche i concetti architetturali hanno eredi diretti. Le distribuzioni miscela, cuore del clustering con EM, sono l'antenato concettuale dei [mixture-of-experts](../kb/concetti/mixture-of-experts.md), dove una variabile latente (quale esperto attivare) governa la generazione. E la distinzione tra modelli generativi e discriminativi e' tornata centrale: i modelli generativi hanno vinto la scala, e l'idea che un agente debba apprendere una distribuzione completa sul mondo per predire e decidere e' la tesi di fondo dei [world models](../kb/concetti/world-models.md). Chi lavora oggi con l'incertezza delle predizioni — calibrazione, confidenza, quando un modello dovrebbe dire "non lo so" — sta riproponendo, su scala diversa, il passaggio dalla stima puntuale alla distribuzione a posteriori che questo capitolo motiva con una manciata di caramelle.
-
-## Riferimenti
-
-- Stuart J. Russell, Peter Norvig — *Intelligenza Artificiale: Un Approccio Moderno*, 4a edizione italiana, Pearson Italia, Vol. 2 (2022), Capitolo 20, pp. 75-102.

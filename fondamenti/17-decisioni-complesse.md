@@ -2,8 +2,6 @@
 titolo: Decisioni complesse
 capitolo: 17
 parte: 4
-volume: 1
-pagine: "573-608"
 concetti: [agent, world-models, rlhf]
 created: 2026-07-06
 last_updated: 2026-07-06
@@ -75,7 +73,7 @@ Il percorso e' progressivo. Prima gli MDP completamente osservabili e gli algori
 
 Un MDP e' definito da pochi elementi: un insieme di stati con uno stato iniziale, le azioni disponibili in ogni stato, un modello di transizione che assegna una probabilita' a ogni possibile esito di ogni azione, e una funzione di ricompensa che attribuisce un valore numerico a ogni transizione. L'ipotesi markoviana dice che la probabilita' di arrivare in uno stato dipende solo dallo stato corrente e dall'azione scelta, non da tutta la storia precedente: il presente riassume il passato.
 
-Il libro usa un mondo giocattolo, una griglia 4x3 con due uscite (una buona, una cattiva) e movimenti inaffidabili: l'azione voluta riesce con probabilita' 0,8, ma nel 20% dei casi l'agente scivola di lato. In un ambiente cosi' una sequenza fissa di mosse non basta, perche' l'agente puo' ritrovarsi ovunque. La soluzione deve dire cosa fare in ogni stato raggiungibile: si chiama politica, e si indica con la lettera greca pi. Una politica ottima e' quella che massimizza l'utilita' attesa sulle possibili storie che genera. Un dettaglio istruttivo: la forma della politica ottima cambia radicalmente al variare della ricompensa dei passi intermedi. Se ogni passo costa molto, l'agente corre verso l'uscita piu' vicina anche se e' quella cattiva; se ogni passo produce una piccola ricompensa positiva, l'agente evita entrambe le uscite e vaga per sempre. Il design della ricompensa e' gia' design del comportamento.
+L'esempio canonico e' un mondo giocattolo, una griglia 4x3 con due uscite (una buona, una cattiva) e movimenti inaffidabili: l'azione voluta riesce con probabilita' 0,8, ma nel 20% dei casi l'agente scivola di lato. In un ambiente cosi' una sequenza fissa di mosse non basta, perche' l'agente puo' ritrovarsi ovunque. La soluzione deve dire cosa fare in ogni stato raggiungibile: si chiama politica, e si indica con la lettera greca pi. Una politica ottima e' quella che massimizza l'utilita' attesa sulle possibili storie che genera. Un dettaglio istruttivo: la forma della politica ottima cambia radicalmente al variare della ricompensa dei passi intermedi. Se ogni passo costa molto, l'agente corre verso l'uscita piu' vicina anche se e' quella cattiva; se ogni passo produce una piccola ricompensa positiva, l'agente evita entrambe le uscite e vaga per sempre. Il design della ricompensa e' gia' design del comportamento.
 
 <figure class="diagram">
 <svg viewBox="0 0 760 300" role="img" aria-label="Il mondo a griglia 4x3 del capitolo 17: stati terminali +1 in (4,3) e -1 in (4,2), muro in (2,2), partenza INIZIO in (1,1); a destra il modello di transizione, con probabilita' 0,8 nella direzione voluta e 0,1 per ciascuna direzione ortogonale">
@@ -115,7 +113,7 @@ Il libro usa un mondo giocattolo, una griglia 4x3 con due uscite (una buona, una
 <text x="600" y="212" text-anchor="middle" class="dg-sublabel">modello di transizione</text>
 <text x="600" y="282" text-anchor="middle" class="dg-sublabel">(b)</text>
 </svg>
-<figcaption>Il mondo 4x3: terminali +1 e -1, muro in (2,2), partenza in (1,1); l'azione voluta riesce con probabilita' 0,8, con 0,1 si scivola di lato e le altre transizioni valgono -0,04 — schema ripreso dalla figura 17.1 del cap. 17, AIMA 4a ed.</figcaption>
+<figcaption>Il mondo 4x3: terminali +1 e -1, muro in (2,2), partenza in (1,1); l'azione voluta riesce con probabilita' 0,8, con 0,1 si scivola di lato e le altre transizioni valgono -0,04.</figcaption>
 </figure>
 
 Resta da definire l'utilita' di una storia infinita. La risposta standard e' lo sconto: le ricompense future vengono moltiplicate per un fattore gamma tra 0 e 1 elevato al tempo, cosi' che il futuro remoto pesi sempre meno. Lo sconto ha giustificazioni economiche (un euro oggi vale piu' di un euro domani), probabilistiche (equivale a una piccola probabilita' di terminazione a ogni passo) e matematiche: rende finita la somma di una sequenza infinita di ricompense, ed e' l'unica forma di aggregazione coerente con preferenze stazionarie nel tempo. C'e' anche un risultato elegante sul reward shaping: aggiungere alla ricompensa un termine a forma di gradiente di potenziale non cambia la politica ottima, il che consente di "aiutare" l'agente con segnali intermedi senza distorcere l'obiettivo. E' esattamente cio' che fa un addestratore di animali con i piccoli premi lungo il percorso.
@@ -168,7 +166,3 @@ Gli algoritmi esatti rappresentano la funzione di utilita' come massimo di una c
 Questo capitolo e' la grammatica formale con cui oggi si descrive qualsiasi [agent](../kb/concetti/agent.md) che opera in piu' passi: stato, azione, osservazione, ricompensa, politica. Quando un agente basato su [llm](../kb/concetti/llm.md) pianifica una sequenza di chiamate a strumenti tramite [tool-use](../kb/concetti/tool-use.md), sta di fatto navigando un POMDP: non osserva mai lo stato completo del mondo (il contenuto vero di un filesystem, l'esito reale di un'API), mantiene una credenza implicita e compie azioni di raccolta di informazioni — leggere prima di scrivere, verificare prima di procedere — esattamente come prescrive la teoria. Anche il ruolo del modello di transizione riecheggia nella ricerca attuale sui [world-models](../kb/concetti/world-models.md): un agente che sa prevedere le conseguenze delle proprie azioni puo' pianificare invece di limitarsi a reagire.
 
 Il legame piu' diretto e' con l'addestramento. Il [rlhf](../kb/concetti/rlhf.md) e le tecniche successive trattano la generazione di testo come un MDP in cui la politica e' il modello stesso e la ricompensa viene da un modello di preferenze: le trappole discusse nel capitolo — ricompense mal disegnate che producono comportamenti degeneri, l'importanza dello shaping — sono gli stessi problemi di reward hacking che affliggono l'allineamento dei modelli. E il dilemma dei banditi vive una seconda vita nei sistemi in produzione, dall'A/B testing con Thompson sampling alla scelta di quale modello o prompt servire a ciascun utente dentro un [agent-harness](../kb/concetti/agent-harness.md).
-
-## Riferimenti
-
-- Stuart J. Russell, Peter Norvig — *Intelligenza Artificiale: Un Approccio Moderno*, 4a edizione italiana, Pearson Italia, Vol. 1 (2021), Capitolo 17, pp. 573-608.

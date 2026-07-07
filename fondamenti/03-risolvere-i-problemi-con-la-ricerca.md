@@ -2,8 +2,6 @@
 titolo: Risolvere i problemi con la ricerca
 capitolo: 3
 parte: 2
-volume: 1
-pagine: "67-114"
 concetti: [agent, world-models, chain-of-thought]
 created: 2026-07-06
 last_updated: 2026-07-06
@@ -11,7 +9,7 @@ last_updated: 2026-07-06
 
 # Risolvere i problemi con la ricerca
 
-Cosa fa un agente quando la mossa giusta non e' ovvia? La risposta del capitolo 3 di Russell e Norvig e' semplice da enunciare e ricca di conseguenze: guarda avanti. L'agente immagina sequenze di azioni possibili, le simula dentro un modello del mondo e sceglie quella che lo porta a uno stato obiettivo. Questo processo computazionale si chiama ricerca, e l'agente che lo esegue e' un agente risolutore di problemi.
+Cosa fa un agente quando la mossa giusta non e' ovvia? La risposta e' semplice da enunciare e ricca di conseguenze: guarda avanti. L'agente immagina sequenze di azioni possibili, le simula dentro un modello del mondo e sceglie quella che lo porta a uno stato obiettivo. Questo processo computazionale si chiama ricerca, e l'agente che lo esegue e' un agente risolutore di problemi.
 
 Il capitolo lavora in un mondo volutamente semplificato: ambienti a singolo agente, completamente osservabili, deterministici e noti. In queste condizioni la soluzione di un problema e' una sequenza fissa di azioni che l'agente puo' eseguire "a occhi chiusi", senza piu' consultare le percezioni: in teoria del controllo si parla di sistema ad anello aperto. Sembra un gioco accademico, ma e' il fondamento su cui poggiano navigatori stradali, pianificatori logistici, risolutori di puzzle e, come vedremo, parecchie idee che oggi ritroviamo negli agenti basati su LLM.
 
@@ -78,7 +76,7 @@ La domanda centrale del capitolo e' doppia. Primo: come si trasforma un obiettiv
 
 Prima di cercare bisogna definire cosa si cerca. Un problema di ricerca e' descritto da cinque ingredienti: lo spazio degli stati (tutte le configurazioni possibili dell'ambiente), lo stato iniziale, le azioni disponibili in ogni stato, un modello di transizione che dice in quale stato si finisce applicando un'azione, e una funzione di costo che assegna un prezzo a ogni azione. Uno o piu' stati sono designati come obiettivo. Una sequenza di azioni forma un cammino; una soluzione e' un cammino dallo stato iniziale a un obiettivo, e la soluzione ottima e' quella di costo minimo.
 
-L'esempio guida del libro e' un viaggio in Romania: le citta' sono gli stati, le strade sono le azioni, le distanze in miglia sono i costi. Ma la lezione piu' importante di questa sezione non riguarda la Romania: riguarda l'astrazione. Un vero viaggio in auto include il traffico, la radio, il meteo, i compagni di viaggio; il modello ignora tutto questo perche' irrilevante rispetto all'obiettivo. Scegliere il livello di astrazione giusto — abbastanza dettagliato da essere valido, abbastanza grossolano da essere trattabile — e' cio' che rende possibile risolvere problemi reali. Senza questa capacita' di semplificare, qualsiasi agente sarebbe schiacciato dalla complessita' del mondo.
+L'esempio guida classico e' un viaggio in Romania: le citta' sono gli stati, le strade sono le azioni, le distanze in miglia sono i costi. Ma la lezione piu' importante di questa sezione non riguarda la Romania: riguarda l'astrazione. Un vero viaggio in auto include il traffico, la radio, il meteo, i compagni di viaggio; il modello ignora tutto questo perche' irrilevante rispetto all'obiettivo. Scegliere il livello di astrazione giusto — abbastanza dettagliato da essere valido, abbastanza grossolano da essere trattabile — e' cio' che rende possibile risolvere problemi reali. Senza questa capacita' di semplificare, qualsiasi agente sarebbe schiacciato dalla complessita' del mondo.
 
 Il capitolo passa in rassegna problemi standardizzati (mondi a griglia, rompicapo a 8 e 15 tasselli, sokoban, il curioso "problema del numero 4" di Knuth che genera uno spazio degli stati infinito) e problemi reali: itinerari stradali, pianificazione di voli, commesso viaggiatore, layout di circuiti VLSI, navigazione di robot, sequenze di montaggio automatico, fino alla progettazione di proteine. La struttura formale e' sempre la stessa; cambia solo cosa mettiamo dentro stati, azioni e costi.
 
@@ -120,12 +118,12 @@ Come si esplora concretamente uno spazio degli stati? Sovrapponendogli un albero
 <text x="530" y="248" text-anchor="middle" class="dg-label">Rimnicu Vilcea</text>
 <text x="530" y="264" text-anchor="middle" class="dg-sublabel">frontiera</text>
 </svg>
-<figcaption>Albero di ricerca parziale da Arad a Bucarest dopo l'espansione di Arad e Sibiu: i nodi non espansi formano la frontiera e il ciclo Arad-Sibiu-Arad genera uno stato ripetuto — schema ripreso dalla figura 3.4 del cap. 3, AIMA 4a ed.</figcaption>
+<figcaption>Albero di ricerca parziale da Arad a Bucarest dopo l'espansione di Arad e Sibiu: i nodi non espansi formano la frontiera e il ciclo Arad-Sibiu-Arad genera uno stato ripetuto.</figcaption>
 </figure>
 
 Lo schema generale e' la ricerca best-first: a ogni passo si estrae dalla frontiera il nodo che minimizza una funzione di valutazione f(n) e lo si espande. Cambiando f si ottengono quasi tutti gli algoritmi del capitolo, il che rende questo schema una specie di stampo universale. La frontiera si implementa con una coda: con priorita' per best-first, FIFO per la ricerca in ampiezza, LIFO per quella in profondita'.
 
-C'e' un'insidia strutturale: i cammini ridondanti. Lo stesso stato puo' essere raggiunto per vie diverse, e i cicli possono rendere infinito l'albero anche quando lo spazio degli stati e' minuscolo. Il libro condensa la questione in un aforisma: un algoritmo che non tiene memoria degli stati gia' visitati e' destinato a esplorarli di nuovo. Le contromisure sono tre: memorizzare tutti gli stati gia' raggiunti (ricerca su grafo), ignorare il problema quando la struttura del dominio lo consente (ricerca ad albero), o controllare solo i cicli risalendo la catena dei nodi padre. E' un trade-off puro tra memoria e tempo.
+C'e' un'insidia strutturale: i cammini ridondanti. Lo stesso stato puo' essere raggiunto per vie diverse, e i cicli possono rendere infinito l'albero anche quando lo spazio degli stati e' minuscolo. Si puo' condensare la questione in un aforisma: un algoritmo che non tiene memoria degli stati gia' visitati e' destinato a esplorarli di nuovo. Le contromisure sono tre: memorizzare tutti gli stati gia' raggiunti (ricerca su grafo), ignorare il problema quando la struttura del dominio lo consente (ricerca ad albero), o controllare solo i cicli risalendo la catena dei nodi padre. E' un trade-off puro tra memoria e tempo.
 
 Per confrontare gli algoritmi servono quattro criteri: completezza (trova sempre una soluzione se esiste?), ottimalita' rispetto al costo, complessita' temporale e complessita' spaziale, misurate in funzione del fattore di ramificazione b e della profondita' d della soluzione.
 
@@ -157,7 +155,7 @@ Se la qualita' dell'euristica decide le prestazioni, come si inventano euristich
 
 La ricetta piu' generale e' il problema rilassato: si tolgono vincoli alle azioni e si usa il costo esatto della soluzione del problema semplificato come stima per quello originale. Se i tasselli potessero volare ovunque, il costo esatto sarebbe "tasselli fuori posto"; se potessero scivolare anche su caselle occupate, sarebbe la distanza Manhattan. Il costo ottimo di un problema rilassato e' sempre un'euristica ammissibile e consistente per il problema vero, e il processo si puo' automatizzare partendo da una descrizione formale delle azioni.
 
-Altre strade: i database di pattern memorizzano i costi esatti di sottoproblemi precalcolati (con le versioni disgiunte si sommano stime senza perdere l'ammissibilita', accelerando il rompicapo a 15 tasselli di un fattore 10.000); i punti di riferimento (landmark) precalcolano cammini ottimi verso pochi vertici scelti, ed e' cosi' che i servizi di mappe online rispondono in millisecondi su grafi con decine di milioni di nodi; infine si puo' imparare l'euristica dall'esperienza, addestrando un modello su coppie stato-costo tratte da soluzioni ottime di istanze passate, tipicamente a partire da caratteristiche (feature) dello stato. Qui il libro getta un ponte esplicito verso il machine learning: perfino il "cercare meglio" puo' essere appreso, ragionando in uno spazio degli stati di metalivello i cui stati sono gli alberi di ricerca stessi.
+Altre strade: i database di pattern memorizzano i costi esatti di sottoproblemi precalcolati (con le versioni disgiunte si sommano stime senza perdere l'ammissibilita', accelerando il rompicapo a 15 tasselli di un fattore 10.000); i punti di riferimento (landmark) precalcolano cammini ottimi verso pochi vertici scelti, ed e' cosi' che i servizi di mappe online rispondono in millisecondi su grafi con decine di milioni di nodi; infine si puo' imparare l'euristica dall'esperienza, addestrando un modello su coppie stato-costo tratte da soluzioni ottime di istanze passate, tipicamente a partire da caratteristiche (feature) dello stato. Qui si apre un ponte esplicito verso il machine learning: perfino il "cercare meglio" puo' essere appreso, ragionando in uno spazio degli stati di metalivello i cui stati sono gli alberi di ricerca stessi.
 
 ## Idee chiave
 
@@ -175,7 +173,3 @@ Altre strade: i database di pattern memorizzano i costi esatti di sottoproblemi 
 La ricerca nello spazio degli stati sembra archeologia dell'IA, ma descrive esattamente il ciclo con cui lavora un [agent](../kb/concetti/agent.md) moderno costruito attorno a un [llm](../kb/concetti/llm.md): formulare l'obiettivo, generare azioni candidate, valutare dove portano, scegliere, eventualmente tornare sui propri passi. Tecniche come Tree of Thoughts o il sampling di piu' catene di ragionamento sono, in sostanza, ricerca best-first su uno spazio di stati testuali, dove il modello stesso fa da funzione euristica; il [chain-of-thought](../kb/concetti/chain-of-thought.md) lineare corrisponde a una ricerca in profondita' senza backtracking, con gli stessi rischi di incompletezza che il capitolo mette in fila. E il vincolo che domina il capitolo — la memoria esponenziale della frontiera — ha un parallelo diretto nel [context-window](../kb/concetti/context-window.md) limitato entro cui un agente deve tenere lo stato della propria esplorazione.
 
 Anche la lezione sulla formulazione resta attuale: definire stati, azioni ammissibili e costi e' il lavoro che oggi si fa progettando il [tool-use](../kb/concetti/tool-use.md) di un agente e il suo modello dell'ambiente, cioe' i suoi [world-models](../kb/concetti/world-models.md) impliciti. Le idee di potatura, satisficing e ricerca bidirezionale riappaiono ogni volta che si bilancia qualita' della soluzione e budget di calcolo o di token. Il capitolo insegna il vocabolario con cui ragionare su questi trade-off, e mostra che erano gia' tutti sul tavolo decenni prima dei transformer.
-
-## Riferimenti
-
-- Stuart J. Russell, Peter Norvig — *Intelligenza Artificiale: Un Approccio Moderno*, 4a edizione italiana, Pearson Italia, Vol. 1 (2021), Capitolo 3, pp. 67-114.

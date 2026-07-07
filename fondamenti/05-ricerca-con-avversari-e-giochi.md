@@ -2,8 +2,6 @@
 titolo: Ricerca con avversari e giochi
 capitolo: 5
 parte: 2
-volume: 1
-pagine: "151-184"
 concetti: [agent, multi-agent-orchestration, world-models, evaluation-benchmark]
 created: 2026-07-06
 last_updated: 2026-07-06
@@ -139,7 +137,7 @@ L'algoritmo minimax formalizza un ragionamento che ogni giocatore da tavolo cono
 <rect x="648" y="240" width="44" height="40" rx="10" class="dg-node"/>
 <text x="670" y="265" text-anchor="middle" class="dg-label">2</text>
 </svg>
-<figcaption>Albero di gioco a due strati: i valori minimax risalgono dalle foglie alla radice, la mossa migliore per MAX e' a1 e la risposta migliore per MIN e' b1 — schema ripreso dalla Figura 5.2 del cap. 5, AIMA 4a ed.</figcaption>
+<figcaption>Albero di gioco a due strati: i valori minimax risalgono dalle foglie alla radice, la mossa migliore per MAX e' a1 e la risposta migliore per MIN e' b1.</figcaption>
 </figure>
 
 Un dettaglio spesso trascurato: giocare la mossa minimax contro un avversario debole garantisce almeno il risultato calcolato, ma non e' sempre la scelta piu' redditizia. Contro un giocatore che difficilmente trovera' l'unica confutazione, una mossa "rischiosa" con nove esiti favorevoli su dieci puo' valere piu' di un pareggio certo. Il minimax e' ottimo nel senso del caso peggiore, non del valore atteso.
@@ -190,7 +188,3 @@ I giochi parzialmente osservabili sono un'altra categoria ancora. In Kriegspiel,
 Le idee di questo capitolo sono il prototipo di come un [agente](../kb/concetti/agent.md) moderno ragiona sotto vincoli di calcolo: non si valuta tutto, si decide dove spendere il budget di computazione. Il "metaragionamento" che il capitolo indica come limite degli algoritmi classici — ragionare sul valore del calcolo stesso — e' esattamente il problema di un sistema di [inference](../kb/concetti/inference.md) che deve dosare quanti token di ragionamento dedicare a un problema, o di una catena di [chain-of-thought](../kb/concetti/chain-of-thought.md) che esplora piu' linee di soluzione e ne scarta la maggior parte: tecniche come tree-of-thought e la best-of-N sampling sono, in sostanza, ricerca su albero con potatura e funzioni di valutazione apprese.
 
 Il secondo lascito e' l'idea, resa concreta da MCTS e AlphaZero, che simulare traiettorie future dentro un modello del mondo batte la valutazione statica: e' la stessa intuizione dietro i [world-models](../kb/concetti/world-models.md) e dietro il self-play che oggi genera dati di addestramento per il reasoning dei modelli. Infine, appena piu' agenti LLM operano nello stesso ambiente — in cooperazione o in competizione — riemergono i temi dei giochi multiplayer e dell'informazione nascosta: alleanze che nascono dall'interesse, valore strategico dell'imprevedibilita', equilibri invece di ottimi individuali. Sono le fondamenta teoriche della [multi-agent-orchestration](../kb/concetti/multi-agent-orchestration.md), e il motivo per cui valutare questi sistemi richiede [benchmark](../kb/concetti/evaluation-benchmark.md) che misurano il comportamento contro avversari reali, non solo su casi statici.
-
-## Riferimenti
-
-- Stuart J. Russell, Peter Norvig — *Intelligenza Artificiale: Un Approccio Moderno*, 4a edizione italiana, Pearson Italia, Vol. 1 (2021), Capitolo 5, pp. 151-184.

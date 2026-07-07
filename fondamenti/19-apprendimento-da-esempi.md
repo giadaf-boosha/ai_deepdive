@@ -2,15 +2,13 @@
 titolo: Apprendimento da esempi
 capitolo: 19
 parte: 5
-volume: 2
-pagine: "7-74"
 concetti: [evaluation-benchmark, fine-tuning, embedding, vector-database, llm]
 created: 2026-07-06
 last_updated: 2026-07-06
 ---
 # Apprendimento da esempi
 
-Fino a questo punto del libro gli agenti ricevono la loro conoscenza dal progettista: regole, modelli del mondo, funzioni di utilita'. Il capitolo 19 ribalta la prospettiva e chiede: come puo' un agente migliorare da solo, osservando i dati? Quando l'agente e' un computer si parla di machine learning: il sistema osserva esempi e costruisce un modello che gli fa da teoria del mondo e, insieme, da modulo software riutilizzabile su problemi nuovi.
+Fino a questo punto del percorso gli agenti ricevono la loro conoscenza dal progettista: regole, modelli del mondo, funzioni di utilita'. Il capitolo 19 ribalta la prospettiva e chiede: come puo' un agente migliorare da solo, osservando i dati? Quando l'agente e' un computer si parla di machine learning: il sistema osserva esempi e costruisce un modello che gli fa da teoria del mondo e, insieme, da modulo software riutilizzabile su problemi nuovi.
 
 La motivazione e' pragmatica. I progettisti non possono anticipare tutte le situazioni che il sistema incontrera', e per molti compiti — riconoscere un volto, per esempio — nessun essere umano sa scrivere esplicitamente il programma giusto, perche' la competenza e' subconscia. L'apprendimento automatico e' ormai parte integrante dell'ingegneria del software: quasi ogni componente di un agente puo' essere appreso dai dati anziche' programmato a mano.
 
@@ -178,7 +176,7 @@ L'albero di decisione e' la prima classe di modelli trattata in dettaglio, sull'
 <rect x="643" y="390" width="44" height="34" rx="10" class="dg-node-accent"/>
 <text x="665" y="412" text-anchor="middle" class="dg-label">Si'</text>
 </svg>
-<figcaption>Albero di decisione per decidere se attendere che si liberi un tavolo — schema ripreso dalla Figura 19.3 del cap. 19, AIMA 4a ed.</figcaption>
+<figcaption>Albero di decisione per decidere se attendere che si liberi un tavolo.</figcaption>
 </figure>
 
 L'algoritmo di apprendimento e' greedy e ricorsivo: a ogni nodo sceglie l'attributo "piu' importante" e suddivide gli esempi, ripetendo sui sottoinsiemi. L'importanza si misura con il guadagno informativo, cioe' la riduzione attesa di entropia — il concetto di Shannon che quantifica l'incertezza di una variabile casuale. Un attributo che separa nettamente esempi positivi e negativi ha guadagno alto e finisce vicino alla radice; uno che li mescola ha guadagno quasi nullo e viene ignorato. Il risultato notevole e' che dodici esempi bastano a produrre un albero piu' semplice di quello mentale della persona che li ha generati, e con pattern inattesi ma corretti.
@@ -232,10 +230,6 @@ Segue la selezione del modello con strumenti come curva ROC e matrice di confusi
 
 ## Perche conta oggi
 
-Questo capitolo e' la grammatica di base con cui leggere gli [LLM](../kb/concetti/llm.md) moderni. Il compromesso distorsione-varianza, la separazione tra addestramento, validazione e test, la discesa stocastica del gradiente su minibatch, la regolarizzazione: sono esattamente i concetti che governano il pre-training e il [fine-tuning](../kb/concetti/fine-tuning.md) dei grandi modelli, con la differenza che oggi la scala ha rimescolato alcune intuizioni (il capitolo stesso nota che modelli con miliardi di parametri possono generalizzare bene dopo l'interpolazione, come gia' si osservava con il boosting). La disciplina della valutazione su dati tenuti da parte e' l'antenata diretta degli [evaluation benchmark](../kb/concetti/evaluation-benchmark.md) con cui si confrontano i modelli, incluso il problema — gia' descritto da Russell e Norvig — del sovradattamento agli insiemi di validazione riusati troppe volte.
+Questo capitolo e' la grammatica di base con cui leggere gli [LLM](../kb/concetti/llm.md) moderni. Il compromesso distorsione-varianza, la separazione tra addestramento, validazione e test, la discesa stocastica del gradiente su minibatch, la regolarizzazione: sono esattamente i concetti che governano il pre-training e il [fine-tuning](../kb/concetti/fine-tuning.md) dei grandi modelli, con la differenza che oggi la scala ha rimescolato alcune intuizioni (il capitolo stesso nota che modelli con miliardi di parametri possono generalizzare bene dopo l'interpolazione, come gia' si osservava con il boosting). La disciplina della valutazione su dati tenuti da parte e' l'antenata diretta degli [evaluation benchmark](../kb/concetti/evaluation-benchmark.md) con cui si confrontano i modelli, incluso il problema — gia' noto — del sovradattamento agli insiemi di validazione riusati troppe volte.
 
 Anche i metodi apparentemente datati hanno eredi diretti. La ricerca dei vicini piu' prossimi con hashing sensibile alla localita' e' il cuore dei [vector database](../kb/concetti/vector-database.md) che alimentano le pipeline [RAG](../kb/concetti/rag.md), dove i punti sono [embedding](../kb/concetti/embedding.md) di testi e la maledizione della dimensionalita' e' un vincolo di progetto quotidiano. E la sezione sullo sviluppo di sistemi — provenienza dei dati, monitoraggio, non stazionarieta', spiegabilita' — descrive gia' nel 2021 quello che oggi chiamiamo MLOps e che qualsiasi team che mette in produzione modelli, generativi o meno, deve presidiare.
-
-## Riferimenti
-
-- Stuart J. Russell, Peter Norvig — *Intelligenza Artificiale: Un Approccio Moderno*, 4a edizione italiana, Pearson Italia, Vol. 2 (2022), Capitolo 19, pp. 7-74.

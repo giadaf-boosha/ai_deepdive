@@ -2,8 +2,6 @@
 titolo: Quantificare l'incertezza
 capitolo: 12
 parte: 4
-volume: 1
-pagine: "397-422"
 concetti: [agent, world-models, inference, llm]
 created: 2026-07-06
 last_updated: 2026-07-06
@@ -13,7 +11,7 @@ last_updated: 2026-07-06
 
 Il mondo reale non offre certezze a un agente: i sensori vedono solo una parte dell'ambiente, gli effetti delle azioni non sono deterministici, e a volte ci sono avversari di mezzo. Un agente puramente logico gestisce questa situazione con gli stati-credenza, cioe' insiemi di tutti gli stati possibili, ma il metodo scala male: costringe a considerare ogni spiegazione, anche la piu' remota, e a costruire piani condizionali che gonfiano senza limite. Peggio ancora, spesso nessun piano garantisce il risultato, eppure l'agente deve comunque scegliere.
 
-Il capitolo 12 di Russell e Norvig affronta esattamente questa domanda: come si ragiona e si decide quando la conoscenza e' incompleta? La risposta proposta e' la teoria della probabilita', intesa come strumento per assegnare gradi numerici di credenza alle proposizioni, da 0 (certamente falsa) a 1 (certamente vera). L'esempio guida e' quotidiano: un taxi autonomo che deve portare un passeggero all'aeroporto non puo' dimostrare che partire 90 minuti prima "funzionera'", ma puo' stimare quanto e' probabile che funzioni, e confrontare quel piano con alternative piu' o meno prudenti.
+Questo capitolo affronta esattamente questa domanda: come si ragiona e si decide quando la conoscenza e' incompleta? La risposta proposta e' la teoria della probabilita', intesa come strumento per assegnare gradi numerici di credenza alle proposizioni, da 0 (certamente falsa) a 1 (certamente vera). L'esempio guida e' quotidiano: un taxi autonomo che deve portare un passeggero all'aeroporto non puo' dimostrare che partire 90 minuti prima "funzionera'", ma puo' stimare quanto e' probabile che funzioni, e confrontare quel piano con alternative piu' o meno prudenti.
 
 La posta in gioco non e' solo rappresentare l'incertezza, ma agire razionalmente sotto incertezza. Il capitolo introduce cosi' anche il principio che collega credenze e scelte: un agente razionale seleziona l'azione con la massima utilita' attesa, combinando probabilita' degli esiti e preferenze su di essi.
 
@@ -106,7 +104,7 @@ Il problema e' la scala. Con n variabili booleane la tabella congiunta ha 2^n el
 
 La prima leva di compressione e' l'indipendenza assoluta: se due gruppi di variabili non si influenzano (i problemi dentali e il meteo, per dire), la congiunta si fattorizza nel prodotto di distribuzioni piu' piccole. Per n lanci di moneta indipendenti si passa da 2^n numeri a n distribuzioni a variabile singola. Il limite e' che l'indipendenza piena tra interi sottoinsiemi di variabili e' rara nei domini reali, dove quasi tutto e' collegato a quasi tutto, anche debolmente.
 
-La seconda leva e' la regola di Bayes, ottenuta scrivendo la regola del prodotto in entrambe le direzioni: P(b|a) = P(a|b) P(b) / P(a). Sembra un giro a vuoto — servono tre numeri per calcolarne un quarto — ma e' preziosa perche' la conoscenza disponibile e' spesso orientata in senso causale, P(effetto|causa), mentre la domanda e' diagnostica, P(causa|effetto). L'esempio del libro e' clinico: la meningite causa torcicollo nel 70% dei casi, ma poiche' la meningite e' rarissima e il torcicollo comune, la probabilita' di meningite dato il torcicollo resta bassissima, intorno allo 0,14%. E' lo stesso errore di intuizione che si commette leggendo i risultati di un test medico molto sensibile per una malattia rara.
+La seconda leva e' la regola di Bayes, ottenuta scrivendo la regola del prodotto in entrambe le direzioni: P(b|a) = P(a|b) P(b) / P(a). Sembra un giro a vuoto — servono tre numeri per calcolarne un quarto — ma e' preziosa perche' la conoscenza disponibile e' spesso orientata in senso causale, P(effetto|causa), mentre la domanda e' diagnostica, P(causa|effetto). L'esempio classico e' clinico: la meningite causa torcicollo nel 70% dei casi, ma poiche' la meningite e' rarissima e il torcicollo comune, la probabilita' di meningite dato il torcicollo resta bassissima, intorno allo 0,14%. E' lo stesso errore di intuizione che si commette leggendo i risultati di un test medico molto sensibile per una malattia rara.
 
 C'e' anche una ragione di robustezza per preferire la direzione causale: se scoppia un'epidemia, la probabilita' a priori della malattia cambia, ma il legame causale tra malattia e sintomo no. Un sistema costruito su conoscenza causale si aggiorna correttamente; uno costruito su statistiche diagnostiche dirette va ricalibrato da zero.
 
@@ -114,7 +112,7 @@ C'e' anche una ragione di robustezza per preferire la direzione causale: se scop
 
 Con piu' evidenze contemporanee, la regola di Bayes da sola torna a scalare male: le combinazioni di sintomi crescono esponenzialmente. La svolta e' l'indipendenza condizionale: due effetti della stessa causa possono essere indipendenti tra loro una volta nota la causa. Il mal di denti e la sonda del dentista che si incastra sono entrambi provocati dalla carie, ma dato che la carie c'e' (o non c'e'), sapere dell'uno non aggiunge nulla sull'altro. La causa "separa" i suoi effetti.
 
-Questa proprieta' permette di scomporre la congiunta in una probabilita' a priori della causa e una condizionata per ciascun effetto: la rappresentazione cresce linearmente col numero di effetti, O(n) invece di O(2^n). Il libro presenta questa struttura come uno degli sviluppi piu' importanti della storia recente dell'AI, e il capitolo successivo la generalizza nelle reti bayesiane.
+Questa proprieta' permette di scomporre la congiunta in una probabilita' a priori della causa e una condizionata per ciascun effetto: la rappresentazione cresce linearmente col numero di effetti, O(n) invece di O(2^n). Questa struttura e' uno degli sviluppi piu' importanti della storia recente dell'AI, e il capitolo successivo la generalizza nelle reti bayesiane.
 
 Il caso piu' semplice e' il modello di Bayes ingenuo (naive Bayes): una causa, molti effetti assunti condizionalmente indipendenti anche quando non lo sono davvero. L'inferenza e' immediata: si moltiplica la probabilita' a priori di ogni causa per le condizionate degli effetti osservati e si normalizza. L'applicazione classica e' la classificazione di testi: la categoria di un articolo e' la causa, la presenza delle singole parole chiave sono gli effetti. L'assunzione di indipendenza tra parole e' palesemente falsa — certe coppie di parole viaggiano insieme — e il modello risulta troppo sicuro delle proprie previsioni, ma l'ordinamento delle categorie resta spesso corretto. E' il motivo per cui i filtri antispam basati su questa idea hanno funzionato per anni.
 
@@ -140,7 +138,3 @@ Il calcolo diretto sommerebbe su tutte le configurazioni delle stanze sconosciut
 Tutto lo stack dell'AI generativa e' probabilistico fin nelle fondamenta: un [LLM](../kb/concetti/llm.md) e' letteralmente una distribuzione condizionata sul token successivo dato il contesto, e la fase di [inference](../kb/concetti/inference.md) e' un campionamento ripetuto da quella distribuzione. Anche la temperatura di generazione, il sampling top-p e la calibrazione delle confidenze sono concetti che discendono direttamente dal vocabolario di questo capitolo. Il fenomeno del naive Bayes "troppo sicuro di se'" per assunzioni di indipendenza violate e' un antenato diretto del problema di calibrazione dei modelli attuali, misurato oggi con [benchmark dedicati](../kb/concetti/evaluation-benchmark.md).
 
 Il salto concettuale dall'agente logico all'agente che massimizza l'utilita' attesa e' anche il salto che serve per capire gli [agent](../kb/concetti/agent.md) moderni: operano in ambienti parzialmente osservabili (un repository, il web, un browser), dove nessuna azione ha esito garantito, e devono continuamente pesare rischio e beneficio — ritentare una chiamata, chiedere conferma, scegliere tra piani alternativi. La lezione del wumpus si ripropone identica: mantenere una stima esplicita di cio' che non si sa, incorporata in [world models](../kb/concetti/world-models.md) piu' o meno formali, distingue un agente che sceglie a caso da uno che sceglie il rischio minore. E la distinzione tra conoscenza causale robusta e correlazioni diagnostiche fragili resta uno dei criteri piu' utili per giudicare quando fidarsi di un sistema appreso dai dati.
-
-## Riferimenti
-
-- Stuart J. Russell, Peter Norvig — *Intelligenza Artificiale: Un Approccio Moderno*, 4a edizione italiana, Pearson Italia, Vol. 1 (2021), Capitolo 12, pp. 397-422.

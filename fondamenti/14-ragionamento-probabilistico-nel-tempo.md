@@ -2,8 +2,6 @@
 titolo: Ragionamento probabilistico nel tempo
 capitolo: 14
 parte: 4
-volume: 1
-pagine: "471-510"
 concetti: [agent, world-models, inference]
 created: 2026-07-06
 last_updated: 2026-07-06
@@ -106,7 +104,7 @@ Il problema tecnico e' che la storia degli stati cresce senza limite: condiziona
 <rect x="530" y="190" width="150" height="50" rx="10" class="dg-node"/>
 <text x="605" y="220" text-anchor="middle" class="dg-label">Ombrello t+1</text>
 </svg>
-<figcaption>Struttura della rete bayesiana del mondo dell'ombrello: modello di transizione P(Pioggia_t|Pioggia_t-1) e modello sensoriale P(Ombrello_t|Pioggia_t) — schema ripreso dalla figura 14.2 del cap. 14, AIMA 4a ed.</figcaption>
+<figcaption>Struttura della rete bayesiana del mondo dell'ombrello: modello di transizione P(Pioggia_t|Pioggia_t-1) e modello sensoriale P(Ombrello_t|Pioggia_t).</figcaption>
 </figure>
 
 L'ipotesi di Markov e' spesso solo approssimativamente vera, e il capitolo indica due rimedi: aumentare l'ordine del modello (far dipendere lo stato anche da istanti piu' remoti) oppure, in modo equivalente, arricchire l'insieme delle variabili di stato finche' non diventa "autosufficiente". Un robot la cui velocita' dipende dalla carica della batteria viola la proprieta' di Markov se la batteria non e' nello stato; includerla la ripristina. Modellare bene un processo significa in sostanza capire quale fisica lo governa.
@@ -169,7 +167,3 @@ Anche il particle filtering ha punti deboli: se il modello di transizione e' det
 Le architetture agentiche moderne rimettono al centro esattamente il problema di questo capitolo: un [agente](../kb/concetti/agent.md) che opera per molti passi in un ambiente parzialmente osservabile deve mantenere una stima di stato aggiornabile in modo incrementale, senza rileggere ogni volta l'intera storia. Il messaggio in avanti del filtraggio — una sintesi a costo costante di tutto il passato rilevante — e' concettualmente lo stesso vincolo che spinge gli agenti basati su [LLM](../kb/concetti/llm.md) a comprimere la memoria di lavoro invece di accumulare trascrizioni illimitate in una [context window](../kb/concetti/context-window.md) finita. E l'idea di un modello di transizione appreso che permette predizione e smoothing e' l'antenata diretta dei [world models](../kb/concetti/world-models.md) con cui oggi si addestrano agenti capaci di simulare le conseguenze delle proprie azioni.
 
 Anche le lezioni operative restano attuali. Il principio per cui un sistema robusto deve modellare il fallimento dei propri sensori si traduce, nella pratica degli agenti con [tool use](../kb/concetti/tool-use.md), nel trattare gli output degli strumenti come evidenza fallibile e non come verita'. E il trade-off tra inferenza esatta intrattabile e approssimazioni campionarie efficienti e' lo stesso che governa ogni scelta di [inference](../kb/concetti/inference.md) su modelli di grandi dimensioni: la qualita' della stima si compra con il calcolo, e gli algoritmi che vincono sono quelli che concentrano il calcolo dove la probabilita' e' alta.
-
-## Riferimenti
-
-- Stuart J. Russell, Peter Norvig — *Intelligenza Artificiale: Un Approccio Moderno*, 4a edizione italiana, Pearson Italia, Vol. 1 (2021), Capitolo 14, pp. 471-510.

@@ -2,8 +2,6 @@
 titolo: Visione artificiale
 capitolo: 25
 parte: 6
-volume: 2
-pagine: "239-282"
 concetti: [world-models, evaluation-benchmark, embedding, agent]
 created: 2026-07-06
 last_updated: 2026-07-06
@@ -12,7 +10,7 @@ last_updated: 2026-07-06
 
 Il capitolo affronta una domanda apparentemente banale e in realta' profonda: come si trasforma un flusso di pixel in una descrizione utile del mondo? Gli occhi sono organi costosi per un organismo — occupano spazio, consumano energia, si danneggiano facilmente — eppure quasi tutti gli animali li hanno, perche' vedere permette di anticipare il futuro: capire se un oggetto si avvicina, se il terreno regge, quanto dista un frutto. La visione artificiale prova a dare la stessa capacita' a un computer collegato a una fotocamera.
 
-Il problema e' difficile perche' le immagini sono ambigue per costruzione. La proiezione da 3D a 2D butta via informazione: un oggetto piccolo e vicino produce la stessa immagine di uno grande e lontano, un oggetto bianco in penombra puo' apparire piu' scuro di uno nero sotto luce intensa. Russell e Norvig organizzano il capitolo attorno a due problemi fondamentali: la ricostruzione, cioe' costruire un modello del mondo a partire dalle immagini, e il riconoscimento, cioe' tracciare distinzioni tra gli oggetti osservati — che cosa sono, dove sono, che cosa stanno facendo.
+Il problema e' difficile perche' le immagini sono ambigue per costruzione. La proiezione da 3D a 2D butta via informazione: un oggetto piccolo e vicino produce la stessa immagine di uno grande e lontano, un oggetto bianco in penombra puo' apparire piu' scuro di uno nero sotto luce intensa. Questo capitolo si organizza attorno a due problemi fondamentali: la ricostruzione, cioe' costruire un modello del mondo a partire dalle immagini, e il riconoscimento, cioe' tracciare distinzioni tra gli oggetti osservati — che cosa sono, dove sono, che cosa stanno facendo.
 
 Il percorso va dalla fisica alla semantica: prima la geometria e l'ottica della formazione delle immagini, poi le caratteristiche di basso livello estraibili dai pixel, quindi la classificazione e il rilevamento di oggetti con reti neurali convoluzionali, la ricostruzione del mondo tridimensionale e infine una rassegna di applicazioni, dalla guida autonoma alla generazione di immagini.
 
@@ -139,6 +137,3 @@ Infine il controllo del movimento: un'auto a guida autonoma deve mantenere la co
 Le idee di questo capitolo sono il ponte tra la visione classica e i sistemi multimodali attuali. Le gerarchie di caratteristiche apprese dalle CNN sono l'antenato diretto degli [embedding](../kb/concetti/embedding.md) visivi con cui gli [LLM](../kb/concetti/llm.md) multimodali oggi "vedono": un'immagine viene trasformata in vettori che il modello linguistico tratta come token, e il captioning e il visual question answering descritti nel capitolo — allora fragili e propensi a indovinare — sono diventati capacita' standard dei modelli di frontiera. La lezione di ImageNet, per cui data set grandi e competizioni pubbliche accelerano il progresso, e' la stessa logica che governa gli attuali [benchmark di valutazione](../kb/concetti/evaluation-benchmark.md); e il monito del capitolo sulla distanza tra dati di addestramento e dati di test resta il cuore del problema di robustezza anche per i modelli di oggi.
 
 Il secondo filo che porta al presente e' la ricostruzione: mappe di profondita', structure-from-motion, SLAM e stima della posa sono i mattoni con cui un [agente](../kb/concetti/agent.md) incarnato — un robot, un'auto autonoma, un drone — costruisce e mantiene una rappresentazione interna dell'ambiente in cui deve agire. E' la stessa esigenza che motiva la ricerca sui [world models](../kb/concetti/world-models.md): passare da pixel a un modello del mondo abbastanza affidabile da poterci pianificare sopra. Il capitolo mostra che questo passaggio non e' mai gratuito, e che ogni sistema che "vede" sta risolvendo, in qualche forma, il problema inverso della proiezione.
-
-## Riferimenti
-- Stuart J. Russell, Peter Norvig — *Intelligenza Artificiale: Un Approccio Moderno*, 4a edizione italiana, Pearson Italia, Vol. 2 (2022), Capitolo 25, pp. 239-282.

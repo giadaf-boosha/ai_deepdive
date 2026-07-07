@@ -2,8 +2,6 @@
 titolo: Logica del primo ordine
 capitolo: 8
 parte: 3
-volume: 1
-pagine: "257-286"
 concetti: [agent, world-models, llm, chain-of-thought]
 created: 2026-07-06
 last_updated: 2026-07-06
@@ -85,7 +83,7 @@ Accanto all'impegno ontologico c'e' l'impegno epistemologico: quali stati di con
 
 ## Modelli, termini e formule: la semantica in pratica
 
-Un modello della logica del primo ordine e' un mondo possibile formalizzato: un dominio non vuoto di oggetti, relazioni come insiemi di tuple di oggetti, funzioni totali, e un'interpretazione che aggancia i simboli del linguaggio a questi elementi. L'esempio guida del libro usa cinque oggetti — Riccardo Cuor di Leone, Re Giovanni, le loro gambe sinistre e una corona — con relazioni come "fratello" (binaria) e "re" (unaria, una proprieta').
+Un modello della logica del primo ordine e' un mondo possibile formalizzato: un dominio non vuoto di oggetti, relazioni come insiemi di tuple di oggetti, funzioni totali, e un'interpretazione che aggancia i simboli del linguaggio a questi elementi. L'esempio guida classico usa cinque oggetti — Riccardo Cuor di Leone, Re Giovanni, le loro gambe sinistre e una corona — con relazioni come "fratello" (binaria) e "re" (unaria, una proprieta').
 
 La sintassi si costruisce a strati. I termini denotano oggetti: simboli di costante come Giovanni, variabili, oppure termini complessi come GambaSinistra(Giovanni) — che non e' una chiamata di funzione che "calcola" qualcosa, ma semplicemente un nome per un oggetto di cui potremmo non conoscere altro. Le formule atomiche affermano fatti applicando un predicato a dei termini: Fratello(Riccardo, Giovanni). I connettivi logici della proposizionale compongono formule complesse. Il simbolo di uguaglianza permette di dire che due termini denotano lo stesso oggetto, o — negato — che ne denotano due distinti, cosa essenziale per contare: "Riccardo ha almeno due fratelli" richiede proprio un vincolo di disuguaglianza tra le variabili.
 
@@ -133,7 +131,3 @@ Il caso di studio e' un sommatore a un bit: porte logiche, morsetti, segnali e c
 La logica del primo ordine non e' il motore degli attuali sistemi di AI generativa, ma le domande che pone sono tornate centrali. Ogni [LLM](../kb/concetti/llm.md) che ragiona su entita' e relazioni — chi possiede cosa, cosa e' collegato a cosa — sta affrontando in forma statistica lo stesso problema che la FOL risolve in forma simbolica; e quando un modello sbaglia una quantificazione ("tutti" contro "qualcuno") sta inciampando esattamente sulle distinzioni che questo capitolo formalizza. Le tecniche di [chain-of-thought](../kb/concetti/chain-of-thought.md) rendono espliciti passi di derivazione che una KB logica produrrebbe per inferenza, e la costruzione di [world models](../kb/concetti/world-models.md) ripropone la questione dell'impegno ontologico: quali oggetti e relazioni il sistema assume esistano nel mondo.
 
 Il parallelo piu' diretto e' pero' con la pratica degli agenti. Il processo di ingegneria della conoscenza — identificare le domande, scegliere un vocabolario, codificare regole generali e istanze specifiche, interrogare, fare debugging — e' strutturalmente identico a come oggi si progetta un [agent](../kb/concetti/agent.md): definire gli strumenti e il loro schema e' scegliere un'ontologia, e il [tool use](../kb/concetti/tool-use.md) con schemi tipati eredita proprio la disciplina di predicati e funzioni con arita' fissata. Anche il [prompt engineering](../kb/concetti/prompt-engineering.md) di sistema, quando enumera regole e vincoli per il modello, e' una forma informale di codifica degli assiomi del dominio — con lo stesso rischio, ben noto agli ingegneri della conoscenza: assiomi mancanti o troppo deboli producono risposte sbagliate difficili da diagnosticare.
-
-## Riferimenti
-
-- Stuart J. Russell, Peter Norvig — *Intelligenza Artificiale: Un Approccio Moderno*, 4a edizione italiana, Pearson Italia, Vol. 1 (2021), Capitolo 8, pp. 257-286.

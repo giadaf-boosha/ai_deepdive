@@ -2,8 +2,6 @@
 titolo: Agenti intelligenti
 capitolo: 2
 parte: 1
-volume: 1
-pagine: "39-64"
 concetti: [agent, world-models, tool-use, multi-agent-orchestration]
 created: 2026-07-06
 last_updated: 2026-07-06
@@ -11,7 +9,7 @@ last_updated: 2026-07-06
 
 # Agenti intelligenti
 
-Il capitolo 2 di Russell e Norvig risponde a una domanda che il capitolo 1 lascia aperta: se l'AI e' la scienza della progettazione di agenti razionali, che cosa e' esattamente un agente, e che cosa significa che si comporta "bene"? La risposta e' una cornice concettuale sorprendentemente compatta, che regge ancora oggi buona parte del vocabolario con cui parliamo di sistemi AI: percezioni, azioni, ambienti, misura di prestazione, razionalita'.
+Questo capitolo risponde a una domanda che il capitolo precedente lascia aperta: se l'AI e' la scienza della progettazione di agenti razionali, che cosa e' esattamente un agente, e che cosa significa che si comporta "bene"? La risposta e' una cornice concettuale sorprendentemente compatta, che regge ancora oggi buona parte del vocabolario con cui parliamo di sistemi AI: percezioni, azioni, ambienti, misura di prestazione, razionalita'.
 
 Il valore del capitolo non sta in un algoritmo specifico, ma in un metodo di analisi. Prima di scrivere una riga di codice, il progettista deve descrivere il problema: cosa vede il sistema, cosa puo' fare, in che tipo di mondo opera, come si misura il successo. Solo dopo ha senso scegliere l'architettura interna. E' la stessa disciplina che oggi applichiamo quando definiamo il perimetro di un agente basato su LLM: quali tool ha a disposizione, quale contesto riceve, come valutiamo se ha svolto il compito.
 
@@ -96,7 +94,7 @@ Un agente e' qualunque sistema che riceve informazioni dall'ambiente tramite sen
 <rect x="250" y="224" width="120" height="36" rx="10" class="dg-node"/>
 <text x="310" y="246" text-anchor="middle" class="dg-label">attuatori</text>
 </svg>
-<figcaption>Gli agenti interagiscono con l'ambiente attraverso sensori e attuatori — schema ripreso dalla Figura 2.1 del cap. 2, AIMA 4a ed.</figcaption>
+<figcaption>Gli agenti interagiscono con l'ambiente attraverso sensori e attuatori.</figcaption>
 </figure>
 
 Il comportamento dell'agente si descrive matematicamente con la funzione agente: una corrispondenza che associa a ogni possibile storia di percezioni (la sequenza percettiva) un'azione. In linea di principio la si potrebbe scrivere come una tabella gigantesca; in pratica la tabella e' astrazione pura, e cio' che gira davvero dentro la macchina e' il programma agente, un'implementazione concreta e finita di quella funzione. La distinzione tra descrizione esterna (funzione) e implementazione interna (programma) e' uno dei punti concettuali piu' utili del capitolo.
@@ -109,7 +107,7 @@ La risposta passa dal consequenzialismo: un agente si giudica dalle conseguenze 
 
 Due dettagli della definizione hanno conseguenze pratiche enormi. Primo: la misura va definita sull'effetto desiderato nell'ambiente, non sul comportamento che immaginiamo debba avere l'agente. Se premio l'aspirapolvere per la quantita' di sporco aspirato, un agente razionale puo' scoprire che conviene aspirare, rovesciare lo sporco e riaspirarlo all'infinito. Meglio premiare i pavimenti puliti, magari con penalita' per consumo e rumore. E' la versione da manuale di quello che oggi chiamiamo reward hacking o specification gaming.
 
-Secondo: razionalita' non significa onniscienza. L'agente razionale massimizza il risultato atteso, non quello effettivo; se attraverso la strada dopo aver guardato bene e mi cade addosso un portellone da un aereo, non sono stato irrazionale, solo sfortunato. Da qui discendono due comportamenti che un agente razionale deve avere: raccogliere informazioni (information gathering) quando le percezioni disponibili non bastano — guardare prima di attraversare, esplorare un ambiente sconosciuto — e apprendere dall'esperienza per correggere una conoscenza iniziale parziale o sbagliata. Un agente che si affida solo a cio' che il progettista gli ha cablato dentro manca di autonomia; gli autori raccontano lo scarabeo stercorario e la vespa sphex, insetti i cui rituali rigidi collassano appena un entomologo dispettoso viola le assunzioni su cui sono costruiti.
+Secondo: razionalita' non significa onniscienza. L'agente razionale massimizza il risultato atteso, non quello effettivo; se attraverso la strada dopo aver guardato bene e mi cade addosso un portellone da un aereo, non sono stato irrazionale, solo sfortunato. Da qui discendono due comportamenti che un agente razionale deve avere: raccogliere informazioni (information gathering) quando le percezioni disponibili non bastano — guardare prima di attraversare, esplorare un ambiente sconosciuto — e apprendere dall'esperienza per correggere una conoscenza iniziale parziale o sbagliata. Un agente che si affida solo a cio' che il progettista gli ha cablato dentro manca di autonomia; un esempio classico e' lo scarabeo stercorario e la vespa sphex, insetti i cui rituali rigidi collassano appena un entomologo dispettoso viola le assunzioni su cui sono costruiti.
 
 ## Descrivere il problema prima della soluzione: PEAS
 
@@ -162,10 +160,6 @@ Un ultimo asse riguarda come i componenti rappresentano l'ambiente: rappresentaz
 
 ## Perche conta oggi
 
-Il vocabolario di questo capitolo del 1995-2021 e' diventato, quasi senza modifiche, il vocabolario degli [agenti](../kb/concetti/agent.md) basati su LLM. Un agente moderno che legge una codebase, chiama API e scrive file e' esattamente il "softbot" descritto da Russell e Norvig: le percezioni sono l'output dei tool e il contesto, gli attuatori sono le chiamate a funzioni esterne — cio' che oggi chiamiamo [tool use](../kb/concetti/tool-use.md) — e l'ambiente operativo e' parzialmente osservabile, dinamico e spesso ignoto. Anche la struttura pratica che circonda il modello, l'[agent harness](../kb/concetti/agent-harness.md), e' la versione contemporanea dell'"architettura" su cui gira il programma agente; e lo stato interno che l'agente mantiene per compensare l'osservabilita' parziale trova il suo limite fisico nella [context window](../kb/concetti/context-window.md) del modello.
+Il vocabolario di questo capitolo del 1995-2021 e' diventato, quasi senza modifiche, il vocabolario degli [agenti](../kb/concetti/agent.md) basati su LLM. Un agente moderno che legge una codebase, chiama API e scrive file e' esattamente il classico "softbot": le percezioni sono l'output dei tool e il contesto, gli attuatori sono le chiamate a funzioni esterne — cio' che oggi chiamiamo [tool use](../kb/concetti/tool-use.md) — e l'ambiente operativo e' parzialmente osservabile, dinamico e spesso ignoto. Anche la struttura pratica che circonda il modello, l'[agent harness](../kb/concetti/agent-harness.md), e' la versione contemporanea dell'"architettura" su cui gira il programma agente; e lo stato interno che l'agente mantiene per compensare l'osservabilita' parziale trova il suo limite fisico nella [context window](../kb/concetti/context-window.md) del modello.
 
 Anche le lezioni concettuali reggono. Il monito sulla misura di prestazione mal specificata e' il cuore dei problemi di allineamento e di reward hacking, e tecniche come [RLHF](../kb/concetti/rlhf.md) sono tentativi di apprendere le preferenze umane invece di cablarle — proprio come il tassista che aggiorna la sua funzione di utilita' osservando le reazioni dei passeggeri. La distinzione tra ambienti a singolo agente e multiagente anticipa i sistemi di [orchestrazione multi-agente](../kb/concetti/multi-agent-orchestration.md) attuali, dove piu' agenti cooperano suddividendosi un compito. E l'idea che un agente competente debba mantenere modelli di transizione e sensoriali del proprio ambiente riecheggia nel dibattito sui [world models](../kb/concetti/world-models.md) degli LLM: quanto del mondo un modello linguistico rappresenta davvero, e quanto gli basta per agire in modo razionale.
-
-## Riferimenti
-
-- Stuart J. Russell, Peter Norvig — *Intelligenza Artificiale: Un Approccio Moderno*, 4a edizione italiana, Pearson Italia, Vol. 1 (2021), Capitolo 2, pp. 39-64.
