@@ -3,7 +3,7 @@ name: Agent harness
 aliases: [agent harness, harness, scaffolding agentico, agent runtime]
 categoria: infrastruttura
 created: 2026-04-28
-last_updated: 2026-06-29
+last_updated: 2026-07-08
 ---
 
 # Agent harness
@@ -139,6 +139,10 @@ Cost governance. In un harness multi-utente i costi possono esplodere. Un agent 
 Sicurezza dei tool. La superficie d'attacco principale di un harness e' nei tool che modificano stato: shell, send-mail, db-write, file-write. Best practice: separare tool read-only da tool write; richiedere conferma utente per i write su prima esecuzione di una sessione; permission model dichiarativo (es. allowlist di comandi shell, denylist di path). Per agenti che eseguono codice, il sandbox e' obbligatorio in qualunque deployment toccato da utenti finali; la documentazione Anthropic del 30 maggio 2026 mostra che la scelta del meccanismo dipende dal contesto di esecuzione (gVisor server-side, Seatbelt/Bubblewrap in locale, VM full-OS per ambienti desktop emulati). In ambito enterprise, separare il loop dall'esecuzione dei tool (self-hosted sandbox) e accedere ai sistemi interni via gateway outbound-only (MCP tunnel) e' il pattern di riferimento per non esporre il perimetro aziendale.
 
 ## Aggiornamenti
+
+### 2026-07-08
+
+Claude Cowork si espande da app desktop-only (lancio gennaio 2026) a web e mobile per gli abbonati Max (7 luglio): l'agente lavora in background nel cloud anche a computer spento, notificando l'utente quando serve un'autorizzazione, con chat e Cowork unificati e progetti/artifact condivisi tra le superfici. Il dato piu' rilevante per il concetto di harness e' quello d'uso pubblicato da Anthropic insieme al lancio: nelle sessioni Cowork campionate, business/operations pesa per il 33,4%, content creation per il 16,4%, sviluppo software solo l'8,7%. E' un riscontro empirico che un harness general-purpose per knowledge work (Cowork, VM completa via Apple Virtualization Framework/HCS, vedi Agent sandboxing) viene adottato in produzione prevalentemente per task non di coding, in controtendenza rispetto alla narrativa dominante — dominata da coding agent come Claude Code, Cursor, Codex — che ha guidato la maggior parte degli sviluppi harness coperti in questa scheda. Per chi progetta o valuta un harness general-purpose, il dato suggerisce di dimensionare telemetria ed eval anche su task non tecnici (redazione, analisi, pianificazione), non solo su benchmark coding-centrici. [Digest 2026-07-08](../../digest/2026/07/08.md)
 
 ### 2026-05-02
 

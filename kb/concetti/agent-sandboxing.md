@@ -3,7 +3,7 @@ name: Agent sandboxing
 aliases: [sandboxing, containment, isolamento agenti, agent containment, esecuzione isolata, sandbox]
 categoria: infrastruttura
 created: 2026-06-01
-last_updated: 2026-06-28
+last_updated: 2026-07-08
 ---
 
 # Agent sandboxing
@@ -82,6 +82,10 @@ Loop e esecuzione vanno disaccoppiati per la compliance. Il pattern "loop su pro
 La sandbox non sostituisce gli altri controlli. Contenimento, human-in-the-loop sulle azioni sensibili, controllo di policy separato dal modello e logging completo sono livelli complementari. Un agente sandboxato ma senza approvazione umana sulle azioni distruttive, o senza tracciamento dei tool call, e' ancora un rischio operativo. La sandbox limita il danno; gli altri controlli riducono la probabilita' che il danno si verifichi.
 
 ## Aggiornamenti
+
+### 2026-07-08
+
+Tre sviluppi paralleli spostano l'attenzione dal contenimento dell'esecuzione al contenimento della decisione. Primo, Anthropic cambia il default dei permessi di Claude Code da Auto a Manual su tutte le superfici (CLI, VS Code, JetBrains) a partire dalla v2.1.200 (3 luglio, ampia copertura il 7): ogni scrittura file, comando shell o chiamata di rete richiede ora conferma umana esplicita, perche' il classificatore che regolava Auto mancava circa il 17% delle azioni troppo aggressive. E' un caso di sandboxing "a monte" — restringere cosa l'agente puo' tentare senza supervisione, non solo dove puo' eseguirlo — e sposta il default verso il contenimento anche a costo di frizione operativa nei workflow CI/CD, che devono ora richiamare esplicitamente `--permission-mode auto`. Secondo e terzo, due paper pubblicati il 6 luglio ampliano la superficie nota degli attacchi contro agenti con memoria o dati esterni, distinti dal contenimento dell'esecuzione codificato in questa scheda: FARMA (arXiv:2607.05029, Penn State) avvelena il "ragionamento ricordato" di un agente con memoria persistente — non i fatti — con tracce forgiate che bypassano filtri a keyword e si autoamplificano, raggiungendo fino al 100% di attack success rate; la difesa proposta, SENTINEL, lo riduce allo 0% senza falsi positivi tramite analisi strutturale a cinque segnali delle entry candidate. Gli Agent Data Injection attacks (arXiv:2607.05120, Seoul National University/UIUC) sfruttano invece la misinterpretazione probabilistica di delimitatori inesatti tra dati e istruzioni, con ASR fino al 100% su contenuti DOM web; delle difese testate solo CaMeL Strict blocca l'attacco completamente. Entrambi i paper confermano il principio gia' in nota operativa in questa scheda: tool result e contenuto recuperato da fonti esterne — inclusa la memoria propria dell'agente — vanno trattati come dato non fidato, mai come istruzione. [Digest 2026-07-08](../../digest/2026/07/08.md)
 
 ### 2026-06-28
 

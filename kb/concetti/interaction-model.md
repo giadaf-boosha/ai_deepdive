@@ -3,7 +3,7 @@ name: Interaction Model
 aliases: [interaction model, full-duplex AI, modello di interazione, full-duplex model]
 categoria: architettura
 created: 2026-05-13
-last_updated: 2026-06-01
+last_updated: 2026-07-08
 ---
 
 # Interaction Model
@@ -96,3 +96,7 @@ Mese ricco di sviluppi sostanziali sul tema full-duplex, su tre fronti distinti.
 3. **Conferma fonti primarie.** Verificato via WebSearch lo stato di TML-Interaction-Small (research preview ancora ristretta, co-fondatrice Lilian Weng oltre a Mira Murati, addestramento full-duplex nativo senza VAD esterno) e l'esistenza del paper multi-stream. Nessuna revisione dei numeri di benchmark: i dati FD-bench/TimeSpeak/CueSpeak/latenza restano quelli del lancio.
 
 Oltre all'aggiunta dei due sviluppi, la scheda e' stata migliorata in chiarezza: esplicitata la distinzione tra full-duplex nativo (TML) e orchestrazione realtime sopra stack tradizionali (Sesame, API realtime), aggiunto un commento sull'interpretazione del distacco su TimeSpeak/CueSpeak, e una nota sullo stato di maturita' nella sezione "quando usarlo / quando no".
+
+### 2026-07-08
+
+OpenAI rilascia gpt-realtime-2.1 e gpt-realtime-2.1-mini (6 luglio), aggiornamento della Realtime API che resta nella categoria dei modelli quasi-full-duplex VAD-based, non un interaction model nativo in senso TML. Il miglioramento principale e' la latenza p95, ridotta di almeno il 25% grazie a caching piu' efficiente, con progressi su riconoscimento alfanumerico e gestione di silenzio/rumore. La novita' strutturale e' di pricing, non di architettura: gpt-realtime-2.1-mini introduce una variante economica con reasoning integrato a $10/$20 per milione di token audio (input/output) contro $32/$64 del modello flagship — un settimo del costo. Il fatto che OpenAI continui a iterare sulla latenza e sul costo di un'architettura VAD-based, invece di muoversi verso il full-duplex nativo dimostrato da TML-Interaction-Small, conferma la distinzione tracciata in questa scheda tra le due famiglie: i benchmark specifici del timing (TimeSpeak, CueSpeak) restano l'unico terreno su cui l'approccio VAD-based non puo' competere per costruzione, indipendentemente da quanto la latenza grezza migliori. [Digest 2026-07-08](../../digest/2026/07/08.md)
