@@ -3,7 +3,7 @@ name: AI Governance
 aliases: [AI governance, governance AI, export control AI, regolazione AI, AI regulation, AI policy, BIS AI, EAR AI models]
 categoria: regolazione
 created: 2026-06-14
-last_updated: 2026-07-06
+last_updated: 2026-07-09
 ---
 
 # AI Governance
@@ -160,3 +160,7 @@ Prima disputa bilaterale pubblica documentata tra un major AI lab americano e un
 ### 2026-07-06
 
 Cloudflare formalizza la classificazione dei bot AI in tre categorie con implicazioni di governance per l'intera infrastruttura web. Il rapporto Cloudflare del 1-5 luglio documenta che il 52% delle richieste crawler e' ora per AI training (contro il 22% della primavera 2025) e che per la prima volta piu' del 57,5% del traffico HTML e' non-umano. I nuovi controlli introducono tre categorie distinte — Search, Agent, Training — con policy separabili per categoria su ogni dominio: i publisher possono ora consentire ai crawler di ricerca (che indirizzano traffico di ritorno) e bloccare i crawler di training (che estraggono contenuto senza compensazione) senza bloccare tutto il traffico non-umano. Il meccanismo Pay Per Use estende il Pay Per Crawl: la compensazione del publisher e' condizionata all'uso effettivo del contenuto in una risposta AI, non alla semplice visita del crawler — rimuove l'incentivo degli operatori AI a crawlare senza usare. I nuovi default Cloudflare dal 15 settembre 2026 (Training e Agent bloccati sulle pagine con pubblicita', Search consentito) diventano de facto uno standard di governance dell'accesso AI al web: la maggior parte dei publisher non modifichera' i default, quindi la politica Cloudflare diventa la politica effettiva per un'ampia quota del web. E' la prima istanza in cui un'infrastruttura tecnica (CDN/WAF) diventa vettore di governance normativa per l'accesso AI al contenuto web a scala globale. [Digest 2026-07-06](../../digest/2026/07/06.md)
+
+### 2026-07-09
+
+La frizione USA-Cina sull'AI acquisisce una dimensione economica diretta e misurabile. CNBC documenta il 7 luglio che la quota di token usati da aziende statunitensi su modelli AI cinesi via OpenRouter e' rimasta sopra il 30% ogni settimana dall'8 febbraio 2026, con picchi al 46% — contro una media dell'11% nei 12 mesi precedenti e il 4,5% nel primo semestre 2025. Il driver e' il differenziale di prezzo (modelli open-source cinesi 60-90% piu' economici dei modelli di punta Anthropic/OpenAI), non restrizioni normative: e' il mercato, non l'export control, a spostare il traffico enterprise verso la Cina. Casi concreti: GLM-5.2 (Z.ai) con crescita clienti 80x e volume token 27x nella prima settimana su Vercel; la startup Lindy che sposta il 100% del proprio traffico da Claude a DeepSeek. Il dato estende il pattern aperto dalla disputa Alibaba-Anthropic (digest 5 luglio, divieto Alibaba su Claude Code + accusa di distillazione industriale su Anthropic): la competizione USA-Cina sull'AI si gioca ora su due piani paralleli e in tensione tra loro — export control e dispute IP sul lato capacita' frontier, differenziale di costo sul lato adozione enterprise di massa. Per chi valuta rischio vendor: la sostituibilita' economica dei modelli USA con alternative cinesi a basso costo e' ormai un fattore osservabile su scala, non un rischio ipotetico. [Digest 2026-07-09](../../digest/2026/07/09.md)

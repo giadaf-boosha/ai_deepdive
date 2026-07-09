@@ -3,7 +3,7 @@ name: Mixture of Experts
 aliases: [MoE, mixture-of-experts, mixture of experts, modello sparso, sparse model, expert routing]
 categoria: architettura
 created: 2026-06-01
-last_updated: 2026-07-05
+last_updated: 2026-07-09
 ---
 
 # Mixture of Experts
@@ -100,3 +100,7 @@ LongCat-2.0 (Meituan, 30 giugno, missed coverage) introduce un nuovo caso d'uso 
 ### 2026-06-20
 
 Tre modelli open-weight per il coding agentico rilasciati nella settimana del ban Fable 5 confermano il MoE come architettura standard per disaccoppiare capacita' e costo di serving: Cohere North Mini Code (30B totali / 3B attivi via 128 expert, Apache 2.0, 256K context), Kimi K2.7-Code di Moonshot (1T totali / 32B attivi, 384 expert, Modified MIT, 256K context), GLM-5.2 di Zhipu/Z.ai (744B totali / 40B attivi, MIT, 1M context). I ratio active/total variano da 1:10 (Kimi K2.7-Code) a 1:18 (North Mini Code), un range piu' ampio rispetto ai modelli frontier della generazione precedente. Il pattern unificante e' la specializzazione degli expert per task di coding agentico: sia North Mini Code che K2.7-Code sono addestrati specificamente per agentic software engineering, mentre GLM-5.2 si posiziona come general-purpose con forte performance sul coding. Tutti e tre sono stati adottati da team enterprise come alternative a Fable 5 nel corso della stessa settimana del ban, documentando per la prima volta la velocita' con cui il mercato sostituisce un modello proprietario sospeso con modelli open-weight quando il gap di qualita' e' sufficientemente ridotto. Vedi [Digest 2026-06-20](../../digest/2026/06/20.md).
+
+### 2026-07-09
+
+NVIDIA estende il MoE a un caso d'uso multimodale nuovo per la scheda: Audex (Nemotron-Labs-Audex-30B-A3B, 7 luglio) e' un decoder Transformer MoE unificato audio-testo, 30B totali / 3B attivi, costruito su un backbone testo-only ibrido Mamba-Transformer (Nemotron-Cascade-2-30B-A3B, 52 layer, 128 expert instradabili, 6 attivati). La novita' architetturale rispetto ai casi precedenti (DiffusionGemma su backbone diffusivo, digest 06-12) e' che audio e testo condividono lo stesso spazio di token durante la generazione: l'audio viene codificato e proiettato nell'embedding testuale, poi processato insieme ai token di testo con lo stesso meccanismo di routing MoE. Il training combina 157,4B token audio e 320,5B token testuali con training supervisionato multi-stage, RL a cascata solo-testo e distillazione on-policy multi-dominio. Il risultato dichiarato — preservazione delle capacita' di reasoning, allineamento e long-context del backbone testuale con regressione marginale o nulla, mentre il modello acquisisce comprensione/generazione audio — conferma che la sparsita' del MoE assorbe l'aggiunta di una modalita' intera senza il trade-off netto capacita'-vs-specializzazione tipico dei modelli densi multimodali. Checkpoint (Audex-30B-A3B e la variante piu' piccola Audex-2B) su Hugging Face, licenza non commerciale. [Digest 2026-07-09](../../digest/2026/07/09.md)
