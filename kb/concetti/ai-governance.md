@@ -3,7 +3,7 @@ name: AI Governance
 aliases: [AI governance, governance AI, export control AI, regolazione AI, AI regulation, AI policy, BIS AI, EAR AI models]
 categoria: regolazione
 created: 2026-06-14
-last_updated: 2026-07-09
+last_updated: 2026-07-10
 ---
 
 # AI Governance
@@ -72,6 +72,10 @@ Esempio 3: verifica della Responsible Scaling Policy prima di distribuire un mod
 - Wilson Sonsini, "Colorado Legislature Repeals and Replaces Colorado AI Act: What SB 189 Means for Your Business" (maggio 2026). https://www.wsgr.com/en/insights/colorado-legislature-repeals-and-replaces-colorado-ai-act-what-sb-189-means-for-your-business.html
 
 ## Aggiornamenti
+
+### 2026-07-10
+
+Si e' svolta il 6-7 luglio a Ginevra la prima sessione del Global Dialogue on AI Governance, il forum ONU dedicato alla cooperazione internazionale sulla governance AI, co-presieduto dalle ambasciatrici di El Salvador ed Estonia. E' un meccanismo di governance categoricamente diverso da quelli documentati finora in questo file (export control BIS, AI Act europeo, responsible scaling policy dei lab): modellato sull'Internet Governance Forum, produce un co-chair summary non vincolante, non regole applicabili. Il Segretario Generale Guterres ha indicato quattro priorita' — standard di sicurezza comuni, linee rosse sui diritti umani, capacity-building (proposto un Global Fund for AI) e una AI Environmental Transparency Initiative sul consumo energetico dei modelli — che segnalano la direzione su cui l'ONU tentera' di costruire coordinamento multilaterale, distinto dai binari regolatori gia' vincolanti (AI Act UE, EAR/BIS USA) coperti altrove in questo file. Il valore per i practitioner e' anticipatorio, non operativo: nessun obbligo nasce da questo forum, ma la AI Environmental Transparency Initiative in particolare prefigura un possibile futuro asse di reporting (consumo energetico dei modelli) che potrebbe confluire in framework vincolanti nei prossimi cicli. Secondo round gia' calendarizzato a New York per maggio 2027. [Digest 2026-07-10](../../digest/2026/07/10.md)
 
 ### 2026-06-14
 

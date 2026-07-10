@@ -3,7 +3,7 @@ name: Interaction Model
 aliases: [interaction model, full-duplex AI, modello di interazione, full-duplex model]
 categoria: architettura
 created: 2026-05-13
-last_updated: 2026-06-01
+last_updated: 2026-07-10
 ---
 
 # Interaction Model
@@ -80,6 +80,10 @@ La complessita' dell'architettura a due livelli comporta anche un costo di integ
 - TechCrunch, "Sesame, the conversational AI startup from Oculus founders, launches its iOS app", maggio 2026. https://techcrunch.com/2026/05/28/sesame-the-conversational-ai-startup-from-oculus-founders-launches-its-ios-app/
 
 ## Aggiornamenti
+
+### 2026-07-10
+
+OpenAI lancia GPT-Live-1 e GPT-Live-1 mini (9 luglio), primo interaction model full-duplex di un frontier lab general-purpose a raggiungere rollout globale su un prodotto di massa (ChatGPT, tutti i piani free e paid), dopo un anno di research preview riservate (TML-Interaction-Small di Thinking Machines Lab, coperto in questo file da maggio 2026). L'architettura conferma il pattern a due livelli gia' documentato per TML: GPT-Live gestisce la percezione e la generazione continua in tempo reale (decisioni su parlare, ascoltare, mettere in pausa, interrompere, invocare un tool, molte volte al secondo), mentre delega il reasoning profondo — ricerca, ragionamento esteso, task agentici — a GPT-5.5 in background. La differenza rispetto al lancio TML e' la scala di distribuzione: non piu' una research preview per un gruppo ristretto di ricercatori, ma un default di prodotto per centinaia di milioni di utenti ChatGPT, il primo vero test di adozione di massa dell'architettura full-duplex nativa. Nei test comparativi umani pubblicati da OpenAI, GPT-Live-1 e la variante mini sono risultati nettamente preferiti rispetto alla precedente Advanced Voice Mode (quasi-full-duplex con VAD). Non sono stati pubblicati numeri comparabili su FD-bench/TimeSpeak/CueSpeak rispetto a TML-Interaction-Small; il confronto diretto tra le due architetture resta da verificare. [Digest 2026-07-10](../../digest/2026/07/10.md) — [OpenAI — Introducing GPT-Live](https://openai.com/index/introducing-gpt-live/)
 
 ### 2026-05-13
 
