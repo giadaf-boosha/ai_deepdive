@@ -8,10 +8,10 @@
 
 | Concetto | Categoria | Aliases | Ultimo aggiornamento |
 |---|---|---|---|
-| [AI Governance](./concetti/ai-governance.md) | regolazione | AI governance, governance AI, export control AI, regolazione AI, AI regulation, AI policy, BIS AI, EAR AI models | 2026-07-09 |
+| [AI Governance](./concetti/ai-governance.md) | regolazione | AI governance, governance AI, export control AI, regolazione AI, AI regulation, AI policy, BIS AI, EAR AI models | 2026-07-11 |
 | [Agent harness](./concetti/agent-harness.md) | infrastruttura | agent harness, harness, scaffolding agentico, agent runtime | 2026-06-29 |
 | [Agent sandboxing](./concetti/agent-sandboxing.md) | infrastruttura | sandboxing, containment, isolamento agenti, agent containment, esecuzione isolata, sandbox | 2026-06-28 |
-| [AI Agent](./concetti/agent.md) | paradigma | agent, AI agent, agente autonomo, autonomous agent | 2026-06-28 |
+| [AI Agent](./concetti/agent.md) | paradigma | agent, AI agent, agente autonomo, autonomous agent | 2026-07-11 |
 | [Chain of Thought / Reasoning](./concetti/chain-of-thought.md) | tecnica | chain of thought, CoT, catena di pensiero, reasoning, ragionamento esplicito, extended thinking | 2026-06-27 |
 | [Context window](./concetti/context-window.md) | architettura | context window, finestra di contesto, finestra contestuale, context length | 2026-06-29 |
 | [Diffusion Language Models](./concetti/diffusion-language-models.md) | architettura | diffusion language model, text diffusion, DLM, modello di diffusione testuale, generazione diffusiva, non-autoregressive generation, masked diffusion | 2026-06-12 |
@@ -22,7 +22,7 @@
 | [Knowledge Distillation](./concetti/knowledge-distillation.md) | training | knowledge distillation, distillazione, model distillation, distillazione di modello, adversarial distillation, response distillation, student-teacher, distillazione avversariale | 2026-06-25 |
 | [Interaction Model](./concetti/interaction-model.md) | architettura | interaction model, full-duplex AI, modello di interazione, full-duplex model | 2026-06-01 |
 | [Large Language Model](./concetti/llm.md) | architettura | LLM, modello linguistico di grandi dimensioni, foundation model | 2026-07-01 |
-| [Mixture of Experts](./concetti/mixture-of-experts.md) | architettura | MoE, mixture-of-experts, mixture of experts, modello sparso, sparse model, expert routing | 2026-07-09 |
+| [Mixture of Experts](./concetti/mixture-of-experts.md) | architettura | MoE, mixture-of-experts, mixture of experts, modello sparso, sparse model, expert routing | 2026-07-11 |
 | [Model Context Protocol](./concetti/mcp.md) | infrastruttura | MCP, Model Context Protocol, protocollo MCP | 2026-06-01 |
 | [Multi-agent orchestration](./concetti/multi-agent-orchestration.md) | paradigma | multi-agent, sistema multi-agente, orchestrazione di agenti, agent swarm, subagenti, sub-agent orchestration | 2026-07-06 |
 | [Private Cloud Compute](./concetti/private-cloud-compute.md) | infrastruttura | PCC, Private Cloud Compute, confidential cloud computing, confidential inference, Apple PCC, TEE cloud inference | 2026-06-08 |

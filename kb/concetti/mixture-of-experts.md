@@ -3,7 +3,7 @@ name: Mixture of Experts
 aliases: [MoE, mixture-of-experts, mixture of experts, modello sparso, sparse model, expert routing]
 categoria: architettura
 created: 2026-06-01
-last_updated: 2026-07-09
+last_updated: 2026-07-11
 ---
 
 # Mixture of Experts
@@ -104,3 +104,7 @@ Tre modelli open-weight per il coding agentico rilasciati nella settimana del ba
 ### 2026-07-09
 
 NVIDIA estende il MoE a un caso d'uso multimodale nuovo per la scheda: Audex (Nemotron-Labs-Audex-30B-A3B, 7 luglio) e' un decoder Transformer MoE unificato audio-testo, 30B totali / 3B attivi, costruito su un backbone testo-only ibrido Mamba-Transformer (Nemotron-Cascade-2-30B-A3B, 52 layer, 128 expert instradabili, 6 attivati). La novita' architetturale rispetto ai casi precedenti (DiffusionGemma su backbone diffusivo, digest 06-12) e' che audio e testo condividono lo stesso spazio di token durante la generazione: l'audio viene codificato e proiettato nell'embedding testuale, poi processato insieme ai token di testo con lo stesso meccanismo di routing MoE. Il training combina 157,4B token audio e 320,5B token testuali con training supervisionato multi-stage, RL a cascata solo-testo e distillazione on-policy multi-dominio. Il risultato dichiarato — preservazione delle capacita' di reasoning, allineamento e long-context del backbone testuale con regressione marginale o nulla, mentre il modello acquisisce comprensione/generazione audio — conferma che la sparsita' del MoE assorbe l'aggiunta di una modalita' intera senza il trade-off netto capacita'-vs-specializzazione tipico dei modelli densi multimodali. Checkpoint (Audex-30B-A3B e la variante piu' piccola Audex-2B) su Hugging Face, licenza non commerciale. [Digest 2026-07-09](../../digest/2026/07/09.md)
+
+### 2026-07-11
+
+Tencent Hy3 (6 luglio, missed coverage) aggiunge un altro data point alla tendenza verso sparsita' piu' estrema: 295B totali con 192 expert e top-8 routing, 21B attivi per token (ratio active/total ≈ 1:14), 80 layer transformer piu' un layer di multi-token-prediction per lo speculative decoding, licenza Apache 2.0. Il dato rilevante rispetto ai casi precedenti in questo file non e' la dimensione ma la traiettoria del post-training: rispetto alla preview di aprile, dopo feedback raccolto da 50 team di prodotto interni, il tasso di allucinazione scende dal 12,5% al 5,4% e gli errori di senso comune dal 25,4% al 12,7% — un miglioramento misurato sullo stesso checkpoint architetturale, isolando l'effetto del post-training dall'effetto della scala. Su valutazioni cieche condotte da 270 esperti esterni su task reali, Hy3 supera GLM-5.1 (2,67 vs 2,51 su 4), con margine piu' ampio su frontend development e workflow CI/CD — un segnale che la competizione tra i MoE open cinesi si gioca ormai su affinamento post-training e non solo su parametri totali o dati di pre-training. [Digest 2026-07-11](../../digest/2026/07/11.md)
