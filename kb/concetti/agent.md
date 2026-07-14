@@ -3,7 +3,7 @@ name: AI Agent
 aliases: [agent, AI agent, agente autonomo, autonomous agent]
 categoria: paradigma
 created: 2026-04-28
-last_updated: 2026-06-28
+last_updated: 2026-07-14
 ---
 
 # AI Agent
@@ -270,3 +270,7 @@ Claude Tag (Anthropic, 23 giugno, 5 fonti) introduce la variante "ambient team m
 ### 2026-06-26
 
 WorkBench Revisited (arXiv:2606.13715, giugno 2026, copertura mancata dal 10 giugno) misura il progresso degli agenti su 50 task da ufficio nel periodo 2024-2026. Il miglior agente 2026 e' Claude Opus 4.8 con l'89% di task completion e il 2,5% di azioni dannose, contro il 43% e il 26% del miglior agente 2024 (GPT-4). La traiettoria documenta che la sicurezza e la capacita' si muovono nella stessa direzione — un dato rilevante perche' la narrative dominante nel campo postulava un trade-off tra i due. Il benchmark mantiene i task fissi nel tempo, rendendo il confronto cross-modello interpretabile senza la variabile confondente dei benchmark nuovi che cambiano distribuzione. 2025 AI Agent Index (arXiv:2602.17753, FAccT '26 Montreal, 25-28 giugno) audita 30 agenti su 8 dimensioni di documentazione della sicurezza. I risultati piu' rilevanti per il design agentico: gli incidenti si concentrano negli agenti browser (prompt injection come vettore dominante), e la copertura della documentazione di sicurezza varia da 8/8 (Claude Code) a 1/8 (Moonshot AI, Manus). L'indice formalizza la documentazione pubblica di sicurezza come asse di valutazione comparabile — complementare ai benchmark di capacita' ma distinto: un agente puo' avere alta capacita' e bassa copertura documentale, o viceversa. Per chi costruisce o sceglie agenti: la lista degli 8 campi dell'AI Agent Index diventa una checklist di accountability minima per qualsiasi deployment in contesti regolamentati. [Digest 2026-06-26](../../digest/2026/06/26.md)
+
+### 2026-07-14
+
+OpenAI lancia ChatGPT Work (9 luglio, missed coverage): un agente che raccoglie contesto da app, file e workflow connessi, pianifica l'approccio e agisce autonomamente su strumenti e app desktop per produrre materiali finiti (fogli di calcolo, documenti, slide, web app), restando su un progetto complesso per ore tramite decomposizione in step piu' piccoli, con tecnologia Codex integrata per il lavoro tecnico. E' l'ennesima istanza del pattern "agentic workspace" enterprise gia' tracciato in questo file (Claude Cowork, Microsoft Agent 365, Writer), ma e' rilevante perche' la stampa lo inquadra esplicitamente come risposta competitiva diretta a Claude Cowork: il baricentro della competizione tra i due maggiori lab frontier si sposta dal chatbot al coworker agentico general-purpose per attivita' amministrative, non solo coding. Disponibile da subito su desktop per tutti i piani, rollout web/mobile su Plus, Pro, Business, Enterprise ed Edu nei giorni successivi. [Digest 2026-07-14](../../digest/2026/07/14.md)

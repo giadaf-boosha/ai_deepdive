@@ -3,7 +3,7 @@ name: Interaction Model
 aliases: [interaction model, full-duplex AI, modello di interazione, full-duplex model]
 categoria: architettura
 created: 2026-05-13
-last_updated: 2026-06-01
+last_updated: 2026-07-14
 ---
 
 # Interaction Model
@@ -96,3 +96,7 @@ Mese ricco di sviluppi sostanziali sul tema full-duplex, su tre fronti distinti.
 3. **Conferma fonti primarie.** Verificato via WebSearch lo stato di TML-Interaction-Small (research preview ancora ristretta, co-fondatrice Lilian Weng oltre a Mira Murati, addestramento full-duplex nativo senza VAD esterno) e l'esistenza del paper multi-stream. Nessuna revisione dei numeri di benchmark: i dati FD-bench/TimeSpeak/CueSpeak/latenza restano quelli del lancio.
 
 Oltre all'aggiunta dei due sviluppi, la scheda e' stata migliorata in chiarezza: esplicitata la distinzione tra full-duplex nativo (TML) e orchestrazione realtime sopra stack tradizionali (Sesame, API realtime), aggiunto un commento sull'interpretazione del distacco su TimeSpeak/CueSpeak, e una nota sullo stato di maturita' nella sezione "quando usarlo / quando no".
+
+### 2026-07-14
+
+Primo interaction model commerciale su larga scala dopo la research preview di TML-Interaction-Small: OpenAI lancia l'8 luglio GPT-Live e GPT-Live-1 mini, modelli vocali full-duplex che elaborano l'audio in ingresso in continuo durante la propria generazione (niente attesa del silenzio via VAD), possono interrompersi, modulare il ritmo o restare in silenzio, e prendono decisioni di interazione (parlare, ascoltare, interrompere, invocare un tool) piu' volte al secondo. La differenza architetturale rispetto a TML e' la separazione dei concern: GPT-Live gestisce il canale conversazionale in tempo reale e delega esplicitamente il ragionamento profondo o la ricerca web alla base testuale GPT-5.5, restando in conversazione nel frattempo — un'istanza commerciale del pattern a due livelli (interazione time-aware + reasoning asincrono) gia' descritto per TML-Interaction-Small. GPT-Live-1 diventa il default vocale per gli abbonati Go/Plus/Pro, rollout su iOS/Android/web, API non ancora disponibile. E' il primo caso in cui un frontier lab mainstream (non un lab di ricerca dedicato come TML) porta un vero modello full-duplex a scala di prodotto consumer, segnale che la categoria sta uscendo dalla fase di research preview. [Digest 2026-07-14](../../digest/2026/07/14.md)
