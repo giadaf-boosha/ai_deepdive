@@ -3,7 +3,7 @@ name: Mixture of Experts
 aliases: [MoE, mixture-of-experts, mixture of experts, modello sparso, sparse model, expert routing]
 categoria: architettura
 created: 2026-06-01
-last_updated: 2026-07-09
+last_updated: 2026-07-16
 ---
 
 # Mixture of Experts
@@ -80,6 +80,10 @@ Quando un denso e' la scelta migliore. Per deployment su singola GPU, su edge o 
 Combinare gli assi di efficienza. MoE (sparsita' tra expert), quantizzazione (precisione ridotta dei pesi) e adaptive per-token compute (budget variabile) sono assi ortogonali e cumulabili. Un sistema di serving maturo li combina: un MoE quantizzato ad AWQ 4-bit con allocazione adattiva del compute per token e' lo stato dell'arte dell'ottimizzazione dell'inferenza nel 2026.
 
 ## Aggiornamenti
+
+### 2026-07-16
+
+Inkling (Thinking Machines Lab, 15 luglio) e' il primo modello pubblico del lab fondato da Mira Murati, John Schulman e Lilian Weng, ed e' un MoE 975B-A41B (975 miliardi di parametri totali, circa 41 miliardi attivi per token) addestrato su 45 trilioni di token multimodali con contesto nativo da 1 milione di token. Il dato nuovo rispetto ai casi gia' tracciati in questa scheda e' la combinazione scala-piu'-licenza: e' il primo MoE a scala vicina al trilione di parametri rilasciato con licenza Apache 2.0 (uso commerciale libero, pesi scaricabili) da un lab occidentale finanziato a livello frontier ($2 miliardi di seed, $12 miliardi di valutazione) — finora questa combinazione di scala e apertura era appannaggio quasi esclusivo dei lab cinesi (LongCat-2.0 1,6T-A48B MIT, GLM-5.2 744B-A40B MIT, Kimi K2.7 1T-A32B, tutti coperti nei digest precedenti). Il ratio active/total (975B/41B ≈ 1:24) si colloca nella fascia alta di sparsita' gia' osservata nei modelli piu' recenti. Sui benchmark pubblicati, Inkling raggiunge 77,6% su SWE-bench Verified, sopra il 71,9% di NVIDIA Nemotron 3. [Digest 2026-07-16](../../digest/2026/07/16.md)
 
 ### 2026-06-05
 

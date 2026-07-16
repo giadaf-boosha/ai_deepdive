@@ -3,7 +3,7 @@ name: AI Governance
 aliases: [AI governance, governance AI, export control AI, regolazione AI, AI regulation, AI policy, BIS AI, EAR AI models]
 categoria: regolazione
 created: 2026-06-14
-last_updated: 2026-07-15
+last_updated: 2026-07-16
 ---
 
 # AI Governance
@@ -164,6 +164,10 @@ Cloudflare formalizza la classificazione dei bot AI in tre categorie con implica
 ### 2026-07-09
 
 La frizione USA-Cina sull'AI acquisisce una dimensione economica diretta e misurabile. CNBC documenta il 7 luglio che la quota di token usati da aziende statunitensi su modelli AI cinesi via OpenRouter e' rimasta sopra il 30% ogni settimana dall'8 febbraio 2026, con picchi al 46% — contro una media dell'11% nei 12 mesi precedenti e il 4,5% nel primo semestre 2025. Il driver e' il differenziale di prezzo (modelli open-source cinesi 60-90% piu' economici dei modelli di punta Anthropic/OpenAI), non restrizioni normative: e' il mercato, non l'export control, a spostare il traffico enterprise verso la Cina. Casi concreti: GLM-5.2 (Z.ai) con crescita clienti 80x e volume token 27x nella prima settimana su Vercel; la startup Lindy che sposta il 100% del proprio traffico da Claude a DeepSeek. Il dato estende il pattern aperto dalla disputa Alibaba-Anthropic (digest 5 luglio, divieto Alibaba su Claude Code + accusa di distillazione industriale su Anthropic): la competizione USA-Cina sull'AI si gioca ora su due piani paralleli e in tensione tra loro — export control e dispute IP sul lato capacita' frontier, differenziale di costo sul lato adozione enterprise di massa. Per chi valuta rischio vendor: la sostituibilita' economica dei modelli USA con alternative cinesi a basso costo e' ormai un fattore osservabile su scala, non un rischio ipotetico. [Digest 2026-07-09](../../digest/2026/07/09.md)
+
+### 2026-07-16
+
+Le Interim Measures for the Administration of AI Anthropomorphic Interactive Services entrano in vigore in Cina il 15 luglio, introducendo un asse regolatorio nuovo rispetto a tutti i casi tracciati finora in questa scheda: non export control su un modello-servizio (caso Fable 5/Mythos 5) ne' proposta di autoregolamentazione cross-lab (Hassabis, Amodei), ma un divieto normativo diretto e vincolante su una categoria intera di prodotto AI gia' in produzione di massa — i companion virtuali antropomorfi. Le misure, co-emanate il 10 aprile 2026 da Cyberspace Administration of China, NDRC, Ministry of Industry and Information Technology, Ministry of Public Security e State Administration for Market Regulation, impongono registrazione dell'algoritmo, valutazione di sicurezza obbligatoria, disclosure che il servizio non e' umano, promemoria anti-dipendenza, percorsi di crisi per l'autolesionismo, divieto assoluto di servizi di companion/famiglia virtuale per i minori e consenso del tutore sotto i 14 anni. L'effetto immediato e' la disattivazione degli agenti companion personalizzati di Doubao (ByteDance) e Qwen (Alibaba), usati da centinaia di milioni di utenti, con finestre di recupero dati asimmetriche (Doubao fino al 15 ottobre 2026 in sola lettura, Qwen nessuna). E' il primo caso al mondo di un governo che vieta per legge, con effetto immediato su prodotti gia' live, un'intera categoria funzionale di AI (companion antropomorfo) distinta dalla regolazione per settore di rischio (tipo AI Act) o dall'export control per attore geopolitico (tipo BIS/Fable 5). Per chi opera prodotti AI conversazionali con componenti di personalizzazione emotiva continuativa e utenza in Cina, il caso stabilisce un precedente diretto: la categoria "interazione antropomorfa continuativa" e' ora un perimetro normativo a se', con requisiti di compliance specifici e non derivabili dalle regole generali sui chatbot o sull'AI Act europeo. [Digest 2026-07-16](../../digest/2026/07/16.md)
 
 ### 2026-07-15
 
