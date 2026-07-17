@@ -3,7 +3,7 @@ name: Agent sandboxing
 aliases: [sandboxing, containment, isolamento agenti, agent containment, esecuzione isolata, sandbox]
 categoria: infrastruttura
 created: 2026-06-01
-last_updated: 2026-06-28
+last_updated: 2026-07-17
 ---
 
 # Agent sandboxing
@@ -82,6 +82,10 @@ Loop e esecuzione vanno disaccoppiati per la compliance. Il pattern "loop su pro
 La sandbox non sostituisce gli altri controlli. Contenimento, human-in-the-loop sulle azioni sensibili, controllo di policy separato dal modello e logging completo sono livelli complementari. Un agente sandboxato ma senza approvazione umana sulle azioni distruttive, o senza tracciamento dei tool call, e' ancora un rischio operativo. La sandbox limita il danno; gli altri controlli riducono la probabilita' che il danno si verifichi.
 
 ## Aggiornamenti
+
+### 2026-07-17
+
+Perplexity rilascia SPACE (Sandboxed Platform for Agentic Code Execution, 15 luglio), il runtime che isola ogni sessione del proprio agente Computer. La tecnica di isolamento — Firecracker microVM, la stessa VM open source di AWS usata per Lambda e Fargate — si colloca sullo spettro gia' mappato in questa scheda come alternativa alla VM completa (Apple Virtualization Framework/Hyper-V) usata da Claude Cowork: entrambe offrono isolamento hardware-assisted, ma Firecracker e' progettata per avvio rapido e alta densita' multi-tenant. Il contributo concettuale nuovo rispetto ai casi gia' tracciati e' il time-travel dello stato di sessione: SPACE prende snapshot incrementali di memoria live e file anche ogni minuto, recuperabili fino a una settimana indietro, permettendo di sospendere un task a meta' e riprenderlo esattamente dal punto di interruzione giorni dopo — una capacita' che va oltre il semplice contenimento e tocca la persistenza dello stato agentico su orizzonti lunghi. Dati di scala dichiarati: milioni di sandbox create e decine di milioni di riconnessioni nell'ultima settimana, spin-up 3-5 volte piu' rapido della soluzione precedente. [Digest 2026-07-17](../../digest/2026/07/17.md)
 
 ### 2026-06-28
 

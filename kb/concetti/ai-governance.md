@@ -3,7 +3,7 @@ name: AI Governance
 aliases: [AI governance, governance AI, export control AI, regolazione AI, AI regulation, AI policy, BIS AI, EAR AI models]
 categoria: regolazione
 created: 2026-06-14
-last_updated: 2026-07-16
+last_updated: 2026-07-17
 ---
 
 # AI Governance
@@ -72,6 +72,10 @@ Esempio 3: verifica della Responsible Scaling Policy prima di distribuire un mod
 - Wilson Sonsini, "Colorado Legislature Repeals and Replaces Colorado AI Act: What SB 189 Means for Your Business" (maggio 2026). https://www.wsgr.com/en/insights/colorado-legislature-repeals-and-replaces-colorado-ai-act-what-sb-189-means-for-your-business.html
 
 ## Aggiornamenti
+
+### 2026-07-17
+
+Le Implementation Opinions cinesi sugli AI agent (CAC, NDRC, MIIT, emanate l'8 maggio 2026) diventano vincolanti il 15 luglio — lo stesso giorno di entrata in vigore delle Interim Measures sui companion AI antropomorfi coperte nel digest del 16 luglio, ma si tratta di due normative distinte con oggetti diversi. Le Implementation Opinions regolano gli AI agent come categoria funzionale — sistemi capaci di percezione autonoma, memoria, decisione, interazione ed esecuzione — non l'interazione emotiva simulata. L'approccio e' risk-tiered: filing obbligatorio, testing e recall di prodotto per gli agenti impiegati in settori sensibili (sanita', trasporti, media, pubblica sicurezza), con il requisito sostanziale che l'utente mantenga il diritto di conoscere e l'autorita' decisionale finale sulle azioni dell'agente, che non puo' operare oltre il perimetro dell'autorizzazione ricevuta. E' il primo caso al mondo di un governo che definisce una categoria normativa dedicata specificamente agli AI agent, distinta sia dalla regolazione settoriale per rischio (AI Act europeo) sia dall'export control per attore geopolitico (caso Fable 5/Mythos 5): su questo asse specifico la Cina anticipa sia gli USA sia l'UE, nessuno dei quali ha ancora una categoria normativa dedicata agli agenti autonomi. [Digest 2026-07-17](../../digest/2026/07/17.md)
 
 ### 2026-06-14
 

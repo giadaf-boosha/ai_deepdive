@@ -3,7 +3,7 @@ name: Mixture of Experts
 aliases: [MoE, mixture-of-experts, mixture of experts, modello sparso, sparse model, expert routing]
 categoria: architettura
 created: 2026-06-01
-last_updated: 2026-07-16
+last_updated: 2026-07-17
 ---
 
 # Mixture of Experts
@@ -80,6 +80,10 @@ Quando un denso e' la scelta migliore. Per deployment su singola GPU, su edge o 
 Combinare gli assi di efficienza. MoE (sparsita' tra expert), quantizzazione (precisione ridotta dei pesi) e adaptive per-token compute (budget variabile) sono assi ortogonali e cumulabili. Un sistema di serving maturo li combina: un MoE quantizzato ad AWQ 4-bit con allocazione adattiva del compute per token e' lo stato dell'arte dell'ottimizzazione dell'inferenza nel 2026.
 
 ## Aggiornamenti
+
+### 2026-07-17
+
+Kimi K3 (Moonshot AI, 16 luglio) spinge ulteriormente l'estremo di scala tra i MoE open-weight: circa 2,8 trilioni di parametri totali con 16 esperti attivati su 896 (circa 50 miliardi di parametri attivi per token, notazione 2.8T-A50B), contesto nativo 1M token, con due meccanismi dichiarati come nuovi — Kimi Delta Attention e Attention Residuals. Il ratio active/total (~1:56) e' piu' sparso di Kimi K2.7 (1:32, digest 20 giugno) e di LongCat-2.0 (1:33, digest 5 luglio), confermando la traiettoria verso sparsita' crescente gia' osservata in questa scheda. La differenza rilevante rispetto ai casi precedenti: al momento del lancio i pesi non sono scaricabili — Moonshot promette il rilascio open-weight entro il 27 luglio — quindi per la prima volta in questa serie di casi la scala dichiarata precede la verificabilita' indipendente invece di accompagnarla. Sui benchmark self-reported, K3 supera Claude Opus 4.8 max e GPT-5.5 high ma resta dietro Claude Fable 5 e GPT-5.6 Sol. [Digest 2026-07-17](../../digest/2026/07/17.md)
 
 ### 2026-07-16
 
