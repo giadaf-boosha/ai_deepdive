@@ -3,7 +3,7 @@ name: Knowledge Distillation
 aliases: [knowledge distillation, distillazione, model distillation, distillazione di modello, adversarial distillation, response distillation, student-teacher, distillazione avversariale]
 categoria: training
 created: 2026-06-25
-last_updated: 2026-06-25
+last_updated: 2026-07-18
 ---
 
 # Knowledge Distillation
@@ -77,6 +77,10 @@ Il meccanismo e' semplice: creare account multipli per aggirare i rate limit e l
 - Taori et al., "Alpaca: A Strong, Replicable Instruction-Following Model" (Stanford CRFM, 2023). https://crfm.stanford.edu/2023/03/13/alpaca.html
 
 ## Aggiornamenti
+
+### 2026-07-18
+
+La Cina respinge pubblicamente, per la prima volta a questo livello istituzionale, le accuse di adversarial distillation mosse da Anthropic e da altri lab USA. Il 18 luglio, a margine della World AI Conference di Shanghai, l'Assistant Chinese Foreign Minister Liu Bin dichiara infondate le affermazioni secondo cui i rivali cinesi estraggono illecitamente risultati dai modelli americani di punta per far progredire le proprie capacita' — la stessa tesi al centro della lettera di Anthropic al Senate Banking Committee sul caso Alibaba (25.000 account fraudolenti, 28,8 milioni di scambi con Mythos Preview tra il 22 aprile e il 5 giugno, coperto digest 25 giugno). E' la prima risposta ufficiale di un funzionario governativo cinese, non di un'azienda, alla tesi di Anthropic che la distillazione sistematica via API fraudolenta debba essere trattata come violazione degli export control oltre che dei termini di servizio. Il rigetto arriva nello stesso arco di 48 ore in cui la Cina rilascia Kimi K3 — il piu' grande modello open-weight al mondo (vedi `kb/concetti/mixture-of-experts.md`) — e lancia la World AI Cooperation Organization (vedi `kb/concetti/ai-governance.md`): la disputa sulla distillazione si sposta dal piano bilaterale lab-vs-lab a quello diplomatico stato-vs-stato, con il governo cinese che difende esplicitamente la legittimita' dei propri modelli frontier proprio mentre questi raggiungono la parita' benchmark con i modelli USA. [Digest 2026-07-18](../../digest/2026/07/18.md)
 
 ### 2026-06-25
 

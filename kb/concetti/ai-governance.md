@@ -3,7 +3,7 @@ name: AI Governance
 aliases: [AI governance, governance AI, export control AI, regolazione AI, AI regulation, AI policy, BIS AI, EAR AI models]
 categoria: regolazione
 created: 2026-06-14
-last_updated: 2026-07-16
+last_updated: 2026-07-18
 ---
 
 # AI Governance
@@ -72,6 +72,10 @@ Esempio 3: verifica della Responsible Scaling Policy prima di distribuire un mod
 - Wilson Sonsini, "Colorado Legislature Repeals and Replaces Colorado AI Act: What SB 189 Means for Your Business" (maggio 2026). https://www.wsgr.com/en/insights/colorado-legislature-repeals-and-replaces-colorado-ai-act-what-sb-189-means-for-your-business.html
 
 ## Aggiornamenti
+
+### 2026-07-18
+
+Prima organizzazione intergovernativa di governance AI a guida cinese: il 16 luglio 29 paesi (tra cui Russia, Pakistan, Kazakhstan, Indonesia, Brasile, Malesia, Sudafrica e Senegal) firmano a Shanghai l'accordo istitutivo della World AI Cooperation Organization (WAICO), organizzazione intergovernativa indipendente con sede a Shanghai; alla cerimonia partecipa anche il Segretario Generale ONU Antonio Guterres. Il giorno successivo, aprendo la World Artificial Intelligence Conference, Xi Jinping propone che la governance AI sia "una sinfonia di cooperazione globale" invece di "un'esibizione solista di un singolo paese", criticando esplicitamente l'uso della sicurezza nazionale come giustificazione delle restrizioni USA all'export di tecnologia AI verso la Cina, e annuncia 5.000 opportunita' di formazione AI per i paesi in via di sviluppo nei prossimi cinque anni. WAICO si presenta come rivale diretto della "Pax Silica" a guida USA (35 paesi aderenti contro i 29 di WAICO). Rispetto a tutti i meccanismi di governance tracciati finora in questa scheda — export control unilaterale (Fable 5/Mythos 5), autoregolamentazione cross-lab proposta da CEO (Hassabis, Amodei), regolazione settoriale vincolante (companion AI cinesi, digest 16 luglio) — WAICO introduce un asse nuovo: un blocco multilaterale intergovernativo che compete esplicitamente con l'infrastruttura di governance a guida USA, non solo con le sue singole misure. Il tempismo coincide con il rilascio di Kimi K3 (16 luglio, vedi `kb/concetti/mixture-of-experts.md`) e con il rigetto cinese, riportato da Bloomberg il 18 luglio, delle accuse di adversarial distillation mosse da Anthropic e altri lab USA (disputa aperta il 25 giugno, vedi `kb/concetti/knowledge-distillation.md`): la somma dei tre eventi consolida la Cina come polo alternativo sia sul piano tecnico sia su quello regolatorio nello stesso arco di 48 ore. [Digest 2026-07-18](../../digest/2026/07/18.md)
 
 ### 2026-06-14
 

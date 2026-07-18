@@ -3,7 +3,7 @@ name: Mixture of Experts
 aliases: [MoE, mixture-of-experts, mixture of experts, modello sparso, sparse model, expert routing]
 categoria: architettura
 created: 2026-06-01
-last_updated: 2026-07-16
+last_updated: 2026-07-18
 ---
 
 # Mixture of Experts
@@ -80,6 +80,10 @@ Quando un denso e' la scelta migliore. Per deployment su singola GPU, su edge o 
 Combinare gli assi di efficienza. MoE (sparsita' tra expert), quantizzazione (precisione ridotta dei pesi) e adaptive per-token compute (budget variabile) sono assi ortogonali e cumulabili. Un sistema di serving maturo li combina: un MoE quantizzato ad AWQ 4-bit con allocazione adattiva del compute per token e' lo stato dell'arte dell'ottimizzazione dell'inferenza nel 2026.
 
 ## Aggiornamenti
+
+### 2026-07-18
+
+Kimi K3 (Moonshot AI, 16 luglio) diventa il modello open-weight piu' grande al mondo: MoE da 2,8 trilioni di parametri totali con 896 expert instradabili, di cui 16 attivati per token (ratio 1:56, il piu' sparso tra tutti i casi tracciati in questa scheda, superando anche LongCat-2.0 1:33 e Inkling 1:24). Il modello introduce due innovazioni architetturali dichiarate — Kimi Delta Attention (KDA) e Attention Residuals (AttnRes) — pensate per migliorare l'efficienza del routing e la qualita' del reasoning mantenendo una finestra di contesto nativa da 1 milione di token. Sui benchmark, Kimi K3 conquista il primo posto sulla Frontend Code Arena di Arena.AI superando sia Claude Fable 5 sia GPT-5.6 Sol, e si piazza terzo su GDPval-AA v2 dietro solo a Fable 5 Max e GPT-5.6 Sol Max, davanti a Claude Opus 4.8. Il dato strutturale rilevante e' la conferma che il numero di expert (896, contro i 128-384 dei modelli MoE cinesi della generazione precedente coperti in questa scheda) e' diventato un asse di scaling autonomo, distinto sia dai parametri totali sia da quelli attivi: piu' expert fine-grained permettono di aumentare la capacita' di specializzazione senza aumentare proporzionalmente ne' la memoria per expert ne' il costo per token. Pesi completi attesi il 27 luglio; modello e API gia' disponibili a $3/$15 per milione di token input/output. [Digest 2026-07-18](../../digest/2026/07/18.md)
 
 ### 2026-07-16
 
