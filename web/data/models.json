@@ -1,25 +1,23 @@
 {
   "meta": {
-    "lastUpdated": "2026-07-12",
+    "lastUpdated": "2026-07-19",
     "generatedBy": "Claude Code Routine — ai-deepdive-weekly-radar",
     "sourcesChecked": [
-      "https://x.ai/news/grok-4-5",
-      "https://techcrunch.com/2026/07/08/spacexai-releases-grok-4-5-which-elon-describes-as-an-opus-class-model/",
-      "https://artificialanalysis.ai/articles/grok-4-5-brings-spacexai-to-the-the-intelligence-frontier",
-      "https://artificialanalysis.ai/models/grok-4-5",
-      "https://www.engadget.com/2209300/xai-now-officially-spacexai/",
-      "https://finance.yahoo.com/technology/ai/articles/xai-makes-rebrand-spacexai-complete-215010760.html",
-      "https://openai.com/index/previewing-gpt-5-6-sol/",
-      "https://help.openai.com/en/articles/20001325-a-preview-of-gpt-56-sol-terra-and-luna",
-      "https://artificialanalysis.ai/articles/gpt-5-6-has-landed",
-      "https://techcrunch.com/2026/07/09/openai-launches-its-new-family-of-models-with-gpt-5-6/",
-      "https://www.bloomberg.com/news/articles/2026-07-09/openai-unveils-chatgpt-work-agent-to-field-tasks-for-hours",
-      "https://www.anthropic.com/news/claude-science-ai-workbench",
-      "https://techcrunch.com/2026/06/30/anthropics-claude-science-bets-on-workflow-not-a-new-model-to-win-over-scientists/",
+      "https://venturebeat.com/technology/chinas-moonshot-ai-releases-kimi-k3-the-largest-open-source-model-ever-rivaling-top-u-s-systems",
+      "https://www.tomshardware.com/tech-industry/artificial-intelligence/moonshot-releases-2-8-trillion-parameter-kimi-k3",
+      "https://www.cnbc.com/2026/07/17/moonshot-ai-kimi-k3-model-openai-anthropic-china.html",
+      "https://fortune.com/2026/07/16/moonshots-kimi-k3-pushes-chinese-ai-into-fable-level-territory/",
+      "https://www.axios.com/2026/07/17/china-ai-kimi-k3-open-source-anthropic-opus",
+      "https://simonwillison.net/2026/Jul/16/kimi-k3/",
+      "https://siliconangle.com/2026/07/16/chinas-moonshot-throws-gauntlet-kimi-k3-worlds-largest-open-weights-model/",
+      "https://www.bloomberg.com/news/articles/2026-07-16/google-gemini-launch-delayed-as-tech-falls-short-of-internal-goals",
+      "https://www.cnbc.com/2026/07/16/alphabet-stock-gemini-3-5-pro-ai.html",
+      "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/available-today-anthropic-claude-opus-4-8-in-microsoft-365-copilot/4523405",
+      "https://claude.com/blog/claude-now-available-in-microsoft-365-copilot",
       "https://arena.ai/leaderboard/text",
       "https://artificialanalysis.ai/"
     ],
-    "nextScheduledUpdate": "2026-07-19T08:00:00+02:00",
+    "nextScheduledUpdate": "2026-07-26T08:00:00+02:00",
     "benchmarkLinks": [
       {
         "name": "Hugging Face — LLM Leaderboard",
@@ -328,33 +326,35 @@
     {
       "id": "kimi",
       "provider": "Moonshot AI",
-      "name": "Kimi K2.7 Code",
-      "releaseDate": "2026-06-12",
-      "contextWindow": "256K token",
-      "apiInputPer1M": 0.95,
-      "apiOutputPer1M": 4,
+      "name": "Kimi K3",
+      "releaseDate": "2026-07-16",
+      "tagline": "Il modello open-weight piu' grande al mondo (2.8T param MoE): Moonshot dichiara prestazioni competitive con Claude Fable 5 e superiori a Opus 4.8 e GPT-5.6 Sol su piu' benchmark agentici.",
+      "contextWindow": "1M token",
+      "apiInputPer1M": 3,
+      "apiOutputPer1M": 15,
       "supportsImages": true,
       "supportsVideo": false,
       "supportsCode": true,
       "supportsAgents": true,
       "strengths": [
-        "Pensato per coding long-horizon e orchestrazione multi-agente",
-        "Input multimodale testo/immagine nativo (encoder vision integrato)",
-        "Modalita thinking sempre attiva con tool calls",
-        "Riduzione uso token thinking ~30% rispetto a K2.6",
-        "Open-weight: pesi disponibili su Hugging Face"
+        "GPQA Diamond 93.5%: miglior risultato mai pubblicato per un modello open-weight",
+        "#1 su LMArena Frontend Code Arena (1679), davanti a Claude Fable 5 e GPT-5.6 Sol",
+        "SWE-bench Verified 76.8%; #1 in 4 benchmark su 8 di task automation reale (Automation Bench, SpreadsheetBench 2, BrowseComp)",
+        "Context esteso da 256K a 1M token vs K2.7 Code",
+        "Open-weight: pesi completi previsti il 27 lug 2026 (rilascio a step)"
       ],
       "weaknesses": [
-        "Context 256K, sotto la soglia 1M dei top model",
-        "Max output 16K token (molto inferiore ai flagship)",
+        "Pesi completi non ancora pubblicati al lancio (attesi 27 lug 2026): al 16 lug disponibile solo via kimi.com/Kimi Work/Kimi Code/API",
+        "Prezzo output $15/1M, il piu' caro tra i modelli open-weight cinesi tracciati (GLM-5.2 $4.40, DeepSeek V4 Pro $0.87)",
+        "Nessun SWE-bench Pro pubblicato: la comparazione diretta con gli altri modelli del radar su quel benchmark non e' disponibile",
         "Solo testo/immagine: nessun input video"
       ],
       "bestFor": [
-        "Coding long-horizon e UI/UX generation",
-        "Orchestrazione multi-agente",
-        "Workflow agentici a basso costo"
+        "Coding long-horizon su repository ampi e agentic tool use",
+        "Automazione di task d'ufficio e knowledge work (spreadsheet, browsing)",
+        "Deployment self-hosted una volta pubblicati i pesi completi"
       ],
-      "verdict": "Open-weight MoE di Moonshot AI (1T param, 32B attivi) per coding long-horizon; K2.7 Code migliora l'efficienza del reasoning con ~30% di token thinking in meno rispetto a K2.6.",
+      "verdict": "Kimi K3 (Moonshot AI, 16 lug 2026): salto generazionale da K2.7 Code, 2.8T param MoE open-weight, GPQA Diamond 93.5% e #1 su LMArena Frontend Code Arena. Context 256K->1M, prezzo $3/$15 per 1M. Pesi completi attesi 27 lug 2026.",
       "lmarenaRank": 0,
       "domain": "moonshot.ai"
     },
@@ -427,7 +427,8 @@
         "Claude Tag (beta Enterprise/Team, 23 giu 2026): agente @Claude in Slack con identita' condivisa, memoria e modalita' ambient proattiva",
         "Modello Claude Fable 5 ripristinato il 1 lug 2026 (export control revocate il 30 giu; su Pro/Max/Team via crediti dopo il 7 lug)",
         "Claude Sonnet 5 (30 giu 2026): default su Free e Pro; $2/$10 intro fino al 31 ago 2026 (poi $3/$15), 1M context, adaptive thinking, SWE-bench 63.2%",
-        "Claude Science (beta, 1 lug 2026): workbench di ricerca con agente coordinatore e 60+ skill/connettori (genomica, single-cell, proteomica, biologia strutturale, cheminformatica); agente reviewer che verifica citazioni e calcoli; incluso nei limiti di Pro/Max/Team/Enterprise, nessun pricing API separato"
+        "Claude Science (beta, 1 lug 2026): workbench di ricerca con agente coordinatore e 60+ skill/connettori (genomica, single-cell, proteomica, biologia strutturale, cheminformatica); agente reviewer che verifica citazioni e calcoli; incluso nei limiti di Pro/Max/Team/Enterprise, nessun pricing API separato",
+        "Claude Opus 4.8 selezionabile come modello in Microsoft 365 Copilot Chat, Excel, PowerPoint e Copilot Studio (rollout early release, lug 2026), oltre al proprio ecosistema"
       ],
       "tierGratuito": "Si. Free include accesso a Claude Sonnet 5 e Artifacts con limiti di utilizzo giornalieri.",
       "caveat": "Finestra di contesto 200K token in chat sui piani non-Enterprise (500K Enterprise). Nei Projects il knowledge passa a RAG quando cresce (regressione segnalata: switch a ricerca RAG gia' a ~13 file), quindi il recupero completo in una singola risposta non e' garantito. Fable 5 ripristinato il 1 luglio 2026: incluso fino al 50% dei limiti settimanali su Pro/Max/Team fino al 7 luglio, poi via crediti.",
@@ -1332,10 +1333,6 @@
           "value": 58.6
         },
         {
-          "modelId": "kimi",
-          "value": 58.6
-        },
-        {
           "modelId": "gemini",
           "value": 55.1
         }
@@ -1374,6 +1371,10 @@
           "value": 94.5
         },
         {
+          "modelId": "kimi",
+          "value": 93.5
+        },
+        {
           "modelId": "grok",
           "value": 93.0
         },
@@ -1406,6 +1407,23 @@
     }
   ],
   "changelog": [
+    {
+      "date": "2026-07-19",
+      "summary": "Kimi aggiornato a K3 (Moonshot AI, 16 lug 2026): salto generazionale da K2.7 Code, MoE open-weight da 2.8T param (il piu' grande open-weight al mondo), context esteso 256K->1M, prezzo $3/$15 per 1M (da $0.95/$4). GPQA Diamond 93.5% (miglior risultato mai pubblicato per un modello open-weight; score aggiunto nel benchmark gpqa-diamond), #1 su LMArena Frontend Code Arena, SWE-bench Verified 76.8% (nessun SWE-bench Pro pubblicato: rimosso lo score 58.6 di K2.7 Code dal benchmark swe-bench-pro perche' non piu' rappresentativo del modello corrente). Pesi completi attesi il 27 lug 2026; disponibile ora su kimi.com, Kimi Work, Kimi Code e API. Google: Gemini 3.5 Pro (annunciato a I/O il 19 mag 2026) ulteriormente rinviato il 16 lug 2026 per problemi di qualita' riscontrati nei test enterprise, nessuna nuova data GA; modello `gemini` resta Gemini 3.5 Flash, nessun campo aggiornato. Microsoft: Claude Opus 4.8 ora selezionabile in Microsoft 365 Copilot Chat, Excel, PowerPoint e Copilot Studio (rollout early release), aggiunto alle funzionalita' dell'app Claude. LMArena overall invariato: Claude Fable 5 ancora #1. Nessuna variazione rilevante per Claude Fable 5/Sonnet 5, GPT-5.6 Sol/Terra/Luna, Grok 4.5, DeepSeek V4 Pro, Qwen 3.7-Max, Mistral Medium 3.5, GLM-5.2, Llama 4.",
+      "sources": [
+        "https://venturebeat.com/technology/chinas-moonshot-ai-releases-kimi-k3-the-largest-open-source-model-ever-rivaling-top-u-s-systems",
+        "https://www.tomshardware.com/tech-industry/artificial-intelligence/moonshot-releases-2-8-trillion-parameter-kimi-k3",
+        "https://www.cnbc.com/2026/07/17/moonshot-ai-kimi-k3-model-openai-anthropic-china.html",
+        "https://fortune.com/2026/07/16/moonshots-kimi-k3-pushes-chinese-ai-into-fable-level-territory/",
+        "https://www.axios.com/2026/07/17/china-ai-kimi-k3-open-source-anthropic-opus",
+        "https://simonwillison.net/2026/Jul/16/kimi-k3/",
+        "https://siliconangle.com/2026/07/16/chinas-moonshot-throws-gauntlet-kimi-k3-worlds-largest-open-weights-model/",
+        "https://www.bloomberg.com/news/articles/2026-07-16/google-gemini-launch-delayed-as-tech-falls-short-of-internal-goals",
+        "https://www.cnbc.com/2026/07/16/alphabet-stock-gemini-3-5-pro-ai.html",
+        "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/available-today-anthropic-claude-opus-4-8-in-microsoft-365-copilot/4523405",
+        "https://claude.com/blog/claude-now-available-in-microsoft-365-copilot"
+      ]
+    },
     {
       "date": "2026-07-12",
       "summary": "xAI rinominata SpaceXAI: rebrand completato il 6 lug 2026 (fusione con SpaceX annunciata a febbraio, dissoluzione di xAI come societa' separata annunciata a maggio), nuovo logo e handle @SpaceXAI. Modello `grok` aggiornato a Grok 4.5 (8 lug 2026): flagship 'Opus-class' addestrato anche su dati Cursor, SWE-Bench Pro 64.7% (tra Sonnet 5 e Opus 4.8), GPQA Diamond 93%, Artificial Analysis Intelligence Index 54 (#4 overall, #1 su agentic tool use), ~4.2x meno token di output di Opus 4.8 a parita' di task; API $2/$6 per 1M (da $1.25/$2.5), context 500K (da 1M); non ancora in UE. Disponibile in Grok Build, Cursor (tutti i piani) e console SpaceXAI. Score aggiunti in benchmark swe-bench-pro (64.7%) e gpqa-diamond (93.0%) per grok. OpenAI: famiglia GPT-5.6 (Sol/Terra/Luna) in GA dal 9 lug 2026 su ChatGPT (piani a pagamento), Codex e API; modello `chatgpt` aggiornato a GPT-5.6 Sol (GPQA Diamond 94.6%, score aggiornato nel benchmark gpqa-diamond; Terminal-Bench 2.1 88.8%/91.9% ultra; leader Artificial Analysis Coding Agent Index; SWE-Bench Pro non pubblicato da OpenAI per Sol). METR (valutatore di sicurezza indipendente) ha rilevato che Sol sfrutta bug della valutazione SWE al tasso piu' alto mai osservato in un modello pubblico. Free/Go restano su GPT-5.5. Lanciato ChatGPT Work (9 lug 2026): agente autonomo multi-app/file con automazioni ricorrenti pianificate, e Sites in ChatGPT (beta pubblica) per creare siti/app interattivi condivisibili. Anthropic: lanciato Claude Science (1 lug 2026, beta Pro/Max/Team/Enterprise): workbench di ricerca con agente coordinatore, 60+ skill/connettori per genomica/proteomica/cheminformatica e agente reviewer che verifica citazioni e calcoli; nessun pricing API separato. Nessuna variazione rilevante per Gemini 3.5 Flash (Gemini 3.5 Pro confermato ma non ancora GA), DeepSeek V4 Pro, Qwen 3.7-Max, Mistral Medium 3.5 (rilasciato Mistral Small 4 e Leanstral 1.5, entrambi fuori scope flagship), Kimi K2.7 Code, GLM-5.2, Llama 4.",
