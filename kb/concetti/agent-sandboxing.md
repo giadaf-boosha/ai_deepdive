@@ -3,7 +3,7 @@ name: Agent sandboxing
 aliases: [sandboxing, containment, isolamento agenti, agent containment, esecuzione isolata, sandbox]
 categoria: infrastruttura
 created: 2026-06-01
-last_updated: 2026-06-28
+last_updated: 2026-07-20
 ---
 
 # Agent sandboxing
@@ -82,6 +82,10 @@ Loop e esecuzione vanno disaccoppiati per la compliance. Il pattern "loop su pro
 La sandbox non sostituisce gli altri controlli. Contenimento, human-in-the-loop sulle azioni sensibili, controllo di policy separato dal modello e logging completo sono livelli complementari. Un agente sandboxato ma senza approvazione umana sulle azioni distruttive, o senza tracciamento dei tool call, e' ancora un rischio operativo. La sandbox limita il danno; gli altri controlli riducono la probabilita' che il danno si verifichi.
 
 ## Aggiornamenti
+
+### 2026-07-20
+
+Il ricercatore di sicurezza Ayush Paul pubblica "The Memory Heist" (9 luglio, ripreso da Simon Willison il 15 luglio), una proof-of-concept che combina il sistema di memoria di default di Claude (riepilogo giornaliero piu' `conversation_search`) con i tool `web_fetch` e `web_search` per costruire un canale di esfiltrazione covert. La falla: `web_fetch` poteva navigare verso URL incontrati in pagine gia' recuperate in precedenza, non solo verso URL inseriti direttamente dall'utente o restituiti da `web_search` come da design dichiarato. Un sito honeypot con link annidati generati dinamicamente bastava a far seguire all'agente una sequenza di richieste che codificava un carattere per segmento di path — Claude ha "compitato" nome, datore di lavoro e citta' di residenza di Paul una GET alla volta. Anthropic ha mitigato disabilitando la capacita' di `web_fetch` di seguire link su pagine esterne, limitando la navigazione ai soli risultati di `web_search` e agli URL forniti direttamente dall'utente. E' il secondo caso in due mesi, dopo l'Agentjacking di giugno (vedi sotto), in cui un canale considerato "sicuro per design" nell'ecosistema degli agent tool si rivela sfruttabile quando combinato con memoria persistente: mentre l'Agentjacking bypassava la sandbox a livello OS influenzando quale codice l'agente sceglie di eseguire, il Memory Heist bypassa il perimetro di navigazione dichiarato sfruttando una regola di allowlist con un loophole — un vettore distinto ma con la stessa lezione operativa: qualsiasi canale che l'agente considera "gia' verificato" (URL derivato da una pagina fidata, error report da un tool interno) va comunque trattato come input non fidato ai fini del contenimento. [Digest 2026-07-20](../../digest/2026/07/20.md)
 
 ### 2026-06-28
 

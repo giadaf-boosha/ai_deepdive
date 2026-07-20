@@ -3,7 +3,7 @@ name: AI Governance
 aliases: [AI governance, governance AI, export control AI, regolazione AI, AI regulation, AI policy, BIS AI, EAR AI models]
 categoria: regolazione
 created: 2026-06-14
-last_updated: 2026-07-18
+last_updated: 2026-07-20
 ---
 
 # AI Governance
@@ -72,6 +72,10 @@ Esempio 3: verifica della Responsible Scaling Policy prima di distribuire un mod
 - Wilson Sonsini, "Colorado Legislature Repeals and Replaces Colorado AI Act: What SB 189 Means for Your Business" (maggio 2026). https://www.wsgr.com/en/insights/colorado-legislature-repeals-and-replaces-colorado-ai-act-what-sb-189-means-for-your-business.html
 
 ## Aggiornamenti
+
+### 2026-07-20
+
+Due sviluppi del 15-16 luglio aggiungono nuove dimensioni alla governance AI. Primo, le "Implementation Opinions on the Standardized Application and Innovative Development of AI Agents" della Cyberspace Administration of China entrano in vigore il 15 luglio — lo stesso giorno delle gia' coperte Interim Measures sui companion antropomorfi (digest 16 luglio), ma con perimetro distinto: non i chatbot compagni, bensi' gli AI agent definiti come sistemi capaci di percezione autonoma, memoria, decisione, interazione ed esecuzione. Il framework introduce una struttura di autorizzazione decisionale a tre livelli che classifica le azioni dell'agente per livello di conseguenza, con soglie di approvazione umana scalate di conseguenza, e filing obbligatorio presso i regolatori per il deploy in settori ad alto rischio (sanita', trasporti, media, sicurezza pubblica). E' il primo caso al mondo di una categoria regolatoria dedicata esclusivamente agli AI agent, definita dall'autonomia del sistema (percezione-decisione-esecuzione) invece che dal dominio applicativo o dalla nazionalita' dell'operatore (a differenza del caso Fable 5/Mythos 5). Secondo, Axios documenta il 16 luglio che Sam Altman, Dario Amodei e Demis Hassabis hanno pubblicato negli ultimi 35 giorni proposte di regolazione AI convergenti sulla stessa diagnosi — modelli frontier soggetti a scrutinio esterno pre-rilascio, enti di certificazione degli standard, ruolo di guida USA sugli organismi internazionali. Il delta rispetto alla proposta di Hassabis gia' tracciata (digest 15 luglio, "FINRA per l'AI") e a quella di Amodei (digest 21 giugno, "FAA per l'AI") e' la proposta specifica di Altman in un op-ed sul Financial Times: una "IAEA per l'AI", forum internazionale a guida USA che certifica paesi, aziende e standard di sicurezza usando l'accesso ai modelli frontier e ai mercati come leva di compliance. La convergenza di tre CEO di lab concorrenti sulla stessa architettura regolatoria in poco piu' di un mese rafforza il pattern gia' identificato nel digest del 15 luglio: l'industria frontier preferisce negoziare un framework cross-lab regolamentato a un mosaico di interventi statali unilaterali come il ban Fable 5. I critici (citati in piu' fonti) segnalano il rischio di cattura regolatoria: i tre lab incumbent hanno gia' i team legali e le relazioni di governo per un processo di certificazione complesso, mentre startup e sviluppatori open-source affronterebbero una barriera d'ingresso molto piu' ripida. [Digest 2026-07-20](../../digest/2026/07/20.md)
 
 ### 2026-07-18
 
