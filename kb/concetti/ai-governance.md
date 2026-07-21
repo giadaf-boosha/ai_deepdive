@@ -3,7 +3,7 @@ name: AI Governance
 aliases: [AI governance, governance AI, export control AI, regolazione AI, AI regulation, AI policy, BIS AI, EAR AI models]
 categoria: regolazione
 created: 2026-06-14
-last_updated: 2026-07-20
+last_updated: 2026-07-21
 ---
 
 # AI Governance
@@ -72,6 +72,10 @@ Esempio 3: verifica della Responsible Scaling Policy prima di distribuire un mod
 - Wilson Sonsini, "Colorado Legislature Repeals and Replaces Colorado AI Act: What SB 189 Means for Your Business" (maggio 2026). https://www.wsgr.com/en/insights/colorado-legislature-repeals-and-replaces-colorado-ai-act-what-sb-189-means-for-your-business.html
 
 ## Aggiornamenti
+
+### 2026-07-21
+
+La Commissione Europea introduce un asse di governance AI nuovo rispetto a tutti i casi tracciati finora in questa scheda: non export control (Fable 5/Mythos 5), non regolazione AI-specifica per categoria di prodotto (companion antropomorfi cinesi, AI agent cinesi), ma interoperabilita' AI imposta tramite enforcement antitrust generalista. Il 16 luglio la Commissione ha emesso due decisioni tecniche vincolanti sotto il Digital Markets Act che obbligano Google ad aprire Android e Google Search ai concorrenti AI: gli assistenti AI rivali, oggi limitati nell'accesso alle funzioni di sistema centrali rispetto ai servizi Google, dovranno poter essere scelti come assistente preferito, attivati vocalmente ed eseguire azioni dentro le app di terze parti (scadenza implementazione luglio 2027); i motori di ricerca concorrenti, inclusi i chatbot AI con funzioni di ricerca, dovranno ricevere dati anonimizzati equivalenti a quelli usati da Google per i propri prodotti (condivisione dal gennaio 2027). Google ha reagito lo stesso giorno definendo le decisioni un rischio per le garanzie di privacy e sicurezza degli utenti europei; in caso di non conformita' la Commissione puo' multare fino al 10% del fatturato globale annuo. Il dato strutturale nuovo: il DMA — legge orizzontale sui gatekeeper digitali, non una legge AI-specifica — sta diventando un canale di regolazione AI de facto in Europa, parallelo e indipendente dall'AI Act. Per chi costruisce assistenti AI concorrenti su Android o servizi di ricerca AI-based con utenza europea, l'accesso a livello di sistema operativo diventa ora un diritto regolamentare enforceable, non piu' solo una scelta commerciale di Google. [Digest 2026-07-21](../../digest/2026/07/21.md)
 
 ### 2026-07-20
 

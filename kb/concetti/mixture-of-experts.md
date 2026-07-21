@@ -3,7 +3,7 @@ name: Mixture of Experts
 aliases: [MoE, mixture-of-experts, mixture of experts, modello sparso, sparse model, expert routing]
 categoria: architettura
 created: 2026-06-01
-last_updated: 2026-07-18
+last_updated: 2026-07-21
 ---
 
 # Mixture of Experts
@@ -80,6 +80,10 @@ Quando un denso e' la scelta migliore. Per deployment su singola GPU, su edge o 
 Combinare gli assi di efficienza. MoE (sparsita' tra expert), quantizzazione (precisione ridotta dei pesi) e adaptive per-token compute (budget variabile) sono assi ortogonali e cumulabili. Un sistema di serving maturo li combina: un MoE quantizzato ad AWQ 4-bit con allocazione adattiva del compute per token e' lo stato dell'arte dell'ottimizzazione dell'inferenza nel 2026.
 
 ## Aggiornamenti
+
+### 2026-07-21
+
+Settimana WAIC: due nuovi MoE near-frontier confermano il pattern di sparsita' estrema gia' tracciato per Kimi K3. Il 19 luglio Alibaba mostra la preview di Qwen3.8 Max, 2,4 trilioni di parametri totali, completamente multimodale, con pesi promessi open "a breve" — Alibaba rivendica la seconda posizione assoluta nei benchmark interni dietro solo a Claude Fable 5. Lo stesso giorno DeepSeek porta V4 da preview (24 aprile) a general availability: DeepSeek-V4-Pro (1,6T totali / 49B attivi, ratio 1:33, identico a LongCat-2.0) e DeepSeek-V4-Flash (284B totali / 13B attivi, ratio 1:22), entrambi con contesto a 1 milione di token e modalita' thinking/non-thinking commutabile a runtime, pesi open su Hugging Face. La novita' non architetturale ma economica e' il pricing peak-valley di V4 — la prima API di modelli AI con tariffa raddoppiata nelle fasce orarie di punta (9-12 e 14-18 orario di Pechino) — che rende esplicito un punto gia' implicito nell'architettura MoE: il costo per token di un modello sparso e' cosi' basso da permettere discriminazione di prezzo temporale sulla domanda, una leva finora impensabile con i prezzi flat dei modelli densi proprietari. Il giorno prima Elon Musk aveva anticipato la risposta americana: Grok 4.6, 2 trilioni di parametri, completa il training iniziale "la prossima settimana" con l'obiettivo dichiarato di superare Kimi K3. Tre lab, tre risposte quasi simultanee nell'arco di 72 ore alla pubblicazione di Kimi K3 (16 luglio): il MoE resta l'architettura predefinita per ogni nuovo tentativo di rincorrere o superare la frontiera. [Digest 2026-07-21](../../digest/2026/07/21.md)
 
 ### 2026-07-18
 

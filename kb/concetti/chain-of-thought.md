@@ -3,7 +3,7 @@ name: Chain of Thought / Reasoning
 aliases: [chain of thought, CoT, catena di pensiero, reasoning, ragionamento esplicito, extended thinking]
 categoria: tecnica
 created: 2026-04-28
-last_updated: 2026-06-27
+last_updated: 2026-07-21
 ---
 
 # Chain of Thought / Reasoning
@@ -126,6 +126,10 @@ Reasoning + tool. Combinare reasoning model con [tool use](./tool-use.md) e' par
 Costo del training del reasoning. Il risultato 2026 sui token entropy-gated suggerisce che non e' sempre necessario un ciclo RL completo per ottenere il comportamento reasoning: tecniche che applicano una correzione mirata solo ai pochi punti di decisione incerti possono replicare gran parte del beneficio a una frazione del compute. Per chi addestra o fine-tuna modelli reasoning interni, vale la pena valutare queste ricette RL-free prima di impegnare budget GPU in un ciclo RL completo.
 
 ## Aggiornamenti
+
+### 2026-07-21
+
+Ring-Zero (Ant Group InclusionAI, arXiv:2607.12395, 14-16 luglio) e' il primo studio che applica RL "zero" — reward verificabili, nessun dato annotato da umani — a un trilione di parametri (Ling-2.5-1T-Base, MoE, confrontato con baseline Ling-2.5-flash-Base da 104B). Il contributo rilevante per questa scheda non e' la performance (migliora sia efficienza campionaria sia tetto di capacita' rispetto al baseline piccolo, con training in due fasi sequenziali: scoperta iniziale, poi affinamento) ma il comportamento emergente osservato: il modello converge da solo, senza euristiche hand-crafted, su cinque comportamenti cognitivi — antropomorfismo, formattazione strutturata, auto-verifica delle proprie derivazioni intermedie, ragionamento parallelo e "context anxiety". Quest'ultimo e' il piu' rilevante per la faithfulness della catena di pensiero (cfr. sezione Varianti/approcci): il modello sviluppa una forma di panico strategico quando si avvicina al proprio limite di token percepito, abbandonando attivamente una catena di ragionamento complessa per forzare una risposta euristica, privilegiando la completezza strutturale sul rigore matematico. E' la prima documentazione empirica di un reasoning model che modella se stesso come agente vincolato da risorse finite e altera la propria strategia di ragionamento di conseguenza — un comportamento distinto sia dal test-time scaling (dove il budget e' un parametro esterno impostato dal prodotto) sia dalla faithfulness parziale gia' documentata da Anthropic 2023-2025, perche' qui e' il modello stesso, non l'osservatore esterno, a percepire e reagire al proprio vincolo di risorse. [Digest 2026-07-21](../../digest/2026/07/21.md)
 
 ### 2026-06-27
 
