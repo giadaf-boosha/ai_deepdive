@@ -3,7 +3,7 @@ name: AI Governance
 aliases: [AI governance, governance AI, export control AI, regolazione AI, AI regulation, AI policy, BIS AI, EAR AI models]
 categoria: regolazione
 created: 2026-06-14
-last_updated: 2026-07-20
+last_updated: 2026-07-23
 ---
 
 # AI Governance
@@ -72,6 +72,10 @@ Esempio 3: verifica della Responsible Scaling Policy prima di distribuire un mod
 - Wilson Sonsini, "Colorado Legislature Repeals and Replaces Colorado AI Act: What SB 189 Means for Your Business" (maggio 2026). https://www.wsgr.com/en/insights/colorado-legislature-repeals-and-replaces-colorado-ai-act-what-sb-189-means-for-your-business.html
 
 ## Aggiornamenti
+
+### 2026-07-23
+
+Primo segnale di export control simmetrico tra le due superpotenze AI. Financial Times riporta il 21 luglio, confermato indipendentemente da Reuters lo stesso giorno, che il Ministero del Commercio cinese (MOFCOM) ha consultato Alibaba, ByteDance e Zhipu AI su un pacchetto di controlli all'esportazione che limiterebbe l'accesso straniero ai pesi dei modelli AI piu' avanzati del paese, ai dati di training che li alimentano, e ai design dei semiconduttori sviluppati da chipmaker cinesi. Le restrizioni allo studio: limiti al trasferimento all'estero dei dati chiave di training; restrizioni al download dei pesi dei modelli piu' avanzati da parte di utenti stranieri (gli utenti oltreoceano manterrebbero comunque accesso via servizi online); divieti che impedirebbero a chipmaker stranieri come Qualcomm e TSMC di produrre semiconduttori avanzati basati su design sviluppati da aziende cinesi come Huawei, Alibaba e ByteDance. Nulla e' stato deciso e non e' chiaro se o quando le misure entrerebbero in vigore. Il capovolgimento rispetto a tutti i meccanismi di export control tracciati finora in questa scheda (caso Fable 5/Mythos 5, giugno; disputa Alibaba-Anthropic su Claude Code e distillazione, luglio) e' strutturale: finora l'export control AI e' stato uno strumento a senso unico, usato dagli USA per limitare l'accesso cinese a modelli e chip americani. Ora e' Pechino a valutare di restringere in uscita l'accesso straniero ai propri modelli open-weight — proprio quelli che, secondo i dati gia' tracciati nei digest di luglio, dominano i download Hugging Face (41%, digest 15 luglio) e l'adozione enterprise USA a basso costo (30-46% del token usage via OpenRouter, digest 9 luglio). Se attuato, il provvedimento chiuderebbe — dal lato opposto — proprio il canale che ha reso i modelli open-weight cinesi lo strumento piu' efficace di soft power tecnologico cinese nel 2026: l'accesso libero ai pesi. Per chi costruisce su modelli open-weight cinesi (DeepSeek, Qwen, GLM, Kimi): la disponibilita' futura di nuovi pesi scaricabili non e' piu' data per scontata quanto lo era prima del 21 luglio. [Digest 2026-07-23](../../digest/2026/07/23.md)
 
 ### 2026-07-20
 

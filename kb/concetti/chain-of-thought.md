@@ -3,7 +3,7 @@ name: Chain of Thought / Reasoning
 aliases: [chain of thought, CoT, catena di pensiero, reasoning, ragionamento esplicito, extended thinking]
 categoria: tecnica
 created: 2026-04-28
-last_updated: 2026-06-27
+last_updated: 2026-07-23
 ---
 
 # Chain of Thought / Reasoning
@@ -126,6 +126,10 @@ Reasoning + tool. Combinare reasoning model con [tool use](./tool-use.md) e' par
 Costo del training del reasoning. Il risultato 2026 sui token entropy-gated suggerisce che non e' sempre necessario un ciclo RL completo per ottenere il comportamento reasoning: tecniche che applicano una correzione mirata solo ai pochi punti di decisione incerti possono replicare gran parte del beneficio a una frazione del compute. Per chi addestra o fine-tuna modelli reasoning interni, vale la pena valutare queste ricette RL-free prima di impegnare budget GPU in un ciclo RL completo.
 
 ## Aggiornamenti
+
+### 2026-07-23
+
+"Verbalizable Representations Form a Global Workspace in Language Models" (arXiv:2607.15495, Anthropic, Transformer Circuits Thread, 6 luglio, missed coverage) aggiunge la prima evidenza meccanicistica diretta a supporto del paragrafo "Faithfulness della catena" gia' presente in questa scheda. Wes Gurnee e Nicholas Sofroniew introducono la Jacobian lens, un metodo di interpretabilita' che trasporta un'attivazione di livello intermedio nello spazio di output del modello tramite uno Jacobiano mediato e decodifica una lista ordinata di token del vocabolario disposti a comparire. Applicata sistematicamente, la lente isola un "J-space": un piccolo insieme evolutivo di concetti verbalizzabili — poche decine alla volta — che il modello usa per il ragionamento che puo' riportare e controllare, e che rappresenta meno di un decimo dell'attivita' interna complessiva del modello. Le rappresentazioni nel J-space non sono ne' puri echi dell'input ne' predizioni del token successivo: nominano i concetti con cui il modello sta attivamente ragionando, possono essere riportate, richiamate e mantenute deliberatamente, portano gli step intermedi del ragionamento silenzioso, e vengono passate come argomenti a computazioni downstream — le proprieta' funzionali di un "global workspace" nel senso della teoria cognitiva. La rilevanza per il tema faithfulness e' diretta: se solo una frazione minoritaria (meno del 10%) dell'attivita' del modello passa attraverso il canale verbalizzabile, la catena di pensiero scritta da un reasoning model non e' — per costruzione strutturale, non solo per osservazione empirica come nei lavori Anthropic 2023-2025 gia' citati — un log completo del calcolo effettivo, ma un canale ristretto che il modello puo' usare, ignorare o rappresentare solo parzialmente. Codice ed esperimenti sono open-source su GitHub (anthropics/jacobian-lens). [Digest 2026-07-23](../../digest/2026/07/23.md)
 
 ### 2026-06-27
 
