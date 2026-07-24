@@ -3,7 +3,7 @@ name: Knowledge Distillation
 aliases: [knowledge distillation, distillazione, model distillation, distillazione di modello, adversarial distillation, response distillation, student-teacher, distillazione avversariale]
 categoria: training
 created: 2026-06-25
-last_updated: 2026-07-18
+last_updated: 2026-07-24
 ---
 
 # Knowledge Distillation
@@ -77,6 +77,10 @@ Il meccanismo e' semplice: creare account multipli per aggirare i rate limit e l
 - Taori et al., "Alpaca: A Strong, Replicable Instruction-Following Model" (Stanford CRFM, 2023). https://crfm.stanford.edu/2023/03/13/alpaca.html
 
 ## Aggiornamenti
+
+### 2026-07-24
+
+Prima accusa nominale di un funzionario governativo USA di alto livello contro un singolo laboratorio cinese specifico per adversarial distillation di un modello specifico. Il 22 luglio Michael Kratsios, direttore del White House Office of Science and Technology Policy, dichiara pubblicamente che Moonshot AI ha distillato Claude Fable di Anthropic per sviluppare Kimi K3, sostenendo che l'azienda ha costruito una piattaforma interna per condurre distillazione su larga scala alternando metodi di accesso per evitare il rilevamento, e che Moonshot avrebbe avuto accesso a server con GPU GB300 in Thailandia per l'addestramento, aggirando l'export control sui chip. Il Segretario al Tesoro Scott Bessent conferma il 22-23 luglio che le sanzioni economiche restano un'opzione sul tavolo. Rispetto al precedente rigetto istituzionale cinese delle accuse generiche di distillazione (Assistant Foreign Minister Liu Bin, 18 luglio, coperto sopra), il caso Kratsios cambia due parametri: l'accusa nomina un'azienda e un modello specifici (non piu' generica), e introduce per la prima volta una minaccia di sanzioni economiche dirette come possibile conseguenza — spostando lo strumento di risposta dagli export control su modelli-servizio (caso Fable 5/Mythos 5, giugno, vedi `ai-governance.md`) alle sanzioni finanziarie mirate. Esperti indipendenti citati dalla stampa mettono pero' in dubbio la tesi tecnica, notando che Fable e' pubblicamente disponibile solo dal 1 luglio — una finestra ristretta per la distillazione su larga scala descritta — e che le prove rese pubbliche restano piu' deboli delle affermazioni ufficiali; Moonshot AI non ha commentato. [Digest 2026-07-24](../../digest/2026/07/24.md)
 
 ### 2026-07-18
 

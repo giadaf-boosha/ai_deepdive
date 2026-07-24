@@ -3,7 +3,7 @@ name: AI Governance
 aliases: [AI governance, governance AI, export control AI, regolazione AI, AI regulation, AI policy, BIS AI, EAR AI models]
 categoria: regolazione
 created: 2026-06-14
-last_updated: 2026-07-23
+last_updated: 2026-07-24
 ---
 
 # AI Governance
@@ -72,6 +72,10 @@ Esempio 3: verifica della Responsible Scaling Policy prima di distribuire un mod
 - Wilson Sonsini, "Colorado Legislature Repeals and Replaces Colorado AI Act: What SB 189 Means for Your Business" (maggio 2026). https://www.wsgr.com/en/insights/colorado-legislature-repeals-and-replaces-colorado-ai-act-what-sb-189-means-for-your-business.html
 
 ## Aggiornamenti
+
+### 2026-07-24
+
+Due sviluppi aggiungono dimensioni nuove alla governance AI. Primo, la disputa sulla distillazione Fable-Kimi K3 (vedi `knowledge-distillation.md`, aggiornamento 2026-07-24) passa dal piano lab-vs-lab (lettera Anthropic al Congresso su Alibaba, giugno) al piano stato-vs-stato: il 22 luglio il direttore dell'OSTP Michael Kratsios accusa nominalmente Moonshot AI di aver distillato Fable per Kimi K3 e di aver eluso l'export control sui chip tramite server GB300 in Thailandia, e il Segretario al Tesoro Bessent conferma che le sanzioni economiche restano un'opzione — la prima volta che la distillazione di un modello frontier viene trattata pubblicamente come possibile base per sanzioni finanziarie dirette, distinto dal meccanismo di export control su modelli-servizio gia' usato nel caso Fable 5/Mythos 5 di giugno. Secondo, l'Autorite' de la concurrence francese pubblica il 17 luglio (recuperato qui come missed coverage) l'Opinion No. 26-A-05: OpenAI, Google e Anthropic detengono insieme oltre l'84% del mercato globale degli AI agent, con rischio di piattaformizzazione e lock-in se i regolatori non intervengono su accesso ai dati, interoperabilita' e posizionamento di default. E' il primo studio quantitativo di un'autorita' antitrust nazionale specificamente sulla concentrazione del mercato degli AI agent (distinto dal mercato piu' ampio dei modelli), e si affianca alla regolazione settoriale cinese sugli AI agent gia' tracciata (Implementation Opinions CAC, 15 luglio, digest 20 luglio) come secondo framework regolatorio del 2026 dedicato specificamente agli agenti — questa volta con una lente di concorrenza invece che di autorizzazione decisionale. [Digest 2026-07-24](../../digest/2026/07/24.md)
 
 ### 2026-07-23
 
