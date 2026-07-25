@@ -3,7 +3,7 @@ name: AI Governance
 aliases: [AI governance, governance AI, export control AI, regolazione AI, AI regulation, AI policy, BIS AI, EAR AI models]
 categoria: regolazione
 created: 2026-06-14
-last_updated: 2026-07-24
+last_updated: 2026-07-25
 ---
 
 # AI Governance
@@ -72,6 +72,10 @@ Esempio 3: verifica della Responsible Scaling Policy prima di distribuire un mod
 - Wilson Sonsini, "Colorado Legislature Repeals and Replaces Colorado AI Act: What SB 189 Means for Your Business" (maggio 2026). https://www.wsgr.com/en/insights/colorado-legislature-repeals-and-replaces-colorado-ai-act-what-sb-189-means-for-your-business.html
 
 ## Aggiornamenti
+
+### 2026-07-25
+
+Tre sviluppi nello stesso arco di 48 ore spostano il baricentro della disputa sui modelli open-weight dal piano bilaterale USA-Cina a quello multilaterale e intra-industria USA. Primo, 25 aziende tecnologiche USA — Nvidia, Microsoft, Meta, IBM, Hugging Face, Mistral, Mozilla, Perplexity, Andreessen Horowitz, Y Combinator — pubblicano il 24 luglio una lettera aperta contro restrizioni ampie ai modelli open-weight, sostenendo che la leadership AI americana si costruisce con un ecosistema di modelli aperti, non proteggendo un singolo sistema migliore. La lettera arriva mentre Washington valuta di estendere l'export control gia' applicato ai modelli commerciali (caso Fable 5/Mythos 5, giugno) alla categoria dei modelli open-weight cinesi, sulla scia dell'accusa OSTP contro Moonshot AI (digest 24 luglio). Il dato piu' rilevante e' l'assenza dei tre lab di modelli frontier chiusi — OpenAI, Anthropic, Google — dalla lista firmatari: prima frattura pubblica e documentata tra l'industria "open-weight-adjacent" (hardware, hosting, tooling, modelli open propri) e i lab proprietari sulla direzione della politica USA verso i modelli aperti. Secondo, un giorno prima (23 luglio) 21 economie APEC inclusi USA e Cina firmano a Chengdu la prima dichiarazione ministeriale APEC che sostiene esplicitamente lo sviluppo di modelli open-source "con forti garanzie di sicurezza" — raro punto di convergenza formale USA-Cina su un principio di policy AI, sia pure generico, proprio mentre le tensioni bilaterali su distillazione ed export control restano aperte. Terzo, recuperata qui come missed coverage di 9 giorni: il 16 luglio la Commissione europea ha ordinato con due decisioni vincolanti sotto il Digital Markets Act che Google apra 11 gruppi di funzionalita' Android e condivida dati di Google Search con assistenti AI concorrenti (ChatGPT, Claude, Perplexity), con multe fino al 10% del fatturato globale in caso di non conformita' — primo caso di interoperabilita' a livello di sistema operativo imposta in modo vincolante specificamente per gli assistenti AI, e secondo intervento regolatorio europeo del mese sulla struttura competitiva del mercato degli assistenti/agenti AI dopo il parere dell'Autorite' de la concurrence francese sull'84% di concentrazione (digest 24 luglio). [Digest 2026-07-25](../../digest/2026/07/25.md)
 
 ### 2026-07-24
 

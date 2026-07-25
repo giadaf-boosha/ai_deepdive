@@ -8,7 +8,7 @@
 
 | Concetto | Categoria | Aliases | Ultimo aggiornamento |
 |---|---|---|---|
-| [AI Governance](./concetti/ai-governance.md) | regolazione | AI governance, governance AI, export control AI, regolazione AI, AI regulation, AI policy, BIS AI, EAR AI models | 2026-07-24 |
+| [AI Governance](./concetti/ai-governance.md) | regolazione | AI governance, governance AI, export control AI, regolazione AI, AI regulation, AI policy, BIS AI, EAR AI models | 2026-07-25 |
 | [Agent harness](./concetti/agent-harness.md) | infrastruttura | agent harness, harness, scaffolding agentico, agent runtime | 2026-06-29 |
 | [Agent sandboxing](./concetti/agent-sandboxing.md) | infrastruttura | sandboxing, containment, isolamento agenti, agent containment, esecuzione isolata, sandbox | 2026-07-23 |
 | [AI Agent](./concetti/agent.md) | paradigma | agent, AI agent, agente autonomo, autonomous agent | 2026-06-28 |
@@ -28,7 +28,7 @@
 | [Private Cloud Compute](./concetti/private-cloud-compute.md) | infrastruttura | PCC, Private Cloud Compute, confidential cloud computing, confidential inference, Apple PCC, TEE cloud inference | 2026-06-08 |
 | [Prompt engineering](./concetti/prompt-engineering.md) | tecnica | prompt engineering, ingegneria dei prompt, prompting | 2026-06-01 |
 | [Reinforcement Learning from Human Feedback](./concetti/rlhf.md) | training | RLHF, reinforcement learning from human feedback, allineamento RL, RLAIF | 2026-06-13 |
-| [Retrieval-Augmented Generation](./concetti/rag.md) | paradigma | RAG, retrieval augmented, generazione aumentata da retrieval | 2026-06-01 |
+| [Retrieval-Augmented Generation](./concetti/rag.md) | paradigma | RAG, retrieval augmented, generazione aumentata da retrieval | 2026-07-25 |
 | [Tokenization](./concetti/tokenization.md) | tecnica | tokenization, tokenizzazione, BPE, subword, byte-pair encoding | 2026-06-01 |
 | [Tool use / Function calling](./concetti/tool-use.md) | tecnica | tool use, function calling, tool calling, chiamata di funzione | 2026-07-03 |
 | [Vector database](./concetti/vector-database.md) | infrastruttura | vector database, vector DB, vector store, database vettoriale, ANN index | 2026-06-01 |

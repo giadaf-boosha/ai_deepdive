@@ -3,7 +3,7 @@ name: Retrieval-Augmented Generation
 aliases: [RAG, retrieval augmented, generazione aumentata da retrieval]
 categoria: paradigma
 created: 2026-04-28
-last_updated: 2026-06-01
+last_updated: 2026-07-25
 ---
 
 # Retrieval-Augmented Generation
@@ -140,3 +140,7 @@ Nessun aggiornamento dopo la creazione (2026-04-28).
 ### 2026-06-01
 
 Mese caratterizzato dal consolidamento di RAG come asset enterprise e dal chiarimento dell'asse retrieval-vs-long-context. Google DeepMind ha effettuato un acqui-hire di Contextual AI (Douwe Kiela e oltre 20 ricercatori, ~80-90M$, licenza non esclusiva sulla tecnologia RAG enterprise; vedi [21/05](../../digest/2026/05/21.md)), segnale che il retrieval ad alta precisione resta strategico nonostante l'arrivo diffuso di finestre da 1M token (Gemini 3.5 Flash, Qwen3.7-Max in [20/05](../../digest/2026/05/20.md) e [23/05](../../digest/2026/05/23.md); modelli locali con 1M token via Nvidia RTX Spark in [01/06](../../digest/2026/06/01.md)). Aggiornata la scheda con il pattern Agentic RAG (loop con tool routing, self-check, re-retrieval) ora baseline per i casi complessi, e con Gated DeltaNet-2 di NVLabs sui benchmark RULER di retrieval ([24/05](../../digest/2026/05/24.md)).
+
+### 2026-07-25
+
+Beyond Relevance-Centric Retrieval (arXiv:2607.19747) introduce SetwiseEvalKit, benchmark a 28.000 rubric che valuta la qualita' del set di documenti recuperato invece del singolo documento, isolando interazioni cross-documento — ridondanza, conflitto, complementarita' — ignorate dallo scoring nDCG punto-per-punto. Il risultato quantitativo: anche il miglior reranker tra i 12 testati copre al massimo il 45% dei criteri di qualita' del set, con le dimensioni di coordinamento cross-documento sistematicamente deboli su tutti i metodi. Gli autori propongono Rubric4Setwise, metodo training-free che converte i criteri rubric in segnali di selezione del set, con miglior performance downstream a parita' di documenti e round di ricerca. Prima evidenza quantitativa diretta, nella scheda, dei limiti del reranking cross-encoder come baseline di produzione (vedi sezione "Varianti / approcci"). [Digest 2026-07-25](../../digest/2026/07/25.md)
