@@ -3,7 +3,7 @@ name: AI Governance
 aliases: [AI governance, governance AI, export control AI, regolazione AI, AI regulation, AI policy, BIS AI, EAR AI models]
 categoria: regolazione
 created: 2026-06-14
-last_updated: 2026-07-24
+last_updated: 2026-07-26
 ---
 
 # AI Governance
@@ -72,6 +72,10 @@ Esempio 3: verifica della Responsible Scaling Policy prima di distribuire un mod
 - Wilson Sonsini, "Colorado Legislature Repeals and Replaces Colorado AI Act: What SB 189 Means for Your Business" (maggio 2026). https://www.wsgr.com/en/insights/colorado-legislature-repeals-and-replaces-colorado-ai-act-what-sb-189-means-for-your-business.html
 
 ## Aggiornamenti
+
+### 2026-07-26
+
+Due sviluppi aggiungono un asse di interoperabilita' e uno di lobbying industriale alla governance AI. Primo, la Commissione Europea pubblica il 16 luglio (recuperato qui come missed coverage) due misure di specificazione vincolanti su Google ai sensi del Digital Markets Act: obbliga Alphabet ad aprire 11 gruppi di funzionalita' core di Android agli assistenti AI concorrenti — inclusi quelli di OpenAI e Anthropic, attivabili via comando vocale e con capacita' di agire dentro le app per conto dell'utente — con scadenza di conformita' a luglio 2027, e la obbliga dal gennaio 2027 a cedere ai rivali dati di ricerca anonimizzati (query, click, ranking) che oggi solo Google Search raccoglie su scala. E' la prima misura vincolante al mondo che obbliga un gatekeeper mobile ad aprire l'accesso di sistema ad assistenti AI rivali, un asse distinto da tutti i meccanismi tracciati finora in questa scheda (export control unilaterale, autoregolamentazione cross-lab, regolazione settoriale cinese, studio antitrust francese sull'84% di concentrazione del mercato AI agent, digest 24 luglio): qui l'intervento non misura ne' limita l'accesso, ma impone interoperabilita' tecnica su un sistema operativo mobile dominante. Secondo, il 24 luglio Nvidia guida una lettera aperta — "Open Weights and American AI Leadership", firmata inizialmente da 25 aziende tra cui Microsoft, Meta, IBM, Dell, Palantir, Hugging Face, Mozilla, Linux Foundation, Mistral, Andreessen Horowitz e Y Combinator — contro "restrizioni premature" sui modelli open-weight, occasione scelta da Jensen Huang per il proprio debutto su X. OpenAI, Anthropic e Google restano inizialmente fuori; dopo che l'assenza viene notata pubblicamente, OpenAI aggiunge la propria firma e i firmatari raddoppiano a circa 50 in 24 ore (Google incluso), mentre Amazon e Anthropic restano fuori. La lettera arriva un giorno dopo che quasi 200 startup avevano fatto la stessa richiesta alla Casa Bianca, e nella stessa settimana dell'accusa nominale dell'OSTP contro Moonshot AI per distillazione di Fable 5 (`knowledge-distillation.md`, aggiornamento 24 luglio): la tensione tra l'industria open-weight USA che chiede di non essere ristretta e il governo che accusa un lab cinese di aver rubato capacita' proprio tramite un canale simile (l'estrazione sistematica di output di un modello chiuso) definisce il perimetro del dibattito 2026 su come normare l'export dei pesi senza soffocare l'ecosistema open americano. [Digest 2026-07-26](../../digest/2026/07/26.md)
 
 ### 2026-07-24
 

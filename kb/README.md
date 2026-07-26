@@ -8,15 +8,15 @@
 
 | Concetto | Categoria | Aliases | Ultimo aggiornamento |
 |---|---|---|---|
-| [AI Governance](./concetti/ai-governance.md) | regolazione | AI governance, governance AI, export control AI, regolazione AI, AI regulation, AI policy, BIS AI, EAR AI models | 2026-07-24 |
+| [AI Governance](./concetti/ai-governance.md) | regolazione | AI governance, governance AI, export control AI, regolazione AI, AI regulation, AI policy, BIS AI, EAR AI models | 2026-07-26 |
 | [Agent harness](./concetti/agent-harness.md) | infrastruttura | agent harness, harness, scaffolding agentico, agent runtime | 2026-06-29 |
-| [Agent sandboxing](./concetti/agent-sandboxing.md) | infrastruttura | sandboxing, containment, isolamento agenti, agent containment, esecuzione isolata, sandbox | 2026-07-23 |
+| [Agent sandboxing](./concetti/agent-sandboxing.md) | infrastruttura | sandboxing, containment, isolamento agenti, agent containment, esecuzione isolata, sandbox | 2026-07-26 |
 | [AI Agent](./concetti/agent.md) | paradigma | agent, AI agent, agente autonomo, autonomous agent | 2026-06-28 |
 | [Chain of Thought / Reasoning](./concetti/chain-of-thought.md) | tecnica | chain of thought, CoT, catena di pensiero, reasoning, ragionamento esplicito, extended thinking | 2026-07-23 |
 | [Context window](./concetti/context-window.md) | architettura | context window, finestra di contesto, finestra contestuale, context length | 2026-06-29 |
 | [Diffusion Language Models](./concetti/diffusion-language-models.md) | architettura | diffusion language model, text diffusion, DLM, modello di diffusione testuale, generazione diffusiva, non-autoregressive generation, masked diffusion | 2026-06-12 |
 | [Embedding](./concetti/embedding.md) | tecnica | embedding, vector embedding, dense representation, rappresentazione densa | 2026-06-01 |
-| [Evaluation / Benchmark AI](./concetti/evaluation-benchmark.md) | tecnica | benchmark, eval, evaluation, valutazione LLM, AI benchmark, leaderboard | 2026-07-15 |
+| [Evaluation / Benchmark AI](./concetti/evaluation-benchmark.md) | tecnica | benchmark, eval, evaluation, valutazione LLM, AI benchmark, leaderboard | 2026-07-26 |
 | [Fine-tuning](./concetti/fine-tuning.md) | training | fine-tuning, fine tuning, SFT, supervised fine-tuning, adattamento di modello | 2026-06-01 |
 | [Inference](./concetti/inference.md) | infrastruttura | inference, inferenza, serving, generation, decoding | 2026-07-03 |
 | [Knowledge Distillation](./concetti/knowledge-distillation.md) | training | knowledge distillation, distillazione, model distillation, distillazione di modello, adversarial distillation, response distillation, student-teacher, distillazione avversariale | 2026-07-24 |
