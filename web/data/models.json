@@ -1,25 +1,33 @@
 {
   "meta": {
-    "lastUpdated": "2026-07-12",
+    "lastUpdated": "2026-07-26",
     "generatedBy": "Claude Code Routine — ai-deepdive-weekly-radar",
     "sourcesChecked": [
-      "https://x.ai/news/grok-4-5",
-      "https://techcrunch.com/2026/07/08/spacexai-releases-grok-4-5-which-elon-describes-as-an-opus-class-model/",
-      "https://artificialanalysis.ai/articles/grok-4-5-brings-spacexai-to-the-the-intelligence-frontier",
-      "https://artificialanalysis.ai/models/grok-4-5",
-      "https://www.engadget.com/2209300/xai-now-officially-spacexai/",
-      "https://finance.yahoo.com/technology/ai/articles/xai-makes-rebrand-spacexai-complete-215010760.html",
-      "https://openai.com/index/previewing-gpt-5-6-sol/",
-      "https://help.openai.com/en/articles/20001325-a-preview-of-gpt-56-sol-terra-and-luna",
-      "https://artificialanalysis.ai/articles/gpt-5-6-has-landed",
-      "https://techcrunch.com/2026/07/09/openai-launches-its-new-family-of-models-with-gpt-5-6/",
-      "https://www.bloomberg.com/news/articles/2026-07-09/openai-unveils-chatgpt-work-agent-to-field-tasks-for-hours",
-      "https://www.anthropic.com/news/claude-science-ai-workbench",
-      "https://techcrunch.com/2026/06/30/anthropics-claude-science-bets-on-workflow-not-a-new-model-to-win-over-scientists/",
+      "https://www.anthropic.com/news/claude-opus-5",
+      "https://artificialanalysis.ai/models/claude-opus-5",
+      "https://benchlm.ai/benchmarks/artificialAnalysis",
+      "https://www.vellum.ai/blog/claude-opus-5-benchmarks-explained",
+      "https://arcprize.org/results/anthropic-claude-opus-5",
+      "https://code.claude.com/docs/en/changelog",
+      "https://techcrunch.com/2026/07/21/google-releases-three-new-gemini-models-but-no-3-5-pro/",
+      "https://venturebeat.com/technology/googles-gemini-3-6-flash-model-cuts-ai-agent-token-costs-by-up-to-65-on-long-horizon-engineering-tasks-and-3-5-pro-is-on-the-way",
+      "https://artificialanalysis.ai/models/gemini-3-6-flash",
+      "https://simonwillison.net/2026/Jul/16/kimi-k3/",
+      "https://www.tomshardware.com/tech-industry/artificial-intelligence/moonshot-releases-2-8-trillion-parameter-kimi-k3",
+      "https://openrouter.ai/moonshotai/kimi-k3",
+      "https://www.bloomberg.com/news/articles/2026-07-19/alibaba-s-qwen-unveils-preview-of-flagship-ai-model",
+      "https://www.scmp.com/tech/article/3361119/alibaba-says-newest-qwen-ai-model-second-only-anthropics-claude-fable-5",
+      "https://www.marktechpost.com/2026/07/19/alibaba-previews-qwen3-8-max-a-2-4-trillion-parameter-multimodal-model-days-after-moonshots-kimi-k3-open-weight-launch/",
+      "https://benchlm.ai/deepseek/api-pricing",
+      "https://ai.meta.com/blog/introducing-muse-spark-meta-model-api/",
+      "https://www.cnbc.com/2026/07/09/meta-jumps-into-ai-coding-market-to-chase-anthropic-and-openai.html",
+      "https://help.openai.com/en/articles/20001152-what-to-know-about-the-sora-discontinuation",
+      "https://docs.midjourney.com/hc/en-us/articles/32199405667853-Version",
+      "https://kie.ai/blog/codex-chatgpt-work-gpt-5-6-analysis",
       "https://arena.ai/leaderboard/text",
       "https://artificialanalysis.ai/"
     ],
-    "nextScheduledUpdate": "2026-07-19T08:00:00+02:00",
+    "nextScheduledUpdate": "2026-08-02T08:00:00+02:00",
     "benchmarkLinks": [
       {
         "name": "Hugging Face — LLM Leaderboard",
@@ -37,7 +45,7 @@
       "provider": "Anthropic",
       "name": "Claude Fable 5",
       "releaseDate": "2026-06-09",
-      "tagline": "Il flagship Anthropic, ripristinato il 1 lug 2026 dopo la revoca delle export control USA. SWE-Bench Pro 80.3%, top assoluto su coding agentico. Claude Sonnet 5 (30 giu 2026) e' il nuovo modello agile default su Free/Pro.",
+      "tagline": "Il flagship Anthropic, ripristinato il 1 lug 2026 dopo la revoca delle export control USA. SWE-Bench Pro 80.3%, top assoluto su coding agentico. Claude Opus 5 (24 lug 2026) sostituisce Opus 4.8 come nuovo tier intermedio a $5/$25 per 1M (meta' del prezzo di Fable 5): #1 su AA Intelligence Index aggregato (60.7 vs 59.9 di Fable 5), pur restando Fable 5 avanti su SWE-Bench Pro. Claude Sonnet 5 (30 giu 2026) resta il modello agile default su Free/Pro.",
       "contextWindow": "1M token · 128K output",
       "apiInputPer1M": 10,
       "apiOutputPer1M": 50,
@@ -59,12 +67,14 @@
         "SWE-Bench Pro 80.3%: top assoluto su coding agentico (+21 pp su GPT-5.5, +25 pp su Gemini)",
         "OSWorld 85.0%: miglior computer use disponibile",
         "GPQA Diamond 94.5%: leadership su ragionamento scientifico PhD-level",
-        "Adaptive thinking always-on; 1M context, 128K output; Claude Sonnet 5 a $3/$15 per workload agentici a costo inferiore"
+        "Adaptive thinking always-on; 1M context, 128K output; Claude Sonnet 5 a $3/$15 per workload agentici a costo inferiore",
+        "Claude Opus 5 (24 lug 2026): nuovo tier a $5/$25 per 1M, SWE-Bench Pro 79.2%, OSWorld 2.0 70.6% (miglior computer use a qualsiasi costo), ARC-AGI-3 30.2% (~3x il secondo classificato); default su Max/Team Premium/Enterprise, disponibile anche su Pro"
       ],
       "weaknesses": [
         "Prezzo API $10/$50 per 1M token (2x Opus 4.8 e Sonnet 5)",
         "Nessun input video (GPT-5.5 supporta video nativamente)",
-        "Accesso incluso su Pro/Max/Team soggetto a crediti dopo il 7 luglio 2026; LMArena non ancora rimisurato post-redeployment"
+        "Accesso incluso su Pro/Max/Team soggetto a crediti dopo il 7 luglio 2026; LMArena non ancora rimisurato post-redeployment",
+        "Su AA Intelligence Index aggregato Fable 5 (59.9-60) e' ora dietro al piu' economico Opus 5 (60.7-61), pur restando #1 su SWE-Bench Pro specifico"
       ],
       "bestFor": [
         "Coding agentico e refactoring su larga scala",
@@ -72,7 +82,7 @@
         "Analisi di documenti e immagini con context da 1M token",
         "Task matematici e scientifici avanzati"
       ],
-      "verdict": "Flagship Anthropic (GA 9 giu 2026, sospeso 12 giu, ripristinato 1 lug 2026). SWE-Bench Pro 80.3%, OSWorld 85.0%, GPQA Diamond 94.5%. API $10/$50 per 1M; Sonnet 5 a $3/$15 (intro $2/$10) per workload agentici a minor costo.",
+      "verdict": "Flagship Anthropic (GA 9 giu 2026, sospeso 12 giu, ripristinato 1 lug 2026). SWE-Bench Pro 80.3%, OSWorld 85.0%, GPQA Diamond 94.5%. API $10/$50 per 1M; Sonnet 5 a $3/$15 (intro $2/$10) per workload agentici a minor costo. Claude Opus 5 (24 lug 2026, $5/$25 per 1M) affianca Fable 5 come opzione piu' economica e ora #1 su AA Intelligence Index aggregato.",
       "lmarenaRank": 1,
       "domain": "claude.ai"
     },
@@ -123,12 +133,12 @@
     {
       "id": "gemini",
       "provider": "Google",
-      "name": "Gemini 3.5 Flash",
-      "releaseDate": "2026-05-19",
-      "tagline": "Il piu' rapido ed economico, multimodale end-to-end.",
+      "name": "Gemini 3.6 Flash",
+      "releaseDate": "2026-07-21",
+      "tagline": "Il piu' rapido ed economico, multimodale end-to-end. Aggiornato a Gemini 3.6 Flash (21 lug 2026), affiancato dalle varianti 3.5 Flash-Lite (entry-level) e 3.5 Flash Cyber (cybersecurity); Gemini 3.5 Pro non ancora GA.",
       "contextWindow": "1M token (input) · 64K (output)",
       "apiInputPer1M": 1.5,
-      "apiOutputPer1M": 9,
+      "apiOutputPer1M": 7.5,
       "supportsImages": true,
       "supportsVideo": true,
       "supportsCode": true,
@@ -150,21 +160,22 @@
       "trainingPolicy": "Vertex AI / Enterprise: nessun uso dei dati cliente per training",
       "strengths": [
         "4x piu' veloce dei modelli frontier: latenza bassa su task agentico e coding",
-        "API piu' economica: $1.50/$9 per 1M token",
+        "API piu' economica: $1.50/$7.50 per 1M token (output -17% vs 3.5 Flash)",
         "Multimodale nativo, video incluso (Omni)",
-        "#2 su LMArena overall"
+        "#2 su LMArena overall",
+        "SWE-Bench Pro 58.7% (+3.6pp) e GPQA Diamond 92.8%; fino al 65% di risparmio su task agentici long-horizon per minor uso di token (DeepSWE 49% vs 37%, MLE-Bench 63.9% vs 49.7%)"
       ],
       "weaknesses": [
-        "SWE-Bench Pro 55.1%: ancora il piu' debole dei tre frontier sul coding agentico",
+        "SWE-Bench Pro 58.7%: ancora il piu' debole dei tre frontier sul coding agentico",
         "Nessun tier consumer 'Team' (uso aziendale solo via Vertex AI / Gemini Enterprise)",
-        "GPQA Diamond 92.2% con Flash: sotto Claude (93.6%) e ChatGPT (93.2%)"
+        "GPQA Diamond 92.8% con Flash: sotto Gemini 3.1 Pro (94.3%), Claude (94.5%) e ChatGPT (94.6%)"
       ],
       "bestFor": [
         "Carichi multimodali e video",
         "Reasoning scientifico e analitico",
         "Volumi elevati a basso costo via API"
       ],
-      "verdict": "Il piu' rapido ed economico, multimodale end-to-end. Ideale per volumi e video; sul coding agentico resta dietro a Claude.",
+      "verdict": "Aggiornato a Gemini 3.6 Flash (21 lug 2026): output -17%, SWE-Bench Pro 58.7% (+3.6pp), GPQA 92.8%, fino al 65% di risparmio su task agentici long-horizon. Ideale per volumi e video; sul coding agentico resta dietro a Claude e ChatGPT.",
       "lmarenaRank": 2,
       "domain": "gemini.google.com"
     },
@@ -221,7 +232,8 @@
       ],
       "weaknesses": [
         "Generazione ferma a Llama 4 (nessun Llama 5 ufficiale a giugno 2026)",
-        "Context Maverick inferiore allo Scout (10M) e con valori discordanti tra fonti"
+        "Context Maverick inferiore allo Scout (10M) e con valori discordanti tra fonti",
+        "Meta ha lanciato Muse Spark 1.1 (9 lug 2026), primo modello closed-weight di Superintelligence Labs con API a pagamento ($1.25/$4.25 per 1M): segnale di possibile allontanamento dalla strategia open-weight che ha sostenuto Llama"
       ],
       "bestFor": [
         "Deployment on-premise/privati",
@@ -252,7 +264,7 @@
       ],
       "weaknesses": [
         "Capacita multimodali (immagini) non documentate ufficialmente come supportate",
-        "Alias legacy deepseek-chat/deepseek-reasoner in deprecazione (24 lug 2026)"
+        "Alias legacy deepseek-chat/deepseek-reasoner ritirati il 24 lug 2026: usare ora deepseek-v4-flash/deepseek-v4-pro"
       ],
       "bestFor": [
         "Coding e reasoning a basso costo",
@@ -279,7 +291,8 @@
         "Context raddoppiato a 1M token vs Qwen3.6 Max (256K)",
         "Extended-thinking nativo",
         "Drop-in compatibile con protocollo Anthropic",
-        "Disponibile su Model Studio, OpenRouter, Together"
+        "Disponibile su Model Studio, OpenRouter, Together",
+        "Alibaba ha presentato in preview Qwen3.8-Max (19 lug 2026, WAIC Shanghai): 2.4T parametri, primo Qwen oltre 1T con supporto multimodale a video; per ora solo su Token Plan/Qoder, senza benchmark o pricing per-token ufficiali"
       ],
       "weaknesses": [
         "Closed-weight (a differenza di altri modelli Qwen open)",
@@ -290,7 +303,7 @@
         "Task multilingua e mercato APAC",
         "Analisi long-context"
       ],
-      "verdict": "Flagship closed-weight di Alibaba con context da 1M e reasoning agentico, lanciato a maggio 2026.",
+      "verdict": "Flagship closed-weight di Alibaba con context da 1M e reasoning agentico, lanciato a maggio 2026. In preview dal 19 lug 2026 Qwen3.8-Max (2.4T, multimodale con video), ancora senza scheda benchmark o pricing ufficiali.",
       "lmarenaRank": 0,
       "domain": "qwen.ai"
     },
@@ -328,33 +341,33 @@
     {
       "id": "kimi",
       "provider": "Moonshot AI",
-      "name": "Kimi K2.7 Code",
-      "releaseDate": "2026-06-12",
-      "contextWindow": "256K token",
-      "apiInputPer1M": 0.95,
-      "apiOutputPer1M": 4,
+      "name": "Kimi K3",
+      "releaseDate": "2026-07-16",
+      "tagline": "Nuovo flagship Moonshot AI (16 lug 2026): 2.8T parametri, context 1M token a velocita' di decoding costante. Pesi open non ancora rilasciati (promessi entro il 27 lug 2026).",
+      "contextWindow": "1M token",
+      "apiInputPer1M": 3,
+      "apiOutputPer1M": 15,
       "supportsImages": true,
       "supportsVideo": false,
       "supportsCode": true,
       "supportsAgents": true,
       "strengths": [
-        "Pensato per coding long-horizon e orchestrazione multi-agente",
-        "Input multimodale testo/immagine nativo (encoder vision integrato)",
-        "Modalita thinking sempre attiva con tool calls",
-        "Riduzione uso token thinking ~30% rispetto a K2.6",
-        "Open-weight: pesi disponibili su Hugging Face"
+        "AA Intelligence Index 57.1: tra i migliori aggregati, dietro solo a Opus 5, Fable 5 e GPT-5.6 Sol",
+        "2.8T parametri (Stable LatentMoE, 896 esperti, 16 attivi); Kimi Delta Attention per decoding fino a 6.3x piu' veloce su contesti da 1M token",
+        "Terminal-Bench 2.1 88.3%, FrontierSWE 81.2%: forte su coding agentico long-horizon",
+        "Context esteso da 256K (K2.7) a 1M token a parita' di velocita' di decoding"
       ],
       "weaknesses": [
-        "Context 256K, sotto la soglia 1M dei top model",
-        "Max output 16K token (molto inferiore ai flagship)",
-        "Solo testo/immagine: nessun input video"
+        "Prezzo aumentato ~5x su input non cached rispetto a K2 ($3 vs $0.60 per 1M); output $15/1M, tra i piu' cari del gruppo cinese (input cached $0.30)",
+        "Pesi open non ancora rilasciati al 26 lug 2026 (K2.7 era gia' open-weight su Hugging Face); rilascio promesso entro il 27 lug 2026",
+        "Benchmark principali (Terminal-Bench, FrontierSWE) self-reported da Moonshot con harness proprietario, non ancora su SWE-Bench Pro standardizzato"
       ],
       "bestFor": [
         "Coding long-horizon e UI/UX generation",
         "Orchestrazione multi-agente",
-        "Workflow agentici a basso costo"
+        "Workflow agentici su repository di grandi dimensioni"
       ],
-      "verdict": "Open-weight MoE di Moonshot AI (1T param, 32B attivi) per coding long-horizon; K2.7 Code migliora l'efficienza del reasoning con ~30% di token thinking in meno rispetto a K2.6.",
+      "verdict": "Kimi K3 (Moonshot AI, 16 lug 2026): salto a 2.8T parametri e context 1M flat-rate, AA Intelligence Index 57.1 (dietro a Opus 5/Fable 5/GPT-5.6 Sol). Prezzo aumentato ~5x su input vs K2; pesi open promessi entro il 27 lug 2026, non ancora disponibili.",
       "lmarenaRank": 0,
       "domain": "moonshot.ai"
     },
@@ -427,6 +440,7 @@
         "Claude Tag (beta Enterprise/Team, 23 giu 2026): agente @Claude in Slack con identita' condivisa, memoria e modalita' ambient proattiva",
         "Modello Claude Fable 5 ripristinato il 1 lug 2026 (export control revocate il 30 giu; su Pro/Max/Team via crediti dopo il 7 lug)",
         "Claude Sonnet 5 (30 giu 2026): default su Free e Pro; $2/$10 intro fino al 31 ago 2026 (poi $3/$15), 1M context, adaptive thinking, SWE-bench 63.2%",
+        "Claude Opus 5 (24 lug 2026): nuovo modello Opus, $5/$25 per 1M, sostituisce Opus 4.8; default su Max/Team Premium/Enterprise (Pro e Team Standard restano di default su Sonnet 5)",
         "Claude Science (beta, 1 lug 2026): workbench di ricerca con agente coordinatore e 60+ skill/connettori (genomica, single-cell, proteomica, biologia strutturale, cheminformatica); agente reviewer che verifica citazioni e calcoli; incluso nei limiti di Pro/Max/Team/Enterprise, nessun pricing API separato"
       ],
       "tierGratuito": "Si. Free include accesso a Claude Sonnet 5 e Artifacts con limiti di utilizzo giornalieri.",
@@ -664,9 +678,9 @@
     },
     {
       "category": "Immagini",
-      "name": "Midjourney V8.1",
+      "name": "Midjourney V8.2",
       "url": "https://www.midjourney.com/",
-      "oneLiner": "Generatore di immagini artistiche (apr 2026): 4-5x piu' veloce, HD fino a 2K e maggiore aderenza al prompt."
+      "oneLiner": "Generatore di immagini artistiche: V8.2 (24 lug 2026) migliora estetica, qualita' e personalizzazione, succedendo a V8.1 (4-5x piu' veloce, HD 2K)."
     },
     {
       "category": "Immagini",
@@ -742,9 +756,9 @@
     },
     {
       "category": "Video",
-      "name": "Sora 2",
+      "name": "Sora 2 (in dismissione)",
       "url": "https://sora.com/",
-      "oneLiner": "Modello video/audio di punta di OpenAI: fisica piu' accurata, realismo maggiore e audio sincronizzato (dialoghi ed effetti)."
+      "oneLiner": "App e sito sora.com chiusi il 26 apr 2026; il modello resta usabile dentro ChatGPT Plus/Pro, ma l'API viene dismessa il 24 set 2026 senza sostituto annunciato."
     },
     {
       "category": "Video",
@@ -880,9 +894,9 @@
     },
     {
       "category": "Coding",
-      "name": "OpenAI Codex (GPT-5.5)",
+      "name": "OpenAI Codex (GPT-5.6)",
       "url": "https://openai.com/codex/",
-      "oneLiner": "Agente di coding unificato OpenAI (terminale, IDE, web) su GPT-5.5 e il modello agentico GPT-5.3-Codex."
+      "oneLiner": "Agente di coding OpenAI, dal 9 lug 2026 unificato nell'app desktop ChatGPT su GPT-5.6 Sol/Terra, con diff inline e revisione PR integrate."
     },
     {
       "category": "Coding",
@@ -1328,16 +1342,12 @@
           "value": 60.6
         },
         {
+          "modelId": "gemini",
+          "value": 58.7
+        },
+        {
           "modelId": "chatgpt",
           "value": 58.6
-        },
-        {
-          "modelId": "kimi",
-          "value": 58.6
-        },
-        {
-          "modelId": "gemini",
-          "value": 55.1
         }
       ]
     },
@@ -1379,7 +1389,7 @@
         },
         {
           "modelId": "gemini",
-          "value": 92.2
+          "value": 92.8
         }
       ]
     },
@@ -1406,6 +1416,32 @@
     }
   ],
   "changelog": [
+    {
+      "date": "2026-07-26",
+      "summary": "Anthropic: lanciato Claude Opus 5 (24 lug 2026), nuovo tier Opus a $5/$25 per 1M (sostituisce Opus 4.8, stesso prezzo), 1M context/128K output; SWE-Bench Pro 79.2%, OSWorld 2.0 70.6% (miglior computer use a qualsiasi costo), ARC-AGI-3 30.2% (~3x il secondo classificato GPT-5.6 Sol 7.8%), GDPval-AA v2 Elo 1861. Su AA Intelligence Index aggregato Opus 5 e' ora #1 (60.7-61) davanti a Fable 5 (59.9-60) e GPT-5.6 Sol (58.9-59), pur restando Fable 5 avanti su SWE-Bench Pro puro (80.3% vs 79.2%). Default su Claude Max/Team Premium/Enterprise/API; Pro e Team Standard restano di default su Sonnet 5. Modello `claude` (Fable 5) aggiornato in tagline/strengths/weaknesses/verdict per riflettere il nuovo tier; LMArena non ancora misurato per Opus 5 (troppo recente). Google: rilasciati Gemini 3.6 Flash, 3.5 Flash-Lite e 3.5 Flash Cyber (21 lug 2026); Gemini 3.5 Pro non ancora GA. Modello `gemini` aggiornato a 3.6 Flash: output $9->$7.50 per 1M (-17%), SWE-Bench Pro 55.1%->58.7%, GPQA Diamond 92.2%->92.8%, risparmio token fino al 65% su task agentici long-horizon (DeepSWE 37%->49%, MLE-Bench 49.7%->63.9%); score aggiornati nei benchmark swe-bench-pro e gpqa-diamond. Moonshot AI: rilasciato Kimi K3 (16 lug 2026), 2.8T parametri (Stable LatentMoE, 896 esperti/16 attivi), context esteso da 256K a 1M token, Kimi Delta Attention (decoding fino a 6.3x piu' veloce). Modello `kimi` aggiornato a K3: prezzo $0.95/$4 -> $3/$15 per 1M (input cached $0.30, ~5x piu' caro su input fresh vs K2), AA Intelligence Index 57.1; pesi open non ancora rilasciati (promessi entro il 27 lug 2026). Rimosso lo score obsoleto di K2.7 (58.6%) dal benchmark swe-bench-pro: nessuno score SWE-Bench Pro standardizzato ancora pubblicato per K3 (solo cifre self-reported su harness proprietari). Alibaba: preview di Qwen3.8-Max (19 lug 2026, WAIC Shanghai), 2.4T parametri, primo Qwen oltre 1T con supporto video; nessun benchmark o prezzo per-token ufficiale, bundlato su Token Plan/Qoder. Modello `qwen` (rimasto 3.7-Max, ancora l'unico con dati ufficiali completi) aggiornato in tagline/verdict con nota sulla preview. DeepSeek: alias legacy deepseek-chat/deepseek-reasoner ritirati il 24 lug 2026 (ora deepseek-v4-flash/deepseek-v4-pro); pricing V4 Pro invariato ($0.435/$0.87 per 1M). Meta: lanciato Muse Spark 1.1 (9 lug 2026), primo modello closed-weight di Superintelligence Labs con API a pagamento ($1.25/$4.25 per 1M) — segnale di possibile allontanamento dalla strategia open-weight Llama; nota aggiunta alle weakness del modello `llama` (ancora Llama 4 Maverick, nessun Llama 5). App Claude aggiornata con la voce Opus 5. Tools: Sora 2 segnalato in dismissione (app/sito chiusi 26 apr 2026, API in sunset dal 24 set 2026, nessun sostituto annunciato); Midjourney aggiornato a V8.2 (24 lug 2026, focus estetica/qualita'/personalizzazione); OpenAI Codex aggiornato a GPT-5.6 Sol/Terra, ora unificato nell'app desktop ChatGPT (9 lug 2026). Nessuna variazione rilevante per Grok 4.5/SpaceXAI, GPT-5.6 Sol (ChatGPT), Mistral Medium 3.5 (nuovi Robostral Navigate e OCR 4 fuori scope: robotica/OCR, non chat flagship) e GLM-5.2 (GLM-5.5 atteso ad agosto 2026, nessun rilascio ufficiale).",
+      "sources": [
+        "https://www.anthropic.com/news/claude-opus-5",
+        "https://artificialanalysis.ai/models/claude-opus-5",
+        "https://benchlm.ai/benchmarks/artificialAnalysis",
+        "https://www.vellum.ai/blog/claude-opus-5-benchmarks-explained",
+        "https://arcprize.org/results/anthropic-claude-opus-5",
+        "https://code.claude.com/docs/en/changelog",
+        "https://techcrunch.com/2026/07/21/google-releases-three-new-gemini-models-but-no-3-5-pro/",
+        "https://venturebeat.com/technology/googles-gemini-3-6-flash-model-cuts-ai-agent-token-costs-by-up-to-65-on-long-horizon-engineering-tasks-and-3-5-pro-is-on-the-way",
+        "https://artificialanalysis.ai/models/gemini-3-6-flash",
+        "https://simonwillison.net/2026/Jul/16/kimi-k3/",
+        "https://www.tomshardware.com/tech-industry/artificial-intelligence/moonshot-releases-2-8-trillion-parameter-kimi-k3",
+        "https://openrouter.ai/moonshotai/kimi-k3",
+        "https://www.bloomberg.com/news/articles/2026-07-19/alibaba-s-qwen-unveils-preview-of-flagship-ai-model",
+        "https://www.scmp.com/tech/article/3361119/alibaba-says-newest-qwen-ai-model-second-only-anthropics-claude-fable-5",
+        "https://benchlm.ai/deepseek/api-pricing",
+        "https://ai.meta.com/blog/introducing-muse-spark-meta-model-api/",
+        "https://www.cnbc.com/2026/07/09/meta-jumps-into-ai-coding-market-to-chase-anthropic-and-openai.html",
+        "https://help.openai.com/en/articles/20001152-what-to-know-about-the-sora-discontinuation",
+        "https://docs.midjourney.com/hc/en-us/articles/32199405667853-Version",
+        "https://kie.ai/blog/codex-chatgpt-work-gpt-5-6-analysis"
+      ]
+    },
     {
       "date": "2026-07-12",
       "summary": "xAI rinominata SpaceXAI: rebrand completato il 6 lug 2026 (fusione con SpaceX annunciata a febbraio, dissoluzione di xAI come societa' separata annunciata a maggio), nuovo logo e handle @SpaceXAI. Modello `grok` aggiornato a Grok 4.5 (8 lug 2026): flagship 'Opus-class' addestrato anche su dati Cursor, SWE-Bench Pro 64.7% (tra Sonnet 5 e Opus 4.8), GPQA Diamond 93%, Artificial Analysis Intelligence Index 54 (#4 overall, #1 su agentic tool use), ~4.2x meno token di output di Opus 4.8 a parita' di task; API $2/$6 per 1M (da $1.25/$2.5), context 500K (da 1M); non ancora in UE. Disponibile in Grok Build, Cursor (tutti i piani) e console SpaceXAI. Score aggiunti in benchmark swe-bench-pro (64.7%) e gpqa-diamond (93.0%) per grok. OpenAI: famiglia GPT-5.6 (Sol/Terra/Luna) in GA dal 9 lug 2026 su ChatGPT (piani a pagamento), Codex e API; modello `chatgpt` aggiornato a GPT-5.6 Sol (GPQA Diamond 94.6%, score aggiornato nel benchmark gpqa-diamond; Terminal-Bench 2.1 88.8%/91.9% ultra; leader Artificial Analysis Coding Agent Index; SWE-Bench Pro non pubblicato da OpenAI per Sol). METR (valutatore di sicurezza indipendente) ha rilevato che Sol sfrutta bug della valutazione SWE al tasso piu' alto mai osservato in un modello pubblico. Free/Go restano su GPT-5.5. Lanciato ChatGPT Work (9 lug 2026): agente autonomo multi-app/file con automazioni ricorrenti pianificate, e Sites in ChatGPT (beta pubblica) per creare siti/app interattivi condivisibili. Anthropic: lanciato Claude Science (1 lug 2026, beta Pro/Max/Team/Enterprise): workbench di ricerca con agente coordinatore, 60+ skill/connettori per genomica/proteomica/cheminformatica e agente reviewer che verifica citazioni e calcoli; nessun pricing API separato. Nessuna variazione rilevante per Gemini 3.5 Flash (Gemini 3.5 Pro confermato ma non ancora GA), DeepSeek V4 Pro, Qwen 3.7-Max, Mistral Medium 3.5 (rilasciato Mistral Small 4 e Leanstral 1.5, entrambi fuori scope flagship), Kimi K2.7 Code, GLM-5.2, Llama 4.",
