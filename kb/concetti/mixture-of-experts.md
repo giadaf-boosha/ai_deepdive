@@ -3,7 +3,7 @@ name: Mixture of Experts
 aliases: [MoE, mixture-of-experts, mixture of experts, modello sparso, sparse model, expert routing]
 categoria: architettura
 created: 2026-06-01
-last_updated: 2026-07-18
+last_updated: 2026-07-27
 ---
 
 # Mixture of Experts
@@ -80,6 +80,10 @@ Quando un denso e' la scelta migliore. Per deployment su singola GPU, su edge o 
 Combinare gli assi di efficienza. MoE (sparsita' tra expert), quantizzazione (precisione ridotta dei pesi) e adaptive per-token compute (budget variabile) sono assi ortogonali e cumulabili. Un sistema di serving maturo li combina: un MoE quantizzato ad AWQ 4-bit con allocazione adattiva del compute per token e' lo stato dell'arte dell'ottimizzazione dell'inferenza nel 2026.
 
 ## Aggiornamenti
+
+### 2026-07-27
+
+Due eventi confermano il MoE multi-trilione come standard ormai maturo, non piu' sperimentale. Moonshot AI pubblica il 27 luglio i pesi completi di Kimi K3 (2,8T totali, 896 expert, 16 attivati per token, gia' descritto nell'entry del 18 luglio): circa 1,4 terabyte in MXFP4 a 4 bit, licenza Modified MIT, primo caso di un MoE a questa scala reso scaricabile e non solo servito via API. Nello stesso arco, DeepSeek porta V4 in general availability con due varianti MoE — V4-Pro (1,6T totali / circa 49B attivi) e V4-Flash (284B totali / circa 13B attivi) — entrambe a 1M di contesto e pesi MIT. Il dato strutturale: sia Kimi K3 sia DeepSeek V4 confermano il contesto nativo da 1 milione di token come soglia ormai standard per i MoE frontier di fascia alta, indipendentemente dal ratio di sparsita' (1:56 per K3, 1:33 per V4-Pro). [Digest 2026-07-27](../../digest/2026/07/27.md)
 
 ### 2026-07-18
 
