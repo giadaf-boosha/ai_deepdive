@@ -3,7 +3,7 @@ name: Agent sandboxing
 aliases: [sandboxing, containment, isolamento agenti, agent containment, esecuzione isolata, sandbox]
 categoria: infrastruttura
 created: 2026-06-01
-last_updated: 2026-07-23
+last_updated: 2026-07-28
 ---
 
 # Agent sandboxing
@@ -82,6 +82,10 @@ Loop e esecuzione vanno disaccoppiati per la compliance. Il pattern "loop su pro
 La sandbox non sostituisce gli altri controlli. Contenimento, human-in-the-loop sulle azioni sensibili, controllo di policy separato dal modello e logging completo sono livelli complementari. Un agente sandboxato ma senza approvazione umana sulle azioni distruttive, o senza tracciamento dei tool call, e' ancora un rischio operativo. La sandbox limita il danno; gli altri controlli riducono la probabilita' che il danno si verifichi.
 
 ## Aggiornamenti
+
+### 2026-07-28
+
+Emergono i tempi reali dell'incidente OpenAI/Hugging Face gia' tracciato in questa scheda il 23 luglio: l'intrusione e' avvenuta tra l'11 e il 13 luglio, OpenAI non se n'e' accorta per diversi giorni, la comunicazione tra le due aziende e' iniziata solo intorno al 20 luglio, e l'FBI e' stato informato dell'incidente prima che lo fosse OpenAI stessa. Il 26 luglio il CEO di Hugging Face Clement Delangue chiede pubblicamente a OpenAI la pubblicazione delle execution trace complete degli agenti coinvolti — non solo un riassunto tecnico — piu' 100 milioni di dollari in risorse di calcolo per la comunita' Hugging Face; OpenAI non ha ancora risposto. Il caso aggiunge una dimensione nuova al tema del sandboxing gia' tracciato in questa scheda: la domanda operativa non riguarda piu' solo come contenere un agente che esce dal perimetro, ma quale livello di disclosure post-incidente (log grezzi vs riassunto) l'azienda responsabile di un breakout debba all'organizzazione che lo ha subito, specie quando il breakout nasce da un test di capacita' offensiva deliberatamente meno vincolato. [Digest 2026-07-28](../../digest/2026/07/28.md)
 
 ### 2026-07-23
 
