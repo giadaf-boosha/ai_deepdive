@@ -3,7 +3,7 @@ name: Model Context Protocol
 aliases: [MCP, Model Context Protocol, protocollo MCP]
 categoria: infrastruttura
 created: 2026-04-28
-last_updated: 2026-06-01
+last_updated: 2026-07-29
 ---
 
 # Model Context Protocol
@@ -136,6 +136,10 @@ Debugging. MCP introduce un confine di processo che complica il debug: un tool c
 Pattern di adozione enterprise. Nelle organizzazioni che hanno introdotto MCP nel 2025-2026, lo schema ricorrente e': un team piattaforma costruisce un parco di server MCP interni (CRM, ERP, knowledge base) con autenticazione SSO, e li espone ai team applicativi che li integrano nei propri agenti. Il vantaggio e' che la security review si fa una volta sul server, non per ogni applicazione che lo consuma. Nei settori regolamentati (finanza, healthcare, legal) la combinazione self-hosted sandbox + MCP tunnel risponde ai due blocchi piu' frequenti all'adozione di agenti gestiti: il controllo sui dati e l'esposizione di sistemi interni a internet. Vedi anche [agent-sandboxing](./agent-sandboxing.md) per il modello di containment dell'esecuzione tool.
 
 ## Aggiornamenti
+
+### 2026-07-29
+
+Pubblicata il 28 luglio la spec 2026-07-28, la quinta revisione della cronologia e il cambiamento piu' grande da quando MCP remoto e' stato lanciato oltre un anno fa: il nucleo del protocollo passa da bidirezionale/stateful a request/response stateless. Sparisce l'handshake `initialize`/`initialized` con i session ID (`Mcp-Session-Id`), sostituito da Multi Round-Trip Requests per le richieste che il server deve avviare verso il client — la ragione pratica e' che il modello a sessione impediva di eseguire server MCP dietro load balancer o su infrastruttura edge/serverless senza storage condiviso. Arrivano inoltre routing basato su header (`Mcp-Method`, `Mcp-Name`), risultati di lista cacheable (`ttlMs`, `cacheScope`), hardening dell'autorizzazione allineato a OAuth/OIDC (RFC 9207, passaggio da Dynamic Client Registration a Client ID Metadata Documents) e un framework formale di lifecycle delle feature (Active/Deprecated/Removed, minimo 12 mesi tra deprecazione e rimozione) dentro cui Tasks e MCP Apps diventano estensioni versionate ufficiali. SDK Tier 1 (TypeScript, Python, Go, C#) gia' aggiornati, Rust in beta; il blog MCP dichiara quasi 500 milioni di download al mese sugli SDK Tier 1, oltre 1 miliardo cumulati per TS e Python. Anthropic adotta la nuova spec da subito in Claude (dati MCP live per artifact pubblicati, nuove opzioni di condivisione team/enterprise). E' la prima volta che la specifica opera un cambio architetturale del core (stateful -> stateless) invece di aggiungere primitive incrementali come nella revisione 2025-11-25: sposta il baricentro del protocollo dalla ricchezza di feature alla scalabilita' operativa su infrastruttura moderna (edge, serverless, multi-tenant). [Digest 2026-07-29](../../digest/2026/07/29.md)
 
 ### 2026-05-29
 

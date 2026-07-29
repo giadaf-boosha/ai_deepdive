@@ -3,7 +3,7 @@ name: AI Governance
 aliases: [AI governance, governance AI, export control AI, regolazione AI, AI regulation, AI policy, BIS AI, EAR AI models]
 categoria: regolazione
 created: 2026-06-14
-last_updated: 2026-07-24
+last_updated: 2026-07-29
 ---
 
 # AI Governance
@@ -72,6 +72,10 @@ Esempio 3: verifica della Responsible Scaling Policy prima di distribuire un mod
 - Wilson Sonsini, "Colorado Legislature Repeals and Replaces Colorado AI Act: What SB 189 Means for Your Business" (maggio 2026). https://www.wsgr.com/en/insights/colorado-legislature-repeals-and-replaces-colorado-ai-act-what-sb-189-means-for-your-business.html
 
 ## Aggiornamenti
+
+### 2026-07-29
+
+Prima frattura pubblica e nominale tra Anthropic e il resto dell'industria frontier sulla regolazione dei modelli open-weight. Il 27 luglio una coalizione guidata da Nvidia — con Microsoft, Meta e Palantir tra i firmatari — pubblica una lettera che chiede ai regolatori di evitare "restrizioni premature" sui modelli open-weight; Anthropic e' l'unico grande lab frontier a non aderire. Dario Amodei risponde lo stesso giorno negando di voler bandire l'open-weight ("mai stato il caso"; i modelli open-weight senza capacita' pericolose restano "un bene pubblico"), ma contesta la tesi centrale della lettera secondo cui l'open-weight favorirebbe sistematicamente i difensori sugli attaccanti in ambito cyber, e propone tre policy alternative e piu' mirate: controlli piu' stretti sull'export di chip avanzati verso stati autoritari, un giro di vite specifico sulla "distillazione su scala industriale" (in continuita' diretta con la disputa Fable-Kimi K3, vedi `knowledge-distillation.md`, aggiornamento 2026-07-24), e test di sicurezza obbligatori pre-deployment per i modelli sufficientemente capaci, aperti o chiusi. Il CEO di Palantir Alex Karp critica pubblicamente su Fox Business la posizione di Anthropic come un freno alla concorrenza. E' la prima volta in questa scheda che la disputa export-control/distillazione USA-Cina (Fable 5/Mythos 5 di giugno, MOFCOM di luglio) si intreccia esplicitamente con un fronte interno all'industria americana stessa sulla regolazione dell'open-weight, con Anthropic isolata tra i pari rispetto a una policy di settore. [Digest 2026-07-29](../../digest/2026/07/29.md)
 
 ### 2026-07-24
 
