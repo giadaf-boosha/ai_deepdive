@@ -3,7 +3,7 @@ name: AI Governance
 aliases: [AI governance, governance AI, export control AI, regolazione AI, AI regulation, AI policy, BIS AI, EAR AI models]
 categoria: regolazione
 created: 2026-06-14
-last_updated: 2026-07-24
+last_updated: 2026-07-30
 ---
 
 # AI Governance
@@ -72,6 +72,10 @@ Esempio 3: verifica della Responsible Scaling Policy prima di distribuire un mod
 - Wilson Sonsini, "Colorado Legislature Repeals and Replaces Colorado AI Act: What SB 189 Means for Your Business" (maggio 2026). https://www.wsgr.com/en/insights/colorado-legislature-repeals-and-replaces-colorado-ai-act-what-sb-189-means-for-your-business.html
 
 ## Aggiornamenti
+
+### 2026-07-30
+
+Il rallentamento deliberato dello sviluppo AI passa da proposta dei singoli CEO a richiesta collettiva dal basso. Il 28 luglio 1.178 dipendenti di OpenAI, Anthropic, Google DeepMind e Meta — inclusi Dario Amodei, i chief scientist di OpenAI e Meta AI e la VP AI Safety and Alignment di Google — firmano la lettera aperta "Pacing the Frontier", che chiede al governo USA di sostenere uno sforzo internazionale per costruire gli strumenti tecnici e di governance necessari a rallentare deliberatamente la frontiera dell'AI automatizzata, citando esplicitamente il caso Hugging Face (digest 23 luglio) come prova del rischio. OpenAI e Anthropic sottoscrivono la lettera come organizzazioni entro poche ore; il 29 luglio Sam Altman discute con senatori bipartisan a Washington e dichiara pubblicamente sostegno a un rallentamento del ritmo di sviluppo. Rispetto alle proposte individuali gia' tracciate in questa scheda (Hassabis/FINRA, digest 15 luglio; Altman/IAEA, digest 20 luglio), la novita' e' che il segnale arriva ora dai ricercatori e ingegneri di linea, non solo dai vertici, e si concentra specificamente sul rischio di recursive self-improvement (AI che accelera lo sviluppo di AI migliore) piuttosto che sulla capacita' dei modelli in generale — lo stesso giorno in cui OpenAI riassegna Lilian Weng, rientrata da Thinking Machines Lab, a guidare proprio la ricerca interna su questo tema. [Digest 2026-07-30](../../digest/2026/07/30.md)
 
 ### 2026-07-24
 
