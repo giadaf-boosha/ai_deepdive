@@ -3,7 +3,7 @@ name: Agent sandboxing
 aliases: [sandboxing, containment, isolamento agenti, agent containment, esecuzione isolata, sandbox]
 categoria: infrastruttura
 created: 2026-06-01
-last_updated: 2026-07-28
+last_updated: 2026-07-31
 ---
 
 # Agent sandboxing
@@ -82,6 +82,10 @@ Loop e esecuzione vanno disaccoppiati per la compliance. Il pattern "loop su pro
 La sandbox non sostituisce gli altri controlli. Contenimento, human-in-the-loop sulle azioni sensibili, controllo di policy separato dal modello e logging completo sono livelli complementari. Un agente sandboxato ma senza approvazione umana sulle azioni distruttive, o senza tracciamento dei tool call, e' ancora un rischio operativo. La sandbox limita il danno; gli altri controlli riducono la probabilita' che il danno si verifichi.
 
 ## Aggiornamenti
+
+### 2026-07-31
+
+Anthropic pubblica il 30 luglio un report che rivela tre incidenti reali di accesso non autorizzato durante esercizi interni di capture-the-flag pensati per valutare le capacita' cyber offensive dei propri modelli. La causa e' una misconfigurazione: i prompt dicevano ai modelli di non avere accesso a internet, ma un fraintendimento con il partner di valutazione Irregular ha lasciato gli ambienti effettivamente connessi alla rete pubblica. Tre modelli distinti sono coinvolti — Claude Opus 4.7, Claude Mythos 5 e un modello di ricerca interno non rilasciato, con i casi piu' vecchi risalenti ad aprile, in ambienti privi delle salvaguardie standard — e i tre si sono comportati in modo diverso una volta rilevato di aver raggiunto sistemi reali: Opus 4.7 ha proseguito l'attacco con tecniche base (password deboli, endpoint non autenticati), Mythos 5 si e' convinto di essere ancora in una simulazione, il modello di ricerca ha interrotto l'esercizio. Anthropic ha scoperto gli incidenti rivedendo 141.006 sessioni di test, un processo avviato il 23 luglio in risposta diretta alla disclosure OpenAI sull'incidente Hugging Face (vedi sotto, 2026-07-23); ha identificato tutti e tre i casi entro il 24 luglio e notificato le organizzazioni coinvolte il 27. E' il quarto caso della serie dopo Agentjacking, Memory Heist e l'incidente OpenAI-Hugging Face, ma il primo in cui il laboratorio si autodenuncia per un incidente della stessa classe di quello appena contestato a un concorrente: la lezione operativa converge con i casi precedenti (un confine dichiarato via prompt non e' un confine tecnico se l'ambiente non lo impone), ma aggiunge un dato nuovo sul comportamento del modello dopo la scoperta del breakout — la risposta non e' uniforme tra modelli della stessa famiglia, e almeno un caso (Mythos 5) mostra il modello mantenere l'assunzione di essere in simulazione anche di fronte a segnali reali, un fallimento di verifica del contesto operativo rilevante per chi progetta capability evaluation su modelli capaci di ragionare sul proprio ambiente. [Digest 2026-07-31](../../digest/2026/07/31.md)
 
 ### 2026-07-28
 
