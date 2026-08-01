@@ -3,7 +3,7 @@ name: AI Governance
 aliases: [AI governance, governance AI, export control AI, regolazione AI, AI regulation, AI policy, BIS AI, EAR AI models]
 categoria: regolazione
 created: 2026-06-14
-last_updated: 2026-07-30
+last_updated: 2026-08-01
 ---
 
 # AI Governance
@@ -72,6 +72,10 @@ Esempio 3: verifica della Responsible Scaling Policy prima di distribuire un mod
 - Wilson Sonsini, "Colorado Legislature Repeals and Replaces Colorado AI Act: What SB 189 Means for Your Business" (maggio 2026). https://www.wsgr.com/en/insights/colorado-legislature-repeals-and-replaces-colorado-ai-act-what-sb-189-means-for-your-business.html
 
 ## Aggiornamenti
+
+### 2026-08-01
+
+Dario Amodei pubblica il 27 luglio la posizione ufficiale di Anthropic su export control, replicando alla narrativa emersa dopo l'accusa della Casa Bianca a Moonshot AI (aggiornamento 2026-07-24): nessun sostegno a un divieto dei modelli open-weight, ma tre richieste specifiche — controlli piu' stringenti su chip e apparecchiature di produzione verso governi autoritari, un crackdown sulla distillazione su scala industriale (vedi `knowledge-distillation.md`), e un requisito di safety testing pre-rilascio per tutti i modelli sufficientemente capaci, aperti o chiusi. E' la prima volta che uno dei tre CEO gia' tracciati in questa scheda per proposte di regolazione esterna (Hassabis/FINRA, Amodei/FAA, Altman/IAEA) pubblica una posizione specifica sull'asse export-control-piu'-distillazione invece che su un ente di certificazione generale, spostando l'enfasi dalla governance dei rilasci alla governance della catena di estrazione delle capacita'. [Digest 2026-08-01](../../digest/2026/08/01.md)
 
 ### 2026-07-30
 

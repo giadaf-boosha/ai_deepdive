@@ -3,7 +3,7 @@ name: Knowledge Distillation
 aliases: [knowledge distillation, distillazione, model distillation, distillazione di modello, adversarial distillation, response distillation, student-teacher, distillazione avversariale]
 categoria: training
 created: 2026-06-25
-last_updated: 2026-07-24
+last_updated: 2026-08-01
 ---
 
 # Knowledge Distillation
@@ -77,6 +77,10 @@ Il meccanismo e' semplice: creare account multipli per aggirare i rate limit e l
 - Taori et al., "Alpaca: A Strong, Replicable Instruction-Following Model" (Stanford CRFM, 2023). https://crfm.stanford.edu/2023/03/13/alpaca.html
 
 ## Aggiornamenti
+
+### 2026-08-01
+
+Dario Amodei pubblica il 27 luglio la prima posizione organica di Anthropic sulla disputa aperta a giugno con Alibaba e riaccesa il 22 luglio dall'accusa nominale della Casa Bianca a Moonshot AI (vedi aggiornamento 2026-07-24). Il post corregge esplicitamente la narrativa che si era formata dopo l'accusa: "Anthropic non ha mai sostenuto un divieto ai modelli open-weight" — i modelli open senza capacita' pericolose restano, nelle parole di Amodei, "un bene pubblico". Al posto di un divieto, Amodei propone un giro di vite specifico sulla distillazione su scala industriale, definita come il canale attraverso cui la Cina estrae capacita' dai modelli frontier americani riducendo l'efficacia dei controlli sui chip — affiancato da controlli piu' stringenti su chip e apparecchiature di produzione verso governi autoritari e da un requisito di safety testing pre-rilascio per tutti i modelli sufficientemente capaci, aperti o chiusi. E' la prima volta che la disputa sulla distillazione, finora gestita per episodi (lettera al Senato su Alibaba a giugno, accusa Kratsios/minaccia sanzioni Treasury a luglio), riceve un inquadramento di policy strutturale direttamente dal CEO del lab che ha sollevato il caso originale. [Digest 2026-08-01](../../digest/2026/08/01.md)
 
 ### 2026-07-24
 

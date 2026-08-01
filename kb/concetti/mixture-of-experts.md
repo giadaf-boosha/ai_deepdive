@@ -3,7 +3,7 @@ name: Mixture of Experts
 aliases: [MoE, mixture-of-experts, mixture of experts, modello sparso, sparse model, expert routing]
 categoria: architettura
 created: 2026-06-01
-last_updated: 2026-07-28
+last_updated: 2026-08-01
 ---
 
 # Mixture of Experts
@@ -80,6 +80,10 @@ Quando un denso e' la scelta migliore. Per deployment su singola GPU, su edge o 
 Combinare gli assi di efficienza. MoE (sparsita' tra expert), quantizzazione (precisione ridotta dei pesi) e adaptive per-token compute (budget variabile) sono assi ortogonali e cumulabili. Un sistema di serving maturo li combina: un MoE quantizzato ad AWQ 4-bit con allocazione adattiva del compute per token e' lo stato dell'arte dell'ottimizzazione dell'inferenza nel 2026.
 
 ## Aggiornamenti
+
+### 2026-08-01
+
+DeepSeek-V4-Flash-0731 (31 luglio) mostra un caso pulito di post-training mirato su una base MoE gia' esistente: l'architettura resta identica alla Preview di aprile (284B totali, 13B attivi), senza alcun cambiamento di routing o di numero di expert, ma un nuovo ciclo di post-training orientato a capacita' agentiche produce risultati che, secondo DeepSeek, superano ampiamente quelli del piu' grande V4-Pro-Preview della stessa famiglia (Terminal-Bench 2.1: 82,7; DeepSWE: 54,4; CyberGym: 76,7). E' un dato distinto dai casi gia' tracciati in questa scheda (Kimi K3, Inkling), dove il salto di capacita' veniva da una nuova architettura o scala: qui il guadagno viene interamente dal post-training, a parita' di parametri totali e attivi — un promemoria che, oltre al ratio active/total, il regime di post-training resta una leva indipendente ed economica per spostare le prestazioni di un MoE gia' addestrato. Da notare: solo la build servita via API riceve l'aggiornamento; i pesi scaricabili su Hugging Face restano fermi al checkpoint Preview. [Digest 2026-08-01](../../digest/2026/08/01.md)
 
 ### 2026-07-28
 
