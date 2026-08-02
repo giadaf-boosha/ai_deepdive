@@ -3,7 +3,7 @@ name: Mixture of Experts
 aliases: [MoE, mixture-of-experts, mixture of experts, modello sparso, sparse model, expert routing]
 categoria: architettura
 created: 2026-06-01
-last_updated: 2026-07-28
+last_updated: 2026-08-02
 ---
 
 # Mixture of Experts
@@ -80,6 +80,10 @@ Quando un denso e' la scelta migliore. Per deployment su singola GPU, su edge o 
 Combinare gli assi di efficienza. MoE (sparsita' tra expert), quantizzazione (precisione ridotta dei pesi) e adaptive per-token compute (budget variabile) sono assi ortogonali e cumulabili. Un sistema di serving maturo li combina: un MoE quantizzato ad AWQ 4-bit con allocazione adattiva del compute per token e' lo stato dell'arte dell'ottimizzazione dell'inferenza nel 2026.
 
 ## Aggiornamenti
+
+### 2026-08-02
+
+DeepSeek pubblica il 31 luglio la build "0731" di V4-Flash: non un nuovo modello ma una versione ri-post-addestrata della stessa architettura MoE 284B totali/13B attivi gia' nota (V4-Flash Preview di aprile), senza cambi di parametri totali, attivi o numero di expert. Sui nove benchmark agentici e di coding pubblicati dall'azienda, la 0731 supera in ognuno il proprio V4-Pro-Preview, compreso Terminal-Bench 2.1 con 82,7% (contro 72,1% del Pro-Preview). Pesi su Hugging Face sotto licenza MIT; pricing $0,14/$0,28 per milione di token input/output. Nota metodologica: le eval pubbliche sono state girate con il "DeepSeek Harness" non ancora rilasciato, in modalita' minimale, condizioni non ancora replicabili integralmente da terzi. Il caso e' il primo in questa scheda in cui il salto di capacita' su un MoE gia' documentato viene isolato interamente al re-training del post-training, senza alcuna modifica all'architettura (totali, attivi, numero di expert restano identici alla Preview di aprile) — un dato utile per chi valuta quanto della capacita' dichiarata di un MoE derivi dal design dei layer sparsi rispetto alla qualita' del post-training applicato sopra. [Digest 2026-08-02](../../digest/2026/08/02.md)
 
 ### 2026-07-28
 

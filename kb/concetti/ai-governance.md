@@ -3,7 +3,7 @@ name: AI Governance
 aliases: [AI governance, governance AI, export control AI, regolazione AI, AI regulation, AI policy, BIS AI, EAR AI models]
 categoria: regolazione
 created: 2026-06-14
-last_updated: 2026-07-30
+last_updated: 2026-08-02
 ---
 
 # AI Governance
@@ -72,6 +72,10 @@ Esempio 3: verifica della Responsible Scaling Policy prima di distribuire un mod
 - Wilson Sonsini, "Colorado Legislature Repeals and Replaces Colorado AI Act: What SB 189 Means for Your Business" (maggio 2026). https://www.wsgr.com/en/insights/colorado-legislature-repeals-and-replaces-colorado-ai-act-what-sb-189-means-for-your-business.html
 
 ## Aggiornamenti
+
+### 2026-08-02
+
+L'AI Act europeo passa da testo normativo a enforcement attivo. Dal 2 agosto 2026 la Commissione europea e le autorita' nazionali iniziano formalmente ad applicare gli obblighi di trasparenza del Regolamento UE 2024/1689: chatbot e sistemi interattivi devono dichiarare esplicitamente di essere AI; contenuto generato da AI deve portare marcature leggibili da macchina; deepfake e testo generato su temi di interesse pubblico devono essere etichettati; sistemi di riconoscimento emozioni e categorizzazione biometrica devono essere dichiarati. Le sanzioni per non conformita' arrivano fino a 15 milioni di euro o il 3% del fatturato globale, con una finestra di tolleranza fino a dicembre 2026 per la marcatura dei sistemi gia' sul mercato. La dilazione del Digital Omnibus di maggio (2 dicembre 2027 per i sistemi Annex III high-risk, vedi aggiornamento 24 giugno) riguardava solo i requisiti piu' onerosi per l'alto rischio: gli obblighi di trasparenza che scattano oggi restano sulla scadenza originale e si applicano trasversalmente a qualunque provider o deployer di sistemi generativi con utenti in UE, incluse le famiglie Claude, GPT e Gemini gia' monitorate dall'AI Office. E' il primo caso in questa scheda di un meccanismo di governance che non dipende da un evento (ban, incidente, accusa) ma da una scadenza normativa pianificata da anni che diventa operativa: a differenza dell'export control USA su Fable 5/Mythos 5 (giugno) o delle direttive cinesi su agent e companion AI (luglio), l'AI Act non sospende ne' limita l'accesso a modelli specifici, ma impone requisiti di disclosure uniformi a tutti i provider attivi in UE indipendentemente da nazionalita' o giurisdizione di origine. [Digest 2026-08-02](../../digest/2026/08/02.md)
 
 ### 2026-07-30
 

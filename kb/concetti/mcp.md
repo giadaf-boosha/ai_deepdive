@@ -3,7 +3,7 @@ name: Model Context Protocol
 aliases: [MCP, Model Context Protocol, protocollo MCP]
 categoria: infrastruttura
 created: 2026-04-28
-last_updated: 2026-06-01
+last_updated: 2026-08-02
 ---
 
 # Model Context Protocol
@@ -156,3 +156,7 @@ Secondo, la sicurezza del deployment enterprise: Claude Managed Agents introduce
 Terzo, la toolchain: l'acquisizione di Stainless da parte di Anthropic ([digest 05-19](../../digest/2026/05/19.md), [digest 05-27](../../digest/2026/05/27.md)) porta in casa l'infrastruttura che generava automaticamente SDK e MCP server da OpenAPI per OpenAI, Google e Cloudflare — un segnale del valore strategico attribuito al layer di generazione MCP.
 
 Sul piano della specifica, oltre alle novita' viste nei digest, vale la pena registrare la maturazione del protocollo intervenuta nel novembre 2025 (primo anniversario): la revisione 2025-11-25 ha introdotto i Tasks asincroni ("call-now, fetch-later"), la URL Mode Elicitation (SEP-1036), il Sampling con tool (SEP-1577), l'Extensions framework e le Authorization Extensions (OAuth client-credentials, SEP-1046), in modo backward compatible. E' inoltre operativo il registry ufficiale registry.modelcontextprotocol.io, che a fine maggio 2026 indicizza dell'ordine di 9.000+ server. La scheda e' stata riscritta in profondita': aggiunte le sezioni su Tasks/elicitation/sampling-con-tool nel "Come funziona", il pattern vendor-managed server in "Varianti", l'esempio asincrono e l'esempio con MCP tunnel in "Esempi pratici", e aggiornate le note operative su versioning e registry. Fonti spec verificate: blog.modelcontextprotocol.io e modelcontextprotocol.io.
+
+### 2026-08-02
+
+Il 28 luglio esce la revisione di specifica 2026-07-28, descritta da Simon Willison come "il cambiamento piu' significativo alla spec MCP da quando e' nata". Il salto architetturale centrale e' il passaggio da un protocollo stateful bidirezionale a un nucleo stateless request/response: un server MCP remoto puo' ora stare dietro un load balancer round-robin qualunque e scalare orizzontalmente come una normale API web, invece di dover mantenere una sessione persistente per client. La revisione aggiunge Multi Round-Trip Requests, routing header-based, risultati di lista cacheable, un framework di extensions formale, e un hardening dell'autorizzazione allineato a deployment OAuth 2.0/OIDC di produzione (sei Specification Enhancement Proposals, inclusa mitigazione mix-up attack) pensato per connettere server MCP a sistemi enterprise come Entra o Okta senza workaround custom. Anthropic ha gia' iniziato il 31 luglio il rollout del supporto alla nuova spec su Claude, e il protocollo ha superato nel 2026 i 400 milioni di download mensili degli SDK (4x sull'anno). Rispetto alla revisione precedente (2025-11-25: Tasks, elicitation, sampling con tool, authorization extensions), il 2026-07-28 tocca il layer piu' basso del protocollo — il modello di trasporto e connessione — non solo le primitive applicative: e' il primo cambiamento che ridefinisce come un server MCP viene deployato e scalato in produzione, non solo cosa puo' esporre. Per chi gestisce server MCP remoti multi-tenant, la migrazione al nucleo stateless rimuove il vincolo di affinita' di sessione che finora richiedeva sticky routing o storage condiviso dello stato tra le istanze del server. [Digest 2026-08-02](../../digest/2026/08/02.md)
