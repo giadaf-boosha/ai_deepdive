@@ -3,7 +3,7 @@ name: Mixture of Experts
 aliases: [MoE, mixture-of-experts, mixture of experts, modello sparso, sparse model, expert routing]
 categoria: architettura
 created: 2026-06-01
-last_updated: 2026-07-28
+last_updated: 2026-08-03
 ---
 
 # Mixture of Experts
@@ -80,6 +80,10 @@ Quando un denso e' la scelta migliore. Per deployment su singola GPU, su edge o 
 Combinare gli assi di efficienza. MoE (sparsita' tra expert), quantizzazione (precisione ridotta dei pesi) e adaptive per-token compute (budget variabile) sono assi ortogonali e cumulabili. Un sistema di serving maturo li combina: un MoE quantizzato ad AWQ 4-bit con allocazione adattiva del compute per token e' lo stato dell'arte dell'ottimizzazione dell'inferenza nel 2026.
 
 ## Aggiornamenti
+
+### 2026-08-03
+
+DeepSeek pubblica il 31 luglio la versione ufficiale di DeepSeek-V4-Flash (build "0731"), succeduta alla preview di aprile (V4-Flash 284B, insieme a V4-Pro 1,6T mai portato a formal release). L'azienda dichiara che l'architettura resta identica alla preview: i guadagni — capacita' agentiche potenziate, supporto nativo alla Responses API, adattamento esplicito per Codex — derivano interamente da una nuova fase di post-training, non da modifiche al backbone MoE. Pricing ridotto fino al 50% rispetto a V4-Pro ($0,0028/$0,14 cache-hit/cache-miss input, $0,28 output per milione di token). Il caso e' il primo tracciato in questa scheda in cui un laboratorio aggiorna sostanzialmente le capacita' agentiche di un MoE gia' rilasciato attraverso il solo post-training, senza toccare parametri totali, attivi o routing — un pattern distinto sia dal caso Kimi K3 (pesi completi rilasciati in anticipo, digest 28 luglio) sia da Inkling (rilascio ex novo con licenza permissiva, digest 16 luglio): qui la leva di miglioramento e' esplicitamente disaccoppiata dall'architettura, coerente con l'osservazione gia' presente in questa scheda che il MoE separa capacita' (parametri) da qualita' realizzata (training), ma estesa qui al post-training incrementale su un modello gia' in produzione invece che al training iniziale. [Digest 2026-08-03](../../digest/2026/08/03.md)
 
 ### 2026-07-28
 

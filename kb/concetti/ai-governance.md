@@ -3,7 +3,7 @@ name: AI Governance
 aliases: [AI governance, governance AI, export control AI, regolazione AI, AI regulation, AI policy, BIS AI, EAR AI models]
 categoria: regolazione
 created: 2026-06-14
-last_updated: 2026-07-30
+last_updated: 2026-08-03
 ---
 
 # AI Governance
@@ -72,6 +72,10 @@ Esempio 3: verifica della Responsible Scaling Policy prima di distribuire un mod
 - Wilson Sonsini, "Colorado Legislature Repeals and Replaces Colorado AI Act: What SB 189 Means for Your Business" (maggio 2026). https://www.wsgr.com/en/insights/colorado-legislature-repeals-and-replaces-colorado-ai-act-what-sb-189-means-for-your-business.html
 
 ## Aggiornamenti
+
+### 2026-08-03
+
+Primo meccanismo di enforcement sovranazionale con potere sanzionatorio diretto sui laboratori frontier. Il 2 agosto 2026 diventano applicabili i poteri di enforcement e sanzione della Commissione europea sui provider di modelli AI general-purpose (GPAI) previsti dall'articolo 101 dell'AI Act: la Commissione e il suo AI Office possono ora richiedere documentazione, condurre valutazioni tecniche dei modelli, imporre misure di mitigazione del rischio, restringere o ritirare un modello dal mercato UE, e comminare multe fino al 3% del fatturato annuo globale o 15 milioni di euro (la cifra maggiore); rifiutare o ostacolare una richiesta della Commissione e' a sua volta sanzionabile. Gli obblighi sostanziali sui provider GPAI erano gia' in vigore dal 2 agosto 2025 senza un meccanismo di enforcement: la data segna quindi l'attivazione dei denti del regolamento, non l'arrivo di nuovi obblighi sostanziali per la maggior parte delle aziende. Gli obblighi piu' onerosi per i sistemi ad alto rischio (art. 9-17 e 26) restano posticipati a dicembre 2027 e agosto 2028 dopo gli emendamenti del Parlamento europeo del 16 giugno; restano pero' vincolanti da oggi la disclosure sui chatbot, la marcatura leggibile da macchina dei contenuti AI-generated e l'etichettatura dei deepfake. Rispetto a tutti i meccanismi di governance gia' tracciati in questa scheda — export control USA unilaterale su singoli modelli (Fable 5/Mythos 5, giugno), regolazione settoriale cinese sugli agenti (Implementation Opinions CAC, luglio), proposte di autoregolamentazione cross-lab dei CEO — l'AI Act introduce qui il primo caso di un organo sovranazionale con potere diretto di richiesta documentale, valutazione tecnica e sanzione economica su un laboratorio frontier operante nel proprio mercato, indipendentemente dalla nazionalita' del laboratorio: Anthropic, OpenAI, Google DeepMind e Meta rientrano tutti nel perimetro GPAI come provider che operano nel mercato UE. Per chi opera modelli GPAI immessi sul mercato prima del 2 agosto 2025, la finestra di adeguamento resta aperta fino al 2 agosto 2027. [Digest 2026-08-03](../../digest/2026/08/03.md)
 
 ### 2026-07-30
 
