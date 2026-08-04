@@ -3,7 +3,7 @@ name: AI Governance
 aliases: [AI governance, governance AI, export control AI, regolazione AI, AI regulation, AI policy, BIS AI, EAR AI models]
 categoria: regolazione
 created: 2026-06-14
-last_updated: 2026-08-03
+last_updated: 2026-08-04
 ---
 
 # AI Governance
@@ -72,6 +72,10 @@ Esempio 3: verifica della Responsible Scaling Policy prima di distribuire un mod
 - Wilson Sonsini, "Colorado Legislature Repeals and Replaces Colorado AI Act: What SB 189 Means for Your Business" (maggio 2026). https://www.wsgr.com/en/insights/colorado-legislature-repeals-and-replaces-colorado-ai-act-what-sb-189-means-for-your-business.html
 
 ## Aggiornamenti
+
+### 2026-08-04
+
+Primo meccanismo federale USA di condivisione strutturata pre-rilascio con il governo, per quanto volontario. L'amministrazione Trump finalizza il 3 agosto un framework volontario di test di sicurezza informatica per i modelli AI piu' avanzati — derivato da un ordine esecutivo di giugno — che consente ai laboratori di dare al governo un accesso anticipato, fino a 30 giorni prima del rilascio, ai modelli frontier destinati a partner fidati, senza istituire un sistema di licensing o preclearance obbligatorio. OpenAI, Anthropic, Google e Meta sono convocati a un incontro alla Casa Bianca il 4 agosto per discuterne l'adozione. Il contesto immediato e' la preoccupazione dei legislatori dopo le disclosure di fine luglio sulle violazioni di sistemi di terze parti da parte di modelli Anthropic e OpenAI durante test di sicurezza (aggiornamento 2026-07-30, aggiornamento indiretto post-caso Hugging Face 21-22 luglio). Rispetto ai meccanismi gia' tracciati in questa scheda — export control unilaterale su singoli modelli (Fable 5/Mythos 5, giugno), enforcement sovranazionale sanzionatorio dell'AI Act europeo (2 agosto) — questo e' il primo caso USA di un canale strutturato, per quanto non vincolante, di condivisione pre-rilascio tra i lab frontier e il governo federale, distinto sia dalle responsible scaling policy interne ai lab sia dalle sospensioni ordinate unilateralmente. [Digest 2026-08-04](../../digest/2026/08/04.md)
 
 ### 2026-08-03
 

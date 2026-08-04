@@ -3,7 +3,7 @@ name: Mixture of Experts
 aliases: [MoE, mixture-of-experts, mixture of experts, modello sparso, sparse model, expert routing]
 categoria: architettura
 created: 2026-06-01
-last_updated: 2026-08-03
+last_updated: 2026-08-04
 ---
 
 # Mixture of Experts
@@ -80,6 +80,10 @@ Quando un denso e' la scelta migliore. Per deployment su singola GPU, su edge o 
 Combinare gli assi di efficienza. MoE (sparsita' tra expert), quantizzazione (precisione ridotta dei pesi) e adaptive per-token compute (budget variabile) sono assi ortogonali e cumulabili. Un sistema di serving maturo li combina: un MoE quantizzato ad AWQ 4-bit con allocazione adattiva del compute per token e' lo stato dell'arte dell'ottimizzazione dell'inferenza nel 2026.
 
 ## Aggiornamenti
+
+### 2026-08-04
+
+Alibaba rilascia il 3 agosto Qwen3.8-Max, il modello piu' grande e capace mai pubblicato dalla famiglia Qwen: MoE multimodale (testo, immagini, video) da 2,4 trilioni di parametri totali con 95 miliardi attivi, contesto fino a 1 milione di token. Su SWE-bench Pro segna 67,7 punti, davanti a GPT-5.6 Sol (64,6) ma dietro Claude Opus 4.8 (69,2). Disponibile via API su Alibaba Cloud Model Studio da subito, pesi aperti attesi "la prossima settimana", pricing a circa il 40% (input) / 24% (output) delle tariffe di Claude Opus 5. E' il terzo rilascio MoE trilione-scala cinese in tre settimane dopo Kimi K3 (18 luglio) e DeepSeek-V4-Flash-0731 (3 agosto), a conferma che lo scaling MoE resta la via dominante dei laboratori cinesi per competere sui benchmark con i modelli proprietari occidentali senza rivelare un'architettura radicalmente nuova. [Digest 2026-08-04](../../digest/2026/08/04.md)
 
 ### 2026-08-03
 
