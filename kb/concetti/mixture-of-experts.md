@@ -3,7 +3,7 @@ name: Mixture of Experts
 aliases: [MoE, mixture-of-experts, mixture of experts, modello sparso, sparse model, expert routing]
 categoria: architettura
 created: 2026-06-01
-last_updated: 2026-08-03
+last_updated: 2026-08-05
 ---
 
 # Mixture of Experts
@@ -80,6 +80,10 @@ Quando un denso e' la scelta migliore. Per deployment su singola GPU, su edge o 
 Combinare gli assi di efficienza. MoE (sparsita' tra expert), quantizzazione (precisione ridotta dei pesi) e adaptive per-token compute (budget variabile) sono assi ortogonali e cumulabili. Un sistema di serving maturo li combina: un MoE quantizzato ad AWQ 4-bit con allocazione adattiva del compute per token e' lo stato dell'arte dell'ottimizzazione dell'inferenza nel 2026.
 
 ## Aggiornamenti
+
+### 2026-08-05
+
+Alibaba presenta il 3 agosto Qwen3.8-Max, MoE multimodale (testo, immagini, video) con 2,4 trilioni di parametri totali e 95 miliardi attivati per richiesta (ratio 1:25, in linea con la fascia alta di sparsita' gia' osservata in questa scheda per Kimi K3 1:56 e LongCat-2.0 1:33), finestra di contesto fino a un milione di token. Su Frontend Code Arena debutta al quarto posto (1.668 punti) dietro Claude Opus 5 Max (1.705) e Kimi K3 Max (1.676), alla pari con Claude Opus 5 High; su Vision Arena e' secondo, a 13 punti da Claude Fable 5 High. Benchmark ufficiali Alibaba: 86,6 Terminal-Bench 2.1, 67,7 SWE-bench Pro, 92,6 GPQA Diamond. Pesi aperti previsti la settimana successiva insieme a una variante piu' piccola Qwen3.8-27B. Il dato nuovo rispetto ai casi gia' tracciati in questa scheda (Kimi K3, GLM-5.2, LongCat-2.0) e' che un MoE cinese di questa scala compete ora su classifiche indipendenti terza parte (Arena.ai) a distanza minima dai modelli Claude di punta, non solo sui benchmark dichiarati dal laboratorio stesso — Bloomberg descrive la finestra come "death zone" competitiva per i produttori di modelli USA. [Digest 2026-08-05](../../digest/2026/08/05.md)
 
 ### 2026-08-03
 

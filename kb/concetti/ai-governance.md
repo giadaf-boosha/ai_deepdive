@@ -3,7 +3,7 @@ name: AI Governance
 aliases: [AI governance, governance AI, export control AI, regolazione AI, AI regulation, AI policy, BIS AI, EAR AI models]
 categoria: regolazione
 created: 2026-06-14
-last_updated: 2026-08-03
+last_updated: 2026-08-05
 ---
 
 # AI Governance
@@ -72,6 +72,10 @@ Esempio 3: verifica della Responsible Scaling Policy prima di distribuire un mod
 - Wilson Sonsini, "Colorado Legislature Repeals and Replaces Colorado AI Act: What SB 189 Means for Your Business" (maggio 2026). https://www.wsgr.com/en/insights/colorado-legislature-repeals-and-replaces-colorado-ai-act-what-sb-189-means-for-your-business.html
 
 ## Aggiornamenti
+
+### 2026-08-05
+
+Anthropic nomina il 4 agosto Mariano-Florentino "Tino" Cuellar — ex giudice della Corte Suprema della California, ex presidente del Carnegie Endowment for International Peace — come primo Chief Global Affairs Officer dell'azienda, con riporto diretto alla presidente Daniela Amodei. Il ruolo copre le relazioni con i governi (inclusa l'amministrazione Trump, che nel 2026 ha gia' imposto controlli sull'AI di Anthropic con la direttiva BIS di giugno su Fable 5/Mythos 5) e la strategia di policy internazionale nei paesi in cui l'azienda si espande. La nomina arriva nella stessa settimana in cui i poteri di enforcement e sanzione della Commissione UE sui modelli GPAI diventano applicabili (2 agosto, aggiornamento precedente in questa scheda). Rispetto a tutti i meccanismi di governance gia' tracciati — export control unilaterale, enforcement sovranazionale UE, proposte di autoregolamentazione dei CEO — questo caso documenta un pattern diverso: un lab frontier che costruisce infrastruttura di policy interna dedicata e di livello C-suite come risposta strutturale e permanente alla pressione regolatoria, non solo dichiarazioni pubbliche o negoziazioni caso per caso. [Digest 2026-08-05](../../digest/2026/08/05.md)
 
 ### 2026-08-03
 
