@@ -1,37 +1,31 @@
 {
   "meta": {
-    "lastUpdated": "2026-08-02",
+    "lastUpdated": "2026-08-09",
     "generatedBy": "Claude Code Routine — ai-deepdive-weekly-radar",
     "sourcesChecked": [
-      "https://www.anthropic.com/news/claude-opus-5",
-      "https://www.axios.com/2026/07/24/anthropic-releases-new-model-opus-5",
-      "https://artificialanalysis.ai/models/claude-opus-5",
-      "https://www.vellum.ai/blog/claude-opus-5-benchmarks-explained",
-      "https://techcrunch.com/2026/07/23/anthropic-updates-claude-voice-mode-with-more-capable-models/",
-      "https://openai.com/index/gpt-5-6/",
-      "https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6/",
-      "https://www.axios.com/2026/07/30/openai-cuts-prices-gpt-terra-luna5",
-      "https://www.cnbc.com/2026/07/30/open-ai-price-cut-gpt.html",
-      "https://thenextweb.com/news/openai-chatgpt-work-agent-launch",
-      "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-6-flash-3-5-flash-lite-3-5-flash-cyber/",
-      "https://venturebeat.com/technology/googles-gemini-3-6-flash-model-cuts-ai-agent-token-costs-by-up-to-65-on-long-horizon-engineering-tasks-and-3-5-pro-is-on-the-way",
-      "https://artificialanalysis.ai/models/gemini-3-6-flash",
-      "https://x.com/muskonomy/status/2077823097194107376",
-      "https://www.marktechpost.com/2026/07/09/meta-superintelligence-labs-releases-muse-spark-1-1/",
-      "https://www.datacamp.com/blog/muse-spark-1-1",
-      "https://artificialanalysis.ai/models/muse-spark-1-1",
-      "https://www.bloomberg.com/news/articles/2026-07-27/what-is-moonshot-ai-s-kimi-k3-model-and-why-is-it-making-waves",
-      "https://www.cnbc.com/2026/07/17/moonshot-ai-kimi-k3-model-openai-anthropic-china.html",
-      "https://openrouter.ai/moonshotai/kimi-k3",
-      "https://www.bloomberg.com/news/articles/2026-07-19/alibaba-s-qwen-unveils-preview-of-flagship-ai-model",
-      "https://www.marktechpost.com/2026/07/19/alibaba-previews-qwen3-8-max-a-2-4-trillion-parameter-multimodal-model-days-after-moonshots-kimi-k3-open-weight-launch/",
-      "https://www.bloomberg.com/news/articles/2026-07-31/deepseek-unveils-public-beta-api-for-flagship-ai-model",
-      "https://api-docs.deepseek.com/updates/",
-      "https://www.techtimes.com/articles/319798/20260706/mistral-ai-targets-frontier-gap-open-weight-model-entering-july-early-access.htm",
+      "https://openai.com/index/improving-gpt-5-6-sol-in-chatgpt/",
+      "https://techcrunch.com/2026/08/06/openai-brings-unlimited-chatgpt-text-chats-to-free-users/",
+      "https://www.macrumors.com/2026/08/06/chatgpt-free-unlimited-text-chats/",
+      "https://www.helpnetsecurity.com/2026/08/07/openai-gpt-5-6-sol-luna-chatgpt-free-limits/",
+      "https://www.marktechpost.com/2026/08/03/alibaba-qwen-releases-qwen3-8-max/",
+      "https://www.bloomberg.com/news/articles/2026-08-03/alibaba-drops-another-china-ai-model-with-breakthrough-performance",
+      "https://www.scmp.com/tech/article/3362738/alibabas-ai-model-qwen38-max-made-widely-accessible-ahead-open-weights-release",
+      "https://www.techrepublic.com/article/news-alibaba-qwen3-8-max-pricing-open-weights/",
+      "https://openrouter.ai/qwen/qwen3.8-max",
+      "https://www.datacamp.com/blog/qwen3-8-max",
+      "https://www.caixinglobal.com/2026-08-01/deepseek-releases-official-v4-flash-model-as-chinas-ai-race-intensifies-102470292.html",
+      "https://www.axios.com/2026/08/01/deepseek-model-cheap-ai-race-to-zero",
+      "https://deepseek.ai/pricing",
+      "https://openrouter.ai/deepseek/deepseek-v4-flash",
+      "https://x.ai/news/grok-voice-think-fast-2",
+      "https://releasebot.io/updates/anthropic/claude",
+      "https://releasebot.io/updates/anthropic/claude-code",
+      "https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook/",
+      "https://workspaceupdates.googleblog.com/2026/07/notebooklm-now-gemini-notebook.html",
       "https://arena.ai/leaderboard/text",
       "https://artificialanalysis.ai/"
     ],
-    "nextScheduledUpdate": "2026-08-09T08:00:00+02:00",
+    "nextScheduledUpdate": "2026-08-16T08:00:00+02:00",
     "benchmarkLinks": [
       {
         "name": "Hugging Face — LLM Leaderboard",
@@ -252,7 +246,7 @@
       "provider": "DeepSeek",
       "name": "DeepSeek V4 Pro",
       "releaseDate": "2026-04-24",
-      "tagline": "Flagship DeepSeek per reasoning e coding. Affiancato dal 31 lug 2026 da DeepSeek V4-Flash, variante piu' veloce ed economica ($0.14/$0.28 per 1M) con GPQA Diamond 90.8%.",
+      "tagline": "Flagship DeepSeek per reasoning e coding. Affiancato da DeepSeek V4-Flash, variante piu' veloce ed economica (in beta pubblica dal 31 lug, GA ufficiale dal 1 ago 2026): $0.14/$0.28 per 1M (cache-miss), GPQA Diamond 90.8%. DeepSeek ha segnalato un rialzo prezzi 'significativo' in arrivo, senza cifre ancora comunicate.",
       "contextWindow": "1M token",
       "apiInputPer1M": 0.435,
       "apiOutputPer1M": 0.87,
@@ -282,32 +276,34 @@
     {
       "id": "qwen",
       "provider": "Alibaba",
-      "name": "Qwen 3.7-Max",
-      "releaseDate": "2026-05-19",
-      "tagline": "Flagship closed-weight Alibaba. Il 19 lug 2026 anticipata in preview Qwen3.8-Max (2.4T parametri multimodali, 'secondo solo a Fable 5' secondo Alibaba); disponibile solo su Token Plan/Qoder in preview, nessun prezzo pubblico ancora.",
+      "name": "Qwen3.8-Max",
+      "releaseDate": "2026-08-03",
+      "tagline": "Nuovo flagship Alibaba, GA dal 3 ago 2026 (succede a Qwen 3.7-Max): 2.4T parametri totali, ~95B attivi, multimodale (testo/immagini/video). Pesi aperti previsti dalla settimana del 10 ago 2026 su Hugging Face/ModelScope insieme al piu' piccolo Qwen3.8-27B — prima volta che un modello della classe Qwen-Max viene rilasciato open-weight.",
       "contextWindow": "1M token",
-      "apiInputPer1M": 2.5,
-      "apiOutputPer1M": 7.5,
+      "apiInputPer1M": 2,
+      "apiOutputPer1M": 6,
       "supportsImages": true,
-      "supportsVideo": false,
+      "supportsVideo": true,
       "supportsCode": true,
       "supportsAgents": true,
       "strengths": [
-        "Context raddoppiato a 1M token vs Qwen3.6 Max (256K)",
-        "Extended-thinking nativo",
-        "Drop-in compatibile con protocollo Anthropic",
-        "Disponibile su Model Studio, OpenRouter, Together"
+        "GPQA Diamond 92.6%: alla pari di Claude Fable 5, dietro solo a GPT-5.6 Sol (94.1%)",
+        "Terminal-Bench 2.1 86.6%: tra i migliori su coding agentico",
+        "Prezzo API tagliato a $2/$6 per 1M (da $2.5/$7.5 di Qwen 3.7-Max), cached input $0.25/M",
+        "Multimodale nativo (testo, immagini, video) su context 1M token",
+        "Prima release Qwen-Max con pesi aperti in arrivo (10 ago 2026)"
       ],
       "weaknesses": [
-        "Closed-weight (a differenza di altri modelli Qwen open)",
-        "Output costoso (7.50/M) rispetto ai concorrenti cinesi"
+        "SWE-Bench Pro 67.7%: sotto Claude Fable 5 (80.3%) sul coding agentico puro",
+        "Pesi ancora non pubblicati al 9 ago 2026 (attesi la settimana successiva)",
+        "Necessita hardware enterprise per self-hosting una volta aperti i pesi (2.4T parametri totali)"
       ],
       "bestFor": [
         "Reasoning agentico di livello enterprise",
         "Task multilingua e mercato APAC",
-        "Analisi long-context"
+        "Analisi long-context e carichi multimodali"
       ],
-      "verdict": "Flagship closed-weight di Alibaba con context da 1M e reasoning agentico, lanciato a maggio 2026.",
+      "verdict": "Qwen3.8-Max (3 ago 2026): nuovo flagship Alibaba, 2.4T parametri (95B attivi), GPQA Diamond 92.6% alla pari di Fable 5, prezzo tagliato a $2/$6 per 1M. Pesi aperti in arrivo dal 10 ago 2026, prima volta per la classe Qwen-Max.",
       "lmarenaRank": 0,
       "domain": "qwen.ai"
     },
@@ -420,12 +416,14 @@
         "Memory cross-chat",
         "Writing blocks e code blocks (Canvas deprecato giu 2026; scrittura e codice ora integrati nella chat)",
         "Generazione immagini",
-        "Modello core GPT-5.6 Sol su piani a pagamento (Free/Go restano su GPT-5.5); GA dal 9 luglio 2026, famiglia Sol $5/$30 (Fast mode: 2.5x piu' veloce a doppio prezzo), Terra $2/$12, Luna $0.20/$1.20 per 1M token (Terra e Luna scontati del 20% e 80% il 30 lug 2026)",
+        "Modello core GPT-5.6 Sol su piani a pagamento; GA dal 9 luglio 2026, famiglia Sol $5/$30 (Fast mode: 2.5x piu' veloce a doppio prezzo), Terra $2/$12, Luna $0.20/$1.20 per 1M token (Terra e Luna scontati del 20% e 80% il 30 lug 2026)",
+        "Free e Go passati a GPT-5.6 Luna come modello default (6 ago 2026); chat testuali senza limite di messaggi dalla settimana del 10 ago 2026 (prima ~10 msg/5h), con pulsante Think per domande piu' difficili",
+        "GPT-5.6 Sol in chat ritarato (6 ago 2026) per maggiore affidabilita' sui fatti e risposte piu' mirate; nuovo slider di effort per scegliere quanto ragionamento dedicare a ogni risposta (Plus/Pro)",
         "ChatGPT Work (9 lug 2026): agente autonomo che completa task multi-ora su piu' app/file (documenti, fogli, presentazioni, siti), con automazioni pianificate ricorrenti; rollout da Pro/Enterprise/Edu a Plus/Business",
         "Sites in ChatGPT: beta pubblica estesa a Pro/Pro Lite/Edu (Plus in arrivo); trasforma contenuti/idee in siti o web app interattivi condivisibili via URL. Non disponibile su Free/Go ne' in EEA/Svizzera/UK al lancio"
       ],
-      "tierGratuito": "Si. Free con limiti: circa 10 messaggi con GPT-5.5 ogni 5 ore (rolling window), poi fallback automatico alla versione mini del modello. ChatGPT Go: $8/mese per accesso espanso con piu' messaggi e upload.",
-      "caveat": "Su Free la finestra di accesso al modello full e' stretta (~10 msg/5h) e si scende al modello mini. I file su Projects/GPT consumano lo storage condiviso (cap 25 GB utente) e la rate di upload e' limitata.",
+      "tierGratuito": "Si. Free ora su GPT-5.6 Luna con chat testuali illimitate dalla settimana del 10 ago 2026 (in precedenza ~10 messaggi/5h con fallback a modello mini). ChatGPT Go: $8/mese per accesso espanso con piu' messaggi e upload.",
+      "caveat": "I limiti restano su upload file, immagini e altri tool anche dopo la rimozione del cap sui messaggi testuali Free. I file su Projects/GPT consumano lo storage condiviso (cap 25 GB utente) e la rate di upload e' limitata.",
       "sweetSpot": "Assistente versatile da pubblicare e condividere con piu' utenti via Custom GPT."
     },
     {
@@ -446,7 +444,8 @@
         "Claude Sonnet 5 (30 giu 2026): default su Free e Pro; $2/$10 intro fino al 31 ago 2026 (poi $3/$15), 1M context, adaptive thinking, SWE-bench 63.2%",
         "Claude Opus 5 (24 lug 2026): nuovo modello a $5/$25 per 1M, 1M context/128K output, prestazioni molto vicine a Fable 5 a meta' del prezzo (SWE-bench Verified ~97%, GPQA Diamond ~93.6%)",
         "Claude Science (beta, 1 lug 2026): workbench di ricerca con agente coordinatore e 60+ skill/connettori (genomica, single-cell, proteomica, biologia strutturale, cheminformatica); agente reviewer che verifica citazioni e calcoli; incluso nei limiti di Pro/Max/Team/Enterprise, nessun pricing API separato",
-        "Voice mode aggiornato (23 lug 2026): oltre a Haiku ora selezionabili anche Sonnet e Opus, connettori (Gmail, Google Calendar, Slack, Canva, Notion) e supporto per 11 lingue; utenti Free limitati a Haiku"
+        "Voice mode aggiornato (23 lug 2026): oltre a Haiku ora selezionabili anche Sonnet e Opus, connettori (Gmail, Google Calendar, Slack, Canva, Notion) e supporto per 11 lingue; utenti Free limitati a Haiku",
+        "Inference hooks in beta per Enterprise (5 ago 2026): enforcement DLP in tempo reale su chat, Claude Code, Cowork e altro, con ispezione di prompt e tool call prima che raggiungano il modello"
       ],
       "tierGratuito": "Si. Free include accesso a Claude Sonnet 5 e Artifacts con limiti di utilizzo giornalieri.",
       "caveat": "Finestra di contesto 200K token in chat sui piani non-Enterprise (500K Enterprise). Nei Projects il knowledge passa a RAG quando cresce (regressione segnalata: switch a ricerca RAG gia' a ~13 file), quindi il recupero completo in una singola risposta non e' garantito. Fable 5 ripristinato il 1 luglio 2026: incluso fino al 50% dei limiti settimanali su Pro/Max/Team fino al 7 luglio, poi via crediti.",
@@ -529,7 +528,7 @@
         "DeepSearch (web + X/Twitter)",
         "Think mode (ragionamento esteso)",
         "Generazione immagini",
-        "Grok Voice (interazione vocale, giu 2026)",
+        "Grok Voice (interazione vocale, giu 2026), aggiornato a Think Fast 2.0 (5 ago 2026): 1.5-2x piu' veloce nei benchmark interni rispetto a Deepgram Nova 3 ed ElevenLabs Scribe v2",
         "Grok Imagine Video 1.5 (image-to-video con audio sincronizzato, API GA)",
         "Speech-to-Text API GA (lug 2026): trascrizione in 25 lingue con batch e streaming",
         "Text-to-Speech API GA (lug 2026)",
@@ -541,16 +540,18 @@
     },
     {
       "id": "notebooklm",
-      "name": "NotebookLM",
-      "url": "https://notebooklm.google.com",
+      "name": "NotebookLM (ora Gemini Notebook)",
+      "url": "https://notebook.google.com",
       "provider": "Google",
-      "cosaFa": "Assistente grounded esclusivamente sulle tue fonti, con Audio/Video Overview, Mind Map e Quiz.",
+      "cosaFa": "Assistente grounded esclusivamente sulle tue fonti, con Audio/Video Overview, Mind Map e Quiz. Rinominato Gemini Notebook il 16 lug 2026 (redirect automatici dal vecchio indirizzo), resta un prodotto standalone.",
       "funzionalita": [
         "Risposte ancorate solo alle fonti caricate (grounded)",
         "Audio Overview e Video Overview",
         "Mind Map",
         "Quiz",
-        "Citazioni alle fonti"
+        "Citazioni alle fonti",
+        "Esecuzione di codice nativa in un secure cloud computer integrato nel notebook (16 lug 2026)",
+        "Export esteso a 11 formati: PNG/SVG (grafici), PDF/DOCX/Markdown, PNG/JPG/GIF, CSV/JSON, XLSX, PPTX"
       ],
       "tierGratuito": "Si. Free: fino a 50 fonti per notebook e circa 3 Audio Overview al giorno.",
       "caveat": "Risponde solo sulle fonti caricate: non e' un assistente generalista. I limiti free su numero di notebook e generazioni audio sono presto raggiunti su lavori intensivi.",
@@ -633,7 +634,9 @@
         "Esecuzione comandi e modifica file",
         "Dynamic workflows (problemi su larga scala, sottoagenti paralleli)",
         "Integrazione con MCP e tool esterni",
-        "Gira su Claude Fable 5 (ripristinato l'1 lug 2026) o Claude Opus 5 (24 lug 2026, opzione a meta' prezzo)"
+        "Gira su Claude Fable 5 (ripristinato l'1 lug 2026) o Claude Opus 5 (24 lug 2026, opzione a meta' prezzo)",
+        "Auto mode ora default su Pro/Max/Team (7 ago 2026)",
+        "Self-hosted environments in beta pubblica (6 ago 2026): sessioni su infrastruttura propria con accesso a rete interna, tool custom e controlli di compliance (Team/Enterprise)"
       ],
       "tierGratuito": "No. Richiede abbonamento Claude (Pro/Max) o accesso via API.",
       "caveat": "Richiede CLI installata e dimestichezza col terminale: non e' uno strumento per non-tecnici. Nessun tier gratuito.",
@@ -1335,6 +1338,10 @@
           "value": 80.3
         },
         {
+          "modelId": "qwen",
+          "value": 67.7
+        },
+        {
           "modelId": "grok",
           "value": 64.7
         },
@@ -1347,16 +1354,12 @@
           "value": 61.5
         },
         {
-          "modelId": "qwen",
-          "value": 60.6
+          "modelId": "gemini",
+          "value": 58.7
         },
         {
           "modelId": "chatgpt",
           "value": 58.6
-        },
-        {
-          "modelId": "gemini",
-          "value": 58.7
         }
       ]
     },
@@ -1397,6 +1400,10 @@
           "value": 93.0
         },
         {
+          "modelId": "qwen",
+          "value": 92.6
+        },
+        {
           "modelId": "gemini",
           "value": 92.2
         },
@@ -1429,6 +1436,29 @@
     }
   ],
   "changelog": [
+    {
+      "date": "2026-08-09",
+      "summary": "Alibaba: modello `qwen` aggiornato da Qwen 3.7-Max a Qwen3.8-Max, GA dal 3 ago 2026 — 2.4T parametri totali (~95B attivi), multimodale (testo/immagini/video), GPQA Diamond 92.6% (alla pari di Fable 5), SWE-Bench Pro 67.7% (score aggiornato in tabella benchmark), Terminal-Bench 2.1 86.6%; prezzo tagliato a $2/$6 per 1M (da $2.5/$7.5); pesi aperti previsti dalla settimana del 10 ago 2026 (prima volta per la classe Qwen-Max). OpenAI: ChatGPT Free/Go passati a GPT-5.6 Luna come modello default (6 ago 2026), chat testuali senza limite di messaggi dalla settimana del 10 ago 2026 (in precedenza ~10 msg/5h con fallback a mini) con nuovo pulsante Think; GPT-5.6 Sol ritarato per affidabilita' sui fatti con nuovo slider di effort per Plus/Pro. DeepSeek: V4-Flash passa da beta pubblica (31 lug) a GA ufficiale (1 ago 2026), stessa architettura del preview di aprile con guadagni da post-training; DeepSeek ha segnalato un rialzo prezzi 'significativo' in arrivo, senza cifre comunicate. Anthropic: inference hooks in beta per Enterprise (5 ago 2026) per DLP in tempo reale su chat/Claude Code/Cowork; Claude Code passa ad auto mode default su Pro/Max/Team (7 ago 2026) e lancia self-hosted environments in beta pubblica (6 ago 2026, Team/Enterprise). SpaceXAI: Grok Voice aggiornato a Think Fast 2.0 (5 ago 2026), 1.5-2x piu' veloce nei benchmark interni vs Deepgram Nova 3 ed ElevenLabs Scribe v2. Google: NotebookLM rinominato Gemini Notebook (16 lug 2026, redirect automatici dal vecchio dominio notebooklm.google.com a notebook.google.com) con esecuzione codice nativa (secure cloud computer) ed export esteso a 11 formati — correzione applicata alla scheda app. Nessuna variazione ufficiale verificabile per Claude Fable 5/Sonnet 5/Opus 5 (nessun nuovo modello), Gemini 3.6 Flash (flagship Flash invariato; Gemini 3.5 Pro resta in test con partner, non GA), Grok 4.5 (Grok 4.6 da 2T parametri ha completato il training a fine luglio secondo fonti non ufficiali, ma non e' ancora rilasciato), Meta Muse Spark 1.1, Kimi K3, GLM-5.2, Mistral Medium 3.5.",
+      "sources": [
+        "https://www.marktechpost.com/2026/08/03/alibaba-qwen-releases-qwen3-8-max/",
+        "https://www.bloomberg.com/news/articles/2026-08-03/alibaba-drops-another-china-ai-model-with-breakthrough-performance",
+        "https://www.scmp.com/tech/article/3362738/alibabas-ai-model-qwen38-max-made-widely-accessible-ahead-open-weights-release",
+        "https://www.techrepublic.com/article/news-alibaba-qwen3-8-max-pricing-open-weights/",
+        "https://openrouter.ai/qwen/qwen3.8-max",
+        "https://openai.com/index/improving-gpt-5-6-sol-in-chatgpt/",
+        "https://techcrunch.com/2026/08/06/openai-brings-unlimited-chatgpt-text-chats-to-free-users/",
+        "https://www.macrumors.com/2026/08/06/chatgpt-free-unlimited-text-chats/",
+        "https://www.helpnetsecurity.com/2026/08/07/openai-gpt-5-6-sol-luna-chatgpt-free-limits/",
+        "https://www.caixinglobal.com/2026-08-01/deepseek-releases-official-v4-flash-model-as-chinas-ai-race-intensifies-102470292.html",
+        "https://www.axios.com/2026/08/01/deepseek-model-cheap-ai-race-to-zero",
+        "https://deepseek.ai/pricing",
+        "https://releasebot.io/updates/anthropic/claude",
+        "https://releasebot.io/updates/anthropic/claude-code",
+        "https://x.ai/news/grok-voice-think-fast-2",
+        "https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook/",
+        "https://workspaceupdates.googleblog.com/2026/07/notebooklm-now-gemini-notebook.html"
+      ]
+    },
     {
       "date": "2026-08-02",
       "summary": "Aggiornamento cumulativo (radar fermo dal 12 lug, coprendo 3 settimane). Anthropic: Claude Opus 5 (24 lug 2026) nuovo modello a $5/$25 per 1M (1M context/128K output), prestazioni molto vicine a Fable 5 a meta' prezzo (SWE-bench Verified ~97%, GPQA Diamond ~93.6%, OSWorld 2.0 70.6%); Claude Code e Claude.ai ora offrono sia Fable 5 sia Opus 5. Voice mode aggiornato (23 lug): Opus/Sonnet/Haiku selezionabili, connettori (Gmail/Calendar/Slack/Canva/Notion), 11 lingue. OpenAI: taglio prezzi GPT-5.6 Terra (-20%, ora $2/$12) e Luna (-80%, ora $0.20/$1.20) il 30 lug 2026, Sol invariato ($5/$30) con nuova Fast mode (2.5x piu' veloce, doppio prezzo); ChatGPT Sites in beta pubblica estesa a Pro/Pro Lite/Edu (non in EEA/Svizzera/UK). Google: modello `gemini` aggiornato a Gemini 3.6 Flash (21 lug 2026), SWE-Bench Pro 58.7% (da 55.1%), output tagliato a $7.50/1M (da $9), -17% token di output medio (fino a -65% su task agentici long-horizon) vs 3.5 Flash; rilasciati anche 3.5 Flash-Lite e 3.5 Flash Cyber (specializzato sicurezza). SpaceXAI: Grok 4.5 ora disponibile in UE dal 16 lug 2026 dopo le verifiche EU AI Act (era bloccato dal lancio dell'8 lug). Meta: cambio di rotta per il flagship, modello `llama` aggiornato da Llama 4 Maverick a Meta Muse Spark 1.1 (9 lug 2026) — primo modello closed-weight di Meta, $1.25/$4.25 per 1M, 1M context multimodale, JobBench 54.7 (supera Opus 4.8 e GPT-5.5), OSWorld-Verified 80.8%, SWE-Bench Pro 61.5%; Llama 4 resta l'opzione open-weight senza eredi annunciati. Moonshot AI: modello `kimi` aggiornato da K2.7 Code a Kimi K3 (16 lug 2026, pesi pubblicati 27 lug) — 2.8T parametri (104B attivi), il piu' grande open-weight disponibile, context esteso a 1M, Terminal-Bench 2.1 88.3%, batte Opus 4.8 e GPT-5.5 su coding/agenti pur restando dietro Fable 5 e GPT-5.6 Sol. DeepSeek: nuova variante V4-Flash (31 lug 2026, beta pubblica API) affiancata a V4 Pro, $0.14/$0.28 per 1M, GPQA Diamond 90.8% (score aggiunto in tabella benchmark). Alibaba: Qwen3.8-Max anticipato in preview il 19 lug 2026 (2.4T parametri multimodali, 'secondo solo a Fable 5' secondo Alibaba), non ancora GA ne' con pricing pubblico — modello `qwen` resta 3.7-Max, nota aggiunta in tagline. Nessuna variazione ufficiale confermata per GLM (rumor non confermati su GLM-5.3/5.5) e Mistral (nuovo modello MoE open-weight in early access, specifiche non ancora divulgate). Score benchmark aggiornati: swe-bench-pro (gemini 55.1->58.7, aggiunto llama/Muse Spark 61.5, rimosso kimi/K2.7 non piu' rappresentativo di K3), gpqa-diamond (aggiunto deepseek 90.8).",
