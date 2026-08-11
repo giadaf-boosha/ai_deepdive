@@ -3,7 +3,7 @@ name: Inference
 aliases: [inference, inferenza, serving, generation, decoding]
 categoria: infrastruttura
 created: 2026-04-28
-last_updated: 2026-07-03
+last_updated: 2026-08-11
 ---
 
 # Inference
@@ -223,3 +223,7 @@ Due sviluppi distinti avanzano il fronte dell'ottimizzazione dell'inference. Com
 ### 2026-07-03
 
 DSpark (DeepSeek + Peking University, 27 giugno, arXiv:2606.19348) porta il confidence-scheduled speculative decoding in produzione su DeepSeek-V4-Pro e V4-Flash: il draft model propone 6 token per passo, il modello target verifica in un singolo forward pass parallelo, con la soglia di accettazione adattata dinamicamente alla confidenza del draft. Il risultato misurato e' uno speedup del 57–85% per singolo utente e un aumento del throughput batch del 51–400%. Il checkpoint e' disponibile su Hugging Face con licenza MIT. Il contributo tecnico rispetto allo speculative decoding standard (Leviathan et al., 2022) e' la schedulazione adattiva della confidenza: invece di una soglia fissa di accettazione, DSpark calibra il budget di verifica in base all'incertezza stimata del draft, riducendo i false reject su token ad alta confidenza. Together AI chiude un Series C da $800 milioni a $8,3 miliardi di valutazione (1 luglio, guidato da Aramco Ventures) con bookings annui a $1,15 miliardi e volume open-source triplicato nell'ultimo anno. Together e' il neocloud di riferimento per l'inference su modelli open-weight (Llama, Mistral, Qwen, DeepSeek): il round consolida l'ipotesi che il mercato dell'inference per modelli open-source sia abbastanza grande da sostenere un'azienda a valutazione multi-miliardaria indipendente dai provider frontier. [Digest 2026-07-03](../../digest/2026/07/03.md)
+
+### 2026-08-11
+
+Meta rilascia Muse Glimmer (10 agosto), modello denso da 30 miliardi di parametri per workflow agentici locali always-on, che combina due tecniche gia' tracciate in questo file — quantizzazione a 4 bit e speculative decoding — in un unico pacchetto pensato per un consumatore, non per un datacenter. La versione a 4 bit comprime il modello sotto i 20 GB, entro 24-32 GB di memoria unificata consumer, con speculative decoding block-level per mantenere la latenza compatibile con un loop agentico reale (non solo una chat sincrona). Meta dichiara supporto nativo a Ollama, LM Studio, llama.cpp, MLX, ExecuTorch, vLLM e SGLang, con i pesi pubblicati su Hugging Face sotto licenza Apache 2.0. Il caso conferma la traiettoria gia' osservata con RTX Spark (digest 1 giugno) e con i modelli 70B-120B in memoria unificata: la soglia hardware per far girare interamente in locale un modello capace di reggere un loop agentico completo, non solo di rispondere a un prompt, continua a scendere, spostando parte del calcolo agentico dal cloud al dispositivo del cliente. [Digest 2026-08-11](../../digest/2026/08/11.md)
