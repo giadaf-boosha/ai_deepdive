@@ -4,7 +4,7 @@
 
 ## Indice
 
-25 concetti documentati.
+26 concetti documentati.
 
 | Concetto | Categoria | Aliases | Ultimo aggiornamento |
 |---|---|---|---|
@@ -32,4 +32,5 @@
 | [Tokenization](./concetti/tokenization.md) | tecnica | tokenization, tokenizzazione, BPE, subword, byte-pair encoding | 2026-06-01 |
 | [Tool use / Function calling](./concetti/tool-use.md) | tecnica | tool use, function calling, tool calling, chiamata di funzione | 2026-07-03 |
 | [Vector database](./concetti/vector-database.md) | infrastruttura | vector database, vector DB, vector store, database vettoriale, ANN index | 2026-06-01 |
+| [Watermarking](./concetti/watermarking.md) | tecnica | watermarking, filigrana digitale, AI text watermarking, digital watermarking, content provenance, provenienza dei contenuti, C2PA | 2026-08-12 |
 | [World Models](./concetti/world-models.md) | architettura | world model, world foundation model, WFM, modello del mondo, physical AI world model | 2026-06-21 |
