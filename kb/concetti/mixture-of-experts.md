@@ -3,7 +3,7 @@ name: Mixture of Experts
 aliases: [MoE, mixture-of-experts, mixture of experts, modello sparso, sparse model, expert routing]
 categoria: architettura
 created: 2026-06-01
-last_updated: 2026-08-05
+last_updated: 2026-08-13
 ---
 
 # Mixture of Experts
@@ -80,6 +80,10 @@ Quando un denso e' la scelta migliore. Per deployment su singola GPU, su edge o 
 Combinare gli assi di efficienza. MoE (sparsita' tra expert), quantizzazione (precisione ridotta dei pesi) e adaptive per-token compute (budget variabile) sono assi ortogonali e cumulabili. Un sistema di serving maturo li combina: un MoE quantizzato ad AWQ 4-bit con allocazione adattiva del compute per token e' lo stato dell'arte dell'ottimizzazione dell'inferenza nel 2026.
 
 ## Aggiornamenti
+
+### 2026-08-13
+
+Alibaba pubblica il 12 agosto su Hugging Face (`Qwen/Qwen3.8-2.4T-A95B`) i pesi aperti di Qwen3.8-Max, gia' tracciato in questa scheda il 5 agosto, ma la versione scaricabile e' un checkpoint ridotto rispetto a quanto annunciato al lancio: solo testo (`Qwen3_5MoeForCausalLM`, nessun `vision_config`, zero tensori vision nell'indice dei pesi), thinking obbligatorio e non disattivabile, senza la finestra di contesto a un milione di token che caratterizza Qwen3.8-Max servito via QwenCloud. I 2,4 trilioni di parametri totali e i 95 miliardi attivi per token (ratio 1:25, invariato rispetto alla voce del 5 agosto) restano gli stessi della versione proprietaria — cambia solo la superficie di funzionalita' esposta nei pesi pubblici. E' il primo caso in questa scheda in cui un laboratorio rilascia pesi aperti di un modello Max-class rimuovendo funzionalita' dichiarate al lancio (vision, contesto lungo, modalita' non-thinking) invece di limitarsi a un ritardo sulla data, a differenza dei casi Kimi K3 (pesi completi in anticipo, 28 luglio) e DeepSeek-V4-Flash (pubblicazione in ritardo ma feature-complete, 3 agosto) gia' tracciati qui. [Digest 2026-08-13](../../digest/2026/08/13.md)
 
 ### 2026-08-05
 

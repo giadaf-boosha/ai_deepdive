@@ -3,7 +3,7 @@ name: AI Governance
 aliases: [AI governance, governance AI, export control AI, regolazione AI, AI regulation, AI policy, BIS AI, EAR AI models]
 categoria: regolazione
 created: 2026-06-14
-last_updated: 2026-08-05
+last_updated: 2026-08-13
 ---
 
 # AI Governance
@@ -72,6 +72,10 @@ Esempio 3: verifica della Responsible Scaling Policy prima di distribuire un mod
 - Wilson Sonsini, "Colorado Legislature Repeals and Replaces Colorado AI Act: What SB 189 Means for Your Business" (maggio 2026). https://www.wsgr.com/en/insights/colorado-legislature-repeals-and-replaces-colorado-ai-act-what-sb-189-means-for-your-business.html
 
 ## Aggiornamenti
+
+### 2026-08-13
+
+Due sviluppi della settimana 7-11 agosto estendono in direzioni distinte i meccanismi di governance gia' tracciati in questa scheda. OpenAI rivela il 7 agosto di aver messo in pausa ogni attivita' interna su Astra, il proprio prossimo modello di punta, non ancora conforme a un set rafforzato di controlli di sicurezza: valutazioni preliminari non escludono che il modello superi per la prima volta la soglia "Critical" di rischio cyber del Preparedness Framework (identificare e sviluppare autonomamente exploit zero-day su sistemi critici reali "hardened", o ideare ed eseguire end-to-end attacchi inediti da un obiettivo di alto livello) — soglia che i modelli precedenti, incluso GPT-5.6 Sol, non avevano raggiunto (classificati "High"). E' la prima volta che un laboratorio frontier annuncia pubblicamente di rallentare lo sviluppo di un modello specificamente per rischio cybersecurity, un'istanza concreta della sezione "Responsible Scaling Policy" di questa scheda: non piu' un framework dichiarato in astratto, ma un caso in cui la soglia numerica cambia visibilmente il ritmo di rilascio di un lab, in modo analogo a come la direttiva BIS di giugno ha cambiato la disponibilita' di Fable 5/Mythos 5 — qui pero' la sospensione e' auto-imposta dal laboratorio stesso in base al proprio framework, non ordinata da un governo. In parallelo, l'11 agosto Anthropic annuncia che marchiera' con watermark invisibili leggibili da macchina tutto il testo generato da Claude a livello globale, non solo per gli utenti europei, per conformarsi al Transparency Code dell'AI Act UE (vincolante dal 2 agosto, aggiornamento del 3 agosto in questa scheda); per i file usa lo standard aperto C2PA, allineandosi a Black Forest Labs, Google, Meta, Microsoft, OpenAI e Synthesia. E' il primo caso in questa scheda in cui un requisito di trasparenza dell'AI Act si traduce in una modifica di prodotto applicata mondialmente da un lab frontier, invece che limitata al solo mercato UE — un pattern di compliance-by-default distinto sia dall'enforcement sovranazionale (2 agosto) sia dall'infrastruttura di policy dedicata costruita da Anthropic con la nomina di Cuellar (5 agosto). [Digest 2026-08-13](../../digest/2026/08/13.md)
 
 ### 2026-08-05
 
