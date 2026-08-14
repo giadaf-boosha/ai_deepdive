@@ -3,7 +3,7 @@ name: Mixture of Experts
 aliases: [MoE, mixture-of-experts, mixture of experts, modello sparso, sparse model, expert routing]
 categoria: architettura
 created: 2026-06-01
-last_updated: 2026-08-13
+last_updated: 2026-08-14
 ---
 
 # Mixture of Experts
@@ -80,6 +80,10 @@ Quando un denso e' la scelta migliore. Per deployment su singola GPU, su edge o 
 Combinare gli assi di efficienza. MoE (sparsita' tra expert), quantizzazione (precisione ridotta dei pesi) e adaptive per-token compute (budget variabile) sono assi ortogonali e cumulabili. Un sistema di serving maturo li combina: un MoE quantizzato ad AWQ 4-bit con allocazione adattiva del compute per token e' lo stato dell'arte dell'ottimizzazione dell'inferenza nel 2026.
 
 ## Aggiornamenti
+
+### 2026-08-14
+
+NVIDIA rilascia l'11 agosto Nemotron 3.5 Lightning, MoE open da 30 miliardi di parametri totali con 3 miliardi attivi (ratio 1:10, in linea con Cohere North Mini Code gia' tracciato qui il 20 giugno), pensato per workload agentici always-on a bassa latenza. Il rilascio arriva insieme a NeMo Switchyard, libreria open source che instrada dinamicamente ogni step di un workflow agentico verso il modello piu' adatto per costo/prestazioni, con compatibilita' nativa per le API OpenAI e Anthropic — un caso complementare al MoE piuttosto che alternativo: il MoE riduce il costo per token dentro un singolo modello, il routing tra modelli riduce il costo per task scegliendo il modello giusto a monte. LangChain riporta una riduzione del 74% dei costi su task multi-turno instradando solo il 7% delle chiamate a un modello frontier. [Digest 2026-08-14](../../digest/2026/08/14.md)
 
 ### 2026-08-13
 
