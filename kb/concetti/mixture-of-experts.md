@@ -3,7 +3,7 @@ name: Mixture of Experts
 aliases: [MoE, mixture-of-experts, mixture of experts, modello sparso, sparse model, expert routing]
 categoria: architettura
 created: 2026-06-01
-last_updated: 2026-08-13
+last_updated: 2026-08-15
 ---
 
 # Mixture of Experts
@@ -80,6 +80,10 @@ Quando un denso e' la scelta migliore. Per deployment su singola GPU, su edge o 
 Combinare gli assi di efficienza. MoE (sparsita' tra expert), quantizzazione (precisione ridotta dei pesi) e adaptive per-token compute (budget variabile) sono assi ortogonali e cumulabili. Un sistema di serving maturo li combina: un MoE quantizzato ad AWQ 4-bit con allocazione adattiva del compute per token e' lo stato dell'arte dell'ottimizzazione dell'inferenza nel 2026.
 
 ## Aggiornamenti
+
+### 2026-08-15
+
+Z.ai rilascia il 14 agosto GLM-5.3 mantenendo lo stesso modello base di GLM-5.2 (gia' tracciato in questa scheda il 20 giugno, 744B-A40B, MIT), con ogni guadagno di capacita' — coding e cybersecurity — ottenuto da un nuovo ciclo di post-training, senza toccare parametri totali, attivi o routing. Sul coding, +50% dichiarato sul benchmark interno Z.ai Code Bench, Terminal-Bench 3.0 da 4,6 a 28,3, DeepSWE v1.1 da 46,2 a 66,9. Sul fronte cybersecurity, Z.ai dichiara che la capacita' offensiva e' cresciuta piu' velocemente del previsto durante lo scaling del post-training (84,5% su CyberGym, sopra Claude Mythos 5 e GPT-5.6 Sol), al punto da posticipare la pubblicazione dei pesi di circa due settimane per completare verifiche e hardening di sicurezza. E' il secondo caso in questa scheda, dopo DeepSeek-V4-Flash (3 agosto), in cui un laboratorio cinese ottiene un salto di capacita' sostanziale su un MoE gia' rilasciato attraverso il solo post-training — ma il primo in cui il salto include una capacita' offensiva non pianificata abbastanza rilevante da ritardare il rilascio dei pesi aperti, un punto di contatto diretto con il filone di soglie di rischio cyber gia' tracciato in `kb/concetti/ai-governance.md` (caso Astra) e in `kb/concetti/agent-sandboxing.md`. [Digest 2026-08-15](../../digest/2026/08/15.md)
 
 ### 2026-08-13
 
