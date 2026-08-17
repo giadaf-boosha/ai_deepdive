@@ -3,7 +3,7 @@ name: AI Governance
 aliases: [AI governance, governance AI, export control AI, regolazione AI, AI regulation, AI policy, BIS AI, EAR AI models]
 categoria: regolazione
 created: 2026-06-14
-last_updated: 2026-08-13
+last_updated: 2026-08-17
 ---
 
 # AI Governance
@@ -72,6 +72,10 @@ Esempio 3: verifica della Responsible Scaling Policy prima di distribuire un mod
 - Wilson Sonsini, "Colorado Legislature Repeals and Replaces Colorado AI Act: What SB 189 Means for Your Business" (maggio 2026). https://www.wsgr.com/en/insights/colorado-legislature-repeals-and-replaces-colorado-ai-act-what-sb-189-means-for-your-business.html
 
 ## Aggiornamenti
+
+### 2026-08-17
+
+Due sviluppi del 14-16 agosto aggiungono alla scheda il primo caso in cui un lab frontier rivela un innalzamento della propria stima di rischio interna e, quasi in contemporanea, il proprio CEO difende pubblicamente le proposte di regolazione contro il backlash crescente. Anthropic pubblica il 14 agosto il secondo Risk Report della propria serie (il primo a febbraio 2026), primo a valutare anche modelli solo interni insieme a quelli gia' rilasciati: il rischio di danno catastrofico da disallineamento in contesti ad alto rischio sale da "molto basso" a "basso", non per un singolo incidente ma perche' il benchmark interno usato per misurare la soglia critica si e' saturato proprio mentre l'azienda osserva segnali di accelerazione delle capacita' che quella soglia doveva intercettare — la prima volta in questa scheda che il segnale di rischio riguarda l'affidabilita' dello strumento di misura, non la capacita' di un singolo modello (a differenza del caso Astra, 7 agosto, dove il rallentamento e' pre-emptive su un modello specifico). Il report rivela inoltre per la prima volta pubblicamente Model 2, un modello interno non rilasciato "leggermente piu' capace" del modello di punta Mythos 5, senza piani di rilascio esterno dichiarati, e segnala che l'intero traffico dei fornitori di feedback umano (133 milioni di scambi) ha girato per un periodo senza i classificatori di blocco biologico attivi, poi corretto senza evidenza di abuso concreto. Notizia del 14 agosto, giorno privo di digest nella cadenza della routine: recuperata qui come missed coverage. Due giorni dopo, il 16 agosto, Dario Amodei dichiara a TechCrunch che il backlash pubblico sull'AI e' "fondamentalmente una crisi di fiducia" (le persone sospettano sistematicamente che aziende e governi stiano "architettando un nuovo modo per fregarle"), non un problema di comunicazione dei lab; difende le proprie proposte di policy come deliberatamente calibrate a svantaggiare i grandi lab frontier a vantaggio dei concorrenti piu' piccoli, sostiene che un framework ben disegnato puo' lasciare spazio ai modelli open-weight affrontandone i rischi specifici, e appoggia esplicitamente il framework di pre-launch vetting che l'amministrazione Trump starebbe per finalizzare — un meccanismo di revisione governativa dei modelli piu' avanzati prima del rilascio pubblico. Rispetto alle proposte di autoregolamentazione gia' tracciate in questa scheda (Hassabis/FINRA, digest 15 luglio; Amodei/FAA, digest 21 giugno), la novita' e' che la difesa arriva ora in risposta diretta al backlash pubblico crescente, nello stesso momento in cui il Risk Report dell'azienda documenta internamente un innalzamento della propria stima di rischio — la prima volta che il pattern "il lab chiede di essere regolato" e il pattern "il lab rivela un rischio interno in crescita" convergono nella stessa finestra di 48 ore. [Digest 2026-08-17](../../digest/2026/08/17.md)
 
 ### 2026-08-13
 
