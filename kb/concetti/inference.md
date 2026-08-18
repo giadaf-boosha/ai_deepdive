@@ -3,7 +3,7 @@ name: Inference
 aliases: [inference, inferenza, serving, generation, decoding]
 categoria: infrastruttura
 created: 2026-04-28
-last_updated: 2026-07-03
+last_updated: 2026-08-18
 ---
 
 # Inference
@@ -223,3 +223,7 @@ Due sviluppi distinti avanzano il fronte dell'ottimizzazione dell'inference. Com
 ### 2026-07-03
 
 DSpark (DeepSeek + Peking University, 27 giugno, arXiv:2606.19348) porta il confidence-scheduled speculative decoding in produzione su DeepSeek-V4-Pro e V4-Flash: il draft model propone 6 token per passo, il modello target verifica in un singolo forward pass parallelo, con la soglia di accettazione adattata dinamicamente alla confidenza del draft. Il risultato misurato e' uno speedup del 57–85% per singolo utente e un aumento del throughput batch del 51–400%. Il checkpoint e' disponibile su Hugging Face con licenza MIT. Il contributo tecnico rispetto allo speculative decoding standard (Leviathan et al., 2022) e' la schedulazione adattiva della confidenza: invece di una soglia fissa di accettazione, DSpark calibra il budget di verifica in base all'incertezza stimata del draft, riducendo i false reject su token ad alta confidenza. Together AI chiude un Series C da $800 milioni a $8,3 miliardi di valutazione (1 luglio, guidato da Aramco Ventures) con bookings annui a $1,15 miliardi e volume open-source triplicato nell'ultimo anno. Together e' il neocloud di riferimento per l'inference su modelli open-weight (Llama, Mistral, Qwen, DeepSeek): il round consolida l'ipotesi che il mercato dell'inference per modelli open-source sia abbastanza grande da sostenere un'azienda a valutazione multi-miliardaria indipendente dai provider frontier. [Digest 2026-07-03](../../digest/2026/07/03.md)
+
+### 2026-08-18
+
+OpenAI lancia in preview limitata Ultrafast (13 agosto, missed coverage, 4 fonti: OpenAI, TechCrunch, Help Net Security, Neowin), un tier di velocita' per GPT-5.6 Sol servito su hardware Cerebras Wafer-Scale Engine invece delle GPU Nvidia standard, con throughput dichiarato fino a 750 token/secondo in output — fino a 14 volte piu' veloce del tier standard, 11 volte piu' veloce di Claude Fable 5 e 5 volte piu' veloce di Claude Opus 4.8 in fast mode secondo Cerebras. Sul benchmark Humanity's Last Exam (2.500 domande), Sol Ultrafast completa l'intero set in 11 ore e 11 minuti contro le 78 ore e 27 minuti di Fable 5, con accuratezza comparabile. L'accesso e' razionato dalla capacita' Cerebras disponibile: OpenAI seleziona i clienti per fit del workload, con lancio prima in API. Il caso e' il primo tracciato in questa scheda in cui un lab frontier instrada un tier di velocita' ufficiale verso un fornitore di silicio esterno invece che sul proprio stack GPU interno, diversamente dai tier di velocita' precedenti (Claude Opus 4.8 fast mode, 9 giugno, ottenuto internamente via distillazione e profilo di sampling separato, non hardware dedicato). Estende anche il filone hardware wafer-scale gia' tracciato (IPO Cerebras, 15 maggio, WSE-3 fino a 2.000 tok/s dichiarati su modelli 70B): qui la capacita' WSE-3 diventa per la prima volta un tier di prodotto venduto da un lab terzo (OpenAI) invece che dalla sola Cerebras. [Digest 2026-08-18](../../digest/2026/08/18.md)
