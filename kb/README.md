@@ -9,7 +9,7 @@
 | Concetto | Categoria | Aliases | Ultimo aggiornamento |
 |---|---|---|---|
 | [AI Governance](./concetti/ai-governance.md) | regolazione | AI governance, governance AI, export control AI, regolazione AI, AI regulation, AI policy, BIS AI, EAR AI models | 2026-08-13 |
-| [Agent harness](./concetti/agent-harness.md) | infrastruttura | agent harness, harness, scaffolding agentico, agent runtime | 2026-06-29 |
+| [Agent harness](./concetti/agent-harness.md) | infrastruttura | agent harness, harness, scaffolding agentico, agent runtime | 2026-08-22 |
 | [Agent sandboxing](./concetti/agent-sandboxing.md) | infrastruttura | sandboxing, containment, isolamento agenti, agent containment, esecuzione isolata, sandbox | 2026-08-10 |
 | [AI Agent](./concetti/agent.md) | paradigma | agent, AI agent, agente autonomo, autonomous agent | 2026-06-28 |
 | [Chain of Thought / Reasoning](./concetti/chain-of-thought.md) | tecnica | chain of thought, CoT, catena di pensiero, reasoning, ragionamento esplicito, extended thinking | 2026-07-23 |

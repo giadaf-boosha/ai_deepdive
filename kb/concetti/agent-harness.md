@@ -3,7 +3,7 @@ name: Agent harness
 aliases: [agent harness, harness, scaffolding agentico, agent runtime]
 categoria: infrastruttura
 created: 2026-04-28
-last_updated: 2026-06-29
+last_updated: 2026-08-22
 ---
 
 # Agent harness
@@ -139,6 +139,10 @@ Cost governance. In un harness multi-utente i costi possono esplodere. Un agent 
 Sicurezza dei tool. La superficie d'attacco principale di un harness e' nei tool che modificano stato: shell, send-mail, db-write, file-write. Best practice: separare tool read-only da tool write; richiedere conferma utente per i write su prima esecuzione di una sessione; permission model dichiarativo (es. allowlist di comandi shell, denylist di path). Per agenti che eseguono codice, il sandbox e' obbligatorio in qualunque deployment toccato da utenti finali; la documentazione Anthropic del 30 maggio 2026 mostra che la scelta del meccanismo dipende dal contesto di esecuzione (gVisor server-side, Seatbelt/Bubblewrap in locale, VM full-OS per ambienti desktop emulati). In ambito enterprise, separare il loop dall'esecuzione dei tool (self-hosted sandbox) e accedere ai sistemi interni via gateway outbound-only (MCP tunnel) e' il pattern di riferimento per non esporre il perimetro aziendale.
 
 ## Aggiornamenti
+
+### 2026-08-22
+
+NVIDIA pubblica AVO (21 agosto, 5+ fonti), architettura general-purpose per agenti long-horizon che porta lo stesso Claude Opus 5 dal 30% al 100% su ARC-AGI-3 (183 livelli, 25 ambienti pubblici, 6.624 azioni totali contro le 7.542 di VISTA, la configurazione precedente basata su input immagine anziche' griglia testuale 64x64). E' la conferma empirica piu' netta finora, a livello di benchmark pubblico e non solo di paper accademico, che il differenziale prestazionale vive nell'harness — memoria persistente, supervisione, loop di esecuzione — e non nel modello sottostante. [Digest 2026-08-22](../../digest/2026/08/22.md)
 
 ### 2026-05-02
 
