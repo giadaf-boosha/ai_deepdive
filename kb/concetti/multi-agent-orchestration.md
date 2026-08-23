@@ -3,7 +3,7 @@ name: Multi-agent orchestration
 aliases: [multi-agent, sistema multi-agente, orchestrazione di agenti, agent swarm, subagenti, sub-agent orchestration]
 categoria: paradigma
 created: 2026-06-01
-last_updated: 2026-07-06
+last_updated: 2026-08-21
 ---
 
 # Multi-agent orchestration
@@ -84,6 +84,10 @@ Eterogeneita' dei modelli. Se l'obiettivo e' affidabilita' (non solo throughput)
 Parallelismo non e' gratis. Il fan-out riduce la latenza percepita ma il costo in token e in chiamate scala linearmente con il numero di worker. Un benchmark valutato "senza cap al numero di chiamate o token" (come nel caveat dell'AI Co-Mathematician) non e' comparabile a parita' di costo con un sistema vincolato: nel valutare sistemi multi-agente, fissare il budget di inferenza e' parte della metodologia, non un dettaglio.
 
 ## Aggiornamenti
+
+### 2026-08-21
+
+Slack lancia Slack Code (21 agosto), primo caso tracciato in questa scheda di orchestrazione multi-agente cross-vendor dentro un'unica superficie di collaborazione con un team umano. Taggare un agente in un canale Slack Code apre uno spazio dedicato con tab per conversazione, piano, diff di codice e anteprima live; agenti di fornitori distinti — Claude Code (Anthropic), Devin (Cognition), GitHub Copilot, l'agente Vercel, ChatGPT (OpenAI) come partner di lancio — condividono la stessa interfaccia e gli stessi controlli di sicurezza: sign-off umano obbligatorio per azioni ad alto rischio come il merge in produzione, e la possibilita' per qualsiasi membro del canale di mettere in pausa o terminare l'agente a meta' task. La differenza rispetto a tutti i pattern gia' tracciati in questa scheda (Dynamic Workflows, Copilot Agent Mode, MDASH, ARIS) e' strutturale: non c'e' un orchestratore che decompone il task e assegna sotto-task a worker della stessa famiglia, ma piu' prodotti concorrenti e indipendenti, ciascuno con il proprio loop e il proprio harness, che operano nello stesso canale visibile a un team umano, con i gate di sicurezza (pausa, kill, sign-off) imposti dalla piattaforma di collaborazione (Slack) invece che dal singolo agente o dal suo vendor. E' un caso limite del principio di sicurezza gia' registrato in questa scheda — ogni subagente va accoppiato a `agent-sandboxing.md` — applicato qui non a un singolo sistema multi-agente ma a un ecosistema aperto di agenti eterogenei con controlli uniformi imposti a livello di piattaforma terza. [Digest 2026-08-23](../../digest/2026/08/23.md)
 
 ### 2026-06-02
 

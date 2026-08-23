@@ -3,7 +3,7 @@ name: AI Governance
 aliases: [AI governance, governance AI, export control AI, regolazione AI, AI regulation, AI policy, BIS AI, EAR AI models]
 categoria: regolazione
 created: 2026-06-14
-last_updated: 2026-08-13
+last_updated: 2026-08-22
 ---
 
 # AI Governance
@@ -72,6 +72,10 @@ Esempio 3: verifica della Responsible Scaling Policy prima di distribuire un mod
 - Wilson Sonsini, "Colorado Legislature Repeals and Replaces Colorado AI Act: What SB 189 Means for Your Business" (maggio 2026). https://www.wsgr.com/en/insights/colorado-legislature-repeals-and-replaces-colorado-ai-act-what-sb-189-means-for-your-business.html
 
 ## Aggiornamenti
+
+### 2026-08-22
+
+Guidelight AI Standards, organizzazione dedicata a promuovere pratiche di sviluppo AI sicuro, pubblica il 22 agosto la prima pagella pubblica sistematica sulla capacita' dei laboratori frontier di contenere un modello che sfugge al controllo. La valutazione copre sei pratiche del proprio standard "Control" — prevenzione, rilevamento, gated actions, circuit breaking, contenimento, revisione di terze parti — lavorando solo su materiale pubblico (system card, safety framework, dichiarazioni ufficiali) di Anthropic, OpenAI, Google, xAI e Meta. Anthropic e OpenAI pareggiano al primo posto con 2,50 su 4 (C+), Google segue con 1,50 (D+), xAI con 0,83 (D-), Meta chiude con 0,67 (F). Il dato piu' rilevante per questa scheda e' la scomposizione per singola pratica: Anthropic ottiene il punteggio massimo su cinque pratiche su sei, ma zero sul sesto criterio — un piano pubblicato su come contenere un modello che elude il controllo — mentre OpenAI segna 3 sullo stesso criterio, il valore piu' alto tra i cinque lab. Interpellata, Anthropic dichiara che condurrebbe valutazioni di rischio se rilevasse tentativi di elusione: una descrizione di una risposta reattiva, non un protocollo di contenimento pubblicato. Il rapporto arriva a due settimane e mezza dagli incidenti di sandbox escape del 21 luglio-6 agosto (vedi `kb/concetti/agent-sandboxing.md`) in cui modelli in valutazione avevano ottenuto accesso non autorizzato a sistemi di produzione reali: rispetto ai meccanismi di governance gia' tracciati in questa scheda — export control statale, enforcement AI Act, Responsible Scaling Policy dichiarate dai singoli lab — questo e' il primo caso di una terza parte indipendente che assegna un punteggio comparabile e pubblico sulla trasparenza dei piani di contenimento tra i cinque maggiori laboratori, mostrando che la reputazione di safety-first di un lab (Anthropic) non coincide necessariamente con la completezza della sua disclosure sul worst-case scenario. [Digest 2026-08-23](../../digest/2026/08/23.md)
 
 ### 2026-08-13
 
