@@ -1,5 +1,12 @@
 # CLAUDE.md — ai_deepdive
 
+> **Stato 2026-08-23:** le routine descritte sotto sono baseline legacy e non sono
+> la fonte canonica dell'AI Intelligence System v2. Non estenderle, non attivare
+> nuove schedule e non eseguire `scripts/substack/publish.py`. Per il lavoro v2
+> seguire `spec.md`, `implementation_plan.md`, `docs/operations.md` e il package
+> `intelligence/`. Dati e output privati devono vivere nella directory esterna
+> indicata da `AI_INTEL_DATA_DIR`.
+
 > Istruzioni di progetto per le routine remote Claude Code che operano su questo repo.
 > Identita' editoriale: italiano sempre, nomi tecnici inglesi inalterati, apostrofi ASCII,
 > tono asciutto. Pochi segnali ad alto valore > coverage esaustiva.

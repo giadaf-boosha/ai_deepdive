@@ -1,0 +1,52 @@
+[system]
+timezone = "Europe/Rome"
+owner_email = "giada.f@me.com"
+daily_reading_minutes = 30
+max_digest_events = 10
+
+[delivery]
+sender = "giada.f@me.com"
+recipient_allowlist = ["giada.f@me.com"]
+smtp_host = "smtp.gmail.com"
+smtp_port = 465
+
+[cost_limits]
+x_max_posts_per_run = 300
+x_max_pages_per_run = 10
+x_monthly_budget_usd = 25.0
+x_post_read_unit_usd = 0.005
+x_owned_read_unit_usd = 0.001
+x_user_read_unit_usd = 0.010
+
+[editorial]
+lanes = [
+  "research",
+  "agents_coding",
+  "product",
+  "labs_business",
+  "business_strategy",
+  "marketing",
+  "education",
+  "philosophy",
+  "neuroscience",
+  "linguistics_semantics",
+  "mathematics",
+  "management_leadership",
+  "spatial_embodied_ai",
+]
+bridge_topics = [
+  "agency",
+  "intentionality",
+  "world models",
+  "spatial intelligence",
+  "embodied AI",
+  "interpretability",
+  "language as representation",
+  "automation augmentation",
+]
+
+# I segreti non vanno inseriti qui. Usare esclusivamente variabili d'ambiente:
+# AI_INTEL_DATA_DIR, X_BEARER_TOKEN, X_USER_ACCESS_TOKEN,
+# ICLOUD_IMAP_USERNAME, ICLOUD_IMAP_PASSWORD, GMAIL_IMAP_USERNAME,
+# GMAIL_IMAP_PASSWORD, SMTP_USERNAME, SMTP_PASSWORD,
+# EDITORIAL_PROVIDER_TOKEN.

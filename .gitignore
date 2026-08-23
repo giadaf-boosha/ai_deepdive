@@ -3,6 +3,13 @@
 *.swo
 .env
 .env.local
+.env.*
+!.env.example
+*.sqlite
+*.sqlite3
+private-data/
+intelligence-data/
+delivery-outbox/
 node_modules/
 __pycache__/
 *.pyc

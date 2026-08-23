@@ -1,211 +1,161 @@
-# spec.md — ai_deepdive
+# AI Intelligence System — specifica
 
-> Specifica del progetto. Sorgente di verità per scope, requisiti, decisioni di design.
-> Ultima revisione: 2026-07-06
+> Sorgente di verita' per scope, requisiti e decisioni. Revisione: 2026-08-23.
 
-## 1. Scopo
+## 1. Contesto e obiettivo
 
-`ai_deepdive` è una repo personale di Giada Franceschini che ogni mattina alle 07:00 (Europe/Rome) produce automaticamente:
+`ai_deepdive` nasce come routine editoriale Claude Code: cerca notizie, genera Markdown, aggiorna una KB pubblica e invia un'email. L'audit 2026-08-23 mostra che il prototipo ha valore editoriale, ma non offre acquisizione incrementale, copertura misurabile, deduplicazione persistente o separazione tra dati privati e output pubblici.
 
-1. Un **digest giornaliero** in italiano con le novità AI rilevanti delle ultime 24 ore, organizzato in sezioni tematiche.
-2. Una **knowledge base** che cresce in modo incrementale estraendo concetti tecnici ricorrenti dal flusso quotidiano e producendo voci enciclopediche in italiano (1500-3000 parole).
-3. Un'**email mattutina** in formato HTML con il digest del giorno, recapitata a `giada.f@me.com`.
+L'obiettivo v2 e' un sistema personale di intelligence, progettato fin dall'inizio per team, Academy e lettori esterni. Deve:
 
-Il sistema NON è un aggregatore esaustivo. È un curatore editoriale con criterio stretto: pochi segnali ad alto valore, integrati in profondità.
+1. aggregare fonti ufficiali, newsletter, stampa, ricerca, X e input manuali;
+2. conservare un solo record per documento e un solo evento per fatto;
+3. distinguere fatto, inferenza, opinione e rumor;
+4. produrre due digest privati feriali e un recap del sabato;
+5. scegliere cosa leggere entro 30 minuti al giorno;
+6. costruire conoscenza persistente, tesi e ponti interdisciplinari verificabili;
+7. preparare output per Notion, public speaking e Substack senza pubblicarli automaticamente;
+8. restare indipendente dal modello e dal tool di esecuzione.
 
-## 2. Stakeholder
+## 2. Confini della prima implementazione
 
-- **Owner**: Giada Franceschini (giada.f@me.com)
-- **Lettori primari**: Giada + colleghi vicini
-- **Visibilità repo**: pubblica (predisposta a contributi futuri ma frame personale)
-- **License**: MIT
+In scope:
 
-## 3. Requisiti funzionali
+- codice pubblico e privo di dati personali;
+- database SQLite e file operativi in una directory privata esterna;
+- connettori deterministici e incrementali;
+- deduplicazione documento/evento, ranking, reading queue, digest e audit trail;
+- adapter editoriale sostituibile, con baseline offline;
+- email all'indirizzo personale tramite allowlist e flag esplicito di invio;
+- export controllato per Notion;
+- pacchetto Substack manuale con fact/rights gate;
+- test offline e benchmark X definito prima dell'attivazione a pagamento.
 
-### 3.1 Scraping fonti
+Fuori scope:
 
-Il sistema legge ogni mattina dalle seguenti categorie di fonti (lista canonica in `config/sources.yaml`):
+- organizzazione degli altri filoni di lavoro;
+- replica automatica del feed X For You;
+- scraping del sito X via browser;
+- API private o reverse engineering di Substack;
+- pubblicazione o invio alla mailing list esistente;
+- import automatico di testo integrale paywalled in output pubblici;
+- migrazione automatica dei digest/KB storici, che restano dataset di eval non verificato.
 
-**Newsletter / blog (19 fonti)**:
-- TechCrunch (paywall parziale)
-- AlphaSignal (alphasignal.ai/archive)
-- Every (every.to)
-- Unwind AI (unwindai.substack.com)
-- Ben's Bites (bensbites.co / Substack)
-- Daily Dose of Data Science (dailydoseofds.com)
-- Cobus Greyling (cobusgreyling.substack.com)
-- Robotic (robotic.substack.com)
-- Simon Willison's Weblog (simonwillison.net)
-- One Useful Thing (oneusefulthing.org — Ethan Mollick)
-- The Week in AI (Substack — XaiGuy)
-- Data Pizza (datapizza.it)
-- Andreas' Newsletter (Substack)
-- G Huntley (ghuntley.com)
-- AI Snake Oil (aisnakeoil.substack.com)
-- Peter Yang (peteryang.substack.com)
-- Exponential View (Azeem Azhar)
-- The Information (paywall)
+## 3. Separazione pubblico/privato
 
-**X accounts (40-60 curated, no italiani)**:
-- Sottoinsieme dei following di @montemagno e @GiadaF_ con focus AI
-- Categorie: ricercatori, founder/CEO AI lab, engineer Anthropic/OpenAI/Google DeepMind, developer relations AI, AI educator, technical writer
-- Lista canonica in `config/sources.yaml` sezione `x_accounts`
+Il repository pubblico contiene codice, configurazioni di esempio, documentazione e contenuti legacy. La variabile obbligatoria `AI_INTEL_DATA_DIR` deve puntare fuori dal repository. L'applicazione rifiuta l'avvio se la directory e' interna al repo.
 
-### 3.2 Filtro editoriale (TLDR)
+Nel data store privato vivono database, body email/newsletter, note, claim, bridge, reading history, outbox e credenziali indirette. I segreti vivono solo in environment variables o secret manager della VM.
 
-**Soglia**: max 10 voci giornaliere, organizzate in 4 sezioni tematiche:
+Ogni record ha una visibility fra `private`, `team`, `public_candidate` e `public_approved`. Solo `public_approved`, dopo fact review e rights review, puo' entrare in un pacchetto pubblico.
 
-1. **Modelli & framework** — nuovi LLM, release major framework (LangChain, LlamaIndex, DSPy…), aggiornamenti API provider
-2. **Tool & prodotti** — nuovi tool/IDE/agent platform, AI coding assistant, prodotti consumer rilevanti
-3. **Paper & ricerca** — paper rilevanti (arXiv, blog ricerca), benchmark, scoperte tecniche con sintesi tecnica
-4. **Business & strategia** — funding, acquisizioni, mosse strategiche big player, regolamentazione
+## 4. Modello dati canonico
 
-**Criteri di inclusione** (deve passare almeno UNO):
-- Release modello LLM o framework AI
-- Lancio prodotto/tool/feature significativa
-- Paper rilevante con risultati riproducibili
-- Annuncio business strategico (funding, acquisizione, regolamentazione)
-- Tutorial concreto su tecnica AI applicata
+```text
+Source -> Document -> Event -> Claim -> Evidence
+                         |        |
+                         |        +-> Concept / Bridge / Thesis
+                         +-> ReadingDecision -> Digest / ReadingNote
+                                                |
+                                                +-> Application / Output
+```
 
-**Criteri di esclusione** (scarta sempre):
-- Bug fix minori, patch sense feature
-- Tip generici di produttività AI
-- Retweet, hot take, opinioni
-- Marketing senza sostanza tecnica
-- Contenuto duplicato già presente nel digest archive (ultime 7 entry)
+Entita' minime:
 
-### 3.3 Deduplicazione
+- `Source`: identita', tipo, priorita', access class e stato.
+- `Document`: URL canonico/fingerprint, titolo, estratto o raw reference privata, data e provenance.
+- `Event`: fatto deduplicato che puo' riunire piu' documenti.
+- `EventDocument`: ruolo `primary`, `confirmation` o `analysis`.
+- `Claim`: tipo `fact`, `inference`, `opinion` o `rumor`, confidenza e stato di verifica.
+- `ClaimEvidence`: supporto o contraddizione con citazione precisa.
+- `Concept`: conoscenza durevole, separata dalla frequenza della notizia.
+- `Bridge`: relazione interdisciplinare con meccanismo, evidenza, controevidenza e rischio dell'analogia.
+- `ReadingDecision` e `ReadingNote`: decisione, minuti, esito e note.
+- `Application`: implicazione per Giada, Boosha, Parla o Academy.
+- `Thesis`: posizione argomentabile e versionata.
+- `Output`: digest, talk, lezione o articolo con audience e gate.
+- `RightsRecord`, `SyncRecord`, `Run`, `Delivery`, `Watermark`: compliance e operabilita'.
 
-Stessa news segnalata da fonti multiple → cluster automatico per topic. Una sola voce nel digest, con le fonti linkate inline in coda alla voce, separate da em-dash: `[Fonte: AlphaSignal](url) — [Ben's Bites](url) — [Simon Willison](url)`.
+## 5. Acquisizione
 
-### 3.4 Knowledge base
+### Fonti web, ricerca e newsletter
 
-**Trigger di estrazione**: un concetto tecnico viene aggiunto alla KB quando ricorre in **3+ fonti distinte oggi** OPPURE **5+ menzioni totali nelle ultime 7 giornate di digest**.
+- RSS/Atom prima scelta, parser locale e watermark per fonte.
+- IMAP per iCloud e Gmail; message ID come identita' primaria.
+- HTML autenticato solo tramite integrazione conforme e contenuto mantenuto privato.
+- articoli dei provider AI e paper sempre collegati alla fonte primaria.
+- import JSONL come porta controllata per acquisizioni manuali o connector esterni.
 
-**Format file** (`kb/concetti/<slug>.md`):
-- Italiano deep dive (1500-3000 parole)
-- Header con metadata YAML: `name`, `aliases`, `categoria`, `created`, `last_updated` (le menzioni nei digest sono calcolate dinamicamente dal web layer, `web/lib/relations.ts`)
-- Sezioni standard: Cos'è, Come funziona, Varianti / approcci, Quando usarlo / quando no, Esempi pratici, Letture, Aggiornamenti
-- Sezione "Aggiornamenti" cresce nel tempo (nuove menzioni/articoli aggiungono entry datate)
+Metriche distinte: `attempted`, `acquired`, `failed`, `cited`, `primary`.
 
-**Bootstrap**: 15 concetti foundation seed — LLM, RAG, Agent, MCP, Embedding, Fine-tuning, RLHF, Tool use / Function calling, Context window, Prompt engineering, Agent harness, Inference, Tokenization, Vector database, Chain of thought / Reasoning.
+### X
 
-### 3.5 Output extra
+X e' diviso in tre corsie:
 
-**Email mattutina via Gmail MCP**:
-- Destinatario: `giada.f@me.com`
-- Subject: `AI Deepdive — YYYY-MM-DD`
-- Body: HTML rendered da markdown del digest del giorno
-- Inviata DOPO il commit su main (così l'email contiene link al commit)
+1. watchlist canonica tramite X Recent Search, query aggregate, `since_id`, cache e tetto rigido;
+2. discovery semantica tramite xAI X Search, misurata come complemento e non come enumerazione;
+3. vero For You tramite gesto umano bookmark e successiva acquisizione con Bookmarks API.
 
-**No** RSS feed, **no** newsletter settimanale email, **no** post X automatico (predisposto per v2 ma non in scope ora).
+Grok.com resta uno strumento manuale di esplorazione. Grok Bot puo' orchestrare processi, ma non automatizza il browser X. X MCP e' solo un adapter della stessa API e non aggira costi o limiti.
 
-### 3.6 Archive policy
+## 6. Deduplicazione e ranking
 
-- Digest: archiviato per sempre con gerarchia `digest/YYYY/MM/DD.md`
-- KB: file unico per concetto, accumula sezione "Aggiornamenti" nel tempo
-- Nessuna rotation/cancellazione automatica
+Tre livelli:
 
-### 3.7 Web frontend (aggiunto 2026-05-31)
+1. identita' esatta per source ID, message ID o post ID;
+2. documento per URL canonico e fingerprint del contenuto;
+3. evento per similarita' deterministica di titolo/entita' e conferma editoriale.
 
-Layer web in `web/` (Next.js 15 App Router, TypeScript, Tailwind) deployato su Vercel a [aideepdive.vercel.app](https://aideepdive.vercel.app). Espone il contenuto già prodotto dalle routine come applicazione navigabile.
+Il ranking considera novita', autorita' e prossimita' della fonte primaria, impatto, rilevanza per le corsie, evidenza, ponte interdisciplinare, applicabilita' e costo di lettura. Non tutte le corsie devono apparire in ogni digest; la copertura viene bilanciata su base settimanale.
 
-- **File-based**: legge i markdown da `digest/` e `kb/` a build time (SSG, export statico in `web/out`). Nessun database, nessuna API esterna a runtime.
-- **Rebuild automatico** ad ogni push su `main` (Git integration Vercel).
-- **Route**: `/` (home), `/digest` (archivio + ricerca Fuse.js + filtro mese), `/digest/[date]` (singolo digest, prev/next, KB correlata), `/kb` (indice + filtro), `/kb/[slug]` (articolo + TOC + digest correlati), `/radar` ("Confronto AI": modelli vs app, catalogo tool, matrice "cosa usare per cosa", benchmark — analisi generale, no finance), `/claude-code` (guida Claude Code sincronizzata dal repo separato + "What's new").
-- **Identità visiva**: brand Boosha da boosha.it — viola `#7531E3` primario + arancione `#FE990B` secondario, Geist + Geist Mono, eyebrow monospace, icone outline, gerarchie H1/H2 chiare, responsive.
-- **Sync Claude Code**: `web/scripts/sync-claude-code.mjs` copia docs/ + whats-new-archive dal repo `giadaf-boosha/claude-code` in `web/content/claude-code/` (frontmatter iniettato, link riscritti); contenuto committato, build dal proprio repo.
-- **Parser** dei digest (frontmatter YAML + 4 sezioni canoniche) e del frontmatter KB.
-- **Radar**: dati in `web/data/models.json` (schema TypeScript in `web/lib/models.ts`), aggiornati dalla routine settimanale.
+Corsie: ricerca tecnica; agenti e coding; prodotto; business dei lab; strategia aziendale; marketing; formazione; filosofia; neuroscienze; linguistica e semantica; matematica; management e leadership; spatial intelligence ed embodied AI.
 
-### 3.8 Fondamenti di AI (aggiunto 2026-07-06)
+Un bridge e' valido solo se esplicita il meccanismo condiviso e dove l'analogia smette di reggere.
 
-Sezione teorica del sito: 7 parti / 28 capitoli, dal test di Turing al futuro dell'AI. Sintesi originali in italiano.
+## 7. Output e tempo
 
-- **Contenuti**: `fondamenti/NN-<slug>.md` in root repo (fuori da `kb/` per non interferire con il `git add digest/ kb/` della routine daily). Frontmatter: `titolo, capitolo, parte, concetti, created, last_updated`. Indice e format capitolo in `fondamenti/README.md`.
-- **Originalità e attribuzione**: le pagine rese sono contenuto originale senza riferimenti alla fonte nel corpo; un'unica attribuzione dell'opera di riferimento (Russell & Norvig, *Intelligenza Artificiale: Un Approccio Moderno*, 4a ed., Pearson) è in coda alla pagina indice `/fondamenti`.
-- **Web**: route `/fondamenti` (indice per parti, con mappa del percorso SVG) e `/fondamenti/[slug]` (capitolo con TOC, prev/next). Loader `web/lib/fondamenti.ts`; cross-link bidirezionali con la KB via `web/lib/relations.ts` (slug espliciti nel frontmatter + match testuale con soglia).
-- **Diagrammi**: ogni capitolo apre con una mappa concettuale SVG inline (dopo l'introduzione, prima del primo h2); i 13 capitoli con figure canoniche del libro hanno anche uno schema dedicato (ciclo agente-ambiente, albero di ricerca, minimax, grafo di vincoli, mondo del wumpus, azione PDDL, rete bayesiana, modello temporale, griglia MDP, albero di decisione, rete feed-forward, ciclo RL, attention). Vocabolario grafico condiviso: classi `dg-*` in `web/app/globals.css` (colori da CSS vars, light/dark automatico); niente stili hardcoded negli SVG; `role="img"` + `aria-label` obbligatori. Fedelta': ogni nodo/etichetta deriva dal testo del capitolo (a sua volta verificato contro il libro).
-- **Manutenzione**: contenuti statici, non toccati dalle routine; aggiornamenti manuali o via sessioni dedicate.
+- lunedi-venerdi, 07:00 Europe/Rome: novita' dalla precedente esecuzione riuscita;
+- lunedi-venerdi, 21:00: novita' del giorno non gia' inviate;
+- sabato, 09:00: top 10 eventi della settimana e long read per il weekend.
 
-### 3.9 Routine settimanale radar (aggiunto 2026-05-31)
+Ogni voce contiene titolo, TLDR, perche' conta, corsia, confidenza, decisione di lettura, minuti, fonti e bridge se validato. La somma delle letture complete selezionate non supera 30 minuti al giorno; il resto va in coda.
 
-`ai-deepdive-weekly-radar` aggiorna `web/data/models.json` ogni domenica alle 08:00 Europe/Rome (cron `0 6 * * 0` UTC, guard `RADAR_UPDATE`). Ricerca web su fonti ufficiali dei vendor, aggiorna campi + changelog, valida con `tsc --noEmit`, committa e pusha (Vercel ricostruisce). Prompt e body in `automations/weekly-radar-*`. Non modifica file fuori da `web/data/models.json`.
+Le finestre partono dal watermark dell'ultima esecuzione riuscita, non da formule come "ultime 24 ore", quindi non si sovrappongono e non lasciano buchi.
 
-### 3.10 Pubblicazione su Substack (aggiunto 2026-07-07)
+## 8. Knowledge e pubblicazione
 
-Pipeline per portare i capitoli Fondamenti sulla newsletter Substack *Minimum Viable Knowledge* (giadaf.substack.com) come serie a pagamento "Fondamenti di AI".
+La KB non nasce da una soglia di menzioni. Un aggiornamento durevole richiede almeno un claim con evidenza, una definizione del delta e una decisione umana o un gate editoriale.
 
-- **Vincolo piattaforma**: Substack non ha API pubblica di scrittura (il Developer API 2025 è solo lettura). La pubblicazione programmatica passa solo da librerie non ufficiali (`ma2za/python-substack`) autenticate con cookie di sessione — zona grigia sui ToS. Substack non importa Markdown né SVG.
-- **Modalità scelta**: solo bozze via API (nessuna pubblicazione automatica); l'autrice rivede e pubblica manualmente. Post `only_paid`, assegnati alla Section "Fondamenti di AI".
-- **Fase 1 (in repo)**: `scripts/substack/convert.py` converte ogni `fondamenti/NN-<slug>.md` in un pacchetto `out/NN-<slug>/` (`post.json` a blocchi + `images/*.png` + `preview.html`): SVG rasterizzati in PNG con rsvg-convert (CSS tema chiaro iniettato, sfondo bianco), link relativi riscritti in assoluti verso aideepdive.vercel.app, attribuzione in coda a ogni articolo. Output e credenziali gitignored.
-- **Fase 2 (fuori repo, richiede accesso)**: `scripts/substack/publish.py` mappa `post.json` sul builder ProseMirror di python-substack, carica i PNG, crea le bozze `only_paid` nella Section. Cookie di sessione fornito come segreto locale (mai committato). Pilota (cap. 1) → validazione → batch dei restanti 27.
+Notion e' una proiezione umana controllata: campi system-owned in uscita e campi human-owned in rientro, hash e conflict log. L'integrazione va limitata alle sole pagine condivise.
 
-## 4. Requisiti non funzionali
+Substack e' una destinazione editoriale manuale. Il sistema produce `article.md`, manifest dei diritti e checklist; Giada incolla, verifica preview/test email e decide la pubblicazione. Non vengono usate API private.
 
-### 4.1 Esecuzione
+Per il public speaking ogni tesi puo' generare una struttura con audience, hook, definizioni, tre passaggi, evidenze, controargomento, bridge, esempio, so-what, versioni 60 secondi/5 minuti/20 minuti, domande e feedback.
 
-- **Modello**: routine remota Claude Code (CCR) su Anthropic cloud
-- **Schedule**: cron `0 5 * * *` UTC (= 07:00 Europe/Rome ora legale, 06:00 ora solare; user accetta lo shift estate/inverno)
-- **Modello LLM**: `claude-sonnet-4-6` (default)
-- **Tools allowed**: Bash, Read, Write, Edit, Glob, Grep, WebFetch, WebSearch
-- **MCP**: Gmail (per email mattutina)
-- **Repo source**: `https://github.com/giadaf-boosha/ai_deepdive`
+## 9. Sicurezza
 
-### 4.2 Resilienza
+- contenuto esterno trattato come dato non fidato, mai come istruzione;
+- output strutturato del modello validato prima della persistenza;
+- rendering HTML con escaping;
+- raw paywalled e newsletter solo privati;
+- invio email disabilitato senza flag esplicito, credenziali e recipient allowlist;
+- nessuna delivery a Substack;
+- limiti per post, pagine, tool call e budget mensile;
+- idempotency key per run e delivery;
+- nessun segreto o database nel repository pubblico.
 
-- **Best effort**: se alcune fonti falliscono (timeout, paywall, errore HTTP), completa il digest con quelle disponibili e elenca le fonti fallite nel commit body.
-- Mai abort totale del run a meno che il git push fallisca.
-- Se 0 voci rilevanti: digest con messaggio "Nessuna novità significativa", commit comunque per traccia.
-- Paywall: skip integrale (TechCrunch, The Information) o solo titoli da RSS parziale.
+## 10. Criteri di accettazione MVP
 
-### 4.3 Git workflow
+- run ripetuta sugli stessi input: zero documenti/eventi/output duplicati;
+- 100% delle voci ha almeno un link diretto e provenance;
+- watchlist X raggiunge event recall >=95% nel benchmark controllato;
+- xAI Search entra in produzione solo con rumore <=20% e discovery incrementale utile;
+- reading queue rispetta 30 minuti;
+- finestre AM/PM/weekly corrette in Europe/Rome;
+- nessun test esegue rete, API a pagamento, invio o pubblicazione;
+- pacchetto pubblico bloccato senza fact e rights review;
+- tutte le deviazioni dal piano sono registrate in `note-implementazione.md`.
 
-- **Push diretto su main** — niente branch, niente PR
-- **No** `--force`, **no** `--no-verify`
-- Pull rebase prima del push
-- Se non clean per cambi NON di routine: ABORT
-- Se conflitto rebase: ABORT
+## 11. Baseline legacy
 
-### 4.4 Identità editoriale
-
-- Lingua: italiano sempre, nomi tecnici inglesi inalterati
-- Tono: tecnico, conciso, autoriale (frame personale di Giada)
-- Apostrofi ASCII `'` (compatibilità brand_checker)
-- Verbi al presente / participi
-- No emoji extra, no esclamativi
-
-## 5. Non requisiti (out of scope v1)
-
-- ❌ Scraping live di X via API ufficiale (uso curated list + WebFetch/WebSearch fallback)
-- ✅ ~~Frontend / sito statico~~ — aggiunto 2026-05-31: web layer in `web/` su Vercel (vedi 3.7)
-- ❌ Database / vector DB per ricerca semantica (KB cercabile via grep; ricerca digest client-side via Fuse.js nel web)
-- ❌ Newsletter pubblica / RSS feed pubblicato
-- ❌ Post X automatico
-- ❌ PDF export della KB
-- ❌ Multi-utente / autenticazione
-
-## 6. Decisioni chiave (rationale)
-
-| Decisione | Razionale |
-|---|---|
-| Routine remota vs GitHub Actions | Coerenza con `whats-new-daily`, zero infra Python da mantenere, agente LLM gestisce nativamente filtro editoriale + scraping web. |
-| Push diretto su main | User non ha protection rule; modello già validato sull'altra repo; meno attrito quotidiano. |
-| Filtro medio (max 10) vs stretto (max 5) | Coverage AI è più ampia di "Claude Code only", servono più voci per dare valore. Sezioni tematiche aiutano lettura veloce. |
-| KB italiano deep dive (1500-3000) | User vuole asset di lungo termine, non scheda riassuntiva; obiettivo è studio personale + condivisione colleghi. |
-| Gmail MCP vs solo commit | User vuole spinta giornaliera attiva (push notification), commit da solo è passivo. |
-| Archive per sempre | Storico indicizzabile è un asset; storage Git markdown è economico; nessun motivo di pulire. |
-
-## 7. Sicurezza & privacy
-
-- Nessuna credenziale paywall in repo (skip fonti gated)
-- `.gitignore` escludes `.env*`
-- Email mattutina solo a `giada.f@me.com` (no leak destinatari multipli)
-- Visibilità repo pubblica: contenuto è citazione + parafrasi di fonti pubbliche, no scraping di dati gated
-
-## 8. Open question (per v2)
-
-- Verifica se le fonti hanno feed RSS affidabili o richiedono HTML scraping (impatta resilienza)
-- Curated X account list: 40-60 nomi finali da definire nello sviluppo (Round 1 della cura)
-- Threshold KB (3+ oggi / 5+ in 7gg) potrebbe essere troppo permissivo o troppo stretto: rivalutare dopo 2 settimane di dati
-- Eventuale `kb/glossario.md` (indice alfabetico auto-generato) come quality-of-life
+`digest/`, `kb/`, `fondamenti/`, `web/` e le routine Claude Code restano temporaneamente intatti. Non sono la fonte canonica della v2 e non vanno estesi prima di una settimana di run manuali affidabili. La vecchia automazione Substack non deve essere eseguita; la sostituzione supportata e' l'export manuale della v2.

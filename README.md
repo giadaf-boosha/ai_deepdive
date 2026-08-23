@@ -1,124 +1,117 @@
-# ai_deepdive
+# ai_deepdive / AI Intelligence System
 
-> La mia raccolta quotidiana di segnali AI, in italiano. Curata da una routine Claude Code, aggiornata ogni mattina alle 07:00 (Europe/Rome).
+Sistema privato-by-design per trasformare fonti AI eterogenee in eventi deduplicati, decisioni di lettura e conoscenza persistente. Il codice e' pubblico; dati acquisiti, note e output personali devono vivere fuori dal repository.
 
-**Sito web**: [aideepdive.vercel.app](https://aideepdive.vercel.app) — digest, knowledge base e radar modelli AI navigabili.
+Il sito storico resta online su [aideepdive.vercel.app](https://aideepdive.vercel.app). I contenuti in `digest/`, `kb/`, `fondamenti/` e la routine Claude Code sono una baseline legacy: utili come corpus e interfaccia, ma non sono la fonte canonica della nuova pipeline.
 
-## Cosa trovi qui
+## Perche' una v2
 
-Tre tracce parallele:
+L'audit del 23 agosto 2026 ha rilevato che il sistema precedente era un prompt monolitico: feed spesso irraggiungibili, X quasi assente, fallback web non governato, deduplica limitata a sette file e nessun watermark. La v2 separa acquisizione, evento, giudizio editoriale, knowledge e delivery in componenti testabili.
 
-1. **[`digest/`](./digest)** — Un file markdown al giorno con i segnali AI rilevanti delle ultime 24 ore. Organizzato in 4 sezioni: Modelli & framework, Tool & prodotti, Paper & ricerca, Business & strategia. Max 10 voci, criterio editoriale stretto.
-2. **[`kb/`](./kb)** — Knowledge base in crescita. Concetti tecnici (LLM, RAG, agent harness, MCP, RLHF…) raccontati in italiano deep dive (1500-3000 parole), aggiornati man mano che ricorrono nei digest.
-3. **[`fondamenti/`](./fondamenti)** — Fondamenti di AI: la teoria in 7 parti e 28 capitoli, sintesi originali in italiano dal test di Turing al futuro dell'AI, con cross-link alla KB e 41 diagrammi SVG (una mappa concettuale per capitolo + gli schemi canonici nei capitoli chiave). Attribuzione dell'opera di riferimento in coda alla pagina indice.
+Le decisioni complete sono in [spec.md](./spec.md); audit e strategie sono in [`docs/`](./docs); avanzamento e rollout sono in [implementation_plan.md](./implementation_plan.md).
 
-## Come funziona
+## Architettura
 
-Ogni mattina alle **07:00 Europe/Rome** una routine remota Claude Code (girata su Anthropic cloud) esegue questi step:
-
-1. **Scrape**: legge 19 newsletter/blog + 40-60 account X curati (lista canonica in [`config/sources.yaml`](./config/sources.yaml))
-2. **Filtra**: applica criterio editoriale stretto — solo segnali ad alto valore (release modello, lancio tool, paper rilevante, mossa strategica). Scarta fix minori, tip generici, marketing senza sostanza.
-3. **Cluster**: raggruppa news segnalate da fonti multiple in una singola voce con elenco fonti.
-4. **Digest**: produce `digest/YYYY/MM/DD.md` con TLDR italiano in 4 sezioni tematiche.
-5. **Knowledge base**: se un concetto tecnico ricorre in **3+ fonti oggi** o **5+ menzioni nelle ultime 7 giornate**, crea o aggiorna il file `kb/concetti/<slug>.md`.
-6. **Commit & push**: push diretto su `main` (no PR).
-7. **Email**: invia il digest in HTML a `giada.f@me.com` via Gmail MCP.
-
-## Web frontend
-
-Un layer web (Next.js 15, App Router, TypeScript, Tailwind) in [`web/`](./web) espone tutto il contenuto come applicazione navigabile, deployata su Vercel: **[aideepdive.vercel.app](https://aideepdive.vercel.app)**.
-
-- **File-based, zero database**: legge a build time i markdown da `digest/` e `kb/` (SSG puro, export statico).
-- **Rebuild automatico ad ogni push** su `main` via Git integration Vercel.
-- **Identità Boosha**: palette viola `#7531E3` (primario) + arancione `#FE990B` (secondario), Geist + Geist Mono, eyebrow monospace, gerarchie chiare (vedi [boosha.it](https://boosha.it/)).
-- **Route**:
-  - `/` — homepage: ultimo digest, ultimi concetti KB, confronto AI rapido, guida Claude Code.
-  - `/digest` — archivio cronologico con ricerca full-text (Fuse.js) e filtro per mese.
-  - `/digest/[date]` — singolo digest con sezioni tematiche, navigazione prev/next, concetti KB correlati.
-  - `/kb` — indice dei concetti con filtro per categoria.
-  - `/kb/[slug]` — articolo con TOC auto-generato, digest che lo citano, concetti correlati, capitoli Fondamenti collegati.
-  - `/fondamenti` — **Fondamenti di AI**: indice delle 7 parti; `/fondamenti/[slug]` — capitolo con TOC, prev/next, concetti KB correlati.
-  - `/radar` — **Confronto AI**: distinzione modelli (motore) vs app (prodotto), catalogo tool per categoria (Immagini/Video/Audio/Agent/Coding), matrice "cosa usare per cosa", benchmark. Analisi generale, non verticale.
-  - `/claude-code` — guida a Claude Code in italiano (sincronizzata dal repo [`giadaf-boosha/claude-code`](https://github.com/giadaf-boosha/claude-code)): capitoli + "What's new".
-
-Sviluppo locale: `cd web && npm install && npm run dev`. Build: `npm run build` (output statico in `web/out`).
-
-I dati del radar vivono in [`web/data/models.json`](./web/data/models.json), aggiornati settimanalmente dalla routine `ai-deepdive-weekly-radar` (vedi [`automations/`](./automations)).
-
-## Struttura repo
-
-```
-ai_deepdive/
-├── README.md                 ← questo file
-├── spec.md                   ← specifica completa
-├── implementation_plan.md    ← piano di lavoro
-├── CLAUDE.md                 ← istruzioni progetto + task routine radar
-├── LICENSE                   ← MIT
-├── config/
-│   └── sources.yaml          ← lista newsletter + X accounts (sorgente di verità)
-├── automations/
-│   ├── whats-new-daily-prompt.md  + routine-body.json        ← routine giornaliera
-│   └── weekly-radar-prompt.md     + weekly-radar-body.json   ← routine settimanale radar
-├── digest/
-│   └── YYYY/MM/DD.md         ← un file per giorno, archiviato per sempre
-├── kb/
-│   ├── README.md             ← indice alfabetico KB
-│   └── concetti/
-│       └── <slug>.md         ← un file per concetto tecnico
-├── fondamenti/
-│   ├── README.md             ← indice 7 parti + format capitolo
-│   └── NN-<slug>.md          ← un file per capitolo (28, sintesi originali)
-├── scripts/
-│   └── substack/             ← pipeline capitoli → Substack (convert.py; out/ e .secrets/ gitignored)
-└── web/                      ← layer Next.js deployato su Vercel (app/, lib/, components/, data/)
+```text
+RSS / IMAP / X API / Bookmarks / JSONL
+                   |
+                   v
+ Source -> Document -> Event -> Claim / Evidence
+                   |              |
+                   v              v
+              Ranking        Concept / Bridge / Thesis
+                   |
+                   v
+      Digest AM/PM/weekly + Reading queue
+                   |
+          +--------+---------+
+          |                  |
+       Email privata      Export controllati
+                         Notion / talk / Substack
 ```
 
-## Pubblicazione su Substack
+Principi:
 
-I capitoli Fondamenti possono essere pubblicati come serie a pagamento sulla newsletter Substack [*Minimum Viable Knowledge*](https://giadaf.substack.com/). Substack non ha API pubblica di scrittura né importa Markdown/SVG, quindi la pipeline in [`scripts/substack/`](./scripts/substack) opera in due fasi: `convert.py` trasforma ogni capitolo in un pacchetto pubblicabile (`post.json` a blocchi + diagrammi rasterizzati in PNG + `preview.html`), poi `publish.py` (via la libreria non ufficiale `python-substack`, autenticata con un cookie di sessione fornito come segreto locale) crea le **bozze** `only_paid` nella Section "Fondamenti di AI" — la pubblicazione resta un'azione manuale dell'autrice. Output e credenziali sono gitignored.
+- `AI_INTEL_DATA_DIR` obbligatoria e sempre esterna al repo;
+- un evento puo' avere piu' fonti, ma compare una sola volta;
+- fonte primaria, conferma e analisi hanno ruoli distinti;
+- modello editoriale sostituibile; baseline deterministica offline;
+- massimo 30 minuti di letture complete al giorno;
+- X watchlist via API ufficiale con ledger costi atomico, For You tramite bookmark manuale, niente browser scraping;
+- Substack solo tramite pacchetto revisionato e pubblicazione manuale;
+- rete, invio e costi disabilitati nei test.
 
-## Fonti monitorate
+## Quickstart locale sicuro
 
-**Newsletter / blog / paper**:
-TechCrunch (categoria AI) · Hugging Face Papers · AlphaSignal · Every · Unwind AI · Ben's Bites · Daily Dose of Data Science · Cobus Greyling · Robotic · Simon Willison · One Useful Thing (Ethan Mollick) · The Week in AI · Data Pizza · Andreas' Newsletter · G Huntley · AI Snake Oil · Peter Yang · Exponential View · The Information.
+Richiede Python 3.11+ e non ha dipendenze runtime esterne.
 
-**X accounts**: 40-60 account curati AI (ricercatori, founder/CEO AI lab, engineer Anthropic/OpenAI/Google DeepMind, dev rel, AI educator, technical writer). Lista completa in `config/sources.yaml`.
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python3 -m pip install -e .
 
-## Come modificare le fonti
+export AI_INTEL_DATA_DIR=/percorso/privato/ai-intelligence-data
+ai-intel --config config/intelligence.example.toml init
+ai-intel --config config/intelligence.example.toml status
+```
 
-Aggiungi/togli voci direttamente in [`config/sources.yaml`](./config/sources.yaml). Dal commit successivo la routine userà la nuova lista.
+Per un ingest offline riproducibile:
 
-## Stack tecnico
+```bash
+ai-intel --config config/intelligence.example.toml ingest-jsonl ./miei-input.jsonl
+ai-intel --config config/intelligence.example.toml curate
+ai-intel --config config/intelligence.example.toml render --slot am
+```
 
-- **Esecuzione**: routine remota Claude Code (CCR) su Anthropic cloud
-- **Modello LLM**: `claude-sonnet-4-6`
-- **Schedule**: cron `0 5 * * *` UTC (= 07:00 Europe/Rome ora legale)
-- **Storage**: markdown nel repo Git (no DB)
-- **Email**: Gmail MCP (HTML rendered)
-- **Visibilità**: pubblica, MIT license
+Il comando `render` scrive Markdown, HTML e preview `.eml` nell'outbox privata. Non invia nulla. L'invio richiede `--send`, credenziali SMTP in environment e destinatario presente nell'allowlist.
+
+Le delivery e le reservation costi hanno ledger e comandi di riconciliazione manuale; i casi ambigui restano bloccati e non vengono ritentati automaticamente. Vedi [`docs/operations.md`](./docs/operations.md).
+
+## Schedule prevista
+
+- lunedi-venerdi 07:00 Europe/Rome: digest mattutino;
+- lunedi-venerdi 21:00 Europe/Rome: digest serale;
+- sabato 09:00 Europe/Rome: top 10 settimanale e long read.
+
+La schedule non va attivata prima di cinque giorni di shadow run manuali. Le finestre usano il watermark dell'ultima esecuzione riuscita, quindi non duplicano la stessa notizia fra mattina e sera.
+
+## X: decisione operativa
+
+- watchlist misurabile: X Recent Search con query aggregate, `since_id` e hard cap;
+- discovery: xAI X Search solo dopo benchmark;
+- vero For You: Giada salva il post in una cartella bookmark, poi la pipeline usa Bookmarks API;
+- Grok.com: ricerca manuale esplorativa;
+- Grok Bot: orchestrazione, non automazione del browser X;
+- X MCP: adapter possibile, con gli stessi costi dell'API e allowlist stretta.
+
+Il benchmark e i criteri di accettazione sono in [`docs/x-retrieval-strategy.md`](./docs/x-retrieval-strategy.md).
+
+## Knowledge, Notion e Substack
+
+Il database privato e' la fonte canonica. Notion riceve una proiezione limitata con ownership dei campi; non contiene automaticamente raw paywalled. Gli articoli Substack vengono esportati come `article.md`, `manifest.json` e checklist. Il sistema non usa API private Substack e non pubblica né invia alla mailing list.
+
+La precedente `scripts/substack/publish.py` e' legacy e non deve essere eseguita. Resta temporaneamente per non introdurre una rimozione distruttiva nello stesso cambiamento.
+
+## Test
+
+```bash
+python3 -m pytest
+```
+
+I test verificano storage esterno, idempotenza, connector offline, hard cap X, schedule Europe/Rome, budget lettura, escaping HTML, allowlist email e rights gate.
+
+## Struttura principale
+
+```text
+intelligence/                 pipeline v2
+config/intelligence.example.toml
+tests/                        test offline
+docs/                         audit e decision record
+digest/ kb/ fondamenti/ web/  baseline legacy
+automations/                  routine legacy congelate
+note-implementazione.md       decisioni e deviazioni del lavoro
+```
 
 ## Stato
 
-- ✅ Scaffold + KB seed + primo digest manuale: 2026-04-28
-- ✅ Routine giornaliera attiva: `ai-deepdive-daily` (ID: `trig_01U38R2BbWd86ZSZvv9uv5Jy`) — digest + KB ogni mattina alle 07:00
-- ✅ Web frontend live su Vercel: [aideepdive.vercel.app](https://aideepdive.vercel.app) (rebuild automatico ad ogni push)
-- ✅ Fonti Hugging Face Papers + TechCrunch (categoria AI) aggiunte a `config/sources.yaml`
-- ✅ Routine settimanale radar `ai-deepdive-weekly-radar` (ID: `trig_017UcxBB68S2FaiQGQWnNh39`) attiva — aggiorna `web/data/models.json` ogni domenica alle 08:00
-
-Dashboard routine daily: https://claude.ai/code/routines/trig_01U38R2BbWd86ZSZvv9uv5Jy
-Dashboard routine radar: https://claude.ai/code/routines/trig_017UcxBB68S2FaiQGQWnNh39
-
-## Identità editoriale
-
-- Italiano sempre, nomi tecnici inglesi inalterati
-- Tono tecnico, conciso, autoriale (non marketing, non aggregatore)
-- Pochi segnali ad alto valore > coverage esaustiva
-- Fonti citate sempre con link diretto
-
-## Contributi
-
-Repo personale. Issue / PR benvenuti se trovi errori, suggerisci fonti da aggiungere/togliere, o vuoi proporre concetti per la KB.
-
-## Licenza
-
-MIT — vedi [LICENSE](./LICENSE).
+MVP implementato e in fase di QA locale. Nessuna schedule, API a pagamento, email live, Notion live o pubblicazione Substack e' stata attivata da questa implementazione.
