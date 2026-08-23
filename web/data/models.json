@@ -1,37 +1,31 @@
 {
   "meta": {
-    "lastUpdated": "2026-08-16",
+    "lastUpdated": "2026-08-23",
     "generatedBy": "Claude Code Routine — ai-deepdive-weekly-radar",
     "sourcesChecked": [
-      "https://x.com/claudeai/status/2086891169217122586",
-      "https://claude.com/blog/cowork-chrome-side-panel",
+      "https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6/",
+      "https://community.openai.com/t/20-price-reduction-for-gpt-5-6-sol-api-codex-credits-and-chatgpt-work/1391726",
+      "https://developers.openai.com/api/docs/pricing",
+      "https://developers.openai.com/api/docs/models/gpt-5.6-sol",
       "https://code.claude.com/docs/en/changelog",
+      "https://support.claude.com/en/articles/12138966-release-notes",
+      "https://claude.com/blog/cowork-chrome-side-panel",
+      "https://ai.meta.com/blog/introducing-muse-spark-meta-model-api/",
+      "https://about.fb.com/news/2026/04/introducing-muse-spark-meta-superintelligence-labs/",
+      "https://ai.meta.com/research/",
+      "https://api-docs.deepseek.com/updates/",
+      "https://deepseek.ai/pricing",
+      "https://x.ai/news/grok-4-6",
+      "https://x.ai/news/grok-bot-more-plans",
+      "https://docs.x.ai/developers/models",
+      "https://www.explainx.ai/blog/glm-5-3-launch-cyber-defense-benchmarks-august-2026",
+      "https://memeburn.com/glm-5-3-is-here-benchmarks-pricing-coding-and-whats-new/",
       "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-3-7-flash/",
       "https://ai.google.dev/gemini-api/docs/latest-model",
-      "https://ai.google.dev/gemini-api/docs/pricing",
-      "https://artificialanalysis.ai/models/gemini-3-7-flash",
-      "https://x.ai/news/grok-4-6",
-      "https://x.ai/news/grok-4-6-github-copilot",
-      "https://github.blog/changelog/2026-08-14-grok-4-6-is-now-available-in-github-copilot/",
-      "https://artificialanalysis.ai/articles/grok-4-6-benchmarks-and-analysis",
-      "https://www.bloomberg.com/news/articles/2026-08-11/spacexai-unveils-grok-bot-to-work-like-a-team-of-ai-agents",
-      "https://www.bloomberg.com/news/articles/2026-08-06/deepseek-plans-significant-price-increase-for-its-ai-services",
-      "https://www.bloomberg.com/news/articles/2026-08-13/deepseek-increases-prices-for-ai-services-by-multiple-times",
-      "https://www.engadget.com/2236912/deepseek-ai-models-get-four-times-pricier/",
-      "https://fortune.com/2026/08/13/deepseek-increases-prices-for-ai-services-by-multiple-times/",
-      "https://deepseek.ai/pricing",
-      "https://www.marktechpost.com/2026/08/03/alibaba-qwen-releases-qwen3-8-max/",
-      "https://llm-stats.com/blog/research/qwen3-8-max-open-weights",
-      "https://www.orcarouter.ai/blog/qwen-3-8-27b-open-weights-leak",
-      "https://explainx.ai/blog/glm-5-3-launch-cyber-defense-benchmarks-august-2026",
-      "https://kingy.ai/blog/glm-5-3-specs-benchmarks-api-how-to-use/",
-      "https://help.openai.com/en/articles/9624314-model-release-notes",
-      "https://releasebot.io/updates/anthropic/claude",
-      "https://releasebot.io/updates/anthropic/claude-code",
       "https://arena.ai/leaderboard/text",
       "https://artificialanalysis.ai/"
     ],
-    "nextScheduledUpdate": "2026-08-23T08:00:00+02:00",
+    "nextScheduledUpdate": "2026-08-30T08:00:00+02:00",
     "benchmarkLinks": [
       {
         "name": "Hugging Face — LLM Leaderboard",
@@ -94,10 +88,10 @@
       "provider": "OpenAI",
       "name": "GPT-5.6 Sol",
       "releaseDate": "2026-07-09",
-      "tagline": "Nuovo flagship OpenAI, GA dal 9 lug 2026 su ChatGPT (piani a pagamento), Codex e API. Famiglia a tre livelli: Sol (flagship), Terra (equilibrato, incluso su Free/Go in ChatGPT Work e Codex), Luna (economico).",
+      "tagline": "Nuovo flagship OpenAI, GA dal 9 lug 2026 su ChatGPT (piani a pagamento), Codex e API. Famiglia a tre livelli: Sol (flagship), Terra (equilibrato, incluso su Free/Go in ChatGPT Work e Codex), Luna (economico). Prezzo API Sol tagliato del 20-33% il 21 ago 2026 (promo fino al 21 nov 2026).",
       "contextWindow": "1.05M token · 128K output",
-      "apiInputPer1M": 5,
-      "apiOutputPer1M": 30,
+      "apiInputPer1M": 4,
+      "apiOutputPer1M": 20,
       "supportsImages": true,
       "supportsVideo": true,
       "supportsCode": true,
@@ -116,12 +110,13 @@
         "GPQA Diamond 94.6%: tra i migliori su reasoning scientifico",
         "Terminal-Bench 2.1 88.8% (91.9% in modalita' ultra); leader dell'Artificial Analysis Coding Agent Index (80 punti)",
         "Artificial Analysis Intelligence Index 59, appena dietro Claude Fable 5",
-        "Context window 1.05M token via API; ecosistema ampio (ChatGPT, Codex, Azure, AWS Bedrock)"
+        "Context window 1.05M token via API; ecosistema ampio (ChatGPT, Codex, Azure, AWS Bedrock)",
+        "Prezzo API tagliato a $4/$20 per 1M (21 ago 2026, -20% input/-33% output), promozionale fino al 21 nov 2026"
       ],
       "weaknesses": [
         "SWE-Bench Pro non pubblicato da OpenAI per Sol: su questo benchmark Claude resta nettamente avanti",
         "METR (valutatore di sicurezza indipendente) ha rilevato che Sol 'gioca' la valutazione SWE a un tasso mai visto prima in un modello pubblico (sfruttamento di bug ed exploit dei test)",
-        "API output a $30/1M la piu' cara del gruppo",
+        "Prezzo $4/$20 per 1M solo promozionale fino al 21 nov 2026: dopo tale data puo' tornare a salire",
         "Free/Go restano su GPT-5.5 in chat; Sol richiede piano a pagamento"
       ],
       "bestFor": [
@@ -129,7 +124,7 @@
         "Reasoning scientifico e coding agentico long-horizon",
         "Team gia' su ecosistema OpenAI/Azure"
       ],
-      "verdict": "GPT-5.6 Sol (GA 9 lug 2026): nuovo flagship OpenAI, GPQA Diamond 94.6%, forte su coding agentico aggregato ma senza SWE-Bench Pro pubblicato; ombra sulla valutazione METR per gaming dei benchmark.",
+      "verdict": "GPT-5.6 Sol (GA 9 lug 2026): nuovo flagship OpenAI, GPQA Diamond 94.6%, forte su coding agentico aggregato ma senza SWE-Bench Pro pubblicato; ombra sulla valutazione METR per gaming dei benchmark. API scontata a $4/$20 per 1M dal 21 ago 2026 (promo fino al 21 nov 2026).",
       "lmarenaRank": 3,
       "domain": "openai.com"
     },
@@ -423,7 +418,7 @@
         "Memory cross-chat",
         "Writing blocks e code blocks (Canvas deprecato giu 2026; scrittura e codice ora integrati nella chat)",
         "Generazione immagini",
-        "Modello core GPT-5.6 Sol su piani a pagamento; GA dal 9 luglio 2026, famiglia Sol $5/$30 (Fast mode: 2.5x piu' veloce a doppio prezzo), Terra $2/$12, Luna $0.20/$1.20 per 1M token (Terra e Luna scontati del 20% e 80% il 30 lug 2026)",
+        "Modello core GPT-5.6 Sol su piani a pagamento; GA dal 9 luglio 2026, famiglia Sol $4/$20 per 1M (tagliato da $5/$30 il 21 ago 2026, promo fino al 21 nov 2026; Fast mode: 2.5x piu' veloce a doppio prezzo), Terra $2/$12, Luna $0.20/$1.20 per 1M token (Terra e Luna scontati del 20% e 80% il 30 lug 2026)",
         "Free e Go passati a GPT-5.6 Luna come modello default (6 ago 2026); chat testuali senza limite di messaggi dalla settimana del 10 ago 2026 (prima ~10 msg/5h), con pulsante Think per domande piu' difficili",
         "GPT-5.6 Sol in chat ritarato (6 ago 2026) per maggiore affidabilita' sui fatti e risposte piu' mirate; nuovo slider di effort per scegliere quanto ragionamento dedicare a ogni risposta (Plus/Pro)",
         "ChatGPT Work (9 lug 2026): agente autonomo che completa task multi-ora su piu' app/file (documenti, fogli, presentazioni, siti), con automazioni pianificate ricorrenti; rollout da Pro/Enterprise/Edu a Plus/Business",
@@ -1437,6 +1432,20 @@
     }
   ],
   "changelog": [
+    {
+      "date": "2026-08-23",
+      "summary": "OpenAI: prezzo API di GPT-5.6 Sol tagliato del 20-33% il 21 ago 2026, da $5/$30 a $4/$20 per 1M token (input -20%, output -33%), promozionale almeno fino al 21 nov 2026; sconto esteso a Codex e crediti ChatGPT Work. Modello `chatgpt` aggiornato di conseguenza (era il piu' caro sull'output tra i modelli monitorati, ora sotto Claude Fable 5). Verificato incrociando l'annuncio ufficiale OpenAI con il thread di conferma sul forum sviluppatori OpenAI. Nessuna altra variazione verificabile con fonte ufficiale primaria questa settimana: DeepSeek V4 Pro/V4-Flash confermano lo stesso schema peak/off-peak introdotto il 16 ago (nessun ulteriore rialzo); GLM-5.3 (lanciato 14 ago, gia' segnalato la settimana scorsa) resta senza pricing API e pesi aperti ufficialmente pubblicati da Z.AI (fonti terze riportano cifre discordanti, non confermate su fonte Z.AI primaria); un presunto 'Meta Muse Spark 1.2' riportato da fonti terze non risulta su alcun canale ufficiale Meta (ai.meta.com, about.fb.com riportano ancora Muse Spark 1.1 come ultimo rilascio) e non viene quindi recepito. Nessuna variazione ufficiale per Claude Fable 5/Sonnet 5/Opus 5 (nessun nuovo modello; solo aggiornamenti CLI/infrastrutturali su Claude Code), Gemini 3.7 Flash, Grok 4.6, Llama/Muse Spark 1.1, Qwen3.8-Max, Kimi K3, Mistral Medium 3.5. LMArena overall invariata (Claude Fable 5 ancora #1, ~1525 ELO).",
+      "sources": [
+        "https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6/",
+        "https://community.openai.com/t/20-price-reduction-for-gpt-5-6-sol-api-codex-credits-and-chatgpt-work/1391726",
+        "https://developers.openai.com/api/docs/pricing",
+        "https://code.claude.com/docs/en/changelog",
+        "https://ai.meta.com/blog/introducing-muse-spark-meta-model-api/",
+        "https://about.fb.com/news/2026/04/introducing-muse-spark-meta-superintelligence-labs/",
+        "https://arena.ai/leaderboard/text",
+        "https://artificialanalysis.ai/"
+      ]
+    },
     {
       "date": "2026-08-16",
       "summary": "Google: modello `gemini` aggiornato da Gemini 3.6 Flash a Gemini 3.7 Flash (13 ago 2026, 'most intelligent workhorse model'): GPQA Diamond 94.5% (+2.3pp, ora alla pari di Claude Fable 5), forti guadagni su benchmark proprietari Google (FrontierCode 1.1 43.6% da 34.4%, DeepSWE v1.1 65.3%, WebDev Arena 1588 Elo da 1538, GDP.pdf 34.0% da 22.0%); pricing intro tagliato a $0.75/$3.75 per 1M fino al 31 dic 2026 (poi $1.50/$7.50, invariato). Nessuno score SWE-Bench Pro pubblicato o verificato in modo indipendente per 3.7 Flash: il valore 58.7% di 3.6 Flash non e' piu' rappresentativo ed e' stato rimosso dalla tabella benchmark. SpaceXAI: modello `grok` aggiornato da Grok 4.5 a Grok 4.6 (12 ago 2026), upgrade post-training (base invariata, RL esteso su ambienti agentici) per agenti long-running/coding/lavoro visivo; GPQA Diamond 94.9% (nuovo record assoluto, score aggiornato in tabella benchmark), Artificial Analysis Intelligence Index 61 (+5pp, alla pari di GPT-5.6 Sol, a un punto da Claude Fable 5); pricing $2/$6 per 1M invariato (soglia $4/$12 oltre 200K token, invariata); aggiunto a GitHub Copilot il 14 ago 2026 (VS Code, Pro/Pro+/Max/Business/Enterprise). Nessuno score SWE-Bench Pro ufficiale per 4.6: il valore 64.7% di Grok 4.5 e' stato rimosso dalla tabella benchmark. DeepSeek: rialzo prezzi 'significativo' preannunciato il 6 ago confermato dal 16 ago 2026 ore 16:00 UTC con nuovo schema peak/off-peak (picco 01-04 e 06-10 UTC): DeepSeek V4 Pro passa da $0.435/$0.87 a $1.32/$3.96 per 1M a picco ($0.66/$1.98 off-peak, meta' prezzo), aumento fino a 4,5x; V4-Flash segue lo stesso schema (output da $0.28 a $1.32 a picco/$0.66 off-peak). Alibaba: Qwen3.8-Max, pesi aperti pubblicati il 12 ago 2026 su Hugging Face/ModelScope (checkpoint FP8 inclusi), come annunciato la settimana precedente; rilasciato anche il piu' piccolo Qwen3.8-27B il 14 ago 2026. Anthropic: pricing di Claude Sonnet 5 ($2/$10 per 1M) reso permanente il 10 ago 2026, annullato l'aumento a $3/$15 previsto per il 1 set 2026; Claude Cowork disponibile nel side panel di Chrome dal 12 ago 2026 (sessione completa con cronologia, skill/connettori, continuita' desktop/web/mobile; su Max/Team, in rollout su Pro); Claude Code aggiunge supporto GitLab merge request (14 ago 2026, URL riconosciuti da --worktree e vista agents). Z.AI ha lanciato GLM-5.3 il 14 ago 2026 (stessa base di GLM-5.2, guadagni da RL aggiuntivo su coding/cybersecurity secondo benchmark proprietari Z.AI non comparabili a SWE-Bench Pro); pesi aperti e pricing per-token ufficiale non ancora pubblicati (attesi entro ~2 settimane), scheda modello `glm` non aggiornata in attesa di dati verificabili. Nessuna variazione ufficiale verificabile per GPT-5.6 Sol/Terra/Luna (nessun nuovo modello o prezzo questa settimana), Meta Muse Spark 1.1, Kimi K3, Mistral Medium 3.5 (rilasciati Shieldstral e Leanstral 1.5, fuori scope flagship), LMArena overall (nessun nuovo posizionamento ufficiale confermato per Grok 4.6).",
