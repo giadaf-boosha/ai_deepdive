@@ -3,7 +3,7 @@ name: Mixture of Experts
 aliases: [MoE, mixture-of-experts, mixture of experts, modello sparso, sparse model, expert routing]
 categoria: architettura
 created: 2026-06-01
-last_updated: 2026-08-15
+last_updated: 2026-08-27
 ---
 
 # Mixture of Experts
@@ -80,6 +80,10 @@ Quando un denso e' la scelta migliore. Per deployment su singola GPU, su edge o 
 Combinare gli assi di efficienza. MoE (sparsita' tra expert), quantizzazione (precisione ridotta dei pesi) e adaptive per-token compute (budget variabile) sono assi ortogonali e cumulabili. Un sistema di serving maturo li combina: un MoE quantizzato ad AWQ 4-bit con allocazione adattiva del compute per token e' lo stato dell'arte dell'ottimizzazione dell'inferenza nel 2026.
 
 ## Aggiornamenti
+
+### 2026-08-27
+
+Zhipu AI conferma il 26 agosto che il modello stealth "Ox Alpha", apparso il 20 agosto su OpenRouter e attribuito con alta confidenza alla famiglia GLM tramite fingerprinting indipendente (vedi [digest 2026-08-24](../../digest/2026/08/24.md)), e' GLM-5.3-Flash: un MoE 320B totali/18B attivi, primo modello nativamente multimodale (testo/immagini/video) della serie GLM-5, rilasciato lo stesso giorno con pesi aperti MIT su Hugging Face. Il dato architetturale nuovo rispetto ai casi gia' tracciati in questa scheda e' l'attenzione ibrida sparsa+lineare, che riduce il calcolo di attenzione di 3,01x e la KV cache di 4,44x rispetto a GLM-5.3 — un asse di efficienza distinto dal routing tra expert (che resta 320B-A18B, invariato nel principio rispetto agli altri MoE GLM di questa scheda) e complementare a esso: la sparsita' del MoE riduce i FLOP per token attivando pochi expert, l'attenzione ibrida riduce il costo del meccanismo di attenzione stesso, in particolare su contesto lungo (il modello dichiara 1.048.576 token). Prezzo API a un decimo del GLM-5.3 flagship. E' anche il primo caso in questa serie di digest in cui un modello stealth viene formalmente riconosciuto dal proprio laboratorio con rilascio ufficiale lo stesso giorno della conferma, invece di restare un'attribuzione per indizi tecnici. [Digest 2026-08-27](../../digest/2026/08/27.md)
 
 ### 2026-08-15
 
