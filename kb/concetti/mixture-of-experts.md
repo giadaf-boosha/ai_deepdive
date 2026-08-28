@@ -3,7 +3,7 @@ name: Mixture of Experts
 aliases: [MoE, mixture-of-experts, mixture of experts, modello sparso, sparse model, expert routing]
 categoria: architettura
 created: 2026-06-01
-last_updated: 2026-08-15
+last_updated: 2026-08-28
 ---
 
 # Mixture of Experts
@@ -80,6 +80,10 @@ Quando un denso e' la scelta migliore. Per deployment su singola GPU, su edge o 
 Combinare gli assi di efficienza. MoE (sparsita' tra expert), quantizzazione (precisione ridotta dei pesi) e adaptive per-token compute (budget variabile) sono assi ortogonali e cumulabili. Un sistema di serving maturo li combina: un MoE quantizzato ad AWQ 4-bit con allocazione adattiva del compute per token e' lo stato dell'arte dell'ottimizzazione dell'inferenza nel 2026.
 
 ## Aggiornamenti
+
+### 2026-08-28
+
+Zhipu AI (Z.ai) conferma il 26 agosto che il modello "stealth" Ox Alpha — comparso il 20 agosto su OpenRouter, OpenCode e Cline e gia' fingerprintato con il 99% di certezza come un GLM non annunciato (digest 24 agosto) — e' GLM-5.3-Flash: un MoE con 320 miliardi di parametri totali e 18 miliardi attivi (ratio 1:18, in linea con la fascia gia' osservata per GLM-5.2 744B-A40B), primo modello nativamente multimodale della serie GLM-5 (testo, immagini, video, documenti visivi), attenzione ibrida sparsa/lineare, contesto fino a un milione di token, addestrato ed eseguito su chip AI domestici cinesi. Pesi pubblicati su Hugging Face sotto licenza MIT. Il caso e' il primo in questa scheda in cui un laboratorio distribuisce un MoE in forma anonima per raccogliere adozione di massa (62 trilioni di token processati in test pubblici prima del lancio ufficiale, oltre 11 trilioni nei primi tre giorni su OpenRouter) e lo rivendica ufficialmente solo dopo che un fingerprinting tecnico esterno e indipendente ne aveva gia' identificato la famiglia — un pattern di go-to-market distinto sia dal rilascio diretto (Kimi K3, GLM-5.2) sia dal rilascio ridotto rispetto all'annuncio (Qwen3.8-Max, 13 agosto). Resta invece non pubblicato, oltre la finestra "due settimane" gia' tracciata in questa scheda il 15 agosto, il rilascio dei pesi del GLM-5.3 di punta (quello con la capacita' offensiva cyber cresciuta oltre le attese): la data placeholder dell'8/28 agosto su Hugging Face e' passata senza pubblicazione al momento di chiusura di questa run. [Digest 2026-08-28](../../digest/2026/08/28.md)
 
 ### 2026-08-15
 
