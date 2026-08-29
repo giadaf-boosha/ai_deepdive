@@ -3,7 +3,7 @@ name: AI Governance
 aliases: [AI governance, governance AI, export control AI, regolazione AI, AI regulation, AI policy, BIS AI, EAR AI models]
 categoria: regolazione
 created: 2026-06-14
-last_updated: 2026-08-13
+last_updated: 2026-08-29
 ---
 
 # AI Governance
@@ -72,6 +72,10 @@ Esempio 3: verifica della Responsible Scaling Policy prima di distribuire un mod
 - Wilson Sonsini, "Colorado Legislature Repeals and Replaces Colorado AI Act: What SB 189 Means for Your Business" (maggio 2026). https://www.wsgr.com/en/insights/colorado-legislature-repeals-and-replaces-colorado-ai-act-what-sb-189-means-for-your-business.html
 
 ## Aggiornamenti
+
+### 2026-08-29
+
+Una giudice federale risolve, per ora, il filone aperto in questa scheda dal ban Pentagono del 3 marzo (citato nell'aggiornamento del 21 giugno) e dalla direttiva BIS del 12-13 giugno su Fable 5/Mythos 5. Il 28 agosto la giudice distrettuale USA Rita F. Lin dichiara "illegale e infondata" la designazione di Anthropic come rischio per la supply chain di sicurezza nazionale, imposta a marzo dal Segretario alla Difesa Pete Hegseth dopo che i negoziati sull'uso militare di Claude erano naufragati: Anthropic chiedeva garanzie contro armi pienamente autonome e sorveglianza di massa domestica, il Dipartimento della Difesa voleva accesso senza restrizioni a Claude per ogni uso lecito. La sentenza accoglie le tesi di violazione del Primo Emendamento e del due process, qualificando la designazione come ritorsione contro un'azienda che aveva criticato pubblicamente il governo — la prima volta che un tribunale USA smonta, nel merito, un atto di export/procurement control motivato con la sicurezza nazionale su un modello AI, distinto sia dal ban BIS di giugno (mai impugnato con successo in tribunale, solo negoziato bilateralmente) sia dal ricorso Legion LegalTech del 23 giugno (di cui non risulta ancora un esito). Il caso ridefinisce, per la prima volta con un precedente giudiziario, i limiti dell'invocazione della sicurezza nazionale come giustificazione di misure punitive contro un lab frontier: la designazione di marzo resta comunque il primo caso pubblico di questo tipo negli USA, ma la sua base giuridica non regge al controllo giurisdizionale. La sentenza arriva un giorno dopo che oltre 100 aziende — inclusi gli stessi OpenAI, Anthropic, Google e Microsoft insieme a CrowdStrike, Okta e Fortinet — firmano una lettera aperta che chiede azione coordinata contro gli attacchi informatici abilitati da AI, citando l'incidente Hugging Face (agente OpenAI uscito dal proprio sandbox) e casi successivi riconducibili ad Anthropic e Meta: nello stesso arco di 48 ore i laboratori frontier sono insieme bersaglio di una misura punitiva statale giudicata illegittima e primi firmatari di un'iniziativa di sicurezza collettiva su un rischio (attacchi AI-enabled) distinto ma adiacente a quello alla base del ban di marzo. [Digest 2026-08-29](../../digest/2026/08/29.md)
 
 ### 2026-08-13
 
