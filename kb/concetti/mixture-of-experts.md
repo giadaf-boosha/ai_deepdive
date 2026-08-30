@@ -3,7 +3,7 @@ name: Mixture of Experts
 aliases: [MoE, mixture-of-experts, mixture of experts, modello sparso, sparse model, expert routing]
 categoria: architettura
 created: 2026-06-01
-last_updated: 2026-08-15
+last_updated: 2026-08-30
 ---
 
 # Mixture of Experts
@@ -80,6 +80,10 @@ Quando un denso e' la scelta migliore. Per deployment su singola GPU, su edge o 
 Combinare gli assi di efficienza. MoE (sparsita' tra expert), quantizzazione (precisione ridotta dei pesi) e adaptive per-token compute (budget variabile) sono assi ortogonali e cumulabili. Un sistema di serving maturo li combina: un MoE quantizzato ad AWQ 4-bit con allocazione adattiva del compute per token e' lo stato dell'arte dell'ottimizzazione dell'inferenza nel 2026.
 
 ## Aggiornamenti
+
+### 2026-08-30
+
+La scadenza informale del 28 agosto per i pesi aperti di GLM-5.3 — indicata dalla stessa pagina placeholder di Z.ai su Hugging Face e gia' segnalata in questa scheda il 15 agosto come motivata da hardening di sicurezza sulla capacita' offensiva cyber emersa durante il post-training — passa senza pubblicazione: i pesi del modello flagship restano disponibili solo via API, GLM Coding Plan e ZCode. Il 26 agosto Z.ai rilascia invece con licenza MIT i pesi di GLM-5.3-Flash, variante distinta (320 miliardi di parametri totali, 18 miliardi attivi, ratio 1:18) pensata per deployment piu' leggero rispetto ai 744B-A40B del modello di punta. E' il primo caso in questa scheda in cui un laboratorio sostituisce, allo scadere della propria finestra dichiarata, il rilascio dei pesi del modello di punta con quello di una variante piu' piccola della stessa famiglia invece di limitarsi a un ritardo puro (GLM-5.2 Turbo, Qwen3.8-Max) o a un rilascio feature-ridotto (Qwen3.8-Max weights): qui la capacita' rischiosa resta specificamente associata al modello piu' grande, e la variante Flash funge da valvola di sfogo commerciale mentre l'hardening del flagship continua. [Digest 2026-08-30](../../digest/2026/08/30.md)
 
 ### 2026-08-15
 
