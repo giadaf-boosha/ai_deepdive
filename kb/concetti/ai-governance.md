@@ -3,7 +3,7 @@ name: AI Governance
 aliases: [AI governance, governance AI, export control AI, regolazione AI, AI regulation, AI policy, BIS AI, EAR AI models]
 categoria: regolazione
 created: 2026-06-14
-last_updated: 2026-09-03
+last_updated: 2026-09-04
 ---
 
 # AI Governance
@@ -72,6 +72,10 @@ Esempio 3: verifica della Responsible Scaling Policy prima di distribuire un mod
 - Wilson Sonsini, "Colorado Legislature Repeals and Replaces Colorado AI Act: What SB 189 Means for Your Business" (maggio 2026). https://www.wsgr.com/en/insights/colorado-legislature-repeals-and-replaces-colorado-ai-act-what-sb-189-means-for-your-business.html
 
 ## Aggiornamenti
+
+### 2026-09-04
+
+Due sviluppi confermano e complicano rispettivamente il filone Responsible Scaling gia' tracciato in questa scheda. Primo, OpenAI lancia il 3 settembre GPT-6 Astra come primo modello proprio a superare formalmente la soglia "Critical" di rischio cyber del Preparedness Framework — la classificazione era gia' stata anticipata come probabile il 7 agosto (aggiornamento 2026-08-13) e confermata come raggiunta l'1 settembre (digest 3 settembre), ma qui diventa per la prima volta il regime operativo di un modello effettivamente in distribuzione: la versione per utenti paganti include guardrail dedicati che limitano l'accesso alle capacita' cyber piu' avanzate, in continuita' con il pattern gia' visto con Gemini 3.8 Flash Cyber di Google (accesso vetted tramite Fairwind Program, digest 3 settembre). E' il primo caso in questa scheda in cui una soglia "Critical" di un Preparedness/Responsible Scaling Framework si traduce in un prodotto pubblico con controlli d'accesso differenziati, invece che in una pausa di sviluppo (caso Astra di agosto) o in un rifiuto di rilascio. Secondo, un alto funzionario del Pentagono (Emil Michael, under secretary of defense) ribadisce il 3 settembre su X che la designazione di Anthropic come "supply chain risk" resta in vigore, contraddicendo pubblicamente — a un giorno di distanza — le dichiarazioni distensive del Segretario al Commercio Lutnick a Bloomberg Television. Il caso e' il seguito diretto della sentenza della giudice federale Rita Lin del 28 agosto che aveva dichiarato illegittima la designazione (aggiornamento precedente in coda a questa sezione, via digest 31 agosto): l'appello del governo resta pendente a Washington DC, e la contraddizione interna tra Commerce e Difesa mostra che una sentenza sfavorevole non ha ancora prodotto un allineamento di posizione tra le agenzie federali coinvolte — un pattern distinto da tutti i casi di risoluzione negoziale gia' tracciati in questa scheda (G7 di Evian, 21 giugno; trattative dirette Anthropic-Commerce, 19 giugno), dove l'ammorbidimento presidenziale o esecutivo precedeva quello delle agenzie operative, non il contrario. [Digest 2026-09-04](../../digest/2026/09/04.md)
 
 ### 2026-08-13
 

@@ -3,7 +3,7 @@ name: Evaluation / Benchmark AI
 aliases: [benchmark, eval, evaluation, valutazione LLM, AI benchmark, leaderboard]
 categoria: tecnica
 created: 2026-04-30
-last_updated: 2026-09-03
+last_updated: 2026-09-04
 ---
 
 # Evaluation / Benchmark AI
@@ -200,6 +200,10 @@ Due sviluppi ridefiniscono cosa viene misurato quando si valuta un LLM. LLM-as-a
 ### 2026-07-15
 
 Long-Horizon-Terminal-Bench (LHTB, arXiv:2607.08964) introduce un benchmark di 46 task terminale distribuiti su nove categorie (riproduzione di esperimenti, ingegneria del software, analisi multimodale, giochi interattivi, calcolo scientifico), pensato per misurare quanto un agente sostenga lavoro utile in un ambiente terminale stateful lungo centinaia di step, a differenza dei benchmark a orizzonte breve dove l'agente produce un singolo artifact e si ferma. La valutazione usa verificatori nascosti che ricostruiscono il risultato dagli artifact prodotti (il progresso auto-dichiarato non conta) e scompone ogni task in sotto-task graduati per ottenere reward intermedi densi e credito parziale — un design in continuita' con TerminalWorld (digest 1 giugno) sul principio di misurare la robustezza su workflow realistici piuttosto che il tetto di capacita' su task curati, ma con un asse aggiuntivo: la durata dell'esecuzione (centinaia di step) come dimensione di difficolta' distinta dalla complessita' del singolo task. Il risultato principale: la configurazione piu' forte testata (Grok 4.5) raggiunge solo il 28,3% di successo a soglia di reward 0,95, con un pass rate medio tra tutti i modelli valutati del 6,4% — un gap netto rispetto ai punteggi 80-95% ormai comuni su Terminal-Bench 2.0/2.1 e SWE-bench Verified (vedi voci precedenti in questa scheda), che quantifica quanto l'esecuzione a orizzonte lungo resti un collo di bottiglia distinto dalla risoluzione di singoli task terminale ben definiti. [Digest 2026-07-15](../../digest/2026/07/15.md)
+
+### 2026-09-04
+
+GPT-6 Astra (OpenAI, 3 settembre) porta il confronto sui benchmark agentici oltre il coding puro verso computer use e reasoning scientifico di frontiera. Sui benchmark di controllo del computer, Astra segna 72,6% su OSWorld 2.0 (in circa il 47% di tempo in meno per task rispetto a GPT-5.6 Sol) e 92,7% su ScreenSpot-Pro senza tool esterni, contro il 76,9% di Sol — un salto sulla dimensione "azione diretta sull'interfaccia" distinta dal coding testuale gia' tracciato in questa scheda con Terminal-Bench e SWE-bench. Su Terminal-Bench 4.0, introdotto appena due giorni prima da Claude Fable 5.1/Mythos 5.1 (voce precedente), Astra segna 57,7% — leggermente sopra il 55,8% di Fable 5.1 ma sotto il 60,9% di Mythos 5.1, il primo confronto diretto disponibile sulla versione 4.0 del benchmark tra i due laboratori. Su FrontierMath Tier 4 v2 (97,6%) e GPQA Diamond (96%) Astra stabilisce risultati tra i piu' alti mai dichiarati pubblicamente su questi due benchmark scientifici di frontiera gia' tracciati in questa scheda (voci 2026-05-10 e 2026-06-30); su ExploitBench, benchmark introdotto per misurare la capacita' di sfruttare vulnerabilita' di sistema note, il punteggio e' 100%, coerente con la classificazione "Critical" del modello sul Preparedness Framework (vedi `kb/concetti/ai-governance.md`). Il dato che complica la narrativa di dominanza assoluta e' Humanity's Last Exam con tool: qui Astra (57,2%) resta dietro Claude Fable 5.1 (65,0%), a conferma del pattern gia' osservato in questa scheda (voce 2026-06-29, GLM-5.2 su IDOR detection) secondo cui nessun modello domina tutti i benchmark contemporaneamente — la leadership resta task-specific anche tra i due modelli piu' recenti dei due laboratori concorrenti principali. [Digest 2026-09-04](../../digest/2026/09/04.md)
 
 ### 2026-09-03
 
