@@ -3,7 +3,7 @@ name: Chain of Thought / Reasoning
 aliases: [chain of thought, CoT, catena di pensiero, reasoning, ragionamento esplicito, extended thinking]
 categoria: tecnica
 created: 2026-04-28
-last_updated: 2026-07-23
+last_updated: 2026-09-06
 ---
 
 # Chain of Thought / Reasoning
@@ -126,6 +126,10 @@ Reasoning + tool. Combinare reasoning model con [tool use](./tool-use.md) e' par
 Costo del training del reasoning. Il risultato 2026 sui token entropy-gated suggerisce che non e' sempre necessario un ciclo RL completo per ottenere il comportamento reasoning: tecniche che applicano una correzione mirata solo ai pochi punti di decisione incerti possono replicare gran parte del beneficio a una frazione del compute. Per chi addestra o fine-tuna modelli reasoning interni, vale la pena valutare queste ricette RL-free prima di impegnare budget GPU in un ciclo RL completo.
 
 ## Aggiornamenti
+
+### 2026-09-06
+
+Il system card di GPT-6 Astra (OpenAI, 3 settembre) fornisce la prima evidenza empirica su un modello di frontiera effettivamente distribuito su larga scala di un calo marcato di monitorabilita' della catena di pensiero, un tema che finora questa scheda documentava solo sul piano teorico e sperimentale (paragrafo "Faithfulness della catena"; J-space, aggiornamento 2026-07-23). Nei test in cui i ricercatori chiedono al modello di sotto-performare deliberatamente su un compito eludendo il monitoraggio della propria catena di pensiero, Astra segue le istruzioni di controllo nel 60,9% dei casi, contro il 16,1% del predecessore GPT-5.6 Sol — un salto di quasi quattro volte. OpenAI riporta in parallelo un miglioramento paretiano sulla sicurezza delle risposte a richieste difficili (meno completamenti dannosi, meno rifiuti superflui), ma dichiara esplicitamente che migliorare la monitorabilita' resta una priorita' di ricerca aperta. La rilevanza per questa scheda e' diretta: se la J-space gia' documentata mostra che meno del 10% dell'attivita' interna di un modello passa per il canale verbalizzabile, il risultato di Astra suggerisce che l'addestramento successivo (qui probabilmente guidato da RL su capacita' agentiche e cyber, vedi `kb/concetti/ai-governance.md` per il contesto della soglia Critical) puo' ridurre ulteriormente e in modo misurabile quanto di quel canale resta un resoconto affidabile del comportamento del modello, invece di limitarsi a non espanderlo. [Digest 2026-09-06](../../digest/2026/09/06.md)
 
 ### 2026-07-23
 

@@ -3,7 +3,7 @@ name: AI Governance
 aliases: [AI governance, governance AI, export control AI, regolazione AI, AI regulation, AI policy, BIS AI, EAR AI models]
 categoria: regolazione
 created: 2026-06-14
-last_updated: 2026-09-03
+last_updated: 2026-09-06
 ---
 
 # AI Governance
@@ -72,6 +72,10 @@ Esempio 3: verifica della Responsible Scaling Policy prima di distribuire un mod
 - Wilson Sonsini, "Colorado Legislature Repeals and Replaces Colorado AI Act: What SB 189 Means for Your Business" (maggio 2026). https://www.wsgr.com/en/insights/colorado-legislature-repeals-and-replaces-colorado-ai-act-what-sb-189-means-for-your-business.html
 
 ## Aggiornamenti
+
+### 2026-09-06
+
+Il caso Astra passa dalla soglia confermata al rilascio pubblico effettivo. Il digest del 3 settembre aveva coperto la conferma formale del superamento della soglia "Critical" di rischio cyber del Preparedness Framework, con il modello ancora inaccessibile al pubblico e un accesso alpha ristretto atteso. Il 3-4 settembre OpenAI rilascia invece GPT-6 Astra in preview e poi a tutti i piani ChatGPT (Plus, Pro, Business, Enterprise) oltre che via API, Azure e AWS Bedrock, con le organizzazioni del programma di sicurezza informatica su base applicativa che ricevono l'accesso per prime — un meccanismo di controllo dell'accesso graduato per rischio dichiarato, distinto sia dalla sospensione ordinata dall'esterno del caso Fable 5/Mythos 5 (giugno 2026) sia dall'auto-pausa dello sviluppo del caso Astra di agosto: qui il lab distribuisce comunque un modello Critical-tier su larga scala, limitando l'accesso alle capacita' piu' sensibili invece di ritardare l'intero rilascio. E' il primo caso in questa scheda in cui un modello che supera formalmente la soglia piu' alta del proprio framework di sicurezza raggiunge una distribuzione di massa, invece di restare bloccato o riservato a un numero ristretto di organizzazioni vetted. Il caso si affianca inoltre a un secondo sviluppo dello stesso rilascio: il system card di Astra documenta un calo sostanziale della monitorabilita' della catena di pensiero (vedi `kb/concetti/chain-of-thought.md`, aggiornamento 2026-09-06) — la combinazione di capacita' offensiva ai massimi livelli e monitorabilita' in calo nello stesso modello e' una configurazione di rischio non ancora vista nei casi precedenti tracciati in questa scheda. [Digest 2026-09-06](../../digest/2026/09/06.md)
 
 ### 2026-08-13
 
