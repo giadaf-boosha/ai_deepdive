@@ -3,7 +3,7 @@ name: Evaluation / Benchmark AI
 aliases: [benchmark, eval, evaluation, valutazione LLM, AI benchmark, leaderboard]
 categoria: tecnica
 created: 2026-04-30
-last_updated: 2026-09-03
+last_updated: 2026-09-09
 ---
 
 # Evaluation / Benchmark AI
@@ -204,3 +204,7 @@ Long-Horizon-Terminal-Bench (LHTB, arXiv:2607.08964) introduce un benchmark di 4
 ### 2026-09-03
 
 Claude Fable 5.1 e Mythos 5.1 (Anthropic, 1 settembre) introducono Terminal-Bench-Science 0.1, primo benchmark pubblico che misura la capacita' di un modello di condurre un'investigazione scientifica end-to-end in un ambiente terminale: pianificare l'esperimento, eseguirlo, e verificare autonomamente il proprio lavoro. I risultati al lancio — Fable 5.1 52,6%, Fable 5 24,7%, Opus 5 29,0%, GPT-5.6 Sol 22,4%, standard error dichiarato 3,5-4,5 punti — mostrano un salto di oltre il doppio rispetto al modello precedente della stessa famiglia, un pattern gia' osservato per altri benchmark verticali di frontiera (vedi ad es. FrontierCode Diamond con Fable 5, voce 2026-06-10) ma qui applicato per la prima volta a un task esplicitamente scientifico end-to-end anziche' di sola programmazione. In parallelo, Terminal-Bench 4.0 aggiorna la serie Terminal-Bench (2.0 -> 2.1 -> 4.0, salto di versione non spiegato pubblicamente da Anthropic) con Fable 5.1 a 55,8% contro il 42,0% di Fable 5, e Mythos 5.1 — variante identica con safeguard piu' leggere, riservata a organizzazioni verificate — a 60,9%, cinque punti sopra Fable 5.1. Il caso conferma il pattern gia' tracciato in questa scheda (aggiornamento 2026-06-04): ogni nuovo modello frontier tende ad accompagnarsi a una nuova versione o a un nuovo benchmark verticale scelto per massimizzare il profilo di lancio, rendendo il confronto storico tra versioni successive di uno stesso benchmark (2.0 vs 2.1 vs 4.0) non sempre diretto. [Digest 2026-09-03](../../digest/2026/09/03.md)
+
+### 2026-09-09
+
+GPT-6 Astra (OpenAI, 3-4 settembre) porta quattro nuovi risultati di benchmark, due dei quali saturano il proprio scale: ExploitBench al 100% (dal 78,5% del predecessore GPT-5.6 Sol) e ARC-AGI-3 al 99,9%. Sul benchmark di exploit development ExploitGym, Astra raggiunge il 42,4% contro il 30,3% di Sol usando meno token in output — un guadagno di efficienza oltre che di capacita', in continuita' con il pattern gia' osservato per Fast Mode di Claude Opus 4.8 (voce 2026-05-29) ma qui applicato a un benchmark di sicurezza offensiva invece che a un compito generico. Su FrontierMath Tier 4, il benchmark di matematica con partizione non pubblica dei problemi difficili (vedi voce 2026-05-10), Astra segna il 98%, il valore piu' alto tracciato finora in questa scheda su quel benchmark. Il caso e' rilevante anche per il legame diretto tra benchmark e governance: il punteggio ExploitBench/ExploitGym e' la prova tecnica citata da OpenAI per la classificazione "Critical" di rischio cyber del Preparedness Framework (vedi `kb/concetti/ai-governance.md`, aggiornamento 2026-09-09) — un caso in cui il risultato di un benchmark determina direttamente il regime di accesso al prodotto, non solo il posizionamento competitivo nella comunicazione di lancio. [Digest 2026-09-09](../../digest/2026/09/09.md)

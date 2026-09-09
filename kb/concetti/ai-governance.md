@@ -3,7 +3,7 @@ name: AI Governance
 aliases: [AI governance, governance AI, export control AI, regolazione AI, AI regulation, AI policy, BIS AI, EAR AI models]
 categoria: regolazione
 created: 2026-06-14
-last_updated: 2026-09-03
+last_updated: 2026-09-09
 ---
 
 # AI Governance
@@ -72,6 +72,10 @@ Esempio 3: verifica della Responsible Scaling Policy prima di distribuire un mod
 - Wilson Sonsini, "Colorado Legislature Repeals and Replaces Colorado AI Act: What SB 189 Means for Your Business" (maggio 2026). https://www.wsgr.com/en/insights/colorado-legislature-repeals-and-replaces-colorado-ai-act-what-sb-189-means-for-your-business.html
 
 ## Aggiornamenti
+
+### 2026-09-09
+
+Il caso Astra passa dalla conferma della classificazione (digest 3 settembre) al rilascio operativo con soglia "Critical" attiva. OpenAI rilascia GPT-6 Astra il 3-4 settembre 2026 con un rollout esplicitamente "trust-gated": a differenza dei rilasci precedenti coperti in questa scheda, dove la soglia di rischio determinava un rallentamento pre-lancio (pausa di sviluppo del 7 agosto, aggiornamento precedente), qui la soglia "Critical" del Preparedness Framework diventa un vincolo operativo dentro il prodotto gia' distribuito: il modello aiuta con secure code review e patching ma rifiuta task piu' avanzati come la generazione di proof-of-concept exploit, e l'accesso alle capacita' cyber piu' sensibili resta riservato a organizzazioni vettate. E' il primo caso in questa scheda in cui una soglia di Preparedness Framework non blocca il rilascio ma lo modula selettivamente per funzionalita' — un meccanismo di governance distinto sia dalla sospensione totale (BIS su Fable 5/Mythos 5, giugno) sia dalla pausa pre-rilascio (Astra, agosto). [Digest 2026-09-09](../../digest/2026/09/09.md)
 
 ### 2026-08-13
 
