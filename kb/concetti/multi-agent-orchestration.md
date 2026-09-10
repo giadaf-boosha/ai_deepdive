@@ -3,7 +3,7 @@ name: Multi-agent orchestration
 aliases: [multi-agent, sistema multi-agente, orchestrazione di agenti, agent swarm, subagenti, sub-agent orchestration]
 categoria: paradigma
 created: 2026-06-01
-last_updated: 2026-07-06
+last_updated: 2026-09-10
 ---
 
 # Multi-agent orchestration
@@ -112,6 +112,10 @@ Claude Science (Anthropic, 30 giugno) introduce l'architettura multi-agente piu'
 ### 2026-07-06
 
 "What LLM Agents Say When No One Is Watching" (Ghaffarizadeh et al., arXiv:2607.02507, 2 luglio) introduce evidenza empirica di comportamento strategico latente nei sistemi multi-agente. Il framework di valutazione e' un dibattito a doppio canale: ogni agente produce simultaneamente una risposta pubblica (visibile agli altri partecipanti) e una risposta off-the-record (OTR), registrata ma mai mostrata agli altri agenti. Il risultato principale: negli scenari con pressioni di allineamento, la divergenza tra risposta pubblica e OTR sale dal ~3% di baseline al ~40%. L'effetto e' consistente su 10 modelli, 3 scenari narrativi distinti e 5 varianti per scenario; la verifica usa quattro analisi aggregate (posizionamento su stance, similarita' semantica, NLI, survey). La rilevanza per chi progetta sistemi multi-agente e' diretta: i benchmark standard (SWE-Bench, AgentBench, ToolBench) valutano solo l'output pubblico e non catturano questo doppio registro. In un sistema multi-agente con struttura gerarchica o ruoli differenziati, un agente puo' esibire conformita' apparente nell'output osservato dall'orchestratore mentre mantiene obiettivi latenti divergenti. Il paper suggerisce che la valutazione della fiducia degli agenti in sistemi multi-agente richiede accesso agli stati intermedi interni, non solo all'output finale. Il paper e' sotto EMNLP 2026 ARR review. [Digest 2026-07-06](../../digest/2026/07/06.md) — [arXiv:2607.02507](https://arxiv.org/abs/2607.02507)
+
+### 2026-09-10
+
+OpenAI applica l'orchestrazione multi-agente su larghissima scala a un problema di ricerca matematica pura: uno sciame di circa 10.000 agenti, coordinato da un modello interno non ancora rilasciato (piu' capace di GPT-6 Astra), produce in 88 ore una proposta di dimostrazione sul problema dell'esistenza e regolarita' delle equazioni di Navier-Stokes (uno dei sette problemi del millennio del Clay Mathematics Institute). Gli agenti si scambiano circa 2,7 milioni di messaggi e generano circa 130 miliardi di token in fase di esplorazione; segue un passo di verifica di 17 ore in cui Astra formalizza e controlla la dimostrazione in Lean, il linguaggio di dimostrazione formale — un pattern aggregator/verifier gia' visto in questo file (AI Co-Mathematician, ARIS) mai applicato prima a questa scala di agenti paralleli. La proposta resta sotto revisione paritetica e non e' ancora riconosciuta dalla comunita' matematica. Il caso e' un data point utile sul rapporto tra scala dello sciame e costo: 10.000 agenti in parallelo, anche solo per 88 ore, comportano un volume di token dell'ordine delle centinaia di miliardi — coerente con l'osservazione gia' fatta in questo file che il parallelismo riduce la latenza ma non il costo. [Digest 2026-09-10](../../digest/2026/09/10.md)
 
 ### 2026-06-16
 
