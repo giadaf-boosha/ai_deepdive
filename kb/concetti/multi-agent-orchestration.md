@@ -3,7 +3,7 @@ name: Multi-agent orchestration
 aliases: [multi-agent, sistema multi-agente, orchestrazione di agenti, agent swarm, subagenti, sub-agent orchestration]
 categoria: paradigma
 created: 2026-06-01
-last_updated: 2026-07-06
+last_updated: 2026-09-12
 ---
 
 # Multi-agent orchestration
@@ -84,6 +84,10 @@ Eterogeneita' dei modelli. Se l'obiettivo e' affidabilita' (non solo throughput)
 Parallelismo non e' gratis. Il fan-out riduce la latenza percepita ma il costo in token e in chiamate scala linearmente con il numero di worker. Un benchmark valutato "senza cap al numero di chiamate o token" (come nel caveat dell'AI Co-Mathematician) non e' comparabile a parita' di costo con un sistema vincolato: nel valutare sistemi multi-agente, fissare il budget di inferenza e' parte della metodologia, non un dettaglio.
 
 ## Aggiornamenti
+
+### 2026-09-12
+
+Sakana AI lancia Fugu Max e Fugu Ultra v2 (10-11 settembre), un sistema di orchestrazione basato su routing: invece di eseguire il ragionamento con un unico modello frontier, Fugu instrada ogni richiesta al modello piu' snello — pescato da un pool di modelli open e specializzati intercambiabili — capace di risolverla, minimizzando il costo a parita' di risultato. Ultra v2 rivendica risultati best o joint-best su 5 di 8 benchmark interni (48,3 su Chartography contro 27,3 di Claude Opus 5 e 29,5 di Fable 5; 74,3 su DeepSWE). Il caso e' rilevante per un limite metodologico che vale come nota operativa generale per questo pattern: il pool orchestrato da Fugu esclude proprio i tre modelli piu' forti citati come termine di paragone (Fable 5.1, GPT-6 Astra e derivati), il che rende il confronto di superiorita' dichiarato non verificabile in condizioni comparabili — un orchestratore che instrada solo tra modelli piu' deboli del benchmark di riferimento puo' battere quel benchmark su singoli task senza che questo implichi superiorita' del sistema nel suo complesso. [Digest 2026-09-12](../../digest/2026/09/12.md)
 
 ### 2026-06-02
 

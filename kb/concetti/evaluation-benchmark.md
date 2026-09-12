@@ -3,7 +3,7 @@ name: Evaluation / Benchmark AI
 aliases: [benchmark, eval, evaluation, valutazione LLM, AI benchmark, leaderboard]
 categoria: tecnica
 created: 2026-04-30
-last_updated: 2026-09-03
+last_updated: 2026-09-12
 ---
 
 # Evaluation / Benchmark AI
@@ -200,6 +200,10 @@ Due sviluppi ridefiniscono cosa viene misurato quando si valuta un LLM. LLM-as-a
 ### 2026-07-15
 
 Long-Horizon-Terminal-Bench (LHTB, arXiv:2607.08964) introduce un benchmark di 46 task terminale distribuiti su nove categorie (riproduzione di esperimenti, ingegneria del software, analisi multimodale, giochi interattivi, calcolo scientifico), pensato per misurare quanto un agente sostenga lavoro utile in un ambiente terminale stateful lungo centinaia di step, a differenza dei benchmark a orizzonte breve dove l'agente produce un singolo artifact e si ferma. La valutazione usa verificatori nascosti che ricostruiscono il risultato dagli artifact prodotti (il progresso auto-dichiarato non conta) e scompone ogni task in sotto-task graduati per ottenere reward intermedi densi e credito parziale — un design in continuita' con TerminalWorld (digest 1 giugno) sul principio di misurare la robustezza su workflow realistici piuttosto che il tetto di capacita' su task curati, ma con un asse aggiuntivo: la durata dell'esecuzione (centinaia di step) come dimensione di difficolta' distinta dalla complessita' del singolo task. Il risultato principale: la configurazione piu' forte testata (Grok 4.5) raggiunge solo il 28,3% di successo a soglia di reward 0,95, con un pass rate medio tra tutti i modelli valutati del 6,4% — un gap netto rispetto ai punteggi 80-95% ormai comuni su Terminal-Bench 2.0/2.1 e SWE-bench Verified (vedi voci precedenti in questa scheda), che quantifica quanto l'esecuzione a orizzonte lungo resti un collo di bottiglia distinto dalla risoluzione di singoli task terminale ben definiti. [Digest 2026-07-15](../../digest/2026/07/15.md)
+
+### 2026-09-12
+
+DeepSeek V4.1-Flash (10 settembre) segna 90,6 su Terminal-Bench 2.1 contro l'89,1 di Claude Opus 5 e l'88,8 di GPT-5.6 Sol, e risolve il 74,2% dei task su DeepSWE v1.1 contro il 74,0% di Opus 5 — il primo caso in questa scheda in cui un modello open-weight con licenza MIT supera i due modelli proprietari di riferimento sullo stesso benchmark curato usato per il lancio (Terminal-Bench), non solo su una singola metrica isolata. Il confronto e' dichiarato dal laboratorio stesso, non da una leaderboard terza parte indipendente: va letto con la stessa cautela metodologica gia' applicata ad altri claim di lancio in questa scheda (harness non dichiarato, possibile selezione della versione di benchmark piu' favorevole). [Digest 2026-09-12](../../digest/2026/09/12.md)
 
 ### 2026-09-03
 
