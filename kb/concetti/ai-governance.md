@@ -3,7 +3,7 @@ name: AI Governance
 aliases: [AI governance, governance AI, export control AI, regolazione AI, AI regulation, AI policy, BIS AI, EAR AI models]
 categoria: regolazione
 created: 2026-06-14
-last_updated: 2026-09-12
+last_updated: 2026-09-13
 ---
 
 # AI Governance
@@ -72,6 +72,10 @@ Esempio 3: verifica della Responsible Scaling Policy prima di distribuire un mod
 - Wilson Sonsini, "Colorado Legislature Repeals and Replaces Colorado AI Act: What SB 189 Means for Your Business" (maggio 2026). https://www.wsgr.com/en/insights/colorado-legislature-repeals-and-replaces-colorado-ai-act-what-sb-189-means-for-your-business.html
 
 ## Aggiornamenti
+
+### 2026-09-13
+
+Dario Amodei pubblica il 12 settembre l'essay "We Must Pace the Frontier", il primo caso in questa scheda in cui il CEO di un laboratorio frontier si impegna unilateralmente a rallentare il ritmo di sviluppo delle proprie capacita', invece di limitarsi a proporlo ad altri o a chiederlo al governo. Il piano in tre parti — valutatori terzi con accesso permanente equivalente a un dipendente interno al laboratorio, coordinamento democratico tra aziende AI di frontiera su standard di sicurezza comuni, coordinamento anche con governi non democratici nei limiti del possibile — attribuisce l'accelerazione recente soprattutto al recursive self-improvement (AI usata per costruire la generazione successiva di AI). Sam Altman dichiara che OpenAI former seguira'. L'essay arriva tre giorni dopo che il ricercatore Anthropic Jacob Coxon si e' dimesso pubblicamente (9 settembre) rinunciando all'equity a due mesi dal vesting, scrivendo ai colleghi su Slack e poi su X che i laboratori "stanno correndo dritti verso una superintelligenza capace di automigliorarsi, scommettendo sulle nostre vite" e che ne' Anthropic ne' OpenAI stanno gestendo responsabilmente la pressione a correre. Rispetto alla lettera "Pacing the Frontier" firmata da 1.178 dipendenti dei principali laboratori il 28 luglio (Amodei tra i firmatari, vedi aggiornamento 2026-07-30) — che chiedeva un intervento governativo esterno per rallentare la frontiera — qui il salto e' che lo stesso Amodei, da CEO, si impegna unilateralmente senza attendere l'intervento statale, in un contesto reso piu' pressante da un abbandono pubblico e motivato dall'interno del laboratorio invece che da una richiesta collettiva anonima nei numeri. E' anche la prima volta in questa scheda che un impegno di autoregolamentazione include esplicitamente il coordinamento con governi non democratici come componente dichiarata della strategia di sicurezza, non solo con alleati o organismi multilaterali occidentali. [Digest 2026-09-13](../../digest/2026/09/13.md)
 
 ### 2026-09-12
 

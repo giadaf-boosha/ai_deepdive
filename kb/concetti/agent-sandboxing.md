@@ -3,7 +3,7 @@ name: Agent sandboxing
 aliases: [sandboxing, containment, isolamento agenti, agent containment, esecuzione isolata, sandbox]
 categoria: infrastruttura
 created: 2026-06-01
-last_updated: 2026-08-10
+last_updated: 2026-09-13
 ---
 
 # Agent sandboxing
@@ -82,6 +82,10 @@ Loop e esecuzione vanno disaccoppiati per la compliance. Il pattern "loop su pro
 La sandbox non sostituisce gli altri controlli. Contenimento, human-in-the-loop sulle azioni sensibili, controllo di policy separato dal modello e logging completo sono livelli complementari. Un agente sandboxato ma senza approvazione umana sulle azioni distruttive, o senza tracciamento dei tool call, e' ancora un rischio operativo. La sandbox limita il danno; gli altri controlli riducono la probabilita' che il danno si verifichi.
 
 ## Aggiornamenti
+
+### 2026-09-13
+
+La startup in stealth Accomplish rivela l'11-12 settembre una classe di sandbox escape in Claude Code, OpenAI Codex e Cursor basata su file di configurazione Git malevoli, dopo averla segnalata privatamente ai vendor durante l'estate. Il vettore: il file di configurazione Git di un repository puo' nominare un comando che l'agente esegue automaticamente sulla macchina dello sviluppatore non appena il repository arriva con la directory `.git` intatta (es. dopo un clone); il comando gira come utente reale, fuori dal perimetro della sandbox e senza alcun prompt di approvazione. Una ricerca correlata di Manifold Security documenta otto difetti distinti con la stessa dinamica su sette agenti di coding a riga di comando. Il dato comparativo piu' rilevante e' la differenza nei tempi di risposta dei vendor alla stessa disclosure coordinata: Cursor e OpenAI correggono in circa una settimana, Anthropic impiega circa 50 giorni e 30 release. Rispetto ai casi gia' tracciati in questa scheda, il vettore si aggiunge alla famiglia dei "canali considerati sicuri per design" che si rivelano sfruttabili — distinto dall'Agentjacking (report di errore Sentry falsificato, giugno) e dal Memory Heist (loophole di allowlist nella navigazione combinato con memoria persistente, luglio) perche' qui il canale sfruttato e' la configurazione stessa del repository che l'agente e' chiamato a lavorare, non uno strumento esterno di terze parti: qualunque agente di coding che apre un repository non fidato eredita implicitamente la fiducia nella sua configurazione Git, che va quindi trattata come input non fidato al pari del contenuto del codice. La lezione operativa per chi valuta piu' vendor sullo stesso rischio: il tempo di remediation a parita' di disclosure e' una metrica di postura di sicurezza confrontabile tra provider, non solo la presenza o assenza della falla. [Digest 2026-09-13](../../digest/2026/09/13.md)
 
 ### 2026-08-10
 
