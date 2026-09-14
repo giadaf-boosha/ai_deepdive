@@ -3,7 +3,7 @@ name: AI Governance
 aliases: [AI governance, governance AI, export control AI, regolazione AI, AI regulation, AI policy, BIS AI, EAR AI models]
 categoria: regolazione
 created: 2026-06-14
-last_updated: 2026-09-13
+last_updated: 2026-09-14
 ---
 
 # AI Governance
@@ -72,6 +72,10 @@ Esempio 3: verifica della Responsible Scaling Policy prima di distribuire un mod
 - Wilson Sonsini, "Colorado Legislature Repeals and Replaces Colorado AI Act: What SB 189 Means for Your Business" (maggio 2026). https://www.wsgr.com/en/insights/colorado-legislature-repeals-and-replaces-colorado-ai-act-what-sb-189-means-for-your-business.html
 
 ## Aggiornamenti
+
+### 2026-09-14
+
+Microsoft e' la prima azienda diversa dai tre lab firmatari originali (Anthropic, OpenAI, xAI) a tradurre l'endorsement generico al "pacing the frontier" di Amodei in un artefatto concreto di policy, nello stesso momento in cui il potere esecutivo e legislativo USA conferma di non voler intervenire per via normativa. Il 13 settembre Satya Nadella pubblica su X un post che accoglie la "pacing deliberata" necessaria per l'allineamento e annuncia un Code of Conduct alla base dei propri modelli proprietari MAI, pubblicato il giorno successivo per consultazione pubblica — prima volta che Microsoft rende pubblico in forma di documento uno standard comportamentale per i modelli che sviluppa in prima persona. Nadella articola la strategia Microsoft su tre pilastri (accesso ampio e scelta a ogni livello dello stack AI, controllo enterprise su learning loop e modelli, Code of Conduct sui modelli MAI) e scrive che la responsabilita' sulla superintelligenza non puo' restare in mano a poche entita'. Lo stesso 13 settembre, in viaggio in Irlanda, il presidente Trump respinge la richiesta di rallentamento di Amodei, Altman e Musk citando la competizione con la Cina ("whoever wins AI wins"); lo speaker della Camera Mike Johnson dichiara alla CNN che non spetta al Congresso intervenire; David Sacks, ex responsabile AI e crypto della Casa Bianca, accusa i tre CEO di volersi costruire un "cartello" chiedendo una sospensione dell'antitrust e nuovi organismi di valutazione terzi, sostenendo che possono rallentare autonomamente senza alcun intervento governativo. Rispetto a tutti i meccanismi di governance gia' tracciati in questa scheda — export control unilaterale (Fable 5/Mythos 5), AI Act europeo, Implementation Opinions cinesi — questo e' il primo caso in cui, di fronte a un impegno di autoregolamentazione cross-lab, i due rami del governo USA (esecutivo e legislativo) dichiarano esplicitamente e nello stesso giorno di non voler intervenire, lasciando l'autoregolamentazione dei lab stessi come unico meccanismo operativo sul mercato USA — l'opposto della postura interventista assunta da Washington nel caso Fable 5/Mythos 5 di giugno. [Digest 2026-09-14](../../digest/2026/09/14.md)
 
 ### 2026-09-13
 
