@@ -3,7 +3,7 @@ name: Mixture of Experts
 aliases: [MoE, mixture-of-experts, mixture of experts, modello sparso, sparse model, expert routing]
 categoria: architettura
 created: 2026-06-01
-last_updated: 2026-08-15
+last_updated: 2026-09-16
 ---
 
 # Mixture of Experts
@@ -80,6 +80,10 @@ Quando un denso e' la scelta migliore. Per deployment su singola GPU, su edge o 
 Combinare gli assi di efficienza. MoE (sparsita' tra expert), quantizzazione (precisione ridotta dei pesi) e adaptive per-token compute (budget variabile) sono assi ortogonali e cumulabili. Un sistema di serving maturo li combina: un MoE quantizzato ad AWQ 4-bit con allocazione adattiva del compute per token e' lo stato dell'arte dell'ottimizzazione dell'inferenza nel 2026.
 
 ## Aggiornamenti
+
+### 2026-09-16
+
+Shanghai AI Laboratory rilascia in sordina l'11-12 settembre Atria Dawn Preview, un MoE agentico open weight da 744 miliardi di parametri totali costruito sullo stesso backbone GLM-5.2 (744B-A40B, MIT) gia' tracciato in questa scheda dal 20 giugno e riutilizzato ad agosto da Z.ai per GLM-5.3. Il modello, distribuito su Hugging Face senza blog post ne' pricing, ottiene il punteggio piu' alto su 5 dei 16 benchmark agentici testati (92,5 su BrowseComp, 86,5 su CyberGym, 96,0 su DeepSearchQA), risultando competitivo con gli agenti frontier proprietari. E' il terzo caso in questa scheda, dopo DeepSeek-V4-Flash (agosto) e GLM-5.3 (agosto), in cui un laboratorio ottiene un salto di capacita' agentica rilevante da un backbone MoE gia' rilasciato attraverso un nuovo ciclo di post-training, senza toccare parametri totali, attivi o routing — a conferma che nel 2026 il riuso di backbone gia' addestrati con post-training mirato e' diventato un percorso di sviluppo distinto e piu' economico rispetto al training di un nuovo MoE da zero. [Digest 2026-09-16](../../digest/2026/09/16.md)
 
 ### 2026-08-15
 

@@ -3,7 +3,7 @@ name: AI Governance
 aliases: [AI governance, governance AI, export control AI, regolazione AI, AI regulation, AI policy, BIS AI, EAR AI models]
 categoria: regolazione
 created: 2026-06-14
-last_updated: 2026-09-13
+last_updated: 2026-09-16
 ---
 
 # AI Governance
@@ -72,6 +72,10 @@ Esempio 3: verifica della Responsible Scaling Policy prima di distribuire un mod
 - Wilson Sonsini, "Colorado Legislature Repeals and Replaces Colorado AI Act: What SB 189 Means for Your Business" (maggio 2026). https://www.wsgr.com/en/insights/colorado-legislature-repeals-and-replaces-colorado-ai-act-what-sb-189-means-for-your-business.html
 
 ## Aggiornamenti
+
+### 2026-09-16
+
+L'essay "We Must Pace the Frontier" di Dario Amodei (12 settembre, vedi aggiornamento 2026-09-13) genera in 48 ore un caso politico nazionale che sposta il dibattito dal piano tecnico-industriale al piano apertamente partigiano. Il 14 settembre Trump attacca Amodei per nome su Truth Social, scrivendo che l'unico "guardrail" di cui l'AI ha bisogno e' "un PRESIDENTE FORTE E INTELLIGENTE" e definendo Amodei un "perfetto angioletto" che finge preoccupazione, dopo che la sua amministrazione "ha gia' impedito alle persone dell'AI di fare cose cattive"; l'attacco arriva nonostante Sam Altman, Demis Hassabis ed Elon Musk avessero pubblicamente appoggiato l'appello di Amodei a rallentare, segno che la posizione presidenziale non distingue tra i CEO delle diverse aziende. Il 15 settembre, alla conferenza Pro-Human Assembly organizzata dal Future of Life Institute a pochi isolati dalla Casa Bianca, un'inedita coalizione trasversale — Bernie Sanders e Steve Bannon sullo stesso palco, insieme a Joseph Gordon-Levitt, Ashley Judd e i sindacati AFL-CIO e SAG-AFTRA — chiede curbs vincolanti sull'AI; Sanders annuncia che presentera' con il deputato democratico Greg Casar una legge per vietare permanentemente lo sviluppo di AI "superintelligente" capace di sfuggire al controllo umano. Rispetto a tutti i meccanismi di governance gia' tracciati in questa scheda — export control (Fable 5/Mythos 5), enforcement sovranazionale (AI Act), autoregolamentazione cross-lab dei CEO (lettera del 28 luglio, essay di Amodei) — questo e' il primo caso in cui un impegno unilaterale di un CEO innesca cosi' rapidamente sia un attacco presidenziale diretto e nominale sia una proposta di legge di divieto vincolante sostenuta da una coalizione politica sinistra-destra populista, invece che richieste di trasparenza o testing pre-rilascio. [Digest 2026-09-16](../../digest/2026/09/16.md)
 
 ### 2026-09-13
 
