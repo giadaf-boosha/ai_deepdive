@@ -3,7 +3,7 @@ name: AI Governance
 aliases: [AI governance, governance AI, export control AI, regolazione AI, AI regulation, AI policy, BIS AI, EAR AI models]
 categoria: regolazione
 created: 2026-06-14
-last_updated: 2026-09-13
+last_updated: 2026-09-17
 ---
 
 # AI Governance
@@ -216,3 +216,7 @@ Demis Hassabis (CEO Google DeepMind) pubblica il 14 luglio un manifesto personal
 ### 2026-09-03
 
 Il caso Astra tracciato nell'aggiornamento del 13 agosto passa da cautela precauzionale a classificazione formale. OpenAI conferma il 1 settembre che Astra e' il primo proprio modello a superare concretamente — non piu' solo "non escludere di superare" — la soglia "Critical" di rischio cyber del Preparedness Framework: la fascia piu' alta prevista dal framework, riservata a capacita' di identificare e sfruttare autonomamente vulnerabilita' zero-day su sistemi "hardened" reali o di ideare ed eseguire end-to-end attacchi inediti da un obiettivo di alto livello. Sul nuovo ExploitBench, benchmark interno che misura la capacita' di violare vulnerabilita' di sistema note, Astra ottiene punteggio pieno; OpenAI dichiara inoltre che il modello individua falle sconosciute e le sfrutta senza guida umana. A differenza della pausa di sviluppo di agosto — un caso di auto-limitazione preventiva prima ancora di conoscere l'esito della valutazione — qui la soglia e' stata raggiunta e riconosciuta pubblicamente, e la risposta di governance non e' un blocco ma un accesso graduale e controllato: alpha ristretta, poi una fase denominata "Daybreak Blue", prima di un rilascio piu' ampio. E' il primo caso in questa scheda in cui la sequenza "responsible scaling policy dichiarata -> soglia numerica raggiunta -> gating dell'accesso invece del blocco totale" si completa interamente in pubblico nell'arco di tre settimane, offrendo un contro-esempio diretto rispetto al precedente Fable 5/Mythos 5 di giugno, dove la soglia critica era stata superata senza preavviso e la risposta era arrivata da un governo esterno anziche' dal framework interno del lab. [Digest 2026-09-03](../../digest/2026/09/03.md)
+
+### 2026-09-17
+
+Il ministero degli Esteri cinese respinge pubblicamente, a livello di portavoce governativo, l'essay di Dario Amodei "We Must Pace the Frontier" (12 settembre, digest 2026-09-13), definendolo "fearmongering" pochi giorni prima di un possibile vertice Trump-Xi (14 settembre). Il portavoce Guo Jiakun risponde direttamente al passaggio dell'essay in cui Amodei chiede di mantenere le restrizioni all'export di chip AI avanzati verso la Cina; il Global Times pubblica in parallelo un editoriale che liquida l'essay come tentativo velato di "contenere" la Cina. E' il primo caso in questa scheda in cui la risposta a una proposta di policy di un CEO di lab frontier arriva esplicitamente a livello di governo, e non solo da ricercatori, competitor o commentatori di settore — un'escalation diretta rispetto al pattern di autoregolamentazione cross-lab (Hassabis, Amodei) e di dispute lab-vs-tech (caso Alibaba-Anthropic, luglio) gia' tracciati in questa scheda. [Digest 2026-09-17](../../digest/2026/09/17.md)

@@ -3,7 +3,7 @@ name: Mixture of Experts
 aliases: [MoE, mixture-of-experts, mixture of experts, modello sparso, sparse model, expert routing]
 categoria: architettura
 created: 2026-06-01
-last_updated: 2026-08-15
+last_updated: 2026-09-17
 ---
 
 # Mixture of Experts
@@ -132,3 +132,7 @@ Tre modelli open-weight per il coding agentico rilasciati nella settimana del ba
 ### 2026-07-09
 
 NVIDIA estende il MoE a un caso d'uso multimodale nuovo per la scheda: Audex (Nemotron-Labs-Audex-30B-A3B, 7 luglio) e' un decoder Transformer MoE unificato audio-testo, 30B totali / 3B attivi, costruito su un backbone testo-only ibrido Mamba-Transformer (Nemotron-Cascade-2-30B-A3B, 52 layer, 128 expert instradabili, 6 attivati). La novita' architetturale rispetto ai casi precedenti (DiffusionGemma su backbone diffusivo, digest 06-12) e' che audio e testo condividono lo stesso spazio di token durante la generazione: l'audio viene codificato e proiettato nell'embedding testuale, poi processato insieme ai token di testo con lo stesso meccanismo di routing MoE. Il training combina 157,4B token audio e 320,5B token testuali con training supervisionato multi-stage, RL a cascata solo-testo e distillazione on-policy multi-dominio. Il risultato dichiarato — preservazione delle capacita' di reasoning, allineamento e long-context del backbone testuale con regressione marginale o nulla, mentre il modello acquisisce comprensione/generazione audio — conferma che la sparsita' del MoE assorbe l'aggiunta di una modalita' intera senza il trade-off netto capacita'-vs-specializzazione tipico dei modelli densi multimodali. Checkpoint (Audex-30B-A3B e la variante piu' piccola Audex-2B) su Hugging Face, licenza non commerciale. [Digest 2026-07-09](../../digest/2026/07/09.md)
+
+### 2026-09-17
+
+Shanghai AI Laboratory rilascia in silenzio Atria Dawn Preview (11 settembre, missed coverage), MoE agentico da 744 miliardi di parametri totali costruito sulla foundation model GLM-5.2, licenza MIT. Il dato nuovo rispetto ai casi gia' tracciati in questa scheda non e' architetturale ma di profilo di capacita': e' il primo modello MoE open-weight di questa scala a ottenere il punteggio piu' alto tra i modelli confrontati su un benchmark di ricerca/navigazione (92,5 su BrowseComp, contro 92,2 di GPT-5.6 Sol e 90,8 di Claude Opus 5) restando pero' nettamente indietro sul coding agentico (59,6 su SWE-bench Pro contro il 74,7 di Opus 5; 78,3 su Terminal-Bench 2.1 contro il 90,2 di Opus 5) — un profilo di forza/debolezza disomogeneo tra domini, diverso dai modelli MoE cinesi precedenti gia' coperti in questa scheda (Kimi K3, LongCat-2.0, GLM-5.2), che puntavano a competitivita' piu' uniforme sui benchmark generalisti. [Digest 2026-09-17](../../digest/2026/09/17.md)

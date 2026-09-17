@@ -3,7 +3,7 @@ name: Formal Verification / Theorem Proving assistito da LLM
 aliases: [formal verification, theorem proving, dimostrazione formale, formalizzazione matematica, Lean proof, autoformalizzazione, computer-checked proof, theorem formalization]
 categoria: tecnica
 created: 2026-09-12
-last_updated: 2026-09-12
+last_updated: 2026-09-17
 ---
 
 # Formal Verification / Theorem Proving assistito da LLM
@@ -79,3 +79,7 @@ Esempio 3: uso pratico per chi costruisce sistemi di verifica software. Un'organ
 ### 2026-09-12
 
 Prima voce di questa scheda, appena creata. Claude (Anthropic) completa la prima dimostrazione formale nota, verificata al computer in Lean, dell'Ultimo Teorema di Fermat: oltre 13 milioni di righe di codice e 29.500 teoremi intermedi verificati in 11 giorni, contro gli anni stimati per una formalizzazione umana equivalente, usando lo strumento open-source Prove2Me e dozzine di istanze Claude in parallelo per circa 6 miliardi di token complessivi. L'annuncio risale al 4 settembre 2026 mai coperto in un digest per assenza di run tra il 4 e l'11 settembre; recuperato come missed coverage nel digest del 12 settembre. [Digest 2026-09-12](../../digest/2026/09/12.md)
+
+### 2026-09-17
+
+Primo caso in questa scheda di dimostrazione formale contestata pubblicamente dalla comunita' matematica. OpenAI dichiara (9 settembre, missed coverage) che un proprio modello non rilasciato, Astra-next, ha prodotto una soluzione al problema di Navier-Stokes (uno dei sette Problemi del Millennio Clay) con verifica in Lean, orchestrando circa 10.000 agenti per 88 ore e circa 130 miliardi di token. A differenza del caso Fermat sopra, dove Anthropic ha pubblicato l'intera catena di dimostrazioni Lean, OpenAI non ha reso pubblico il testo completo della dimostrazione: la comunita' matematica — incluso il matematico Tristan Buckmaster, che accusa OpenAI di aver indirizzato il proprio sistema sul problema dopo essere venuta a conoscenza di un metodo che lui stesso stava usando su una questione correlata, accusa che OpenAI respinge — non puo' quindi escludere assunzioni nascoste o che il sistema abbia risolto un problema correlato ma diverso da quello posto da Clay. Il caso rende esplicito un limite gia' impliciti nella sezione "Quando usarlo" di questa scheda: un kernel Lean verifica solo che i passaggi formali siano coerenti con l'enunciato sottoposto, non che l'accesso al ragionamento completo sia garantito senza pubblicazione del testo della dimostrazione. [Digest 2026-09-17](../../digest/2026/09/17.md)
