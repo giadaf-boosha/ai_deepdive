@@ -3,7 +3,7 @@ name: AI Governance
 aliases: [AI governance, governance AI, export control AI, regolazione AI, AI regulation, AI policy, BIS AI, EAR AI models]
 categoria: regolazione
 created: 2026-06-14
-last_updated: 2026-09-13
+last_updated: 2026-09-19
 ---
 
 # AI Governance
@@ -72,6 +72,10 @@ Esempio 3: verifica della Responsible Scaling Policy prima di distribuire un mod
 - Wilson Sonsini, "Colorado Legislature Repeals and Replaces Colorado AI Act: What SB 189 Means for Your Business" (maggio 2026). https://www.wsgr.com/en/insights/colorado-legislature-repeals-and-replaces-colorado-ai-act-what-sb-189-means-for-your-business.html
 
 ## Aggiornamenti
+
+### 2026-09-19
+
+Due sviluppi distinti, uno che quantifica per la prima volta il tema del recursive self-improvement gia' tracciato in questa scheda, l'altro che aggiunge dettaglio contrattuale inedito al rapporto lab-Pentagono. Primo, Anthropic pubblica il 18 settembre un "AI R&D automation index" sviluppato con Epoch AI: Claude guida ormai il 26% del lavoro di ricerca e sviluppo interno sui propri modelli, contro meno dell'1% a febbraio, con circa 30.000 agenti al lavoro in parallelo sulla piattaforma di ricerca interna ad agosto e un sistema di monitoraggio che ha bloccato circa 1 decisione su 47.000 su oltre un miliardo osservate. E' la prima volta in questa scheda che il fenomeno descritto in astratto da Dario Amodei nell'essay "We Must Pace the Frontier" (12 settembre, aggiornamento precedente) — l'AI usata per costruire la generazione successiva di AI come motore dell'accelerazione recente — riceve un numero pubblico e tracciabile nel tempo, con una traiettoria dichiarata (0% a febbraio, 26% ad agosto) che gli osservatori esterni potranno usare come metro per i prossimi annunci dello stesso tipo; Anthropic invita esplicitamente altri lab a riprodurre la metodologia sui propri dati con validazione di terze parti. Secondo, The Intercept pubblica l'8 settembre (recuperato qui come missed coverage) oltre 400 pagine di contratti del Pentagono con OpenAI, Anthropic, Google e xAI ottenuti via causa FOIA, fino a 200 milioni di dollari ciascuno, firmati nel luglio 2025 con emendamenti successivi: i quattro lab si impegnano a costruire prototipi AI per sorveglianza, acquisizione di bersagli ed esecuzione autonoma di missioni, oltre a consulenza strategica e addestramento del personale militare; documenti di febbraio mostrano dipendenti OpenAI incorporati direttamente nelle strutture di comando. Anthropic risulta l'unica delle quattro ad aver rifiutato di fornire la propria tecnologia senza divieti contrattuali fissi su sorveglianza domestica e armi autonome — la stessa postura che aveva portato alla designazione "supply chain risk" del Pentagono poi dichiarata illegittima da una giudice federale (digest 31 agosto). Il dettaglio contrattuale ora disponibile aggiunge per la prima volta cifre e obblighi specifici, e una differenza di postura documentata tra i quattro laboratori, a una relazione finora nota solo per i suoi episodi di attrito pubblico. [Digest 2026-09-19](../../digest/2026/09/19.md)
 
 ### 2026-09-13
 

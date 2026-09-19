@@ -3,7 +3,7 @@ name: Interaction Model
 aliases: [interaction model, full-duplex AI, modello di interazione, full-duplex model]
 categoria: architettura
 created: 2026-05-13
-last_updated: 2026-06-01
+last_updated: 2026-09-19
 ---
 
 # Interaction Model
@@ -80,6 +80,10 @@ La complessita' dell'architettura a due livelli comporta anche un costo di integ
 - TechCrunch, "Sesame, the conversational AI startup from Oculus founders, launches its iOS app", maggio 2026. https://techcrunch.com/2026/05/28/sesame-the-conversational-ai-startup-from-oculus-founders-launches-its-ios-app/
 
 ## Aggiornamenti
+
+### 2026-09-19
+
+Google rilascia il 14-15 settembre Gemini 3.8 Live e Gemini 3.8 Live Extended Thinking, terzo rilascio della famiglia Flash/Live in sei settimane dopo Gemini 3.8 Flash e Flash Cyber (2 settembre). I due modelli processano il contesto visivo quasi in tempo reale, passano automaticamente tra 97 lingue ed eseguono tool o chiamate API in background durante la conversazione senza interromperla; ogni audio generato porta un watermark SynthID incorporato nello spettro di frequenza. E' il primo salto di Google verso un'architettura piu' vicina al full-duplex nativo gia' descritto in questa scheda: i modelli Gemini Live precedenti (3.1 Flash Live) restavano quasi-full-duplex basati su VAD, con latenza end-to-end di 0,57 s contro lo 0,40 s di TML-Interaction-Small. Google non ha ancora pubblicato numeri comparabili su FD-bench, TimeSpeak o CueSpeak per la nuova generazione: il posizionamento reale rispetto al full-duplex nativo TML resta quindi da verificare nei prossimi benchmark indipendenti, e questa scheda tornera' sul tema quando tali numeri saranno disponibili. [Digest 2026-09-19](../../digest/2026/09/19.md)
 
 ### 2026-05-13
 
