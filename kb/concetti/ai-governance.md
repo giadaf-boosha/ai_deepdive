@@ -3,7 +3,7 @@ name: AI Governance
 aliases: [AI governance, governance AI, export control AI, regolazione AI, AI regulation, AI policy, BIS AI, EAR AI models]
 categoria: regolazione
 created: 2026-06-14
-last_updated: 2026-09-13
+last_updated: 2026-09-20
 ---
 
 # AI Governance
@@ -72,6 +72,10 @@ Esempio 3: verifica della Responsible Scaling Policy prima di distribuire un mod
 - Wilson Sonsini, "Colorado Legislature Repeals and Replaces Colorado AI Act: What SB 189 Means for Your Business" (maggio 2026). https://www.wsgr.com/en/insights/colorado-legislature-repeals-and-replaces-colorado-ai-act-what-sb-189-means-for-your-business.html
 
 ## Aggiornamenti
+
+### 2026-09-20
+
+Due sviluppi del 15-19 settembre spostano la governance AI dall'impegno unilaterale dei singoli CEO verso il coordinamento istituzionale concreto e la prima risposta normativa statale USA. Primo, OpenAI, Anthropic e Google DeepMind sono in trattative da settimane, riportate il 15 settembre, per un possibile organismo condiviso di standard di sicurezza AI; nessun accordo vincolante e' stato raggiunto e Chris Lehane (OpenAI) dichiara che non serve un'esenzione antitrust per coordinarsi con i concorrenti su questi temi. Il presidente della FTC Andrew Ferguson si dice pero' "profondamente sospettoso" verso richieste di esenzione antitrust o di limitazione di responsabilita' legale avanzate dai laboratori AI, Anthropic inclusa, definendole potenziale "moat digging" a danno dei concorrenti piu' piccoli: e' il primo caso in questa scheda in cui il coordinamento cross-lab proposto da Amodei nell'essay "We Must Pace the Frontier" (9 settembre, aggiornamento 2026-09-13) incontra la resistenza esplicita di un regolatore antitrust USA invece che il sostegno bipartisan visto in altri episodi. Secondo, il governatore della California Newsom firma il 18-19 settembre un ordine esecutivo che ordina alla Government Operations Agency e all'Office of Emergency Services statali di presentare entro il 16 novembre raccomandazioni su tre fronti: valutatori di sicurezza esterni indipendenti, un meccanismo di spegnimento d'emergenza ("kill switch") per i modelli frontier con verifica indipendente continua, ed estensione degli obblighi di segnalazione agli incidenti di perdita di controllo — dopo che lo stesso Newsom aveva bocciato nel 2024 la legge piu' severa SB 1047. E' il primo caso in questa scheda di un intervento statale USA (invece che federale o europeo) che risponde direttamente al tema del rallentamento controllato sollevato dagli stessi laboratori pochi giorni prima, e introduce per la prima volta il concetto di kill switch normativo come possibile requisito regolatorio anziche' solo come feature tecnica interna ai lab. [Digest 2026-09-20](../../digest/2026/09/20.md)
 
 ### 2026-09-13
 

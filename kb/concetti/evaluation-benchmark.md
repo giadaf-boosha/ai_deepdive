@@ -3,7 +3,7 @@ name: Evaluation / Benchmark AI
 aliases: [benchmark, eval, evaluation, valutazione LLM, AI benchmark, leaderboard]
 categoria: tecnica
 created: 2026-04-30
-last_updated: 2026-09-12
+last_updated: 2026-09-20
 ---
 
 # Evaluation / Benchmark AI
@@ -208,3 +208,7 @@ DeepSeek V4.1-Flash (10 settembre) segna 90,6 su Terminal-Bench 2.1 contro l'89,
 ### 2026-09-03
 
 Claude Fable 5.1 e Mythos 5.1 (Anthropic, 1 settembre) introducono Terminal-Bench-Science 0.1, primo benchmark pubblico che misura la capacita' di un modello di condurre un'investigazione scientifica end-to-end in un ambiente terminale: pianificare l'esperimento, eseguirlo, e verificare autonomamente il proprio lavoro. I risultati al lancio — Fable 5.1 52,6%, Fable 5 24,7%, Opus 5 29,0%, GPT-5.6 Sol 22,4%, standard error dichiarato 3,5-4,5 punti — mostrano un salto di oltre il doppio rispetto al modello precedente della stessa famiglia, un pattern gia' osservato per altri benchmark verticali di frontiera (vedi ad es. FrontierCode Diamond con Fable 5, voce 2026-06-10) ma qui applicato per la prima volta a un task esplicitamente scientifico end-to-end anziche' di sola programmazione. In parallelo, Terminal-Bench 4.0 aggiorna la serie Terminal-Bench (2.0 -> 2.1 -> 4.0, salto di versione non spiegato pubblicamente da Anthropic) con Fable 5.1 a 55,8% contro il 42,0% di Fable 5, e Mythos 5.1 — variante identica con safeguard piu' leggere, riservata a organizzazioni verificate — a 60,9%, cinque punti sopra Fable 5.1. Il caso conferma il pattern gia' tracciato in questa scheda (aggiornamento 2026-06-04): ogni nuovo modello frontier tende ad accompagnarsi a una nuova versione o a un nuovo benchmark verticale scelto per massimizzare il profilo di lancio, rendendo il confronto storico tra versioni successive di uno stesso benchmark (2.0 vs 2.1 vs 4.0) non sempre diretto. [Digest 2026-09-03](../../digest/2026/09/03.md)
+
+### 2026-09-20
+
+SAFE (Omer Tafveez, University of Michigan, 15 settembre, arXiv 2609.17865) introduce un benchmark che misura se un modello cerca attivamente prove di sicurezza prima di una decisione di deployment, a un costo di recupero variabile, invece di misurare solo la qualita' della decisione finale. Testando GPT-5.5, o3, Claude Opus 4.8 e Claude Sonnet 4.6 emergono politiche di ispezione molto diverse tra modelli a parita' di scenario: Opus ispeziona quasi sempre di default, o3 salta l'ispezione piu' spesso ed e' molto sensibile al costo di recupero, GPT-5.5 e Sonnet si collocano in mezzo; l'ispezione cresce con la gravita' del rischio ipotizzato e cala con il costo, mentre la probabilita' stimata dell'evento pesa molto meno sul comportamento osservato. E' un esempio di benchmark comportamentale (misura il processo decisionale, non solo l'output) distinto dai benchmark di capability o di safety-outcome gia' tracciati in questa scheda. [Digest 2026-09-20](../../digest/2026/09/20.md)

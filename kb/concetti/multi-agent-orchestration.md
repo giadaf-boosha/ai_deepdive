@@ -3,7 +3,7 @@ name: Multi-agent orchestration
 aliases: [multi-agent, sistema multi-agente, orchestrazione di agenti, agent swarm, subagenti, sub-agent orchestration]
 categoria: paradigma
 created: 2026-06-01
-last_updated: 2026-09-12
+last_updated: 2026-09-20
 ---
 
 # Multi-agent orchestration
@@ -84,6 +84,10 @@ Eterogeneita' dei modelli. Se l'obiettivo e' affidabilita' (non solo throughput)
 Parallelismo non e' gratis. Il fan-out riduce la latenza percepita ma il costo in token e in chiamate scala linearmente con il numero di worker. Un benchmark valutato "senza cap al numero di chiamate o token" (come nel caveat dell'AI Co-Mathematician) non e' comparabile a parita' di costo con un sistema vincolato: nel valutare sistemi multi-agente, fissare il budget di inferenza e' parte della metodologia, non un dettaglio.
 
 ## Aggiornamenti
+
+### 2026-09-20
+
+Anthropic ridisegna Claude Code Projects (17 settembre, beta): da cartella statica a rete di thread paralleli coordinati, dove ogni thread e' una sessione cloud di Claude Code sul proprio branch o copia del repository e un thread "coordinatore" scompone la richiesta, delega ai thread paralleli, ne rivede gli output e assembla il risultato finale, con memoria condivisa persistente tra thread. E' un'applicazione del pattern orchestratore-worker gia' tracciato in questa scheda (Dynamic Workflows di Opus 4.8, Claude Science) al flusso di lavoro quotidiano di sviluppo su un intero progetto invece che a un singolo task agentico o a una singola sessione; la differenza architetturale rispetto a Dynamic Workflows e' che qui il coordinamento non e' uno script scritto dal modello ma una struttura di prodotto persistente tra sessioni, con una "Library" condivisa per file e artifact. [Digest 2026-09-20](../../digest/2026/09/20.md)
 
 ### 2026-09-12
 
