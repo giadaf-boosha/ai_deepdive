@@ -3,7 +3,7 @@ name: AI Governance
 aliases: [AI governance, governance AI, export control AI, regolazione AI, AI regulation, AI policy, BIS AI, EAR AI models]
 categoria: regolazione
 created: 2026-06-14
-last_updated: 2026-09-13
+last_updated: 2026-09-21
 ---
 
 # AI Governance
@@ -72,6 +72,10 @@ Esempio 3: verifica della Responsible Scaling Policy prima di distribuire un mod
 - Wilson Sonsini, "Colorado Legislature Repeals and Replaces Colorado AI Act: What SB 189 Means for Your Business" (maggio 2026). https://www.wsgr.com/en/insights/colorado-legislature-repeals-and-replaces-colorado-ai-act-what-sb-189-means-for-your-business.html
 
 ## Aggiornamenti
+
+### 2026-09-21
+
+Tre sviluppi del 15-20 settembre danno seguito diretto all'essay di Amodei "We Must Pace the Frontier" (12 settembre, aggiornamento precedente). Primo, il 15 settembre il chief policy officer di OpenAI Chris Lehane conferma ai giornalisti — dichiarazione riportata per prima da Bloomberg — che l'azienda coordina da settimane con Anthropic e Google DeepMind su standard di sicurezza condivisi, incluso l'accesso di valutatori terzi a checkpoint intermedi dei modelli per rilevare comportamento ingannevole; OpenAI precisa di non ritenere necessaria una deroga antitrust per il coordinamento. E' il primo caso in questa scheda in cui il coordinamento cross-lab su standard di sicurezza esce dal piano delle proposte pubbliche di singoli CEO (Hassabis, Amodei, Altman, gia' tracciate) per diventare un processo confermato ufficialmente in corso tra tre laboratori concorrenti. Secondo, il 18 settembre Anthropic dichiara che Claude "guida" gia' il 26% del proprio lavoro di R&D sui modelli (dallo 0% di febbraio), completando la maggior parte di un task end-to-end da un prompt di alto livello sotto supervisione umana, mentre il 90% della R&D complessiva avviene in "collaborazione" con Claude; circa 30.000 istanze dell'agente girano in concorrenza internamente. Anthropic collega esplicitamente la pubblicazione del dato al rischio di recursive self-improvement gia' discusso nell'essay del 12 settembre, fornendo per la prima volta in questa scheda una metrica quantitativa tracciata nel tempo del fenomeno che l'essay descriveva solo in termini qualitativi. Terzo, nel weekend del 19-20 settembre Donald Trump annuncia in un post su Truth Social la creazione di una "AI Force" modellata sulla Space Force e la nomina imminente di uno "AI czar", presentando l'iniziativa esplicitamente come protezione e accelerazione dell'industria AI contro tentativi di limitarla, senza fornire dettagli su struttura o tempistica. La direzione dichiarata dalla Casa Bianca e' in tensione diretta con il filone di coordinamento volontario sulla sicurezza dei tre laboratori e con la richiesta di intervento regolatorio della lettera "Pacing the Frontier" di fine luglio: nella stessa settimana in cui i lab discutono privatamente standard di sicurezza comuni, l'amministrazione USA segnala pubblicamente una postura opposta, di sostegno esplicito e deregolatorio al settore. [Digest 2026-09-21](../../digest/2026/09/21.md)
 
 ### 2026-09-13
 

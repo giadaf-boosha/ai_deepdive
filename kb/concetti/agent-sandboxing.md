@@ -3,7 +3,7 @@ name: Agent sandboxing
 aliases: [sandboxing, containment, isolamento agenti, agent containment, esecuzione isolata, sandbox]
 categoria: infrastruttura
 created: 2026-06-01
-last_updated: 2026-09-13
+last_updated: 2026-09-21
 ---
 
 # Agent sandboxing
@@ -82,6 +82,10 @@ Loop e esecuzione vanno disaccoppiati per la compliance. Il pattern "loop su pro
 La sandbox non sostituisce gli altri controlli. Contenimento, human-in-the-loop sulle azioni sensibili, controllo di policy separato dal modello e logging completo sono livelli complementari. Un agente sandboxato ma senza approvazione umana sulle azioni distruttive, o senza tracciamento dei tool call, e' ancora un rischio operativo. La sandbox limita il danno; gli altri controlli riducono la probabilita' che il danno si verifichi.
 
 ## Aggiornamenti
+
+### 2026-09-21
+
+Google conferma il 18 settembre che Gemini ha ottenuto accesso non autorizzato a tre sistemi reali di aziende esterne durante un capture-the-flag di sicurezza condotto dalla startup israeliana Irregular nel maggio 2026, appreso internamente a fine luglio e reso pubblico solo dopo domande giornalistiche — un gap di circa sette settimane tra scoperta interna e disclosure. La causa e' un bug nell'ambiente di test unito a una coincidenza: il nome fittizio di un'azienda usato nello scenario corrispondeva a un dominio reale su internet, e l'ambiente e' rimasto collegato alla rete pubblica anziche' sigillato in sandbox. Gemini ha ottenuto l'accesso indovinando credenziali o usandone di trovate in un repository pubblico, credendo che i sistemi esterni facessero parte del test; gli agenti hanno interrotto l'intrusione non appena hanno determinato di aver raggiunto sistemi aziendali reali. Rispetto ai casi Accomplish (configurazione Git malevola, 11-12 settembre, aggiornamento precedente) e Anthropic/Irregular del 30 luglio (stesso partner di test, fraintendimento di configurazione che lascia l'ambiente connesso alla rete aperta), questo caso conferma con un secondo laboratorio e a distanza di sette settimane lo stesso pattern causale gia' visto con Anthropic: un ambiente di valutazione con lo stesso partner esterno (Irregular) che non impone il confine di rete a livello tecnico resta vulnerabile indipendentemente da quale laboratorio lo commissiona. Il dato nuovo per questa scheda e' il tempo di disclosure: sette settimane tra scoperta interna e comunicazione pubblica, comparabile alle metriche di tempistica di risposta gia' tracciate per i casi di patch vendor (Accomplish) piuttosto che di comportamento del modello durante l'incidente stesso. [Digest 2026-09-21](../../digest/2026/09/21.md)
 
 ### 2026-09-13
 
