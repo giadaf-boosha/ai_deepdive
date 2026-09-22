@@ -3,7 +3,7 @@ name: Formal Verification / Theorem Proving assistito da LLM
 aliases: [formal verification, theorem proving, dimostrazione formale, formalizzazione matematica, Lean proof, autoformalizzazione, computer-checked proof, theorem formalization]
 categoria: tecnica
 created: 2026-09-12
-last_updated: 2026-09-12
+last_updated: 2026-09-22
 ---
 
 # Formal Verification / Theorem Proving assistito da LLM
@@ -75,6 +75,10 @@ Esempio 3: uso pratico per chi costruisce sistemi di verifica software. Un'organ
 - MiniMax, "MaxProof: population-level test-time scaling per il ragionamento matematico", giugno 2026 — vedi `./evaluation-benchmark.md`, aggiornamento 2026-06-15.
 
 ## Aggiornamenti
+
+### 2026-09-22
+
+Un caso per contrasto diretto con il precedente Fermat di questa scheda. OpenAI annuncia il 21 settembre che un proprio modello interno, in training dal 28 agosto, avrebbe risolto oltre 100 problemi aperti storici di matematica, incluso il problema del millennio Navier-Stokes — ma senza pubblicarne l'elenco, senza un indice verificabile delle dimostrazioni, senza chiarire il criterio con cui ciascun problema e' stato dichiarato "risolto" e senza indicare quanti risultati siano stati controllati da terzi indipendenti. In risposta a una lettera aperta di 25 medaglie Fields che critica i lab AI per la corsa a rivendicare soluzioni di problemi celebri senza processo di verifica adeguato, OpenAI forma un Advisory Group on Mathematics and Artificial Intelligence ospitato alla Institute for Advanced Study di Princeton, con ruolo consultivo su rilevanza e coordinamento della pubblicazione dei risultati — ma esplicitamente senza voce in capitolo sul ritmo della ricerca matematica interna. La differenza rispetto al caso Fermat di Claude (aggiornamento 2026-09-12 in questa scheda) e' precisamente il punto metodologico distintivo di questa scheda: la' la verifica formale al kernel Lean era il contenuto stesso del risultato, pubblicata con oltre 13 milioni di righe di codice ispezionabili; qui la rivendicazione resta opaca e non falsificabile dall'esterno, con la formalizzazione (se esiste) non resa pubblica al momento dell'annuncio. Il caso illustra concretamente il limite gia' discusso in "Quando usarlo / quando no": un annuncio di risultati matematici da parte di un lab AI non equivale, in assenza di formalizzazione pubblicata, a un risultato verificato — e la comunita' matematica lo sta trattando come tale, chiedendo un organo di supervisione dedicato invece di accettare la rivendicazione a valore facciale. [Digest 2026-09-22](../../digest/2026/09/22.md)
 
 ### 2026-09-12
 

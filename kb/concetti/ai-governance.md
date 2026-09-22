@@ -3,7 +3,7 @@ name: AI Governance
 aliases: [AI governance, governance AI, export control AI, regolazione AI, AI regulation, AI policy, BIS AI, EAR AI models]
 categoria: regolazione
 created: 2026-06-14
-last_updated: 2026-09-13
+last_updated: 2026-09-22
 ---
 
 # AI Governance
@@ -72,6 +72,10 @@ Esempio 3: verifica della Responsible Scaling Policy prima di distribuire un mod
 - Wilson Sonsini, "Colorado Legislature Repeals and Replaces Colorado AI Act: What SB 189 Means for Your Business" (maggio 2026). https://www.wsgr.com/en/insights/colorado-legislature-repeals-and-replaces-colorado-ai-act-what-sb-189-means-for-your-business.html
 
 ## Aggiornamenti
+
+### 2026-09-22
+
+L'impegno unilaterale di Dario Amodei a "rallentare la frontiera" (essay del 12 settembre, aggiornamento precedente in questa scheda) diventa oggetto di contenzioso antitrust privato e di una risposta istituzionale della Casa Bianca. Il 18 settembre quattro consumatori (Charles Buist, Nick Spetsas, Cheyenne Hunt, Christine Bullock) depositano presso la U.S. District Court for the Northern District of California una proposta class action contro Anthropic, OpenAI, SpaceXAI e Google, sostenendo che le adesioni pubbliche di Sam Altman, Elon Musk e Demis Hassabis all'essay di Amodei — arrivate entro un'ora dalla pubblicazione — costituiscano un accordo tra concorrenti per limitare collettivamente il ritmo di sviluppo, in violazione della Section 1 dello Sherman Act; la causa chiede danni triplicati per conto di una classe nazionale di consumatori paganti. La tesi non contesta il diritto di ciascuna azienda a rallentare individualmente per motivi di sicurezza, ma sostiene che sostituire la responsabilita' individuale con una restrainer collettivo concordato sia di per se' l'illecito. Il 19-20 settembre Trump risponde con un post su Truth Social che annuncia la creazione di una "AI Force" sul modello della Space Force del suo primo mandato e la nomina imminente di un "AI czar" (ruolo ricoperto fino a marzo 2026 da David Sacks), dichiarando che l'amministrazione non intende "in alcun modo ostacolare o soffocare la crescita" del settore AI. Bloomberg inquadra il 21 settembre la vicenda nel contesto del prossimo incontro Trump-Xi Jinping, con Pechino che promuove in parallelo un proprio organismo internazionale di governance AI. Rispetto a tutti i meccanismi gia' tracciati in questa scheda — export control unilaterale (Fable 5/Mythos 5, giugno), enforcement sovranazionale UE, proposte di autoregolamentazione cross-lab dei CEO, impegno unilaterale di Amodei (12 settembre) — questo e' il primo caso in cui un impegno di autoregolamentazione dichiarato da un CEO diventa il fondamento fattuale di una causa antitrust privata, e il primo in cui la risposta della Casa Bianca a un tema di sicurezza AI e' un'iniziativa istituzionale esplicitamente orientata all'accelerazione (non un negoziato bilaterale su un singolo modello, come nel caso Fable 5) in aperta tensione con le richieste di rallentamento dei lab. [Digest 2026-09-22](../../digest/2026/09/22.md)
 
 ### 2026-09-13
 

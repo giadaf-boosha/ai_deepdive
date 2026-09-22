@@ -3,7 +3,7 @@ name: Multi-agent orchestration
 aliases: [multi-agent, sistema multi-agente, orchestrazione di agenti, agent swarm, subagenti, sub-agent orchestration]
 categoria: paradigma
 created: 2026-06-01
-last_updated: 2026-09-12
+last_updated: 2026-09-22
 ---
 
 # Multi-agent orchestration
@@ -84,6 +84,10 @@ Eterogeneita' dei modelli. Se l'obiettivo e' affidabilita' (non solo throughput)
 Parallelismo non e' gratis. Il fan-out riduce la latenza percepita ma il costo in token e in chiamate scala linearmente con il numero di worker. Un benchmark valutato "senza cap al numero di chiamate o token" (come nel caveat dell'AI Co-Mathematician) non e' comparabile a parita' di costo con un sistema vincolato: nel valutare sistemi multi-agente, fissare il budget di inferenza e' parte della metodologia, non un dettaglio.
 
 ## Aggiornamenti
+
+### 2026-09-22
+
+Google rilascia AX v0.3.0 (20-21 settembre), il proprio agentic orchestrator open source Apache-2.0 costruito sopra Agent Substrate per l'esecuzione sandboxed, pensato per eseguire miliardi di task agentici per cluster. La release sposta il tema di questa scheda dal piano della topologia (chi coordina chi) al piano dell'infrastruttura di stato a scala di cluster: v0.3.0 spacca il runtime in tre servizi indipendenti — frontend API, reconciler, task runner sandboxed — e sposta lo stato dei task fuori dalle custom resource di Kubernetes verso Redis Streams, perche' secondo Google etcd non e' pensato per il turnover di milioni di task agentici di breve durata. Il design resta stateless (stato in Redis, Postgres o GCS), il che rende banale la scalabilita' orizzontale; Google dichiara pero' esplicitamente lo status alpha, con architettura soggetta a cambiare, e la v0.3.0 e' una breaking change che elimina il vecchio harness Python e il client ATE per chi veniva da v0.2.x. Rispetto ai pattern gia' tracciati in questa scheda — orchestrazione via script (Dynamic Workflows), swarm da linguaggio naturale (Copilot Agent Mode), ensemble di modelli eterogenei (MDASH) — AX e' il primo caso di un orchestratore generico e open source rilasciato come infrastruttura riusabile, non legato a un singolo prodotto o vendor di modelli, ed e' diventato in giornata la storia AI piu' commentata su Hacker News. [Digest 2026-09-22](../../digest/2026/09/22.md)
 
 ### 2026-09-12
 
