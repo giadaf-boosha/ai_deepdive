@@ -3,7 +3,7 @@ name: Multi-agent orchestration
 aliases: [multi-agent, sistema multi-agente, orchestrazione di agenti, agent swarm, subagenti, sub-agent orchestration]
 categoria: paradigma
 created: 2026-06-01
-last_updated: 2026-09-12
+last_updated: 2026-09-23
 ---
 
 # Multi-agent orchestration
@@ -120,3 +120,7 @@ Claude Science (Anthropic, 30 giugno) introduce l'architettura multi-agente piu'
 ### 2026-06-16
 
 Due architetture multi-agente nel digest di oggi. Arbor (arXiv:2606.11926, Renmin University / RUC-NLPIR, 15 giugno, 5 fonti) formalizza un pattern coordinator-executor per ricerca scientifica autonoma: l'agente coordinatore mantiene un Hypothesis Tree — un albero dove ogni nodo e' un'ipotesi con stato (proposta, testata, confermata, falsificata) — e delega l'esecuzione degli esperimenti a subagenti paralleli. Il risultato dei subagenti aggiorna l'albero, che il coordinatore usa per proporre la prossima ipotesi. Il contributo architetturale e' la separazione esplicita tra piano di ricerca (struttura dell'albero, responsabilita' del coordinatore) ed esecuzione sperimentale (subagenti stateless): il coordinatore non esegue mai direttamente, i subagenti non pianificano mai. I risultati su ScienceWorld e Discovery Bench mostrano miglioramenti rispetto a baseline ReAct e CoT. MRAgent (arXiv:2606.06036, National University of Singapore, 4 giugno, ICLR 2026, 5 fonti) affronta il problema complementare: come un agente singolo mantiene memoria tra sessioni senza caricare l'intera storia nel context window. La soluzione e' un grafo Cue-Tag-Content: ogni ricordo e' un nodo con un cue (la situazione che lo ha generato), tag (categorie semantiche per filtro) e content (il ricordo effettivo). Il recupero selettivo per cue riduce il rumore nel context window rispetto al retrieval vettoriale denso. La combinazione dei due papers indica che la frontiera del design agentico nel 2026 si e' spostata su due assi ortogonali: topologia multi-agente (Arbor) e memoria persistente nell'agente singolo (MRAgent). [Digest 2026-06-16](../../digest/2026/06/16.md)
+
+### 2026-09-23
+
+Anthropic dichiara che Claude guida in autonomia il 26% della propria R&D interna ad agosto 2026, contro meno dell'1% a febbraio, con circa 30.000 agenti al lavoro contemporaneamente su ricerca e ingegneria (18 settembre). Per "guidare" Anthropic intende esecuzione end-to-end da un prompt di alto livello sotto supervisione umana; Claude parteciperebbe a oltre il 90% della R&D totale dell'azienda, e su oltre un miliardo di decisioni prese dagli agenti nel mese di agosto solo una ogni 47.000 (0,002%) e' stata bloccata da un intervento umano. La cifra va letta con un limite metodologico esplicito: parte della valutazione dei dati e' condotta dallo stesso Claude, quindi e' un'autovalutazione parziale del laboratorio, non una misura verificata da terze parti. La scala dichiarata — 30.000 agenti operativi in parallelo su lavoro di ricerca reale, non su un benchmark o una demo — estende di un ordine di grandezza i casi di orchestrazione multi-agente tracciati finora in questa scheda (Claude Science con pochi sub-agenti per dominio, Sakana Fugu con un pool di modelli instradati). [Digest 2026-09-23](../../digest/2026/09/23.md)
