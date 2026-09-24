@@ -3,7 +3,7 @@ name: Multi-agent orchestration
 aliases: [multi-agent, sistema multi-agente, orchestrazione di agenti, agent swarm, subagenti, sub-agent orchestration]
 categoria: paradigma
 created: 2026-06-01
-last_updated: 2026-09-12
+last_updated: 2026-09-24
 ---
 
 # Multi-agent orchestration
@@ -84,6 +84,10 @@ Eterogeneita' dei modelli. Se l'obiettivo e' affidabilita' (non solo throughput)
 Parallelismo non e' gratis. Il fan-out riduce la latenza percepita ma il costo in token e in chiamate scala linearmente con il numero di worker. Un benchmark valutato "senza cap al numero di chiamate o token" (come nel caveat dell'AI Co-Mathematician) non e' comparabile a parita' di costo con un sistema vincolato: nel valutare sistemi multi-agente, fissare il budget di inferenza e' parte della metodologia, non un dettaglio.
 
 ## Aggiornamenti
+
+### 2026-09-24
+
+Claude Science (introdotto nel digest del 2 luglio come workflow multi-agente per la ricerca scientifica) produce il primo claim pubblico di scoperta originale: Anthropic annuncia il 23 settembre che circa 950 sub-agenti basati su Claude hanno scandagliato per 21 ore un database di sequenze DNA, individuando oltre 200.000 geni candidati per un tipo di enzima e selezionandone 20 per un'analisi approfondita, fino a identificare un sistema enzimatico prima non caratterizzato (array-associated reverse transcriptase, o ART) nel genoma di batteriofagi. Rispetto alla descrizione architetturale del 2 luglio — un coordinatore che decompone la richiesta e delega a sub-agenti specializzati per dominio (genomica, proteomica, biologia strutturale) — questo caso mostra la stessa topologia applicata a fan-out ampio su un singolo dominio (ricerca bibliografica e genomica su larga scala) piuttosto che su piu' domini paralleli, con un numero di worker (950) superiore di quasi un ordine di grandezza al tetto di 1.000 subagenti totali per run gia' documentato per Dynamic Workflows (voce 2026-06-09) ma qui raggiunto non su una migrazione di codice bensi' su un compito di discovery scientifica. Il caso e' rilevante anche come promemoria del limite della sola scala: Anthropic stessa dichiara che funzione, utilita' e significativita' della scoperta restano da verificare, e parte della comunita' scientifica (a partire da un giudizio comunque interlocutorio di Feng Zhang, co-inventore del CRISPR) segnala il rischio di concludere prematuramente che un volume elevato di ricerca automatizzata equivalga a una scoperta validata — un fan-out ampio accelera l'esplorazione dello spazio delle ipotesi, non sostituisce la verifica sperimentale indipendente a valle. [Digest 2026-09-24](../../digest/2026/09/24.md)
 
 ### 2026-09-12
 

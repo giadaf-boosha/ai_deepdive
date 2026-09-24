@@ -3,7 +3,7 @@ name: Evaluation / Benchmark AI
 aliases: [benchmark, eval, evaluation, valutazione LLM, AI benchmark, leaderboard]
 categoria: tecnica
 created: 2026-04-30
-last_updated: 2026-09-12
+last_updated: 2026-09-24
 ---
 
 # Evaluation / Benchmark AI
@@ -204,6 +204,10 @@ Long-Horizon-Terminal-Bench (LHTB, arXiv:2607.08964) introduce un benchmark di 4
 ### 2026-09-12
 
 DeepSeek V4.1-Flash (10 settembre) segna 90,6 su Terminal-Bench 2.1 contro l'89,1 di Claude Opus 5 e l'88,8 di GPT-5.6 Sol, e risolve il 74,2% dei task su DeepSWE v1.1 contro il 74,0% di Opus 5 — il primo caso in questa scheda in cui un modello open-weight con licenza MIT supera i due modelli proprietari di riferimento sullo stesso benchmark curato usato per il lancio (Terminal-Bench), non solo su una singola metrica isolata. Il confronto e' dichiarato dal laboratorio stesso, non da una leaderboard terza parte indipendente: va letto con la stessa cautela metodologica gia' applicata ad altri claim di lancio in questa scheda (harness non dichiarato, possibile selezione della versione di benchmark piu' favorevole). [Digest 2026-09-12](../../digest/2026/09/12.md)
+
+### 2026-09-24
+
+I lanci ravvicinati di Claude Opus 5.5 (Anthropic, 22 settembre), GPT-6 Sol e Luna (OpenAI, 22 settembre) e Grok 4.7 (xAI, 21 settembre) convergono sullo stesso set di benchmark, consolidando FrontierCode e CursorBench 4.0 come coppia di riferimento accanto a Terminal-Bench e SWE-bench Verified gia' tracciati in questa scheda. FrontierCode v1.1: Opus 5.5 segna 54,4%, in continuita' con FrontierCode Diamond (Fable 5, voce 2026-06-10) come misura di capacita' algoritmica di frontiera. CursorBench 4.0: introdotto da Cursor come benchmark alternativo ai benchmark dei laboratori (gia' annunciato come CursorBench v3.1 nella voce 2026-06-27 su questa scheda), diventa qui il terreno di confronto diretto tra tre modelli di tre laboratori diversi nello stesso mese — Opus 5.5 57,8%, Grok 4.7 46,3%, con Claude Fable 5.1 citato da xAI stessa a 51,8% come riferimento competitivo. Artificial Analysis Intelligence Index, gia' citato in voci precedenti come score aggregato indipendente, e' il terzo asse comune: Opus 5.5 al primo posto con punteggio 58 a effort massimo, GPT-6 Astra a 53, Grok 4.7 a 46 — un caso raro in cui un valutatore terzo (non un laboratorio) fornisce il numero usato da piu' comunicati di lancio concorrenti nello stesso ciclo. OSWorld 2.0 (Opus 5.5, 81,8%) entra come nuovo benchmark di computer use nel novero delle metriche citate in questa scheda. Il pattern conferma quanto gia' osservato nell'aggiornamento 2026-06-04: ogni laboratorio sceglie la combinazione di benchmark che massimizza il proprio profilo di lancio, ma la convergenza su CursorBench 4.0 e Artificial Analysis Intelligence Index in questo ciclo specifico offre, in via eccezionale, un terreno di confronto diretto tra tre lanci di tre laboratori distinti nello stesso arco di 48 ore. [Digest 2026-09-24](../../digest/2026/09/24.md)
 
 ### 2026-09-03
 

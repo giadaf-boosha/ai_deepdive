@@ -16,7 +16,7 @@
 | [Context window](./concetti/context-window.md) | architettura | context window, finestra di contesto, finestra contestuale, context length | 2026-06-29 |
 | [Diffusion Language Models](./concetti/diffusion-language-models.md) | architettura | diffusion language model, text diffusion, DLM, modello di diffusione testuale, generazione diffusiva, non-autoregressive generation, masked diffusion | 2026-06-12 |
 | [Embedding](./concetti/embedding.md) | tecnica | embedding, vector embedding, dense representation, rappresentazione densa | 2026-06-01 |
-| [Evaluation / Benchmark AI](./concetti/evaluation-benchmark.md) | tecnica | benchmark, eval, evaluation, valutazione LLM, AI benchmark, leaderboard | 2026-09-12 |
+| [Evaluation / Benchmark AI](./concetti/evaluation-benchmark.md) | tecnica | benchmark, eval, evaluation, valutazione LLM, AI benchmark, leaderboard | 2026-09-24 |
 | [Fine-tuning](./concetti/fine-tuning.md) | training | fine-tuning, fine tuning, SFT, supervised fine-tuning, adattamento di modello | 2026-06-01 |
 | [Formal Verification / Theorem Proving assistito da LLM](./concetti/formal-verification.md) | tecnica | formal verification, theorem proving, dimostrazione formale, formalizzazione matematica, Lean proof, autoformalizzazione, computer-checked proof, theorem formalization | 2026-09-12 |
 | [Inference](./concetti/inference.md) | infrastruttura | inference, inferenza, serving, generation, decoding | 2026-07-03 |
@@ -25,7 +25,7 @@
 | [Large Language Model](./concetti/llm.md) | architettura | LLM, modello linguistico di grandi dimensioni, foundation model | 2026-07-01 |
 | [Mixture of Experts](./concetti/mixture-of-experts.md) | architettura | MoE, mixture-of-experts, mixture of experts, modello sparso, sparse model, expert routing | 2026-08-15 |
 | [Model Context Protocol](./concetti/mcp.md) | infrastruttura | MCP, Model Context Protocol, protocollo MCP | 2026-06-01 |
-| [Multi-agent orchestration](./concetti/multi-agent-orchestration.md) | paradigma | multi-agent, sistema multi-agente, orchestrazione di agenti, agent swarm, subagenti, sub-agent orchestration | 2026-09-12 |
+| [Multi-agent orchestration](./concetti/multi-agent-orchestration.md) | paradigma | multi-agent, sistema multi-agente, orchestrazione di agenti, agent swarm, subagenti, sub-agent orchestration | 2026-09-24 |
 | [Private Cloud Compute](./concetti/private-cloud-compute.md) | infrastruttura | PCC, Private Cloud Compute, confidential cloud computing, confidential inference, Apple PCC, TEE cloud inference | 2026-06-08 |
 | [Prompt engineering](./concetti/prompt-engineering.md) | tecnica | prompt engineering, ingegneria dei prompt, prompting | 2026-06-01 |
 | [Reinforcement Learning from Human Feedback](./concetti/rlhf.md) | training | RLHF, reinforcement learning from human feedback, allineamento RL, RLAIF | 2026-06-13 |
