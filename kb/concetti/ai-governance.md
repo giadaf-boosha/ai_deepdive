@@ -3,7 +3,7 @@ name: AI Governance
 aliases: [AI governance, governance AI, export control AI, regolazione AI, AI regulation, AI policy, BIS AI, EAR AI models]
 categoria: regolazione
 created: 2026-06-14
-last_updated: 2026-09-13
+last_updated: 2026-09-26
 ---
 
 # AI Governance
@@ -72,6 +72,10 @@ Esempio 3: verifica della Responsible Scaling Policy prima di distribuire un mod
 - Wilson Sonsini, "Colorado Legislature Repeals and Replaces Colorado AI Act: What SB 189 Means for Your Business" (maggio 2026). https://www.wsgr.com/en/insights/colorado-legislature-repeals-and-replaces-colorado-ai-act-what-sb-189-means-for-your-business.html
 
 ## Aggiornamenti
+
+### 2026-09-26
+
+Tre sviluppi del 24-25 settembre spostano ulteriormente l'asse della governance AI verso l'autoregolamentazione cross-lab e la diplomazia bilaterale diretta. Primo, Google, OpenAI e Anthropic annunciano il 25 settembre il piano per una Standards Authority for Frontier AI (SAFA), organismo di autoregolamentazione senza supervisione governativa diretta, con lancio atteso entro fine 2026 o inizio 2027 e un possibile CEO ex Casa Bianca (Sriram Krishnan): la proposta, avanzata da Hassabis a luglio come partnership pubblico-privata (vedi aggiornamento 2026-07-20, "IAEA per l'AI" di Altman e proposte convergenti dei tre CEO), vira ora verso un organismo interamente privato dopo che una bozza di ordine esecutivo e' stata accantonata dalla Casa Bianca — la stessa dinamica di "autoregolamentazione preferita a un mosaico di interventi statali unilaterali" gia' identificata nel digest del 20 luglio, ma qui concretizzata in un ente costituito invece che in sole dichiarazioni pubbliche convergenti. Secondo, la Casa Bianca (Office of the National Cyber Director) chiede a OpenAI e Anthropic di sospendere la condivisione dei modelli piu' recenti con i tester dell'AI Security Institute britannico fino a completare una revisione di sicurezza statunitense; Anthropic ha gia' trattenuto Mythos 5.1 dal Regno Unito. E' il primo caso in questa scheda in cui il governo USA limita la cooperazione di sicurezza tra un lab frontier americano e un alleato storico (UK) invece che tra il lab e un paese terzo, introducendo una dimensione di controllo che si applica anche ai rapporti con i partner piu' stretti. Terzo, Xi Jinping in visita alla Casa Bianca il 24 settembre propone a Trump un "US-China AI Dialogue" formale su rischi e uso malevolo dell'AI, confermato in discussione dal Segretario al Tesoro Bessent tramite i canali negoziali commerciali: e' il primo caso in questa scheda di un canale diplomatico bilaterale diretto tra le due superpotenze AI sui rischi del settore, distinto sia dal blocco multilaterale a guida cinese WAICO (digest 18 luglio) sia dalle misure di export control unilaterali reciproche gia' tracciate (Fable 5/Mythos 5 di giugno, consultazione MOFCOM di luglio). [Digest 2026-09-26](../../digest/2026/09/26.md)
 
 ### 2026-09-13
 
