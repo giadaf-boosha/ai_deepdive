@@ -3,7 +3,7 @@ name: Evaluation / Benchmark AI
 aliases: [benchmark, eval, evaluation, valutazione LLM, AI benchmark, leaderboard]
 categoria: tecnica
 created: 2026-04-30
-last_updated: 2026-09-12
+last_updated: 2026-09-27
 ---
 
 # Evaluation / Benchmark AI
@@ -208,3 +208,7 @@ DeepSeek V4.1-Flash (10 settembre) segna 90,6 su Terminal-Bench 2.1 contro l'89,
 ### 2026-09-03
 
 Claude Fable 5.1 e Mythos 5.1 (Anthropic, 1 settembre) introducono Terminal-Bench-Science 0.1, primo benchmark pubblico che misura la capacita' di un modello di condurre un'investigazione scientifica end-to-end in un ambiente terminale: pianificare l'esperimento, eseguirlo, e verificare autonomamente il proprio lavoro. I risultati al lancio — Fable 5.1 52,6%, Fable 5 24,7%, Opus 5 29,0%, GPT-5.6 Sol 22,4%, standard error dichiarato 3,5-4,5 punti — mostrano un salto di oltre il doppio rispetto al modello precedente della stessa famiglia, un pattern gia' osservato per altri benchmark verticali di frontiera (vedi ad es. FrontierCode Diamond con Fable 5, voce 2026-06-10) ma qui applicato per la prima volta a un task esplicitamente scientifico end-to-end anziche' di sola programmazione. In parallelo, Terminal-Bench 4.0 aggiorna la serie Terminal-Bench (2.0 -> 2.1 -> 4.0, salto di versione non spiegato pubblicamente da Anthropic) con Fable 5.1 a 55,8% contro il 42,0% di Fable 5, e Mythos 5.1 — variante identica con safeguard piu' leggere, riservata a organizzazioni verificate — a 60,9%, cinque punti sopra Fable 5.1. Il caso conferma il pattern gia' tracciato in questa scheda (aggiornamento 2026-06-04): ogni nuovo modello frontier tende ad accompagnarsi a una nuova versione o a un nuovo benchmark verticale scelto per massimizzare il profilo di lancio, rendendo il confronto storico tra versioni successive di uno stesso benchmark (2.0 vs 2.1 vs 4.0) non sempre diretto. [Digest 2026-09-03](../../digest/2026/09/03.md)
+
+### 2026-09-27
+
+Tre rilasci flagship ravvicinati (Claude Opus 5.5 e GPT-6 Sol/Luna il 22 settembre, Grok 4.7 il 21 settembre — tutti missed coverage nel buco tra il 13 e il 27 settembre) introducono o aggiornano quattro benchmark di riferimento. Terminal-Bench 4.0: Opus 5.5 66,4% contro 52,3% di Opus 5, un salto che conferma il pattern gia' tracciato in questa scheda di ogni nuova generazione Anthropic accompagnata da un guadagno netto su Terminal-Bench. FrontierCode v1.1: Opus 5.5 54,4% contro 48,0% di Opus 5. GDPval-AA v2.1: Opus 5.5 a 1846 Elo contro 1708 di Opus 5. CursorBench 4.0: Grok 4.7 46,3% contro 40,4% di Grok 4.6. Su DeepSWE v1.1 i tre rilasci offrono un confronto diretto sullo stesso benchmark: GPT-6 Sol 68,8% (max effort) contro il 69,9% di Claude Fable 5 dichiarato da OpenAI a circa un quinto del costo (fonte Artificial Analysis, non un confronto indipendente), e Grok 4.7 71,0% in modalita' high effort, il punteggio piu' alto tra i tre. Come gia' notato per DeepSeek V4.1-Flash (voce 2026-09-12), tutti questi confronti sono dichiarati dai laboratori stessi, non da una leaderboard terza parte indipendente, e vanno letti con la consueta cautela su harness non dichiarato ed effort/versione di benchmark selezionata. Nessuna fonte consultata in questa run riporta una variazione di ranking numerica su LMArena (nel frattempo ribrandizzato Arena.ai) attribuibile specificamente a questi tre modelli. [Digest 2026-09-27](../../digest/2026/09/27.md)

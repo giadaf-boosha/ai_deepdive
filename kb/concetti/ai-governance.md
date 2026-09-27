@@ -3,7 +3,7 @@ name: AI Governance
 aliases: [AI governance, governance AI, export control AI, regolazione AI, AI regulation, AI policy, BIS AI, EAR AI models]
 categoria: regolazione
 created: 2026-06-14
-last_updated: 2026-09-13
+last_updated: 2026-09-27
 ---
 
 # AI Governance
@@ -216,3 +216,7 @@ Demis Hassabis (CEO Google DeepMind) pubblica il 14 luglio un manifesto personal
 ### 2026-09-03
 
 Il caso Astra tracciato nell'aggiornamento del 13 agosto passa da cautela precauzionale a classificazione formale. OpenAI conferma il 1 settembre che Astra e' il primo proprio modello a superare concretamente — non piu' solo "non escludere di superare" — la soglia "Critical" di rischio cyber del Preparedness Framework: la fascia piu' alta prevista dal framework, riservata a capacita' di identificare e sfruttare autonomamente vulnerabilita' zero-day su sistemi "hardened" reali o di ideare ed eseguire end-to-end attacchi inediti da un obiettivo di alto livello. Sul nuovo ExploitBench, benchmark interno che misura la capacita' di violare vulnerabilita' di sistema note, Astra ottiene punteggio pieno; OpenAI dichiara inoltre che il modello individua falle sconosciute e le sfrutta senza guida umana. A differenza della pausa di sviluppo di agosto — un caso di auto-limitazione preventiva prima ancora di conoscere l'esito della valutazione — qui la soglia e' stata raggiunta e riconosciuta pubblicamente, e la risposta di governance non e' un blocco ma un accesso graduale e controllato: alpha ristretta, poi una fase denominata "Daybreak Blue", prima di un rilascio piu' ampio. E' il primo caso in questa scheda in cui la sequenza "responsible scaling policy dichiarata -> soglia numerica raggiunta -> gating dell'accesso invece del blocco totale" si completa interamente in pubblico nell'arco di tre settimane, offrendo un contro-esempio diretto rispetto al precedente Fable 5/Mythos 5 di giugno, dove la soglia critica era stata superata senza preavviso e la risposta era arrivata da un governo esterno anziche' dal framework interno del lab. [Digest 2026-09-03](../../digest/2026/09/03.md)
+
+### 2026-09-27
+
+USA e Cina istituiscono il 26 settembre il primo canale di dialogo bilaterale formale sull'intelligenza artificiale, nell'ambito di un accordo in otto punti firmato durante la visita di Xi Jinping a Washington che include anche il taglio di tariffe su 30 miliardi di dollari di beni; il prossimo round di colloqui e' previsto per novembre. E' uno sviluppo diretto del filone di tensione USA-Cina gia' tracciato in questa scheda: il divieto Alibaba su Claude Code e le accuse reciproche di distillazione industriale (5 luglio), e lo spostamento misurabile di traffico enterprise USA verso modelli cinesi via OpenRouter per differenziale di prezzo (9 luglio). Rispetto a quei due episodi — entrambi contrapposizioni unilaterali, uno normativo/reputazionale (il divieto Alibaba) e uno di mercato (lo spostamento di traffico) — questo e' il primo meccanismo istituzionale di dialogo bilaterale sull'AI tra le due parti, concordato al livello dei capi di stato e non delle singole aziende. Resta da vedere se il canale produrra' impegni vincolanti o restera' consultivo: alla data di questa voce e' stato annunciato solo l'avvio del dialogo e la data del prossimo round, non un'agenda o un esito concordato. [Digest 2026-09-27](../../digest/2026/09/27.md)
