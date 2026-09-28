@@ -3,7 +3,7 @@ name: Evaluation / Benchmark AI
 aliases: [benchmark, eval, evaluation, valutazione LLM, AI benchmark, leaderboard]
 categoria: tecnica
 created: 2026-04-30
-last_updated: 2026-09-12
+last_updated: 2026-09-28
 ---
 
 # Evaluation / Benchmark AI
@@ -90,6 +90,10 @@ Per gli agenti il processo e' piu' complesso: lo stato esterno (database, browse
 - Xiong e Luo et al., "AutoResearchBench: Benchmarking AI Agents on Complex Scientific Literature Discovery", 2026. https://arxiv.org/abs/2604.25256
 
 ## Aggiornamenti
+
+### 2026-09-28
+
+Claude Opus 5.5 (Anthropic, 22 settembre) e GPT-6 Sol/Luna (OpenAI, stesso giorno) aggiornano contemporaneamente i riferimenti su tre benchmark distinti. Su Terminal-Bench 4.0, Opus 5.5 segna 66,4% contro il 57,9% del concorrente piu' vicino, il salto piu' ampio dichiarato da Anthropic per questa release; su GDPval 2.1 (knowledge-work reale) ottiene un punteggio Elo di circa 1.846. Su DeepSWE 1.1, GPT-6 Sol a effort massimo segna 68,8% contro il 69,9% di Claude Fable 5 a effort xhigh — leggermente sotto, ma con un costo per task stimato da OpenAI circa l'80% piu' basso, introducendo esplicitamente il costo-per-successo come asse di confronto accanto al punteggio puro; su AutomationBench di Zapier, GPT-6 Luna migliora di 5,4 punti percentuali sulla versione precedente. Come gia' notato per i lanci precedenti in questa scheda, i confronti sono dichiarati dai laboratori stessi, non da leaderboard terze indipendenti, e vanno letti con la stessa cautela metodologica su harness non dichiarato e possibile selezione della versione di benchmark piu' favorevole. [Digest 2026-09-28](../../digest/2026/09/28.md)
 
 ### 2026-04-30
 
