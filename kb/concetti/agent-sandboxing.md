@@ -3,7 +3,7 @@ name: Agent sandboxing
 aliases: [sandboxing, containment, isolamento agenti, agent containment, esecuzione isolata, sandbox]
 categoria: infrastruttura
 created: 2026-06-01
-last_updated: 2026-09-13
+last_updated: 2026-09-29
 ---
 
 # Agent sandboxing
@@ -82,6 +82,10 @@ Loop e esecuzione vanno disaccoppiati per la compliance. Il pattern "loop su pro
 La sandbox non sostituisce gli altri controlli. Contenimento, human-in-the-loop sulle azioni sensibili, controllo di policy separato dal modello e logging completo sono livelli complementari. Un agente sandboxato ma senza approvazione umana sulle azioni distruttive, o senza tracciamento dei tool call, e' ancora un rischio operativo. La sandbox limita il danno; gli altri controlli riducono la probabilita' che il danno si verifichi.
 
 ## Aggiornamenti
+
+### 2026-09-29
+
+AIR Security rivela Plugin4Shell (17-18 settembre), la prima vera vulnerabilita' di supply chain nell'ecosistema degli agenti di coding: una falla zero-click che colpisce contemporaneamente Claude Code, OpenAI Codex, GitHub Copilot e Gemini CLI. Quando un agente installa un plugin, esegue un git checkout ancorato a uno SHA di commit a 40 esadecimali per garantirne l'integrita' (SHA pinning), ma nessuno dei quattro agenti verifica che l'albero di lavoro risultante corrisponda davvero a quello SHA: un attaccante che controlla il repository del plugin puo' creare un branch con nome identico allo SHA fissato e impostarlo come branch di default, ottenendo remote code execution senza alcuna interazione dell'utente. A differenza di tutti i casi gia' tracciati in questa scheda — che sfruttano un canale "considerato sicuro per design" attraversato dall'agente durante l'esecuzione (error tracking, navigazione, configurazione Git del repository di lavoro) — qui il vettore e' il layer di distribuzione stesso: i marketplace e i repository che alimentano milioni di installazioni, non il comportamento dell'agente a runtime. La risposta dei vendor replica il pattern di divergenza gia' osservato con il caso Accomplish (11-12 settembre): Anthropic corregge in Claude Code 2.1.179, OpenAI in Codex 0.146.0, mentre Microsoft non ha ancora rilasciato una patch per Copilot e Google non correggera' affatto Gemini CLI perche' lo sta dismettendo — lasciando ogni installazione esistente esposta a tempo indeterminato, un caso limite del principio gia' registrato che il tempo di remediation a parita' di disclosure e' una metrica di postura di sicurezza confrontabile tra provider: qui un vendor sceglie esplicitamente di non rimediare affatto. [Digest 2026-09-29](../../digest/2026/09/29.md)
 
 ### 2026-09-13
 

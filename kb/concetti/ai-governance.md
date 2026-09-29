@@ -3,7 +3,7 @@ name: AI Governance
 aliases: [AI governance, governance AI, export control AI, regolazione AI, AI regulation, AI policy, BIS AI, EAR AI models]
 categoria: regolazione
 created: 2026-06-14
-last_updated: 2026-09-13
+last_updated: 2026-09-29
 ---
 
 # AI Governance
@@ -72,6 +72,10 @@ Esempio 3: verifica della Responsible Scaling Policy prima di distribuire un mod
 - Wilson Sonsini, "Colorado Legislature Repeals and Replaces Colorado AI Act: What SB 189 Means for Your Business" (maggio 2026). https://www.wsgr.com/en/insights/colorado-legislature-repeals-and-replaces-colorado-ai-act-what-sb-189-means-for-your-business.html
 
 ## Aggiornamenti
+
+### 2026-09-29
+
+La Commissione europea presenta il 17 settembre il KIDS Act, quarto framework regolatorio europeo rilevante per i sistemi AI accanto ad AI Act, DSA e CRA gia' tracciati in questa scheda. A differenza dell'AI Act — risk-based e trasversale a tutti i settori — il KIDS Act e' verticale sulla protezione dei minori online e introduce per la prima volta in questa scheda un requisito specifico sui chatbot AI companion: le funzionalita' companion devono restare disattivate di default per chiunque abbia meno di 18 anni, non possono essere progettate per generare dipendenza emotiva, e gli under-13 perdono l'accesso ai chatbot in assenza di consenso di un genitore. La proposta nasce esplicitamente come risposta alla frammentazione di divieti social nazionali divergenti che si stavano moltiplicando nei singoli stati membri — un pattern di armonizzazione preventiva dal centro, distinto dal meccanismo bottom-up di enforcement per settore gia' visto con l'AI Act. Il testo passa ora a Parlamento europeo e Consiglio per negoziazione: nessun obbligo e' ancora vincolante, ma la Commissione annuncia in parallelo lo sviluppo di un codice di condotta dedicato alla progettazione di algoritmi per minori, un meccanismo di soft law che puo' anticipare gli effetti pratici del regolamento prima della sua adozione formale. [Digest 2026-09-29](../../digest/2026/09/29.md)
 
 ### 2026-09-13
 

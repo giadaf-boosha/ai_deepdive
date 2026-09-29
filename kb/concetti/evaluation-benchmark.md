@@ -3,7 +3,7 @@ name: Evaluation / Benchmark AI
 aliases: [benchmark, eval, evaluation, valutazione LLM, AI benchmark, leaderboard]
 categoria: tecnica
 created: 2026-04-30
-last_updated: 2026-09-12
+last_updated: 2026-09-29
 ---
 
 # Evaluation / Benchmark AI
@@ -90,6 +90,10 @@ Per gli agenti il processo e' piu' complesso: lo stato esterno (database, browse
 - Xiong e Luo et al., "AutoResearchBench: Benchmarking AI Agents on Complex Scientific Literature Discovery", 2026. https://arxiv.org/abs/2604.25256
 
 ## Aggiornamenti
+
+### 2026-09-29
+
+Tre rilasci di fine settembre aggiornano il quadro dei benchmark di frontiera. GPT-6 Astra (OpenAI, 3 settembre) satura ARC-AGI-3 al 99,9% e ExploitBench al 100% — il primo caso in questa scheda di un modello che dichiara la saturazione quasi completa di un benchmark di ragionamento astratto generalista, non solo di un benchmark verticale (coding, matematica) come nei casi precedenti. Claude Opus 5.5 (Anthropic, 22 settembre) segna 66,4% su Terminal-Bench 4.0 e 54,4% su FrontierCode contro il 55,8% e il 50,3% di Fable 5.1: un salto misurato dallo stesso laboratorio sul proprio modello di generazione precedente, coerente con il pattern gia' tracciato per le release Anthropic. Grok 4.7 (xAI, 21 settembre) introduce un punto di riferimento comparativo diverso dai singoli benchmark verticali finora tracciati: l'Artificial Analysis Intelligence Index (v4.3.2), un indice composito di dieci benchmark gestito da terze parti indipendenti, dove Grok 4.7 segna 46 contro il 53 di Claude Fable 5.1 e GPT-6 a pari merito. La compresenza di un indice composito indipendente accanto ai benchmark verticali dichiarati dai singoli laboratori e' un dato metodologico rilevante per chi confronta claim di lancio: un indice aggregato di terze parti riduce, ma non elimina, il rischio di selection bias sulla singola metrica piu' favorevole gia' segnalato altrove in questa scheda. [Digest 2026-09-29](../../digest/2026/09/29.md)
 
 ### 2026-04-30
 
