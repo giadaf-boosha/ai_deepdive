@@ -3,7 +3,7 @@ name: Formal Verification / Theorem Proving assistito da LLM
 aliases: [formal verification, theorem proving, dimostrazione formale, formalizzazione matematica, Lean proof, autoformalizzazione, computer-checked proof, theorem formalization]
 categoria: tecnica
 created: 2026-09-12
-last_updated: 2026-09-12
+last_updated: 2026-09-30
 ---
 
 # Formal Verification / Theorem Proving assistito da LLM
@@ -79,3 +79,7 @@ Esempio 3: uso pratico per chi costruisce sistemi di verifica software. Un'organ
 ### 2026-09-12
 
 Prima voce di questa scheda, appena creata. Claude (Anthropic) completa la prima dimostrazione formale nota, verificata al computer in Lean, dell'Ultimo Teorema di Fermat: oltre 13 milioni di righe di codice e 29.500 teoremi intermedi verificati in 11 giorni, contro gli anni stimati per una formalizzazione umana equivalente, usando lo strumento open-source Prove2Me e dozzine di istanze Claude in parallelo per circa 6 miliardi di token complessivi. L'annuncio risale al 4 settembre 2026 mai coperto in un digest per assenza di run tra il 4 e l'11 settembre; recuperato come missed coverage nel digest del 12 settembre. [Digest 2026-09-12](../../digest/2026/09/12.md)
+
+### 2026-09-30
+
+Un sistema multiagente di OpenAI produce, in una run di 88 ore avviata il 1 settembre, una dimostrazione di 166 pagine e una formalizzazione Lean che risolve il problema del millennio di Navier-Stokes per il caso con forza esterna liscia, mostrando che un fluido inizialmente liscio e a riposo puo' sviluppare una singolarita' in tempo finito con energia che resta finita lungo tutta la dinamica (annuncio 8 settembre). Il matematico Tristan Buckmaster accusa OpenAI di aver usato senza attribuzione lavoro suo non pubblicato sul problema correlato delle equazioni di Eulero in 3D; OpenAI riconosce la priorita' di Buckmaster e del collega Alpoge su quel risultato ma rivendica la propria priorita' sul risultato Navier-Stokes, sostenendo che i prompt di Buckmaster nei due mesi precedenti l'annuncio non potessero aver influenzato il sistema nemmeno tramite training — la comunita' matematica sta ancora verificando la dimostrazione a fine settembre. Rispetto alla voce precedente in questa scheda (Fermat, Claude, settembre), il salto qui non e' di scala del codice Lean prodotto ma di natura del problema: la formalizzazione di un teorema gia' dimostrato da umani lascia il posto a un risultato originale su un problema aperto di ricerca matematica corrente, con annessa la prima disputa di priorita' documentata tra un ricercatore umano e un sistema AI su un risultato di questo tipo. [Digest 2026-09-30](../../digest/2026/09/30.md)

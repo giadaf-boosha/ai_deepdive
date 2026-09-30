@@ -3,7 +3,7 @@ name: Evaluation / Benchmark AI
 aliases: [benchmark, eval, evaluation, valutazione LLM, AI benchmark, leaderboard]
 categoria: tecnica
 created: 2026-04-30
-last_updated: 2026-09-12
+last_updated: 2026-09-30
 ---
 
 # Evaluation / Benchmark AI
@@ -208,3 +208,7 @@ DeepSeek V4.1-Flash (10 settembre) segna 90,6 su Terminal-Bench 2.1 contro l'89,
 ### 2026-09-03
 
 Claude Fable 5.1 e Mythos 5.1 (Anthropic, 1 settembre) introducono Terminal-Bench-Science 0.1, primo benchmark pubblico che misura la capacita' di un modello di condurre un'investigazione scientifica end-to-end in un ambiente terminale: pianificare l'esperimento, eseguirlo, e verificare autonomamente il proprio lavoro. I risultati al lancio — Fable 5.1 52,6%, Fable 5 24,7%, Opus 5 29,0%, GPT-5.6 Sol 22,4%, standard error dichiarato 3,5-4,5 punti — mostrano un salto di oltre il doppio rispetto al modello precedente della stessa famiglia, un pattern gia' osservato per altri benchmark verticali di frontiera (vedi ad es. FrontierCode Diamond con Fable 5, voce 2026-06-10) ma qui applicato per la prima volta a un task esplicitamente scientifico end-to-end anziche' di sola programmazione. In parallelo, Terminal-Bench 4.0 aggiorna la serie Terminal-Bench (2.0 -> 2.1 -> 4.0, salto di versione non spiegato pubblicamente da Anthropic) con Fable 5.1 a 55,8% contro il 42,0% di Fable 5, e Mythos 5.1 — variante identica con safeguard piu' leggere, riservata a organizzazioni verificate — a 60,9%, cinque punti sopra Fable 5.1. Il caso conferma il pattern gia' tracciato in questa scheda (aggiornamento 2026-06-04): ogni nuovo modello frontier tende ad accompagnarsi a una nuova versione o a un nuovo benchmark verticale scelto per massimizzare il profilo di lancio, rendendo il confronto storico tra versioni successive di uno stesso benchmark (2.0 vs 2.1 vs 4.0) non sempre diretto. [Digest 2026-09-03](../../digest/2026/09/03.md)
+
+### 2026-09-30
+
+Claude Sonnet 5.5 (Anthropic, 28 settembre) si avvicina a Opus 5.5 mantenendo i prezzi di Sonnet 5: su Terminal-Bench passa dal 10,3% di Sonnet 5 al 70,6%, su GDPval-AA v2.1 ottiene 1844 punti contro 1846 di Opus 5.5 e 1449 di Sonnet 5, su OSWorld 2.1 (computer use) arriva all'80,1%. Il salto piu' vistoso e' proprio su Terminal-Bench, dove il delta tra due versioni successive dello stesso modello (10,3% -> 70,6%) e' tra i piu' ampi mai registrati in questa scheda tra major version consecutive, e supera nettamente il pattern "raddoppio" gia' osservato per Fable 5 -> Fable 5.1 (Terminal-Bench-Science, aggiornamento 2026-09-03). Un test indipendente di Base44 su 118 build di applicazioni reali misura risultati comparabili a Opus 5 in una media di 3,6 iterazioni per build contro le 7,7 di Opus 5 — un dato di terze parti che integra i benchmark dichiarati dal laboratorio con una misura di efficienza pratica (iterazioni necessarie), meno soggetta al rischio di selezione del benchmark piu' favorevole gia' segnalato per altri lanci in questa scheda. [Digest 2026-09-30](../../digest/2026/09/30.md)
