@@ -3,7 +3,7 @@ name: Evaluation / Benchmark AI
 aliases: [benchmark, eval, evaluation, valutazione LLM, AI benchmark, leaderboard]
 categoria: tecnica
 created: 2026-04-30
-last_updated: 2026-09-12
+last_updated: 2026-10-02
 ---
 
 # Evaluation / Benchmark AI
@@ -200,6 +200,10 @@ Due sviluppi ridefiniscono cosa viene misurato quando si valuta un LLM. LLM-as-a
 ### 2026-07-15
 
 Long-Horizon-Terminal-Bench (LHTB, arXiv:2607.08964) introduce un benchmark di 46 task terminale distribuiti su nove categorie (riproduzione di esperimenti, ingegneria del software, analisi multimodale, giochi interattivi, calcolo scientifico), pensato per misurare quanto un agente sostenga lavoro utile in un ambiente terminale stateful lungo centinaia di step, a differenza dei benchmark a orizzonte breve dove l'agente produce un singolo artifact e si ferma. La valutazione usa verificatori nascosti che ricostruiscono il risultato dagli artifact prodotti (il progresso auto-dichiarato non conta) e scompone ogni task in sotto-task graduati per ottenere reward intermedi densi e credito parziale — un design in continuita' con TerminalWorld (digest 1 giugno) sul principio di misurare la robustezza su workflow realistici piuttosto che il tetto di capacita' su task curati, ma con un asse aggiuntivo: la durata dell'esecuzione (centinaia di step) come dimensione di difficolta' distinta dalla complessita' del singolo task. Il risultato principale: la configurazione piu' forte testata (Grok 4.5) raggiunge solo il 28,3% di successo a soglia di reward 0,95, con un pass rate medio tra tutti i modelli valutati del 6,4% — un gap netto rispetto ai punteggi 80-95% ormai comuni su Terminal-Bench 2.0/2.1 e SWE-bench Verified (vedi voci precedenti in questa scheda), che quantifica quanto l'esecuzione a orizzonte lungo resti un collo di bottiglia distinto dalla risoluzione di singoli task terminale ben definiti. [Digest 2026-07-15](../../digest/2026/07/15.md)
+
+### 2026-10-02
+
+Google rilascia il 30 settembre Gemini 4 Argon, che riprende la testa dei benchmark su 12 delle 18 metriche rese pubbliche dall'azienda, superando sia GPT-6 Astra sia Claude Opus 5.5/Fable 5.1 su piu' dimensioni: 84,2% su GraphWalks BFS F1 a contesto lungo (256K-1M token) contro 71,8% di Astra, 66,8% di Opus 5.5 e 65,0% di Fable 5.1; 77,9% su DeepSWE v1.1; 91,7% su LVBench (comprensione video lunga), stato dell'arte. Rispetto ai casi gia' tracciati in questa scheda, dove il confronto tra modelli era quasi sempre dichiarato dal laboratorio stesso senza un gate di accesso distinto dal lancio pubblico standard, qui Google introduce un elemento procedurale nuovo: Argon non viene aperto a tutti gli sviluppatori al lancio, ma riservato prima a team di cyberdifesa fidati e tester pre-rilascio selezionati, con l'accesso piu' ampio promesso in seguito. La scelta solleva per la prima volta in questa scheda una domanda specifica per chi confronta modelli su benchmark pubblicati dal vendor: un punteggio dichiarato su un modello non ancora accessibile in modo ampio non puo' essere verificato indipendentemente dalla comunita' nello stesso modo di un modello gia' disponibile via API, un caveat distinto rispetto ai gia' noti problemi di harness non dichiarato e di selezione della versione di benchmark piu' favorevole. [Digest 2026-10-02](../../digest/2026/10/02.md)
 
 ### 2026-09-12
 
