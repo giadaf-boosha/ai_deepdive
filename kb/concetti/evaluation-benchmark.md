@@ -3,7 +3,7 @@ name: Evaluation / Benchmark AI
 aliases: [benchmark, eval, evaluation, valutazione LLM, AI benchmark, leaderboard]
 categoria: tecnica
 created: 2026-04-30
-last_updated: 2026-09-12
+last_updated: 2026-10-03
 ---
 
 # Evaluation / Benchmark AI
@@ -90,6 +90,10 @@ Per gli agenti il processo e' piu' complesso: lo stato esterno (database, browse
 - Xiong e Luo et al., "AutoResearchBench: Benchmarking AI Agents on Complex Scientific Literature Discovery", 2026. https://arxiv.org/abs/2604.25256
 
 ## Aggiornamenti
+
+### 2026-10-03
+
+"Sharpening Tax in Post-Training" (Meta, arXiv:2610.01509, 1 ottobre) introduce una metrica per un fenomeno rilevante per l'interpretazione dei benchmark: il post-training via reinforcement learning aumenta sistematicamente il pass@1 ma riduce il pass@K, perche' concentra la distribuzione delle risposte del modello su un insieme piu' ristretto di comportamenti rispetto al modello base. Testato su 14 coppie di checkpoint base/post-trained di 4 famiglie di modelli, su tre benchmark agentici (BFCL v4 multi-turno, WebShop, ACEBench) con 128 rollout per task, il paper mostra che i modelli base, interrogati piu' volte con un harness leggero (vedi `kb/concetti/agent-harness.md`), spesso superano la controparte post-trained in pass@K nonostante un pass@1 molto piu' basso. L'implicazione per la sezione "Quando usarlo / quando no" di questa scheda: un singolo numero di pass@1 riportato al lancio di un modello post-trained puo' sovrastimare il vantaggio reale quando il caso d'uso a valle permette piu' tentativi o un sistema di verifica — un caveat metodologico distinto sia dall'harness non dichiarato sia dalla contaminazione del dataset, perche' riguarda una proprieta' statistica introdotta deliberatamente dal processo di post-training stesso, non un difetto del protocollo di misurazione. [Digest 2026-10-03](../../digest/2026/10/03.md)
 
 ### 2026-04-30
 

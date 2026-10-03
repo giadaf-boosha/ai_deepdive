@@ -3,7 +3,7 @@ name: Agent harness
 aliases: [agent harness, harness, scaffolding agentico, agent runtime]
 categoria: infrastruttura
 created: 2026-04-28
-last_updated: 2026-08-22
+last_updated: 2026-10-03
 ---
 
 # Agent harness
@@ -139,6 +139,10 @@ Cost governance. In un harness multi-utente i costi possono esplodere. Un agent 
 Sicurezza dei tool. La superficie d'attacco principale di un harness e' nei tool che modificano stato: shell, send-mail, db-write, file-write. Best practice: separare tool read-only da tool write; richiedere conferma utente per i write su prima esecuzione di una sessione; permission model dichiarativo (es. allowlist di comandi shell, denylist di path). Per agenti che eseguono codice, il sandbox e' obbligatorio in qualunque deployment toccato da utenti finali; la documentazione Anthropic del 30 maggio 2026 mostra che la scelta del meccanismo dipende dal contesto di esecuzione (gVisor server-side, Seatbelt/Bubblewrap in locale, VM full-OS per ambienti desktop emulati). In ambito enterprise, separare il loop dall'esecuzione dei tool (self-hosted sandbox) e accedere ai sistemi interni via gateway outbound-only (MCP tunnel) e' il pattern di riferimento per non esporre il perimetro aziendale.
 
 ## Aggiornamenti
+
+### 2026-10-03
+
+Anthropic lancia il 1 ottobre i "mods" di Claude Code (CLI v2.1.287, 3 fonti): funzioni TypeScript che modificano il comportamento dell'harness a runtime — riscrivono i prompt prima che raggiungano il modello, bloccano o approvano automaticamente singole tool call, redigono segreti dall'output visualizzato e sostituiscono elementi dell'interfaccia — distribuite come plugin dalla directory ufficiale di Claude. Per i piani Team ed Enterprise e' incluso di default un mod "sec-default" che impedisce ai mod installati dai singoli utenti di sovrascrivere le regole di permesso configurate a livello di account gestito. I mods introducono un quarto asse di estensione dell'harness, distinto dai tre gia' tracciati in questa scheda: i tool/MCP estendono le capacita' dell'agente (cosa puo' fare), le Dynamic Workflows orchestrano subagenti (come si struttura un task complesso), mentre i mods intervengono sul comportamento stesso del loop e del rendering (come l'harness tratta ogni prompt, tool call e output, indipendentemente dal task specifico) — una posizione concettualmente vicina al permission model e alla sicurezza dei tool gia' discussi in questa scheda, ma esposta per la prima volta come livello di personalizzazione programmabile dall'utente invece che come configurazione dichiarativa (allowlist/denylist). Il vincolo "sec-default" sui piani gestiti e' il primo caso in cui un vendor di harness introduce esplicitamente un mod di sistema non sovrascrivibile dagli utenti finali, per impedire che l'estensibilita' individuale eroda la governance centrale dell'organizzazione. [Digest 2026-10-03](../../digest/2026/10/03.md)
 
 ### 2026-08-22
 
