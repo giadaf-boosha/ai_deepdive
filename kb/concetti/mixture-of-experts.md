@@ -3,7 +3,7 @@ name: Mixture of Experts
 aliases: [MoE, mixture-of-experts, mixture of experts, modello sparso, sparse model, expert routing]
 categoria: architettura
 created: 2026-06-01
-last_updated: 2026-08-15
+last_updated: 2026-10-04
 ---
 
 # Mixture of Experts
@@ -80,6 +80,10 @@ Quando un denso e' la scelta migliore. Per deployment su singola GPU, su edge o 
 Combinare gli assi di efficienza. MoE (sparsita' tra expert), quantizzazione (precisione ridotta dei pesi) e adaptive per-token compute (budget variabile) sono assi ortogonali e cumulabili. Un sistema di serving maturo li combina: un MoE quantizzato ad AWQ 4-bit con allocazione adattiva del compute per token e' lo stato dell'arte dell'ottimizzazione dell'inferenza nel 2026.
 
 ## Aggiornamenti
+
+### 2026-10-04
+
+Aleph Alpha pubblica il 3 ottobre i pesi completi di Kolibri-1, primo modello di questa scheda proveniente da un laboratorio europeo rilasciato con pesi aperti e licenza permissiva (Apache 2.0) a questa scala: MoE inglese-tedesco da 78,1 miliardi di parametri totali e 3,46 miliardi attivi per token (ratio circa 1:22), con 50 layer che instradano ogni token a 6 dei 384 expert piu' un expert condiviso sempre attivo per layer, e una finestra di contesto validata di 1.048.576 token. Il posizionamento dichiarato da Aleph Alpha e' "sovrano": un modello pensato per essere eseguito on-premise da clienti istituzionali europei che vogliono controllo pieno sull'infrastruttura, non solo accesso via API — un caso d'uso del MoE distinto dai casi gia' tracciati in questa scheda (ottimizzazione costo/latenza per laboratori USA e cinesi), dove qui il motore economico non e' il costo per token ma la possibilita' di hosting indipendente da un singolo fornitore cloud. Il ratio di sparsita' (1:22) si colloca nella fascia alta gia' osservata nei modelli cinesi (Kimi K2.7-Code 1:10, GLM-5.2 1:18, LongCat-2.0 1:33), confermando che l'uso di molti expert fine-grained piu' uno o pochi shared expert e' ormai lo standard architetturale indipendentemente dalla provenienza geografica del laboratorio. [Digest 2026-10-04](../../digest/2026/10/04.md)
 
 ### 2026-08-15
 
