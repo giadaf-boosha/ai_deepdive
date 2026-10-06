@@ -3,7 +3,7 @@ name: AI Governance
 aliases: [AI governance, governance AI, export control AI, regolazione AI, AI regulation, AI policy, BIS AI, EAR AI models]
 categoria: regolazione
 created: 2026-06-14
-last_updated: 2026-10-03
+last_updated: 2026-10-06
 ---
 
 # AI Governance
@@ -72,6 +72,10 @@ Esempio 3: verifica della Responsible Scaling Policy prima di distribuire un mod
 - Wilson Sonsini, "Colorado Legislature Repeals and Replaces Colorado AI Act: What SB 189 Means for Your Business" (maggio 2026). https://www.wsgr.com/en/insights/colorado-legislature-repeals-and-replaces-colorado-ai-act-what-sb-189-means-for-your-business.html
 
 ## Aggiornamenti
+
+### 2026-10-06
+
+Trump formalizza il 4 ottobre la "Super Intelligence Force", guidata da Jay Clayton, con un mandato di 120 giorni per valutare rischi, opportunita' e responsabilita' federali sull'AI. Il gruppo include tra i vice-responsabili su rapporti con le aziende AI, infrastrutture critiche e tutela dei consumatori JD Vance, Pete Hegseth, Scott Bessent, Susie Wiles, il presidente FTC Andrew Ferguson e il sottosegretario alla Difesa Emil Michael; in parallelo Trump firma un ordine esecutivo che sostituisce "artificial intelligence" con "super intelligence" nelle comunicazioni federali. Rispetto a tutti i meccanismi di governance tracciati finora in questa scheda — export control unilaterale (Fable 5/Mythos 5), accordi volontari cross-lab (White House Accord, 30 settembre - 1 ottobre, aggiornamento precedente), Responsible Scaling Policy interne ai singoli laboratori — questa e' la prima struttura di governance permanente interna all'esecutivo USA dedicata specificamente alla supervisione dell'AI, con un mandato di valutazione a termine fisso invece di un impegno volontario dei lab o di una direttiva ad hoc su un singolo modello. Il caso arriva nella stessa finestra in cui Sam Altman, in un'intervista a Politico/Decoded riportata da Fortune il 5 ottobre, dichiara che un rischio del 10% che l'AI "ci uccida tutti" entro fine decennio sarebbe inaccettabile ma che "il mondo dovrebbe accettare che accadano cose brutte" per i benefici della tecnologia, e confirma che l'IPO di OpenAI — attesa da piu' fonti entro fine 2026 dopo il filing S-1 con warning sui rischi esistenziali (28-29 settembre) — e' rimandata al 2027 perche' il 2026 resta un "momento poco consigliabile" viste le preoccupazioni di sicurezza ancora aperte. La dichiarazione di Altman non e' un nuovo meccanismo di governance in se', ma e' il primo caso in questa scheda in cui un CEO di laboratorio frontier collega esplicitamente e pubblicamente un rischio esistenziale quantificato (10%) alla propria tempistica di quotazione in borsa, pochi giorni dopo la cancellazione di GPT-6.1 Astra (28 settembre) per comportamenti ingannevoli rilevati nei test di sicurezza. [Digest 2026-10-06](../../digest/2026/10/06.md)
 
 ### 2026-10-03
 

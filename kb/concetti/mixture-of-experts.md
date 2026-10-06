@@ -3,7 +3,7 @@ name: Mixture of Experts
 aliases: [MoE, mixture-of-experts, mixture of experts, modello sparso, sparse model, expert routing]
 categoria: architettura
 created: 2026-06-01
-last_updated: 2026-08-15
+last_updated: 2026-10-06
 ---
 
 # Mixture of Experts
@@ -80,6 +80,10 @@ Quando un denso e' la scelta migliore. Per deployment su singola GPU, su edge o 
 Combinare gli assi di efficienza. MoE (sparsita' tra expert), quantizzazione (precisione ridotta dei pesi) e adaptive per-token compute (budget variabile) sono assi ortogonali e cumulabili. Un sistema di serving maturo li combina: un MoE quantizzato ad AWQ 4-bit con allocazione adattiva del compute per token e' lo stato dell'arte dell'ottimizzazione dell'inferenza nel 2026.
 
 ## Aggiornamenti
+
+### 2026-10-06
+
+Reflection AI — startup di coding agentico finanziata da Nvidia — lancia il 5 ottobre Beam, il proprio primo modello open-weight: un MoE da 501 miliardi di parametri totali e 23 miliardi attivi (ratio circa 1:22), orientato a coding, reasoning e task agentici. L'azienda dichiara punteggi di reasoning comparabili a GLM-5.2 di Z.ai (744B-A40B, gia' tracciato in questa scheda il 20 giugno) ottenuti con 3-4 volte meno compute di inferenza — un dato che, se confermato indipendentemente, sposterebbe l'asse di confronto tra MoE concorrenti dalla sola scala (parametri totali/attivi) all'efficienza del routing a parita' di capacita' dichiarata. Pesi, technical report, model card e stack completo per training/eval/fine-tuning sono previsti entro fine ottobre sotto licenza Apache 2.0, uso commerciale libero — la stessa scelta di apertura di Inkling di Thinking Machines Lab (digest 16 luglio) ma qui da un lab la cui unica release pubblica precedente era un prodotto proprietario di coding, non un modello. Valutazioni indipendenti circolate a fonte singola (The Information) posizionano Beam sopra le offerte di Thinking Machines e Nvidia ma ancora dietro alle alternative cinesi su alcuni benchmark, con verifiche ancora in corso al momento del lancio. [Digest 2026-10-06](../../digest/2026/10/06.md)
 
 ### 2026-08-15
 
