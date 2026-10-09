@@ -3,7 +3,7 @@ name: Inference
 aliases: [inference, inferenza, serving, generation, decoding]
 categoria: infrastruttura
 created: 2026-04-28
-last_updated: 2026-07-03
+last_updated: 2026-10-09
 ---
 
 # Inference
@@ -223,3 +223,7 @@ Due sviluppi distinti avanzano il fronte dell'ottimizzazione dell'inference. Com
 ### 2026-07-03
 
 DSpark (DeepSeek + Peking University, 27 giugno, arXiv:2606.19348) porta il confidence-scheduled speculative decoding in produzione su DeepSeek-V4-Pro e V4-Flash: il draft model propone 6 token per passo, il modello target verifica in un singolo forward pass parallelo, con la soglia di accettazione adattata dinamicamente alla confidenza del draft. Il risultato misurato e' uno speedup del 57–85% per singolo utente e un aumento del throughput batch del 51–400%. Il checkpoint e' disponibile su Hugging Face con licenza MIT. Il contributo tecnico rispetto allo speculative decoding standard (Leviathan et al., 2022) e' la schedulazione adattiva della confidenza: invece di una soglia fissa di accettazione, DSpark calibra il budget di verifica in base all'incertezza stimata del draft, riducendo i false reject su token ad alta confidenza. Together AI chiude un Series C da $800 milioni a $8,3 miliardi di valutazione (1 luglio, guidato da Aramco Ventures) con bookings annui a $1,15 miliardi e volume open-source triplicato nell'ultimo anno. Together e' il neocloud di riferimento per l'inference su modelli open-weight (Llama, Mistral, Qwen, DeepSeek): il round consolida l'ipotesi che il mercato dell'inference per modelli open-source sia abbastanza grande da sostenere un'azienda a valutazione multi-miliardaria indipendente dai provider frontier. [Digest 2026-07-03](../../digest/2026/07/03.md)
+
+### 2026-10-09
+
+Il progetto open source vLLM rilascia il 5 ottobre la versione 0.31.0, con due feature dedicate ai colli di bottiglia gia' tracciati in questa scheda: "Fast Start" precarica la memoria GPU con pesi del modello gia' quantizzati per ridurre i tempi di inizializzazione (il problema del cold start); "HiSparse" introduce il paging della KV cache verso storage di livello host quando la memoria GPU e' sotto pressione, un approccio complementare alle tecniche di compressione della KV cache gia' coperte (KVarN, CompressKV) che invece riducono la cache stessa piuttosto che spostarla su un tier di storage diverso. La release aggiunge anche nuove capacita' di speculative decoding e una funzione sperimentale di snapshot. Copertura disponibile solo tramite fonti secondarie concordanti (717 commit, 307 contributor); la pagina ufficiale delle release GitHub non e' stata raggiungibile direttamente in questa run. [Digest 2026-10-09](../../digest/2026/10/09.md)

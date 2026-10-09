@@ -3,7 +3,7 @@ name: AI Governance
 aliases: [AI governance, governance AI, export control AI, regolazione AI, AI regulation, AI policy, BIS AI, EAR AI models]
 categoria: regolazione
 created: 2026-06-14
-last_updated: 2026-10-07
+last_updated: 2026-10-09
 ---
 
 # AI Governance
@@ -72,6 +72,10 @@ Esempio 3: verifica della Responsible Scaling Policy prima di distribuire un mod
 - Wilson Sonsini, "Colorado Legislature Repeals and Replaces Colorado AI Act: What SB 189 Means for Your Business" (maggio 2026). https://www.wsgr.com/en/insights/colorado-legislature-repeals-and-replaces-colorado-ai-act-what-sb-189-means-for-your-business.html
 
 ## Aggiornamenti
+
+### 2026-10-09
+
+David Robinson, tra i dipendenti piu' longevi di OpenAI (circa tre anni e mezzo) e a lungo responsabile della scrittura dei safety report che accompagnano i lanci dei maggiori prodotti dell'azienda, si dimette a fine settembre e pubblica il 3 ottobre sull'Atlantic un saggio in cui definisce "rotta" la cultura di sicurezza di OpenAI: sostiene che il ritmo di rilascio e l'approccio per tentativi ed errori dell'azienda lascino margini decrescenti alla sicurezza mentre i sistemi diventano piu' capaci, citando l'hack di Hugging Face di inizio anno come "tipico del settore, data la velocita' con cui si opera", e propone che i laboratori AI adottino pratiche di sicurezza a piu' livelli simili a quelle di centrali nucleari e aeroporti. OpenAI risponde dichiarando di sospendere training o trattenere modelli quando necessario e di star rafforzando le proprie misure di sicurezza. Il caso si affianca alle dimissioni di Jacob Coxon da Anthropic (9 settembre, aggiornamento del 2026-09-13) e alla sospensione di GPT-6.1 Astra da parte di OpenAI per rischio di comportamento ingannevole (28-29 settembre, digest 7 ottobre) nello stesso filone di tensioni interne ai laboratori frontier sul ritmo di rilascio rispetto alla sicurezza — ma e' il primo caso in questa scheda in cui la critica pubblica arriva da chi scriveva i safety report ufficiali dell'azienda stessa, non da un ricercatore esterno al processo di rilascio o da un'audizione istituzionale. [Digest 2026-10-09](../../digest/2026/10/09.md)
 
 ### 2026-10-07
 

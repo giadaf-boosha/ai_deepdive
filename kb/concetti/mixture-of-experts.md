@@ -3,7 +3,7 @@ name: Mixture of Experts
 aliases: [MoE, mixture-of-experts, mixture of experts, modello sparso, sparse model, expert routing]
 categoria: architettura
 created: 2026-06-01
-last_updated: 2026-08-15
+last_updated: 2026-10-09
 ---
 
 # Mixture of Experts
@@ -80,6 +80,10 @@ Quando un denso e' la scelta migliore. Per deployment su singola GPU, su edge o 
 Combinare gli assi di efficienza. MoE (sparsita' tra expert), quantizzazione (precisione ridotta dei pesi) e adaptive per-token compute (budget variabile) sono assi ortogonali e cumulabili. Un sistema di serving maturo li combina: un MoE quantizzato ad AWQ 4-bit con allocazione adattiva del compute per token e' lo stato dell'arte dell'ottimizzazione dell'inferenza nel 2026.
 
 ## Aggiornamenti
+
+### 2026-10-09
+
+Reflection AI, startup sostenuta da Nvidia (circa 4,7 miliardi di dollari raccolti, valutazione recente intorno ai 25 miliardi pre-money), lancia il 5 ottobre Beam, il proprio primo modello open-weight: un MoE da 501 miliardi di parametri totali e 23 miliardi attivi, pretrained su 23,8 trilioni di token con contesto nativo da 1 milione di token, addestrato con un run RL di quattro settimane su 10.500 GPU Nvidia GB300. Reflection dichiara risultati alla pari con GLM-5.3/GLM-5.2 di Z.ai e vicini a Qwen3.8-Max su coding e task agentici (80,1 su Terminal Bench v2.1, 80,9 su SWE-bench Verified, numeri auto-riportati e non verificati da terzi), con un uso di calcolo in inferenza dichiarato 3-4 volte inferiore ai modelli concorrenti. I pesi completi non sono ancora pubblici: attesi entro fine ottobre, accesso anticipato solo su waitlist. Il caso e' il primo in questa scheda di un laboratorio statunitense a scala paragonabile che rilascia un MoE open-weight posizionandosi esplicitamente come alternativa occidentale ai modelli cinesi (DeepSeek, GLM, Qwen3.8-Max, Kimi) che fino ad ora hanno dominato questa fascia della scheda: finora la combinazione scala-frontier-piu'-pesi-aperti era appannaggio quasi esclusivo di laboratori cinesi o di Inkling (Thinking Machines Lab, 975B-A41B, luglio). [Digest 2026-10-09](../../digest/2026/10/09.md)
 
 ### 2026-08-15
 
