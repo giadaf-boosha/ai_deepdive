@@ -3,7 +3,7 @@ name: AI Governance
 aliases: [AI governance, governance AI, export control AI, regolazione AI, AI regulation, AI policy, BIS AI, EAR AI models]
 categoria: regolazione
 created: 2026-06-14
-last_updated: 2026-10-07
+last_updated: 2026-10-16
 ---
 
 # AI Governance
@@ -72,6 +72,10 @@ Esempio 3: verifica della Responsible Scaling Policy prima di distribuire un mod
 - Wilson Sonsini, "Colorado Legislature Repeals and Replaces Colorado AI Act: What SB 189 Means for Your Business" (maggio 2026). https://www.wsgr.com/en/insights/colorado-legislature-repeals-and-replaces-colorado-ai-act-what-sb-189-means-for-your-business.html
 
 ## Aggiornamenti
+
+### 2026-10-16
+
+Due sviluppi del 14-15 ottobre concretizzano in meccanismi operativi gli impegni di autoregolamentazione gia' tracciati in questa scheda. Primo, Anthropic annuncia il 15 ottobre un framework a tre livelli di accesso per valutatori esterni indipendenti e assegna il livello piu' alto (Tier 3) a un team di sei persone di METR, che ricevono hardware aziendale, spazio ufficio e accesso a strumenti interni paragonabile a quello dei team di risk assessment interni di Anthropic, con diritto di pubblicare le proprie analisi senza veto dell'azienda (che puo' solo richiedere redazioni su categorie predefinite — dati clienti, materiale legale privilegiato, architettura dei modelli). Tier 1 e Tier 2 restano gradi di accesso piu' limitati, rispettivamente con e senza obbligo di approvazione alla pubblicazione; altri valutatori in corso includono SecureBio (capitolo bio/chem del Risk Report di agosto) e Accenture/Faculty (red-teaming e valutazione piu' ampi). Il passo rende operativo l'impegno a incorporare "valutatori esterni con accesso permanente equivalente a un dipendente interno" annunciato nell'essay di Amodei "We Must Pace the Frontier" (aggiornamento 2026-09-13) e nel White House Accord (aggiornamento 2026-10-03) — e' il primo caso in questa scheda in cui quell'impegno assume una struttura a livelli verificabile con un valutatore operativo al grado massimo, anziche' restare una dichiarazione di intenti. Critici tra cui l'ex consigliere AI della Casa Bianca David Sacks contestano pubblicamente l'indipendenza di METR per legami finanziari indiretti con investitori di Anthropic tramite Good Ventures; METR rivendica una regola di "indipendenza dura" che esclude ogni finanziamento da laboratori AI di frontiera. Secondo, il 14 ottobre Anthropic pubblica un aggiornamento sui safeguard elettorali di Claude per le midterm USA che introduce per la prima volta in questa scheda il tema della misurazione del bias politico e del misuso elettorale come categoria distinta dal misuso agentico generico: su un campione di 250.000 conversazioni USA di fine settembre solo lo 0,002% viola le policy di integrita' elettorale, i modelli Claude 5.5 ottengono il 99% su una valutazione interna di equanimita' politica, ma revisori indipendenti (Vanderbilt, Foundation for American Innovation, Collective Intelligence Project) segnalano hedging non uniforme tra posizioni politiche; il report di threat intelligence di settembre (aggiornamento 2026-09-12) documenta inoltre un sito di fake news alimentato da Claude usato da operatori legati a Russia, Iran e Corea del Nord per orientare la copertura delle midterm. [Digest 2026-10-16](../../digest/2026/10/16.md)
 
 ### 2026-10-07
 
