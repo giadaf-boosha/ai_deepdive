@@ -3,7 +3,7 @@ name: AI Governance
 aliases: [AI governance, governance AI, export control AI, regolazione AI, AI regulation, AI policy, BIS AI, EAR AI models]
 categoria: regolazione
 created: 2026-06-14
-last_updated: 2026-10-07
+last_updated: 2026-10-17
 ---
 
 # AI Governance
@@ -72,6 +72,10 @@ Esempio 3: verifica della Responsible Scaling Policy prima di distribuire un mod
 - Wilson Sonsini, "Colorado Legislature Repeals and Replaces Colorado AI Act: What SB 189 Means for Your Business" (maggio 2026). https://www.wsgr.com/en/insights/colorado-legislature-repeals-and-replaces-colorado-ai-act-what-sb-189-means-for-your-business.html
 
 ## Aggiornamenti
+
+### 2026-10-17
+
+Anthropic pubblica il 15 ottobre un aggiornamento sul proprio programma di valutatori indipendenti, dando per la prima volta a un team di sei dipendenti METR un accesso "simile a quello di un dipendente" ai propri sistemi interni — il terzo e piu' alto dei tre livelli di accesso ora definiti pubblicamente dall'azienda. Il primo livello prevede investigazioni a perimetro ristretto con pubblicazione soggetta ad approvazione di Anthropic; il secondo amplia l'accesso e consente la pubblicazione senza approvazione preventiva, pur lasciando ad Anthropic la facolta' di richiedere la rimozione di categorie specifiche (dati clienti, materiale legale privilegiato, architetture di modello); il terzo, in cui si colloca ora METR, aggiunge l'accesso equivalente a un dipendente interno mantenendo i diritti di pubblicazione del secondo livello. Accenture/Faculty proseguono su una partnership piu' ampia annunciata a settembre (red-teaming, valutazioni di allineamento, capability building); SecureBio contesta pubblicamente di essere stata classificata come partner di primo livello, dichiarando di non aver concordato con Anthropic alcuna designazione formale. Reuters ha riportato che sia Anthropic sia OpenAI avrebbero cercato un controllo significativo su cosa i valutatori esterni possono pubblicare; Anthropic replica che la caratterizzazione non rispecchia accuratamente l'insieme delle sue discussioni con i valutatori. Rispetto alla proposta programmatica di Dario Amodei nell'essay "We Must Pace the Frontier" del 12 settembre (valutatori terzi con accesso permanente equivalente a un dipendente interno, vedi aggiornamento 2026-09-13), questo e' il primo caso in questa scheda in cui quella proposta si traduce in un'implementazione concreta con un accesso di terzo livello effettivamente concesso a un'organizzazione nominata — accompagnata, pero', da una contestazione pubblica sulla classificazione di un secondo partner, segno che lo standard di cosa conta come "indipendente" resta contestato anche tra le parti coinvolte. [Digest 2026-10-17](../../digest/2026/10/17.md)
 
 ### 2026-10-07
 
