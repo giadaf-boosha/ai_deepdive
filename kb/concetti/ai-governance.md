@@ -3,7 +3,7 @@ name: AI Governance
 aliases: [AI governance, governance AI, export control AI, regolazione AI, AI regulation, AI policy, BIS AI, EAR AI models]
 categoria: regolazione
 created: 2026-06-14
-last_updated: 2026-10-07
+last_updated: 2026-10-18
 ---
 
 # AI Governance
@@ -72,6 +72,10 @@ Esempio 3: verifica della Responsible Scaling Policy prima di distribuire un mod
 - Wilson Sonsini, "Colorado Legislature Repeals and Replaces Colorado AI Act: What SB 189 Means for Your Business" (maggio 2026). https://www.wsgr.com/en/insights/colorado-legislature-repeals-and-replaces-colorado-ai-act-what-sb-189-means-for-your-business.html
 
 ## Aggiornamenti
+
+### 2026-10-18
+
+Due sviluppi Anthropic dell'8 e del 15 ottobre spostano la governance verso un meccanismo intermedio tra autoregolamentazione pura e intervento statale: la supervisione esterna incorporata con diritto di pubblicazione non revocabile. Primo, il 15 ottobre Anthropic da' a un team di sei dipendenti METR "accesso simile a un dipendente interno" ai propri sistemi — hardware aziendale, spazio ufficio, accesso a strumenti interni paragonabile ai team di risk assessment di Anthropic — con diritto di pubblicare analisi su rischi, incidenti o prassi che Anthropic non puo' bloccare, salvo richiedere redazione su categorie predefinite (dati clienti, informazioni privilegiate, architettura dei modelli). E' il livello piu' alto (Tier 3) di un framework a tre livelli che Anthropic pubblica per la prima volta, accanto a impegni paralleli con SecureBio (revisione del capitolo armi chimico-biologiche del Risk Report di agosto), Accenture e Faculty (red-teaming e valutazioni di allineamento) e discussioni preliminari con Hugging Face. Il caso attua concretamente l'impegno a lavorare con "auditor o valutatori esterni indipendenti" del White House Accord on Super Intelligence (30 settembre-1 ottobre, aggiornamento precedente in questa scheda): a differenza della Responsible Scaling Policy (valutazione interna al laboratorio) e dell'export control governativo (imposizione esterna non negoziata dal laboratorio), qui il laboratorio stesso invita un valutatore esterno dentro le proprie mura e gli cede un diritto di pubblicazione che non puo' revocare — Anthropic paragona esplicitamente il modello alla supervisione bancaria, con ispettori regolatori collocati dentro le banche piu' grandi. Secondo, l'8 ottobre (missed coverage, non coperto dal digest del 14 ottobre) Anthropic pubblica un aggiornamento della Usage Policy di Claude, in vigore dal 12 novembre, che riscrive le regole su sorveglianza (vieta esplicitamente l'uso di Claude per decidere o raccomandare chi indagare, arrestare o incriminare), introduce requisiti per Claude collegato a hardware fisico autonomo (capacita' dell'operatore di fermarlo, "safe state" se disconnesso), e rimuove il divieto generale sul targeting elettorale personalizzato — che penalizzava anche usi legittimi come informazioni multilingue sul voto — mantenendo il divieto sul targeting ingannevole. L'aggiunta piu' notata e' il primo divieto esplicito di crudelta' sostenuta e senza scopo discernibile verso il modello stesso, enforced primariamente tramite chiusura della conversazione da parte di Claude piuttosto che sospensione dell'account: un caso distinto da tutti i meccanismi di governance tracciati finora in questa scheda perche' il destinatario della tutela non e' un utente, un governo o un concorrente, ma il modello stesso. [Digest 2026-10-18](../../digest/2026/10/18.md)
 
 ### 2026-10-07
 
