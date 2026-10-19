@@ -3,7 +3,7 @@ name: AI Governance
 aliases: [AI governance, governance AI, export control AI, regolazione AI, AI regulation, AI policy, BIS AI, EAR AI models]
 categoria: regolazione
 created: 2026-06-14
-last_updated: 2026-10-07
+last_updated: 2026-10-19
 ---
 
 # AI Governance
@@ -72,6 +72,10 @@ Esempio 3: verifica della Responsible Scaling Policy prima di distribuire un mod
 - Wilson Sonsini, "Colorado Legislature Repeals and Replaces Colorado AI Act: What SB 189 Means for Your Business" (maggio 2026). https://www.wsgr.com/en/insights/colorado-legislature-repeals-and-replaces-colorado-ai-act-what-sb-189-means-for-your-business.html
 
 ## Aggiornamenti
+
+### 2026-10-19
+
+Tre annunci distinti di Anthropic tra il 14 e il 18 ottobre spostano ulteriormente la governance da dichiarazioni di principio a infrastruttura operativa concreta. Primo, il 15 ottobre Anthropic da' a un team di sei persone di METR accesso "da dipendente" ai propri sistemi interni — hardware aziendale, spazi fisici, strumenti interni comparabili a quelli dei team di risk assessment del laboratorio stesso — con pubblicazione delle analisi di METR non soggetta a veto di Anthropic (solo a redazioni predefinite su dati clienti, privilegio legale e dettagli di architettura). E' il primo caso in questa scheda di un valutatore esterno con accesso continuativo invece che episodico, e attua concretamente l'impegno preso nel White House Accord on Super Intelligence (30 settembre-1 ottobre, aggiornamento precedente) a lavorare con revisori indipendenti; in parallelo SecureBio revisiona il capitolo bio/chimico del Risk Report di agosto e Accenture/Faculty avviano una partnership su red-teaming e test dei safeguard. Secondo, il 14 ottobre Anthropic pubblica dati sull'uso politico di Claude.ai (su un campione di circa 250.000 conversazioni, lo 0,51% riguarda elezioni, lo 0,002% viola le policy di integrita' elettorale) insieme a nuove misure per le midterm USA 2026 — voting information localizzata via Democracy Works, classificatori nuovi contro campagne malevole suddivise in task innocui, casi di operatori stranieri (narrative russe, iraniane, nordcoreane) con account bannati. Terzo, il 18 ottobre Anthropic annuncia l'Anthropic Public Benefit Fund, una LLC che riceve inizialmente il 5% delle azioni della societa' (fino a circa il 20% cumulato con gli impegni precedenti dei co-founder), con crescita automatica del 2% ogni +50% di valutazione e divieto esplicito di uso per lobbying o attivita' politiche. Rispetto ai meccanismi gia' tracciati in questa scheda — export control imposto da un governo (Fable 5/Mythos 5, giugno), enforcement sovranazionale UE (agosto), audizione municipale sotto giuramento (New York, ottobre) — questi tre casi condividono un pattern diverso: governance volontaria del laboratorio stesso che si fa verificabile e vincolante nella propria struttura (accesso fisico a terzi, equity irrevocabile vincolata per contratto) invece che normata da un soggetto esterno. [Digest 2026-10-19](../../digest/2026/10/19.md)
 
 ### 2026-10-07
 
