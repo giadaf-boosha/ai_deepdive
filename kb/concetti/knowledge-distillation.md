@@ -3,7 +3,7 @@ name: Knowledge Distillation
 aliases: [knowledge distillation, distillazione, model distillation, distillazione di modello, adversarial distillation, response distillation, student-teacher, distillazione avversariale]
 categoria: training
 created: 2026-06-25
-last_updated: 2026-07-24
+last_updated: 2026-10-22
 ---
 
 # Knowledge Distillation
@@ -77,6 +77,10 @@ Il meccanismo e' semplice: creare account multipli per aggirare i rate limit e l
 - Taori et al., "Alpaca: A Strong, Replicable Instruction-Following Model" (Stanford CRFM, 2023). https://crfm.stanford.edu/2023/03/13/alpaca.html
 
 ## Aggiornamenti
+
+### 2026-10-22
+
+Anthropic pubblica il 12 ottobre il dettaglio tecnico delle proprie contromisure contro la adversarial distillation, la prima volta in questa scheda che un laboratorio descrive la propria risposta con risultati quantificati, non solo l'attacco subito. Il post nomina per la prima volta due responsabili specifici di campagne gia' tracciate in questa scheda in forma anonima: Zhipu, che avrebbe distillato capacita' cyber da modelli USA durante lo sviluppo di GLM-5.3 (vedi aggiornamento 2026-07-18 e `kb/concetti/mixture-of-experts.md`), e Moonshot (Kimi), colto a reindirizzare segretamente richieste verso Claude per la distillazione, in un caso da un utente che Anthropic ritiene affiliato all'Esercito Popolare di Liberazione cinese per analizzare footage di sorveglianza CCTV. Le tre contromisure tecniche: "preserved thinking" (dal 31 agosto impedisce la modifica del contesto pregresso su Fable 5.1 e Opus 5.5 e nasconde le trascrizioni di ragionamento ai modelli piu' vecchi con safeguard piu' deboli — il target piu' prezioso per i distillatori non sono le risposte finali ma il ragionamento visibile); un classificatore a due stadi basato sui constitutional classifiers, con falsi positivi sotto lo 0,1% e ora al livello dei safeguard anti-bioweapon; limiti di utilizzo piu' stretti e, dal 24 settembre, costi addebitati anche per le richieste bloccate prima che Claude risponda. Risultati: token di ragionamento estraibili scesi da 10 a oltre 100 volte, decine di migliaia di account bannati spesso entro due ore dall'inizio di una campagna, e una prima quantificazione del costo della difesa in termini di qualita' — un modello addestrato su trascrizioni complete di Opus 4.8 ottiene 80,4% su SWE-bench Verified contro 71,8% se addestrato su trascrizioni riassunte, il prezzo pagato per nascondere il ragionamento completo. Anthropic ammette di non aver raggiunto pienamente l'obiettivo di bloccare la distillazione senza impatto sugli utenti legittimi e prevede un gioco del gatto e del topo persistente, turnando via meaningful revenue e trilioni di token di traffico pagante. Rispetto alla scala quantificata a giugno (28,8 milioni di scambi fraudolenti con Mythos Preview) e alle accuse nominali di luglio, qui per la prima volta il laboratorio pubblica la propria contabilita' dei danni evitati e dei costi sostenuti, aprendo la sezione "Varianti / approcci" di questa scheda a un quarto asse — non solo tecnica, complessita' e accesso al teacher, ma anche costo della difesa per chi la subisce. [Digest 2026-10-22](../../digest/2026/10/22.md)
 
 ### 2026-07-24
 

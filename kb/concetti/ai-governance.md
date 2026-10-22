@@ -3,7 +3,7 @@ name: AI Governance
 aliases: [AI governance, governance AI, export control AI, regolazione AI, AI regulation, AI policy, BIS AI, EAR AI models]
 categoria: regolazione
 created: 2026-06-14
-last_updated: 2026-10-19
+last_updated: 2026-10-22
 ---
 
 # AI Governance
@@ -72,6 +72,10 @@ Esempio 3: verifica della Responsible Scaling Policy prima di distribuire un mod
 - Wilson Sonsini, "Colorado Legislature Repeals and Replaces Colorado AI Act: What SB 189 Means for Your Business" (maggio 2026). https://www.wsgr.com/en/insights/colorado-legislature-repeals-and-replaces-colorado-ai-act-what-sb-189-means-for-your-business.html
 
 ## Aggiornamenti
+
+### 2026-10-22
+
+Anthropic nomina il 21 ottobre il fisico Christopher Stubbs (Harvard, ex Dean of Science, High-Z Supernova Search Team, project scientist dell'Osservatorio Vera C. Rubin) primo trustee con formazione scientifica del Long-Term Benefit Trust, l'organo indipendente che puo' nominare la maggioranza del board di Anthropic e che conta anche Neil Buddy Shah (chair), Richard Fontaine e l'ex presidente della Federal Reserve Ben Bernanke (nominato in luglio). L'annuncio accompagna il primo Public Benefit Report di Anthropic, che misura l'azienda sui cinque pilastri del proprio charter definiti con il contributo dei trustee stessi. E' il terzo rafforzamento in una settimana della struttura di supervisione indipendente di Anthropic, dopo l'apertura ai valutatori esterni METR (15 ottobre) e l'annuncio del Public Benefit Fund (18 ottobre, aggiornamento precedente): a differenza di quei due casi, qui il salto non e' nel perimetro del potere di supervisione ma nella sua composizione, con il primo trustee proveniente dalle scienze naturali invece che da policy, finanza o sanita' pubblica, in un momento in cui Anthropic si avvicina alla IPO e la composizione del Trust diventa visibile al mercato come parte della due diligence di governance. [Digest 2026-10-22](../../digest/2026/10/22.md)
 
 ### 2026-10-19
 
