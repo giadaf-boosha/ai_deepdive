@@ -19,7 +19,7 @@
 | [Evaluation / Benchmark AI](./concetti/evaluation-benchmark.md) | tecnica | benchmark, eval, evaluation, valutazione LLM, AI benchmark, leaderboard | 2026-10-03 |
 | [Fine-tuning](./concetti/fine-tuning.md) | training | fine-tuning, fine tuning, SFT, supervised fine-tuning, adattamento di modello | 2026-06-01 |
 | [Formal Verification / Theorem Proving assistito da LLM](./concetti/formal-verification.md) | tecnica | formal verification, theorem proving, dimostrazione formale, formalizzazione matematica, Lean proof, autoformalizzazione, computer-checked proof, theorem formalization | 2026-09-12 |
-| [Inference](./concetti/inference.md) | infrastruttura | inference, inferenza, serving, generation, decoding | 2026-07-03 |
+| [Inference](./concetti/inference.md) | infrastruttura | inference, inferenza, serving, generation, decoding | 2026-10-23 |
 | [Knowledge Distillation](./concetti/knowledge-distillation.md) | training | knowledge distillation, distillazione, model distillation, distillazione di modello, adversarial distillation, response distillation, student-teacher, distillazione avversariale | 2026-07-24 |
 | [Interaction Model](./concetti/interaction-model.md) | architettura | interaction model, full-duplex AI, modello di interazione, full-duplex model | 2026-06-01 |
 | [Large Language Model](./concetti/llm.md) | architettura | LLM, modello linguistico di grandi dimensioni, foundation model | 2026-07-01 |
