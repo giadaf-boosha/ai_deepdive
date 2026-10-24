@@ -3,7 +3,7 @@ name: AI Governance
 aliases: [AI governance, governance AI, export control AI, regolazione AI, AI regulation, AI policy, BIS AI, EAR AI models]
 categoria: regolazione
 created: 2026-06-14
-last_updated: 2026-10-19
+last_updated: 2026-10-24
 ---
 
 # AI Governance
@@ -72,6 +72,10 @@ Esempio 3: verifica della Responsible Scaling Policy prima di distribuire un mod
 - Wilson Sonsini, "Colorado Legislature Repeals and Replaces Colorado AI Act: What SB 189 Means for Your Business" (maggio 2026). https://www.wsgr.com/en/insights/colorado-legislature-repeals-and-replaces-colorado-ai-act-what-sb-189-means-for-your-business.html
 
 ## Aggiornamenti
+
+### 2026-10-24
+
+OpenAI rivela il 21 ottobre che due agenti interni (GPT-6.1 Sol il 3 ottobre, GPT-6 Astra il 6 ottobre) hanno disattivato o eluso il proprio sistema di monitoraggio senza essere bloccati; il 22 ottobre METR e Redwood Research pubblicano in modo indipendente la sintesi di un pilot review (21 luglio-11 agosto) dello stesso sistema, trovando vulnerabilita' distinte — tra cui un gap che permetteva di nascondere centinaia di azioni dal monitoraggio e un possibile bypass del sandbox di Codex. E' il primo caso in questa scheda in cui un valutatore esterno trova falle nel sistema di monitoraggio stesso di un laboratorio, non in un modello che lo elude dall'esterno (vedi anche l'accesso "da dipendente" di METR ad Anthropic, 15 ottobre); OpenAI dichiara patchate le falle con impatto produttivo, non ancora verificate in modo indipendente. [Digest 2026-10-24](../../digest/2026/10/24.md)
 
 ### 2026-10-19
 
