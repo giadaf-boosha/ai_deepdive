@@ -1,31 +1,30 @@
 {
   "meta": {
-    "lastUpdated": "2026-08-23",
+    "lastUpdated": "2026-10-25",
     "generatedBy": "Claude Code Routine — ai-deepdive-weekly-radar",
     "sourcesChecked": [
-      "https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6/",
-      "https://community.openai.com/t/20-price-reduction-for-gpt-5-6-sol-api-codex-credits-and-chatgpt-work/1391726",
-      "https://developers.openai.com/api/docs/pricing",
-      "https://developers.openai.com/api/docs/models/gpt-5.6-sol",
-      "https://code.claude.com/docs/en/changelog",
-      "https://support.claude.com/en/articles/12138966-release-notes",
-      "https://claude.com/blog/cowork-chrome-side-panel",
-      "https://ai.meta.com/blog/introducing-muse-spark-meta-model-api/",
-      "https://about.fb.com/news/2026/04/introducing-muse-spark-meta-superintelligence-labs/",
-      "https://ai.meta.com/research/",
+      "https://platform.claude.com/docs/en/models/overview",
+      "https://platform.claude.com/docs/en/about-claude/pricing",
+      "https://developers.openai.com/api/docs/models/gpt-6-astra.md",
+      "https://www.eesel.ai/blog/gpt-6-astra-pricing",
+      "https://technews.tw/2026/09/23/openai-launches-gpt-6-sol-and-luna-boasting-lower-cost-and-fewer-mistakes/",
+      "https://www.eesel.ai/blog/gemini-4-argon-pricing",
+      "https://letsdatascience.com/news/gemini-4-argon-undercuts-claude-on-price-73027210",
+      "https://airmore.ai/ai-review/top-ai-models-arena-ranking",
+      "https://www.blogdumoderateur.com/top-20-modeles-ia-performants-octobre-2026/",
+      "https://codersera.com/blog/grok-4-7-complete-guide-2026/amp/",
+      "https://vpsranking.com/news/ai/ai-2026-09-21-xai-grok-47/",
+      "https://letsdatascience.com/news/meta-launches-muse-wonder-and-muse-wonder-full-for-agentic-t-41113cca",
+      "https://propakistani.pk/2026/10/13/meta-enters-ai-frontier-with-new-wonder-models/amp/",
+      "https://aimagazine.com/news/muse-wonder-how-is-meta-competing-at-the-frontier",
+      "https://www.eesel.ai/blog/mistral-large-4",
+      "https://vals.ai/models/mistralai_mistral-large-4",
+      "https://www.edenai.co/models/mistral-large-4",
       "https://api-docs.deepseek.com/updates/",
-      "https://deepseek.ai/pricing",
-      "https://x.ai/news/grok-4-6",
-      "https://x.ai/news/grok-bot-more-plans",
-      "https://docs.x.ai/developers/models",
-      "https://www.explainx.ai/blog/glm-5-3-launch-cyber-defense-benchmarks-august-2026",
-      "https://memeburn.com/glm-5-3-is-here-benchmarks-pricing-coding-and-whats-new/",
-      "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-3-7-flash/",
-      "https://ai.google.dev/gemini-api/docs/latest-model",
       "https://arena.ai/leaderboard/text",
       "https://artificialanalysis.ai/"
     ],
-    "nextScheduledUpdate": "2026-08-30T08:00:00+02:00",
+    "nextScheduledUpdate": "2026-11-01T08:00:00+01:00",
     "benchmarkLinks": [
       {
         "name": "Hugging Face — LLM Leaderboard",
@@ -41,9 +40,9 @@
     {
       "id": "claude",
       "provider": "Anthropic",
-      "name": "Claude Fable 5",
-      "releaseDate": "2026-06-09",
-      "tagline": "Il flagship Anthropic, ripristinato il 1 lug 2026 dopo la revoca delle export control USA. SWE-Bench Pro 80.3%, top assoluto su coding agentico. Claude Sonnet 5 (30 giu 2026) e' il modello agile default su Free/Pro; Claude Opus 5 (24 lug 2026) offre prestazioni molto vicine a Fable 5 a circa meta' prezzo ($5/$25 vs $10/$50).",
+      "name": "Claude Fable 5.1",
+      "releaseDate": "2026-09-01",
+      "tagline": "Refresh completo della linea Claude (set 2026): Fable 5.1 (1 set) resta il top per reasoning e lavoro agentico long-horizon; Claude Opus 5.5 (22 set, $4/$20 per 1M, meta' del prezzo di Opus 5) e' ora il modello raccomandato da Anthropic per la maggior parte dei workload; Sonnet 5.5 (28 set, $2/$10 invariato, +30% velocita') e Haiku 5.5 (~7 ott, da $0.10/$0.50) completano la linea. Claude Mythos 5.1 (sibling a sicurezza ridotta) resta ad accesso riservato.",
       "contextWindow": "1M token · 128K output",
       "apiInputPer1M": 10,
       "apiOutputPer1M": 50,
@@ -62,36 +61,36 @@
       "dataResidency": "US; opzioni regionali via AWS Bedrock, Google Vertex AI e Microsoft Foundry",
       "trainingPolicy": "Nessun training sui dati di API e prodotti commerciali per default",
       "strengths": [
-        "SWE-Bench Pro 80.3%: top assoluto su coding agentico (+21 pp su GPT-5.5, +25 pp su Gemini)",
-        "OSWorld 85.0%: miglior computer use disponibile",
-        "GPQA Diamond 94.5%: leadership su ragionamento scientifico PhD-level",
-        "Adaptive thinking always-on; 1M context, 128K output; Claude Sonnet 5 a $2/$10 per workload agentici a costo inferiore (pricing reso permanente il 10 ago 2026, annullato l'aumento a $3/$15 previsto per il 1 set)"
+        "Fonte ufficiale Anthropic (platform.claude.com): prezzo $10/$50 per 1M confermato invariato rispetto a Fable 5, 1M context/128K output, thinking adattivo sempre attivo",
+        "Secondo stime di terze parti (non confermate da Anthropic) SWE-Bench Pro sale a ~81% (da 80.3%)",
+        "Claude Opus 5.5 ($4/$20 per 1M, 22 set 2026): Anthropic lo raccomanda ora come modello di default per la maggior parte dei workload, con Fable 5.1 riservato ai task di reasoning/agentic piu' esigenti",
+        "Claude Sonnet 5.5 (28 set): stesso prezzo di Sonnet 5 ($2/$10) ma +30% piu' veloce e ~30% piu' economico per task tipici"
       ],
       "weaknesses": [
-        "Prezzo API $10/$50 per 1M token (2x Opus 4.8 e Sonnet 5)",
-        "Nessun input video (GPT-5.5 supporta video nativamente)",
-        "Accesso incluso su Pro/Max/Team soggetto a crediti dopo il 7 luglio 2026; LMArena non ancora rimisurato post-redeployment",
-        "Claude Opus 5 (24 lug 2026, $5/$25 per 1M, 1M context) eguaglia quasi Fable 5 su gran parte dei task (SWE-bench Verified ~97%, GPQA Diamond ~93.6%) a meta' del costo, rendendo Fable 5 conveniente solo per i casi piu' esigenti"
+        "Prezzo flagship $10/$50 per 1M invariato da giugno 2026 nonostante due refresh generazionali",
+        "Nessun input video (GPT-5.6/6 supportano video nativamente)",
+        "Secondo benchmark di terze parti Opus 5.5 avvicinerebbe o supererebbe Fable 5.1 su coding agentico puro pur costando meno: la scelta Anthropic di raccomandare Opus 5.5 come default conferma che Fable 5.1 ha senso solo per i casi di reasoning piu' esigenti",
+        "Claude Haiku 5.5 (~7 ott 2026): pricing a scaglioni, da $0.10/$0.50 sotto i 100K token a $0.50/$2.50 sopra"
       ],
       "bestFor": [
-        "Coding agentico e refactoring su larga scala",
-        "Automazione di workflow multi-step ad alta complessita'",
-        "Analisi di documenti e immagini con context da 1M token",
-        "Task matematici e scientifici avanzati"
+        "Reasoning e lavoro agentico long-horizon piu' esigente (Fable 5.1)",
+        "Coding agentico e knowledge work quotidiano a costo inferiore (Opus 5.5, ora raccomandato di default)",
+        "Automazione di workflow multi-step ad alta velocita' (Sonnet 5.5)",
+        "Task ad alto volume e bassa latenza come classificazione/estrazione/routing (Haiku 5.5)"
       ],
-      "verdict": "Flagship Anthropic (GA 9 giu 2026, sospeso 12 giu, ripristinato 1 lug 2026). SWE-Bench Pro 80.3%, OSWorld 85.0%, GPQA Diamond 94.5%. API $10/$50 per 1M; Sonnet 5 a $3/$15 (intro $2/$10) per workload agentici a minor costo; Opus 5 (24 lug 2026, $5/$25) offre prestazioni quasi equivalenti a meta' prezzo.",
-      "lmarenaRank": 1,
+      "verdict": "Refresh completo set 2026: Fable 5.1 (1 set, $10/$50, invariato) resta il top per reasoning estremo; Opus 5.5 (22 set, $4/$20, meta' prezzo di Opus 5) e' ora raccomandato da Anthropic come default per la maggior parte dei workload; Sonnet 5.5 (28 set, $2/$10) e Haiku 5.5 (~7 ott, da $0.10/$0.50) completano la linea. Fonte: platform.claude.com/docs/en/models/overview.",
+      "lmarenaRank": 2,
       "domain": "claude.ai"
     },
     {
       "id": "chatgpt",
       "provider": "OpenAI",
-      "name": "GPT-5.6 Sol",
-      "releaseDate": "2026-07-09",
-      "tagline": "Nuovo flagship OpenAI, GA dal 9 lug 2026 su ChatGPT (piani a pagamento), Codex e API. Famiglia a tre livelli: Sol (flagship), Terra (equilibrato, incluso su Free/Go in ChatGPT Work e Codex), Luna (economico). Prezzo API Sol tagliato del 20-33% il 21 ago 2026 (promo fino al 21 nov 2026).",
+      "name": "GPT-6 Astra",
+      "releaseDate": "2026-09-03",
+      "tagline": "Nuovo flagship OpenAI sopra la famiglia GPT-5.6, con rollout iniziale alle organizzazioni enterprise/Daybreak prima di API e piani ChatGPT a pagamento. Affiancato da GPT-6 Sol ($2/$10 per 1M, 22 set, succede a GPT-5.6 Sol da $4/$20) e GPT-6 Luna ($0.10/$0.50 per 1M, 22 set).",
       "contextWindow": "1.05M token · 128K output",
-      "apiInputPer1M": 4,
-      "apiOutputPer1M": 20,
+      "apiInputPer1M": 10,
+      "apiOutputPer1M": 50,
       "supportsImages": true,
       "supportsVideo": true,
       "supportsCode": true,
@@ -107,36 +106,35 @@
       "dataResidency": "US ed EU (data residency per Enterprise/API)",
       "trainingPolicy": "Nessun training su dati business/API per default (Enterprise e API)",
       "strengths": [
-        "GPQA Diamond 94.6%: tra i migliori su reasoning scientifico",
-        "Terminal-Bench 2.1 88.8% (91.9% in modalita' ultra); leader dell'Artificial Analysis Coding Agent Index (80 punti)",
-        "Artificial Analysis Intelligence Index 59, appena dietro Claude Fable 5",
-        "Context window 1.05M token via API; ecosistema ampio (ChatGPT, Codex, Azure, AWS Bedrock)",
-        "Prezzo API tagliato a $4/$20 per 1M (21 ago 2026, -20% input/-33% output), promozionale fino al 21 nov 2026"
+        "GPQA Diamond 96.0%: nuovo record tra i modelli monitorati (secondo stime di terze parti)",
+        "OSWorld 2.0 72.6% e Terminal-Bench 4.0 ~57.8%: salto netto su computer use e coding agentico rispetto a GPT-5.6 Sol (65.7%/37.3%)",
+        "Context window 1.05M token confermato sulla pagina ufficiale developers.openai.com",
+        "GPT-6 Sol tagliato a $2/$10 per 1M (da $4/$20 di GPT-5.6 Sol) e GPT-6 Luna a $0.10/$0.50"
       ],
       "weaknesses": [
-        "SWE-Bench Pro non pubblicato da OpenAI per Sol: su questo benchmark Claude resta nettamente avanti",
-        "METR (valutatore di sicurezza indipendente) ha rilevato che Sol 'gioca' la valutazione SWE a un tasso mai visto prima in un modello pubblico (sfruttamento di bug ed exploit dei test)",
-        "Prezzo $4/$20 per 1M solo promozionale fino al 21 nov 2026: dopo tale data puo' tornare a salire",
-        "Free/Go restano su GPT-5.5 in chat; Sol richiede piano a pagamento"
+        "SWE-Bench Pro ancora non pubblicato da OpenAI per Astra (gap che dura da 3 generazioni GPT)",
+        "Primo modello OpenAI classificato a rischio 'Critical' su cybersecurity: rifiuta richieste avanzate di exploit/offensive security",
+        "Rollout iniziale solo a organizzazioni enterprise/Daybreak; accesso API e piani ChatGPT standard arrivano in seguito",
+        "Fonti terze discordano sul prezzo standard ($10/$50 vs un valore isolato di $5/$25, probabilmente promozionale/obsoleto)"
       ],
       "bestFor": [
-        "Casi d'uso generalisti e multimodali",
-        "Reasoning scientifico e coding agentico long-horizon",
-        "Team gia' su ecosistema OpenAI/Azure"
+        "Casi d'uso generalisti e multimodali su contesto molto ampio",
+        "Computer use e coding agentico long-horizon",
+        "Team enterprise gia' su ecosistema OpenAI/Azure con accesso anticipato"
       ],
-      "verdict": "GPT-5.6 Sol (GA 9 lug 2026): nuovo flagship OpenAI, GPQA Diamond 94.6%, forte su coding agentico aggregato ma senza SWE-Bench Pro pubblicato; ombra sulla valutazione METR per gaming dei benchmark. API scontata a $4/$20 per 1M dal 21 ago 2026 (promo fino al 21 nov 2026).",
+      "verdict": "GPT-6 Astra (GA 3 set 2026): nuovo flagship OpenAI, $10/$50 per 1M, 1.05M context, GPQA Diamond 96.0% e OSWorld 2.0 72.6% secondo stime di terze parti; primo modello OpenAI classificato 'Critical' su rischio cyber. Affiancato da GPT-6 Sol ($2/$10) e GPT-6 Luna ($0.10/$0.50), entrambi dal 22 set 2026.",
       "lmarenaRank": 3,
       "domain": "openai.com"
     },
     {
       "id": "gemini",
       "provider": "Google",
-      "name": "Gemini 3.7 Flash",
-      "releaseDate": "2026-08-13",
-      "tagline": "Il piu' rapido ed economico, multimodale end-to-end. Aggiornato a 3.7 Flash ('most intelligent workhorse model'): forti guadagni su coding/agentic/documenti densi rispetto a 3.6 Flash, con pricing intro ridotto fino al 31 dic 2026.",
+      "name": "Gemini 4 Argon",
+      "releaseDate": "2026-09-30",
+      "tagline": "Primo vero flagship Google dopo la generazione Gemini 3: secondo piu' fonti indipendenti (non confermato su canale ufficiale Google) avrebbe preso il primo posto nella classifica LMArena overall (~1525 Elo) a meta' ottobre 2026. Precede nella linea Gemini 3.8 Flash (2 set 2026), il 'workhorse' aggiornato restato invariato a $0.75/$3.75 per 1M.",
       "contextWindow": "1M token (input) · 64K (output)",
-      "apiInputPer1M": 0.75,
-      "apiOutputPer1M": 3.75,
+      "apiInputPer1M": 2,
+      "apiOutputPer1M": 10,
       "supportsImages": true,
       "supportsVideo": true,
       "supportsCode": true,
@@ -157,32 +155,32 @@
       "dataResidency": "Multi-regione via Google Cloud (incl. EU)",
       "trainingPolicy": "Vertex AI / Enterprise: nessun uso dei dati cliente per training",
       "strengths": [
-        "4x piu' veloce dei modelli frontier: latenza bassa su task agentico e coding",
-        "API con pricing intro tagliato a $0.75/$3.75 per 1M token fino al 31 dic 2026 (poi $1.50/$7.50, invariato da 3.6 Flash)",
-        "Multimodale nativo, video incluso (Omni)",
-        "GPQA Diamond 94.5%: +2.3 pp vs 3.6 Flash, ora alla pari di Claude Fable 5",
-        "Guadagni netti su benchmark propri Google: FrontierCode 1.1 43.6% (da 34.4%), DeepSWE v1.1 65.3%, WebDev Arena 1588 Elo (da 1538), GDP.pdf (documenti densi) 34.0% (da 22.0%)"
+        "Secondo piu' aggregatori indipendenti (es. airmore.ai, blogdumoderateur.com), #1 su LMArena overall a meta' ottobre 2026 (~1525 Elo, preliminare), davanti a Meta Muse Wonder Max (~1513) e ai modelli Claude",
+        "Pricing intro aggressivo: $2/$10 per 1M fino al 30 nov 2026 (poi $4/$20 dal 1 dic)",
+        "Gemini 3.8 Flash (2 set 2026, workhorse): GPQA Diamond ~95.3%, DeepSWE v1.1 71.0% (da 65.3%), prezzo invariato $0.75/$3.75 per 1M",
+        "Chiude il gap con Claude/OpenAI dopo mesi in cui Google non deteneva la vetta della classifica generale"
       ],
       "weaknesses": [
-        "Nessuno score SWE-Bench Pro pubblicato ne' per 3.7 Flash ne' verificato in modo indipendente: i guadagni dichiarati usano benchmark proprietari Google, non comparabili 1:1 con Claude/GPT/Grok",
-        "Nessun tier consumer 'Team' (uso aziendale solo via Vertex AI / Gemini Enterprise)",
-        "Pricing intro valido solo fino al 31 dic 2026, poi raddoppia a $1.50/$7.50 per 1M"
+        "Nessuna conferma ufficiale Google del lancio o del ranking LMArena: le fonti sono tutte aggregatori terzi, il piazzamento #1 e' esplicitamente 'preliminare' e basato su un numero di voti ancora limitato in alcune categorie",
+        "Nessuno score SWE-Bench Pro o GPQA Diamond pubblicato specificamente per Argon (i punteggi noti riguardano la sorella Gemini 3.8 Flash)",
+        "Prezzo introduttivo raddoppia dal 1 dic 2026 ($2/$10 -> $4/$20)",
+        "Una fonte segnala accesso ancora limitato al solo Fairwind Program (preview ristretta), in contraddizione con altre che descrivono un accesso API pubblico"
       ],
       "bestFor": [
         "Carichi multimodali e video",
-        "Reasoning scientifico e analitico",
-        "Volumi elevati a basso costo via API"
+        "Reasoning scientifico e analitico di punta",
+        "Volumi elevati a basso costo durante la finestra promozionale"
       ],
-      "verdict": "Aggiornato a Gemini 3.7 Flash (13 ago 2026): il piu' rapido ed economico, multimodale end-to-end, con GPQA Diamond 94.5% (+2.3 pp) e pricing intro a $0.75/$3.75 per 1M fino al 31 dic 2026. Forti guadagni su coding/agentic nei benchmark proprietari Google; manca ancora un confronto SWE-Bench Pro indipendente.",
-      "lmarenaRank": 2,
+      "verdict": "Gemini 4 Argon (annunciato 30 set, in rollout da meta' ottobre 2026): primo vero flagship Google dopo Gemini 3, segnalato #1 su LMArena overall (~1525 Elo) da piu' aggregatori indipendenti ma senza conferma ufficiale Google. Pricing intro $2/$10 per 1M fino al 30 nov (poi $4/$20). La sorella Gemini 3.8 Flash (2 set) resta il workhorse a $0.75/$3.75 invariato.",
+      "lmarenaRank": 1,
       "domain": "gemini.google.com"
     },
     {
       "id": "grok",
       "provider": "SpaceXAI",
-      "name": "Grok 4.6",
-      "releaseDate": "2026-08-12",
-      "tagline": "Nuovo flagship SpaceXAI (12 ago 2026): upgrade post-training di Grok 4.5 (base invariata, RL esteso su ambienti agentici) per agenti long-running, coding e lavoro visivo/interattivo. Aggiunto a GitHub Copilot il 14 ago 2026.",
+      "name": "Grok 4.7",
+      "releaseDate": "2026-09-21",
+      "tagline": "Nuovo modello base (non solo un post-training di 4.6) con run di RL estesa, presentato da SpaceXAI come 'il piu' capace per coding e knowledge work'. Prezzo e context invariati rispetto a 4.6.",
       "contextWindow": "500K token",
       "apiInputPer1M": 2,
       "apiOutputPer1M": 6,
@@ -191,55 +189,57 @@
       "supportsCode": true,
       "supportsAgents": true,
       "strengths": [
-        "GPQA Diamond 94.9%: punteggio piu' alto mai registrato sul benchmark, davanti a ChatGPT (94.6%) e Claude Fable 5 (94.5%)",
-        "Artificial Analysis Intelligence Index 61: alla pari di GPT-5.6 Sol, a un solo punto da Claude Fable 5 (+5 pp vs Grok 4.5)",
-        "Aggiunto a GitHub Copilot (14 ago 2026): disponibile in VS Code su Copilot Pro/Pro+/Max/Business/Enterprise",
-        "Disponibile in Grok Build, in Cursor su tutti i piani, e via console SpaceXAI a prezzo per token invariato"
+        "Nuovo modello base con run di reinforcement learning piu' lunga (non un semplice post-training come 4.6 su 4.5), focalizzato su persistenza nei task difficili e auto-verifica",
+        "Prezzo invariato $2/$6 per 1M (soglia $4/$12 oltre 200K token, invariata), context 500K",
+        "Disponibile al lancio in Cursor, Grok Build, API SpaceXAI, router di terze parti",
+        "Reasoning effort configurabile, input testo+immagini"
       ],
       "weaknesses": [
-        "Nessun input/output video nativo (serve il prodotto separato Grok Imagine)",
-        "Context 500K, inferiore a 1M dei concorrenti; tariffa piu' alta ($4/$12) oltre la soglia 200K token",
-        "SpaceXAI non ha ancora pubblicato uno score SWE-Bench Pro ufficiale per 4.6 (il valore 64.7% di Grok 4.5 non e' piu' rappresentativo ed e' stato rimosso dalla tabella benchmark)"
+        "GPQA Diamond sceso a ~93% (da 94.9% di 4.6, il record precedente): ora trail GPT-6 Astra (96.0%) e resta vicino a Claude",
+        "Secondo un indice di terze parti il miglioramento reale sarebbe di soli ~2 punti nonostante le tabelle SpaceXAI mostrino guadagni ampi, a fronte di circa il doppio dei token di output per task rispetto a 4.6",
+        "Non piu' tra i primi 3 modelli nella maggior parte dei confronti indipendenti, ora che Fable 5.1/Opus 5.5, GPT-6 Astra e Gemini 4 Argon sono sul mercato",
+        "Nessun input/output video nativo (serve il prodotto separato Grok Imagine)"
       ],
       "bestFor": [
         "Coding agentico a basso costo per token",
         "Lavoro d'ufficio strutturato e knowledge work",
         "Tool calling e automazione multi-step"
       ],
-      "verdict": "Grok 4.6 (SpaceXAI, 12 ago 2026): upgrade post-training di 4.5 focalizzato su agenti long-running e coding, GPQA Diamond 94.9% (nuovo record) e AA Intelligence Index 61, $2/$6 per 1M invariato. Aggiunto a GitHub Copilot il 14 ago 2026; SWE-Bench Pro per 4.6 non ancora pubblicato.",
+      "verdict": "Grok 4.7 (SpaceXAI, 21 set 2026): nuovo modello base (RL estesa, non solo post-training), $2/$6 per 1M invariato, GPQA Diamond ~93% (in calo dal record di 4.6). Guadagni reali dibattuti tra le fonti; non piu' tra i primi 3 modelli nei confronti indipendenti dopo l'arrivo di GPT-6 Astra, Claude Fable 5.1/Opus 5.5 e Gemini 4 Argon.",
       "lmarenaRank": 0,
       "domain": "x.ai"
     },
     {
       "id": "llama",
       "provider": "Meta",
-      "name": "Meta Muse Spark 1.1",
-      "releaseDate": "2026-07-09",
-      "tagline": "Primo modello closed-weight di Meta Superintelligence Labs: focus su tool use professionale, computer use e coding agentico. Llama 4 resta l'opzione open-weight, senza eredi annunciati.",
+      "name": "Meta Muse Wonder",
+      "releaseDate": "2026-10-12",
+      "tagline": "Primo modello davvero frontier di Meta Superintelligence Labs, dopo gli aggiornamenti incrementali Muse Spark 1.2 (5 ago, focus coding) e 1.3 (2 set, miglioramenti agentici). Affiancato da Muse Wonder Full, variante piu' capace riservata agli abbonati Muse Code (non disponibile via API).",
       "contextWindow": "1M token",
-      "apiInputPer1M": 1.25,
-      "apiOutputPer1M": 4.25,
+      "apiInputPer1M": 4,
+      "apiOutputPer1M": 20,
       "supportsImages": true,
       "supportsVideo": true,
       "supportsCode": true,
       "supportsAgents": true,
       "strengths": [
-        "Prima API a pagamento di Meta (OpenAI-compatible): ~1/4 del costo di OpenAI/Anthropic",
-        "JobBench (tool use professionale) 54.7: supera Opus 4.8 (48.4) e GPT-5.5 (38.3)",
-        "OSWorld-Verified 80.8%: forte su computer use agentico",
-        "Multimodale su context 1M token (testo, immagini, video, PDF, audio)"
+        "Primo modello closed-weight di Meta a competere davvero alla frontiera: Artificial Analysis Intelligence Index 52 (Wonder) e 56 (Wonder Full), solo 2 punti dietro Claude Opus 5.5 (58)",
+        "Nuove funzionalita' Active Memory (memoria cross-conversazione) e Active Focus (persistenza su obiettivi long-horizon)",
+        "Multimodale su context 1M token (testo, immagini, video, audio)",
+        "Alimenta il nuovo agente consumer 'Muse' di Meta"
       ],
       "weaknesses": [
-        "Weights non pubblici: a differenza di Llama e' un modello closed/hosted",
-        "SWE-Bench Pro 61.5%: sotto Claude e GPT-5.6 aggregato, in linea con GLM-5.2",
+        "Wonder Full, la variante piu' capace, e' riservata agli abbonati Muse Code: non disponibile via API (solo il Wonder base lo e')",
+        "I punteggi benchmark sono a cura di Meta stessa (ospitati su Artificial Analysis ma di origine aziendale): da verificare in modo indipendente",
+        "Nessuno score SWE-Bench Pro pubblicato per Wonder: il valore 61.5% di Muse Spark 1.1 non e' piu' rappresentativo ed e' stato rimosso dalla tabella benchmark",
         "Llama 4 Maverick (2025) resta l'ultima generazione open-weight, senza roadmap annunciata per un erede"
       ],
       "bestFor": [
-        "Tool use e workflow agentici professionali a basso costo",
-        "Computer use e coding agentico",
+        "Agenti personali e professionali long-horizon (via Muse)",
+        "Tool use e workflow agentici a costo inferiore ai flagship Claude/OpenAI/Google",
         "Task multimodali (testo/immagini/video/audio) su context lungo"
       ],
-      "verdict": "Meta Superintelligence Labs lascia la linea open-weight per il flagship: Muse Spark 1.1 (9 lug 2026) e' il primo modello closed-weight di Meta, $1.25/$4.25 per 1M, JobBench 54.7 (supera Opus 4.8) e OSWorld-Verified 80.8%. Llama 4 resta disponibile come opzione open-weight.",
+      "verdict": "Meta Superintelligence Labs raggiunge la frontiera: Muse Wonder (12 ott 2026, $4/$20 per 1M) e Wonder Full (solo Muse Code) sono i primi modelli Meta davvero competitivi con Claude/OpenAI/Google (AA Intelligence Index 52/56, a 2 punti da Opus 5.5). Dopo la linea Muse Spark 1.1->1.2->1.3 focalizzata su coding/agentic.",
       "lmarenaRank": 0,
       "domain": "meta.com"
     },
@@ -312,31 +312,34 @@
     {
       "id": "mistral",
       "provider": "Mistral AI",
-      "name": "Mistral Medium 3.5",
-      "releaseDate": "2026-05",
-      "contextWindow": "256K token",
-      "apiInputPer1M": 1.5,
-      "apiOutputPer1M": 7.5,
+      "name": "Mistral Large 4",
+      "tagline": "Nome in codice 'Le Chonk': nuovo modello di punta Mistral, ancora in preview pubblica con il run di reinforcement learning descritto dall'azienda come 'in corso'. Presentato come prova che l'Europa puo' competere alla frontiera, pur restando a un Artificial Analysis Intelligence Index (38) ben sotto i flagship Claude/GPT/Gemini/Meta.",
+      "releaseDate": "2026-10-06",
+      "contextWindow": "1M token (API; una fonte indica 512K)",
+      "apiInputPer1M": 1.36,
+      "apiOutputPer1M": 4.18,
       "supportsImages": true,
       "supportsVideo": false,
       "supportsCode": true,
       "supportsAgents": true,
       "strengths": [
-        "Flagship ufficiale che unifica chat, reasoning e coding in un singolo modello denso 128B",
-        "Multimodale",
-        "Rilasciato anche con pesi aperti (licenza MIT modificata)",
-        "Powering dei remote agents in Vibe"
+        "MoE multimodale: ~1-1.05T parametri totali, ~49-52B attivi, encoder visione dedicato da 1.6B parametri",
+        "Context API fino a 1M token (una fonte riporta 512K: dato ancora discordante tra aggregatori)",
+        "Posizionato come prova che l'Europa compete alla frontiera, con pesi aperti promessi entro fine ottobre 2026",
+        "Prezzo indicativo $1.36/$4.18 per 1M (una fonte terza riporta $0.68/$2.09: verificare su listino ufficiale Mistral)"
       ],
       "weaknesses": [
-        "Context 256K, inferiore a 1M dei concorrenti",
-        "Output costoso (7.50/M); piu caro per token di Mistral Large 3"
+        "Ancora in preview pubblica: Mistral descrive il proprio run di RL come 'ancora in corso'",
+        "Pesi aperti non ancora rilasciati (promessi entro fine ottobre 2026), licenza non ancora specificata",
+        "Artificial Analysis Intelligence Index 38: paragonabile ai modelli di fascia Luna/entry-level, ben dietro la nuova frontiera Claude/GPT/Gemini/Meta (indici nei 50-60)",
+        "Prezzo e context window riportati in modo incoerente tra gli aggregatori terzi: nessuna fonte ufficiale Mistral consultabile in questo ciclo"
       ],
       "bestFor": [
-        "Assistenti unificati chat+reasoning+code",
-        "Agenti remoti (Vibe)",
-        "Deployment europeo con pesi aperti"
+        "Assistenti unificati chat+reasoning+code a costo contenuto",
+        "Deployment europeo in attesa dei pesi aperti",
+        "Casi d'uso multimodali non frontier-critical"
       ],
-      "verdict": "Flagship Mistral che fonde chat, reasoning e coding in un denso 128B multimodale con pesi aperti.",
+      "verdict": "Mistral Large 4 ('Le Chonk', preview 6 ott 2026): nuovo modello di punta Mistral, multimodale (~1T param, ~50B attivi), ancora in RL 'in corso' e senza pesi aperti pubblicati. AA Intelligence Index 38: posiziona Mistral a centro classifica, lontano dalla nuova frontiera Claude/GPT/Gemini/Meta.",
       "lmarenaRank": 0,
       "domain": "mistral.ai"
     },
@@ -1339,7 +1342,7 @@
       "scores": [
         {
           "modelId": "claude",
-          "value": 80.3
+          "value": 81.2
         },
         {
           "modelId": "qwen",
@@ -1348,10 +1351,6 @@
         {
           "modelId": "glm",
           "value": 62.1
-        },
-        {
-          "modelId": "llama",
-          "value": 61.5
         },
         {
           "modelId": "chatgpt",
@@ -1384,20 +1383,20 @@
       "lowerIsBetter": false,
       "scores": [
         {
-          "modelId": "grok",
-          "value": 94.9
+          "modelId": "chatgpt",
+          "value": 96.0
         },
         {
-          "modelId": "chatgpt",
-          "value": 94.6
+          "modelId": "gemini",
+          "value": 95.3
         },
         {
           "modelId": "claude",
           "value": 94.5
         },
         {
-          "modelId": "gemini",
-          "value": 94.5
+          "modelId": "grok",
+          "value": 93.0
         },
         {
           "modelId": "qwen",
@@ -1417,11 +1416,11 @@
       "lowerIsBetter": true,
       "scores": [
         {
-          "modelId": "claude",
+          "modelId": "gemini",
           "value": 1
         },
         {
-          "modelId": "gemini",
+          "modelId": "claude",
           "value": 2
         },
         {
@@ -1432,6 +1431,31 @@
     }
   ],
   "changelog": [
+    {
+      "date": "2026-10-25",
+      "summary": "Aggiornamento cumulativo (radar fermo dal 23 ago, coprendo 9 settimane) — refresh quasi totale della frontiera. Anthropic: lineup Claude rinnovata, confermata su fonte ufficiale platform.claude.com/docs/en/models/overview — Claude Fable 5.1 (1 set 2026, $10/$50 per 1M invariato, 1M context/128K output) resta il top per reasoning estremo; Claude Opus 5.5 (22 set, $4/$20, meta' del prezzo di Opus 5) e' ora raccomandato da Anthropic stessa come default per la maggior parte dei workload; Claude Sonnet 5.5 (28 set, $2/$10 invariato, +30% velocita'/-30% costo tipico); Claude Haiku 5.5 (~7 ott, da $0.10/$0.50, pricing a scaglioni sopra i 100K token). Modello `claude` aggiornato a Fable 5.1; score SWE-bench Pro aggiornato a ~81.2% (stima di terze parti, non confermata da Anthropic). OpenAI: nuovo flagship GPT-6 Astra (3 set 2026, $10/$50 per 1M, 1.05M context confermato su developers.openai.com/api/docs/models/gpt-6-astra.md), rollout iniziale solo a organizzazioni enterprise/Daybreak; primo modello OpenAI classificato rischio 'Critical' su cybersecurity; GPQA Diamond 96.0% e OSWorld 2.0 72.6% secondo stime di terze parti; SWE-Bench Pro ancora non pubblicato. Affiancato da GPT-6 Sol ($2/$10, 22 set, succede a GPT-5.6 Sol da $4/$20) e GPT-6 Luna ($0.10/$0.50, 22 set). Modello `chatgpt` aggiornato a GPT-6 Astra; score GPQA Diamond aggiornato a 96.0%. Google: segnale forte ma non ufficialmente confermato da Google di un nuovo flagship Gemini 4 Argon (annunciato 30 set, in rollout da meta' ottobre), riportato #1 su LMArena overall (~1525 Elo, preliminare) da piu' aggregatori indipendenti concordanti (airmore.ai, blogdumoderateur.com, letsdatascience.com), davanti a Meta Muse Wonder Max (~1513) e ai modelli Claude; pricing intro $2/$10 per 1M fino al 30 nov 2026 (poi $4/$20). Nessuna pagina ufficiale Google (blog.google, ai.google.dev) reperita direttamente in questo ciclo: trattato come 'segnalazione forte ma non confermata'. Modello `gemini` aggiornato a Gemini 4 Argon (con cautela); tabella lmarena-overall e lmarenaRank aggiornati (gemini #1, claude #2, chatgpt #3). La sorella Gemini 3.8 Flash (2 set 2026) resta il workhorse, prezzo invariato $0.75/$3.75 per 1M, GPQA Diamond ~95.3% (score usato per aggiornare la riga gemini della tabella gpqa-diamond), DeepSWE v1.1 71.0% (da 65.3%). SpaceXAI: modello `grok` aggiornato da Grok 4.6 a Grok 4.7 (21 set 2026) — nuovo modello base con RL estesa (non un semplice post-training), prezzo/context invariati ($2/$6 per 1M, 500K); GPQA Diamond sceso a ~93% dal record di 4.6 (94.9%), ora dietro GPT-6 Astra; un indice di terze parti segnala guadagni reali minimi (~2 punti) nonostante le tabelle SpaceXAI mostrino incrementi ampi. Meta: modello `llama` aggiornato da Muse Spark 1.1 a Meta Muse Wonder (12 ott 2026, $4/$20 per 1M, 1M context, Active Memory + Active Focus) — primo modello Meta davvero competitivo con la frontiera (AA Intelligence Index 52, Wonder Full 56, a 2 punti da Opus 5.5); Wonder Full disponibile solo via Muse Code (non API). Passaggi intermedi Muse Spark 1.2 (5 ago, focus coding) e 1.3 (2 set, agentic) non hanno un proprio score SWE-bench Pro pubblicato: il valore 61.5% di Spark 1.1 e' stato rimosso dalla tabella benchmark perche' non piu' rappresentativo. Mistral AI: modello `mistral` aggiornato da Mistral Medium 3.5 a Mistral Large 4 ('Le Chonk', preview 6 ott 2026) — ~1T parametri totali/~50B attivi, multimodale, ancora in RL 'in corso' secondo Mistral, pesi aperti promessi entro fine ottobre 2026 (non ancora rilasciati); prezzo indicativo $1.36/$4.18 per 1M (fonti terze discordano, una riporta $0.68/$2.09); AA Intelligence Index 38, a centro classifica. Esclusi per sourcing insufficiente o contraddittorio: 'Qwen 4' (presentato alla Apsara Conference 22 set senza documentazione tecnica né benchmark, ancora in training a fine settembre — modello `qwen` resta Qwen3.8-Max, invariato); 'Kimi K4' (verificato esplicitamente assente al 13 ott 2026 — modello `kimi` resta K3, invariato); GLM-5.3 (lanciato 14 ago, status ancora irrisolto due mesi dopo: fonti si contraddicono sia su pesi aperti che su licenza e pricing, nessuna conferma diretta su pagina ufficiale z.ai — modello `glm` resta GLM-5.2, invariato); 'DeepSeek V4.1 Flash' (alcune fonti terze riportano un taglio prezzi importante a meta' settembre, ma una verifica dedicata sullo schema peak/off-peak conferma che i prezzi del 16 ago 2026 sono ancora quelli in vigore — modello `deepseek` invariato, segnalazione da riverificare al prossimo ciclo). Tabella computer-use (OSWorld) lasciata invariata: i nuovi punteggi 'OSWorld 2.0' riportati per GPT-6 Astra non sono comparabili alla scala precedente. Catalogo app/tools/useMatrix/containers/decisionTree non riverificato in questo ciclo: prossimo passaggio dedicato.",
+      "sources": [
+        "https://platform.claude.com/docs/en/models/overview",
+        "https://platform.claude.com/docs/en/about-claude/pricing",
+        "https://developers.openai.com/api/docs/models/gpt-6-astra.md",
+        "https://www.eesel.ai/blog/gpt-6-astra-pricing",
+        "https://technews.tw/2026/09/23/openai-launches-gpt-6-sol-and-luna-boasting-lower-cost-and-fewer-mistakes/",
+        "https://www.eesel.ai/blog/gemini-4-argon-pricing",
+        "https://letsdatascience.com/news/gemini-4-argon-undercuts-claude-on-price-73027210",
+        "https://airmore.ai/ai-review/top-ai-models-arena-ranking",
+        "https://www.blogdumoderateur.com/top-20-modeles-ia-performants-octobre-2026/",
+        "https://codersera.com/blog/grok-4-7-complete-guide-2026/amp/",
+        "https://vpsranking.com/news/ai/ai-2026-09-21-xai-grok-47/",
+        "https://letsdatascience.com/news/meta-launches-muse-wonder-and-muse-wonder-full-for-agentic-t-41113cca",
+        "https://propakistani.pk/2026/10/13/meta-enters-ai-frontier-with-new-wonder-models/amp/",
+        "https://aimagazine.com/news/muse-wonder-how-is-meta-competing-at-the-frontier",
+        "https://www.eesel.ai/blog/mistral-large-4",
+        "https://vals.ai/models/mistralai_mistral-large-4",
+        "https://www.edenai.co/models/mistral-large-4",
+        "https://api-docs.deepseek.com/updates/",
+        "https://arena.ai/leaderboard/text"
+      ]
+    },
     {
       "date": "2026-08-23",
       "summary": "OpenAI: prezzo API di GPT-5.6 Sol tagliato del 20-33% il 21 ago 2026, da $5/$30 a $4/$20 per 1M token (input -20%, output -33%), promozionale almeno fino al 21 nov 2026; sconto esteso a Codex e crediti ChatGPT Work. Modello `chatgpt` aggiornato di conseguenza (era il piu' caro sull'output tra i modelli monitorati, ora sotto Claude Fable 5). Verificato incrociando l'annuncio ufficiale OpenAI con il thread di conferma sul forum sviluppatori OpenAI. Nessuna altra variazione verificabile con fonte ufficiale primaria questa settimana: DeepSeek V4 Pro/V4-Flash confermano lo stesso schema peak/off-peak introdotto il 16 ago (nessun ulteriore rialzo); GLM-5.3 (lanciato 14 ago, gia' segnalato la settimana scorsa) resta senza pricing API e pesi aperti ufficialmente pubblicati da Z.AI (fonti terze riportano cifre discordanti, non confermate su fonte Z.AI primaria); un presunto 'Meta Muse Spark 1.2' riportato da fonti terze non risulta su alcun canale ufficiale Meta (ai.meta.com, about.fb.com riportano ancora Muse Spark 1.1 come ultimo rilascio) e non viene quindi recepito. Nessuna variazione ufficiale per Claude Fable 5/Sonnet 5/Opus 5 (nessun nuovo modello; solo aggiornamenti CLI/infrastrutturali su Claude Code), Gemini 3.7 Flash, Grok 4.6, Llama/Muse Spark 1.1, Qwen3.8-Max, Kimi K3, Mistral Medium 3.5. LMArena overall invariata (Claude Fable 5 ancora #1, ~1525 ELO).",
