@@ -3,7 +3,7 @@ name: Formal Verification / Theorem Proving assistito da LLM
 aliases: [formal verification, theorem proving, dimostrazione formale, formalizzazione matematica, Lean proof, autoformalizzazione, computer-checked proof, theorem formalization]
 categoria: tecnica
 created: 2026-09-12
-last_updated: 2026-09-12
+last_updated: 2026-10-28
 ---
 
 # Formal Verification / Theorem Proving assistito da LLM
@@ -75,6 +75,10 @@ Esempio 3: uso pratico per chi costruisce sistemi di verifica software. Un'organ
 - MiniMax, "MaxProof: population-level test-time scaling per il ragionamento matematico", giugno 2026 — vedi `./evaluation-benchmark.md`, aggiornamento 2026-06-15.
 
 ## Aggiornamenti
+
+### 2026-10-28
+
+OpenAI pubblica il 26 ottobre un nuovo lotto di risultati matematici generati da un modello interno non rilasciato — distinto dalla raccolta "ten proofs" di agosto 2026 — con formalizzazione Lean completa solo per una parte dei risultati di punta (stimata attorno al 42% in una fonte). Tra i claim: una confutazione della Exponential Time Hypothesis, un caso della congettura di Kakeya, e un'esistenza in teoria quantistica dei campi di Yang-Mills. A differenza del caso Fermat (settembre 2026, formalizzazione di un teorema gia' noto e accettato), qui il contributo rivendicato e' la soluzione di problemi aperti originali: una categoria che richiede uno standard di verifica piu' alto, perche' una build Lean riuscita conferma solo la coerenza logica interna dell'enunciato formalizzato, non che quell'enunciato catturi correttamente la congettura informale. Il matematico Ryan Williams, insieme a Russell Impagliazzo e Mohan Paturi, viene incaricato di organizzare una revisione indipendente aperta sul risultato riguardante la Exponential Time Hypothesis; nessuna fonte consultata riporta una verifica indipendente completata alla data di questo aggiornamento. [Digest 2026-10-28](../../digest/2026/10/28.md)
 
 ### 2026-09-12
 
