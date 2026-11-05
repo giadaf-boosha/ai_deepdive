@@ -3,7 +3,7 @@ name: World Models
 aliases: [world model, world foundation model, WFM, modello del mondo, simulatore del mondo, physical AI world model]
 categoria: architettura
 created: 2026-06-09
-last_updated: 2026-06-21
+last_updated: 2026-11-05
 ---
 
 # World Models
@@ -73,6 +73,10 @@ Addestramento da video YouTube. Cosmos 3 e' stato preaddestrato su grandi corpus
 - Anthropic, "MolmoAct2 and robot action reasoning", arXiv 2605.02881, 2026. https://arxiv.org/abs/2605.02881
 
 ## Aggiornamenti
+
+### 2026-11-05
+
+Google DeepMind annuncia Genie 4 (27 ottobre 2026, missed coverage): primo world model in tempo reale di DeepMind a generare audio nativo (musica, rumore ambientale, dialogo) insieme alla scena simulata, non sovrapposto in post-produzione. Introduce il "live steering": l'utente digita nuovi prompt a meta' simulazione per modificare meteo, angolo di camera o aggiungere persone e oggetti. Un esperimento collegato a Gemini Robotics scompone un compito robotico in step che Genie 4 simula in tempo reale, un possibile percorso di simulazione pre-deployment (dettaglio da una sola fonte secondaria, da confermare). Accesso oggi limitato a un research preview per tester selezionati; Google dichiara l'intenzione di portarlo a Project Genie per gli abbonati Google AI Ultra, senza data. Rispetto a Cosmos 3 (NVIDIA, giugno 2026, pesi aperti e focus physical AI/robotica) e DreamX-World 1.0 (open-source, giugno 2026), Genie 4 resta closed e orientato alla generazione di ambienti interattivi generalisti con audio, non specificamente al training di robot. [Digest 2026-11-05](../../digest/2026/11/05.md)
 
 ### 2026-06-21
 
