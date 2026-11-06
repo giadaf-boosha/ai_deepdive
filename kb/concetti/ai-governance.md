@@ -3,7 +3,7 @@ name: AI Governance
 aliases: [AI governance, governance AI, export control AI, regolazione AI, AI regulation, AI policy, BIS AI, EAR AI models]
 categoria: regolazione
 created: 2026-06-14
-last_updated: 2026-10-24
+last_updated: 2026-11-06
 ---
 
 # AI Governance
@@ -72,6 +72,10 @@ Esempio 3: verifica della Responsible Scaling Policy prima di distribuire un mod
 - Wilson Sonsini, "Colorado Legislature Repeals and Replaces Colorado AI Act: What SB 189 Means for Your Business" (maggio 2026). https://www.wsgr.com/en/insights/colorado-legislature-repeals-and-replaces-colorado-ai-act-what-sb-189-means-for-your-business.html
 
 ## Aggiornamenti
+
+### 2026-11-06
+
+Google rilascia il 28 ottobre Gemini 4 Carbon, model orientato a cybersecurity (ricerca, exploit e patching di vulnerabilita') con accesso iniziale riservato a un sottoinsieme di cyber defender verificati tramite un meccanismo dedicato, il "Fairwind Program", nel quadro del processo volontario di test pre-rilascio con il governo USA. Rispetto alla pausa auto-imposta di OpenAI su Astra per rischio cyber (8 agosto, aggiornamento precedente) — dove il lab ritarda il rilascio finche' il modello non e' conforme a soglie di sicurezza rafforzate — qui per la prima volta in questa scheda un lab frontier rilascia comunque un modello ad alto rischio cyber, ma ne restringe l'accesso tramite vetting degli utenti finali invece di un gate binario rilascia/non rilascia: un meccanismo di governance distinto, piu' vicino a un controllo di accesso selettivo che a una soglia di capability. [Digest 2026-11-06](../../digest/2026/11/06.md)
 
 ### 2026-10-24
 
