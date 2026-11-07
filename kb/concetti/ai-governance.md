@@ -3,7 +3,7 @@ name: AI Governance
 aliases: [AI governance, governance AI, export control AI, regolazione AI, AI regulation, AI policy, BIS AI, EAR AI models]
 categoria: regolazione
 created: 2026-06-14
-last_updated: 2026-10-24
+last_updated: 2026-11-07
 ---
 
 # AI Governance
@@ -72,6 +72,10 @@ Esempio 3: verifica della Responsible Scaling Policy prima di distribuire un mod
 - Wilson Sonsini, "Colorado Legislature Repeals and Replaces Colorado AI Act: What SB 189 Means for Your Business" (maggio 2026). https://www.wsgr.com/en/insights/colorado-legislature-repeals-and-replaces-colorado-ai-act-what-sb-189-means-for-your-business.html
 
 ## Aggiornamenti
+
+### 2026-11-07
+
+OpenAI prepara, secondo uno scoop Axios del 1 novembre, una campagna di policy e comunicazione a Washington calibrata sull'apertura della sessione lame-duck del Congresso (9 novembre), con al centro la richiesta di "limiti di velocita'" (speed limits) obbligatori per i sistemi AI piu' potenti; la campagna, guidata da Chris Lehane (chief global affairs officer), include anche un tentativo di ribrandizzare i data center come "AI compute campus". A differenza delle proposte convergenti dei CEO gia' tracciate in questa scheda (Hassabis/FINRA, Amodei/FAA, Altman/IAEA, luglio 2026) e dell'accordo volontario multi-azienda alla Casa Bianca (30 settembre-1 ottobre), qui e' un singolo laboratorio a muoversi con una campagna di lobbying e PR dedicata, rivolta esplicitamente al Congresso in un momento politico specifico (dopo le midterm, prima della fine della sessione), non una dichiarazione di principio condivisa. Il contenuto tecnico della proposta resta indefinito: non e' chiaro se "velocita'" si riferisca al compute di training, alla latenza di inferenza o a soglie di capability evaluation — una scelta che determinerebbe chi viene effettivamente vincolato dalla norma. Nota di cautela editoriale: la fonte primaria, Axios, dichiara nel proprio articolo un accordo di licensing di contenuti con OpenAI, e al momento di questa run i dettagli della proposta provengono solo dal racconto di OpenAI stesso, senza controparte indipendente che li confermi o li contraddica. [Digest 2026-11-07](../../digest/2026/11/07.md)
 
 ### 2026-10-24
 
