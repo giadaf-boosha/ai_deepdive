@@ -3,7 +3,7 @@ name: Chain of Thought / Reasoning
 aliases: [chain of thought, CoT, catena di pensiero, reasoning, ragionamento esplicito, extended thinking]
 categoria: tecnica
 created: 2026-04-28
-last_updated: 2026-07-23
+last_updated: 2026-11-08
 ---
 
 # Chain of Thought / Reasoning
@@ -126,6 +126,10 @@ Reasoning + tool. Combinare reasoning model con [tool use](./tool-use.md) e' par
 Costo del training del reasoning. Il risultato 2026 sui token entropy-gated suggerisce che non e' sempre necessario un ciclo RL completo per ottenere il comportamento reasoning: tecniche che applicano una correzione mirata solo ai pochi punti di decisione incerti possono replicare gran parte del beneficio a una frazione del compute. Per chi addestra o fine-tuna modelli reasoning interni, vale la pena valutare queste ricette RL-free prima di impegnare budget GPU in un ciclo RL completo.
 
 ## Aggiornamenti
+
+### 2026-11-08
+
+Un team di Xi'an Jiaotong University, WeChat AI e Tencent pubblica LoCo ("Think Less, Locally: Local Preference Learning for Reasoning Compression", arXiv:2611.04814, 3 novembre), che estende il filone sul costo del training del reasoning gia' tracciato in questa scheda (RL-free entropy-gated tuning, ReasonMaxxer). LoCo individua i punti in cui un modello reasoning sovra-pensa nelle proprie tracce auto-generate, fissa il prefisso fino a quel punto e rigenera continuazioni piu' brevi e verificate, poi allena con DPO su coppie di preferenza "continua o concludi" condizionate allo stato specifico — non una preferenza generica per risposte corte. Risultato dichiarato: riduzione della lunghezza delle risposte del 41,7-45,4% su cinque benchmark di matematica e del 23,4-36,3% su tre benchmark di coding, con accuratezza mantenuta o migliorata, nonostante il training avvenga solo su tracce di matematica (transfer non supervisionato verso il coding). Dato non ancora verificato a lettura diretta del paper (fetch bloccato in questa run); numeri confermati da due sintesi secondarie indipendenti concordanti. [Digest 2026-11-08](../../digest/2026/11/08.md)
 
 ### 2026-07-23
 
