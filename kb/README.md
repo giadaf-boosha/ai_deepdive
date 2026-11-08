@@ -33,4 +33,4 @@
 | [Tokenization](./concetti/tokenization.md) | tecnica | tokenization, tokenizzazione, BPE, subword, byte-pair encoding | 2026-06-01 |
 | [Tool use / Function calling](./concetti/tool-use.md) | tecnica | tool use, function calling, tool calling, chiamata di funzione | 2026-07-03 |
 | [Vector database](./concetti/vector-database.md) | infrastruttura | vector database, vector DB, vector store, database vettoriale, ANN index | 2026-06-01 |
-| [World Models](./concetti/world-models.md) | architettura | world model, world foundation model, WFM, modello del mondo, physical AI world model | 2026-06-21 |
+| [World Models](./concetti/world-models.md) | architettura | world model, world foundation model, WFM, modello del mondo, physical AI world model | 2026-11-05 |
