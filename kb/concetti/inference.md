@@ -3,7 +3,7 @@ name: Inference
 aliases: [inference, inferenza, serving, generation, decoding]
 categoria: infrastruttura
 created: 2026-04-28
-last_updated: 2026-10-23
+last_updated: 2026-11-09
 ---
 
 # Inference
@@ -227,3 +227,7 @@ DSpark (DeepSeek + Peking University, 27 giugno, arXiv:2606.19348) porta il conf
 ### 2026-10-23
 
 Due sviluppi distinti, entrambi in continuita' diretta con filoni gia' tracciati in questa scheda. DeepSeek apre in open source DeepInfer (20 ottobre, 3 fonti), il motore di inferenza che usa per i propri servizi a produzione, sotto licenza Apache 2.0: bundla i kernel gia' noti FlashMLA, DeepGEMM e DeepEP piu' i nuovi TileKernels e DeepSelect, con tensor/context/expert parallelism e load balancing EPLB per MoE. Alla pubblicazione supporta solo offline inference su DeepSeek-V4.1-Flash; mancano ancora i pezzi di un servizio completo (KV cache distribuita, disaggregazione, load balancing a runtime), che DeepSeek dichiara in arrivo — un percorso di maturazione simile a quello che vLLM e TGI hanno attraversato prima di diventare backend di produzione standard. Tenstorrent, l'azienda di chip guidata da Jim Keller, raccoglie un Series E da 1,5 miliardi di dollari che raddoppia la valutazione a 6,2 miliardi di dollari (19 ottobre, missed coverage, 3+ fonti), scegliendo di restare indipendente dopo l'interesse di acquisizione di Intel e Qualcomm. Il digest del 29 giugno documentava le trattative di Qualcomm per acquisire Tenstorrent per 8-10 miliardi di dollari, terzo pilastro di una strategia hardware alternativa a Nvidia dopo Modular/MAX: qui Tenstorrent prende la strada opposta, capitale fresco da investitori finanziari (Fidelity, ARK, Morgan Stanley, T. Rowe Price, Tether) a una valutazione inferiore a quella offerta in acquisizione, con Keller che cita la capacita' dimostrata dei server Galaxy di far girare bene i modelli DeepSeek come argomento per restare sul mercato pubblico del silicio alternativo invece di vendersi a chi lo dominava gia' nel software (Qualcomm/Modular). [Digest 2026-10-23](../../digest/2026/10/23.md)
+
+### 2026-11-09
+
+Fal, infrastruttura di inferenza specializzata in modelli generativi per immagini e video, chiude un Series F da 1,3 miliardi di dollari guidato da Bessemer Venture Partners (3 novembre), che raddoppia la valutazione a 16 miliardi di dollari rispetto agli 8 miliardi di aprile. Il round si somma a un Series E da 350 milioni guidato da Sequoia (aprile) per un totale di circa 1,65 miliardi raccolti nei due round; partecipano anche Nvidia, Sound Ventures, HOF Capital e T. Rowe Price. Bloomberg riporta un fatturato annualizzato sopra gli 800 milioni di dollari; i fondi vanno dichiaratamente a piu' capacita' di calcolo e crescita del team. Il caso estende il filone del finanziamento dell'infrastruttura di inferenza AI gia' tracciato in questa scheda per Tenstorrent (Series E, 19 ottobre, silicio alternativo per inferenza) e Together AI (Series C, 1 luglio, neocloud per modelli open-weight): Fal ne rappresenta una terza variante, un provider di inferenza verticale specializzato nella generazione multimodale (immagini e video) invece che nel silicio o nel serving generalista di LLM testuali. [Digest 2026-11-09](../../digest/2026/11/09.md)

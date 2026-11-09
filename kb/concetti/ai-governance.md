@@ -3,7 +3,7 @@ name: AI Governance
 aliases: [AI governance, governance AI, export control AI, regolazione AI, AI regulation, AI policy, BIS AI, EAR AI models]
 categoria: regolazione
 created: 2026-06-14
-last_updated: 2026-10-24
+last_updated: 2026-11-09
 ---
 
 # AI Governance
@@ -72,6 +72,10 @@ Esempio 3: verifica della Responsible Scaling Policy prima di distribuire un mod
 - Wilson Sonsini, "Colorado Legislature Repeals and Replaces Colorado AI Act: What SB 189 Means for Your Business" (maggio 2026). https://www.wsgr.com/en/insights/colorado-legislature-repeals-and-replaces-colorado-ai-act-what-sb-189-means-for-your-business.html
 
 ## Aggiornamenti
+
+### 2026-11-09
+
+Due rilasci distinti e indipendenti, entrambi in continuita' diretta con il filone del gating ad accesso controllato per modelli ad alta capacita' cyber tracciato in questa scheda per GPT-6 Astra (soglia "Critical" raggiunta, accesso alpha poi "Daybreak Blue", aggiornamento del 2026-09-03). Google rilascia Gemini 4 Carbon (28 ottobre, missed coverage), il proprio modello di punta con stato dell'arte dichiarato su cybersecurity e task agentici di lungo orizzonte, riservandone l'accesso ai soli cyber defender prima di un rollout piu' ampio senza data indicata. OpenAI rilascia GPT-6 Cyber (5 novembre), primo proprio modello classificato "Critical" per rischio cyber nel Preparedness Framework (contro "High" del predecessore GPT-5.6 Cyber), con accesso iniziale limitato ai clienti approvati del programma Daybreak Red (rinominato rispetto al precedente "Daybreak Blue" di Astra) per ricerca di sicurezza e sviluppo di exploit autorizzati, in espansione dichiarata "nelle prossime settimane". La coincidenza temporale di due laboratori concorrenti che adottano lo stesso pattern — soglia di capacita' cyber critica raggiunta e riconosciuta pubblicamente, risposta con accesso gated per utenti verificati invece di blocco totale o rilascio generale — rafforza il segnale che il gating per livelli di accesso e' diventato la risposta di governance standard dell'industria ai modelli con capacita' cyber offensive ad alto rischio, non un'eccezione isolata di un singolo lab. [Digest 2026-11-09](../../digest/2026/11/09.md)
 
 ### 2026-10-24
 
