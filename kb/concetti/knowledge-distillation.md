@@ -3,7 +3,7 @@ name: Knowledge Distillation
 aliases: [knowledge distillation, distillazione, model distillation, distillazione di modello, adversarial distillation, response distillation, student-teacher, distillazione avversariale]
 categoria: training
 created: 2026-06-25
-last_updated: 2026-07-24
+last_updated: 2026-11-10
 ---
 
 # Knowledge Distillation
@@ -77,6 +77,10 @@ Il meccanismo e' semplice: creare account multipli per aggirare i rate limit e l
 - Taori et al., "Alpaca: A Strong, Replicable Instruction-Following Model" (Stanford CRFM, 2023). https://crfm.stanford.edu/2023/03/13/alpaca.html
 
 ## Aggiornamenti
+
+### 2026-11-10
+
+Anthropic dichiara, nell'annuncio del 9 novembre di Claude Fable 5.2 e Mythos 5.2, una riduzione del 90-99% dei dati utili sottraibili dai distillatori rispetto alle versioni 5.1, con il preserved thinking (la cifratura/oscuramento del ragionamento intermedio del modello) estesa per la prima volta a tutti gli account API, non solo a quelli enterprise. E' il primo aggiornamento tecnico concreto sulle contromisure difensive lato-teacher tracciate in questa scheda da quando il filone era rimasto sul piano dell'accusa pubblica e della minaccia di sanzioni (caso Kratsios/Moonshot, 22 luglio): qui il laboratorio non accusa un attore specifico ma riduce direttamente la superficie disponibile per la adversarial distillation sui propri modelli di punta, a prescindere da chi tenti l'estrazione. [Digest 2026-11-10](../../digest/2026/11/10.md)
 
 ### 2026-07-24
 

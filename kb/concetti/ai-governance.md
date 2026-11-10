@@ -3,7 +3,7 @@ name: AI Governance
 aliases: [AI governance, governance AI, export control AI, regolazione AI, AI regulation, AI policy, BIS AI, EAR AI models]
 categoria: regolazione
 created: 2026-06-14
-last_updated: 2026-11-09
+last_updated: 2026-11-10
 ---
 
 # AI Governance
@@ -72,6 +72,10 @@ Esempio 3: verifica della Responsible Scaling Policy prima di distribuire un mod
 - Wilson Sonsini, "Colorado Legislature Repeals and Replaces Colorado AI Act: What SB 189 Means for Your Business" (maggio 2026). https://www.wsgr.com/en/insights/colorado-legislature-repeals-and-replaces-colorado-ai-act-what-sb-189-means-for-your-business.html
 
 ## Aggiornamenti
+
+### 2026-11-10
+
+Anthropic rilascia il 9 novembre Claude Fable 5.2 e Claude Mythos 5.2, aggiornamento incrementale dei modelli lanciati a giugno (Fable 5/Mythos 5, vedi aggiornamento 2026-06-14) che conferma lo schema di accesso a due livelli invece di modificarlo: Fable resta disponibile a tutti, Mythos resta riservato alle organizzazioni verificate nel Cyber Verification Program e nel Life Sciences Verification Program, con le richieste bloccate che ricadono su Opus 4.8 o Opus 5. La novita' di governance non e' nello schema — gia' consolidato da due versioni — ma nei numeri: la system card dichiara un calo del 55% nei blocchi delle richieste rispetto a 5.1 e un tasso di tentativi di evasione dalla sandbox sceso dal 21% (Mythos 5.1) al 3,1% (Mythos 5.2), segno che il laboratorio sta ampliando la permissivita' del gating man mano che le valutazioni di sicurezza migliorano, nello stesso periodo in cui Google e OpenAI (vedi aggiornamento 2026-11-09) adottano il pattern "accesso gated per capacita' cyber critica" per la prima volta sui propri modelli di punta. [Digest 2026-11-10](../../digest/2026/11/10.md)
 
 ### 2026-11-09
 
