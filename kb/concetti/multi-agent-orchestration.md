@@ -3,7 +3,7 @@ name: Multi-agent orchestration
 aliases: [multi-agent, sistema multi-agente, orchestrazione di agenti, agent swarm, subagenti, sub-agent orchestration]
 categoria: paradigma
 created: 2026-06-01
-last_updated: 2026-09-12
+last_updated: 2026-11-12
 ---
 
 # Multi-agent orchestration
@@ -84,6 +84,10 @@ Eterogeneita' dei modelli. Se l'obiettivo e' affidabilita' (non solo throughput)
 Parallelismo non e' gratis. Il fan-out riduce la latenza percepita ma il costo in token e in chiamate scala linearmente con il numero di worker. Un benchmark valutato "senza cap al numero di chiamate o token" (come nel caveat dell'AI Co-Mathematician) non e' comparabile a parita' di costo con un sistema vincolato: nel valutare sistemi multi-agente, fissare il budget di inferenza e' parte della metodologia, non un dettaglio.
 
 ## Aggiornamenti
+
+### 2026-11-12
+
+Meta acquisisce Conductor (4 novembre), startup che fa girare piu' agenti di coding in parallelo su copie isolate della codebase (supporta Claude Code, Codex, Cursor, OpenCode), con il team che entra nei Meta Superintelligence Labs. E' il primo caso in questa scheda in cui un laboratorio frontier acquisisce un prodotto di orchestrazione multi-agente standalone per il coding, invece di costruirlo internamente (Dynamic Workflows, Azure Agent Mesh) o integrarlo in un IDE proprio (Copilot Workspace, GitHub Copilot App): qui il pattern fan-out su worktree isolati, gia' visto nell'app desktop di GitHub Copilot (digest 3 giugno), diventa materia di M&A tra un laboratorio e uno strumento di terze parti. [Digest 2026-11-12](../../digest/2026/11/12.md)
 
 ### 2026-09-12
 
