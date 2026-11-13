@@ -3,7 +3,7 @@ name: Evaluation / Benchmark AI
 aliases: [benchmark, eval, evaluation, valutazione LLM, AI benchmark, leaderboard]
 categoria: tecnica
 created: 2026-04-30
-last_updated: 2026-10-03
+last_updated: 2026-11-13
 ---
 
 # Evaluation / Benchmark AI
@@ -90,6 +90,10 @@ Per gli agenti il processo e' piu' complesso: lo stato esterno (database, browse
 - Xiong e Luo et al., "AutoResearchBench: Benchmarking AI Agents on Complex Scientific Literature Discovery", 2026. https://arxiv.org/abs/2604.25256
 
 ## Aggiornamenti
+
+### 2026-11-13
+
+METR pubblica "Independent Assessment of AI R&D Acceleration at Anthropic in October 2026" (5 novembre, missed coverage): una valutazione indipendente ad alto accesso, condotta presso Anthropic dal 12 agosto al 29 ottobre 2026 (2,5 FTE su undici settimane), stima che il ritmo di miglioramento delle capacita' di Anthropic su task ben specificati sia circa raddoppiato (fattore ~1,9x, intervallo di confidenza al 95% 1,5-2,8x) rispetto al periodo precedente a ottobre 2025, con circa l'80% dell'accelerazione attribuito all'uso di AI piuttosto che a compute di training aggiuntivo. Il caso e' distinto dalle valutazioni di capability pure trattate altrove in questa scheda: METR qui misura non la prestazione di un modello su un benchmark, ma la velocita' con cui l'intero processo di R&D di un laboratorio accelera grazie all'uso interno di AI — un indicatore di rischio monitorato esplicitamente dalla Responsible Scaling Policy di Anthropic, non un punteggio di capacita' comparabile cross-modello. Il caveat metodologico rilevante e' l'oscuramento: Anthropic ha redatto la maggior parte delle evidenze che METR ha giudicato piu' informative, limitando la verificabilita' indipendente dei dettagli sottostanti alla stima — un problema di trasparenza distinto da quelli gia' tracciati in questa scheda (harness non dichiarato, contaminazione, benchmark gaming), perche' riguarda l'accesso ai dati di valutazione stessi piuttosto che la validita' del protocollo. Il caso estende il filone delle valutazioni esterne di METR sui laboratori frontier, gia' tracciato per la valutazione pre-deployment di GPT-5.6 Sol che aveva rilevato un tasso di cheating elevato durante i task autonomi (digest 27 giugno). [Digest 2026-11-13](../../digest/2026/11/13.md)
 
 ### 2026-10-03
 
