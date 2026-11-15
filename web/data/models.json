@@ -1,39 +1,27 @@
 {
   "meta": {
-    "lastUpdated": "2026-11-08",
+    "lastUpdated": "2026-11-15",
     "generatedBy": "Claude Code Routine — ai-deepdive-weekly-radar",
     "sourcesChecked": [
-      "https://www.anthropic.com/claude-fable-and-mythos-5-1",
-      "https://platform.claude.com/docs/en/models/fable-5-1/overview",
-      "https://www.anthropic.com/claude-opus-5-5",
-      "https://www.anthropic.com/news/claude-duet",
+      "https://www.anthropic.com/news/claude-fable-and-mythos-5-2",
+      "https://platform.claude.com/docs/en/models/fable-5-2/whats-new-fable-5-2",
       "https://code.claude.com/docs/en/changelog",
-      "https://help.openai.com/en/articles/20001415-chatgpt-rate-card-enterprise-token-based-pricing",
-      "https://openai.com/index/gpt-6-astra/",
-      "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
-      "https://community.openai.com/t/introducing-gpt-6-astra-the-most-intelligent-and-aligned-model-in-the-world/1394703",
-      "https://www.ghacks.net/2026/10/27/openai-launches-gpt-6-1-terra-with-api-pricing-50-lower-than-gpt-5-6-terra/",
-      "https://openai.com/index/introducing-images-2-6/",
-      "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
+      "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+      "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/",
+      "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-4-carbon-developers/",
       "https://ai.google.dev/gemini-api/docs/pricing",
+      "https://openai.com/index/gpt-6-astra/",
+      "https://help.openai.com/en/articles/20001415-chatgpt-rate-card-enterprise-token-based-pricing",
       "https://x.ai/news/grok-4-7",
-      "https://github.blog/changelog/2026-09-21-grok-4-7-is-now-available-in-github-copilot/",
-      "https://x.ai/news/grok-voice-3",
       "https://api-docs.deepseek.com/updates/",
-      "https://api-docs.deepseek.com/news/news261017/",
-      "https://www.kimi.com/en/blog/kimi-k3-1-pro",
       "https://platform.moonshot.ai/",
       "https://docs.z.ai/guides/overview/pricing",
-      "https://research.meta.ai/",
       "https://mistral.ai/news/mistral-large-4/",
-      "https://docs.mistral.ai/models/mistral-large-4-0",
-      "https://www.neowin.net/news/openai-to-shut-down-sora-app-and-apis-as-it-shifts-focus-to-coding-ai/",
-      "https://cursor.com/changelog",
-      "https://elevenlabs.io/blog/eleven-v4",
+      "https://research.meta.ai/",
       "https://arena.ai/leaderboard/text",
       "https://artificialanalysis.ai/"
     ],
-    "nextScheduledUpdate": "2026-11-15T08:00:00+01:00",
+    "nextScheduledUpdate": "2026-11-22T08:00:00+01:00",
     "benchmarkLinks": [
       {
         "name": "Hugging Face — LLM Leaderboard",
@@ -49,12 +37,12 @@
     {
       "id": "claude",
       "provider": "Anthropic",
-      "name": "Claude Fable 5.1",
-      "releaseDate": "2026-09-01",
-      "tagline": "Flagship Anthropic aggiornato (1 set 2026): stesso prezzo di Fable 5 ($10/$50 per 1M), cache-read tagliato del 75% a $0.25/M; 1M context/128K output invariati. Affiancato da Claude Opus 5.5 (22 set 2026, $4/$20, ora default raccomandato per la maggior parte dei workload), Claude Sonnet 5.5 (28 set 2026, $2/$10, 30%+ piu' rapido) e Claude Haiku 5.5 (7 ott 2026, da $0.10/$0.50 su prompt fino a 100K).",
+      "name": "Claude Fable 5.2",
+      "releaseDate": "2026-11-09",
+      "tagline": "Flagship Anthropic aggiornato (9 nov 2026): Claude Fable 5.2 e Claude Mythos 5.2 succedono alla serie 5.1, stessa finestra 1M context/128K output, prezzo API tagliato a $8/$40 per 1M (da $10/$50), cache-read $0.20/M. Output fino al 30% piu' rapido e ~55% meno blocchi dei classificatori di sicurezza rispetto a 5.1. Claude Code e claude.ai passano a Fable 5.2 come modello Fable di default; Claude Opus 5.5 ($4/$20) resta il default raccomandato per la maggior parte dei workload.",
       "contextWindow": "1M token · 128K output",
-      "apiInputPer1M": 10,
-      "apiOutputPer1M": 50,
+      "apiInputPer1M": 8,
+      "apiOutputPer1M": 40,
       "supportsImages": true,
       "supportsVideo": false,
       "supportsCode": true,
@@ -70,16 +58,16 @@
       "dataResidency": "US; opzioni regionali via AWS Bedrock, Google Vertex AI e Microsoft Foundry",
       "trainingPolicy": "Nessun training sui dati di API e prodotti commerciali per default",
       "strengths": [
-        "Terminal-Bench 4.0 55.8%: miglior punteggio Anthropic sul nuovo benchmark agentico da terminale",
-        "OSWorld 2.0 77.9% (partial) / 41.7% (strict): computer use sulla nuova versione del benchmark",
-        "Humanity's Last Exam (con tool) 65.0%, AutomationBench 31.4%, CursorBench 3.2.0 73.4%",
-        "1M context, 128K output; cache-read a $0.25/M (-75%); Claude Opus 5.5 ($4/$20, 22 set 2026) offre prestazioni vicine a Fable 5.1 per la maggior parte dei workload a meno di meta' prezzo"
+        "FrontierSWE v2 69.9% e FrontierCode 2.0 (effort Xhigh) 49.1%: nuovi benchmark Anthropic su coding agentico, sopra Opus 5.5 (62.3%/45.5%) e GPT-6 Astra (65.5%/42.8%) secondo le cifre pubblicate da Anthropic",
+        "OSWorld 2.1 (offline, partial) 89.3%, Humanity's Last Exam (con tool) 74.2%, Terminal-Bench-Science 0.1 74.6%: generazione di benchmark rinnovata rispetto a 5.1",
+        "Prezzo tagliato a $8/$40 per 1M (da $10/$50), cache-read $0.20/M; output fino al 30% piu' rapido e ~55% meno blocchi dei classificatori di sicurezza rispetto a Fable 5.1",
+        "1M context, 128K output, fast mode opzionale a $16/$80; Claude Opus 5.5 ($4/$20) offre prestazioni vicine a Fable 5.2 per la maggior parte dei workload a un quinto del prezzo"
       ],
       "weaknesses": [
-        "Prezzo API $10/$50 per 1M invariato, il piu' alto tra i modelli monitorati",
-        "Anthropic non riporta piu' SWE-Bench Pro, OSWorld (versione precedente) e GPQA Diamond per questa generazione: confronto diretto con i punteggi pubblicati dai concorrenti su questi benchmark non piu' possibile",
+        "Generazione di benchmark completamente rinnovata (FrontierCode 2.0, FrontierSWE v2, Terminal-Bench-Science, OSWorld 2.1, ecc.): confronto diretto con le cifre SWE-Bench Pro/GPQA Diamond/Terminal-Bench 4.0 della serie 5.1 non piu' possibile",
         "Nessun input video",
-        "Claude Opus 5.5 e' ora il default raccomandato per la maggior parte dei task, lasciando Fable 5.1 conveniente solo per reasoning/long-horizon particolarmente esigenti"
+        "Claude Mythos 5.2 (stesso modello, meno safeguard) resta riservato a organizzazioni verificate nei Verification Program Cyber/Life Sciences",
+        "Claude Opus 5.5 e' ancora il default raccomandato per la maggior parte dei task, lasciando Fable 5.2 conveniente solo per reasoning/long-horizon particolarmente esigenti"
       ],
       "bestFor": [
         "Coding agentico e refactoring su larga scala",
@@ -87,7 +75,7 @@
         "Analisi di documenti e immagini con context da 1M token",
         "Reasoning long-horizon estremo (altrimenti preferire Opus 5.5)"
       ],
-      "verdict": "Claude Fable 5.1 (1 set 2026): stesso prezzo di Fable 5 ($10/$50), nuovi benchmark Terminal-Bench 4.0 (55.8%) e OSWorld 2.0 (77.9% partial); SWE-Bench Pro e GPQA Diamond non piu' riportati da Anthropic per questa generazione. Claude Opus 5.5 (22 set 2026, $4/$20) e' ora il default raccomandato per la maggior parte dei workload.",
+      "verdict": "Claude Fable 5.2 e Mythos 5.2 (9 nov 2026): succedono alla serie 5.1, stesso context 1M/128K output, prezzo tagliato a $8/$40 per 1M (cache-read $0.20/M), output fino al 30% piu' rapido. Nuovi benchmark Anthropic (FrontierSWE v2 69.9%, FrontierCode 2.0 49.1%, OSWorld 2.1 89.3%) sopra Opus 5.5 e GPT-6 Astra secondo le cifre pubblicate da Anthropic. Claude Opus 5.5 resta il default raccomandato per la maggior parte dei workload.",
       "lmarenaRank": 1,
       "domain": "claude.ai"
     },
@@ -140,7 +128,7 @@
       "provider": "Google",
       "name": "Gemini 4 Argon",
       "releaseDate": "2026-10-13",
-      "tagline": "Nuovo flagship Google (GA 13 ott 2026) via API a pagamento, Google AI Studio, app Gemini, AI Mode in Search e Antigravity; non disponibile su tier free/Google AI Pro. Pricing intro $2/$10 per 1M fino al 30 nov 2026, poi $4/$20 dal 1 dic 2026. Gemini 4 Carbon (annunciato 28 ott 2026, focus cybersecurity) resta riservato alle organizzazioni verificate nel Fairwind Program, nessuna data GA.",
+      "tagline": "Flagship Google (GA 13 ott 2026) via API a pagamento, Google AI Studio, app Gemini, AI Mode in Search e Antigravity; pricing intro $2/$10 per 1M fino al 30 nov 2026, poi $4/$20. Gemini 4 Carbon, presentato da Google come successore di punta di Argon, ha raggiunto la disponibilita' generale il 10 nov 2026 (API, Google AI Studio, Gemini for Business) alla stessa fascia di prezzo; nell'app Gemini e' su AI Ultra per 'il lavoro piu' complesso' (Argon resta su AI Pro+ per 'codice e analisi'), con Gemini 3.1 Pro rimosso dal model picker.",
       "contextWindow": "1.05M token (input+output condivisi) · 64K output per richiesta (default)",
       "apiInputPer1M": 2,
       "apiOutputPer1M": 10,
@@ -164,25 +152,25 @@
       "dataResidency": "Multi-regione via Google Cloud (incl. EU)",
       "trainingPolicy": "Vertex AI / Enterprise: nessun uso dei dati cliente per training",
       "strengths": [
-        "Nuovo flagship Google, GA su API/AI Studio/app Gemini/AI Mode in Search/Antigravity dal 13 ott 2026",
+        "Flagship Google, GA su API/AI Studio/app Gemini/AI Mode in Search/Antigravity dal 13 ott 2026",
         "Pricing intro $2/$10 per 1M fino al 30 nov 2026 (poi $4/$20): tra i flagship piu' economici monitorati",
         "Context 1.05M token condiviso input+output",
         "Cached input scontato a $0.10/1M in fase intro",
-        "Multimodale nativo, video incluso"
+        "Multimodale nativo, video incluso",
+        "Gemini 4 Carbon (successore di punta, GA 10 nov 2026) disponibile su API/AI Studio/Gemini for Business alla stessa fascia di prezzo, e su AI Ultra nell'app Gemini per il lavoro piu' complesso"
       ],
       "weaknesses": [
-        "Nessuno score GPQA Diamond o SWE-Bench Pro pubblicato ufficialmente da Google per Argon al momento della rilevazione: i valori circolati su aggregatori terzi non sono confermati su fonte primaria",
-        "Output limitato a 64K token per richiesta di default",
-        "Non disponibile su tier free o Google AI Pro",
-        "Pricing intro valido solo fino al 30 nov 2026, poi raddoppia a $4/$20 per 1M",
-        "Gemini 4 Carbon (cybersecurity) resta riservato a organizzazioni verificate, nessuna data GA pubblica"
+        "Nessuno score GPQA Diamond o SWE-Bench Pro pubblicato ufficialmente da Google per Argon o Carbon al momento della rilevazione: i valori circolati su aggregatori terzi non sono confermati su fonte primaria",
+        "Output limitato a 64K token per richiesta di default (Argon)",
+        "Argon non disponibile su tier free o Google AI Pro; Carbon richiede AI Ultra nell'app consumer o il tier API a pagamento",
+        "Pricing intro valido solo fino al 30 nov 2026, poi raddoppia a $4/$20 per 1M (vale sia per Argon sia per Carbon)"
       ],
       "bestFor": [
         "Carichi multimodali e video",
         "Reasoning e coding agentico di fascia alta a prezzo intro competitivo",
         "Team gia' su ecosistema Google (AI Studio, Antigravity, Search AI Mode)"
       ],
-      "verdict": "Gemini 4 Argon (GA 13 ott 2026): nuovo flagship Google, pricing intro $2/$10 per 1M fino al 30 nov 2026 (poi $4/$20), context 1.05M condiviso. Nessuno score GPQA Diamond/SWE-Bench Pro confermato su fonte primaria Google al momento della rilevazione. Gemini 4 Carbon (cybersecurity, 28 ott 2026) resta ad accesso riservato.",
+      "verdict": "Gemini 4 Argon (GA 13 ott 2026) resta il flagship API a pricing intro $2/$10 per 1M fino al 30 nov 2026 (poi $4/$20). Gemini 4 Carbon, presentato da Google come successore di punta, ha raggiunto la disponibilita' generale il 10 nov 2026 (API/AI Studio/Gemini for Business, stessa fascia di prezzo) ed e' su AI Ultra nell'app Gemini per il lavoro piu' complesso. Nessuno score GPQA Diamond/SWE-Bench Pro confermato su fonte primaria Google per nessuno dei due al momento della rilevazione.",
       "lmarenaRank": 2,
       "domain": "gemini.google.com"
     },
@@ -457,7 +445,7 @@
         "Connettori MCP (Drive, Gmail, Notion, ecc.)",
         "Dynamic workflows su Claude Code (multi-step agentico con sottoagenti paralleli)",
         "Claude Tag (beta Enterprise/Team, 23 giu 2026): agente @Claude in Slack con identita' condivisa, memoria e modalita' ambient proattiva",
-        "Modello core aggiornato a Claude Fable 5.1 (1 set 2026, stesso prezzo $10/$50 di Fable 5)",
+        "Modello core aggiornato a Claude Fable 5.2 (9 nov 2026, $8/$40 per 1M, da $10/$50 di Fable 5.1)",
         "Claude Opus 5.5 (22 set 2026): $4/$20 per 1M (da $5/$25 di Opus 5), prestazioni al livello di Fable 5.1 per la maggior parte dei workload; ora il modello raccomandato di default",
         "Claude Sonnet 5.5 (28 set 2026): $2/$10 per 1M invariato, 30%+ piu' rapido e fino al 30% piu' economico di Sonnet 5 su task tipici; default su Free e Pro",
         "Claude Haiku 5.5 (7 ott 2026): da $0.10/$0.50 per 1M su prompt fino a 100K, ~75% piu' economico di Haiku 4.5, il modello piccolo piu' veloce e capace della linea",
@@ -485,7 +473,7 @@
         "Generazione immagini Nano Banana",
         "Deep Research",
         "Riferimento a file su Google Drive",
-        "Modello core aggiornato a Gemini 4 Argon (GA 13 ott 2026) su piani a pagamento, disponibile anche in AI Mode (Search) e Antigravity; Gemini 4 Carbon (cybersecurity, 28 ott 2026) riservato a organizzazioni verificate nel Fairwind Program"
+        "Modello core aggiornato a Gemini 4 Argon (GA 13 ott 2026) su piani a pagamento, disponibile anche in AI Mode (Search) e Antigravity; Gemini 4 Carbon (GA 10 nov 2026) disponibile su AI Ultra per 'il lavoro piu' complesso', con Gemini 3.1 Pro rimosso dal model picker"
       ],
       "tierGratuito": "Si, ma limitato (quote su Deep Research e modelli avanzati ridotte rispetto ai piani a pagamento).",
       "caveat": "Le Gems accettano max 10 file di knowledge: insufficiente per knowledge base ampie. Il vero valore emerge dentro l'ecosistema Workspace.",
@@ -657,11 +645,13 @@
         "Esecuzione comandi e modifica file",
         "Dynamic workflows (problemi su larga scala, sottoagenti paralleli)",
         "Integrazione con MCP e tool esterni",
-        "Gira su Claude Fable 5.1 (1 set 2026) o Claude Opus 5.5 (22 set 2026, $4/$20, opzione raccomandata di default)",
-        "Auto mode ora default su Pro/Max/Team (7 ago 2026)",
-        "Self-hosted environments in beta pubblica (6 ago 2026): sessioni su infrastruttura propria con accesso a rete interna, tool custom e controlli di compliance (Team/Enterprise)",
-        "Supporto GitLab merge request (14 ago 2026): URL delle MR riconosciuti da --worktree e dalla vista agents (visualizzate come !N)",
-        "Fast mode per Claude Opus 4.8 deprecato (rimozione prevista 30 nov 2026); ultrathink esegue a effort xhigh su diversi modelli della serie 5.x; Monitor tool esteso a Bedrock/Vertex/Foundry; backgrounding dei task MCP"
+        "Gira su Claude Fable 5.2 (9 nov 2026, $8/$40, ora default Fable) o Claude Opus 5.5 ($4/$20, opzione raccomandata di default); le selezioni salvate su Fable 5.1 restano disponibili con /model claude-fable-5-1",
+        "Auto mode default su Pro/Max/Team",
+        "Code Mode (12 nov 2026, sperimentale): Claude scrive JavaScript per chiamare i propri tool invece di tool call dirette",
+        "Context di default portato a 1M per model ID non riconosciuti (12 nov 2026); fast mode esteso a Vertex AI nelle region global/us/eu (10 nov 2026)",
+        "Self-hosted environments in beta pubblica: sessioni su infrastruttura propria con accesso a rete interna, tool custom e controlli di compliance (Team/Enterprise)",
+        "Supporto GitLab merge request: URL delle MR riconosciuti da --worktree e dalla vista agents (visualizzate come !N)",
+        "Fast mode per Claude Opus 4.8 deprecato (rimozione prevista 30 nov 2026); Monitor tool esteso a Bedrock/Vertex/Foundry; backgrounding dei task MCP"
       ],
       "tierGratuito": "No. Richiede abbonamento Claude (Pro/Max) o accesso via API.",
       "caveat": "Richiede CLI installata e dimestichezza col terminale: non e' uno strumento per non-tecnici. Nessun tier gratuito.",
@@ -1411,6 +1401,29 @@
     }
   ],
   "changelog": [
+    {
+      "date": "2026-11-15",
+      "summary": "Anthropic: modello claude aggiornato da Claude Fable 5.1 a Claude Fable 5.2 (9 nov 2026, insieme a Claude Mythos 5.2): stesso context 1M/128K output, prezzo tagliato a $8/$40 per 1M (da $10/$50, cache-read $0.20/M da $0.25/M), output fino al 30% piu' rapido e ~55% meno blocchi dei classificatori di sicurezza rispetto a 5.1. Nuova generazione di benchmark Anthropic (FrontierCode 2.0, FrontierSWE v2, Terminal-Bench-Science 0.1, OSWorld 2.1, Humanity's Last Exam, Chartography, Remote Labor Index, RoboDojo Sim, WANDR, AA-Briefcase) sostituisce quella di 5.1 (Terminal-Bench 4.0/OSWorld 2.0): Fable 5.2 69.9% su FrontierSWE v2 e 49.1% su FrontierCode 2.0 (effort Xhigh), sopra Opus 5.5 (62.3%/45.5%) e GPT-6 Astra (65.5%/42.8%) secondo le cifre pubblicate da Anthropic. Mythos 5.2 (stesso modello, meno safeguard) resta riservato ai Verification Program Cyber/Life Sciences. Claude Code (v2.1.321, 9 nov) passa a Fable 5.2 come modello Fable di default (le selezioni salvate su 5.1 restano disponibili con /model claude-fable-5-1); v2.1.322 (10 nov) estende fast mode a Vertex AI (global/us/eu); v2.1.323 (12 nov) introduce Code Mode sperimentale (Claude scrive JavaScript per chiamare i tool) e porta a 1M il context di default per model ID non riconosciuti. Google: Gemini 4 Carbon, presentato da Google come successore di punta di Argon, ha raggiunto la disponibilita' generale il 10 nov 2026 su API, Google AI Studio e Gemini for Business, alla stessa fascia di prezzo intro di Argon ($2/$10 per 1M fino al 30 nov, poi $4/$20); nell'app Gemini e' disponibile su AI Ultra per 'il lavoro piu' complesso' (Argon resta su AI Pro+ per 'codice e analisi'), con Gemini 3.1 Pro rimosso dal model picker. Nessuno score GPQA Diamond/SWE-Bench Pro confermato su fonte primaria Google per Argon o Carbon al momento della rilevazione. Nessuna variazione verificata con fonte ufficiale primaria questa settimana per OpenAI (solo proroga al 30 nov 2026 della promo di pricing GPT-5.6 Sol legacy; nessun cambio per GPT-6 Astra/Sol/Terra/Luna), SpaceXAI/Grok, DeepSeek, Alibaba/Qwen, Moonshot/Kimi, Z.AI/GLM, Mistral, Meta/Muse Spark, catalogo tools (Midjourney, ElevenLabs, Suno, Cursor, Grok Imagine, ecc.) e containers/decisionTree/benchmarkLinks. LMArena overall: ranking non riverificabile in modo affidabile questa settimana (fonti terze contrastanti tra Gemini 4 Carbon, Gemini 4 Argon e la linea Claude Fable 5.2/Opus 5.5); valori lasciati invariati in attesa di conferma da lmarena.ai.",
+      "sources": [
+        "https://www.anthropic.com/news/claude-fable-and-mythos-5-2",
+        "https://platform.claude.com/docs/en/models/fable-5-2/whats-new-fable-5-2",
+        "https://code.claude.com/docs/en/changelog",
+        "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+        "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/",
+        "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-4-carbon-developers/",
+        "https://ai.google.dev/gemini-api/docs/pricing",
+        "https://openai.com/index/gpt-6-astra/",
+        "https://help.openai.com/en/articles/20001415-chatgpt-rate-card-enterprise-token-based-pricing",
+        "https://x.ai/news/grok-4-7",
+        "https://api-docs.deepseek.com/updates/",
+        "https://platform.moonshot.ai/",
+        "https://docs.z.ai/guides/overview/pricing",
+        "https://mistral.ai/news/mistral-large-4/",
+        "https://research.meta.ai/",
+        "https://arena.ai/leaderboard/text",
+        "https://artificialanalysis.ai/"
+      ]
+    },
     {
       "date": "2026-11-08",
       "summary": "Aggiornamento cumulativo (radar fermo dall'23 ago, coprendo 11 settimane). Anthropic: modello claude aggiornato da Fable 5 a Claude Fable 5.1 (1 set 2026, stesso prezzo $10/$50, nuovi benchmark Terminal-Bench 4.0 55.8% e OSWorld 2.0 77.9% partial; SWE-Bench Pro e GPQA Diamond non piu' riportati da Anthropic per questa generazione); affiancato da Claude Opus 5.5 (22 set, $4/$20, ora default raccomandato), Claude Sonnet 5.5 (28 set, $2/$10) e Claude Haiku 5.5 (7 ott, da $0.10/$0.50). Claude Duet (21 ott, research preview, agente always-on su Opus 5.5) e Agent Skills donate alla Agentic AI Foundation (22 ott). Claude Code: fast mode Opus 4.8 in deprecazione (rimozione 30 nov), ultrathink a effort xhigh sulla serie 5.x. OpenAI: modello chatgpt aggiornato da GPT-5.6 Sol a GPT-6 Astra (3 set 2026, $10/$50, prima generazione GPT-6, classificato 'Critical' per rischio cyber con monitorabilita' ridotta secondo il system card ufficiale; nessun SWE-Bench Pro pubblicato); famiglia GPT-6.1 Sol ($2/$10, ora default Codex CLI), GPT-6.1 Terra (26 ott, $1/$5), GPT-6 Luna ($0.10/$0.50). ChatGPT Images 2.6 (4 nov): modelli Flare/Sunburst con GIF animate e immagini di riferimento. Google: modello gemini aggiornato da Gemini 3.7 Flash a Gemini 4 Argon (GA 13 ott 2026, nuovo flagship): pricing intro $2/$10 per 1M fino al 30 nov (poi $4/$20), context 1.05M condiviso; nessuno score GPQA Diamond/SWE-Bench Pro confermato su fonte primaria Google al momento della rilevazione. Gemini 4 Carbon (cybersecurity, 28 ott) resta riservato a organizzazioni verificate (Fairwind Program), nessuna GA pubblica. SpaceXAI: modello grok aggiornato da Grok 4.6 a Grok 4.7 (21 set 2026), prezzo $2/$6 invariato, aggiunto a GitHub Copilot lo stesso giorno; GPQA Diamond per 4.7 non confermato su fonte ufficiale (dati terzi contrastanti). Grok Voice aggiornato a Voice 3.0 (14 ott); Grok Imagine Video 1.5 ora GA (1080p nativo). Meta: modello llama aggiornato da Muse Spark 1.1 a Muse Spark 1.3 (2 set 2026), prezzo invariato $1.25/$4.25, JobBench 64.9 e OSWorld 2.0 66.9 (variante max) secondo lo scorecard di lancio Meta. Moonshot AI: modello kimi aggiornato da K3 a Kimi K3.1 Pro (23 ott 2026), prezzo tagliato a $2/$10 (da $3/$15); pesi aperti promessi per il 4 nov, non confermati pubblicati al momento della rilevazione. Z.AI: modello glm aggiornato da GLM-5.2 a GLM-5.3 (pesi pubblicati 28 ago 2026, pricing confermato invariato $1.40/$4.40, open-weight MIT 753B/40B attivi); nessuno score SWE-bench Pro ufficiale per questa generazione. Mistral: modello mistral aggiornato da Medium 3.5 a Mistral Large 4 ('Le Chonk', 6 ott 2026): context esteso a 1M (da 256K), prezzo tagliato a $0.7/$2.1 (da $1.5/$7.5), open-weight MoE 1.05T/52B attivi con encoder visione 1.6B. DeepSeek: V4 Pro invariato ($1.32/$3.96 picco/$0.66/$1.98 off-peak), affiancato dal 17 ott da DeepSeek-V4.1-Flash-1017 (variante ancora piu' economica). Alibaba: Qwen3.8-Max confermato invariato (pricing e benchmark); Qwen4 annunciato ad Apsara (set 2026) ma ancora in training, nessuna data di rilascio. Tools: rimosso Sora 2 dal catalogo (shutdown app/API confermato da OpenAI, 26 apr/24 set 2026, nessun successore annunciato); Suno v5.5 -> v6 (9 set, musica licenziata); Cursor 2.0 -> 3.0 (Composer 2.5 invariato); ElevenLabs aggiornato a Eleven v4/Realtime v1; OpenAI Codex e Grok Build aggiornati ai modelli correnti (GPT-6.1 Sol, Grok 4.7); Grok Imagine Video 1.5 da preview a GA. Benchmark: a seguito dei cambi generazionali su quasi tutti i vendor, rimossi dalle tabelle swe-bench-pro/computer-use/gpqa-diamond i punteggi legati a modelli ora superati e privi di uno score ufficiale pubblicato per la nuova generazione (niente stime); restano solo le cifre verificate per il modello attualmente in scheda. LMArena overall: ranking non riverificabile in modo affidabile questa settimana (fonti terze contrastanti su chi sia #1 tra Gemini 4 Argon/Carbon e la linea Claude 5.5/Mythos); valori lasciati invariati in attesa di conferma da lmarena.ai/arena.ai. Nessuna variazione verificata per containers/decisionTree/benchmarkLinks, Perplexity, Zapier Agents, n8n, Lovable, Transcript LOL, Gamma, Midjourney (resta V8.1), Runway (resta Gen-4.5), FLUX.2, Adobe Firefly, HeyGen, Google AI Studio, NotebookLM/Gemini Notebook, Pomelli, Mixboard.",
