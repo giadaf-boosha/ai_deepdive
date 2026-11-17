@@ -3,7 +3,7 @@ name: Formal Verification / Theorem Proving assistito da LLM
 aliases: [formal verification, theorem proving, dimostrazione formale, formalizzazione matematica, Lean proof, autoformalizzazione, computer-checked proof, theorem formalization]
 categoria: tecnica
 created: 2026-09-12
-last_updated: 2026-09-12
+last_updated: 2026-11-17
 ---
 
 # Formal Verification / Theorem Proving assistito da LLM
@@ -79,3 +79,7 @@ Esempio 3: uso pratico per chi costruisce sistemi di verifica software. Un'organ
 ### 2026-09-12
 
 Prima voce di questa scheda, appena creata. Claude (Anthropic) completa la prima dimostrazione formale nota, verificata al computer in Lean, dell'Ultimo Teorema di Fermat: oltre 13 milioni di righe di codice e 29.500 teoremi intermedi verificati in 11 giorni, contro gli anni stimati per una formalizzazione umana equivalente, usando lo strumento open-source Prove2Me e dozzine di istanze Claude in parallelo per circa 6 miliardi di token complessivi. L'annuncio risale al 4 settembre 2026 mai coperto in un digest per assenza di run tra il 4 e l'11 settembre; recuperato come missed coverage nel digest del 12 settembre. [Digest 2026-09-12](../../digest/2026/09/12.md)
+
+### 2026-11-17
+
+Google DeepMind annuncia AlphaProof Code (10 novembre): un framework multi-agente che scrive dimostrazioni formali in Lean per verificare matematicamente proprieta' di sicurezza direttamente sul codice compilato, non solo sul sorgente. Nel caso di studio pubblico il sistema verifica il nucleo del protocollo di cifratura di Signal (PQXDH e Triple Ratchet) contro il binario compilato ARM a 64 bit, generando tra 6 e 6,5 milioni di righe di proof Lean in circa 4 settimane; come test di validazione, reintroducendo due bug di sicurezza reali gia' corretti il sistema produce proof machine-checked che ne dimostrano l'insicurezza. E' la prima istanza pubblica dell'"Esempio 3" di questa scheda (verifica di protocolli crittografici per chi costruisce sistemi di sicurezza) applicata a un protocollo di produzione reale e ampiamente usato, e al codice compilato invece che al solo sorgente — un'estensione concreta oltre la formalizzazione di risultati matematici storici (vedi il caso Fermat sopra). [Digest 2026-11-17](../../digest/2026/11/17.md)
