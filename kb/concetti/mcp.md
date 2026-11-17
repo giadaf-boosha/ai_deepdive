@@ -3,7 +3,7 @@ name: Model Context Protocol
 aliases: [MCP, Model Context Protocol, protocollo MCP]
 categoria: infrastruttura
 created: 2026-04-28
-last_updated: 2026-06-01
+last_updated: 2026-11-17
 ---
 
 # Model Context Protocol
@@ -156,3 +156,7 @@ Secondo, la sicurezza del deployment enterprise: Claude Managed Agents introduce
 Terzo, la toolchain: l'acquisizione di Stainless da parte di Anthropic ([digest 05-19](../../digest/2026/05/19.md), [digest 05-27](../../digest/2026/05/27.md)) porta in casa l'infrastruttura che generava automaticamente SDK e MCP server da OpenAPI per OpenAI, Google e Cloudflare — un segnale del valore strategico attribuito al layer di generazione MCP.
 
 Sul piano della specifica, oltre alle novita' viste nei digest, vale la pena registrare la maturazione del protocollo intervenuta nel novembre 2025 (primo anniversario): la revisione 2025-11-25 ha introdotto i Tasks asincroni ("call-now, fetch-later"), la URL Mode Elicitation (SEP-1036), il Sampling con tool (SEP-1577), l'Extensions framework e le Authorization Extensions (OAuth client-credentials, SEP-1046), in modo backward compatible. E' inoltre operativo il registry ufficiale registry.modelcontextprotocol.io, che a fine maggio 2026 indicizza dell'ordine di 9.000+ server. La scheda e' stata riscritta in profondita': aggiunte le sezioni su Tasks/elicitation/sampling-con-tool nel "Come funziona", il pattern vendor-managed server in "Varianti", l'esempio asincrono e l'esempio con MCP tunnel in "Esempi pratici", e aggiornate le note operative su versioning e registry. Fonti spec verificate: blog.modelcontextprotocol.io e modelcontextprotocol.io.
+
+### 2026-11-17
+
+Anthropic espande gli Interactive Connectors (10 novembre), lo strato di connettori costruito sopra MCP che gia' permetteva di collegare app di terze parti a Claude: ora le app partner (Adobe, Atlassian, Box, Notion) si aprono come applicazioni complete accanto alla conversazione o a schermo intero, cosi' l'utente lavora direttamente nello strumento invece di limitarsi a invocare un tool che ritorna testo. E' un passo ulteriore nell'evoluzione dei connettori MCP verso un'integrazione a livello di interfaccia utente, oltre alla semplice chiamata di funzione: il contesto condiviso diventa visuale e interattivo, non solo dati o risultati testuali passati al modello. Il lancio e' accompagnato, lo stesso giorno, da Claude Whiteboards, Claude Sheets e dalla disponibilita' generale di Claude Data (ex Dashboards), e il 12 novembre da Claude Meetings. [Digest 2026-11-17](../../digest/2026/11/17.md)
