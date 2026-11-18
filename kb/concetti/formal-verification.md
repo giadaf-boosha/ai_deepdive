@@ -3,7 +3,7 @@ name: Formal Verification / Theorem Proving assistito da LLM
 aliases: [formal verification, theorem proving, dimostrazione formale, formalizzazione matematica, Lean proof, autoformalizzazione, computer-checked proof, theorem formalization]
 categoria: tecnica
 created: 2026-09-12
-last_updated: 2026-09-12
+last_updated: 2026-11-18
 ---
 
 # Formal Verification / Theorem Proving assistito da LLM
@@ -79,3 +79,7 @@ Esempio 3: uso pratico per chi costruisce sistemi di verifica software. Un'organ
 ### 2026-09-12
 
 Prima voce di questa scheda, appena creata. Claude (Anthropic) completa la prima dimostrazione formale nota, verificata al computer in Lean, dell'Ultimo Teorema di Fermat: oltre 13 milioni di righe di codice e 29.500 teoremi intermedi verificati in 11 giorni, contro gli anni stimati per una formalizzazione umana equivalente, usando lo strumento open-source Prove2Me e dozzine di istanze Claude in parallelo per circa 6 miliardi di token complessivi. L'annuncio risale al 4 settembre 2026 mai coperto in un digest per assenza di run tra il 4 e l'11 settembre; recuperato come missed coverage nel digest del 12 settembre. [Digest 2026-09-12](../../digest/2026/09/12.md)
+
+### 2026-11-18
+
+Nuovo caso d'uso, distinto dalla formalizzazione originale (Fermat): Jan von Plato (Universita' di Helsinki) usa Claude per catalogare 663 possibili teoremi nei quaderni inediti in stenografia Gabelsberger di Kurt Godel (anni '40), poi verificati nel proof assistant Coq — circa 400 confermati, 200 da correggere, 50 falsi. Il risultato di maggior rilievo riguarda la pretesa di Godel del 1966 sull'indipendenza dell'assioma di scelta, per cui Paul Cohen ha poi vinto la Fields Medal. Qui il contributo di Claude non e' una dimostrazione originale ma la ricostruzione/catalogazione di risultati storici inediti, verificata post-hoc in Coq invece di Lean. [Digest 2026-11-18](../../digest/2026/11/18.md)
