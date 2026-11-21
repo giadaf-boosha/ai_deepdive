@@ -3,7 +3,7 @@ name: AI Governance
 aliases: [AI governance, governance AI, export control AI, regolazione AI, AI regulation, AI policy, BIS AI, EAR AI models]
 categoria: regolazione
 created: 2026-06-14
-last_updated: 2026-11-10
+last_updated: 2026-11-21
 ---
 
 # AI Governance
@@ -72,6 +72,10 @@ Esempio 3: verifica della Responsible Scaling Policy prima di distribuire un mod
 - Wilson Sonsini, "Colorado Legislature Repeals and Replaces Colorado AI Act: What SB 189 Means for Your Business" (maggio 2026). https://www.wsgr.com/en/insights/colorado-legislature-repeals-and-replaces-colorado-ai-act-what-sb-189-means-for-your-business.html
 
 ## Aggiornamenti
+
+### 2026-11-21
+
+Google porta Gemini 4 Carbon alla disponibilita' generale il 10 novembre (missed coverage), chiudendo il ciclo di accesso gated aperto il 28 ottobre e tracciato in questa scheda nell'aggiornamento del 9 novembre: il modello passa dall'accesso riservato ai soli cyber defender a disponibilita' per developer, enterprise, ricercatori e consumatori, via API in Google AI Studio e Gemini for Business per tutti gli sviluppatori paganti, e nell'app Gemini per gli utenti Google AI Ultra, allo stesso pricing introduttivo di Gemini 4 Argon. Il modello debutta contemporaneamente al primo posto sul Text leaderboard di Arena (ex LMArena) con un punteggio Elo di 1.528 (assestato poi a 1.526), davanti a Gemini 4 Argon e ai modelli Claude di punta, e secondo su Agent Arena. E' il primo caso in questa scheda in cui un modello soggetto a gating per capacita' cyber critica raggiunge la disponibilita' generale senza un downgrade di capacita' dichiarato, segno che il laboratorio ha trattato il periodo di accesso riservato ai cyber defender come una fase temporanea di hardening pre-rilascio piuttosto che un limite permanente — diversamente dallo schema a due livelli stabile adottato da Anthropic per Fable/Mythos (vedi aggiornamento 2026-11-10). [Digest 2026-11-21](../../digest/2026/11/21.md)
 
 ### 2026-11-10
 

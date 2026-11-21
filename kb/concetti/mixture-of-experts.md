@@ -3,7 +3,7 @@ name: Mixture of Experts
 aliases: [MoE, mixture-of-experts, mixture of experts, modello sparso, sparse model, expert routing]
 categoria: architettura
 created: 2026-06-01
-last_updated: 2026-08-15
+last_updated: 2026-11-21
 ---
 
 # Mixture of Experts
@@ -80,6 +80,10 @@ Quando un denso e' la scelta migliore. Per deployment su singola GPU, su edge o 
 Combinare gli assi di efficienza. MoE (sparsita' tra expert), quantizzazione (precisione ridotta dei pesi) e adaptive per-token compute (budget variabile) sono assi ortogonali e cumulabili. Un sistema di serving maturo li combina: un MoE quantizzato ad AWQ 4-bit con allocazione adattiva del compute per token e' lo stato dell'arte dell'ottimizzazione dell'inferenza nel 2026.
 
 ## Aggiornamenti
+
+### 2026-11-21
+
+Alibaba rilascia il 16 novembre Qwen4-Max, nuovo flagship MoE closed-weight, disponibile su QwenCloud via Token Plan e API a 1,50 dollari per milione di token in input e 4,50 in output. Sul benchmark interno Alibaba Work360 (721 campi) il modello segna 52,69 contro il 47,74 di Qwen3.8-Max (gia' tracciato in questa scheda il 5 agosto e nell'aggiornamento del 13 agosto), con un uso dichiarato di meno token per risposta. Su benchmark di terze parti il quadro e' piu' incerto: 46,7 su Agents' Last Exam v1.1 e 48,5 su Terminal-Bench 4.0 (contro 59,6 di Claude Opus 5.5), mentre su DeepSWE v1.1 il modello realizza 75,7, leggermente sopra Kimi K3.1 (75,5, gia' tracciato in questa scheda il 28 luglio) e GPT-6.1 Sol (75,2) — una fonte segnala che il prezzo API di default usa reasoning effort "High", mentre i risultati piu' favorevoli sono stati misurati con l'effort "Xhigh", dettaglio non riconciliato nei materiali ufficiali. A differenza di Qwen3.8-Max, Alibaba non ha ancora dichiarato i parametri totali/attivi del modello, e i pesi aperti previsti riguarderanno solo le varianti Qwen4 piu' piccole, non il Max: un ulteriore caso, dopo quello di Qwen3.8-Max (13 agosto), in cui il laboratorio limita cosa della propria linea Max-class diventa pubblicamente verificabile. [Digest 2026-11-21](../../digest/2026/11/21.md)
 
 ### 2026-08-15
 
