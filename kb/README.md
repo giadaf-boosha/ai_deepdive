@@ -23,9 +23,9 @@
 | [Knowledge Distillation](./concetti/knowledge-distillation.md) | training | knowledge distillation, distillazione, model distillation, distillazione di modello, adversarial distillation, response distillation, student-teacher, distillazione avversariale | 2026-11-10 |
 | [Interaction Model](./concetti/interaction-model.md) | architettura | interaction model, full-duplex AI, modello di interazione, full-duplex model | 2026-06-01 |
 | [Large Language Model](./concetti/llm.md) | architettura | LLM, modello linguistico di grandi dimensioni, foundation model | 2026-07-01 |
-| [Mixture of Experts](./concetti/mixture-of-experts.md) | architettura | MoE, mixture-of-experts, mixture of experts, modello sparso, sparse model, expert routing | 2026-08-15 |
+| [Mixture of Experts](./concetti/mixture-of-experts.md) | architettura | MoE, mixture-of-experts, mixture of experts, modello sparso, sparse model, expert routing | 2026-11-12 |
 | [Model Context Protocol](./concetti/mcp.md) | infrastruttura | MCP, Model Context Protocol, protocollo MCP | 2026-06-01 |
-| [Multi-agent orchestration](./concetti/multi-agent-orchestration.md) | paradigma | multi-agent, sistema multi-agente, orchestrazione di agenti, agent swarm, subagenti, sub-agent orchestration | 2026-09-12 |
+| [Multi-agent orchestration](./concetti/multi-agent-orchestration.md) | paradigma | multi-agent, sistema multi-agente, orchestrazione di agenti, agent swarm, subagenti, sub-agent orchestration | 2026-11-12 |
 | [Private Cloud Compute](./concetti/private-cloud-compute.md) | infrastruttura | PCC, Private Cloud Compute, confidential cloud computing, confidential inference, Apple PCC, TEE cloud inference | 2026-06-08 |
 | [Prompt engineering](./concetti/prompt-engineering.md) | tecnica | prompt engineering, ingegneria dei prompt, prompting | 2026-06-01 |
 | [Reinforcement Learning from Human Feedback](./concetti/rlhf.md) | training | RLHF, reinforcement learning from human feedback, allineamento RL, RLAIF | 2026-06-13 |
