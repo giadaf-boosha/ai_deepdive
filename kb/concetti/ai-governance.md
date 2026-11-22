@@ -3,7 +3,7 @@ name: AI Governance
 aliases: [AI governance, governance AI, export control AI, regolazione AI, AI regulation, AI policy, BIS AI, EAR AI models]
 categoria: regolazione
 created: 2026-06-14
-last_updated: 2026-11-10
+last_updated: 2026-11-22
 ---
 
 # AI Governance
@@ -72,6 +72,10 @@ Esempio 3: verifica della Responsible Scaling Policy prima di distribuire un mod
 - Wilson Sonsini, "Colorado Legislature Repeals and Replaces Colorado AI Act: What SB 189 Means for Your Business" (maggio 2026). https://www.wsgr.com/en/insights/colorado-legislature-repeals-and-replaces-colorado-ai-act-what-sb-189-means-for-your-business.html
 
 ## Aggiornamenti
+
+### 2026-11-22
+
+OpenAI rilascia il 17 novembre GPT-6.2 Astra e GPT-6.2 Sol: entrambi superano la soglia "Critical" per rischio cyber del Preparedness Framework, confermando lo stesso livello gia' raggiunto dalla generazione precedente (GPT-6 Cyber, aggiornamento 2026-11-09) invece di introdurre un salto di soglia. La novita' di governance, se confermata, e' altrove: una fonte secondaria (non riscontrata altrove in questa run) riporta che Astra sarebbe il primo modello esterno di OpenAI giudicato al livello "High" per rischio di auto-miglioramento (AI self-improvement) — una categoria di rischio distinta dal filone cyber tracciato finora in questa scheda (Fable 5/Mythos 5 giugno, GPT-6 Astra/Cyber settembre-novembre, Gemini 4 Carbon ottobre, Mythos 5.2 novembre), che riguarda la capacita' di un modello di accelerare lo sviluppo della propria generazione successiva invece che di condurre attacchi informatici. Il dato resta da verificare a fonte primaria; se confermato in una prossima run, introdurrebbe nella scheda il primo caso pubblico di soglia di rischio riconosciuta non per capacita' offensiva ma per recursive self-improvement, lo stesso tema che Dario Amodei aveva citato come principale driver dell'accelerazione recente nell'essay "We Must Pace the Frontier" (12 settembre, aggiornamento 2026-09-13). [Digest 2026-11-22](../../digest/2026/11/22.md)
 
 ### 2026-11-10
 

@@ -3,7 +3,7 @@ name: Agent harness
 aliases: [agent harness, harness, scaffolding agentico, agent runtime]
 categoria: infrastruttura
 created: 2026-04-28
-last_updated: 2026-10-03
+last_updated: 2026-11-22
 ---
 
 # Agent harness
@@ -139,6 +139,10 @@ Cost governance. In un harness multi-utente i costi possono esplodere. Un agent 
 Sicurezza dei tool. La superficie d'attacco principale di un harness e' nei tool che modificano stato: shell, send-mail, db-write, file-write. Best practice: separare tool read-only da tool write; richiedere conferma utente per i write su prima esecuzione di una sessione; permission model dichiarativo (es. allowlist di comandi shell, denylist di path). Per agenti che eseguono codice, il sandbox e' obbligatorio in qualunque deployment toccato da utenti finali; la documentazione Anthropic del 30 maggio 2026 mostra che la scelta del meccanismo dipende dal contesto di esecuzione (gVisor server-side, Seatbelt/Bubblewrap in locale, VM full-OS per ambienti desktop emulati). In ambito enterprise, separare il loop dall'esecuzione dei tool (self-hosted sandbox) e accedere ai sistemi interni via gateway outbound-only (MCP tunnel) e' il pattern di riferimento per non esporre il perimetro aziendale.
 
 ## Aggiornamenti
+
+### 2026-11-22
+
+Claude Code introduce Code Mode in v2.1.323 (circa il 12 novembre, missed coverage parziale): funzionalita' sperimentale, disattivata di default e attivabile via variabile d'ambiente `CLAUDE_CODE_EXPERIMENTAL_CODE_MODE`, in cui Claude scrive uno script JavaScript che esegue piu' tool call in un solo passaggio invece di chiamarle una a una nel loop classico. I permessi deny/ask e gli hook PreToolUse restano applicati alle singole tool call dentro lo script, non allo script nel suo insieme. Nella settimana successiva (16-20 novembre) la feature matura rapidamente secondo il changelog ufficiale: v2.1.326 aggiunge il supporto agli agent team dentro Code Mode (le sessioni con team e Code Mode attivi partono in Code Mode); v2.1.327 rimuove il blocco di avvio in presenza di mod che agganciano le tool call; v2.1.328-329 migliorano velocita', prompt caching e aggiungono supporto OpenTelemetry, oltre a correggere un loop che saturava la memoria; v2.1.330 corregge gestione di immagini/PDF e un blocco del terminale dopo migliaia di tool call in un singolo script. Code Mode e' un quinto asse di estensione dell'harness di Claude Code, distinto dai quattro gia' tracciati in questa scheda (tool/MCP, Dynamic Workflows, mods, gerarchia di subagenti): qui il modello stesso genera uno script che fa da livello di batching per le tool call di una singola sessione, riducendo il numero di round-trip modello-tool invece di orchestrare subagenti separati o modificare il comportamento del loop. [Digest 2026-11-22](../../digest/2026/11/22.md)
 
 ### 2026-10-03
 
