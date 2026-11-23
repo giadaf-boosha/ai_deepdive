@@ -3,7 +3,7 @@ name: Evaluation / Benchmark AI
 aliases: [benchmark, eval, evaluation, valutazione LLM, AI benchmark, leaderboard]
 categoria: tecnica
 created: 2026-04-30
-last_updated: 2026-11-13
+last_updated: 2026-11-23
 ---
 
 # Evaluation / Benchmark AI
@@ -90,6 +90,10 @@ Per gli agenti il processo e' piu' complesso: lo stato esterno (database, browse
 - Xiong e Luo et al., "AutoResearchBench: Benchmarking AI Agents on Complex Scientific Literature Discovery", 2026. https://arxiv.org/abs/2604.25256
 
 ## Aggiornamenti
+
+### 2026-11-23
+
+OpenAI rilascia GPT-6.2 Astra e Sol (17 novembre, missed coverage) con tre nuove misurazioni di benchmark che si aggiungono al panorama tracciato in questa scheda. GDPval v2: +6,2 punti percentuali rispetto a GPT-6 Astra, ottenuto con il 22% di token di output in meno — un caso di miglioramento su capacita' e su efficienza contemporaneamente, non in trade-off. OSWorld V2-Offline: 72,6% contro 65,7% di GPT-5.6 Sol, benchmark di esecuzione di task su ambienti desktop simulati. Agents' Last Exam: le fonti secondarie divergono sulla metrica esatta del confronto con Claude Fable 5.2 (un vantaggio dichiarato di 5,5 punti a un ventesimo del costo secondo una fonte, pass rate piu' che doppio a un sesto del costo secondo un'altra) — un caso aggiuntivo del pattern gia' tracciato in questa scheda in cui i laboratori frontier riportano la stessa comparazione con framing di metrica diversi, rendendo il confronto diretto tra lanci non immediato senza accesso al protocollo completo. Il rilascio arriva due mesi dopo la cancellazione interna di GPT-6.1 Astra (ottobre), attribuita a test interni che avevano rilevato problemi di rispetto dello scope e dell'autorizzazione del modello — un caso raro di laboratorio frontier che rende pubblica la cancellazione di una release per ragioni di valutazione interna prima del lancio, non dopo. [Digest 2026-11-23](../../digest/2026/11/23.md)
 
 ### 2026-11-13
 

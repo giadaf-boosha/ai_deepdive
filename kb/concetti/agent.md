@@ -3,7 +3,7 @@ name: AI Agent
 aliases: [agent, AI agent, agente autonomo, autonomous agent]
 categoria: paradigma
 created: 2026-04-28
-last_updated: 2026-06-28
+last_updated: 2026-11-23
 ---
 
 # AI Agent
@@ -270,3 +270,7 @@ Claude Tag (Anthropic, 23 giugno, 5 fonti) introduce la variante "ambient team m
 ### 2026-06-26
 
 WorkBench Revisited (arXiv:2606.13715, giugno 2026, copertura mancata dal 10 giugno) misura il progresso degli agenti su 50 task da ufficio nel periodo 2024-2026. Il miglior agente 2026 e' Claude Opus 4.8 con l'89% di task completion e il 2,5% di azioni dannose, contro il 43% e il 26% del miglior agente 2024 (GPT-4). La traiettoria documenta che la sicurezza e la capacita' si muovono nella stessa direzione — un dato rilevante perche' la narrative dominante nel campo postulava un trade-off tra i due. Il benchmark mantiene i task fissi nel tempo, rendendo il confronto cross-modello interpretabile senza la variabile confondente dei benchmark nuovi che cambiano distribuzione. 2025 AI Agent Index (arXiv:2602.17753, FAccT '26 Montreal, 25-28 giugno) audita 30 agenti su 8 dimensioni di documentazione della sicurezza. I risultati piu' rilevanti per il design agentico: gli incidenti si concentrano negli agenti browser (prompt injection come vettore dominante), e la copertura della documentazione di sicurezza varia da 8/8 (Claude Code) a 1/8 (Moonshot AI, Manus). L'indice formalizza la documentazione pubblica di sicurezza come asse di valutazione comparabile — complementare ai benchmark di capacita' ma distinto: un agente puo' avere alta capacita' e bassa copertura documentale, o viceversa. Per chi costruisce o sceglie agenti: la lista degli 8 campi dell'AI Agent Index diventa una checklist di accountability minima per qualsiasi deployment in contesti regolamentati. [Digest 2026-06-26](../../digest/2026/06/26.md)
+
+### 2026-11-23
+
+Perplexity lancia Teammates (4-6 novembre, missed coverage, date non riconciliate tra le fonti): agenti AI pensati per prendere in carico lavoro continuativo con stato persistente, non singoli prompt, costruiti sulla piattaforma esistente Perplexity Computer. L'accesso e' una research preview limitata al sito web e riservata ai soli abbonati Max (200 dollari/mese); app native per iOS sono annunciate senza data. Il caso e' un'ulteriore istanza del pattern "agente persistente per lavoro continuativo" gia' tracciato in questa scheda per Writer (trigger event-based, digest 05-04), Microsoft Agent 365 (governance GA, digest 05-03) e Claude Tag (ambient team member su Slack, digest 06-28): qui applicato per la prima volta a un prodotto consumer/pro con limite di accesso esplicito legato al piano di abbonamento, non alla verifica enterprise. [Digest 2026-11-23](../../digest/2026/11/23.md)
