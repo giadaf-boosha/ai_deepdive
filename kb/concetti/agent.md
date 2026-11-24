@@ -3,7 +3,7 @@ name: AI Agent
 aliases: [agent, AI agent, agente autonomo, autonomous agent]
 categoria: paradigma
 created: 2026-04-28
-last_updated: 2026-11-23
+last_updated: 2026-11-24
 ---
 
 # AI Agent
@@ -122,6 +122,10 @@ Pattern di rollout. Il deployment di agenti in azienda segue tipicamente tre fas
 Telemetria distribuita. Un agente che fa 50 step distribuiti tra LLM, database, API esterne genera traccia complessa. Standardizzare con OpenTelemetry, attributi span dedicati (model.name, tool.name, tokens.input, tokens.output, cost.usd), correlation id per sessione utente e per task. Senza questi, il debugging di un fail in produzione consuma ore; con essi, minuti.
 
 ## Aggiornamenti
+
+### 2026-11-24
+
+Microsoft presenta Autopilot a Ignite 2026 (17-18 novembre, date non riconciliate tra le fonti): agente personale per Microsoft 365 che opera attraverso Teams e Outlook mantenendo il lavoro in corso tra un prompt e l'altro. Il contributo architetturale rilevante e' Entra Agent ID: ogni agente riceve un'identita' propria tramite l'estensione del sistema di identity management Microsoft dagli utenti umani agli agenti. Il caso e' la terza istanza in questa scheda, dopo Claude Tag (membro Slack con identita' condivisa, digest 28 giugno) e Agent 365 (control plane di governance e inventario, GA digest 3 maggio), del pattern "agente con identita' propria persistente"; la differenza e' che qui l'identita' e' individuale e dedicata (un ID per agente, non un'istanza condivisa a livello di workspace o un inventario aggregato) e si applica a un agente personale invece che a un membro di team o a uno strato di governance. Agent 365 si espande in parallelo con una funzionalita' di Business Analytics per il budgeting in stile FinOps della spesa generata dagli agenti, estendendo il filone della governance economica degli agenti in produzione. [Digest 2026-11-24](../../digest/2026/11/24.md)
 
 ### 2026-04-28
 

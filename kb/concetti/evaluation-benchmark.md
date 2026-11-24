@@ -3,7 +3,7 @@ name: Evaluation / Benchmark AI
 aliases: [benchmark, eval, evaluation, valutazione LLM, AI benchmark, leaderboard]
 categoria: tecnica
 created: 2026-04-30
-last_updated: 2026-11-23
+last_updated: 2026-11-24
 ---
 
 # Evaluation / Benchmark AI
@@ -90,6 +90,10 @@ Per gli agenti il processo e' piu' complesso: lo stato esterno (database, browse
 - Xiong e Luo et al., "AutoResearchBench: Benchmarking AI Agents on Complex Scientific Literature Discovery", 2026. https://arxiv.org/abs/2604.25256
 
 ## Aggiornamenti
+
+### 2026-11-24
+
+Google rilascia Gemini 4 Neon (18 novembre, missed coverage), modello di fascia media tra Gemini 4 Carbon e Gemini 4 Hydrogen. Il caso e' un esempio diretto del pattern "framing vendor vs. misurazione indipendente" gia' tracciato in questa scheda: Google dichiara nell'annuncio prestazioni sopra Claude Opus 5.5 e GPT-6.2 Sol sulla maggior parte delle metriche citate, ma la misurazione di Artificial Analysis — l'unica terza parte indipendente con dati pubblici in questa run — colloca Neon (setting xhigh) terzo a 61,4 punti sull'Intelligence Index, dietro Claude Fable 5.2 (64,6) e appena sopra Gemini 4 Carbon high (60,0). La divergenza non e' un caso di benchmark diversi (come spesso accade in questa scheda, dove laboratori diversi scelgono metriche diverse per il proprio profilo di lancio) ma dello stesso indice composito letto con framing opposti: "batte quasi tutti" nella comunicazione ufficiale, "terzo posto" nella misurazione indipendente. Il costo per task (Artificial Analysis: 0,75 dollari per Neon low contro 6,59 per Carbon medium) e la velocita' (stime discordanti tra fonti, da 3x a confronti puntuali che vanno da 3,7 a 37,2 minuti secondo il setting) restano variabili di inference performance distinte dalla capability pura, coerenti con la distinzione gia' tracciata in questa scheda. [Digest 2026-11-24](../../digest/2026/11/24.md)
 
 ### 2026-11-23
 
