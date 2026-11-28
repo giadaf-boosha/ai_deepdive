@@ -3,7 +3,7 @@ name: AI Governance
 aliases: [AI governance, governance AI, export control AI, regolazione AI, AI regulation, AI policy, BIS AI, EAR AI models]
 categoria: regolazione
 created: 2026-06-14
-last_updated: 2026-11-10
+last_updated: 2026-11-28
 ---
 
 # AI Governance
@@ -72,6 +72,10 @@ Esempio 3: verifica della Responsible Scaling Policy prima di distribuire un mod
 - Wilson Sonsini, "Colorado Legislature Repeals and Replaces Colorado AI Act: What SB 189 Means for Your Business" (maggio 2026). https://www.wsgr.com/en/insights/colorado-legislature-repeals-and-replaces-colorado-ai-act-what-sb-189-means-for-your-business.html
 
 ## Aggiornamenti
+
+### 2026-11-28
+
+Il board di Nvidia accetta l'11 novembre le dimissioni del CEO Jensen Huang da presidente, CEO e membro del consiglio, in seguito a un'indagine indipendente di consiglieri esterni su un possibile avvicinamento a Huang da parte di un'operazione di intelligence straniera (gia' annunciata l'8 novembre e scartata editorialmente nel digest del 13 novembre come "questione di governance societaria interna"); Colette Kress (CFO dal 2013) diventa CEO interinale, Harvey C. Jones (ex Synopsys) primo chair indipendente del board. Sei giorni dopo, il 17 novembre, Kress annuncia sulla call del terzo trimestre fiscale 2027 che Nvidia ha interrotto le spedizioni verso la Cina di chip Hopper con licenza (inclusi gli H200, circa 2,4 miliardi di dollari di vendite nel trimestre chiuso il 25 ottobre), senza piani di ripresa, chiudendo di fatto l'accordo tariffario al 25% negoziato da Huang con l'amministrazione Trump a gennaio 2026. Rispetto al filone dell'export control hardware tracciato in questa scheda dal 2022 (bandi USA su H100/H800, poi A100/A800) — finora sempre iniziativa di un governo verso un produttore — questo e' il primo caso in cui l'interruzione delle spedizioni coincide con un cambio di CEO non pianificato nell'azienda esportatrice stessa, con causalita' tra i due eventi non dichiarata ufficialmente ma temporalmente stretta. [Digest 2026-11-28](../../digest/2026/11/28.md)
 
 ### 2026-11-10
 
